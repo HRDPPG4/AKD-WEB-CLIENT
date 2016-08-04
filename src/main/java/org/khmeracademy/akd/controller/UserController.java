@@ -15,4 +15,9 @@ public class UserController {
 	public String findAll(){
 		return "index";
 	}
+	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String listslide(){
+		return "listSlide";
+	}
 }

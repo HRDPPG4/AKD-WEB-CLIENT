@@ -109,7 +109,13 @@
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
 							<a href="detail.html" class="thumbnail">
 								<span class="img">
-								<img src="img/Law/011.png" alt="">
+								
+								
+								
+								<img src="img/Law/011.png" alt=""> 
+								
+								
+								
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
