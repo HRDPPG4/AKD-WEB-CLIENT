@@ -13,6 +13,8 @@
 
 </head>
 <body>
+
+
 	<div id="LoginForm">
 	<div class="container">
   <!-- Trigger the modal with a button -->
@@ -55,5 +57,11 @@
   </div>
 </div>
 </div>
+
+
+
+
+
+
 </body>
 </html>
