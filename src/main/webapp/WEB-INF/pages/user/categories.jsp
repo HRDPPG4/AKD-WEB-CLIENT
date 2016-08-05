@@ -182,7 +182,4 @@
 	</div>
 </div>
 </content>
-
-<script src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
-</body>
-</html>
+<jsp:include page="include/footer.jsp"></jsp:include>
