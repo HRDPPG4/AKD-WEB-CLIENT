@@ -57,6 +57,15 @@
 				        <div class="modal-header" style="padding:35px 50px;">
 				          <button type="button" class="close" data-dismiss="modal">&times;</button>
 				          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				          
+				          
+					         
+						    <div class="imgcontainer">
+						      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+						      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
+						    </div>
+									          
+				          
 				        </div>
 				        <div class="modal-body" style="padding:40px 50px;">
 				          <form role="form">
@@ -88,7 +97,7 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span  class="navbar-logo">
-					<a href="#" class="navbar-brand brand-logo">AllKhmerDocs</a>
+					<a href="/" class="navbar-brand brand-logo">AllKhmerDocs</a>
 			</span>
 			
 					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;style="overflow: scroll;">
