@@ -52,6 +52,7 @@ html,body {
   border-radius: 0;
   background-clip: padding-box;
   margin-top:40px;
+  clear:both;
  }
 
 /*main-menu*/
@@ -126,6 +127,7 @@ ul.menu-basic li.icon {display: none;}
 	text-align:left;
 	float: left;
 	 border-bottom: 2px dashed #fff;
+	 margin-top:25px;								-------------------------------------New Here---------------------------
 }
 .topspace-second > .section-title #right-title{
 	text-align: right;
