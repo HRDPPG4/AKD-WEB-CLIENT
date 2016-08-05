@@ -11,19 +11,9 @@
 .content-left-bar{
   color:white;
  ​ text-align: center;
+ padding-bottom: 10px;
 }
-.content-cates{
- color:white;
- ​ text-align: center;
-}
-.header-cates{
-font-size: 16px;
-  text-align: center;
-  border-bottom:1px solid #fff;
-  margin-bottom:5px;
-  padding: 10px 5px 10px 10px;
-  background-color:  #3B5998;
-}
+
 .header-nav-bar{
   width: 100%;
   font-size: 18px;
@@ -41,23 +31,6 @@ font-size: 16px;
   font-size: 16px;
   background-color:#fff;
 
-}
-.header-cates{
-  width: 100%;
-  font-size: 18px;
-  text-align: left;
-  padding: 10px 5px 10px 10px;
-  margin-bottom:10px;
-  background-color:  #3B5998;
-}
-.body-cates{
-  font-family: "Times New Roman";
-  padding: 10px 5px 5px 10px;
-  color: black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-size: 16px;
-  background-color:#fff;
 }
 /**/
 ul.main-nav-cate{
@@ -96,6 +69,28 @@ ul.main-nav-cate li{
    padding-top: 5px;
     padding-bottom:5px;
  }
- .title-by-cates{
 
- }
+
+/*///////////////////////*/
+.content-cates{
+ color:white;
+ ​ text-align: center;
+}
+
+.header-cates{
+  width: 100%;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px 5px 10px 10px;
+  margin-bottom:10px;
+  background-color:  #3B5998;
+}
+.body-cates{
+  font-family: "Times New Roman";
+  padding: 10px 5px 5px 10px;
+  color: black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 16px;
+  background-color:#fff;
+}
