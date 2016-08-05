@@ -32,11 +32,8 @@
 					<div class="row">
 					<!-- //////////////////////////// -->
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-							<a href="detail.html" class="thumbnail">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
-								
-								
-								
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
 								
 								

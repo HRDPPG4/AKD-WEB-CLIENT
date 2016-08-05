@@ -42,11 +42,11 @@
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 
-			  <li class="active"><a href="index.html">
+			  <li class="active"><a href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
-			  <li><a href="/technology">
+			  <li><a href="/category">
 			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
 			  </li>
 			  <li><a href="technology.html">

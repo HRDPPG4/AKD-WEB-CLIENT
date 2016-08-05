@@ -1,4 +1,5 @@
 .topspace-cates{
+  overflow: hidden;
    margin-top: 20px;
     /*background-color: #fff;*/
   padding-bottom: 10px;
@@ -12,13 +13,20 @@
  ​ text-align: center;
 }
 .content-cates{
-  color:white;
-  /*height:150px;*/
+ color:white;
  ​ text-align: center;
+}
+.header-cates{
+font-size: 16px;
+  text-align: center;
+  border-bottom:1px solid #fff;
+  margin-bottom:5px;
+  padding: 10px 5px 10px 10px;
+  background-color:  #3B5998;
 }
 .header-nav-bar{
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   padding: 10px 5px 10px 10px;
   background-color:  #3B5998;
@@ -36,9 +44,10 @@
 }
 .header-cates{
   width: 100%;
-  font-size: 16px;
-  text-align: center;
+  font-size: 18px;
+  text-align: left;
   padding: 10px 5px 10px 10px;
+  margin-bottom:10px;
   background-color:  #3B5998;
 }
 .body-cates{
@@ -86,4 +95,7 @@ ul.main-nav-cate li{
     color: black;
    padding-top: 5px;
     padding-bottom:5px;
+ }
+ .title-by-cates{
+
  }
