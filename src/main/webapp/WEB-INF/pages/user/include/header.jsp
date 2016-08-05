@@ -11,29 +11,77 @@
 	<!--  FOOTER HEADER -->
 	
 	<!-- link -->
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">
+	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
 	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/path/to/font-awesome/css/font-awesome.min.css">
+	
+<%--     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/path/to/font-awesome/css/font-awesome.min.css"> --%>
 
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/login.css">
+	
     <!-- script -->
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	
 	<title>AllKhmerDocs</title>
 	
 	
 	<!--  FOOTER RESOURCE -->
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
+	
+	
+	
+		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  
+	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/login.css">
+	  <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 
 </head>
 <body>
+  <!-- Modal -->
+				  <div class="modal fade" id="ModalLogin" role="dialog">
+				    <div class="modal-dialog">
+				    
+				      <!-- Modal content-->
+				      <div class="modal-content">
+				        <div class="modal-header" style="padding:35px 50px;">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				        </div>
+				        <div class="modal-body" style="padding:40px 50px;">
+				          <form role="form">
+				            <div class="form-group">
+				              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+				              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+				            </div>
+				            <div class="form-group">
+				              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+				              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+				            </div>
+				            <div class="checkbox">
+				              <label><input type="checkbox" value="" checked>Remember me</label>
+				            </div>
+				              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+				          </form>
+				        </div>
+				        <div class="modal-footer">
+				          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				          <p>Not a member? <a href="#">Sign Up</a></p>
+				          <p>Forgot <a href="#">Password?</a></p>
+				        </div>
+				      </div>
+				      
+				    </div>
+				  </div>
 	<header id="header">
 <!-- top menu -->
 	<div class="top-menu">
@@ -42,35 +90,18 @@
 					<a href="#" class="navbar-brand brand-logo">AllKhmerDocs</a>
 			</span>
 			
-			<br>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="action_page.php">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <input type="checkbox" checked="checked"> Remember me
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
+			
+			<br><br><br>
+			
+			
+					<div id="LoginForm">
+					<div class="container">
+				  <!-- Trigger the modal with a button -->
+				  <button type="button" class="btn btn-default btn-lg" id="btnLogin">Login</button>
+				
+				
+				</div>
+				</div>
 			
 			
 		</nav>
