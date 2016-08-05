@@ -53,7 +53,7 @@
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
-			  <li><a href="/category">
+			  <li><a href="/technology">
 			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
 			  </li>
 			  <li><a href="technology.html">
