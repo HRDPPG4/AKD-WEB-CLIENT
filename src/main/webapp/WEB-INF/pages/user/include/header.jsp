@@ -91,17 +91,9 @@
 					<a href="#" class="navbar-brand brand-logo">AllKhmerDocs</a>
 			</span>
 			
-			
-			<br><br><br>
-			
-			
-					<div id="LoginForm">
-					<div class="container">
+					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;">
 				  <!-- Trigger the modal with a button -->
 				  <button type="button" class="btn btn-default btn-lg" id="btnLogin">Login</button>
-				
-				
-				</div>
 				</div>
 			
 			
