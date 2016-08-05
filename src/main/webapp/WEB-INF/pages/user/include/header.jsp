@@ -102,7 +102,7 @@
 			
 					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;style="overflow: scroll;">
 				  <!-- Trigger the modal with a button -->
-				  <button type="button" class="btn btn-default btn-lg" id="btnLogin">Login</button>
+				  <button type="button" class="btn btn-primary btn-lg" style="font-size:14px;" id="btnLogin">ចូរប្រើប្រាស់</button>
 	</div>
 			
 			
