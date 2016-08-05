@@ -97,7 +97,7 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span  class="navbar-logo">
-					<a href="#" class="navbar-brand brand-logo">AllKhmerDocs</a>
+					<a href="/" class="navbar-brand brand-logo">AllKhmerDocs</a>
 			</span>
 			
 					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;style="overflow: scroll;">
