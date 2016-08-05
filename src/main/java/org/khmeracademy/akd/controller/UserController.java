@@ -17,9 +17,39 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/technology",method=RequestMethod.GET)
-	public String categories(){
+	public String technology(){
 		return "user/technology";
 	}
+	
+	@RequestMapping(value="/general-knowledge",method=RequestMethod.GET)
+	public String generalKnowledge(){
+		return "user/general_knowledge";
+	}
+	
+	@RequestMapping(value="/literal",method=RequestMethod.GET)
+	public String literal(){
+		return "user/literal";
+	}
+	
+	@RequestMapping(value="/business",method=RequestMethod.GET)
+	public String business(){
+		return "user/business";
+	}
+	
+	@RequestMapping(value="/other",method=RequestMethod.GET)
+	public String other(){
+		return "user/other";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
