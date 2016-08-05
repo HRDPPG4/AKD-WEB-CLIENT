@@ -54,14 +54,16 @@
 				    
 				      <!-- Modal content-->
 				      <div class="modal-content">
-				        <div class="modal-header" style="padding:35px 50px;">
+				        <div class="modal-header"  >
 				          <button type="button" class="close" data-dismiss="modal">&times;</button>
-				          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				          <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
+				          
+				          <span>
 				          
 				          
+				          </span>
 					         
-						    <div class="imgcontainer">
-						      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+						    <div class="imgcontainer">						     
 						      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
 						    </div>
 									          

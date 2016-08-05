@@ -13,9 +13,15 @@
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
+    padding:0px;
 }
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
+}
+
+.modal-header
+{
+	padding:10px 10px 5px 10px;
 }
