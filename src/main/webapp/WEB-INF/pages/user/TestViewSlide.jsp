@@ -64,6 +64,18 @@
 
 </head>
 <body>
+	<div id="btn">
+	<input type="button" value="Full Screen" onclick="full()" id="mybtn">
+	</div>
+
+<!-- 	<iframe src="https://drive.google.com/file/d/0B68nlMSpQS2WaGhwTVhXR0VVeUU/preview" width="640" height="480" ></iframe> -->
+
+	<!-- <div id="slideView"> -->
+	
 	<iframe src='https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21434&authkey=AABcOreYLL7cv-I&em=2&wdAr=1.7777777777777777' id="pptx"</iframe>
+
+	<!-- </div> -->
+
+	
 </body>
 </html>
