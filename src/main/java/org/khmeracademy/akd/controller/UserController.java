@@ -16,7 +16,10 @@ public class UserController {
 		return "index";
 	}
 	
-	
+	@RequestMapping(value="/technology",method=RequestMethod.GET)
+	public String technology(){
+		return "user/technology";
+	}
 	
 	
 	
