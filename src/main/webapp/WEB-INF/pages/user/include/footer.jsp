@@ -1,12 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    
+    
+    
+    
+    <div class="footer">
+		<div class="container">	
+			<div class="col-sm-3 footer-height">
+				<h3>About Us</h3>
+				<ul class="list">
+					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
+				</ul>
+			</div>
+			<div class="col-sm-3 footer-height">
+				<h3>Our Services</h3>
+				<ul class="list">
+					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
+				</ul>
+			</div>
+			<div class="col-sm-3 footer-height">
+				<h3>Contact Us</h3>
+				<ul class="list">
+					<li><i class="fa fa-map-marker">&nbsp;&nbsp;&nbsp;&nbsp;</i>#12, St 323, Sangkat Boeung Kak II, KhanToul Kork, Phnom Penh, Cambodia.</li>
+					<li><i class="fa fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;</i>(855)23 99 13 14</li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;(855)77 77 12 36 (Khmer, English)</li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;(855)77 77 12 36 (Khmer, English)</li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;(855)77 77 12 36 (Khmer, English)</li>
+					<li><i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;&nbsp;</i>admin@akd.org</li>
+				</ul>
+			</div>
+			<div class="col-sm-3 footer-height">
+				<h3>Follow Us</h3>
+				<div class="footer-img">	
+					<img src="car.jpg" alt="Car">
+				</div>
+			</div>
+		</div>
+		<div​>
+		<div class="col-sm-12 center copyright">
+			Copyright © 2016 Korea Software HRD Center (All Khmer Docs). All Rights Reserved.
+		</div>
+	</div>
+</div>	
+    
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
 
 </body>
 </html>

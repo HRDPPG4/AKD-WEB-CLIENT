@@ -986,7 +986,5 @@
 <!-- </div> -->
 <!-- !end container-fluid -->
 </content>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
 
-</body>
-</html>
+<jsp:include page="user/include/footer.jsp"></jsp:include>

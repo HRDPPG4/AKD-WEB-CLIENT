@@ -24,6 +24,25 @@
 	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
 	<title>AllKhmerDocs</title>
 	
+	
+	<!--  FOOTER RESOURCE -->
+	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
+	
+	<!-- <link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="bootstrap-theme.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.min.js"></script> -->
+	
+	<!-- 
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  -->
+
 </head>
 <body>
 	<header id="header">
