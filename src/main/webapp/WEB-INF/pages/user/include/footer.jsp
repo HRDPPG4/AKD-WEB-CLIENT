@@ -46,5 +46,10 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
 	
 	 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+	 
+	 
+	 <!-- Search Box -->
+	
+	<script src="${pageContext.request.contextPath}/resources/user/js/search.js"></script>
 </body>
 </html>

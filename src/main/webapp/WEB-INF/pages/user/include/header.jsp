@@ -43,9 +43,12 @@
   
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
   
-	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/login.css">
+	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
 	  <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-
+	  
+	  
+<!-- Search Box  -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
 </head>
 <body>
   <!-- Modal -->
@@ -102,10 +105,45 @@
 					<a href="/" class="navbar-brand brand-logo">AllKhmerDocs</a>
 			</span>
 			
-					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;style="overflow: scroll;">
-				  <!-- Trigger the modal with a button -->
-				  <button type="button" class="btn btn-primary btn-lg" style="font-size:14px;" id="btnLogin">ចូរប្រើប្រាស់</button>
-	</div>
+				<span id="LoginForm">
+				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
+				</span>
+				
+				<span id="SignUpForm">
+				  <button type="button" class="btn btn-primary btn-lg" id="btnSignUp">ចុះឈ្មោះ</button>
+				</span>
+				
+					<span id="UploadForm">
+				  <button type="button" class="btn btn-primary btn-lg"  id="btnUpload">ចែកចាយឯកសារ</button>
+				</span> 
+				
+				<div id="searchBox">
+  
+				    <form id="searchForm" method="post">
+						<fieldset>
+				        
+				           	<input id="s" type="text" />
+				            
+				            <input type="submit" value="Submit" id="submitButton" />
+				            
+				            <div id="searchInContainer">
+				                <input type="radio" name="check" value="site" id="searchSite" checked />
+				                <label for="searchSite" id="siteNameLabel">Search</label>
+				                
+				                <input type="radio" name="check" value="web" id="searchWeb" />
+				                <label for="searchWeb">Search The Web</label>
+							</div>
+				                        
+				            <ul class="icons">
+				                <li class="web" title="Web Search" data-searchType="web">Web</li>
+				                <li class="images" title="Image Search" data-searchType="images">Images</li>
+				                <li class="news" title="News Search" data-searchType="news">News</li>
+				                <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+				            </ul>
+				            
+				        </fieldset>
+				    </form> 
+				</div>
 			
 			
 		</nav>

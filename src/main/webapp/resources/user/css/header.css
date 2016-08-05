@@ -25,3 +25,15 @@ img.avatar {
 {
 	padding:10px 10px 5px 10px;
 }
+
+#LoginForm,#SignUpForm,#UploadForm
+{
+	float:right;
+	margin:0px 3px;
+	font-size:10px;
+	*font-family:Khmer OS Niroth;
+	*font-family:NiDA Preahvihear;
+}
+
+
+

@@ -51,6 +51,7 @@ html,body {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
+  margin-top:40px;
  }
 
 /*main-menu*/
@@ -378,7 +379,7 @@ i.fa-bars{
 .navbar.stick {
   position: fixed;
   width: 100%;
-  top: 0px;
+  top: -40px;
   left: 0;
   opacity: 1;
   z-index: 100;
