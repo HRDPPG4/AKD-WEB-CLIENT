@@ -7,48 +7,21 @@
 
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--  FOOTER HEADER -->
 	
-	<!-- link -->
-	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">
-	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
 	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">
-	
-<%--     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/path/to/font-awesome/css/font-awesome.min.css"> --%>
-
-	
-    <!-- script -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
 	
 	<title>AllKhmerDocs</title>
 	
-	
-	<!--  FOOTER RESOURCE -->
-	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
-	
-	
-	<!-- 
-		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-  
-	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
-	  <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	  
-	  
-<!-- Search Box  -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
+
 </head>
 <body>
   <!-- Modal -->
