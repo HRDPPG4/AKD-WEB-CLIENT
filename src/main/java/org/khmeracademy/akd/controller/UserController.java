@@ -16,6 +16,27 @@ public class UserController {
 		return "index";
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="/view",method=RequestMethod.GET)
+	public String viewslide(){
+		return "user/TestViewSlide";
+	}
+	
+	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String listslide(){
 		return "listSlide";
