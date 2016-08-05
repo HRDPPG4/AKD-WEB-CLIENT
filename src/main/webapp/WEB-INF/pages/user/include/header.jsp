@@ -47,7 +47,7 @@
 	  <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 
 </head>
-<body style="overflow: scroll;">
+<body>
   <!-- Modal -->
 				  <div class="modal fade" id="ModalLogin" role="dialog">
 				    <div class="modal-dialog">
