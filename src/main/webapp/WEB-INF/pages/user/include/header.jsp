@@ -76,7 +76,7 @@
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 		
 			<span  class="navbar-logo">
-					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
+					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
 			</span>
 			
 				<span id="LoginForm">
