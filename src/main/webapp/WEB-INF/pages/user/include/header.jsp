@@ -7,44 +7,20 @@
 
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--  FOOTER HEADER -->
 	
-	<!-- link -->
-	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">
-	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
 	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">
-	
-<%--     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/path/to/font-awesome/css/font-awesome.min.css"> --%>
-
-	
-    <!-- script -->
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
 	
 	<title>AllKhmerDocs</title>
 	
-	
-	<!--  FOOTER RESOURCE -->
-	
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
-	
-	
-	<!-- 
-		  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  
-   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
-  
-	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/login.css">
-	  <script src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 
 </head>
 <body>
@@ -54,14 +30,16 @@
 				    
 				      <!-- Modal content-->
 				      <div class="modal-content">
-				        <div class="modal-header" style="padding:35px 50px;">
+				        <div class="modal-header"  >
 				          <button type="button" class="close" data-dismiss="modal">&times;</button>
-				          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				          <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
+				          
+				          <span>
 				          
 				          
+				          </span>
 					         
-						    <div class="imgcontainer">
-						      <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+						    <div class="imgcontainer">						     
 						      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
 						    </div>
 									          
@@ -97,13 +75,48 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span  class="navbar-logo">
-					<a href="/" class="navbar-brand brand-logo">AllKhmerDocs</a>
+					<a href="/" class="navbar-brand brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 			</span>
 			
-					<div id="LoginForm" class="col-lg-1" style="float:right;margin-right:30px;style="overflow: scroll;">
-				  <!-- Trigger the modal with a button -->
-				  <button type="button" class="btn btn-primary btn-lg" style="font-size:14px;" id="btnLogin">ចូរប្រើប្រាស់</button>
-	</div>
+				<span id="LoginForm">
+				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
+				</span>
+				
+				<span id="SignUpForm">
+				  <button type="button" class="btn btn-primary btn-lg" id="btnSignUp">ចុះឈ្មោះ</button>
+				</span>
+				
+					<span id="UploadForm">
+				  <button type="button" class="btn btn-primary btn-lg"  id="btnUpload">ចែកចាយឯកសារ</button>
+				</span> 
+				
+				<div id="searchBox">
+  
+				    <form id="searchForm" method="post">
+						<fieldset>
+				        
+				           	<input id="s" type="text" />
+				            
+				            <input type="submit" value="Submit" id="submitButton" />
+				            
+				            <div id="searchInContainer">
+				                <input type="radio" name="check" value="site" id="searchSite" checked />
+				                <label for="searchSite" id="siteNameLabel">Search</label>
+				                
+				                <input type="radio" name="check" value="web" id="searchWeb" />
+				                <label for="searchWeb">Search The Web</label>
+							</div>
+				                        
+				            <ul class="icons">
+				                <li class="web" title="Web Search" data-searchType="web">Web</li>
+				                <li class="images" title="Image Search" data-searchType="images">Images</li>
+				                <li class="news" title="News Search" data-searchType="news">News</li>
+				                <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+				            </ul>
+				            
+				        </fieldset>
+				    </form> 
+				</div>
 			
 			
 		</nav>

@@ -13,9 +13,34 @@
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
+    padding:0px;
 }
 
 img.avatar {
-    width: 40%;
+    width: 20%;
     border-radius: 50%;
 }
+
+.modal-header
+{
+	padding:10px 10px 5px 10px;
+}
+
+#LoginForm,#SignUpForm,#UploadForm
+{
+	float:right;
+	margin:0px 3px;
+	font-size:10px;
+	*font-family:Khmer OS Niroth;
+	*font-family:NiDA Preahvihear;
+}
+
+.navbar-logo img
+{
+	max-width:80px;
+
+
+}
+
+
+
