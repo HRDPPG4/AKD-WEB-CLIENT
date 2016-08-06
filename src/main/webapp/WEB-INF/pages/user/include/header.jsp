@@ -78,6 +78,11 @@
 			<span  class="navbar-logo">
 					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
 			</span>
+			<span id="searchBox">
+  					<form>
+					  <input type="text" name="search" placeholder="ស្វែងរក...">
+					</form>				   
+				</span>
 			
 				<span id="LoginForm">
 				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
@@ -91,11 +96,7 @@
 				  <button type="button" class="btn btn-primary btn-lg"  id="btnUpload">ចែកចាយឯកសារ</button>
 				</span> 
 				
-				<div id="searchBox">
-  					<form>
-					  <input type="text" name="search" placeholder="Search..">
-					</form>				   
-				</div>
+				
 			
 			
 		</nav>
