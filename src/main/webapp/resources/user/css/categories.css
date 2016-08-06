@@ -4,93 +4,51 @@
     /*background-color: #fff;*/
   padding-bottom: 10px;
 }
-/*////////////////////////////////*/
-.nav-left-bar{
-  padding: 0px;
+
+.row-nav-left-content{
+	padding: 0px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-radius: 0px;
+    	background-color:white;
 }
-.content-left-bar{
-  color:white;
- ​ text-align: center;
- padding-bottom: 10px;
+.left-side-nav{
+	width: 205px;
+	margin-right: 10px;
+	/*fixed*/
+	position: fixed;
+	left: 10%;
 }
-
-.header-nav-bar{
-  width: 100%;
-  font-size: 18px;
-  text-align: center;
-  padding: 10px 5px 10px 10px;
-  background-color:  #3B5998;
+ul.left-category{
+	padding:0px;
+	background-color:#fff;
+	list-style-type: none;
 }
-
-.body-nav-bar{
-  font-family: "Times New Roman";
-  padding: 10px 5px 5px 10px;
-  color: black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-size: 16px;
-  background-color:#fff;
-
+li.bg-cates{
+	width:auto;
+	background-color:#3B5998 !important;
+	color:#fff;
 }
-/**/
-ul.main-nav-cate{
-font-size:18px;
-  width: 100%;
-  list-style-type: none;
-  display: inline-block;
-  background-color: #eee;
+ul.left-category li:first-child {
+	color: #fff;
+	padding: 10px;
 }
-ul.main-nav-cate li{
-  padding-top: 5px;
-    padding-bottom:5px;
- }
-
-  ul.main-nav-cate li a{
-    text-decoration: none;
-    color: black;
-   padding-top: 5px;
-    padding-bottom:5px;
- }
- ul.main-cates {
-  font-size:18px;
-  width: 100%;
-  list-style-type: none;
-  display: inline-block;
-  background-color: #eee;
+.left-side-nav, .body-cates, .right-side-cate {
+    float: left;
 }
- ul.main-cates li{
-  padding-top: 5px;
-    padding-bottom:5px;
- }
-
-  ul.main-cates li a{
-    text-decoration: none;
-    color: black;
-   padding-top: 5px;
-    padding-bottom:5px;
- }
-
-
-/*///////////////////////*/
-.content-cates{
- color:white;
- ​ text-align: center;
-}
-
-.header-cates{
-  width: 100%;
-  font-size: 18px;
-  text-align: left;
-  padding: 10px 5px 10px 10px;
-  margin-bottom:10px;
-  background-color:  #3B5998;
+/*///////////////////////////*/
+.right-side-cate{
+	width: 285px;
+	background-color: #fff;
+	/*fixed*/
+	position: fixed;
+	right: 20%;
 }
 .body-cates{
-  font-family: "Times New Roman";
-  padding: 10px 5px 5px 10px;
-  color: black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-size: 16px;
-  background-color:#fff;
+	     width: 860px;
+    margin-right: 10px;
+    position: relative;
+    left: 22%;
+    z-index: 5;
 }
+

@@ -4,7 +4,7 @@
     
     
     
-    <div class="footer">
+   <div class="footer">
 		<div class="container">	
 			<div class="col-sm-3 footer-height">
 				<h3>About Us</h3>
@@ -41,7 +41,7 @@
 			Copyright © 2016 Korea Software HRD Center (All Khmer Docs). All Rights Reserved.
 		</div>
 	</div>
-</div>	
+</div>
     
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
 	

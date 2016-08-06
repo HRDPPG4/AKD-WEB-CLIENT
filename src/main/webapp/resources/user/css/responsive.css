@@ -1,4 +1,6 @@
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+
+
 @media screen and (max-width:1023px) {
   .main-menu{
   position: relative;
@@ -39,4 +41,8 @@
   }
 
 
+}
+@media screen and (max-width: 1520px)
+.left-side-nav {
+  
 }

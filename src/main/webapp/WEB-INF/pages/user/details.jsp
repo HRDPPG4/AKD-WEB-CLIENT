@@ -2,13 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     <!-- /////////////////////////////////////////////////////////- -->
-    <content>
-<!-- <div class="container-fluid"> -->
-<!-- end container left-->
-		<div id="page-content-wrapper">
-		  <div class="container">
-			  <section id="slide-view" style="width:100%;">
-				<div class="row section nav-left topspace-cates">
+<content>
+<div id="page-content-wrapper">
+	<div class="container">
+		<section id="slide-view" style="width:100%;">
+				<div class="row section nav-left topspace-right-slide">
 					<div class="row">
 					<div class="show-slide-view">
 						<div class="col-lg-7 content-slide-view">
@@ -30,7 +28,7 @@
 						</div>
 					</div>
 
-						<div class="show-all-cates">
+						<div class="show-slides-cates">
 							<div class="col-lg-5  content-cates">
 							<div class="row col-lg-12" >
 								<div class="cates-container">
@@ -46,14 +44,13 @@
 							</div>
 						</div>
 					</div>
+					<!-- end row -->
 				</div>
-			 </section>
-		  </div>
-		
-	 </div>
-	     <!-- end container -->
-    </div>
-    <!-- end wrapper -->
+	</section>
+  </div>
+		<!-- end container -->
+</div>
+	     <!-- end page-content-wrapper -->
 </content>
 
 <jsp:include page="include/footer.jsp"></jsp:include>
