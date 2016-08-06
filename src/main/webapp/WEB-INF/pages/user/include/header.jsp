@@ -75,26 +75,28 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 		
-			<span  class="navbar-logo">
+			<span class="navbar-logo">
 					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
 			</span>
+			
 			<span id="searchBox">
   					<form>
-					  <input type="text" name="search" placeholder="ស្វែងរក...">
+					  <input type="text" name="search" placeholder="&#xF002; ស្វែងរកឯកសារ..." >
 					</form>				   
-				</span>
+			</span>
+				
+			<span id="SignUpForm">
+			  <button type="button" class="btn btn-primary btn-lg" id="btnSignUp"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span> ចុះឈ្មោះ</button>
+			</span>
+		
+			<span id="LoginForm">
+			  <button type="button" class="btn btn-primary btn-lg" id="btnLogin"><span><i class="fa fa-user" aria-hidden="true"></i></span> ចូលប្រើប្រាស់</button>
+			</span>
 			
-				<span id="LoginForm">
-				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
-				</span>
-				
-				<span id="SignUpForm">
-				  <button type="button" class="btn btn-primary btn-lg" id="btnSignUp">ចុះឈ្មោះ</button>
-				</span>
-				
-					<span id="UploadForm">
-				  <button type="button" class="btn btn-primary btn-lg"  id="btnUpload">ចែកចាយឯកសារ</button>
-				</span> 
+			
+			<span id="UploadForm">
+			  <button type="button" class="btn btn-primary btn-lg"  id="btnUpload"><span><i class="fa fa-upload" aria-hidden="true"></i></span> ចែកចាយឯកសារ</button>
+			</span> 
 				
 				
 			
