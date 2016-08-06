@@ -26,7 +26,7 @@ img.avatar {
 	padding:10px 10px 5px 10px;
 }
 
-#LoginForm,#SignUpForm,#UploadForm
+#LoginForm,#SignUpForm,#UploadForm,#searchBox
 {
 	float:right;
 	margin:0px 3px;
@@ -37,7 +37,7 @@ img.avatar {
 
 .navbar-logo img
 {
-	max-width:80px;
+	max-width:50px;
 
 
 }

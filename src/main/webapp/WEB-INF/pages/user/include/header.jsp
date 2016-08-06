@@ -74,8 +74,9 @@
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
+		
 			<span  class="navbar-logo">
-					<a href="/" class="navbar-brand brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
+					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 			</span>
 			
 				<span id="LoginForm">
@@ -91,31 +92,9 @@
 				</span> 
 				
 				<div id="searchBox">
-  
-				    <form id="searchForm" method="post">
-						<fieldset>
-				        
-				           	<input id="s" type="text" />
-				            
-				            <input type="submit" value="Submit" id="submitButton" />
-				            
-				            <div id="searchInContainer">
-				                <input type="radio" name="check" value="site" id="searchSite" checked />
-				                <label for="searchSite" id="siteNameLabel">Search</label>
-				                
-				                <input type="radio" name="check" value="web" id="searchWeb" />
-				                <label for="searchWeb">Search The Web</label>
-							</div>
-				                        
-				            <ul class="icons">
-				                <li class="web" title="Web Search" data-searchType="web">Web</li>
-				                <li class="images" title="Image Search" data-searchType="images">Images</li>
-				                <li class="news" title="News Search" data-searchType="news">News</li>
-				                <li class="videos" title="Video Search" data-searchType="video">Videos</li>
-				            </ul>
-				            
-				        </fieldset>
-				    </form> 
+  					<form>
+					  <input type="text" name="search" placeholder="Search..">
+					</form>				   
 				</div>
 			
 			

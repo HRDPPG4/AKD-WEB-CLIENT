@@ -51,7 +51,7 @@
     
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/user/js/search.js"></script>
+
 	
 	
 </body>

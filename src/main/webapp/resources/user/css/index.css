@@ -18,15 +18,15 @@ html,body {
   height: 60px;
 }
 .navbar-bg{
-  padding-top: 10px;
+  padding: 8px;
   background-color: #fff;
   border-bottom: 1px solid #fff;
 }
 
 /*logo*/
 .navbar >  .navbar-logo .brand-logo{
-  position: relative;
-  left: 100px;
+*  position: relative;
+*  left: 100px;
   color: #3B5998;
   font-weight: 400px;
 }
@@ -51,8 +51,9 @@ html,body {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-  margin-top:40px;
+*  margin-top:10px;
   clear:both;
+  padding:8px 0px 5px 0px;
  }
 
 /*main-menu*/
@@ -127,7 +128,7 @@ ul.menu-basic li.icon {display: none;}
 	text-align:left;
 	float: left;
 	 border-bottom: 2px dashed #fff;
-	 margin-top:25px;								-------------------------------------New Here---------------------------
+*	 margin-top:25px;								-------------------------------------New Here---------------------------
 }
 .topspace-second > .section-title #right-title{
 	text-align: right;
@@ -381,7 +382,7 @@ i.fa-bars{
 .navbar.stick {
   position: fixed;
   width: 100%;
-  top: -40px;
+  top: -10px;
   left: 0;
   opacity: 1;
   z-index: 100;
