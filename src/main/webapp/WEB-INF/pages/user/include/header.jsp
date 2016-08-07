@@ -14,7 +14,7 @@
 	<header id="header">
 <!-- top menu -->
 	<div class="top-menu">
-		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
+		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg container">
 		
 			<span class="navbar-logo">
 					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
@@ -38,10 +38,6 @@
 			<span id="UploadForm">
 			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#upload"><span><i class="fa fa-upload" aria-hidden="true"></i></span> ចែកចាយឯកសារ</button>
 			</span> 
-				
-				
-			
-			
 		</nav>
 	</div>
 <!-- main menu -->
@@ -51,11 +47,7 @@
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 			
-			 <li class="active"><a href="/">
-				   <span class="navbar-logo">
-					<img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-				</span>
-			  </li>
+			 
 
 			  <li class="active"><a href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
