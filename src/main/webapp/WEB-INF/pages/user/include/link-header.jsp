@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
-	
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/font-server/font.css" />
 	
 	
 	<!-- Register -->
