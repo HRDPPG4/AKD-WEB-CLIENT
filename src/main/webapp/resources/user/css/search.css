@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 #searchBox {
 	
@@ -262,4 +263,31 @@ The UL that contains the search type icons */
 
 #searchBox .clear{
 	clear:both;
+=======
+#searchBox form input[type=text] {
+    width: 60%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 11px 5px 8px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchBox form input[type=text]:focus {
+    width: 80%;
+}
+#searchBox
+{
+	font-family: FontAwesome,Khmer OS Battambang;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    width:50%;
+>>>>>>> 6c001f22e7e2dcad76958570bb7d720d13e0ceb7
 }
