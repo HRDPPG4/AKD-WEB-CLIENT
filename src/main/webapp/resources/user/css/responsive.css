@@ -1,6 +1,51 @@
+@media screen and (max-width: 1780px) {
+    .left-side-nav{
+      left:5%;
+    }
+    .body-cates{
+   left: 25% !important;
+    } 
+    .container{
+      width:100%;
+    } 
+    
+}
+
+@media screen and (max-width: 1520px) {
+    .left-side-nav{
+      left:3%;
+    }
+    .body-cates{
+   left: 23.6% !important;
+    } 
+    .container{
+      width:100%;
+    }
+    
+}
+@media screen and (max-width: 1160px) {
+     .left-side-nav{
+      left:0%;
+    }
+    .body-cates{
+   left: 21.6% !important;
+    } 
+    .container{
+      width:100%;
+    }
+  }
+@media screen and (max-width: 1096px) {
+    .left-side-nav{
+      display:none;
+    }
+    .body-cates{
+   left: 5% !important;
+    } 
+    .container{
+      width:100%;
+    } 
+}
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
-
-
 @media screen and (max-width:1023px) {
   .main-menu{
   position: relative;
@@ -23,6 +68,8 @@
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+
+
 @media screen and (max-width:1023px) {
   ul.menu-basic.responsive {position: relative;}
   ul.menu-basic.responsive li.icon {
@@ -40,9 +87,70 @@
     text-align: left;
   }
 
+}
+@media screen and (max-width: 900px){
+  ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 766px){
+.left-side-nav{
+      display:none;
+    }
+    .body-cates{
+   left: 5% !important;
+    } 
+    #min-width-sm{
+      padding: auto;
+      width: 700px;
+    }
+    .container{
+      width: 100%;
+    }
+  }
 
-}
-@media screen and (max-width: 1520px)
-.left-side-nav {
-  
-}
+  @media screen and (max-width: 534px) {
+    .left-side-nav{
+      display:none;
+    }
+    .body-cates{
+      /*width: 300px;*/
+   left: 2% !important;
+    } 
+    #min-width-sm{
+      width: 525px;
+    }
+    .container{
+      padding: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 310px) {
+.left-side-nav{
+      display:none;
+    }
+    .body-cates{
+      /*width: 300px;*/
+   left: 3% !important;
+    } 
+    #min-width-sm{
+      width: 300px;
+    }
+    .container{
+      width: 100%;
+    }
+  }
+

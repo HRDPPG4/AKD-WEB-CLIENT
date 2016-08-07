@@ -15,15 +15,6 @@
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
-<<<<<<< HEAD
-			<span  class="navbar-logo">
-					<a href="/" class="navbar-brand brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>-->
-			</span>
-			
-				  <span id="LoginForm">
-				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
-				</span>
-=======
 		
 			<span class="navbar-logo">
 					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
@@ -34,7 +25,6 @@
 					  <input type="text" name="search" placeholder="&#xF002; ស្វែងរកឯកសារ..." >
 					</form>				   
 			</span>
->>>>>>> 6c001f22e7e2dcad76958570bb7d720d13e0ceb7
 				
 			<span id="SignUpForm">
 			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span> ចុះឈ្មោះ</button>
@@ -50,6 +40,7 @@
 			</span> 
 				
 				
+			
 			
 		</nav>
 	</div>
