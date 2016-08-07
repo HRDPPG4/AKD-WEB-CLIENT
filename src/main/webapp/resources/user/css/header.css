@@ -45,13 +45,26 @@ img.avatar {
 
 .navbar-logo img
 {
-	max-width:50px;
+	max-width:35px;
 
 
 }
 #header .top-menu .navbar-logo a
 {
 	text-decoration:none;
+}
+
+#header .btn-lg,#header .btn-group-lg > .btn
+{
+	padding: 6px 16px;
+    font-size: 13px;
+    line-height: 1.3333333;
+    border-radius: 2px;
+    font-family:Khmer OS Battambang;
+}
+.main-menu #myTopnav navbar-logo img
+{
+	display:none;
 }
 
 
