@@ -75,10 +75,10 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span  class="navbar-logo">
-					<a href="/" class="navbar-brand brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
+					<a href="/" class="navbar-brand brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>-->
 			</span>
 			
-				<span id="LoginForm">
+				  <span id="LoginForm">
 				  <button type="button" class="btn btn-primary btn-lg" id="btnLogin">ចូលប្រើប្រាស់</button>
 				</span>
 				
@@ -117,7 +117,6 @@
 				        </fieldset>
 				    </form> 
 				</div>
-			
 			
 		</nav>
 	</div>

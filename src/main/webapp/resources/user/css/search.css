@@ -1,7 +1,6 @@
 
-
 #searchBox {
-	/* The main container div */
+	
 	width:620px;
 *	margin:100px auto 0;
 	float:right;
@@ -15,8 +14,9 @@
 	height:90px;
 }
 
+
 #searchBox #searchForm{
-	/* The search form. */
+	
 	background-color:#4C5A65;
 	padding:10px 10px 5px;
 *	margin:80px 0;
@@ -32,7 +32,6 @@
 }
 
 #searchBox #searchInputContainer{
-	/* This div contains the transparent search box */
 	width:420px;
 	height:36px;
 	background:url("/resources/user/img/search/searchBox.png") no-repeat;
@@ -41,7 +40,6 @@
 }
 
 #searchBox #s{
-	/* The search text box. */
 	
 	border:none;
 	color:#888888;
@@ -59,7 +57,7 @@
 	width:385px;
 }
 
-/* The UL that contains the search type icons */
+The UL that contains the search type icons */
 
 #searchBox .icons{
 	list-style:none;
@@ -77,7 +75,7 @@
 	margin-right:5px;
 }
 
-/* Styling each icon */
+/*Styling each icon */
 
 #searchBox li.web{ width:15px;}
 #searchBox li.web.active,
@@ -95,9 +93,7 @@
 #searchBox li.videos.active,
 #searchBox li.videos:hover{ background-position:right bottom;}
 
-#searchBox span.arrow{
-	/* The little arrow that moves below the icons */
-	
+#searchBox span.arrow{	
 	width:11px;
 	height:6px;
 	margin:21px 0 0 5px;
@@ -157,11 +153,11 @@
 
 
 #searchBox .pageContainer{
-	/* Holds each page with search results. Has an inset bottom border. */
+	
 	border-bottom:1px solid #5e7481;
 	margin-bottom:50px;
 	
-	/* Adding a dark bottom border with box shadow */
+	
 	
 	-moz-box-shadow:0 1px 0 #798e9c;
 	-webkit-box-shadow:0 1px 0 #798e9c;
@@ -177,7 +173,6 @@
 
 /* Web & news results */
 
-
 #searchBox .webResult{ text-shadow:1px 1px 0 #586a75;margin-bottom:50px;}
 #searchBox .webResult h2{ 
 	background-color:#5D6F7B;
@@ -185,7 +180,7 @@
 	font-weight:normal;
 	padding:8px 20px;
 	
-	/* Applying CSS3 rounded corners */
+	 Applying CSS3 rounded corners
 	-moz-border-radius:18px;
 	-webkit-border-radius:18px;
 	border-radius:18px;
