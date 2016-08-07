@@ -50,12 +50,6 @@
 	<div class="container">
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			
-			 <li class="active"><a href="/">
-				   <span class="navbar-logo">
-					<img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-				</span>
-			  </li>
 
 			  <li class="active"><a href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
