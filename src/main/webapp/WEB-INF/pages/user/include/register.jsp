@@ -12,7 +12,12 @@
         </div>
         <div class="modal-body">
           	<div class="row main">
-				 
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Company Name</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="#">
 						
