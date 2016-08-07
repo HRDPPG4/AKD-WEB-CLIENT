@@ -11,7 +11,7 @@ public class AdminController {
 	
 	
 	
-	@RequestMapping(value="/admin",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/dashboard",method=RequestMethod.GET)
 	public String findAll(){
 		return "admin/dashboard";
 	}
