@@ -2,10 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
-    
-<div ng-app="slideDetailApp" ng-controller="slideDetailCtrl">
+  
 
-{{firstName}}
+<jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
+<div ng-app="slideDetailApp" ng-controller="slideDetailCtrl">
 	<content>
 	<div id="page-content-wrapper">
 	
@@ -17,10 +17,12 @@
 						 <div class="show-slide-view">
 							<div class="col-lg-7 content-slide-view">
 								<div class="row col-lg-12">
-									<div class="slide-container">
-										 <!-- <iframe src="{{slideURL}}" id="pptx"></iframe> --> 
-										 
-										 <iframe src="{{slideURL}}" id="pptx"></iframe>
+									<div class="slide-container">										 
+										 <iframe src="{{slideURL}}" id="pptx"></iframe> 																				
+									</div>
+
+									<div>
+										 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ViewByGoogleDrive"> <!--  <span><i class="fa fa-upload" aria-hidden="true"></i></span> --> មើលទំហំពេញ</button>
 									</div>
 									
 									<div class="detail-slide">
@@ -60,7 +62,7 @@
 	</div>
 		     <!-- end page-content-wrapper -->
 	</content>
-	
+		
 	<jsp:include page="include/footer.jsp"></jsp:include>
 
 </div>    
