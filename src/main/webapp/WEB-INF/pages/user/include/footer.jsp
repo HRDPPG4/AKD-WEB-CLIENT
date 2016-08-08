@@ -32,7 +32,7 @@
 			<div class="col-sm-3 footer-height">
 				<h3>Follow Us</h3>
 				<div class="footer-img">	
-					<img src="car.jpg" alt="Car">
+					<img src="${pageContext.request.contextPath}/resources/user/img/unnamed.png" alt="Car">
 				</div>
 			</div>
 		</div>
