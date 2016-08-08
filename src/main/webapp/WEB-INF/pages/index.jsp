@@ -5,6 +5,7 @@
 <!-- //////////////////////////////////////////////////////// -->
 <content>
 <!-- <div class="container-fluid" style="background-color:red;"> -->
+
 <div class="container">
 	<section id="technology">
 		<!-- section-title -->

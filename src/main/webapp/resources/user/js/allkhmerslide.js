@@ -1,3 +1,18 @@
+
+$(document).ready(function(){
+	alert('hello')
+	var nav_left ='0';
+	$('ul.left-category li:not(:first-child)').click(function(){
+		if (nav_left=="0") {
+		$('.sub-menus-cates').css({'display':'inline'});
+		nav_left=="1";
+		}else{
+			$('.sub-menus-cates').css({'display':'none'});
+			nav_left=="0";
+		}
+	});
+});
+///////////////////////////////////////
 $(document).ready(function(){
 	var menu ='close';
 	$('#myTopnav').click(function(){
@@ -13,24 +28,40 @@ $(document).ready(function(){
 });
 // ///////////////////////
 $(document).ready(function(){
-	
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-
+alert('hello');
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
-
+       // alert('hi');
 		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
-	})
+		$("#"+ tab_id).addClass('current');
 
-})
+		alert('he');
+	});
 
+});
+// ///////////////////////////////////
+// $(document).ready(function(){
+// 	var menu_minimize ='close';
+//   $('.nav-minimize').click(function(){
+//   	if (menu_minimize=="close") {
+//   		$('.left-side-nav').hide('slow');
+//   		$('.nav-minimize').css({'left':'100px'},"slow");
+  		
+//   		menu_minimize ='open';
+//   	}else{
+//   		$('.left-side-nav').show('slow');
+//   		$('.nav-minimize').css({'left':'260px'},"slow");
+//   		menu_minimize ='close';
+//   	}
+//   });
+// });
 // ///////////////////////////////////
 jQuery(document).ready(function($) {
- 
 	var my_nav = $('.navbar-sticky'); 
 	var my_header=$('.navbar-bg');
+	var my_left_bar =$('.left-side-nav');
 
 	
 	// grab the initial top offset of the navigation 
@@ -43,6 +74,7 @@ jQuery(document).ready(function($) {
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
 		if (scroll_top > sticky_navigation_offset_top) { 
 			my_nav.addClass( 'stick' );
+			my_left_bar.css({'top':'10%'});
 			my_header.hide();
 			// $('.logo-main-menu').show();
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
@@ -53,7 +85,9 @@ jQuery(document).ready(function($) {
 
 		} else {
 			my_nav.removeClass( 'stick' );
+			my_left_bar.css({'top':'18.30%'});
 			my_header.show();
+		
 			// $('.logo-main-menu').hide();
 			// $('.navbar-collapse .navbar-nav').css({"margin":"0 auto","right":"0px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"hidden"});

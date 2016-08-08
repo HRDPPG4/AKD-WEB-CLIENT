@@ -4,47 +4,59 @@
     pageEncoding="utf-8"%>
 <!--  //////////////////////////////////////////////////////////-->
 
+<!-- //////////////////////////////////////////////////////// -->
 <content>
-<!-- <div class="container-fluid"> -->
-<!-- end container left-->
 <div id="page-content-wrapper">
-	<div class="container">
-			<section id="slide-view" style="width:100%;">
+	<div class="container" id="container-cate">
+		<section id="cates-view">
 				<div class="row section nav-left topspace-cates">
-					<div class="row">
-					<div class="show-all-cates">
-							<div class="col-lg-3  content-left-bar">
-							<div class="row col-lg-12" >
-								<div class="header-nav-bar">
-									header-nav-left
-								</div>
-								<div class="body-nav-bar">
-									<ul class="main-nav-cate">
-										<li><a href="#">Java</a></li>
-										<li><a href="#">Java</a></li>
-										<li><a href="#">Java</a></li>
-										<li><a href="#">Java</a></li>
-									</ul>
-								</div>
-							</div>
-							</div>
-					</div>
+				<div class="row-nav-left-content">
+				<!-- <span class="nav-minimize"><i class="fa fa-list-ul" aria-hidden="true"></i></span> -->
+			     		<div class="left-side-nav">
+			     			<ul class="left-category">
+			     			    <li class="bg-cates">
+				     			     <span><i class="fa fa-tags" aria-hidden="true"></i>
+		  	   						 </span>ប្រភេទ
+	  	   						</li>
+	  	   						<li>
+		  	   						<a href="#"> <span><i class="fa fa-flask"></i>
+		  	   						</span>បច្ចេកវិទ្យា</a>
+		  	   					      <ul class="sub-menus-cates">
+		  	   					      		<li>ជឿជាក់</li>
+		  	   					      		<li>ជឿជាក់</li>
+		  	   					      		<li>ជឿជាក់</li>
+		  	   					      		<li>ជឿជាក់</li>
+		  	   					      </ul>
+	  	   						</li>
 
-					<div class="show-all-cates" style="padding:0px;">
-						<div class="col-lg-9 content-cates">
-							<div class="col-lg-12" >
-							<div class="row" style="background:white;">
-							<div class="header-cates">
-									slide
-							</div>
-							<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
+	  	   						<li>
+		  	   						<a href="#"><span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+		  	   						</span>ចំណេះដឹងទូទៅ</a>
+	  	   						</li>
+	  	   						<li>
+		  	   						<a href="#"><span><i class="fa fa-book" aria-hidden="true"></i></span>
+		  	   						អក្សរសាស្រត្ត</a>
+	  	   						</li>
+							   <li>
+								   <a href="#"><span><i class="fa fa-cubes" aria-hidden="true"></i>
+								   </span>អក្សរសាស្រ្ត</a>
+							   </li>
+			     			</ul>
+			     		</div>
+
+
+			     		
+			     		<div class="body-cates">
+			     		<div class="row" id="min-width-sm">
+			     				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+								<span class="descript">សៀវភៅដែលចេញដោយក្រសួង</span>
 								<span class="view-count">១០០០ បានមើល</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
@@ -59,11 +71,11 @@
 								</span>
 							</a>
 						</div>
-
-						<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
-							<a href="detail.html" class="thumbnail">
+			     				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -82,10 +94,11 @@
 								</span>
 							</a>
 						</div>
-						<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
-							<a href="detail.html" class="thumbnail">
+			     		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -104,11 +117,15 @@
 								</span>
 							</a>
 						</div>
+						</div>
+						<!-- row  -->
 
-						<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
-							<a href="detail.html" class="thumbnail">
+						<div class="row" id="min-width-sm">
+			     				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -127,11 +144,11 @@
 								</span>
 							</a>
 						</div>
-
-						<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
-							<a href="detail.html" class="thumbnail">
+			     				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -150,11 +167,11 @@
 								</span>
 							</a>
 						</div>
-
-						<div  class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
-							<a href="detail.html" class="thumbnail">
+			     		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<a href="/detail" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -174,17 +191,19 @@
 							</a>
 						</div>
 						</div>
-
+						<!-- row -->
+			     		</div>
+			    
+					
+					
 					</div>
-						</div>
-					</div>
-
-					</div>
+			         
 				</div>
-			 </section>
-		 		   </div>
- 		</section>
-	</div>
+	  </section>
+  </div>
+		<!-- end container -->
 </div>
+	     <!-- end page-content-wrapper -->
 </content>
-<jsp:include page="include/footer.jsp"></jsp:include>
+
+<%-- <jsp:include page="include/footer.jsp"></jsp:include> --%>

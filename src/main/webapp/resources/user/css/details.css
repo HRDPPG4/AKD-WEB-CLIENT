@@ -1,7 +1,8 @@
-.topspace-right{
+.topspace-right-slide{
   overflow: hidden;
-  margin-top: 20px;
-  margin-left: 40px;
+   margin-top: 20px;
+    /*background-color: #fff;*/
+  padding-bottom: 10px;
 }
 .show-slide-view{
 	padding: 0px;
@@ -16,7 +17,6 @@
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  padding: 10px 5px 10px 10px;
   background-color:  #3B5998;
 }
 .detail-slide{
@@ -24,7 +24,6 @@
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  padding: 10px 5px 10px 10px;
   background-color:  #3B5998;
 }
 .commend-visitor{
@@ -32,16 +31,15 @@
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  padding: 10px 5px 10px 10px;
   background-color:  #3B5998;
 }
 
 /*///////////*/
-.show-all-cate{
+.show-slides-cates{
 	padding: 0px;
 }
 .content-cates{
-		color:white;
+color:white;
  ​ text-align: center;
 }
 .cates-container{
