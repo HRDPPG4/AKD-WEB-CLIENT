@@ -2,6 +2,7 @@
     pageEncoding="utf-8"%>
 
 <div id="commentBox">
+	បញ្ចេញមតិរបស់អ្នកចំពោះអត្ថបទនេះ
 	<form action="">
 		<div id="img-user">
 			<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
