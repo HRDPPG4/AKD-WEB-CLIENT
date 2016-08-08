@@ -10,7 +10,14 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>          
         </div>
         <div class="modal-body">          
-           <iframe src="http://docs.google.com/gview?url=http%3a%2f%2fvideo.ch9.ms%2fbuild%2f2011%2fslides%2fTOOL-532T_Sutter.pptx  &embedded=true "></iframe>          
+           
+           
+          <!--  <iframe src="http://docs.google.com/gview?url=http%3a%2f%2fvideo.ch9.ms%2fbuild%2f2011%2fslides%2fTOOL-532T_Sutter.pptx  &embedded=true "></iframe> -->          
+        
+        <!--  <iframe src="http://docs.google.com/gview?url=https://drive.google.com/drive/folders/0B4RhbtI4DXY_emZYeHpKbXZPUTg&embedded=true "></iframe> -->
+        
+        	<iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe>
+        	
         </div>
         <div class="modal-footer">
                   

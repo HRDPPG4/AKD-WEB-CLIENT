@@ -18,8 +18,13 @@
 						 <div class="show-slide-view">
 							<div class="col-lg-7 content-slide-view">
 								<div class="row col-lg-12">
-									<div class="slide-container">										 
-										 <iframe src="${url}" id="pptx"></iframe> 																				
+									<div class="slide-container">	
+									
+																		 
+										<%--  <iframe src="${url}" id="pptx"></iframe> --%> 	
+										 
+										 <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe>
+										 																			
 									</div>
 
 									<div>
