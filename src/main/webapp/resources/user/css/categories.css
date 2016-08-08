@@ -13,7 +13,7 @@
   width: 220px;
   margin-right: 10px;
   position: fixed;
-  left: 20%;
+  left: 25%;
   z-index: 300;
 }
 /*.nav-minimize{
@@ -49,7 +49,7 @@ ul.main-category li.bg-cates {
 
 ul.main-category li:not(first-child){
 	padding:10px;
-	background-color:yellow;
+	background-color:#fff;
 	
 }
 
