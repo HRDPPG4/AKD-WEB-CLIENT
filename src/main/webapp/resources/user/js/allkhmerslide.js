@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	alert('hello')
+	
 	var nav_left ='0';
 	$('ul.left-category li:not(:first-child)').click(function(){
 		if (nav_left=="0") {
@@ -30,14 +30,12 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-alert('hello');
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
        // alert('hi');
 		$(this).addClass('current');
 		$("#"+ tab_id).addClass('current');
 
-		alert('he');
 	});
 
 });
