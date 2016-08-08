@@ -16,7 +16,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
 	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/right-nav.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
@@ -29,7 +28,7 @@
 	
 	
 	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> 
-	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/user/js/jquery-3.1.0.min.js"></script>
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	
 	

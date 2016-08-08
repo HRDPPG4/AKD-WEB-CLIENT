@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	alert('hello')
 	var nav_left ='0';
 	$('ul.left-category li:not(:first-child)').click(function(){
 		if (nav_left=="0") {
