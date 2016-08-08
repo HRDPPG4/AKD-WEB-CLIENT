@@ -3,6 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!-- //////////////////////////////////////////////////////// -->
+<div ng-app="indexApp" ng-controller="indexCtrl">
+
 <content>
 <!-- <div class="container-fluid" style="background-color:red;"> -->
 
@@ -32,8 +34,10 @@
 					<!-- row first -->
 					<div class="row">
 					<!-- //////////////////////////// -->
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-							<a href="/detail" class="thumbnail">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
+						ng-repeat="slide in slides">
+							
+							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
 								
@@ -990,3 +994,4 @@
 
 
 <jsp:include page="user/include/footer.jsp"></jsp:include>
+</div>

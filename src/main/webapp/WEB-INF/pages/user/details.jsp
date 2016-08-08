@@ -5,7 +5,8 @@
   
 
 <jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
-<div ng-app="slideDetailApp" ng-controller="slideDetailCtrl">
+<div ng-app="indexApp" ng-controller="indexCtrl">
+
 	<content>
 	<div id="page-content-wrapper">
 	
@@ -18,7 +19,7 @@
 							<div class="col-lg-7 content-slide-view">
 								<div class="row col-lg-12">
 									<div class="slide-container">										 
-										 <iframe src="{{slideURL}}" id="pptx"></iframe> 																				
+										 <iframe src="${url}" id="pptx"></iframe> 																				
 									</div>
 
 									<div>
@@ -63,6 +64,8 @@
 		     <!-- end page-content-wrapper -->
 	</content>
 		
+	
 	<jsp:include page="include/footer.jsp"></jsp:include>
+	
 
 </div>    
