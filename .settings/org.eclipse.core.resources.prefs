@@ -5,5 +5,6 @@ encoding//src/main/webapp/WEB-INF/pages/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/user/include/login.jsp=UTF-8
 encoding//src/main/webapp/resources/user/css/categories.css=UTF-8
 encoding//src/main/webapp/resources/user/css/details.css=UTF-8
+encoding//src/main/webapp/resources/user/css/user_view.css=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

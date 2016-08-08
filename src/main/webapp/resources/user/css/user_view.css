@@ -1,0 +1,47 @@
+user.main-tab{	
+	margin :auto;
+	padding:auto;
+}
+ul.tab{
+	color:#fff;
+	margin-top: 20px;
+	padding: 0px;
+    border-bottom:2px solid #f9c100;
+    list-style: none;
+   
+}
+ul.tab li{
+			border-radius:12px;
+			background:#3B5998;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+		}	
+ul.tab li:hover{
+			background:#eee;
+			color: #000;
+			border-top-left-radius:15px;
+			border-bottom-right-radius:10px; 
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+		}
+ul.tab li.current{
+			background: #fff;
+			color: #222;
+		}
+		
+.panel-user{
+	border-color:red;
+	background-color:white;
+	
+}	
+ .panel-heading-user {
+   padding: 7px 10px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #338199;
+    color: aliceblue;
+    font-family: khmer os siemreap;
+}

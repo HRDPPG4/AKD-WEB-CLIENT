@@ -2,8 +2,11 @@ package org.khmeracademy.akd.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -19,6 +22,20 @@ public class UserController {
 	@RequestMapping(value="/technology",method=RequestMethod.GET)
 	public String technology(){
 		return "user/technology";
+	}
+	
+	@RequestMapping(value="/userview",method=RequestMethod.GET)
+	public String user_view(){
+		return "user/user_view";
+	}
+	
+	@RequestMapping(value="/user_upload",method=RequestMethod.GET)
+	public String user_person(){
+		return "user/user_personal/user_upload";
+	}
+	@RequestMapping(value="/user_information",method=RequestMethod.GET)
+	public String user_information(){
+		return "user/user_information";
 	}
 	
 	@RequestMapping(value="/general-knowledge",method=RequestMethod.GET)
@@ -58,7 +75,9 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public String details(){
+	public String details(@RequestParam("url") String url, ModelMap model){
+		model.put("url", url);
+		System.out.print(url);
 		return "user/details";
 	}
 	
