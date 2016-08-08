@@ -2,7 +2,6 @@
   overflow: hidden;
    margin-top: 20px;
     margin-bottom: 20px;
-  padding-bottom: 10px;
 }
 
 .row-cates-content{
@@ -13,7 +12,7 @@
   width: 220px;
   margin-right: 10px;
   position: fixed;
-  left: 25%;
+  left:50%;
   z-index: 300;
 }
 /*.nav-minimize{

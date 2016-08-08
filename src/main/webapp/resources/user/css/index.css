@@ -90,14 +90,6 @@ ul.menu-basic li a{
     /*transition: 0.3s;*/
     font-size: 18px;
 }
- /* ul.menu-basic li{
-	color:red;
-	background-color:#fff;
-} */
-.active a{
-	color:#000 !important;
-	background-color:#fff;
-}
 /* Change background color of links on hover */
 
 /* ul.menu-basic li a{
