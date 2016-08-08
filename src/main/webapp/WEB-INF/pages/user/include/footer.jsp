@@ -48,8 +48,8 @@
       
     
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-	 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	
 	
 </body>

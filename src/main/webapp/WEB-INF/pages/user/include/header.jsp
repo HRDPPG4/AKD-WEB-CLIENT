@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<jsp:include page="link-header.jsp"></jsp:include>
+
 	
 	<title>AllKhmerDocs</title> <!-- The Problem is How to Change title when we click to another page. So cannot use this title as Static Page. -->
 	<!-- Now I can fix it by javascript. but I'm not sure that is good or not. Because it related to search engine. Maybe google can't search our website. because title very important for search engine -->
-
+<jsp:include page="link-header.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="register.jsp"></jsp:include>
@@ -41,6 +41,7 @@
 		</nav>
 	</div>
 <!-- main menu -->
+
 <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
@@ -82,4 +83,5 @@
 	</div>
 </nav>
 </div>
+
 </header>
