@@ -37,9 +37,11 @@
 											<span>Framewor</span>
 										  </div>
 									</div>
+									
 									<div class="commend-visitor">
-											commend-visitor
+											<jsp:include page="include/comment.jsp"></jsp:include>
 									</div>
+									
 								</div>
 							</div>
 						</div> 
@@ -48,14 +50,43 @@
 								<div class="col-lg-5  content-cates">
 								<div class="row col-lg-12" >
 									<div class="cates-container">
-										slide-01
+										
+										
+										
+										
+										<div class="row">
+											<div class="col-sm-6" ng-repeat="slide in slides">
+												
+												<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+													
+													<span class="img " >
+													<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+													</span>
+													
+													<span class="socials" >
+														<a href="#" alt="like" class="like">
+															<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+														</a>
+														<a href="#" alt="download" class="download">
+															<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+															</a>
+														<a href="#" alt="share" class="share">
+															<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+														</a>
+													</span>
+													
+													
+													
+												</a>
+											</div>
+										</div>	
+										
+										
+								
 									</div>
-									<div class="cates-container">
-										slide-02
-									</div>
-									<div class="cates-container">
-										slide-03
-									</div>
+								
+									
+									
 								</div>
 								</div>
 							</div> 
