@@ -46,27 +46,24 @@
 	<div class="container">
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			
-			 
-
-			  <li class="active"><a href="/">
+			  <li><a href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
 			  <li><a href="/technology">
 			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
 			  </li>
-			  <li><a href="/general-knowledge">
+			  <li><a  href="/general-knowledge">
 				   <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
 				   </span>ចំណេះដឹងទូទៅ</a>
 			  </li>
-			  <li><a href="/literal">
+			  <li><a  href="/literal">
 				   <span><i class="fa fa-book" aria-hidden="true">
 				   </i>
 				   </span>អក្សរសាស្រ្ត</a>
 			  </li>
 			  
-			  <li><a href="/business">
+			  <li><a  href="/business">
 				   <span><i class="fa fa-cubes" aria-hidden="true"></i>
 				   </span>មុខជំនួញ</a>
 			  </li>

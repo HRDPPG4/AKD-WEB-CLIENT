@@ -1,8 +1,6 @@
 
 $(document).ready(function(){
-	$('.main-category').click(function(){
-		
-	});
+	
 });
 
 ///////////////////////////////////////

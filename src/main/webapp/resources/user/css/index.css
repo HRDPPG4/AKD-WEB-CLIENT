@@ -75,7 +75,10 @@ html,body {
  	margin-left: 170px;
 
  }
-ul.menu-basic li{float: left;}
+ ul.menu-basic li{
+	list-style:none;
+  float:left;
+	}
 ul.menu-basic li a{
 	display: inline-block;
     color: #fff;
@@ -87,22 +90,20 @@ ul.menu-basic li a{
     /*transition: 0.3s;*/
     font-size: 18px;
 }
-
+ /* ul.menu-basic li{
+	color:red;
+	background-color:#fff;
+} */
+.active a{
+	color:#000 !important;
+	background-color:#fff;
+}
 /* Change background color of links on hover */
-ul.menu-basic li a{
+
+/* ul.menu-basic li a{
   background-color:#fff;
   color:#000;
-  border-right: 1px solid #3B5998;
-}
-ul.menu-basic li.active a:visited{
-  background-color:#fff;
-  color:#000;
-}
-ul.menu-basic li a:hover{
-  background-color:#fff;
-  color:#424242;
-  border-right: 1px solid #3B5998;
-}
+}*/ 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.menu-basic li.icon {display: none;}
 /*///////////////////////////////////////////////*/
