@@ -10,36 +10,47 @@
 	<div class="container" id="container-cate">
 		<section id="cates-view">
 				<div class="row section nav-left topspace-cates">
-				<div class="row-nav-left-content">
+				<div class="row--content">
 				<!-- <span class="nav-minimize"><i class="fa fa-list-ul" aria-hidden="true"></i></span> -->
 			     		<div class="left-side-nav">
-			     			<ul class="left-category">
+			     			<ul class="main-category">
 			     			    <li class="bg-cates">
-				     			     <span><i class="fa fa-tags" aria-hidden="true"></i>
-		  	   						 </span>ប្រភេទ
+				     			     <span><i class="fa fa-flask"></i>
+		  	   						</span>បច្ចេកវិទ្យា
 	  	   						</li>
 	  	   						<li>
-		  	   						<a href="#"> <span><i class="fa fa-flask"></i>
-		  	   						</span>បច្ចេកវិទ្យា</a>
-		  	   					      <ul class="sub-menus-cates">
-		  	   					      		<li>ជឿជាក់</li>
-		  	   					      		<li>ជឿជាក់</li>
-		  	   					      		<li>ជឿជាក់</li>
-		  	   					      		<li>ជឿជាក់</li>
-		  	   					      </ul>
+		  	   						<a href="#">Programming</a>
+		  	   						<ul class="sub-menus-cates">
+		  	   							<li>JAVA</li>
+		  	   							<li>C++</li>
+		  	   							<li>C#</li>
+		  	   						</ul>
 	  	   						</li>
 
 	  	   						<li>
-		  	   						<a href="#"><span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-		  	   						</span>ចំណេះដឹងទូទៅ</a>
+		  	   						<a href="#">Design</a>
+		  	   							<ul class="sub-menus-cates">
+		  	   							<li>JAVA</li>
+		  	   							<li>C++</li>
+		  	   							<li>C#</li>
+		  	   						</ul>
 	  	   						</li>
 	  	   						<li>
-		  	   						<a href="#"><span><i class="fa fa-book" aria-hidden="true"></i></span>
-		  	   						អក្សរសាស្រត្ត</a>
+		  	   						<a href="#">Network</a>
+		  	   						<ul class="sub-menus-cates">
+		  	   							<li>JAVA</li>
+		  	   							<li>C++</li>
+		  	   							<li>C#</li>
+		  	   						</ul>
 	  	   						</li>
 							   <li>
-								   <a href="#"><span><i class="fa fa-cubes" aria-hidden="true"></i>
-								   </span>អក្សរសាស្រ្ត</a>
+								   <a href="#">Web</a>
+								   <ul class="sub-menus-cates">
+		  	   							<li>JAVA</li>
+		  	   							<li>C++</li>
+		  	   							<li>C#</li>
+		  	   						</ul>
+								
 							   </li>
 			     			</ul>
 			     		</div>
@@ -205,5 +216,7 @@
 </div>
 	     <!-- end page-content-wrapper -->
 </content>
+
+ <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>
 
 <%-- <jsp:include page="include/footer.jsp"></jsp:include> --%>

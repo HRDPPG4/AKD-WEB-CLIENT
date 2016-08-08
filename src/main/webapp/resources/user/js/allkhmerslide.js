@@ -1,17 +1,12 @@
 
 $(document).ready(function(){
-	alert('hello')
-	var nav_left ='0';
-	$('ul.left-category li:not(:first-child)').click(function(){
-		if (nav_left=="0") {
-		$('.sub-menus-cates').css({'display':'inline'});
-		nav_left=="1";
-		}else{
-			$('.sub-menus-cates').css({'display':'none'});
-			nav_left=="0";
-		}
+	
+	var nav_left ='close';
+	$('.main-category').click(function() {
+		$('.sub-menus-cates').slideToggle("slow");
 	});
 });
+
 ///////////////////////////////////////
 $(document).ready(function(){
 	var menu ='close';
