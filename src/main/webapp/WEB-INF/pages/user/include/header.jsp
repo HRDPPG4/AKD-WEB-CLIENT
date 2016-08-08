@@ -13,7 +13,7 @@
 	<!-- link -->
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.css">
-	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/user_view.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">

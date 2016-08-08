@@ -21,6 +21,20 @@ public class UserController {
 		return "user/technology";
 	}
 	
+	@RequestMapping(value="/userview",method=RequestMethod.GET)
+	public String user_view(){
+		return "user/user_view";
+	}
+	
+	@RequestMapping(value="/user_upload",method=RequestMethod.GET)
+	public String user_person(){
+		return "user/user_personal/user_upload";
+	}
+	@RequestMapping(value="/user_information",method=RequestMethod.GET)
+	public String user_information(){
+		return "user/user_information";
+	}
+	
 	@RequestMapping(value="/general-knowledge",method=RequestMethod.GET)
 	public String generalKnowledge(){
 		return "user/general_knowledge";
