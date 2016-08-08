@@ -1,21 +1,7 @@
 
 $(document).ready(function(){
-	
-<<<<<<< HEAD
-	var nav_left ='close';
-	$('.main-category').click(function() {
-		$('.sub-menus-cates').slideToggle("slow");
-=======
-	var nav_left ='0';
-	$('ul.left-category li:not(:first-child)').click(function(){
-		if (nav_left=="0") {
-		$('.sub-menus-cates').css({'display':'inline'});
-		nav_left=="1";
-		}else{
-			$('.sub-menus-cates').css({'display':'none'});
-			nav_left=="0";
-		}
->>>>>>> 7ebcb033057a7d268b6b24e9987df1f24aade0e9
+	$('.main-category').click(function(){
+		
 	});
 });
 

@@ -89,7 +89,7 @@ ul.menu-basic li a{
 }
 
 /* Change background color of links on hover */
-ul.menu-basic li.active a{
+ul.menu-basic li a{
   background-color:#fff;
   color:#000;
   border-right: 1px solid #3B5998;
