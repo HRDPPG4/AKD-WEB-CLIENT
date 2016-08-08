@@ -21,9 +21,9 @@
 									<div class="slide-container">	
 									
 																		 
-										<%--  <iframe src="${url}" id="pptx"></iframe> --%> 	
+										  <iframe src="${url}" id="pptx"></iframe> 
 										 
-										 <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe>
+										<!--  <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe> -->
 										 																			
 									</div>
 
