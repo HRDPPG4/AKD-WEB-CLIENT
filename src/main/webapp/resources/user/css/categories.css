@@ -13,23 +13,11 @@
   margin-right: 10px;
   position: relative;
   left:9%;
-  z-index: 300;
 }
-/*.nav-minimize{
-  position:fixed;
-  left:260px;
-  z-index: 300;
-  cursor: pointer;
-  background:red;
-  padding:7px;
-  color:white;
-  -webkit-transition:all 1s ease;
-  font-size:20px;
 
-  
-}*/
 /*change class when scroll down*/
 ul.main-category{
+	font-family:"Khmer OS Battambang",Times New Roman;
   padding:0px;
   background-color:#fff;
   list-style-type: none;
@@ -37,6 +25,7 @@ ul.main-category{
 }
 
 ul.main-category li{
+	
 border-bottom: 1px dashed #003666  !important;
 }
 ul.main-category li.bg-cates {
@@ -65,11 +54,10 @@ ul ul.sub-menus-cates{
   left:10px;
   color:#000;
   display:none;
-  list-style-type: none;
+  list-style-type: circle;
 }
 
 ul ul.sub-menus-cates li{
-  background-color:red !important;
   margin-bottom:2px;
   border-style: none !important;
 }
@@ -86,10 +74,10 @@ ul ul.sub-menus-cates li{
 }*/
 .body-cates{
        width: 860px;
-    margin-right: 10px;
+   /*  margin-right: 10px; */
     position: relative;
     -webkit-transition:all 1s ease;
-    left: 22%;
-    z-index: 5;
+    /* left: 22%; */
+   /*  z-index: 5; */
 }
 

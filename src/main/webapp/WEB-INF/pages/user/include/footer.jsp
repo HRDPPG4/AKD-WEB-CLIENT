@@ -12,13 +12,13 @@
 					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
 				</ul>
 			</div>
-			<div class="col-sm-3 footer-height">
+			<div class="col-sm-3 footer-height​ col-sm-offset-1">
 				<h3>Our Services</h3>
 				<ul class="list">
 					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
 				</ul>
 			</div>
-			<div class="col-sm-3 footer-height">
+			<div class="col-sm-3 footer-height col-sm-offset-1">
 				<h3>Contact Us</h3>
 				<ul class="list">
 					<li><i class="fa fa-map-marker">&nbsp;&nbsp;&nbsp;&nbsp;</i>#12, St 323, Sangkat Boeung Kak II, KhanToul Kork, Phnom Penh, Cambodia.</li>
@@ -29,12 +29,7 @@
 					<li><i class="fa fa-envelope-o">&nbsp;&nbsp;&nbsp;&nbsp;</i>admin@akd.org</li>
 				</ul>
 			</div>
-			<div class="col-sm-3 footer-height">
-				<h3>Follow Us</h3>
-				<div class="footer-img">	
-					<img src="${pageContext.request.contextPath}/resources/user/img/unnamed.png" alt="Car">
-				</div>
-			</div>
+	
 		</div>
 		<div​>
 		<div class="col-sm-12 center copyright">

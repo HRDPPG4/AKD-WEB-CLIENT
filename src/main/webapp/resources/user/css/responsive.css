@@ -1,42 +1,36 @@
 @media screen and (max-width: 1780px) {
-    .left-side-nav{
-      left:5%;
-    }
-    .body-cates{
+ /*    .body-cates{
    left: 25% !important;
-    } 
-   /* .container{
-      width:100%;
-    } */
+    }  */
     
 }
 
 @media screen and (max-width: 1520px) {
-    .left-side-nav{
+    /* .left-side-nav{
       left:8%;
     }
     .body-cates{
    left: 23.6% !important;
-    } 
+    }  */
    /* .container{
       width:100%;
     }
     */
 }
 @media screen and (max-width: 1255px) {
-    .left-side-nav{
+   /*  .left-side-nav{
       left:4%;
     }
     .body-cates{
    left: 23.6% !important;
-    } 
+    }  */
    /* .container{
       width:100%;
     }
     */
 }
 @media screen and (max-width: 1160px) {
-     .left-side-nav{
+     /* .left-side-nav{
       left:0%;
       z-index: 300;
     }
@@ -45,19 +39,18 @@
     } 
     .container{
       width:100%;
-    }
+    } */
   }
 @media screen and (max-width: 1096px) {
-    .left-side-nav{
+   /*  .left-side-nav{
       left:0%;
-      z-index: 300;
     }
     .body-cates{
    left: 5% !important;
     } 
     .container{
       width:100%;
-    } 
+    }  */
 }
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
 @media screen and (max-width:1023px) {
@@ -184,7 +177,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   }
 }
 @media screen and (max-width: 766px){
-.left-side-nav{
+/* .left-side-nav{
      left:0%;
       z-index: 300;
     }
@@ -197,7 +190,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
     }
     .container{
       width: 100%;
-    }
+    } */
   }
 
   @media screen and (max-width:885px){
@@ -294,7 +287,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 @media screen and (max-width: 768px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -326,7 +319,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 @media screen and (max-width: 412px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -344,7 +337,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 @media screen and (max-width: 414px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -412,14 +405,13 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 
   @media screen and (max-width: 310px) {
 .left-side-nav{
-    display: none;
+   /*  display: none; */
     }
     .body-cates{
       width: 300px;
    left: 0% !important;
     } 
     #min-width-sm{
-    background-color:red;
       width: 270px;
     }
     .container{

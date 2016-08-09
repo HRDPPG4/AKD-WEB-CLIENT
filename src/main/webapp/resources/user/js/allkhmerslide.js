@@ -54,7 +54,7 @@ alert('hello');
 jQuery(document).ready(function($) {
 	var my_nav = $('.navbar-sticky'); 
 	var my_header=$('.navbar-bg');
-	var my_left_bar =$('.left-side-nav');
+//	var my_left_bar =$('.left-side-nav');
 
 	
 	// grab the initial top offset of the navigation 
@@ -67,7 +67,6 @@ jQuery(document).ready(function($) {
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
 		if (scroll_top > sticky_navigation_offset_top) { 
 			my_nav.addClass( 'stick' );
-			my_left_bar.css({'top':'10%'});
 			my_header.hide();
 			// $('.logo-main-menu').show();
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
@@ -78,7 +77,6 @@ jQuery(document).ready(function($) {
 
 		} else {
 			my_nav.removeClass( 'stick' );
-			my_left_bar.css({'top':'18.30%'});
 			my_header.show();
 		
 			// $('.logo-main-menu').hide();
