@@ -1,8 +1,8 @@
-.modal-header, h4, .close {
+.modal-header, .close {
       background-color: #5cb85c;
       color:white !important;
       text-align: center;
-      font-size: 30px;
+    *  font-size: 30px;
 
   }
   .modal-footer {

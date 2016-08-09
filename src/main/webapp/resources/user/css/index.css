@@ -5,7 +5,7 @@ html,body {
     height: 100%;
   font-weight: 300;
     color: #666;
-    font-family:"NiDA Bayon";
+    font-family:"Khmer OS Battambang";
     background-color:#E9EBEE;
 }
 
@@ -120,7 +120,7 @@ position: relative;
 /*main-menu*/
 /* Remove margins and padding from the list, and add a black background color */
  ul.menu-basic{
- 	font-family:"NiDA Bayon";
+ 	font-family:"Khmer OS Battambang";
  	text-transform: uppercase;
  	list-style-type: none;
  	margin: 0;
@@ -142,8 +142,14 @@ ul.menu-basic li a{
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
+<<<<<<< HEAD
    
     font-size: 16px;
+=======
+    /*transition: 0.3s;*/
+    font-size: 18px;
+    font-family:Khmer OS Battambang;
+>>>>>>> 0688100893f3025cdc9514d7a46c9e55f1f870b4
 }
 
 
