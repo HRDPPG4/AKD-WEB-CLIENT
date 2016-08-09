@@ -13,31 +13,34 @@
 	<header id="header">
 <!-- top menu -->
 	<div class="top-menu">
-		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg container">
+		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
+	<span  class="navbar-logo">
+			<a href="#" class="navbar-brand logo">SliderReader-kh</a>
+	</span>
+	<div class="container">
 		
-			<span class="navbar-logo">
-					<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
-			</span>
-			
-			<span id="searchBox">
-  					<form>
-					  <input type="text" name="search" placeholder="&#xF002; ស្វែងរកឯកសារ..." >
-					</form>				   
-			</span>
-				
-			<span id="SignUpForm">
-			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#register"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span> ចុះឈ្មោះ</button>
-			</span>
-		
-			<span id="LoginForm">
-			  <button type="button" class="btn btn-primary btn-lg" id="btnLogin"><span><i class="fa fa-user" aria-hidden="true"></i></span> ចូលប្រើប្រាស់</button>
-			</span>
-			
-			
-			<span id="UploadForm">
-			  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#upload"><span><i class="fa fa-upload" aria-hidden="true"></i></span> ចែកចាយឯកសារ</button>
-			</span> 
-		</nav>
+		<form class="navbar-form navbar-left form-contain" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control form-search"  placeholder="ស្វែងរក">
+        </div>
+        <button type="submit">
+        	 <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
+	</div>
+	<div class="upload-signup-signin">
+     	<ul>
+            <li id="upload"><a href="#" class="btn-lg" data-toggle="modal" data-target="#myModal">upload</a>
+            </li>
+
+            <li id="signin"><a href="#features" class="btn-lg" data-toggle="modal" data-target="#myModal">signin</a>
+            </li>
+
+            <li id="signup"><a href="#stories" class="btn-lg" data-toggle="modal" data-target="#myModal">signup</a>
+            </li>
+        </ul>
+     </div>
+</nav>
 	</div>
 <!-- main menu -->
 

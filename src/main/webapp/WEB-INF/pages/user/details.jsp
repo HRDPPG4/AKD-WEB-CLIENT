@@ -19,16 +19,20 @@
 						 <div class="show-slide-view">
 							<div class="col-md-6 content-slide-view">
 								<div class="row col-md-12">
-									<div class="slide-container">																											 
+									<div class="slide-container">
+															
+			<iframe src="https://docs.google.com/presentation/d/1lesKumHAhMT_DXZlGbXpiVCrVYIAL-0MvFySFwRVbiI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+												<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe>  -->
+									 
 									<%--  <iframe src="${url}" id="pptx"></iframe>  --%>
-										<a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
+										<!-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
 											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
-										</a> 											
+										</a>  -->											
 																										
 									</div>
 
 									<div>
-											<button class="btn btn-primary">ថែមប៊ូតុង Share , Savelist,... ទីនេះ</button>
+											<button class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive">ថែមប៊ូតុង Share , Savelist,... ទីនេះ</button>
 									</div>
 
 
