@@ -415,11 +415,12 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     display: none;
     }
     .body-cates{
-      /*width: 300px;*/
+      width: 300px;
    left: 0% !important;
     } 
     #min-width-sm{
-      width: 280px;
+    background-color:red;
+      width: 270px;
     }
     .container{
       width: 100%;
