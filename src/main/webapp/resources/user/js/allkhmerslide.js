@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
 		if (scroll_top > sticky_navigation_offset_top) { 
 			my_nav.addClass( 'stick' );
 			my_header.hide();
-			// $('.logo-main-menu').show();
+			$('.logo-main-menu').show();
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"visible"});
 			
@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
 			my_nav.removeClass( 'stick' );
 			my_header.show();
 		
-			// $('.logo-main-menu').hide();
+			$('.logo-main-menu').hide();
 			// $('.navbar-collapse .navbar-nav').css({"margin":"0 auto","right":"0px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"hidden"});
 		   

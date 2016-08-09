@@ -37,7 +37,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/012.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/005.png" alt=""> 
 								
 								
 								
@@ -223,7 +223,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/002.png" alt=""> 
 								
 								
 								
@@ -257,7 +257,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/006.png" alt=""> 
 								
 								
 								
@@ -289,7 +289,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Business/006.png" alt=""> 
 								
 								
 								
@@ -321,7 +321,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Business/011.png" alt=""> 
 								
 								
 								

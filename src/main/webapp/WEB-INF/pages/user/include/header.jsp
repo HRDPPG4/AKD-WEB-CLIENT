@@ -48,6 +48,9 @@
 <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
+	 <span class="navbar-logo-main">
+			   	<a href="#" class="navbar-brand logo-main-menu">All Khmer Docs</a>
+			   </span>
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 			  <li><a class="menu-a" actives"#" href="/">
