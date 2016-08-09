@@ -33,7 +33,7 @@
 					<div id="design" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -67,7 +67,7 @@
 					<div id="network" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -96,7 +96,7 @@
 				<div id="mobile" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -128,7 +128,7 @@
 				<div id="programming" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -160,7 +160,7 @@
 				<div id="web" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">

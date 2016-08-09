@@ -1,9 +1,10 @@
 
 .footer{
-	background-color: #21252b;
+	background-color: #374458;
 	width: 100%;
 	color:  white;
 	margin-top: 30px;
+	text-align:justify-all;
 }
 
 .footer .list{
@@ -25,11 +26,15 @@
 .footer .center{
 	border-top: 1px solid black;
 	text-align: center;	
-	background-color: #21252b;
+*	background-color: #21252b;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	color: white;
+	margin-top:10px;
 }
 .footer .copyright{
 	border-bottom: 3px solid #3B5998;
+}
+.footer h3{
+	*text-align: center;
 }
