@@ -71,10 +71,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
