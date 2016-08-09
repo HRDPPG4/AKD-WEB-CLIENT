@@ -16,19 +16,17 @@ html,body {
 }
 .top-menu{
   height: 60px;
-  background-color:#e9ebee;
 }
 .navbar-bg{
-   padding: 5px 0px 0px 0px;
- * background-color: #fff;
- background-color:#e9ebee;
+  padding-top: 10px;
+  background-color: #fff;
   border-bottom: 1px solid #fff;
 }
 
 /*logo*/
 .navbar >  .navbar-logo .brand-logo{
-*  position: relative;
-*  left: 100px;
+  position: relative;
+  left: 100px;
   color: #3B5998;
   font-weight: 400px;
 }
@@ -36,16 +34,81 @@ html,body {
   position: relative;
   color:gray;
 }
+
+/*search contain*/
+.navbar > .container .form-contain ,
+.form-group .form-search{
+  position: relative;
+   /*padding: 10px 15px;*/
+   border-style: none;
+  margin-top: 1px;
+  margin-right: -15px;
+  margin-bottom: 1px;
+  margin-left: 70px;
+  }
+ .navbar > .container .form-search{
+  position: relative;
+  width: 400px;
+  background-color: #eee;
+  }
+  .navbar > .container button[type="submit"]{
+    position: absolute;
+    bottom: 10px;
+    left: 440px;
+    border:0;
+    width: 50px;
+    color: #888;
+    display: line;
+    background: transparent;
+  }
+  i.fa-search{
+    font-size: 18px;
+  }
+  
+  .navbar > .container button[type="submit"]:hover{
+    position: absolute;
+    color: #000;
+    background: transparent;
+  }
+ /*////////////////////////////////////////////////////////////*/
+ 
+/*upload,sign in,sign up*/
+
+.upload-signup-signin{
+  position: relative;
+  float: right;
+  right: 140px;
+  top: -39px;
+  padding: 0px;
+  margin-bottom:-30px;
+  display: inline-block;
+  list-style-type:none;
+}
+.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+  position: relative;
+  text-decoration: none;
+  display: inline;
+}
+ul li#upload  > a,li#signin  > a ,li#signup > a{
+  color: gray;
+   font-size:14px;
+  text-decoration: none;
+  padding: 5px 10px 5px 7px;
+}
+ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
+  color:#eee;
+
+  background-color:#003666;
+  text-decoration: none;
+}
 /*////////////////////////////////////////////////////////////*/
 .main-menu-contain{
-	width:100%;
   height:30px;
 }
 .navbar-main-menu{
-  position: fixed;
-  width: 100%;
+position: relative;
   z-index: 300;
-  background-color: #3B5998;
+  background-color: #003666;
   border-width: 1px 0;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -53,16 +116,12 @@ html,body {
   -moz-background-clip: padding;
   border-radius: 0;
   background-clip: padding-box;
-*  margin-top:10px;
-  clear:both;
- * padding:8px 0px 5px 0px;
- top:50px;
  }
 
 /*main-menu*/
 /* Remove margins and padding from the list, and add a black background color */
  ul.menu-basic{
- 	font-family:"Khmer OS Battambang";
+ 	font-family:"NiDA Bayon";
  	text-transform: uppercase;
  	list-style-type: none;
  	margin: 0;
@@ -75,36 +134,44 @@ html,body {
  	margin-left: 170px;
 
  }
+
+
+
+ /* Float the list items side by side */
+ .main-menu{
+  position: relative;
+  margin-left: 170px;
+
+ }
  ul.menu-basic li{
-	list-style:none;
+  list-style:none;
   float:left;
-	}
+  }
 ul.menu-basic li a{
-	display: inline-block;
+  display: inline-block;
     color: #fff;
     position: relative;
-    top: 4px;
+    top: 5.5px;
     text-align: center;
     padding: 10px 16px;
     text-decoration: none;
     /*transition: 0.3s;*/
     font-size: 18px;
-    font-family:Khmer OS Battambang;
 }
- /* ul.menu-basic li{
-	color:red;
-	background-color:#fff;
-} */
-.active a{
-	color:#000 !important;
-	background-color:#fff;
-}
-/* Change background color of links on hover */
 
-/* ul.menu-basic li a{
-  background-color:#fff;
-  color:#000;
-}*/ 
+ul.menu-basic li a:hover{
+  display: inline-block;
+    color: #000;
+    position: relative;
+    top: 5.5px;
+    text-align: center;
+    padding: 10px 16px;
+    background-color: #fff;
+    text-decoration: none;
+    /*transition: 0.3s;*/
+    font-size: 18px;
+}
+ 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.menu-basic li.icon {display: none;}
 /*///////////////////////////////////////////////*/
@@ -112,9 +179,6 @@ ul.menu-basic li.icon {display: none;}
 .topspace-second{
 	margin-top: 20px;
     background-color: #fff;
- /* border-left:1px solid #3B5998;
-  border-right:1px solid #3B5998;
-  border-bottom:1px solid #3B5998;*/
 	padding-bottom: 10px;
 }
 .section-title{
@@ -127,13 +191,12 @@ ul.menu-basic li.icon {display: none;}
   font-size: 16px;
 	line-height: 30px;
   letter-spacing: 1px;
-	background-color:#3B5998;
+	background-color:#003666;
 }
 .topspace-second > .section-title #left-title{
 	text-align:left;
 	float: left;
 	 border-bottom: 2px dashed #fff;
-*	 margin-top:25px;								-------------------------------------New Here---------------------------
 }
 .topspace-second > .section-title #right-title{
 	text-align: right;
@@ -149,49 +212,32 @@ ul.menu-basic li.icon {display: none;}
 	text-decoration: none;
 }
 
-
-/*tab-content-second*/
-.topspace-second > .main-tab-content{
-		margin: auto;
-		padding: auto;
+/*content tab*/
+.topspace-second > .tab-content{
+    margin: auto;
+    padding: auto;
+    margin-top: 10px;
 }
-ul.tabs{
-			margin: 0px;
-			padding: 0px;
-       		border-bottom: 2px solid #f9c100;
-			list-style: none;
-		}
-		ul.tabs li{
-			background:#3B5998;
-			color: #fff; 
-			display: inline-block;
-			padding: 10px 15px;
-			cursor: pointer;
-		}
-		ul.tabs li:hover{
-			background:#eee;
-			color: #000;
-			border-top-left-radius:15px;
-			border-bottom-right-radius:10px; 
-			display: inline-block;
-			padding: 10px 15px;
-			cursor: pointer;
-		}
+ul.nav-tabs{
+      background: #fff;
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+}
+ul.nav-tabs li a{
+  background:#003666;
+      color: #fff; 
+      border-radius: 2px;
+      display: inline-block;
+      cursor: pointer;
+}
 
-		ul.tabs li.current{
-			background: #fff;
-			color: #222;
-		}
-
-		.tab-content{
-			display: none;
-			background: #fff;
-			padding: 15px;
-		}
-
-		.tab-content.current{
-			display: inherit;
-		}
+ul.nav-tabs li a:hover{
+      background:#eee;
+      color: #000;
+      display: inline-block;
+      cursor: pointer;
+    }
 
 /*section-content*/
 
@@ -204,10 +250,10 @@ ul.tabs{
   border-radius: 0;
   background-clip: padding-box;
   border: 0 none;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   margin: 0px -7px -3px;
   padding: 0px 0px 0px;
-  padding-bottom:30px;
+  padding-bottom:10px;
   text-align: center;
   text-decoration: none;
   color: #333;
@@ -263,11 +309,11 @@ a.thumbnail{
 .img > img{
   -webkit-transition: all 1s ease;
 }
-.img:hover > img{
+/* .img:hover > img{
   width: 350px;
   margin: -40px;
   -webkit-transition: all 1s ease;
-}
+} */
  /*.img .cover:hover{
   position: absolute;
   right: 0;
@@ -307,18 +353,20 @@ a.thumbnail{
   text-transform: uppercase;
   margin: 0 1em;
   text-align: left;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 16px;
   font-weight: 400;
   text-decoration: none;
-  margin-top: -1px;
+  margin-top: 10px;
   display: block;
   text-indent: 0;
 }
 .thumbnail .user-name{
    margin: 0 1.1em;
     text-transform: capitalize;
-   margin-bottom:10px;
-   line-height: 25px;
+    margin-top:5px;
+   margin-bottom:5px;
+   line-height: 18px;
    text-align: left;
    font-size: 16px;
    text-decoration: none;
@@ -327,25 +375,25 @@ a.thumbnail{
 }
 .thumbnail .descript{
    margin: 0 1.1em;
-   padding-bottom: 20px;
+   padding-bottom: 10px;
    line-height: 25px;
    text-align: left;
    font-size: 16px;
    text-decoration: none;
   display: block;
   text-indent: 0;
-  border-bottom: 0.1em solid #3B5998;
+  border-bottom: 0.1em solid #003666;
 }
 .thumbnail .socials{
   position: relative;
-  padding-bottom: 35px;
+  padding-bottom:40px;
   margin: 0 2em;
   display: block;
   text-indent: 0;
 }
 .thumbnail .view-count{
   position: relative;
- top: 25px;
+ top: 10px;
   left: 25px;
   color: #757575;
   float: left;
@@ -358,7 +406,7 @@ a .fa-thumbs-up{
   top: -40px;
   float: right;
   right: 20px;
-  color:#3B5998; 
+  color:#003666; 
   font-size: 20px;
   margin:0 0.4em; 
 }

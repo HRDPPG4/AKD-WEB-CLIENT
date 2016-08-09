@@ -2,7 +2,6 @@
   overflow: hidden;
    margin-top: 20px;
     margin-bottom: 20px;
-  padding-bottom: 10px;
 }
 
 .row-cates-content{
@@ -13,7 +12,7 @@
   width: 220px;
   margin-right: 10px;
   position: fixed;
-  left: 25%;
+  left:9%;
   z-index: 300;
 }
 /*.nav-minimize{
@@ -36,43 +35,43 @@ ul.main-category{
   list-style-type: none;
   
 }
+
 ul.main-category li{
-border-bottom: 1px dashed #3B5998  !important;
+border-bottom: 1px dashed #003666  !important;
 }
 ul.main-category li.bg-cates {
-	font-size:16px;
-	padding:10px;
-	color:#fff;
-	 background-color: #3B5998 !important;
-	 
+    font-size: 16px;
+    padding: 10px;
+    color: #fff;
+    background-color: #003666 !important;
 }
 
 ul.main-category li:not(first-child){
-	padding:10px;
-	background-color:#fff;
-	
+  padding:10px;
+  background-color:#fff;
+  
 }
 
 ul.main-category li:not(first-child) a{
-	text-decoration: none;
-	color:#000;
+  text-decoration: none;
+  color:#000;
 }
 
 /*sub menu  */
 ul ul.sub-menus-cates{
-	margin-top:10px;
-	padding:10px;
-	position:relative;
-	left:10px;
-	color:#000;
-	display:none;
-	list-style-type: none;
+  margin-top:10px;
+  padding:10px;
+  position:relative;
+  left:10px;
+  color:#000;
+  display:none;
+  list-style-type: none;
 }
 
 ul ul.sub-menus-cates li{
-	background-color:red !important;
-	margin-bottom:2px;
-	border-style: none !important;
+  background-color:red !important;
+  margin-bottom:2px;
+  border-style: none !important;
 }
 
 .left-side-nav, .body-cates, .right-side-cate {

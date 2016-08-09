@@ -52,8 +52,8 @@
 			
 			<div class=" col-md-3 col-md-offset-3 head-action">
 			 	
-			 	     <a class="btn btn-success" href="#">
-  						<i class="fa fa-pencil fa-fw""></i> Edit
+			 	     <a class="btn btn-success" href="#" data-toggle="modal" data-target="#update-slide">
+  						<i class="fa fa-pencil fa-fw"></i> Edit
   					</a>
 			 	    <a class="btn btn-danger" href="#">
   						<i class="fa fa-trash-o fa-lg"></i> Delete
@@ -105,8 +105,9 @@
 			
 			<div class=" col-md-3 col-md-offset-3 head-action">
 			 	
-			 	     <a class="btn btn-success" href="#">
-  						<i class="fa fa-pencil fa-fw""></i> Edit
+			 	     <a class="btn btn-success" href="#" >
+			 	     	
+  						<i class="fa fa-pencil fa-fw"></i> Edit
   					</a>
 			 	    <a class="btn btn-danger" href="#">
   						<i class="fa fa-trash-o fa-lg"></i> Delete

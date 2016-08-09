@@ -11,6 +11,7 @@ ul.tab{
    
 }
 ul.tab li{
+	        color:#fff;
 			border-radius:12px;
 			background:#3B5998;
 			display: inline-block;
@@ -36,6 +37,13 @@ ul.tab li.current{
 	background-color:white;
 	
 }	
+.border-slide{
+	border-bottom: 1px solid transparent;
+	margin-left: 0px;
+    margin-right: 0px;
+    background-color: #f5f5f5;
+    
+}
  .panel-heading-user {
    padding: 7px 10px;
     border-bottom: 1px solid transparent;
@@ -45,3 +53,29 @@ ul.tab li.current{
     color: aliceblue;
     font-family: khmer os siemreap;
 }
+.head-action{
+	margin-top: 53px;
+	
+}
+.thumbnail-user{
+	text-decoration: none;
+    border: 1px solid #fff;
+    border-bottom-color: rgb(208, 209, 213);
+    
+}
+
+.head-title{
+	margin-top: 20px;
+	
+}
+.image-slide{
+	display: block;
+    width: 100%;
+    overflow: hidden;
+    height: 130px;
+    margin: 0 0 2px;
+    position: relative;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
