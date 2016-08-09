@@ -24,35 +24,35 @@
 		  	   						</li>
 
 		  	   						<li>
-			  	   						<a class= "cates-menu">Design<span><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span></a>
+			  	   						<a class= "cates-menu">Design</a>
 			  	   						<ul class="sub-menus-cates">
 			  	   						   <li><a>Photoshop</a></li>
 			  	   						   <li><a>Illustrator</a></li>
 			  	   						</ul>
 		  	   						</li>
 		  	   						<li>
-			  	   						<a>Network</a>
+			  	   						<a class= "cates-menu">Network</a>
 		  	   						</li>
 		  	   						<li>
 			  	   						<a>Mobile</a>
 		  	   						</li>
 		  	   						<li>
-			  	   						<a>Programming</a>
-			  	   						<ul class="sub-menus-cates">
+			  	   						<a class= "cates-menu">Programming</a>
+			  	   						<!-- <ul class="sub-menus-cates">
 			  	   						   <li><a>Java</a></li>
 			  	   						   <li><a>C++</a></li>
 			  	   						   <li><a>VB.NET</a></li>
 			  	   						   <li><a>PHP</a></li>
-			  	   						</ul>
+			  	   						</ul> -->
 		  	   						</li>
 		  	   						<li>
 			  	   						<a>Web</a>
-			  	   						<ul class="sub-menus-cates">
+			  	   						<!-- <ul class="sub-menus-cates">
 			  	   						   <li><a>HTML</a></li>
 			  	   						   <li><a>CSS</a></li>
 			  	   						   <li><a>Javascript</a></li>
 			  	   						   <li><a>Bootstrap</a></li>
-			  	   						</ul>
+			  	   						</ul> -->
 		  	   						</li>
 		  	   						
 				     			</ul>

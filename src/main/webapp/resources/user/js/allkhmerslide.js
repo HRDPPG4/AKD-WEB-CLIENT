@@ -1,17 +1,21 @@
 
 
 $(document).ready(function(){
-	$('ul li a').click(function(){
-		$('li a').removeClass("actives");
-		 $(this).addClass("actives");
+	$('#navlist a').click(function(e) {
+	    e.preventDefault(); //prevent the link from being followed
+	    $('#navlist a').removeClass('selected');
+	    $(this).addClass('selected');
 	});
 });
 
-$(document).ready(function(){
-	$('.main-category').click(function(){
-		$('.sub-menus-cates').slideToggle('slow');
+/*$(document).ready(function(){
+	$('.main-category a').click(function(){
+		 e.preventDefault();
+		$('ul.sub-menus-cates').slideToggle(200);
+		 $('.main-category a').removeClass('clicks');
+		$(this).addClass('clicks');
 	});
-});
+});*/
 // /////////
 $(document).ready(function(){
 	var menu ='close';
@@ -27,10 +31,10 @@ $(document).ready(function(){
 	});
 });
 // ///////////////////////
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-alert('hello');
+
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
        // alert('hi');
@@ -40,7 +44,7 @@ alert('hello');
 		alert('he');
 	});
 
-});
+});*/
 // ///////////////////////////////////
 // $(document).ready(function(){
 // 	var menu_minimize ='close';
