@@ -9,6 +9,7 @@
 <jsp:include page="register.jsp"></jsp:include>
 <jsp:include page="login.jsp"></jsp:include>
 <jsp:include page="upload.jsp"></jsp:include>
+<jsp:include page="update-slide.jsp"></jsp:include>
 				  
 	<header id="header">
 <!-- top menu -->
