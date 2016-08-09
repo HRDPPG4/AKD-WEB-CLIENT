@@ -23,7 +23,7 @@
 											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
 										</a>  -->	
 
-										<iframe src="${url}"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+										<iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
 
 										
 
