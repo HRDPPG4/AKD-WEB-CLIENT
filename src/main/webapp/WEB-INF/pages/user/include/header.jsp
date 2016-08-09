@@ -60,7 +60,7 @@
 			  <li><a  href="/literal">
 				   <span><i class="fa fa-book" aria-hidden="true">
 				   </i>
-				   </span>អក្សរសាស្រ្ត</a>
+				   </span>អក្សរសាស្ត្រ</a>
 			  </li>
 			  
 			  <li><a  href="/business">
