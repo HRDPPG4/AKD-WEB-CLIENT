@@ -211,7 +211,7 @@
 						    <li><a data-toggle="tab" href="#historical">ប្រវត្តិសាស្ត្រ</a></li>
 						    <li><a data-toggle="tab" href="#inter-nation">ទំនាក់ទំនងអត្តរជាតិ</a></li>
 						    <li><a data-toggle="tab" href="#religion">សាសនា</a></li>
-						   <li><a data-toggle="tab" href="#proverb">សុភាសិទ</a></li>
+						   <li><a data-toggle="tab" href="#proverb">សុភាសិត</a></li>
 					</ul>
 
 				<div class="tab-content">

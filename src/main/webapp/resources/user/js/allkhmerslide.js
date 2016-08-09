@@ -1,6 +1,13 @@
 
 
 $(document).ready(function(){
+	$('ul li a').click(function(){
+		$('li a').removeClass("actives");
+		 $(this).addClass("actives");
+	});
+});
+
+$(document).ready(function(){
 	$('.main-category').click(function(){
 		$('.sub-menus-cates').slideToggle('slow');
 	});

@@ -16,7 +16,7 @@
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 	<span class="navbar-logo">
-			<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
+			<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/> All Khmer Docs</a>
 	</span>
 	<div class="container">
 		
@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			  <li><a href="/">
+			  <li><a class="menu-a" actives"#" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>

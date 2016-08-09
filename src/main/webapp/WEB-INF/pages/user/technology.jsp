@@ -24,7 +24,7 @@
 		  	   						</li>
 
 		  	   						<li>
-			  	   						<a class= " active">Design</a>
+			  	   						<a class= "cates-menu">Design<span><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span></a>
 			  	   						<ul class="sub-menus-cates">
 			  	   						   <li><a>Photoshop</a></li>
 			  	   						   <li><a>Illustrator</a></li>
@@ -58,8 +58,9 @@
 				     			</ul>
 				     		</div>
 						</div>
-
+						
 						<div class="col-sm-9 col-xs-12">
+							<div class=".body-cates">
 							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -82,7 +83,8 @@
 								</span>
 								</a>
 							</div>
-
+							</div>
+							</div>
 						</div>
 					</div>				
 					

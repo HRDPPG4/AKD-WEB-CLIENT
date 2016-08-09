@@ -274,6 +274,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
      left:0%;
     }
 	}
+	
 @media screen and (max-width: 900px){
   ul.menu-basic.responsive {position: relative;}
   ul.menu-basic.responsive li.icon {
@@ -495,16 +496,16 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 /*IPhone 5*/
   @media screen and (max-width: 320px) {
 .left-side-nav{
-     left:0%;
-     /*  z-index: 300; */
-    }
+  width: 300px;
+  margin-right: 10px;
+  position: relative;
+  left:9%;
+}
+
     .body-cates{
       /*width: 300px;*/
    left: 5% !important;
     } 
-    #min-width-sm{
-      width: 320px;
-    }
     .container{
       width: 100%;
     }

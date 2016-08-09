@@ -173,6 +173,11 @@ ul.menu-basic li a:hover{
     /*transition: 0.3s;*/
     font-size: 18px;
 }
+
+.actives
+{
+    background-color:green;
+}
  
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.menu-basic li.icon {display: none;}
