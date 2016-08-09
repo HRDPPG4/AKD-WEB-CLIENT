@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 
 
-<div class="modal fade" id="ModalLogin" role="dialog">
+<div class="modal fade" id="login" role="dialog">
   <div class="modal-dialog">
   
     <!-- Modal content-->

@@ -14,8 +14,8 @@
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
-	<span  class="navbar-logo">
-			<a href="#" class="navbar-brand logo">SliderReader-kh</a>
+	<span class="navbar-logo">
+			<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>All Khmer Docs</a>
 	</span>
 	<div class="container">
 		
@@ -30,13 +30,13 @@
 	</div>
 	<div class="upload-signup-signin">
      	<ul>
-            <li id="upload"><a href="#" class="btn-lg" data-toggle="modal" data-target="#myModal">upload</a>
+            <li id="upload"><a href="#" class="btn-lg" data-toggle="modal" data-target="#upload">ចែកចាយឯកសារ</a>
             </li>
 
-            <li id="signin"><a href="#features" class="btn-lg" data-toggle="modal" data-target="#myModal">signin</a>
+            <li id="signin"><a href="#features" class="btn-lg" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
 
-            <li id="signup"><a href="#stories" class="btn-lg" data-toggle="modal" data-target="#myModal">signup</a>
+            <li id="signup"><a href="#stories" class="btn-lg" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
         </ul>
      </div>
