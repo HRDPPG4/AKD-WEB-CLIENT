@@ -23,7 +23,14 @@
 											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
 										</a>  -->	
 
-										<iframe src="https://docs.google.com/presentation/d/1xmbyX56yEEEkfE-SEKR5rLbqrsntFMqlUyrEoXKG050/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>						
+										<iframe src="https://docs.google.com/presentation/d/1xmbyX56yEEEkfE-SEKR5rLbqrsntFMqlUyrEoXKG050/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+
+										
+
+
+										<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
+
+
 									</div>
 									<div>
 											<button class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive">ថែមប៊ូតុង Share , Savelist,... ទីនេះ</button>

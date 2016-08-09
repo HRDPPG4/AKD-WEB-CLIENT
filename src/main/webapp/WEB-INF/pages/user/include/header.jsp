@@ -31,13 +31,13 @@
 	</div>
 	<div class="upload-signup-signin">
      	<ul>
-            <li id="upload"><a href="#" class="btn-lg" data-toggle="modal" data-target="#upload">ចែកចាយឯកសារ</a>
+            <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload">ចែកចាយឯកសារ</a>
             </li>
 
-            <li id="signin"><a href="#features" class="btn-lg" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
+            <li id="signin"><a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
 
-            <li id="signup"><a href="#stories" class="btn-lg" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
+            <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
         </ul>
      </div>
