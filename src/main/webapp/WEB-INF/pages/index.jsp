@@ -37,7 +37,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/012.png" alt=""> 
 								
 								
 								
@@ -71,7 +71,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/002.png" alt="">
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
@@ -100,7 +100,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/003.png" alt=""> 
 								
 								
 								
@@ -132,7 +132,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/004.png" alt=""> 
 								
 								
 								
@@ -164,7 +164,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/006.png" alt=""> 
 								
 								
 								
