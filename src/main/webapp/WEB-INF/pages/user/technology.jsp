@@ -15,7 +15,38 @@
 				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
 						<div class="well col-sm-3 col-xs-12">
-							
+							<div class="left-side-nav">
+				     			<ul class="main-category">
+				     			    <li class="bg-cates">
+					     			     <span><i class="fa fa-tags" aria-hidden="true"></i>
+			  	   						 </span>ប្រភេទ
+		  	   						</li>
+		  	   						<li>
+			  	   						<span><i class="fa fa-flask"></i>
+			  	   						</span>បច្ចេកវិទ្យា
+
+			  	   						 <ul class="sub-menus-cates">
+			  	   					      		<li>ជឿជាក់</li>
+			  	   					      		<li>ជឿជាក់</li>
+			  	   					      		<li>ជឿជាក់</li>
+			  	   					      		<li>ជឿជាក់</li>
+			  	   					      </ul>
+		  	   						</li>
+
+		  	   						<li>
+			  	   						<span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+			  	   						</span>ចំណេះដឹងទូទៅ
+		  	   						</li>
+		  	   						<li>
+			  	   						<span><i class="fa fa-book" aria-hidden="true"></i></span>
+			  	   						អក្សរសាស្រត្ត
+		  	   						</li>
+								   <li>
+									   <span><i class="fa fa-cubes" aria-hidden="true"></i>
+									   </span>អក្សរសាស្រត្ត
+								   </li>
+				     			</ul>
+				     		</div>
 						</div>
 
 						<div class="well col-sm-9 col-xs-12">
