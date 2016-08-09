@@ -6,6 +6,8 @@
   
 
 <jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
+
+
 <div ng-app="indexApp" ng-controller="indexCtrl">
 	<content>
 	<div id="page-content-wrapper">
@@ -24,13 +26,9 @@
 											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
 										</a>  -->	
 
-										<iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+											<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
 
-										
-
-
-										<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
-
+										<!-- <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  -->
 
 									</div>
 									<div>
@@ -81,12 +79,20 @@
 											<div class="row#">
 												<div>
 													<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
-													 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">
-													 		<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
-													 			<span class="img " >
-													 			<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-													 			</span>
-													 		</a>
+													 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">  
+													 		 
+
+													 		<div class="col-md-6">
+													 			<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+														 			<span class="img " >
+														 			<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+														 			</span>
+														 		</a>
+													 		</div>
+													 		<div class="col-md-6">
+													 			This is slide description
+													 		</div>
+													 		
 													 </div> 
 												</div>
 											</div>	
