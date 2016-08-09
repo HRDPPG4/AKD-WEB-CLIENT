@@ -41,9 +41,9 @@ html,body {
   position: relative;
    /*padding: 10px 15px;*/
    border-style: none;
-  margin-top: 4px;
+  margin-top: 2px;
   margin-right: -15px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   margin-left: 70px;
   }
  .navbar > .container .form-search{
@@ -91,13 +91,14 @@ html,body {
 }
 ul li#upload  > a,li#signin  > a ,li#signup > a{
   color: gray;
+   font-size:18px;
   text-decoration: none;
   padding: 5px 10px 5px 7px;
 }
 ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   color:#eee;
 
-  background-color:#3B5998;
+  background-color:#003666;
   text-decoration: none;
 }
 /*////////////////////////////////////////////////////////////*/
@@ -107,7 +108,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 .navbar-main-menu{
 position: relative;
   z-index: 300;
-  background-color: #3B5998;
+  background-color: #003666;
   border-width: 1px 0;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -133,48 +134,9 @@ position: relative;
  	margin-left: 170px;
 
  }
-/*ul.menu-basic li{float: left;}
-ul.menu-basic li a{
-	display: inline-block;
-    color: #fff;
-    position: relative;
-    top: 4px;
-    text-align: center;
-    padding: 10px 16px;
-    text-decoration: none;
-<<<<<<< HEAD
-   
-    font-size: 16px;
-=======
-    /*transition: 0.3s;*/
-    font-size: 18px;
-    font-family:Khmer OS Battambang;
->>>>>>> 0688100893f3025cdc9514d7a46c9e55f1f870b4
-}
 
 
-ul.menu-basic li.active a{
-  background-color:#fff;
-  color:#000;
-  border-right: 1px solid #3B5998;
-}
-ul.menu-basic li.active a:visited{
-  background-color:#fff;
-  color:#000;
-}
-ul.menu-basic li a:hover{
-  background-color:#fff;
-  color:#424242;
-  border-right: 1px solid #3B5998;
-}*/
- ul.menu-basic{
-  font-family:"NiDA Bayon";
-  text-transform: uppercase;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
- }
+
  /* Float the list items side by side */
  .main-menu{
   position: relative;
@@ -229,7 +191,7 @@ ul.menu-basic li.icon {display: none;}
   font-size: 16px;
 	line-height: 30px;
   letter-spacing: 1px;
-	background-color:#3B5998;
+	background-color:#003666;
 }
 .topspace-second > .section-title #left-title{
 	text-align:left;
@@ -250,6 +212,7 @@ ul.menu-basic li.icon {display: none;}
 	text-decoration: none;
 }
 
+/*content tab*/
 .topspace-second > .tab-content{
     margin: auto;
     padding: auto;
@@ -262,7 +225,7 @@ ul.nav-tabs{
       list-style: none;
 }
 ul.nav-tabs li a{
-  background:#3B5998;
+  background:#003666;
       color: #fff; 
       border-radius: 2px;
       display: inline-block;
@@ -275,49 +238,7 @@ ul.nav-tabs li a:hover{
       display: inline-block;
       cursor: pointer;
     }
-/*tab-content-second*/
-/*.topspace-second > .tab-content{
-		margin: auto;
-		padding: auto;
-}
-ul.tabs{
-			margin: 0px;
-			padding: 0px;
-       border-bottom: 2px solid #f9c100;
-			list-style: none;
-		}
-		ul.tabs li{
-			background:#3B5998;
-			color: #fff; 
-			display: inline-block;
-			padding: 10px 15px;
-			cursor: pointer;
-		}
-		ul.tabs li:hover{
-			background:#eee;
-			color: #000;
-			border-top-left-radius:15px;
-			border-bottom-right-radius:10px; 
-			display: inline-block;
-			padding: 10px 15px;
-			cursor: pointer;
-		}
 
-		ul.tabs li.current{
-			background: #fff;
-			color: #222;
-		}
-
-		.tab-content{
-			display: none;
-			background: #fff;
-			padding: 15px;
-		}
-
-		.tab-content.current{
-			display: inherit;
-		}
-*/
 /*section-content*/
 
 .thumbnail {
@@ -388,11 +309,11 @@ a.thumbnail{
 .img > img{
   -webkit-transition: all 1s ease;
 }
-.img:hover > img{
+/* .img:hover > img{
   width: 350px;
   margin: -40px;
   -webkit-transition: all 1s ease;
-}
+} */
  /*.img .cover:hover{
   position: absolute;
   right: 0;
@@ -461,7 +382,7 @@ a.thumbnail{
    text-decoration: none;
   display: block;
   text-indent: 0;
-  border-bottom: 0.1em solid #3B5998;
+  border-bottom: 0.1em solid #003666;
 }
 .thumbnail .socials{
   position: relative;
@@ -485,7 +406,7 @@ a .fa-thumbs-up{
   top: -40px;
   float: right;
   right: 20px;
-  color:#3B5998; 
+  color:#003666; 
   font-size: 20px;
   margin:0 0.4em; 
 }

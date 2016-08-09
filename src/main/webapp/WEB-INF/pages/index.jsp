@@ -60,6 +60,8 @@
 							</a>
 						</div>
 					</div>
+					
+					<!-- end home hab -->
 				</div>
 			</div>
 		</section>
