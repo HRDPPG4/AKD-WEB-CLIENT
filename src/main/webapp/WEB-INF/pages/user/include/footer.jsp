@@ -7,15 +7,16 @@
    <div class="footer">
 		<div class="container">	
 			<div class="col-sm-4 footer-height#">
-				<h3>About Us</h3>
+				<h3>អំពីពួកយើង</h3>
 				<ul class="list">
 					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
 				</ul>
 			</div>
 			<div class="col-sm-4 footer-height​# col-sm-offset-1#">
-				<h3>Our Services</h3>
+				<h3>សេវាកម្មរបស់យើង</h3>
 				<ul class="list">
-					<div>Khmer Academy Mobile Application is the first mobile app of e-learning video platform of Khmer Academy website to offer lessons of several skills in Cambodia.</div>
+					<div>All Khmer Docs បានផ្តល់នូវសេវាកម្មយ៉ាងល្ក្នុងការចែកចាយឯកសារនានាទៅដល់សិស្សានុសិស្ស...... អត់ច្បាស់ថានិយាយយ៉ាងម៉េច។
+					</div>
 				</ul>
 			</div>
 			<div class="col-sm-4 footer-height# col-sm-offset-1##">
