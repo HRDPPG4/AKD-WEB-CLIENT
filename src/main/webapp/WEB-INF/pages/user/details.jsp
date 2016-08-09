@@ -31,37 +31,40 @@
 										 <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  
 
 									</div>
-									<div>
-											<button class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive">ថែមប៊ូតុង Share , Savelist,... ទីនេះ</button>
-									</div>
+									
 									<div class="detail-slide">
-									     <div class="Slide-Owner">
-											<div id="title">វិធីសាស្ត្រក្នុងការពន្យារកំណើត</div>
-
+									     <div class="Slide-Owner">											
+											<div id="title"><p>វិធីដាំដំណាំស្រូវអោយទទួលបានផលច្រើន</p></div>
 											<div id="owner">
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
 												ហ៊ុំ ជីវ័ន
 											</div>
-
-											<div id="read">ចំនួនអ្នកអានៈ100</div>
-
-											
-											<div id="share">ចំនួនអ្នកចែកចាយៈ80</div>
-											<div id="publish">Publish on Aug 13 2016</div>
-											<div id="category">Category: Technology</div>
-
-
-											<div id="description">Description: 
-												<div>
-													ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
-												</div>
+											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  100</span></div>
+											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  88</span></div>
+											<div id="line">
+												<hr>
 											</div>
-												
+											<div id="btn">
+												<button class="btn btn-primary"><span><i class="fa fa-plus" aria-hidden="true"></i>Add To SaveList</span></button>
+												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
+											</div>
 											
-										 </div>
+										 </div>										
 									</div>
+
+									 <div class="slide-detail-more">
+									 	<div id="publish">Publish on Aug 13 2016</div>
+										<div id="category">Category: Technology</div>
+										<hr>
+										<div id="description">Description: 
+											<div>
+												ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
+											</div>
+										</div>
+									</div>
+									
 
 									<div class="commend-visitor">
 											<jsp:include page="include/comment.jsp"></jsp:include>
