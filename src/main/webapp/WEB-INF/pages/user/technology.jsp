@@ -14,7 +14,38 @@
 				
 				
 				
-				
+					<div class="row">
+						<div class="well col-sm-3 col-xs-12">
+							<div>
+								
+							</div>
+						</div>
+
+						<div class="well col-sm-9 col-xs-12">
+							
+							<!-- <div class="col-sm-4 col-xs-6 well">
+								 <div class="body-cates" ng-app="indexApp" ng-controller="indexCtrl">
+					     		<div class="row" id="min-width-sm">
+					     		
+					     			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" 
+								ng-repeat="slide in slides">
+									
+									<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+										<span class="img">
+										<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+										
+									
+										</span>
+										
+										
+									</a>
+								</div>
+								</div>
+						
+					     		</div> 
+							</div> 
+						</div>
+					</div>				
 				
 				
 				
@@ -55,7 +86,7 @@
 
 
 			     		
-			     		<%-- <div class="body-cates" ng-app="indexApp" ng-controller="indexCtrl">
+			     		<!--  <div class="body-cates" ng-app="indexApp" ng-controller="indexCtrl">
 			     		<div class="row" id="min-width-sm">
 			     		
 			     			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" 
@@ -65,9 +96,7 @@
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
 								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> 
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
 								<span class="user-name">ជឹម មិនា</span>
@@ -86,17 +115,9 @@
 								</span>
 							</a>
 						</div>
-			     		
-			     		
-			     		
-						
-						
-						
 						</div>
-						
-						
-						<!-- row -->
-			     		</div> --%>
+						/*---Row-*/
+			     		</div>  -->
 			    
 					
 					
