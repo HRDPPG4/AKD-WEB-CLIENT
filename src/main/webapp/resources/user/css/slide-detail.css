@@ -5,10 +5,14 @@
 .slide-container  iframe
 {
 	width:100%;
-	height:100%;
-	
+	height:100%;	
 }
 
+.slide-container  img
+{
+	width:100%;
+	height:100%;	
+}
 
 #Slide-Detail .modal.in .modal-dialog
 {
@@ -40,19 +44,10 @@
 	height:90%;
 	border:0px;
 }
-
-.drive-viewer-v3 .drive-viewer-toolstrip-rgt-panel
+#Slide-Detail .show-slides-cates
 {
-	dispplay:none;
-	top: auto;
-    right: 0px;
+	clear:both;
 }
-.drive-viewer-v3.drive-viewer-embed .drive-viewer-toolstrip-inner {
-	  height: 40px; 
-    padding: 0px;
-    margin: 0px;
-    display: none; 
-
-	}
+	
    
 

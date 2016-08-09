@@ -340,7 +340,7 @@
 				  <span​ class="col-xs-12 col-lg-12" id="left-title">
 				  <span><i class="fa fa-book" aria-hidden="true">
 				   </i></span>
-				  អក្សរសាស្រ្ត
+				  អក្សរសាស្ត្រ
 				  </span>
 				  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
 				  </span>	

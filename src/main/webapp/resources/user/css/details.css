@@ -12,7 +12,7 @@
  ​ text-align: center;
 }
 .slide-container{
-  height: 400px;
+  height: 78%;
   font-size: 16px;
   text-align: center;
   border-bottom:1px solid #fff;
@@ -21,10 +21,13 @@
 }
 .detail-slide{
   font-size: 16px;
-  text-align: center;
+  text-align: left;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  background-color:  #3B5998;
+ * background-color:  #3B5998;
+  color: #333;
+  background-color: white;
+  padding: 10px;
 }
 .commend-visitor{
 	font-size: 16px;
@@ -47,8 +50,8 @@ color:white;
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  padding: 10px 5px 10px 10px;
-  background-color:  #3B5998;
+ * padding: 10px 5px 10px 10px;
+ * background-color:  #3B5998;
 }
 /*////////////*/
 .watch-titles{
@@ -67,4 +70,47 @@ color:white;
   text-align: center;
   text-decoration: none;
   color: #333;
+  background-color: white; 
 }
+#read,#share,#description,#owner,#publish,#category
+{
+    padding: 5px;
+    font-family: Khmer OS Battambang;
+}
+.Slide-Owner #owner img
+{
+    max-width: 45px;
+    border-radius: 50%;
+    *padding:5px;
+   * margin:5px;
+}
+
+
+.detail-slide .Slide-Owner #title
+{
+  text-align: center;
+}
+.detail-slide .Slide-Owner #description
+{
+  margin-top: 10px;
+}
+
+.show-slide-view #related-slide
+{
+  background-color: white;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  margin-top: 25px;
+}
+.related-slide .col-sm-12
+{
+  background-color: white !important;
+}
+
+.related-slide .related-container h4
+{
+  font-size: 20px;
+  text-align: center;
+}
+
