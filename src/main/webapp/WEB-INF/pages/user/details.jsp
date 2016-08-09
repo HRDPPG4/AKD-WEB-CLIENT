@@ -1,3 +1,4 @@
+<title>ចំណងជើង  slides| AKD</title>
 <jsp:include page="include/header.jsp"></jsp:include>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>

@@ -5,7 +5,7 @@ html,body {
     height: 100%;
   font-weight: 300;
     color: #666;
-   font-family:"NiDA Bayon";
+   font-family:"Khmer OS Battambang",Times New Roman;
     background-color:#E9EBEE;
 }
 
@@ -122,7 +122,7 @@ position: relative;
 /*main-menu*/
 /* Remove margins and padding from the list, and add a black background color */
  ul.menu-basic{
- 	font-family:"NiDA Bayon";
+ 	font-family:"Khmer OS Battambang",Times New Roman;
  	text-transform: uppercase;
  	list-style-type: none;
  	margin: 0;

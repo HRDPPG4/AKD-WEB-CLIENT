@@ -1,3 +1,4 @@
+<title>បច្ចេកវិទ្យា | AKD</title>
 <jsp:include page="include/header.jsp"></jsp:include>
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -12,45 +13,54 @@
 				<div class="row-nav-left-content">
 				
 				
-				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
 						<div class="well col-sm-3 col-xs-12">
 							<div class="left-side-nav">
 				     			<ul class="main-category">
 				     			    <li class="bg-cates">
-					     			     <span><i class="fa fa-tags" aria-hidden="true"></i>
-			  	   						 </span>ប្រភេទ
-		  	   						</li>
-		  	   						<li>
-			  	   						<span><i class="fa fa-flask"></i>
-			  	   						</span>បច្ចេកវិទ្យា
-
-			  	   						 <ul class="sub-menus-cates">
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      </ul>
+				     			    <span><i class="fa fa-flask"></i>
+			  	   						</span>
+					     			  បច្ចេកវិទ្យា
 		  	   						</li>
 
 		  	   						<li>
-			  	   						<span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-			  	   						</span>ចំណេះដឹងទូទៅ
+			  	   						<a>Design</a>
+			  	   						<ul class="sub-menus-cates">
+			  	   						   <li><a>Photoshop</a></li>
+			  	   						   <li><a>Illustrator</a></li>
+			  	   						</ul>
 		  	   						</li>
 		  	   						<li>
-			  	   						<span><i class="fa fa-book" aria-hidden="true"></i></span>
-			  	   						អក្សរសាស្រត្ត
+			  	   						<a>Network</a>
 		  	   						</li>
-								   <li>
-									   <span><i class="fa fa-cubes" aria-hidden="true"></i>
-									   </span>អក្សរសាស្រត្ត
-								   </li>
+		  	   						<li>
+			  	   						<a>Mobile</a>
+		  	   						</li>
+		  	   						<li>
+			  	   						<a>Programming</a>
+			  	   						<ul class="sub-menus-cates">
+			  	   						   <li><a>Java</a></li>
+			  	   						   <li><a>C++</a></li>
+			  	   						   <li><a>VB.NET</a></li>
+			  	   						   <li><a>PHP</a></li>
+			  	   						</ul>
+		  	   						</li>
+		  	   						<li>
+			  	   						<a>Web</a>
+			  	   						<ul class="sub-menus-cates">
+			  	   						   <li><a>HTML</a></li>
+			  	   						   <li><a>CSS</a></li>
+			  	   						   <li><a>Javascript</a></li>
+			  	   						   <li><a>Bootstrap</a></li>
+			  	   						</ul>
+		  	   						</li>
+		  	   						
 				     			</ul>
 				     		</div>
 						</div>
 
 						<div class="well col-sm-9 col-xs-12">
-							<div ng-repeat="slide in slides" class="col-lg-3 col-sm-4 col-xs-6">
+							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
