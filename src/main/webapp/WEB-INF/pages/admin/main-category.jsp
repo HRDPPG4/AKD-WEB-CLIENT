@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Feedback</title>
+<title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
 
 </head>
@@ -78,7 +78,7 @@
 			<ol class="breadcrumb">
 				<li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
 				<li><a href="#">Categories</a></li>
-				<li class="active">Sub Categories</li>
+				<li class="active">Main Categories</li>
 			</ol>
 			</section>
 
