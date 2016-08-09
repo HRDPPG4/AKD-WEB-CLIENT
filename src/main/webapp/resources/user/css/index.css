@@ -93,7 +93,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   color: gray;
    font-size:14px;
   text-decoration: none;
-   background-color:red;
+  * background-color:red;
   padding: 5px 10px 5px 7px;
 }
 ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{

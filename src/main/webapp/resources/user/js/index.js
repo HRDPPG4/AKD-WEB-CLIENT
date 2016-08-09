@@ -4,7 +4,7 @@ app.controller('indexCtrl', function($scope,$sce) {
     $scope.newURL="NewURL";
     
     $scope.slides = [
-                     {"id":1, "url":'https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21434&authkey=AABcOreYLL7cv-I&em=2&wdAr=1.7777777777777777'},
+                     {"id":1, "url":'https://docs.google.com/presentation/d/1xmbyX56yEEEkfE-SEKR5rLbqrsntFMqlUyrEoXKG050/embed?start=false&loop=false&delayms=3000'},
                      {"id":2, "url":'https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21442&authkey=ALAtWEYG0XCIT68&em=2'},
                      {"id":3, "url":'https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21444&authkey=ACpBXF0xrONbjR4&em=2'},
                      {"id":4, "url":'https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21446&authkey=APjt6YdY7rP5ZFw&em=2'}

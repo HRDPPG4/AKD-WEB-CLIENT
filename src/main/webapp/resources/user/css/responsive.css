@@ -310,7 +310,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   @media screen and (max-width: 534px) {
     .left-side-nav{
       left:0%;
-      z-index: 300;
+     /*  z-index: 300; */
     }
     .body-cates{
    left: 0% !important;
@@ -361,7 +361,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
    @media screen and (max-width: 375px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+     /*  z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -378,7 +378,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   @media screen and (max-width: 360px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+      /* z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -396,7 +396,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   @media screen and (max-width: 320px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+     /*  z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
