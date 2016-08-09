@@ -55,8 +55,6 @@
 										 </div>
 									</div>
 
-							
-									
 									<div class="commend-visitor">
 											<jsp:include page="include/comment.jsp"></jsp:include>
 									</div>
@@ -65,78 +63,25 @@
 							</div>
 						</div> 
 
-
-
-
 	
-							 <div class="show-slides-cates">
-								<div class="col-md-3  content-cates">
-								<div class="row col-lg-12" >
-									<div class="cates-container">
-										<div class="row">
-											<!-- <div class="col-sm-6" ng-repeat="slide in slides">
-												<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
-													<span class="img " >
-													<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-													</span>
-												</a>
-											</div> -->
-
-
-
-									<!-- <div class="detail-slide">
-									     <div class="Slide-Owner">
-											<div id="title">វិធីសាស្ត្រក្នុងការពន្យារកំណើត</div>
-									
-											<div id="owner">
-											<span id="img-user">
-												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
-											</span>
-												ហ៊ុំ ជីវ័ន
-											</div>
-									
-											<div id="read">ចំនួនអ្នកអានៈ100</div>
-									
-											
-											<div id="share">ចំនួនអ្នកចែកចាយៈ80</div>
-											<div id="publish">Publish on Aug 13 2016</div>
-											<div id="category">Category: Technology</div>
-									
-									
-											<div id="description">Description: 
+							 <div class="related-slide">
+								<div class="col-md-3">
+									<div class="row col-sm-12" >
+										<div class="related-container">
+											<div class="row#">
 												<div>
-													ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
+													<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
+													 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">
+													 		<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+													 			<span class="img " >
+													 			<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+													 			</span>
+													 		</a>
+													 </div> 
 												</div>
-											</div>
-												
-											
-											
-										 </div>
+											</div>	
+										</div>
 									</div>
-									
-																
-									
-									<div class="commend-visitor">
-											<jsp:include page="include/comment.jsp"></jsp:include>
-									</div> -->
-
-
-
-									<div id="related-slide">
-										<h3>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h3>
-										 <div class="col-sm-4" ng-repeat="slide in slides">
-										 		<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
-										 			<span class="img " >
-										 			<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-										 			</span>
-										 		</a>
-										 </div> 
-									</div>
-
-
-										</div>	
-									</div>
-								</div>
 								</div>
 							</div> 
 

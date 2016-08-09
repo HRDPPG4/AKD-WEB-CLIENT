@@ -103,3 +103,14 @@ color:white;
   text-align: center;
   margin-top: 25px;
 }
+.related-slide .col-sm-12
+{
+  background-color: white !important;
+}
+
+.related-slide .related-container h4
+{
+  font-size: 20px;
+  text-align: center;
+}
+
