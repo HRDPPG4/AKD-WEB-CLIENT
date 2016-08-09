@@ -40,7 +40,7 @@
       </div>
       <div class="modal-footer">
         <!-- <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button> -->
-        <p>មិនទាន់ជាសមាជិក? <a href="#">ចុះឈ្មោះ</a></p>
+        <p>មិនទាន់ជាសមាជិក? <a href="#" data-toggle="modal" data-target="#register" data-dismiss="modal">ចុះឈ្មោះ</a></p>
         <p> <a href="#">ភ្លេចពាក្យសំងាត់?</a></p>
       </div>
     </div>
