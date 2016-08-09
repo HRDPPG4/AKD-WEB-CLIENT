@@ -1,9 +1,11 @@
 
-$(document).ready(function(){
-	
-});
 
-///////////////////////////////////////
+$(document).ready(function(){
+	$('.main-category').click(function(){
+		$('.sub-menus-cates').slideToggle('slow');
+	});
+});
+// /////////
 $(document).ready(function(){
 	var menu ='close';
 	$('#myTopnav').click(function(){
@@ -21,12 +23,14 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
+alert('hello');
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
        // alert('hi');
 		$(this).addClass('current');
 		$("#"+ tab_id).addClass('current');
 
+		alert('he');
 	});
 
 });
