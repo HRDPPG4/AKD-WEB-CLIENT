@@ -15,25 +15,13 @@
 						 <div class="show-slide-view">
 							<div class="col-md-9 content-slide-view">
 								<div class="row col-md-12">
-<<<<<<< HEAD
-									<div class="slide-container">
 															
-			<iframe src="https://docs.google.com/presentation/d/1lesKumHAhMT_DXZlGbXpiVCrVYIAL-0MvFySFwRVbiI/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-												<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKYTZwUWdqUU1aNFE/preview"></iframe>  -->
-									 
-									<%--  <iframe src="${url}" id="pptx"></iframe>  --%>
-										<!-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
-											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
-										</a>  -->											
-																										
-									</div>
-=======
+
 									<div class="slide-container">	
 									<%--  <iframe src="${url}" id="pptx"></iframe>  --%>
 										<!-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
 											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
 										</a>  -->	
->>>>>>> 0688100893f3025cdc9514d7a46c9e55f1f870b4
 
 										<iframe src="https://docs.google.com/presentation/d/1xmbyX56yEEEkfE-SEKR5rLbqrsntFMqlUyrEoXKG050/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>						
 									</div>
