@@ -27,7 +27,7 @@
 
 											<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
 
-										<!-- <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  -->
+										 <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  
 
 									</div>
 									<div>
@@ -75,25 +75,20 @@
 								<div class="col-md-3">
 									<div class="row col-sm-12" >
 										<div class="related-container">
-											<div class="row#">
-												<div>
-													<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
-													 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">  
-													 		 
+											<div class="row">												
+												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
+												<hr>
+												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides" >  									 		 
+												 		<div class="col-md-6">												 			
+															<a href="/detail?url={{escapeUrl(slide.url)}}" >
+													 		<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+													 		</a>
+												 		</div>
+												 		<div class="col-md-6">
+												 			ដំណាំស្រូវជាដំណាំដ៏សំខាន់សម្រាប់ទ្រទ្រង់ជីវភាព...
+												 		</div>	
 
-													 		<div class="col-md-6">
-													 			<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
-														 			<span class="img " >
-														 			<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-														 			</span>
-														 		</a>
-													 		</div>
-													 		<div class="col-md-6">
-													 			This is slide description
-													 		</div>
-													 		
-													 </div> 
-												</div>
+												 </div> 												
 											</div>	
 										</div>
 									</div>
