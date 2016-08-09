@@ -24,14 +24,14 @@ public class UserController {
 		return "user/technology";
 	}
 	
-	@RequestMapping(value="/userview",method=RequestMethod.GET)
+	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
 		return "user/user_view";
 	}
 	
-	@RequestMapping(value="/user_upload",method=RequestMethod.GET)
-	public String user_person(){
-		return "user/user_personal/user_upload";
+	@RequestMapping(value="/user_view_history",method=RequestMethod.GET)
+	public String user_view_history(){
+		return "user/user_view_history";
 	}
 	@RequestMapping(value="/user_information",method=RequestMethod.GET)
 	public String user_information(){
