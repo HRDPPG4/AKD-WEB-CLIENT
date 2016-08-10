@@ -25,23 +25,23 @@
       <div class="modal-body" style="padding:40px 50px;">
         <form role="form">
           <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+            <input type="text" class="form-control" id="usrname" placeholder="សូមបញ្ចូល Username ឫ Email">
           </div>
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-            <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            <input type="text" class="form-control" id="psw" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
           </div>
           <div class="checkbox">
-            <label><input type="checkbox" value="" checked>Remember me</label>
+            <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
           </div>
             <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-        <p>Not a member? <a href="#">Sign Up</a></p>
-        <p>Forgot <a href="#">Password?</a></p>
+        <!-- <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button> -->
+        <p>មិនទាន់ជាសមាជិក? <a href="#" data-toggle="modal" data-target="#register" data-dismiss="modal">ចុះឈ្មោះ</a></p>
+        <p> <a href="#">ភ្លេចពាក្យសំងាត់?</a></p>
       </div>
     </div>
     

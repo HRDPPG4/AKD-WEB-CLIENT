@@ -1,5 +1,5 @@
 .modal-header, .close {
-      background-color: #5cb85c;
+      background-color: #003666;
       color:white !important;
       text-align: center;
     *  font-size: 30px;
@@ -65,6 +65,10 @@ img.avatar {
 .main-menu #myTopnav navbar-logo img
 {
 	display:none;
+}
+.btn-block
+{
+  max-width: 20%;
 }
 
 
