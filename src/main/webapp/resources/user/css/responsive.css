@@ -369,26 +369,61 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 }
 
   @media screen and (max-width:810px){
-.navbar > .container .form-contain ,
+ .navbar > .container .form-contain ,
 .form-group .form-search{
-  display: none;
+  position: relative;
+   /*padding: 10px 15px;*/
+   border-style: none;
+  margin-top: 4px;
+  margin-right: -15px;
+  margin-bottom:20px;
+  margin-left: 1px;
   }
  .navbar > .container .form-search{
  display: none;
   }
   .navbar > .container button[type="submit"]{
-    display: none;
+   display: none;
+  }
+  i.fa-search{
+    font-size: 18px;
   }
   
+  .navbar > .container button[type="submit"]:hover{
+    position: absolute;
+    color: #000;
+    background: transparent;
+  }
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
 
 .upload-signup-signin{
+  position: relative;
+  float: right;
+  right: 210px;
+  top: -40px;
+  padding: 0px;
+ 
+  margin-bottom:-30px;
+  display: inline-block;
+  list-style-type:none;
+}
+.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+  position: relative;
+  text-decoration: none;
   display: none;
 }
 ul li#upload  > a,li#signin  > a ,li#signup > a{
- display: none;
+  color: gray;
+  text-decoration: none;
+  padding: 5px 10px 5px 7px;
+}
+ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
+  color:#eee;
+
+  background-color:#3B5998;
+  text-decoration: none;
 }
 
 }
@@ -474,6 +509,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     .container{
       width: 100%;
     }
+    
   }
 /*Galasy S5*/
   @media screen and (max-width: 360px) {
@@ -496,10 +532,10 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 /*IPhone 5*/
   @media screen and (max-width: 320px) {
 .left-side-nav{
-  width: 300px;
+  width: 250px;
   margin-right: 10px;
   position: relative;
-  left:9%;
+  left:1%;
 }
 
     .body-cates{
@@ -509,6 +545,9 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     .container{
       width: 100%;
     }
+    
+   
+    
   }
 
   @media screen and (max-width: 310px) {

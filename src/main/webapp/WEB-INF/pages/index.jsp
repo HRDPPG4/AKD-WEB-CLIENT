@@ -16,7 +16,7 @@
 						  <span><i class="fa fa-flask"></i></span>
 						  បច្ចេកវិទ្យា
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/technology">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -202,7 +202,7 @@
 				   </span>
 						 ចំណេះដឹងទូទៅ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/general-knowledge">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -390,7 +390,7 @@
 				   </span>
 						អក្សរសាស្ត្រ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/literal">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -577,7 +577,7 @@
 				   </span>
 						 ចំណេះដឹងទូទៅ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/business">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->

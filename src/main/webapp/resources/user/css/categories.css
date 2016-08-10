@@ -14,19 +14,21 @@
  float:left;
   position: relative;
   left:9%;
+  border:3px solid #fff;
 }
 
 /*change class when scroll down*/
 ul.main-category{
-	font-family:"Khmer OS Battambang",Times New Roman;
+	font-family:"Times New Roman",Khmer OS Battambang;
   padding:0px;
+  font-size:16px;
+  font-weight:400;
   background-color:#fff;
   list-style-type: none;
-  
+ 
 }
 
 ul.main-category li{
-	
 border-bottom: 1px dashed #003666  !important;
 }
 ul.main-category li.bg-cates {

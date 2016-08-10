@@ -7,8 +7,10 @@
 <content>
 <div id="page-content-wrapper">
 	<div class="container" id="container-cate">
-	<div class="row section nav-left topspace-cates">
-	<p>ទំព័រនេះកំពុងតែធ្វើ</p>
+	<div class="row section nav-left topspace-cates" style="height:200px;">
+	<div style="padding-top:20px;padding-bottom:20px; background:white;">
+	<p style="font-size:30px;text-align: center;color:red;">សូមអភ័យទោស ទំព័រនេះកំពុងតែធ្វើ</p>
+	</div>
 	</div>
 </div>
 </div>
