@@ -26,7 +26,7 @@
         <form role="form">
           <div class="form-group">
             <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-            <input type="text" class="form-control" id="usrname" placeholder="សូមបញ្ចូល Username ឫ Email">
+            <input type="text" class="form-control" id="usrname" placeholder="សូមបញ្ចូល Email">
           </div>
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>

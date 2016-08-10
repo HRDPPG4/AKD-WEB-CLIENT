@@ -82,7 +82,7 @@
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides" >  									 		 
+												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">  									 		 
 												 		<div class="col-md-6">												 			
 															<a href="/detail?url={{escapeUrl(slide.url)}}" >
 													 		<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
@@ -91,6 +91,7 @@
 												 		<div class="col-md-6">
 												 			ដំណាំស្រូវជាដំណាំដ៏សំខាន់សម្រាប់ទ្រទ្រង់ជីវភាព...
 												 		</div>	
+												 		
 
 												 </div> 												
 											</div>	
