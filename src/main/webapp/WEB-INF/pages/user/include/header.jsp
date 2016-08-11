@@ -39,6 +39,8 @@
 
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
+            <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"></a>
+            </li>
         </ul>
      </div>
 </nav>
@@ -53,28 +55,28 @@
 			   </span>
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			  <li><a class="menu-a" actives"#" href="/">
+			  <li><a class="menu actives-main" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
-			  <li><a href="/technology">
+			  <li><a class="menu" href="/technology">
 			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
 			  </li>
-			  <li><a  href="/general-knowledge">
+			  <li><a class="menu" href="/general-knowledge">
 				   <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
 				   </span>ចំណេះដឹងទូទៅ</a>
 			  </li>
-			  <li><a  href="/literal">
+			  <li><a class="menu" href="/literal">
 				   <span><i class="fa fa-book" aria-hidden="true">
 				   </i>
 				   </span>អក្សរសាស្ត្រ</a>
 			  </li>
 			  
-			  <li><a  href="/business">
+			  <li><a class="menu" href="/business">
 				   <span><i class="fa fa-cubes" aria-hidden="true"></i>
 				   </span>មុខជំនួញ</a>
 			  </li>
-			  <li><a href="/other">
+			  <li><a class="menu" href="/other">
 			  	   <span><i class="fa fa-tags" aria-hidden="true"></i>
 			  	   </span>ផ្សេងៗ</a>
 			  </li>

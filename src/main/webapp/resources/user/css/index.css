@@ -78,7 +78,7 @@ html,body {
 .upload-signup-signin{
   position: relative;
   float: right;
-  right: 140px;
+  right: 70px;
   top: -33px;
   padding: 0px;
   margin-bottom:-30px;
@@ -103,12 +103,26 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   background-color:#003666;
   text-decoration: none;
 }
+
+
+li#avatar-user{
+	clear:left;
+	float:right;
+	list-style-type:none;
+}
+#avatar-user a img{
+	position:relative;
+	top:-7px;
+	width:46px;
+	list-style-type: none;
+}
 /*////////////////////////////////////////////////////////////*/
 .main-menu-contain{
   height:30px;
 }
 .navbar-main-menu{
-position: relative;
+    position: fixed;
+    width: 100%;
   z-index: 300;
   background-color: #003666;
   border-width: 1px 0;
@@ -149,7 +163,7 @@ position: relative;
   list-style:none;
   float:left;
   }
-ul.menu-basic li a{
+ul.menu-basic li > a{
   display: inline-block;
     color: #fff;
     position: relative;
@@ -161,18 +175,25 @@ ul.menu-basic li a{
     font-size: 18px;
 }
 
-ul.menu-basic li a:hover{
+.actives-main{
+    background-color: #fff !important;
+    text-align: center;
+    color: #000 !important;
+    text-decoration: none;
+}
+
+ul.menu-basic li > a:hover{
   display: inline-block;
     color: #000;
     position: relative;
     top: 5.5px;
     text-align: center;
     padding: 10px 16px;
-    background-color: #fff;
+    background-color: #fff !important;
     text-decoration: none;
-    /*transition: 0.3s;*/
-    font-size: 18px;
+      font-size: 18px;
 }
+
 
 
  
@@ -431,7 +452,7 @@ a .fa-thumbs-up:hover{
 }
 i.fa-bars{
   position: relative;
-  top: 10px;
+ margin-top:15px;
   font-size: 25px;
   color: white;
 }

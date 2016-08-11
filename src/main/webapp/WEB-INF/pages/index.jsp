@@ -1,9 +1,9 @@
 <title>ទំព័រដើម | AKD</title>
 <jsp:include page="user/include/header.jsp"></jsp:include>
 
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!-- //////////////////////////////////////////////////////// -->
 <div ng-app="DocumentApp" ng-controller="DocumentCtrl">
 
 <content>

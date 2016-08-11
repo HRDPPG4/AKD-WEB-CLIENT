@@ -115,6 +115,10 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   ul.menu-basic li:not(:first-child) {
     display: none;
   }
+  ul.menu-basic li:first-child {
+    display: none;
+  }
+  
   ul.menu-basic li.active a{
   border-bottom: 1px dashed #3B5998;
 }
@@ -146,7 +150,10 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     display: block;
     text-align: left;
   }
-
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
 .navbar > .container .form-contain ,
 .form-group .form-search{
   position: relative;
@@ -293,20 +300,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   }
 }
 @media screen and (max-width: 766px){
-/* .left-side-nav{
-     left:0%;
-      z-index: 300;
-    }
-    .body-cates{
-   left: 5% !important;
-    } 
-    #min-width-sm{
-      padding: auto;
-      width: 700px;
-    }
-    .container{
-      width: 100%;
-    } */
+
   }
 
   @media screen and (max-width:886px){
@@ -465,12 +459,6 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
     /*   z-index: 300; */
     }
     .body-cates{
-      /*width: 300px;*/
-   left:4% !important;
-    } 
-    #min-width-sm{
-      width: 410px;
-    }
     .container{
       width: 100%;
     }
@@ -486,9 +474,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
       /*width: 300px;*/
    left:4% !important;
     } 
-    #min-width-sm{
-      width: 405px;
-    }
+    
     .container{
       width: 100%;
     }
@@ -546,7 +532,15 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
       width: 100%;
     }
     
-   
+   .logo-main-menu{
+	position:absolute;
+	display: none !important;
+	
+}
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
     
   }
 
@@ -558,11 +552,35 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
       width: 300px;
    left: 0% !important;
     } 
-    #min-width-sm{
-      width: 270px;
-    }
+    
     .container{
       width: 100%;
     }
+    
+    ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+ .logo-main-menu{
+	position:absolute;
+	display: none !important;
+	
+}
+
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
   }
 
