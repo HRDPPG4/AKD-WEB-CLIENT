@@ -1,10 +1,9 @@
 
 
 $(document).ready(function(){
-	$('#navlist a').click(function(e) {
-	    e.preventDefault(); //prevent the link from being followed
-	    $('#navlist a').removeClass('selected');
-	    $(this).addClass('selected');
+	$('a.menu').click(function() {
+	    $('a.menu').removeClass("actives-main");
+	    $(this).addClass("actives-main");
 	});
 });
 
