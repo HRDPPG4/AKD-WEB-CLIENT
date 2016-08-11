@@ -30,10 +30,12 @@ img.avatar {
 {
 	float:right;
 	margin:0px 3px;
+	
 	font-size:10px;
 	*font-family:Khmer OS Niroth;
 	*font-family:NiDA Preahvihear;
 }
+
 #searchBox,.navbar-logo
 {
 	float:left;
@@ -70,6 +72,6 @@ img.avatar {
 {
   max-width: 20%;
 }
-
+#avatar
 
 

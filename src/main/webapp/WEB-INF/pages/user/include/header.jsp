@@ -39,6 +39,8 @@
 
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
+            <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"></a>
+            </li>
         </ul>
      </div>
 </nav>
@@ -53,7 +55,7 @@
 			   </span>
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			  <li><a class="menu-a" actives"#" href="/">
+			  <li><a  href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>

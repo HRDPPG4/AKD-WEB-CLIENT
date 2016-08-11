@@ -78,7 +78,7 @@ html,body {
 .upload-signup-signin{
   position: relative;
   float: right;
-  right: 140px;
+  right: 70px;
   top: -33px;
   padding: 0px;
   margin-bottom:-30px;
@@ -103,12 +103,26 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   background-color:#003666;
   text-decoration: none;
 }
+
+
+li#avatar-user{
+	clear:left;
+	float:right;
+	list-style-type:none;
+}
+#avatar-user a img{
+	position:relative;
+	top:-7px;
+	width:46px;
+	list-style-type: none;
+}
 /*////////////////////////////////////////////////////////////*/
 .main-menu-contain{
   height:30px;
 }
 .navbar-main-menu{
-position: relative;
+    position: fixed;
+    width: 100%;
   z-index: 300;
   background-color: #003666;
   border-width: 1px 0;
@@ -431,7 +445,7 @@ a .fa-thumbs-up:hover{
 }
 i.fa-bars{
   position: relative;
-  top: 10px;
+ margin-top:15px;
   font-size: 25px;
   color: white;
 }
