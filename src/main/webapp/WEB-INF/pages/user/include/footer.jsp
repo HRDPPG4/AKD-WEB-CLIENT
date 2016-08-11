@@ -67,5 +67,10 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
 	
+	<!-- library jquery for file upload -->
+	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
+	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
+	<!-- Online Link -->
 </body>
 </html>
