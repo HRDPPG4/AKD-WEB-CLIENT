@@ -31,13 +31,13 @@ app.controller('UploadFileCtrl', function($scope, $http) {
 
 });
 
-app.controller('test', function($scope){
+/*app.controller('test', function($scope){
 	alert()
 });
 
 app.controller('test1', function($scope){
 	
-});
+});*/
 
 /*
 

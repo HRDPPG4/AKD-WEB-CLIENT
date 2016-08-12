@@ -4,6 +4,9 @@
 	 <!-- The Problem is How to Change title when we click to another page. So cannot use this title as Static Page. -->
 	<!-- Now I can fix it by javascript. but I'm not sure that is good or not. Because it related to search engine. Maybe google can't search our website. because title very important for search engine -->
 <jsp:include page="link-header.jsp"></jsp:include>
+<script>
+	PATH_UI = "http://192.168.178.202:2222";
+</script>
 </head>
 <body ng-app="UploadFileApp" ng-controller="UploadFileCtrl">
 <jsp:include page="register.jsp"></jsp:include>
