@@ -14,14 +14,7 @@
     <div class="imgcontainer">						     
     
     </div>
-    
-    <div ng-controller="test">
-    </div>
-    
-    <div ng-controller="test1">
-    </div>
-			          
-        
+                  
       </div>
       <div class="modal-body" style="padding:40px 50px;">
    		<form ng-submit ="uploadFile($event)" method="post" enctype="multipart/form-data">     			

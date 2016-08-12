@@ -1,4 +1,4 @@
-
+/*
 var app = angular.module('DocumentApp', []);
 app.controller('DocumentCtrl', function($scope, $http, $sce){
 
@@ -110,3 +110,4 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 });
 
 
+*/
