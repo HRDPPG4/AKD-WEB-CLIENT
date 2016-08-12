@@ -18,10 +18,8 @@
       </div>
       <div class="modal-body" style="padding:40px 50px;">
    		<form ng-submit ="uploadFile($event)" method="post" enctype="multipart/form-data">     			
-	 		<input type="file" name="file" id="filer_input" multiple="multiple">	<!-- id="filer_input"   -->
-		  <button type="submit" class="btn btn-primary"​ alignt="center">រក្សាទុក</button>
-			<!-- <input type="button" value="Upload" ng-click="uploadFile($event)"> -->
-     					
+	 		<input type="file" name="file" id="filer_input" multiple="multiple">
+		  <button type="submit" class="btn btn-primary"​ alignt="center"​​ id="btnSave">រក្សាទុក</button>   					
 		</form>        
       </div>
       <div class="modal-footer">

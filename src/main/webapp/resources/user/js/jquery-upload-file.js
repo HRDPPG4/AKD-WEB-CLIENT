@@ -1,9 +1,21 @@
 $(document).ready(function() {
+	
+	
+	
+	
 	$('#filer_input').on('change',function ()
     {
-      /*  alert("Hello");*/
+		var ext = $('#filer_input').val().split('.').pop().toLowerCase();
+		if($.inArray(ext, ['pdf','pptx','ppt']) == -1) {
+		    alert('សូមអភ័យទោស! លោកអ្នកអាចធ្វើការចែកចាយឯកសារបានតែប្រភេទ  PDF, Word និង PowerPoint តែប៉ុណ្ណោះ!');	    
+		    $('#btnSave').prop('disabled', true);	    
+		}
+		else{
+			$('#btnSave').prop('disabled', false);
+		}
     }); 
 	
+
 	$('#filer_input').filer({
 	    changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-folder"></i></div><div class="jFiler-input-text"><h3>Click on this box</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
 	    showThumbs: true,
@@ -88,5 +100,9 @@ $(document).ready(function() {
 	            remove: '.jFiler-item-trash-action'
 	        }
 	    }
-	});     
+	});
+	  
+	
+	
+	
 });
