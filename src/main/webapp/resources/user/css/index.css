@@ -174,17 +174,6 @@ ul.menu-basic li > a{
     /*transition: 0.3s;*/
     font-size: 18px;
 }
-ul.menu-basic li > a{
-  display: inline-block;
-    color: #fff;
-    position: relative;
-    top: 5.5px;
-    text-align: center;
-    padding: 10px 16px;
-    text-decoration: none;
-    /*transition: 0.3s;*/
-    font-size: 18px;
-}
 
 .actives-main{
     background-color: #fff !important;

@@ -28,8 +28,9 @@
 
 											<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
 
-										 <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>  
-
+										 <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+										 
+									
 									</div>
 									
 									<div class="detail-slide">
@@ -85,9 +86,20 @@
 												<hr>
 												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">  									 		 
 												 		<div class="col-md-6">												 			
-															<a href="/detail?url={{escapeUrl(slide.url)}}" >
+															<!-- <a href="/detail?url={{escapeUrl(slide.url)}}" >
 													 		<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
+													 		</a> -->
+
+
+
+
+													 		<a href="/detail?url={{escapeUrl(slide.url)}}" >
+													 		<img src="https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1j3tJPgadg7nuS3XPHmrEiMdN3kXYSbG2a80r8Y7Rb-s" alt="">
 													 		</a>
+
+
+
+
 												 		</div>
 												 		<div class="col-md-6">
 												 			ដំណាំស្រូវជាដំណាំដ៏សំខាន់សម្រាប់ទ្រទ្រង់ជីវភាព...
