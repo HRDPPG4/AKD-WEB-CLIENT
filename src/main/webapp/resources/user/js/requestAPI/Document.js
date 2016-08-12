@@ -1,10 +1,11 @@
 
 var app = angular.module('DocumentApp', []);
-app.controller('DocumentCtrl', function($scope, $http,$sce){
+app.controller('DocumentCtrl', function($scope, $http, $sce){
+
 	$scope.display = function(){
 		$http({
-			url:'http://192.168.178.202:1111/api/v1/document',
-			method:'GET'			
+			url:'http://localhost:1111/api/v1/document',
+			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
 			console.log($scope.document);

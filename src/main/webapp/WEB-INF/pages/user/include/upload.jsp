@@ -4,7 +4,6 @@
 
 <div class="modal fade" id="upload" role="dialog">
   <div class="modal-dialog">
-  
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header"  >
@@ -15,18 +14,22 @@
     <div class="imgcontainer">						     
     
     </div>
+    
+    <div ng-controller="test">
+    </div>
+    
+    <div ng-controller="test1">
+    </div>
 			          
         
       </div>
       <div class="modal-body" style="padding:40px 50px;">
-
-     		<form action="#" method="post" enctype="multipart/form-data">
-     			
-     			 		<input type="file" name="files[]" id="filer_input" multiple="multiple">
-     					<button type="button" class="btn btn-primary"​ alignt="center">រក្សាទុក</button>
+   		<form ng-submit ="uploadFile($event)" method="post" enctype="multipart/form-data">     			
+	 		<input type="file" name="file" id="filer_input" multiple="multiple">	<!-- id="filer_input"   -->
+		  <button type="submit" class="btn btn-primary"​ alignt="center">រក្សាទុក</button>
+			<!-- <input type="button" value="Upload" ng-click="uploadFile($event)"> -->
      					
-			</form>
-        
+		</form>        
       </div>
       <div class="modal-footer">
         

@@ -5,7 +5,7 @@
 	<!-- Now I can fix it by javascript. but I'm not sure that is good or not. Because it related to search engine. Maybe google can't search our website. because title very important for search engine -->
 <jsp:include page="link-header.jsp"></jsp:include>
 </head>
-<body>
+<body ng-app="UploadFileApp" ng-controller="UploadFileCtrl">
 <jsp:include page="register.jsp"></jsp:include>
 <jsp:include page="login.jsp"></jsp:include>
 <jsp:include page="upload.jsp"></jsp:include>

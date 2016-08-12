@@ -3,7 +3,7 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<div ng-app="DocumentApp" ng-controller="DocumentCtrl">
+<div ng-controller="DocumentCtrl">
 
 <content>
 <div class="container">
