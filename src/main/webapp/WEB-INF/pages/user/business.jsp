@@ -14,28 +14,22 @@
 				
 				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
-						<div class="col-sm-3 col-xs-12 " >
-							<div class="left-side-nav">
-				     			<ul class="main-category">
-				     			    <li class="bg-cates">
-				     			    <span><i class="fa fa-cubes" aria-hidden="true"></i>
-				   </span>
-					     			  មុខជំនួញ
-		  	   						</li>
-
-		  	   						<li>
-			  	   						<a class= " active">គណនី</a>
-			  	   					
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>រដ្ឋបាល</a>
-		  	   						</li>
-		  	   				
-				     		</div>
-						</div>
+						<div class="col-sm-3" id="left-side-nav" >
+					   	   <ul class="category-menu">
+					   	   		<li class="bg-cate"><span><i class="fa fa-cubes" aria-hidden="true"></i>
+				   				</span>មុខជំនួញ
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">គណនី</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">រដ្ឋបាល</a> 
+			  	   				</li>
+					   	   </ul>
+					   </div>
 						
 						<div class="col-sm-9 col-xs-12">
-							<div class=".body-cates">
+							<div class="body-cates">
 							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">

@@ -14,34 +14,31 @@
 				
 				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
-						<div class="col-sm-3 col-xs-12 " >
-							<div class="left-side-nav">
-				     			<ul class="main-category">
-				     			    <li class="bg-cates">
-				     			   <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				   </span>
-					     			ចំណេះដឹងទូទៅ
-		  	   						</li>
-
-		  	   						<li>
-			  	   						<a>គីមីវិទ្យា</a>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>ប្រវត្តិសាស្រ្ត</a>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>ទំនាក់ទំនងអន្តរជាតិ</a>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>សុភាសិត</a>
-		  	   						</li>
-		  	   						
-				     			</ul>
-				     		</div>
-						</div>
+							<div class="col-sm-3" id="left-side-nav" >
+					   	   <ul class="category-menu">
+					   	   		<li class="bg-cate"> <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				  				 </span>ចំណេះដឹងទូទៅ
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">គីមីវិទ្យា</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">ប្រវត្តិវិទ្យា</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">ទំនាក់ទំនងអន្តរជាតិ</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">សាសនា</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">សុភាសិត</a> 
+			  	   				</li>
+					   	   </ul>
+					   </div>
 						
 						<div class="col-sm-9 col-xs-12">
-							<div class=".body-cates">
+							<div class="body-cates">
 							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
