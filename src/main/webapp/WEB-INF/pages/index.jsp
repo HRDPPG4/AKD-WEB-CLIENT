@@ -1,8 +1,8 @@
 <title>ទំព័រដើម | AKD</title>
 <jsp:include page="user/include/header.jsp"></jsp:include>
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    
 <div ng-app="DocumentApp" ng-controller="DocumentCtrl">
 
 <content>
@@ -569,9 +569,8 @@
 		<div class="row section business topspace-second">
 				<div class="section-title">
 						  <span​ class="col-xs-12 col-lg-12" id="left-title">
-						  <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				   </span>
-						 ចំណេះដឹងទូទៅ
+						  <span><i class="fa fa-cubes" aria-hidden="true"></i>
+				   				</span>មុខជំនួញ
 						  </span>
 						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/business">មើលលំអិត</a>
 						  </span>	

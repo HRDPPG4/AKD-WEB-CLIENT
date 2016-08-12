@@ -81,18 +81,6 @@ public class UserController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@RequestMapping(value="/view",method=RequestMethod.GET)
 	public String viewslide(){
 		return "user/TestViewSlide";

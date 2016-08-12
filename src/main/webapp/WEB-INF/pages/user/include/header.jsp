@@ -16,11 +16,12 @@
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
-	<span class="navbar-logo">
-			<a href="/" class="navbar-brand## brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/> All Khmer Docs</a>
-	</span>
+			<span class="navbar-logo">
+					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
+					 <span>All Khmer Docs</span>
+					 </a>
+			</span>
 	<div class="container">
-		
 		<form class="navbar-form navbar-left form-contain" role="search">
         <div class="form-group">
           <input type="text" class="form-control form-search"  placeholder="ស្វែងរក">
@@ -43,10 +44,8 @@
             <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
                 	<li><a href="#"> ជឹម មិនា</a></li>
-                	<li><a href="#"> ជឹម មិនា</a></li>
-                	<li><a href="#"> ជឹម មិនា</a></li>
-                	<li><a href="#"> ជឹម មិនា</a></li>
-                
+                	<li><a href="#"> ស្លាយរបស់ខ្ញុំ</a></li>
+                	<li><a href="#"> ចាកចេញ</a></li>
                 </ul>
             </a>
             </li>
@@ -54,7 +53,7 @@
         </ul>
      </div>
 </nav>
-	</div>
+</div>
 <!-- main menu -->
 
 <div class="main-menu-contain">
@@ -62,7 +61,7 @@
 	<div class="container">
 	 <span class="navbar-logo-main">
 			   	<a href="#" class="navbar-brand logo-main-menu">All Khmer Docs</a>
-			   </span>
+	</span>
 		<div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 			  <li><a class="menu actives-main" href="/">

@@ -14,53 +14,32 @@
 				
 				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
-						<div class="col-sm-3 col-xs-12 " >
-							<div class="left-side-nav">
-				     			<ul class="main-category">
-				     			    <li class="bg-cates">
-				     			    <span><i class="fa fa-flask"></i>
-			  	   						</span>
-					     			  បច្ចេកវិទ្យា
-		  	   						</li>
-
-		  	   						<li>
-			  	   						<a class= "cates-menu">Design</a>
-			  	   						<ul class="sub-menus-cates">
-			  	   						   <li><a>Photoshop</a></li>
-			  	   						   <li><a>Illustrator</a></li>
-			  	   						</ul>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a class= "cates-menu">Network</a>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>Mobile</a>
-		  	   						</li>
-		  	   						<li>
-			  	   						<a class= "cates-menu">Programming</a>
-			  	   						<!-- <ul class="sub-menus-cates">
-			  	   						   <li><a>Java</a></li>
-			  	   						   <li><a>C++</a></li>
-			  	   						   <li><a>VB.NET</a></li>
-			  	   						   <li><a>PHP</a></li>
-			  	   						</ul> -->
-		  	   						</li>
-		  	   						<li>
-			  	   						<a>Web</a>
-			  	   						<!-- <ul class="sub-menus-cates">
-			  	   						   <li><a>HTML</a></li>
-			  	   						   <li><a>CSS</a></li>
-			  	   						   <li><a>Javascript</a></li>
-			  	   						   <li><a>Bootstrap</a></li>
-			  	   						</ul> -->
-		  	   						</li>
-		  	   						
-				     			</ul>
-				     		</div>
-						</div>
+					   <div class="col-sm-3" id="left-side-nav" >
+					   	   <ul class="category-menu">
+					   	   		<li class="bg-cate"><span><i class="fa fa-flask"></i>
+			  	   					</span>បច្ចេកវិទ្យា
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Design</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Network</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Mobile</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Programming</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Web</a> 
+			  	   				</li>
+					   	   </ul>
+					   </div>
+						<!--  -->
 						
 						<div class="col-sm-9 col-xs-12">
-							<div class=".body-cates">
+							<div class="body-cates">
 							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">

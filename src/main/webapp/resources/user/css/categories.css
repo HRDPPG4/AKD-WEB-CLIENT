@@ -8,89 +8,56 @@
   padding: 0px;
     margin: 0 auto;
 }
-.left-side-nav{
-  width: 220px;
- /*  margin-right: 10px; */
- float:left;
-  position: relative;
-  left:9%;
-  
+
+#left-side-nav{
+ margin:0px;
+ padding:3px;
+ position: relative;
+}
+ ul.category-menu {
+ margin:2px;
+ padding:3px;
+	 background-color: white;
+	 list-style-type:none;
+}
+ul.category-menu li.bg-cate{
+	margin-left:10px;
+	padding:10px;
+	color:white;
+	background-color: #003666;
+}
+ul.category-menu li.cates-main{
+	margin-left:10px;
+	padding:10px;
+	background-color: white;
+	color:#000;
+}
+li.cates-main a{
+	display: block;
+    color: #000;
+    margin-bottom:-9px;
+    margin-top:-9px;
+    margin-left:-10px;
+    margin-right:-10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-bottom: 1px dashed #003666;
+}
+li.cates-main a:hover{
+	 background-color:#003666;
+    color: white;
 }
 
-/*change class when scroll down*/
-ul.main-category{
-	font-family:"Times New Roman",Khmer OS Battambang;
-  padding:0px;
-  font-size:16px;
-  font-weight:400;
-  background-color:#fff;
-  list-style-type: none;
- 
-}
-
-ul.main-category li{
-border-bottom: 1px dashed #003666  !important;
-}
-ul.main-category li.bg-cates {
-    font-size: 16px;
-    padding: 10px;
-    color: #fff;
-    background-color: #003666 !important;
-}
-
-ul.main-category li:not(first-child){
-  padding:10px;
-  background-color:#fff;
-  
-}
-
-ul.main-category li:not(first-child) a{
-  text-decoration: none;
-  color:#000;
-  cursor: pointer;
-}
-
-/*sub menu  */
-ul ul.sub-menus-cates{
-  margin-top:10px;
-  padding:10px;
-  position:relative;
-  left:10px;
-  color:#000;
-  display:none;
-  list-style-type: circle;
-}
-
-ul ul.sub-menus-cates li{
-  margin-bottom:2px;
-  border-style: none !important;
-}
-
-
-.clicks{
-	background:red;
-}
-cates-menu{
-	background:yellow;
-}
 
 .left-side-nav, .body-cates, .right-side-cate {
     float: left;
 }
-/*///////////////////////////*/
-/*.right-side-cate{
-  width: 285px;
-  background-color: #fff;
-  position: fixed;
-  right: 10%;
-}*/
+
 .body-cates{
-     /*   width: 860px; */
-   /*  margin-right: 10px; */
     position: relative;
     margin:0px;
-    /* left: 22%; */
-   /*  z-index: 5; */
+    padding:0px;
+   
 }
 
 .fa-arrow-circle-down{

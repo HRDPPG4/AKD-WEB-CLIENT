@@ -53,7 +53,7 @@
     border:0;
     width: 50px;
     color: #888;
-    display: line;
+    display:inline;
     background: transparent;
   }
   i.fa-search{
@@ -515,6 +515,51 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
     }
   }
 
+ @media screen and (max-width: 345px) {
+.left-side-nav{
+   /*  display: none; */
+    }
+    .body-cates{
+      width: 300px;
+   left: 0% !important;
+    } 
+    
+    .container{
+      width: 100%;
+    }
+    
+    ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+.navbar > .navbar-logo .brand-logo {
+    position: relative;
+    left:0px !important;
+    color: #3B5998;
+    font-weight: 400px;
+}
+
+#avatar-user{
+	position:relative;
+	display: none !important;
+}
+.navbar-logo-main{
+	position: absolute;
+	display: none;
+}
+  }
+
 /*IPhone 5*/
   @media screen and (max-width: 320px) {
 .left-side-nav{
@@ -572,10 +617,11 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
     display: block;
     text-align: left;
   }
- .logo-main-menu{
-	position:absolute;
-	display: none !important;
-	
+.navbar > .navbar-logo .brand-logo {
+    position: relative;
+    left: 300px !important;
+    color: #3B5998;
+    font-weight: 400px;
 }
 
 #avatar-user a img{
