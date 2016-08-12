@@ -1,12 +1,50 @@
 <title>ទំព័រដើម | AKD</title>
 <jsp:include page="user/include/header.jsp"></jsp:include>
+<!-- <<<<<<< HEAD
+<div class="main-menu-contain">
+<nav class="navbar navbar-default navbar-sticky navbar-main-menu">
+	<div class="container">
+	 <span class="navbar-logo-main">
+			   	<a href="#" class="navbar-brand logo-main-menu">All Khmer Docs</a>
+			   </span>
+		<div class="main-menu">
+			<ul class="menu-basic" id="myTopnav">
+			  <li><a class="menu actives-main" href="/">
+				   <span><i class="fa fa-home" aria-hidden="true"></i>
+				   </span>ទំព័រដើម</a>
+			  </li>
+			  <li><a class="menu" href="/technology">
+			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
+			  </li>
+			  <li><a class="menu" href="/general-knowledge">
+				   <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				   </span>ចំណេះដឹងទូទៅ</a>
+			  </li>
+			  <li><a class="menu" href="/literal">
+				   <span><i class="fa fa-book" aria-hidden="true">
+				   </i>
+				   </span>អក្សរសាស្ត្រ</a>
+			  </li>
+			  
+			  <li><a class="menu" href="/business">
+				   <span><i class="fa fa-cubes" aria-hidden="true"></i>
+				   </span>មុខជំនួញ</a>
+			  </li>
+			  <li><a class="menu" href="/other">
+			  	   <span><i class="fa fa-tags" aria-hidden="true"></i>
+			  	   </span>ផ្សេងៗ</a>
+			  </li>
+			  <li class="icon">
+			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+			  </li>
+			</ul>
+		</div>
+	</div>
+</nav>
+</div>
 
+<div ng-app="DocumentApp" ng-controller="DocumentCtrl">
 
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!-- //////////////////////////////////////////////////////// -->
-
-<div ng-app="indexApp" ng-controller="indexCtrl">
 <content>
 <div class="container">
 	<section id="technology">
@@ -34,20 +72,17 @@
 					<div id="design" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides  | limitTo : 4">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							<a href="/detail?url={{escapeUrl(slide.EMBEDED_LINK)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/005.png" alt=""> 
-								
-								
-								
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>

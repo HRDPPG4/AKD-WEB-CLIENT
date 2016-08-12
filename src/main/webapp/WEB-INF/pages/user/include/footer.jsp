@@ -57,15 +57,23 @@
 	</div>
 
 <!--  </div>   -->
-    
-     
-      
-      
-    
+   
+      <%=request.getContextPath()%>
+    <script type="text/javascript">
+    	BASE_URL = '<%=request.getContextPath()%>';
+    	/* alert('==> ' + BASE_URL); */
+    </script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
+<<<<<<< HEAD
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
+=======
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/Document.js"></script>
+	
+	
+>>>>>>> 4774c8b8be9a8981b5fe8e4e598f2a31d4a7b7d6
 	
 	<!-- library jquery for file upload -->
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>

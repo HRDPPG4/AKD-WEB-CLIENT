@@ -8,7 +8,7 @@
       <div class="modal-content">
         <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចែកចាយឯកសារ</h4>
+        <h4><span class="glyphicon glyphicon-lock"></span> ចុះឈ្មោះ</h4>
           <div class="imgcontainer">						     
 	      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
 	    </div>
@@ -79,9 +79,7 @@
 				</div>
 			</div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+       
       </div>
     </div>
   </div>
