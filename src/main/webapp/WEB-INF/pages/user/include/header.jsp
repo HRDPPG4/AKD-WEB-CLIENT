@@ -9,6 +9,7 @@
 <jsp:include page="register.jsp"></jsp:include>
 <jsp:include page="login.jsp"></jsp:include>
 <jsp:include page="upload.jsp"></jsp:include>
+<jsp:include page="save-list.jsp"></jsp:include>
 <jsp:include page="update-slide.jsp"></jsp:include>
 				  
 	<header id="header">
@@ -47,7 +48,7 @@
 	</div>
 <!-- main menu -->
 
-<div class="main-menu-contain">
+<!-- <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
 	 <span class="navbar-logo-main">
@@ -87,6 +88,6 @@
 		</div>
 	</div>
 </nav>
-</div>
+</div> -->
 
 </header>

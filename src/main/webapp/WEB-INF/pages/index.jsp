@@ -1,10 +1,5 @@
 <title>ទំព័រដើម | AKD</title>
 <jsp:include page="user/include/header.jsp"></jsp:include>
-
-
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!-- //////////////////////////////////////////////////////// -->
 <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
@@ -46,6 +41,11 @@
 	</div>
 </nav>
 </div>
+
+
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!-- //////////////////////////////////////////////////////// -->
 <div ng-app="indexApp" ng-controller="indexCtrl">
 <content>
 <div class="container">
