@@ -9,6 +9,7 @@
 <jsp:include page="register.jsp"></jsp:include>
 <jsp:include page="login.jsp"></jsp:include>
 <jsp:include page="upload.jsp"></jsp:include>
+<jsp:include page="save-list.jsp"></jsp:include>
 <jsp:include page="update-slide.jsp"></jsp:include>
 				  
 	<header id="header">
@@ -39,15 +40,24 @@
 
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
-            <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"></a>
+            <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
+                <ul  class="tooltiptext">
+                	<li><a href="#"> ជឹម មិនា</a></li>
+                	<li><a href="#"> ជឹម មិនា</a></li>
+                	<li><a href="#"> ជឹម មិនា</a></li>
+                	<li><a href="#"> ជឹម មិនា</a></li>
+                
+                </ul>
+            </a>
             </li>
+          
         </ul>
      </div>
 </nav>
 	</div>
 <!-- main menu -->
 
-<div class="main-menu-contain">
+<!-- <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
 	 <span class="navbar-logo-main">
@@ -87,6 +97,6 @@
 		</div>
 	</div>
 </nav>
-</div>
+</div> -->
 
 </header>

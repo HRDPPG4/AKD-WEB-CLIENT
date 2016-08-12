@@ -48,7 +48,7 @@
 												<hr>
 											</div>
 											<div id="btn">
-												<button class="btn btn-primary"><span><i class="fa fa-plus" aria-hidden="true" id="savelist"></i>Add To SaveList</span></button>
+												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list"><span><i class="fa fa-plus" aria-hidden="true" id="savelist" ></i>Add To SaveList</span></button>
 												
 												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
 											</div>
