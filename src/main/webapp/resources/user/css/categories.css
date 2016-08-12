@@ -15,18 +15,23 @@
  position: relative;
 }
  ul.category-menu {
- margin:2px;
- padding:3px;
+ margin:0px;
+ padding:0px;
 	 background-color: white;
 	 list-style-type:none;
+	 
+	 
 }
 ul.category-menu li.bg-cate{
 	margin-left:10px;
 	padding:10px;
 	color:white;
+	border-left:10px solid red;
 	background-color: #003666;
 }
 ul.category-menu li.cates-main{
+	font-family:"Times New Roman",Khmer OS Battambang;
+	font-size:14px;
 	margin-left:10px;
 	padding:10px;
 	background-color: white;

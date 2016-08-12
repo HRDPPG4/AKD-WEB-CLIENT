@@ -15,7 +15,11 @@
         
         
         </span>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c63396f627e7bdbb54d2ebab1d9f6a4ee1b52a2f
     <div class="imgcontainer">						     
       <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
     </div>
