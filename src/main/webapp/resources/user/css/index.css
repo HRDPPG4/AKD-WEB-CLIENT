@@ -106,8 +106,9 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 
 
 li#avatar-user{
-	clear:left;
 	float:right;
+	 position: relative;
+	 display: inline-block;
 	list-style-type:none;
 }
 #avatar-user a img{
@@ -115,6 +116,58 @@ li#avatar-user{
 	top:-7px;
 	width:46px;
 	list-style-type: none;
+}
+
+/* tooltip */
+
+
+li#avatar-user ul.tooltiptext {
+    visibility: hidden;
+   /*  width: 160px; */
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -105px;  
+}
+
+li#avatar-user ul.tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 80%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #003666 transparent;
+}
+
+li#avatar-user:hover ul.tooltiptext {
+    visibility: visible;
+    list-style-type: none;
+    border: 1px solid #000;
+}
+ul li > ul.tooltiptext li {
+	padding:10px 0;
+	width:160px;
+	border-bottom: 1px solid #000;
+}
+ul li > ul.tooltiptext li a{
+	text-decoration:none;
+	color:#000;
+	
+}
+ul li > ul.tooltiptext li:hover{
+	background:#003666 !important;
+	cursor: pointer;
+}
+ul li > ul.tooltiptext li:hover > a {
+	color:white !important;
+	/* background-color: #000; */
 }
 /*////////////////////////////////////////////////////////////*/
 .main-menu-contain{
@@ -154,11 +207,7 @@ li#avatar-user{
 
 
  /* Float the list items side by side */
- .main-menu{
-  position: relative;
-  margin-left: 170px;
 
- }
  ul.menu-basic li{
   list-style:none;
   float:left;
@@ -479,5 +528,3 @@ i.fa-bars{
 .navbar-logo-main > .logo-main-menu:visited{
 	color:white;
 }
-
-
