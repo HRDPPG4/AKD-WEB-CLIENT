@@ -2,6 +2,7 @@
 
 #register body, html{
  	font-family: 'Oxygen', sans-serif;
+
 }
 
 #register .main{
@@ -20,7 +21,8 @@
 }
 
 #register .form-group{
-	margin-bottom: 15px;
+	margin-bottom: 0px;
+	padding: 5px;
 }
 
 #register label{
@@ -61,3 +63,31 @@
 	font-size: 11px;
 	text-align: center;
 }
+
+#register .modal-body
+{
+	padding: 0px 15px;
+}
+
+#register .modal-header {
+    padding: 10px 15px 0px 0px;
+}
+
+#register .main-center {
+    padding: 10px 40px;
+    padding-bottom: 15px;
+}
+
+#register img.avatar
+{
+	max-width: 10%;
+}
+
+
+
+
+
+	
+   
+
+

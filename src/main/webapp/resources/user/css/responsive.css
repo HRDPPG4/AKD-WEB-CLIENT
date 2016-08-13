@@ -1,65 +1,111 @@
 @media screen and (max-width: 1780px) {
-    .left-side-nav{
-      left:5%;
-    }
-    .body-cates{
+ /*    .body-cates{
    left: 25% !important;
-    } 
-   /* .container{
-      width:100%;
-    } */
+    }  */
     
 }
 
 @media screen and (max-width: 1520px) {
-    .left-side-nav{
+    /* .left-side-nav{
       left:8%;
     }
     .body-cates{
    left: 23.6% !important;
-    } 
+    }  */
    /* .container{
       width:100%;
     }
     */
 }
 @media screen and (max-width: 1255px) {
-    .left-side-nav{
+   /*  .left-side-nav{
       left:4%;
     }
     .body-cates{
    left: 23.6% !important;
-    } 
+    }  */
    /* .container{
       width:100%;
     }
     */
 }
+@media screen and (max-width: 1199px) {
+    /*search contain*/
+.navbar > .container .form-contain ,
+.form-group .form-search{
+  position: relative;
+   /*padding: 10px 15px;*/
+   border-style: none;
+  margin-top: 1px;
+  margin-right: -15px;
+  margin-bottom: 1px;
+  margin-left: 70px;
+  }
+ .navbar > .container .form-search{
+  position: relative;
+  width: 300px;
+  background-color: #eee;
+  }
+  .navbar > .container button[type="submit"]{
+    position: absolute;
+    bottom: 10px;
+    left: 330px;
+    border:0;
+    width: 50px;
+    color: #888;
+    display:inline;
+    background: transparent;
+  }
+  i.fa-search{
+    font-size: 18px;
+  }
+  
+  .navbar > .container button[type="submit"]:hover{
+    position: absolute;
+    color: #000;
+    background: transparent;
+  }
+ /*////////////////////////////////////////////////////////////*/
+ 
+/*upload,sign in,sign up*/
+
+.upload-signup-signin{
+  position: relative;
+  float: right;
+  right: 140px;
+  top: -33px;
+  padding: 0px;
+  margin-bottom:-30px;
+  display: inline-block;
+  list-style-type:none;
+}
+.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+  position: relative;
+  text-decoration: none;
+  display: inline;
+}
+ul li#upload  > a,li#signin  > a ,li#signup > a{
+  color: gray;
+   font-size:14px;
+  text-decoration: none;
+  * background-color:red;
+  padding: 5px 10px 5px 7px;
+}
+
+
+.main-menu{
+ 	position: relative;
+ 	margin-left: 110px;
+
+ }
+  }
 @media screen and (max-width: 1160px) {
-     .left-side-nav{
-      left:0%;
-      z-index: 300;
-    }
-    .body-cates{
-   left: 21.6% !important;
-    } 
-    .container{
-      width:100%;
-    }
+    
   }
 @media screen and (max-width: 1096px) {
-    .left-side-nav{
-      left:0%;
-      z-index: 300;
-    }
-    .body-cates{
-   left: 5% !important;
-    } 
-    .container{
-      width:100%;
-    } 
+ 
 }
-/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+
 @media screen and (max-width:1023px) {
   .main-menu{
   position: relative;
@@ -69,6 +115,10 @@
   ul.menu-basic li:not(:first-child) {
     display: none;
   }
+  ul.menu-basic li:first-child {
+    display: none;
+  }
+  
   ul.menu-basic li.active a{
   border-bottom: 1px dashed #3B5998;
 }
@@ -81,7 +131,7 @@
   }
 }
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+
 
 
 @media screen and (max-width:1023px) {
@@ -100,16 +150,19 @@
     display: block;
     text-align: left;
   }
-
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
 .navbar > .container .form-contain ,
 .form-group .form-search{
   position: relative;
    /*padding: 10px 15px;*/
    border-style: none;
-  margin-top: 4px;
+  margin-top: 2px;
   margin-right: -15px;
-  margin-bottom: 4px;
-  margin-left: 20px;
+  margin-bottom: 2px;
+  margin-left: 50px;
   }
  .navbar > .container .form-search{
   position: relative;
@@ -142,7 +195,7 @@
 .upload-signup-signin{
   position: relative;
   float: right;
-  right: 140px;
+  right: 110px;
   top: -39px;
   padding: 0px;
   margin-bottom:-30px;
@@ -159,57 +212,18 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   text-decoration: none;
   padding: 5px 10px 5px 7px;
 }
-ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
-  color:#eee;
 
-  background-color:#3B5998;
-  text-decoration: none;
 }
-}
-@media screen and (max-width: 900px){
-  ul.menu-basic.responsive {position: relative;}
-  ul.menu-basic.responsive li.icon {
-    position: absolute;
-    right: 0;
-    color: black;
-    top: 0;
-  }
-  ul.menu-basic.responsive li {
-    float: none;
-    display: inline;
-  }
-  ul.menu-basic.responsive li a {
-    display: block;
-    text-align: left;
-  }
-}
-@media screen and (max-width: 766px){
-.left-side-nav{
-     left:0%;
-      z-index: 300;
-    }
-    .body-cates{
-   left: 5% !important;
-    } 
-    #min-width-sm{
-      padding: auto;
-      width: 700px;
-    }
-    .container{
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width:885px){
-.navbar > .container .form-contain ,
+@media screen and (max-width: 967px){
+ .navbar > .container .form-contain ,
 .form-group .form-search{
   position: relative;
    /*padding: 10px 15px;*/
    border-style: none;
-  margin-top: 4px;
+  margin-top: 2px;
   margin-right: -15px;
-  margin-bottom: 4px;
-  margin-left: 1px;
+  margin-bottom: 2px;
+  margin-left: 50px;
   }
  .navbar > .container .form-search{
   position: relative;
@@ -219,7 +233,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   .navbar > .container button[type="submit"]{
     position: absolute;
     bottom: 10px;
-    left: 178px;
+    left: 220px;
     border:0;
     width: 50px;
     color: #888;
@@ -242,7 +256,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 .upload-signup-signin{
   position: relative;
   float: right;
-  right: 210px;
+  right: 110px;
   top: -39px;
   padding: 0px;
   margin-bottom:-30px;
@@ -259,6 +273,87 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   text-decoration: none;
   padding: 5px 10px 5px 7px;
 }
+ 
+  
+}
+@media screen and (max-width: 992px){
+	 .left-side-nav{
+     left:0%;
+    }
+	}
+	
+@media screen and (max-width: 900px){
+  ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 766px){
+
+  }
+
+  @media screen and (max-width:886px){
+.navbar > .container .form-contain ,
+.form-group .form-search{
+  position: relative;
+   /*padding: 10px 15px;*/
+   border-style: none;
+  margin-top: 4px;
+  margin-right: -15px;
+  margin-bottom:45px;
+  margin-left: 1px;
+  }
+ .navbar > .container .form-search{
+ display: none;
+  }
+  .navbar > .container button[type="submit"]{
+   display: none;
+  }
+  i.fa-search{
+    font-size: 18px;
+  }
+  
+  .navbar > .container button[type="submit"]:hover{
+    position: absolute;
+    color: #000;
+    background: transparent;
+  }
+ /*////////////////////////////////////////////////////////////*/
+ 
+/*upload,sign in,sign up*/
+
+.upload-signup-signin{
+  position: relative;
+  float: right;
+  right: 210px;
+  top: -40px;
+  padding: 0px;
+ 
+  margin-bottom:-30px;
+  display: inline-block;
+  list-style-type:none;
+}
+.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+  position: relative;
+  text-decoration: none;
+  display: none;
+}
+ul li#upload  > a,li#signin  > a ,li#signup > a{
+  color: gray;
+  text-decoration: none;
+  padding: 5px 10px 5px 7px;
+}
 ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   color:#eee;
 
@@ -268,33 +363,68 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 }
 
   @media screen and (max-width:810px){
-.navbar > .container .form-contain ,
+ .navbar > .container .form-contain ,
 .form-group .form-search{
-  display: none;
+  position: relative;
+   /*padding: 10px 15px;*/
+   border-style: none;
+  margin-top: 4px;
+  margin-right: -15px;
+  margin-bottom:20px;
+  margin-left: 1px;
   }
  .navbar > .container .form-search{
  display: none;
   }
   .navbar > .container button[type="submit"]{
-    display: none;
+   display: none;
+  }
+  i.fa-search{
+    font-size: 18px;
   }
   
+  .navbar > .container button[type="submit"]:hover{
+    position: absolute;
+    color: #000;
+    background: transparent;
+  }
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
 
 .upload-signup-signin{
+  position: relative;
+  float: right;
+  right: 210px;
+  top: -40px;
+  padding: 0px;
+ 
+  margin-bottom:-30px;
+  display: inline-block;
+  list-style-type:none;
+}
+.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+  position: relative;
+  text-decoration: none;
   display: none;
 }
 ul li#upload  > a,li#signin  > a ,li#signup > a{
- display: none;
+  color: gray;
+  text-decoration: none;
+  padding: 5px 10px 5px 7px;
+}
+ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
+  color:#eee;
+
+  background-color:#3B5998;
+  text-decoration: none;
 }
 
 }
 @media screen and (max-width: 768px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
@@ -326,15 +456,9 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 @media screen and (max-width: 412px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
-      /*width: 300px;*/
-   left:4% !important;
-    } 
-    #min-width-sm{
-      width: 410px;
-    }
     .container{
       width: 100%;
     }
@@ -344,15 +468,13 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 @media screen and (max-width: 414px) {
 .left-side-nav{
      left:0%;
-      z-index: 300;
+    /*   z-index: 300; */
     }
     .body-cates{
       /*width: 300px;*/
    left:4% !important;
     } 
-    #min-width-sm{
-      width: 405px;
-    }
+    
     .container{
       width: 100%;
     }
@@ -373,6 +495,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     .container{
       width: 100%;
     }
+    
   }
 /*Galasy S5*/
   @media screen and (max-width: 360px) {
@@ -392,38 +515,118 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     }
   }
 
-/*IPhone 5*/
-  @media screen and (max-width: 320px) {
+ @media screen and (max-width: 345px) {
 .left-side-nav{
-     left:0%;
-     /*  z-index: 300; */
-    }
-    .body-cates{
-      /*width: 300px;*/
-   left: 5% !important;
-    } 
-    #min-width-sm{
-      width: 320px;
-    }
-    .container{
-      width: 100%;
-    }
-  }
-
-  @media screen and (max-width: 310px) {
-.left-side-nav{
-    display: none;
+   /*  display: none; */
     }
     .body-cates{
       width: 300px;
    left: 0% !important;
     } 
-    #min-width-sm{
-    background-color:red;
-      width: 270px;
-    }
+    
     .container{
       width: 100%;
     }
+    
+    ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+.navbar > .navbar-logo .brand-logo {
+    position: relative;
+    left:0px !important;
+    color: #3B5998;
+    font-weight: 400px;
+}
+
+#avatar-user{
+	position:relative;
+	display: none !important;
+}
+.navbar-logo-main{
+	position: absolute;
+	display: none;
+}
+  }
+
+/*IPhone 5*/
+  @media screen and (max-width: 320px) {
+.left-side-nav{
+  width: 250px;
+  margin-right: 10px;
+  position: relative;
+  left:1%;
+}
+
+    .body-cates{
+      /*width: 300px;*/
+   left: 5% !important;
+    } 
+    .container{
+      width: 100%;
+    }
+    
+   .logo-main-menu{
+	position:absolute;
+	display: none !important;
+	
+}
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
+    
+  }
+
+  @media screen and (max-width: 310px) {
+.left-side-nav{
+   /*  display: none; */
+    }
+    .body-cates{
+      width: 300px;
+   left: 0% !important;
+    } 
+    
+    .container{
+      width: 100%;
+    }
+    
+    ul.menu-basic.responsive {position: relative;}
+  ul.menu-basic.responsive li.icon {
+    position: absolute;
+    right: 0;
+    color: black;
+    top: 0;
+  }
+  ul.menu-basic.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.menu-basic.responsive li a {
+    display: block;
+    text-align: left;
+  }
+.navbar > .navbar-logo .brand-logo {
+    position: relative;
+    left: 300px !important;
+    color: #3B5998;
+    font-weight: 400px;
+}
+
+#avatar-user a img{
+	position:relative;
+	display: none !important;
+}
   }
 

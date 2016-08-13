@@ -9,22 +9,23 @@
     <div class="modal-content">
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចែកចាយឯកសារ</h4>
+        <h4><span class="glyphicon glyphicon-lock"></span>បញ្ជូលឯកសារនៅទីនេះ</h4>
         
-        <span>
-        
-        
-        </span>
         
     <div class="imgcontainer">						     
-      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
+    
     </div>
 			          
         
       </div>
       <div class="modal-body" style="padding:40px 50px;">
-        
-        	កំពុងរងចាំទិន្នន័យ
+
+     		<form action="#" method="post" enctype="multipart/form-data">
+     			
+     			 		<input type="file" name="files[]" id="filer_input" multiple="multiple">
+     					<button type="button" class="btn btn-primary"​ alignt="center">រក្សាទុក</button>
+     					
+			</form>
         
       </div>
       <div class="modal-footer">

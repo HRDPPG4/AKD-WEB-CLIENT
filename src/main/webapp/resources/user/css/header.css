@@ -1,5 +1,5 @@
 .modal-header, .close {
-      background-color: #5cb85c;
+      background-color: #003666;
       color:white !important;
       text-align: center;
     *  font-size: 30px;
@@ -30,10 +30,12 @@ img.avatar {
 {
 	float:right;
 	margin:0px 3px;
+	
 	font-size:10px;
 	*font-family:Khmer OS Niroth;
 	*font-family:NiDA Preahvihear;
 }
+
 #searchBox,.navbar-logo
 {
 	float:left;
@@ -66,6 +68,10 @@ img.avatar {
 {
 	display:none;
 }
-
+.btn-block
+{
+  max-width: 20%;
+}
+#avatar
 
 

@@ -1,0 +1,288 @@
+[33mcommit 199ae9530cc4cd45e7deb472ef79bd08d285b3a2[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Thu Aug 11 11:14:17 2016 +0700
+
+    add avatar
+
+[33mcommit c2ff6376e048f907104d824063cec51d3b2c390f[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Thu Aug 11 09:21:34 2016 +0700
+
+    change
+
+[33mcommit 18cda36b28436822b53d72aa46a65c871631df80[m
+Author: Siangkongkea <siang.kongkea@gmail>
+Date:   Wed Aug 10 20:15:41 2016 -0700
+
+    new update.
+
+[33mcommit 4200021d95a62017310f9a308a68127dc498fb51[m
+Author: Siangkongkea <siang.kongkea@gmail>
+Date:   Wed Aug 10 20:14:05 2016 -0700
+
+    getupload
+
+[33mcommit 69965fe9f5581f676c41b62764ba28b6f1e875ed[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 18:41:18 2016 +0700
+
+    Update Register.
+
+[33mcommit 61130647a291e3d60d3fcff159b7ea12e524208c[m
+Merge: 855c76a d621d80
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 16:39:38 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 855c76a47e2cbb411e20fad2fa9fbbcdae76c966[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 16:39:10 2016 +0700
+
+    update latest
+
+[33mcommit d621d803eb33a3da1cebe34a4f98c6e1586b84af[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 06:16:28 2016 +0700
+
+    Update Ligin.
+
+[33mcommit 72df4fa5b2d758df7864131ca84377b512933e7d[m
+Merge: a2824f3 9c90fab
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 06:08:34 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit a2824f33e5d3532ed97160f19fd925cda5340ff5[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 06:08:04 2016 +0700
+
+    Last Update Today with Footer , Login, ....
+
+[33mcommit 9c90fab576f44773a89bceabf39f1666876f13eb[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 04:28:58 2016 +0700
+
+    hide logo and show logo
+
+[33mcommit e7cd4284c7deeff0d177abc9028b81f11f35a360[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 04:06:09 2016 +0700
+
+    Update Footer Test.
+
+[33mcommit dfb223ff42f0f589670488a6289917aa2d103ff9[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 04:00:48 2016 +0700
+
+    update some cover in index page
+
+[33mcommit 9ac498d8522e0cab969bfabdb05c5a4873d20ee6[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 03:54:32 2016 +0700
+
+    Updating Footer.
+
+[33mcommit b581fb6e10e369037375d55010ccb4ae18750e3b[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 03:49:14 2016 +0700
+
+    update all page not yet other pages
+
+[33mcommit dabae2dc71393db1b1c990e3935ca8a4a3d70ad7[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 03:03:31 2016 +0700
+
+    update all page with logo
+
+[33mcommit 8b9e84af35bb6c95dc98752c7df72b7df1fe9b31[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 02:52:55 2016 +0700
+
+    Update css.
+
+[33mcommit a049710873e9e42059414ab700b27fcf49c62502[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 02:51:12 2016 +0700
+
+    Update Detail on share and view.
+
+[33mcommit fb1eb822c4e0d27373c091a79961e3a9fe526746[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 02:20:32 2016 +0700
+
+    Page Detail Finished.
+
+[33mcommit 34c883deba3c023f3746659ebd9d655d767224ef[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Wed Aug 10 01:20:13 2016 +0700
+
+    change categories page already not yet navigation
+
+[33mcommit 7748bd9c85649a20265fa8fd17fb6eb45edb59c9[m
+Merge: 426b81a 9fea3da
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 00:42:34 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 426b81a76345b32c009f9c7d13de39fa65ed4d2f[m
+Author: Chivorns <chivorn@live.com>
+Date:   Wed Aug 10 00:42:07 2016 +0700
+
+    Update Page Detail With Related Slide Style Finished.
+
+[33mcommit 9fea3dab0021ba8128b558008b8fb43ce0ac04fc[m
+Merge: efe0037 122fb33
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 23:49:46 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit efe003749ba401a238a718073ef24fef540ba318[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 23:49:25 2016 +0700
+
+    update categories
+
+[33mcommit 122fb33db97726a17b7fd4613dd294bc2a8c25f2[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 23:40:46 2016 +0700
+
+    Updating Page Detail but not ready. Just push for Chem Minea.
+
+[33mcommit 79d004b72a92716282ba9be514ae6d47318c6914[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 20:22:50 2016 +0700
+
+    Chagne Header Font.
+
+[33mcommit f5e49cead00828fbc296fe28b4667a800a5236cb[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 19:41:23 2016 +0700
+
+    change data with angular in index.jsp
+
+[33mcommit 2f6138eb11c75a1315548313bfa8ba2fc36ae1ff[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 19:34:06 2016 +0700
+
+    Add Dynamic Link to 8 slide.
+
+[33mcommit b7b7fc00b02d97bf9e1fa857ede9cf8b9a78c7a0[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 19:12:16 2016 +0700
+
+    New.
+
+[33mcommit 02852dcf3725ebca5c6a0414bf32c53f2ce39125[m
+Merge: 5f314c5 63f6693
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 19:03:43 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 5f314c593c4598c4f7e7ef1b078ad5f816eaeab5[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 19:02:37 2016 +0700
+
+    enter data in index.jsp
+
+[33mcommit 63f66938b79a11d46f77199a287f33543a0e6362[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 18:59:41 2016 +0700
+
+    Update Page Category
+
+[33mcommit 03404b46d76bb6d39944dffbf2e33b396efd17cf[m
+Merge: 22bf556 09ae98c
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 18:56:35 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 22bf556f53af747469f686642d0071bcb4dd6857[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 18:56:08 2016 +0700
+
+    Update Page Category
+
+[33mcommit 09ae98ca9054985eb7870c5982f99fa3aa41e3e2[m
+Author: KimBunhong <bunhongkim93@gmail.com>
+Date:   Tue Aug 9 18:42:25 2016 +0700
+
+    update title in all admin page by bunhong
+
+[33mcommit b412a8a78d6def5c885a5a0cdb045116cd0c0256[m
+Merge: 663e30a 74ed0e5
+Author: KimBunhong <bunhongkim93@gmail.com>
+Date:   Tue Aug 9 18:33:36 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 74ed0e5653a8c8d8c3b6ef7fea484c0945639b50[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 18:33:18 2016 +0700
+
+    Update New.
+
+[33mcommit 663e30adad03109b39c35873c0840118c15a4801[m
+Merge: a57786c 7623bdc
+Author: KimBunhong <bunhongkim93@gmail.com>
+Date:   Tue Aug 9 18:24:00 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 7623bdc400fc014b97f7a3fd7d6f8a91a82f1ea0[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 17:45:36 2016 +0700
+
+    Update Some.
+
+[33mcommit 5ce274d3cfc7cd2107da6393e03605a94535e2e3[m
+Merge: 50a84c7 b5a30eb
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 17:04:37 2016 +0700
+
+    Merge branch 'master' of https://github.com/HRDPPG4/AKD-WEB-CLIENT
+
+[33mcommit 50a84c72a5610d95d16d820c9c2101836608bba9[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 17:04:20 2016 +0700
+
+    Update Detail
+
+[33mcommit b5a30ebf33a01e9debcc50b54d9001e212fd3855[m
+Author: mineachem <minea.chem@gmail.com>
+Date:   Tue Aug 9 16:30:01 2016 +0700
+
+    Update On technology
+
+[33mcommit 6b15cb239410d48ad55f9e79de8c51b82175ddfd[m
+Author: Siangkongkea <siang.kongkea@gmail>
+Date:   Tue Aug 9 02:19:42 2016 -0700
+
+    Hello
+
+[33mcommit 7ad31804a5f06e21cc83b4f0a2ec07bdc42e0d1d[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 15:55:09 2016 +0700
+
+    Update More.
+
+[33mcommit 3f5491ffbdcfe40d3bbb057490da0a5f7e224d94[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 15:06:05 2016 +0700
+
+    Update Header again.
+
+[33mcommit 03b2ef78dcb62e15c343a660ecd073d1439de978[m
+Author: Siangkongkea <siang.kongkea@gmail>
+Date:   Tue Aug 9 14:35:19 2016 -0700
+
+    Update User Page.
+
+[33mcommit bc874ca49084f491b956c5a034f434ae0078b613[m
+Author: Chivorns <chivorn@live.com>
+Date:   Tue Aug 9 14:14:06 2016 

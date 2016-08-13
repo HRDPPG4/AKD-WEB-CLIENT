@@ -19,7 +19,7 @@
   margin-bottom:5px;
   background-color:  #003666;
 }
-.detail-slide{
+.detail-slide,.slide-detail-more{
   font-size: 16px;
   text-align: left;
   border-bottom:1px solid #fff;
@@ -77,6 +77,30 @@ color:white;
     padding: 5px;
     font-family: Khmer OS Battambang;
 }
+
+.detail-slide .Slide-Owner #owner
+{
+  float: left;
+}
+
+.detail-slide .Slide-Owner #read,.detail-slide .Slide-Owner #share
+{
+  float: right;
+  padding: 5px 20px;
+  vertical-align: bottom;
+}
+.detail-slide .Slide-Owner #line
+{
+  clear: both;
+}
+#read,#share
+{
+  border:1px solid #003666;
+  border-radius: 5%;
+  padding: 5px;
+  margin: 2px 5px;
+}
+
 .Slide-Owner #owner img
 {
     max-width: 45px;
@@ -88,11 +112,12 @@ color:white;
 
 .detail-slide .Slide-Owner #title
 {
-  text-align: center;
+  text-align: justify;
+  font-weight: bold;
 }
-.detail-slide .Slide-Owner #description
+.detail-slide .Slide-Owner #btn
 {
-  margin-top: 10px;
+  *float: right;
 }
 
 .show-slide-view #related-slide
@@ -112,5 +137,23 @@ color:white;
 {
   font-size: 20px;
   text-align: center;
+  padding-top: 10px;
+  font-family: NiDA Bayon;
 }
 
+.related-slide .related-container img
+{
+  max-width: 100%;
+}
+
+.related-slide .related-container .col-md-12
+{
+  font-family: Khmer OS Battambang;
+}
+
+.related-slide .related-container .col-md-12 .col-md-6
+{
+  padding: 10px;
+  vertical-align: middle;
+  text-align: justify;
+}

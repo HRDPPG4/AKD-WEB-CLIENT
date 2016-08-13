@@ -1,3 +1,4 @@
+<title>បច្ចេកវិទ្យា | AKD</title>
 <jsp:include page="include/header.jsp"></jsp:include>
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -12,55 +13,59 @@
 				<div class="row-nav-left-content">
 				
 				
-				
 					<div class="row" ng-app="indexApp" ng-controller="indexCtrl">
-						<div class="well col-sm-3 col-xs-12">
-							<div class="left-side-nav">
-				     			<ul class="main-category">
-				     			    <li class="bg-cates">
-					     			     <span><i class="fa fa-tags" aria-hidden="true"></i>
-			  	   						 </span>ប្រភេទ
-		  	   						</li>
-		  	   						<li>
-			  	   						<span><i class="fa fa-flask"></i>
-			  	   						</span>បច្ចេកវិទ្យា
-
-			  	   						 <ul class="sub-menus-cates">
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      		<li>ជឿជាក់</li>
-			  	   					      </ul>
-		  	   						</li>
-
-		  	   						<li>
-			  	   						<span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-			  	   						</span>ចំណេះដឹងទូទៅ
-		  	   						</li>
-		  	   						<li>
-			  	   						<span><i class="fa fa-book" aria-hidden="true"></i></span>
-			  	   						អក្សរសាស្រត្ត
-		  	   						</li>
-								   <li>
-									   <span><i class="fa fa-cubes" aria-hidden="true"></i>
-									   </span>អក្សរសាស្រត្ត
-								   </li>
-				     			</ul>
-				     		</div>
-						</div>
-
-						<div class="well col-sm-9 col-xs-12">
-							<div ng-repeat="slide in slides" class="col-lg-3 col-sm-4 col-xs-6">
+					   <div class="col-sm-3" id="left-side-nav" >
+					   	   <ul class="category-menu">
+					   	   		<li class="bg-cate"><span><i class="fa fa-flask"></i>
+			  	   					</span>បច្ចេកវិទ្យា
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Design</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Network</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Mobile</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Programming</a> 
+			  	   				</li>
+			  	   				<li class="cates-main">
+			  	   				<a href="#">Web</a> 
+			  	   				</li>
+					   	   </ul>
+					   </div>
+						<!--  -->
+						
+						<div class="col-sm-9 col-xs-12">
+							<div class="body-cates">
+							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
 								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
 								</span>
-								
+								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
+								<span class="user-name">ជឹម មិនា</span>
+								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+								<span class="view-count">១០០០ បានមើល</span>
+								<span class="socials">
+									<a href="#" alt="like" class="like">
+										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+									</a>
+									<a href="#" alt="download" class="download">
+										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+										</a>
+									<a href="#" alt="share" class="share">
+										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+									</a>
+								</span>
 								</a>
 							</div>
-
+							</div>
+							</div>
 						</div>
+						
 					</div>				
 					
 					</div>

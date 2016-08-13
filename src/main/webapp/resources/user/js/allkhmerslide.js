@@ -1,10 +1,20 @@
 
 
 $(document).ready(function(){
-	$('.main-category').click(function(){
-		$('.sub-menus-cates').slideToggle('slow');
+	$('a.menu').click(function() {
+	    $('a.menu').removeClass("actives-main");
+	    $(this).addClass("actives-main");
 	});
 });
+
+/*$(document).ready(function(){
+	$('.main-category a').click(function(){
+		 e.preventDefault();
+		$('ul.sub-menus-cates').slideToggle(200);
+		 $('.main-category a').removeClass('clicks');
+		$(this).addClass('clicks');
+	});
+});*/
 // /////////
 $(document).ready(function(){
 	var menu ='close';
@@ -20,10 +30,10 @@ $(document).ready(function(){
 	});
 });
 // ///////////////////////
-$(document).ready(function(){
+/*$(document).ready(function(){
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-alert('hello');
+
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
        // alert('hi');
@@ -33,28 +43,12 @@ alert('hello');
 		alert('he');
 	});
 
-});
-// ///////////////////////////////////
-// $(document).ready(function(){
-// 	var menu_minimize ='close';
-//   $('.nav-minimize').click(function(){
-//   	if (menu_minimize=="close") {
-//   		$('.left-side-nav').hide('slow');
-//   		$('.nav-minimize').css({'left':'100px'},"slow");
-  		
-//   		menu_minimize ='open';
-//   	}else{
-//   		$('.left-side-nav').show('slow');
-//   		$('.nav-minimize').css({'left':'260px'},"slow");
-//   		menu_minimize ='close';
-//   	}
-//   });
-// });
+});*/
 // ///////////////////////////////////
 jQuery(document).ready(function($) {
 	var my_nav = $('.navbar-sticky'); 
 	var my_header=$('.navbar-bg');
-	var my_left_bar =$('.left-side-nav');
+//	var my_left_bar =$('.left-side-nav');
 
 	
 	// grab the initial top offset of the navigation 
@@ -67,21 +61,17 @@ jQuery(document).ready(function($) {
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
 		if (scroll_top > sticky_navigation_offset_top) { 
 			my_nav.addClass( 'stick' );
-			my_left_bar.css({'top':'10%'});
 			my_header.hide();
-			// $('.logo-main-menu').show();
+			$('.logo-main-menu').show();
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"visible"});
 			
 
-
-
 		} else {
 			my_nav.removeClass( 'stick' );
-			my_left_bar.css({'top':'18.30%'});
 			my_header.show();
 		
-			// $('.logo-main-menu').hide();
+			$('.logo-main-menu').hide();
 			// $('.navbar-collapse .navbar-nav').css({"margin":"0 auto","right":"0px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"hidden"});
 		   

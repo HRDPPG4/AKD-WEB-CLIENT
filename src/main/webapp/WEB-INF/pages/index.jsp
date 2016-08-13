@@ -1,9 +1,13 @@
+<title>ទំព័រដើម | AKD</title>
 <jsp:include page="user/include/header.jsp"></jsp:include>
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!-- //////////////////////////////////////////////////////// -->
-<div ng-app="indexApp" ng-controller="indexCtrl">
+
+    
+<div ng-app="DocumentApp" ng-controller="DocumentCtrl">
+
+<div ng-controller="DocumentCtrl">
+
 
 <content>
 <div class="container">
@@ -15,7 +19,7 @@
 						  <span><i class="fa fa-flask"></i></span>
 						  បច្ចេកវិទ្យា
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/technology">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -32,20 +36,17 @@
 					<div id="design" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							<a href="/detail?url={{escapeUrl(slide.EMBEDED_LINK)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -66,14 +67,11 @@
 					<div id="network" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/002.png" alt="">
 								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 								</span>
 								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
@@ -98,11 +96,11 @@
 				<div id="mobile" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/003.png" alt=""> 
 								
 								
 								
@@ -130,11 +128,11 @@
 				<div id="programming" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/004.png" alt=""> 
 								
 								
 								
@@ -162,11 +160,11 @@
 				<div id="web" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in slides  | limitTo : 4">
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Law/006.png" alt=""> 
 								
 								
 								
@@ -204,7 +202,7 @@
 				   </span>
 						 ចំណេះដឹងទូទៅ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/general-knowledge">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -213,7 +211,7 @@
 						    <li><a data-toggle="tab" href="#historical">ប្រវត្តិសាស្ត្រ</a></li>
 						    <li><a data-toggle="tab" href="#inter-nation">ទំនាក់ទំនងអត្តរជាតិ</a></li>
 						    <li><a data-toggle="tab" href="#religion">សាសនា</a></li>
-						   <li><a data-toggle="tab" href="#proverb">សុភាសិទ</a></li>
+						   <li><a data-toggle="tab" href="#proverb">សុភាសិត</a></li>
 					</ul>
 
 				<div class="tab-content">
@@ -225,7 +223,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/002.png" alt=""> 
 								
 								
 								
@@ -259,7 +257,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/006.png" alt=""> 
 								
 								
 								
@@ -291,7 +289,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Business/006.png" alt=""> 
 								
 								
 								
@@ -323,7 +321,7 @@
 							
 							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="${pageContext.request.contextPath}/resources/user/img/Business/011.png" alt=""> 
 								
 								
 								
@@ -392,7 +390,7 @@
 				   </span>
 						អក្សរសាស្ត្រ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/literal">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
@@ -575,11 +573,10 @@
 		<div class="row section business topspace-second">
 				<div class="section-title">
 						  <span​ class="col-xs-12 col-lg-12" id="left-title">
-						  <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
-				   </span>
-						 ចំណេះដឹងទូទៅ
+						  <span><i class="fa fa-cubes" aria-hidden="true"></i>
+				   				</span>មុខជំនួញ
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="#">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/business">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
