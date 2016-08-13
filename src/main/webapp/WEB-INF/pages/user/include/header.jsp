@@ -8,7 +8,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="UploadFileApp" ng-controller="UploadFileCtrl">
+<body ng-app="MainApp">
 <jsp:include page="register.jsp"></jsp:include>
 <jsp:include page="login.jsp"></jsp:include>
 <jsp:include page="upload.jsp"></jsp:include>

@@ -3,11 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-    
-<div ng-app="DocumentApp" ng-controller="DocumentCtrl">
-
-<div ng-controller="DocumentCtrl">
-
 
 <content>
 <div class="container">
@@ -33,7 +28,7 @@
 
 				<div class="tab-content">
 
-					<div id="design" class="tab-pane fade in active">
+					<div id="design" class="tab-pane fade in active" ng-controller="DocumentCtrl">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
 						ng-repeat="slide in document  | limitTo : 4">

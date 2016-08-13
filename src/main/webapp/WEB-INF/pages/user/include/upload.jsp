@@ -2,7 +2,7 @@
     pageEncoding="utf-8"%>
 
 
-<div class="modal fade" id="upload" role="dialog">
+<div class="modal fade" id="upload" role="dialog" ng-controller="UploadCtrl">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">

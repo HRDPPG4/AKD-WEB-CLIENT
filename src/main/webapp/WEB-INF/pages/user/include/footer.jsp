@@ -62,8 +62,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/Document.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/Upload.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/MainApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 	

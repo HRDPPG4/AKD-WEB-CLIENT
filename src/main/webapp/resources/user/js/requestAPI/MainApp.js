@@ -1,10 +1,39 @@
-/*
-var app = angular.module('DocumentApp', []);
+var app = angular.module('MainApp', []);
+app.controller('UploadCtrl', function($scope, $http) {
+
+	$scope.uploadFile = function(event) {
+		event.preventDefault();
+
+		var frmData = new FormData();
+		var file = $('#filer_input')[0].files[0];
+		frmData.append("files", file);
+		$http({
+			url : 'http://192.168.178.202:1111/api/uploadFile',
+			method :'POST',
+			data : frmData,
+			transformRequest : angular.identity,
+			headers : {
+				'Content-Type' : undefined
+			}
+		}).then(function(response) {
+			alert("Success");
+			console.log(response);
+			$scope.message = response.data.message;
+		}, function(response) {
+			console.log(response);
+		});
+
+		alert("Click in AngularJS");
+	};
+
+});
+
+
 app.controller('DocumentCtrl', function($scope, $http, $sce){
 
 	$scope.display = function(){
 		$http({
-			url:'http://localhost:1111/api/v1/document',
+			url:'http://192.168.178.202:1111/api/v1/document',
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
@@ -110,4 +139,4 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 });
 
 
-*/
+
