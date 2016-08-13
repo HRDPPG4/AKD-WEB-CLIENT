@@ -8,7 +8,7 @@ app.controller('UploadFileCtrl', function($scope, $http) {
 		var file = $('#filer_input')[0].files[0];
 		frmData.append("files", file);
 		$http({
-			url : 'http://localhost:1111/api/uploadFile',
+			url : 'http://192.168.178.202:1111/api/uploadFile',
 			method :'POST',
 			data : frmData,
 			transformRequest : angular.identity,
