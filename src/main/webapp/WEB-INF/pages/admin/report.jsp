@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Admin | Slide</title>
+	<title>Admin | Report</title>
 	<%@include file="include/admin-link.jsp" %>
 	 
 </head>
@@ -12,7 +12,7 @@
 		<div class="wrapper">
 			<%@include file="include/admin-header.jsp" %>
 			<%-- <%@include file="../include/navigation.jsp" %> --%>
-			<aside class="main-sidebar">
+					<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -46,7 +46,7 @@
           </a>
         </li>
 
-        <li class="active"><a href="slide"><i class="fa fa-slideshare"></i> <span>Slides</span></a></li>
+        <li><a href="slide"><i class="fa fa-slideshare"></i> <span>Slides</span></a></li>
         
         <li class="treeview">
           <a href="#">
@@ -74,31 +74,27 @@
             <span class="label label-primary pull-right">8</span>
           </a>
         </li>
-        <li>
-        	<a href="report">
-        		<i class="fa fa-exclamation-circle"></i>
-				<span>Report</span> <span class="label label-primary pull-right">8</span>
-			</a>
-		</li>
+        
+        <li  class="active">
+          <a href="report">
+            <i class="fa fa-exclamation-circle"></i> <span>Report</span>
+            <span class="label label-primary pull-right">8</span>
+          </a>
+        </li>
       </ul>
       </section>
     <!-- /.sidebar -->
   </aside>
-			
-			
-			
-			
-			
-			<div class="content-wrapper">
+		<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Slide Information
+        Feedback Data
         <small>advanced tables</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active"><a href="#">Slide</a></li>
+        <li class="active"><a href="#">Feedback</a></li>
       </ol>
     </section>
 
@@ -108,7 +104,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"> Slide Data </h3>
+              <h3 class="box-title">Feedbacks Table</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -116,63 +112,68 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Title</th>
+                  <th>User</th>
                   <th>Desciption</th>
                   <th>Post Date</th>
-                  <th>View Count</th>
-                  <th>Categories</th>
-                  <th>Public View</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>1001</td>
-                  <td>Java EE</td>
-                  <td>Java EE Begining</td>
+                  <td>F1001</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
                   <td>12/12/2014</td>
-                  <td>5</td>
-                  <td>Programming</td>
-                  <td><span class="label label-success">Approved</span></td>
                   <td>
                       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                       <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <td>1001</td>
-                  <td>Java EE</td>
-                  <td>Java EE Begining</td>
+                  <td>F1002</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
                   <td>12/12/2014</td>
-                  <td>5</td>
-                  <td>Programming</td>
-                  <td><span class="label label-success">Approved</span></td>
                   <td>
                       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                       <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <td>1001</td>
-                  <td>Java EE</td>
-                  <td>Java EE Begining</td>
+                  <td>F1003</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
                   <td>12/12/2014</td>
-                  <td>5</td>
-                  <td>Programming</td>
-                  <td><span class="label label-success">Approved</span></td>
                   <td>
                       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                       <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
                   </td>
                 </tr>
                 <tr>
-                  <td>1001</td>
-                  <td>Java EE</td>
-                  <td>Java EE Begining</td>
+                  <td>F1004</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
                   <td>12/12/2014</td>
-                  <td>5</td>
-                  <td>Programming</td>
-                  <td><span class="label label-success">Approved</span></td>
+                  <td>
+                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>F1005</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
+                  <td>12/12/2014</td>
+                  <td>
+                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
+                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>F1006</td>
+                  <td>Rany</td>
+                  <td>I think you should add video or file for download.</td>
+                  <td>12/12/2014</td>
                   <td>
                       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                       <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
@@ -180,11 +181,6 @@
                 </tr>
                 
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th><a href="add-slide.html"><button class="btn btn-flat btn-primary">Add Slide</button></a></th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -197,9 +193,8 @@
     </section>
     <!-- /.content -->
   </div>
-			</div>
+  
+		
 		</div>
-
-	</div>
 </body>
 </html>

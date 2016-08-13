@@ -75,6 +75,13 @@
             <span class="label label-primary pull-right">8</span>
           </a>
         </li>
+        
+        <li>
+          <a href="report">
+            <i class="fa fa-exclamation-circle"></i> <span>Report</span>
+            <span class="label label-primary pull-right">8</span>
+          </a>
+        </li>
       </ul>
       </section>
     <!-- /.sidebar -->
