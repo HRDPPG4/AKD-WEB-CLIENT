@@ -44,6 +44,11 @@ public class AdminController {
 	public String subCategory(){
 		return "admin/sub-category";
 	}
+	
+	@RequestMapping(value="/admin/report",method=RequestMethod.GET)
+	public String report(){
+		return "admin/report";
+	}
 
 	
 }

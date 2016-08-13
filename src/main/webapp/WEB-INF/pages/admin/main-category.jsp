@@ -66,6 +66,9 @@
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
+			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
+					<span>Report</span> <span class="label label-primary pull-right">8</span>
+			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
 
@@ -203,19 +206,26 @@
 													<form role="form">
 														<div class="box-body">
 															<div class="form-group">
-																<label for="exampleInputEmail1">Category Title</label> <input
+																<label for="categoryTitle">Category Title</label> <input
 																	type="text" class="form-control"
 																	placeholder="Category title ">
 															</div>
 
 															<div class="form-group">
-																<label> Display </label><br /> <label
+																<label for="description">Description</label>
+																<textarea class="form-control"
+																	placeholder="Description..." rows="4"></textarea>
+
+															</div>
+
+															<div class="form-group">
+																<label> Status </label><br /> <label
 																	class="radio-inline"> <input type="radio"
 																	name="optionsRadios" id="optionsRadios2"
-																	value="option2"> Private
+																	value="option2"> Enable
 																</label> <label class="radio-inline"> <input
 																	type="radio" name="optionsRadios" id="optionsRadios3"
-																	value="option3"> Public
+																	value="option3"> Disable
 																</label>
 															</div>
 														</div>

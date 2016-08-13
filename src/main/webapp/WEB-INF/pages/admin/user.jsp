@@ -11,8 +11,6 @@
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
-		<%-- <%@include file="../include/navigation.jsp" %> --%>
-
 		<aside class="main-sidebar"> <!-- sidebar: style can be found in sidebar.less -->
 		<section class="sidebar"> <!-- Sidebar user panel -->
 		<div class="user-panel">
@@ -27,6 +25,7 @@
 
 			</div>
 		</div>
+
 		<!-- search form -->
 		<form action="#" method="get" class="sidebar-form">
 			<div class="input-group">
@@ -66,6 +65,10 @@
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
+			</a></li>
+
+			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
+					<span>Report</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
