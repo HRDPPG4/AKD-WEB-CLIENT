@@ -6,7 +6,6 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		var frmData = new FormData();
 		
 		$scope.des="Des for file by Chivorn";
-	//	$scope.title="My Title";
 		
 		var file = $('#filer_input')[0].files[0];
 		frmData.append("files", file);	
