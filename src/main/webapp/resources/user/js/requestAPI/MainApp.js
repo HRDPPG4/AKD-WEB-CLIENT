@@ -55,10 +55,16 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 	//	$(".progress-bar").css("width", "100%"); 
 		
 		var frmData = new FormData();
+		
+		$scope.des="Des for file by Chivorn";
+	//	$scope.title="My Title";
+		
 		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);		
+		frmData.append("files", file);	
+		frmData.append("title", $scope.title);
+		frmData.append("des", $scope.des);
 		$http({
-			url : 'http://192.168.178.202:1111/api/uploadFile',
+			url : 'http://localhost:1111/api/uploadFile',
 			method :'POST',
 			data : frmData,
 			transformRequest : angular.identity,
@@ -72,32 +78,9 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 			
 			
 		}, function(response) {
-			console.log(response);
-			
-			/*
-			var i = -1;
-		    function update() {
-		      $scope.progress += random(0, 10);
-		      if ($scope.progress > random(70, 90)) {
-		      
-		        i = (i + 1) % $scope.labels.length;
-		        $scope.status = $scope.labels[i];
-		      }
-		      $timeout(update, 200);
-		    }
-		    function random(a, b) {
-		      return a + Math.floor(Math.random() * (b - a));
-		    }
-			
-		    upadte();*/
-			
-			
+		//	console.log(response);	
 			$(".progress-bar").css("width", "100%"); 
-			
-			
 			alert("Error");
-			
-			
 		});
 		
 		
@@ -164,7 +147,7 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 
 	$scope.display = function(){
 		$http({
-			url:'http://192.168.178.202:1111/api/v1/document',
+			url:'http://localhost:1111/api/v1/document',
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;

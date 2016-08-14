@@ -1,8 +1,4 @@
 $(document).ready(function() {
-	
-	
-	
-	
 	$('#filer_input').on('change',function ()
     {
 		var ext = $('#filer_input').val().split('.').pop().toLowerCase();
@@ -51,7 +47,7 @@ $(document).ready(function() {
 		</div>\
 	        			<div class="form-group">\
 						<label for="pwd">ឈ្មោះឯកសារ:</label>\
-						<input type="text" class="form-control" id="pwd" value="{{fi-name}}">\
+						\
 	        			</div>\
 	                        </div>\
 	                    </div>\
@@ -87,7 +83,7 @@ $(document).ready(function() {
 		</div>\
 	        			<div class="form-group">\
 						<label for="pwd">ឈ្មោះឯកសារ:</label>\
-						<input type="text" class="form-control" id="pwd" value="{{fi-name}}">\
+						\
 	        			</div>\
 	                            </div>\
 	                        </div>\
