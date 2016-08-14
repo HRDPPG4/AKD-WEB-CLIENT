@@ -27,15 +27,10 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 			
 			
 		}, function(response) {
-		//	console.log(response);	
 			$(".progress-bar").css("width", "100%"); 
 			alert("Error");
 		});
-		
-		
-		
 
-		/*alert("Click in AngularJS");*/
 	};
 	
 	
@@ -48,6 +43,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		frmData.append("folderID", id);
 		frmData.append("folderName", $scope.folderName);
 		frmData.append("folderDes", $scope.des);
+		
 		$http({
 			url : 'http://localhost:1111/api/uploadFolder',
 			method :'POST',
@@ -65,7 +61,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 			console.log(response);
 		});
 
-		alert("Upload Folder");
+		//alert("Upload Folder");
 	};
 
 });
