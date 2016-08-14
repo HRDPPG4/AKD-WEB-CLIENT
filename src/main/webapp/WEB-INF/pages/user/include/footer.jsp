@@ -2,9 +2,7 @@
     pageEncoding="utf-8"%>
     
     
-    
-    
-   <div class="footer">
+     <div class="footer">
 		<div class="container">	
 			<div class="col-sm-3 footer-height#">
 				<h3><i class="fa fa-users" aria-hidden="true"></i>  អំពីពួកយើង</h3>
@@ -48,30 +46,8 @@
 					</li>					
 				</ul>
 			</div>
-	
-	<!-- 	</div> -->
-		<!-- <div​> -->
 		<div class="col-sm-12 center copyright">
 			Copyright © 2016 Korea Software HRD Center (All Khmer Docs). All Rights Reserved.
 		</div>
 	</div>
-
-<!--  </div>   -->
-   
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/MainApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
-
-	
-	<!-- library jquery for file upload -->
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
-	<!-- Online Link -->
-	
-	
-</body>
-</html>
+ </div>  

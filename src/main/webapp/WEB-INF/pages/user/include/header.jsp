@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 	
-<!-- Now I can fix it by javascript. but I'm not sure that is good or not. Because it related to search engine. Maybe google can't search our website. because title very important for search engine -->
-<jsp:include page="link-header.jsp"></jsp:include>
-<script>
-	PATH_UI = "http://192.168.178.202:2222";
-</script>
-</head>
-<body ng-app="MainApp">
-<jsp:include page="register.jsp"></jsp:include>
-<jsp:include page="login.jsp"></jsp:include>
-<jsp:include page="upload.jsp"></jsp:include>
-<jsp:include page="save-list.jsp"></jsp:include>
-<jsp:include page="update-slide.jsp"></jsp:include>
-
-<jsp:include page="uploadFolder.jsp"></jsp:include>
-				  
-	<header id="header">
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
@@ -104,5 +88,4 @@
 	</div>
 </nav>
 </div>
-
-</header>
+	

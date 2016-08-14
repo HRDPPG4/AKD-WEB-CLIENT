@@ -17,7 +17,6 @@
         </span>
 
     <div class="imgcontainer">						     
-      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
     </div>
 			          
         
