@@ -2,13 +2,14 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
 
 </head>
-<body class="skin-blue sidebar-mini">
+<body class="skin-blue sidebar-mini" ng-app="MainApp">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>
@@ -122,66 +123,10 @@
 											</button>
 										</td>
 									</tr>
-									<tr>
-										<td>1002</td>
-										<td>Technology</td>
-										<td>5</td>
-										<td>12/12/2014</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1003</td>
-										<td>Social</td>
-										<td>1</td>
-										<td>12/12/2014</td>
-										<td><span class="label label-warning">Block</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1004</td>
-										<td>Business</td>
-										<td>1</td>
-										<td>12/12/2014</td>
-										<td><span class="label label-warning">Block</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1005</td>
-										<td>Management</td>
-										<td>1</td>
-										<td>12/12/2014</td>
-										<td><span class="label label-success">Block</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
+									
+									
+									
+								
 								</tbody>
 								<tfoot>
 									<tr>
@@ -193,7 +138,7 @@
 									</tr>
 
 									<!-- Modal -->
-									<div class="modal fade" id="addMainModal" role="dialog">
+									<div class="modal fade" id="addMainModal" role="dialog" ng-controller="UploadCtrl">
 										<div class="modal-dialog">
 
 											<!-- Modal content-->
@@ -208,13 +153,13 @@
 															<div class="form-group">
 																<label for="categoryTitle">Category Title</label> <input
 																	type="text" class="form-control"
-																	placeholder="Category title ">
+																	placeholder="Category title " name="folderName" ng-model="folderName">
 															</div>
 
 															<div class="form-group">
 																<label for="description">Description</label>
 																<textarea class="form-control"
-																	placeholder="Description..." rows="4"></textarea>
+																	placeholder="Description..." rows="4" ng-model="des"></textarea>
 
 															</div>
 
@@ -230,10 +175,10 @@
 															</div>
 														</div>
 													</form>
-												</div>
+												</div>																								
 												<div class="modal-footer">
 													<!--   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-													<button class="btn btn-primary btn-flat">Save</button>
+													<input type="submit" class="btn btn-primary btn-flat" value="Submit" ng-click="uploadFolder($event)">
 												</div>
 											</div>
 
@@ -257,6 +202,8 @@
 
 	</div>
 <body>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/MainApp.js"></script>
 
 </body>
 </html>

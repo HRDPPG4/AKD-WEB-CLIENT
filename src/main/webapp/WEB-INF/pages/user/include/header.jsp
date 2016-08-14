@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-	
+
 <!-- top menu -->
 	<div class="top-menu">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
@@ -20,10 +20,7 @@
       </form>
 	</div>
 	<div class="upload-signup-signin">
-     	<ul>
-     	<li id="uploadFol"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#uploadFolder">Test Up</a>
-            </li>
-            
+     	<ul>            
             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload">ចែកចាយឯកសារ</a>
             </li>
 

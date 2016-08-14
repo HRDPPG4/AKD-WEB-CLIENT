@@ -58,7 +58,7 @@
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include>
-<jsp:include page="include/uploadFolder.jsp"></jsp:include>
+
 				  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
