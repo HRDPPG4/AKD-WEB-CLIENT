@@ -25,6 +25,36 @@ app.controller('UploadCtrl', function($scope, $http) {
 
 		alert("Click in AngularJS");
 	};
+	
+	
+	
+	$scope.uploadFolder=function(event) {
+		event.preventDefault();
+		var frmData = new FormData();
+		var id="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+		
+		frmData.append("folderID", id);
+		frmData.append("folderName", $scope.folderName);
+		
+		$http({
+			url : 'http://192.168.178.202:1111/api/uploadFolder',
+			method :'POST',
+			data : frmData,
+			transformRequest : angular.identity,
+			headers : {
+				'Content-Type' : undefined
+			}
+		}).then(function(response) {
+			alert("Folder upload Successful");
+			console.log("Check Upload Foler here!!");
+			console.log(response);
+			$scope.message = response.data.message;
+		}, function(response) {
+			console.log(response);
+		});
+
+		//alert("Upload Folder");
+	};
 
 });
 

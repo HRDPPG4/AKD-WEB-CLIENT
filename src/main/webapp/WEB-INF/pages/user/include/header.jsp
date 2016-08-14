@@ -13,6 +13,8 @@
 <jsp:include page="upload.jsp"></jsp:include>
 <jsp:include page="save-list.jsp"></jsp:include>
 <jsp:include page="update-slide.jsp"></jsp:include>
+
+<jsp:include page="uploadFolder.jsp"></jsp:include>
 				  
 	<header id="header">
 <!-- top menu -->
@@ -35,6 +37,9 @@
 	</div>
 	<div class="upload-signup-signin">
      	<ul>
+     	<li id="uploadFol"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#uploadFolder">Test Up</a>
+            </li>
+            
             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload">ចែកចាយឯកសារ</a>
             </li>
 
