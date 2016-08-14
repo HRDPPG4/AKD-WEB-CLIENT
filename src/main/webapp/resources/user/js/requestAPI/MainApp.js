@@ -1,12 +1,62 @@
 var app = angular.module('MainApp', []);
-app.controller('UploadCtrl', function($scope, $http) {
+app.controller('UploadCtrl', function($scope, $http,$timeout) {
+	
+	
+	
+
+	/*$scope.status = "Uploading...";
+    $scope.progress = 0;
+    $scope.labels = [
+      "Thanks for share your file.",
+
+      "Success"
+    ];
+    
+    
+    var i = -1;
+    function update() {
+      $scope.progress += random(0, 10);
+      if ($scope.progress > random(70, 90)) {
+      
+        i = (i + 1) % $scope.labels.length;
+        $scope.status = $scope.labels[i];
+      }
+      $timeout(update, 200);
+    }
+    function random(a, b) {
+      return a + Math.floor(Math.random() * (b - a));
+    }
+*/
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	$scope.uploadFile = function(event) {
 		event.preventDefault();
-
+		
+	//	$(".progress-bar").css("width", "100%"); 
+		
 		var frmData = new FormData();
 		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);
+		frmData.append("files", file);		
 		$http({
 			url : 'http://192.168.178.202:1111/api/uploadFile',
 			method :'POST',
@@ -16,14 +66,65 @@ app.controller('UploadCtrl', function($scope, $http) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			$(".progress-bar").css("width", "100%"); 
+			//alert("Click in AngularJS");
 			alert("Success");
-			console.log(response);
-			$scope.message = response.data.message;
+			
+			
 		}, function(response) {
 			console.log(response);
+			
+			/*
+			var i = -1;
+		    function update() {
+		      $scope.progress += random(0, 10);
+		      if ($scope.progress > random(70, 90)) {
+		      
+		        i = (i + 1) % $scope.labels.length;
+		        $scope.status = $scope.labels[i];
+		      }
+		      $timeout(update, 200);
+		    }
+		    function random(a, b) {
+		      return a + Math.floor(Math.random() * (b - a));
+		    }
+			
+		    upadte();*/
+			
+			
+			$(".progress-bar").css("width", "100%"); 
+			
+			
+			alert("Error");
+			
+			
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-		alert("Click in AngularJS");
+		/*alert("Click in AngularJS");*/
 	};
 	
 	
