@@ -45,7 +45,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout,$rootScope) {
 	}	
 	$scope.showCategory();
 	
-	
+	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.uploadFile = function(event) {
 		event.preventDefault();
 		
