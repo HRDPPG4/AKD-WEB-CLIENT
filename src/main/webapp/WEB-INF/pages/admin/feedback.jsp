@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="myApp">
+<html ng-app="MainApp">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Admin | Feedback</title>
 	<%@include file="include/admin-link.jsp" %>
 
 <script src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js" ></script>
-<script src="${pageContext.request.contextPath}/resources/admin/angular/feedbackAngular.js" ></script>
+<script src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js" ></script>
 	 
 </head>
 <body class="skin-blue sidebar-mini">
@@ -102,7 +102,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content" ng-controller="myCtrl">
+    <section class="content" ng-controller="MainCtrl">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">

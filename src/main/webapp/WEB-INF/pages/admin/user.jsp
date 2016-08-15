@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="myApp">
+<html ng-app="MainApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | User</title>
@@ -9,7 +9,7 @@
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/admin/angular/userAngular.js"></script>
+	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -93,7 +93,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="myCtrl">
+			<section class="content" ng-controller="MainCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -132,16 +132,18 @@
 											</button>
 										</td>
 									</tr>
-																	</tbody>
+								</tbody>
 								<tfoot>
 									<tr>
-										<th><button class="btn btn-flat btn-primary">Add
+										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#register">Add
 												User</button></th>
 									</tr>
 								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
+						
+						<jsp:include page="../user/include/register.jsp"></jsp:include>
 					</div>
 					<!-- /.box -->
 				</div>

@@ -6,6 +6,8 @@
 <link href="${pageContext.request.contextPath}/resources/admin/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/admin/blue.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/admin/morris.css">
+<link href="${pageContext.request.contextPath}/resources/user/css/register.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/user/css/header.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="${pageContext.request.contextPath}/resources/admin/css/dashboard.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/admin/css/_all-skins.min.css" rel="stylesheet">
