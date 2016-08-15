@@ -53,7 +53,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="MainApp">
+<body ng-app="MainApp">		<!-- indexApp -->	<!-- ng-app="MainApp" -->
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -136,14 +136,14 @@
 						</div> 
 
 	
-							 <div class="related-slide" ng-controller="relatedSlideCtrl">
+							 <div class="related-slide" ng-controller="DocumentCtrl" >
 								<div class="col-md-3">
 									<div class="row col-sm-12" >
 										<div class="related-container">
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in slides">  									 		 
+												 <div class="col-xs-6 col-sm-4 col-md-12" "slide in document  | limitTo : 4">  									 		 
 												 		<div class="col-md-6">												 			
 															<!-- <a href="/detail?url={{escapeUrl(slide.url)}}" >
 													 		<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
@@ -152,8 +152,8 @@
 
 
 
-													 		<a href="/detail?url={{escapeUrl(slide.url)}}" >
-													 		<img src="https://drive.google.com/thumbnail?authuser=0&sz=w320&id=1j3tJPgadg7nuS3XPHmrEiMdN3kXYSbG2a80r8Y7Rb-s" alt="">
+													 		<a href="/detail" >
+													 		<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 													 		</a>
 
 
