@@ -104,7 +104,7 @@
 										<th>Name</th>
 										<th>Date</th>
 										<th>Describe</th>
-										<th>Type</th>
+										<!-- <th>Type</th> -->
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -114,7 +114,7 @@
 										<td>{{c.CAT_NAME}}</td>
 										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>
-										<td>{{c.PARENT_ID}}</td>
+										<!-- <td>{{c.PARENT_ID}}</td> -->
 										<td>{{c.STATUS}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm">
