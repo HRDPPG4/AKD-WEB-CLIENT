@@ -44,6 +44,8 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		frmData.append("folderID", id);
 		frmData.append("folderName", $scope.folderName);
 		frmData.append("folderDes", $scope.des);
+		frmData.append("folderStatus", $scope.sta);
+		
 		
 		$http({
 			url : 'http://localhost:1111/api/uploadFolder',

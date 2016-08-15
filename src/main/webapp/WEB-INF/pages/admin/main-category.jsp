@@ -160,18 +160,19 @@
 																<label for="description">Description</label>
 																<textarea class="form-control"
 																	placeholder="Description..." rows="4" ng-model="des"></textarea>
-
 															</div>
 
 															<div class="form-group">
-																<label> Status </label><br /> <label
-																	class="radio-inline"> <input type="radio"
-																	name="optionsRadios" id="optionsRadios2"
-																	value="option2"> Enable
-																</label> <label class="radio-inline"> <input
-																	type="radio" name="optionsRadios" id="optionsRadios3"
-																	value="option3"> Disable
-																</label>
+														    <div class="radio">
+																 <label> Status </label><br /> 
+																  <label>
+														            <input ng-model="sta" type="radio" name="rdoResult" ng-value="'1'">
+														              Enable
+														        </label>
+																<label>
+														            <input ng-model="sta" type="radio" name="rdoResult" ng-value="'0'">
+														              Disable
+														        </label>
 															</div>
 														</div>
 													</form>
@@ -203,7 +204,7 @@
 	</div>
 <body>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/MainApp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/AdminApp.js"></script>
 
 </body>
 </html>
