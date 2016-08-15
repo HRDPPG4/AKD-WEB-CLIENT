@@ -67,7 +67,7 @@
 <jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
 
 
-<div ng-app="indexApp" ng-controller="indexCtrl">
+<div>
 	<content>
 	<div id="page-content-wrapper">
 		 <div class="container">
@@ -136,7 +136,7 @@
 						</div> 
 
 	
-							 <div class="related-slide">
+							 <div class="related-slide" ng-controller="relatedSlideCtrl">
 								<div class="col-md-3">
 									<div class="row col-sm-12" >
 										<div class="related-container">
