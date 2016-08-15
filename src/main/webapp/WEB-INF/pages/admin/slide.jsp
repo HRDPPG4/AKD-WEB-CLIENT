@@ -93,7 +93,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="DocumentCtrl">
+			<section class="content" ng-controller="MainCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">

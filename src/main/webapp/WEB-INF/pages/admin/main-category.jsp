@@ -89,7 +89,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content"  ng-controller="CategoryCtrl">
+			<section class="content"  ng-controller="MainCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -110,7 +110,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="c in categories">
+									<tr ng-repeat="c in category">
 										<td>{{c.CAT_NAME}}</td>
 										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>

@@ -93,7 +93,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="UserCtrl">
+			<section class="content" ng-controller="MainCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -135,13 +135,15 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th><button class="btn btn-flat btn-primary">Add
+										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#register">Add
 												User</button></th>
 									</tr>
 								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
+						
+						<jsp:include page="../user/include/register.jsp"></jsp:include>
 					</div>
 					<!-- /.box -->
 				</div>

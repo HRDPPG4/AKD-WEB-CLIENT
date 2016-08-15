@@ -180,78 +180,11 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 });
 
 
-// Categories Controller
-app.controller('CategoryCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
-		$http({
-			url:'http://localhost:1111/api/v1/category',
-			method:'GET'
-		}).then(function(response){
-			$scope.categories=response.data.DATA;
-			console.log($scope.document);
-		}, function(response){
-
-		});
-	}
-	$scope.getAllData();
-});
-
-// Document Controller 
-app.controller('DocumentCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
-		$http({
-			url:'http://localhost:1111/api/v1/document',
-			method:'GET'
-		}).then(function(response){
-			$scope.document=response.data.DATA;
-			console.log($scope.document);
-		}, function(response){
-
-		});
-	}
-	$scope.getAllData();
-});
-
-//Comment Controller 
-app.controller('CommentCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
-		$http({
-			url:'http://localhost:1111/api/v1/comment',
-			method:'GET'
-		}).then(function(response){
-			$scope.comment=response.data.DATA;
-			console.log($scope.document);
-		}, function(response){
-
-		});
-	}
-	$scope.getAllData();
-});
-
-//Feedback Controller 
-app.controller('FeedbackCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
-		$http({
-			url:'http://localhost:1111/api/v1/feedback',
-			method:'GET'
-		}).then(function(response){
-			$scope.feedback=response.data.DATA;
-			console.log($scope.feedback);
-		}, function(response){
-
-		});
-	}
-	$scope.getAllData();
-});
-
-//User Controller 
-app.controller('UserCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
+//Main Controller for admin
+app.controller('MainCtrl', function($scope, $http, $sce){
+	
+//	Method for manipulating user
+	$scope.getUserData = function(){
 		$http({
 			url:'http://localhost:1111/api/v1/user',
 			method:'GET'
@@ -262,24 +195,80 @@ app.controller('UserCtrl', function($scope, $http, $sce){
 
 		});
 	}
-	$scope.getAllData();
-});
+	$scope.getUserData();
 
-//Report Controller 
-app.controller('ReportCtrl', function($scope, $http, $sce){
-
-	$scope.getAllData = function(){
+	
+//	Method for manipulating report
+	$scope.getReportData = function(){
 		$http({
 			url:'http://localhost:1111/api/v1/report',
 			method:'GET'
 		}).then(function(response){
 			$scope.report=response.data.DATA;
-			console.log($scope.reports);
+			console.log($scope.report);
 		}, function(response){
 
 		});
 	}
-	$scope.getAllData();
+	$scope.getReportData();
+	
+//	Method for manipulating feedback
+	$scope.getFeedbackData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/feedback',
+			method:'GET'
+		}).then(function(response){
+			$scope.feedback=response.data.DATA;
+			console.log($scope.feedback);
+		}, function(response){
+
+		});
+	}
+	$scope.getFeedbackData();
+	
+//	Method for manipulating comment
+	$scope.getCommentData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/comment',
+			method:'GET'
+		}).then(function(response){
+			$scope.comment=response.data.DATA;
+			console.log($scope.comment);
+		}, function(response){
+
+		});
+	}
+	$scope.getCommentData();
+	
+//	Method for manipulating categories
+	$scope.getCategoryData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'
+		}).then(function(response){
+			$scope.category=response.data.DATA;
+			console.log($scope.category);
+		}, function(response){
+
+		});
+	}
+	$scope.getCategoryData();
+
+//	Method for manipulating document
+	$scope.getDocumentData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/document',
+			method:'GET'
+		}).then(function(response){
+			$scope.document=response.data.DATA;
+			console.log($scope.document);
+		}, function(response){
+
+		});
+	}
+	$scope.getDocumentData();
+	
+	
 });
 
 
