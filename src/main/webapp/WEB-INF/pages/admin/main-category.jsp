@@ -204,7 +204,7 @@
 	</div>
 <body>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/js/AdminApp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
 
 </body>
 </html>

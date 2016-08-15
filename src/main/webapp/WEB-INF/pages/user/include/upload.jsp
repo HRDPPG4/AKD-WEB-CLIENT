@@ -19,20 +19,15 @@
       <div class="modal-body" style="padding:40px 50px;">
       
       
-   		 <form ng-submit ="uploadFile($event)" method="post" enctype="multipart/form-data">     			
-	 		<input type="file" name="file" id="filer_input" multiple="multiple">
-	 		<input type="text" ng-model="title">
-		  <button type="submit" class="btn btn-primary"​ alignt="center"​​ id="btnSave">រក្សាទុក</button>   
-		  
+   		 <form method="post" enctype="multipart/form-data">     			
+	 		<input type="file" name="file" id="filer_input" multiple="multiple">		  		  
 		  <div class = "progress progress-striped active">
 		   <div class = "progress-bar progress-bar-success" role = "progressbar" id="BBBB"
 		      aria-valuenow = "60" aria-valuemin = "0" aria-valuemax = "100" style = "width: 0%;">
 		      
 		      <span class = "sr-only">40% Complete</span>
 		   </div>
-		</div>
-				 
-		  						
+		</div>				 		  					
 		</form>  
 		
 		
@@ -62,7 +57,7 @@
 		
 	      </div>
       <div class="modal-footer">
-        
+        <button class="btn btn-primary"​ alignt="center"​​ id="btnSave" ng-click="uploadFile($event)">រក្សាទុក</button>   
       </div>
     </div>
     
