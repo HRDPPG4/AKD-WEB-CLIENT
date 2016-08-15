@@ -2,7 +2,35 @@ var app = angular.module('MainApp', []);
 
 //START UPLOAD FILE BLOCK
 
-app.controller('UploadCtrl', function($scope, $http,$timeout) {	
+app.directive('bindFile', [function () {
+    return {
+        require: "ngModel",
+        restrict: 'A',
+        link: function ($scope, el, attrs, ngModel) {
+            el.bind('change', function (event) {
+                ngModel.$setViewValue(event.target.files[0]);
+                $scope.$apply();
+              //  alert($scope.theFile.name);
+               // $rootScope.name=$scope.theFile.name;
+            });
+            
+            $scope.$watch(function () {
+            //	$rootScope.name=$scope.theFile.name;
+
+                return ngModel.$viewValue;
+            }, function (value) {
+                if (!value) {
+                    el.val("");
+                }
+            });
+        }
+
+    };
+
+}]);
+
+app.controller('UploadCtrl', function($scope, $http,$timeout,$rootScope) {	
+	$scope.theFile = null;
 	//	CATEGORY	
 	$scope.showCategory = function(){		
 		$http({
@@ -21,13 +49,12 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 	$scope.uploadFile = function(event) {
 		event.preventDefault();
 		
+		var files = event.target.files;
 		var frmData = new FormData();
-		
-	/*	$scope.des="Des for file by Chivorn";*/
-		
+						
 		var file = $('#filer_input')[0].files[0];
 		frmData.append("files", file);				
-		frmData.append("title", $scope.title);
+		frmData.append("title", $scope.theFile.name);
 		frmData.append("des", $scope.des);
 		frmData.append("catID", $scope.catID);	
 		$http({
@@ -41,7 +68,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		}).then(function(response) {
 			$(".progress-bar").css("width", "100%"); 
 			//alert("Click in AngularJS");
-		//	alert("Success");
+			//alert("Success");
 			
 			console.log("Success Block");
 			console.log(response);
@@ -54,16 +81,17 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 			    console.log('All uploads have finished');
 			});
 			
+		//	alert($scope.fileTitle);
 			
 		}, function(response) {
 		//	console.log(response);	
 			$scope.width="100%";
 			$(".progress-bar").css("width", $scope.width); 
-			//alert("Error");
+		//	alert("Error");
 			
 			console.log("Error Block");
 			console.log(response);
-			
+			//alert($scope.fileTitle);
 			
 		});
 		
@@ -102,7 +130,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 			console.log(response);
 		});
 
-		alert("Upload Folder");
+	//	alert("Upload Folder");
 	};
 
 });

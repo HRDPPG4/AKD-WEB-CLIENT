@@ -10,9 +10,22 @@
       <!--   <h4><span class="glyphicon glyphicon-lock"></span>បញ្ជូលឯកសារនៅទីនេះ</h4> -->                  
       </div>
       <div class="modal-body" style="padding:40px 50px;">
+      
+     
+		    <!-- <div ng-show="theFile">
+		        {{theFile.name}}<br />
+		        {{theFile.size}} byte(s)<br/>
+		        {{theFile.type}}
+		
+		        <input type="text" ng-model="theFile.name">
+		    </div> -->
+	
+		
+		
+		
    
    		 <form method="post" enctype="multipart/form-data">     			
-	 		<input type="file" name="file" id="filer_input" multiple="multiple">		  		  
+	 		<input type="file" name="file" id="filer_input" multiple="multiple" data-bind-file="" data-ng-model="theFile">		  		  
 		  <div class = "progress progress-striped active">
 		   <div class = "progress-bar progress-bar-success" role = "progressbar" id="BBBB"
 		      aria-valuenow = "60" aria-valuemin = "0" aria-valuemax = "100" style = "width: 0%;">
@@ -24,9 +37,10 @@
 			<form role="form">
 			    <div class="form-group">
 			      <label>Title:</label>
-			      <input type="text" class="form-control" placeholder="Title" ng-model="title" id="title">
+			      <input type="text" class="form-control" placeholder="Title" ng-model="theFile.name" id="title">		<!-- ng-model="fileTitle" id="title" -->
+			    <p>Title: {{theFile.name}}</p>
 			    </div>
-
+				
 			    <div class="form-group">
 			    
 			    
