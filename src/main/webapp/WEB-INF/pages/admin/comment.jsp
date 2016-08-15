@@ -110,7 +110,7 @@
 								<tbody>
 									<tr ng-repeat="c in comment">
 										<td>{{c.COMMENT_ID}}</td>
-										<td>{{c.CREATE_DATE}}</td>
+										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>
 										<td>{{c.USER_ID}}</td>
 										<td>
