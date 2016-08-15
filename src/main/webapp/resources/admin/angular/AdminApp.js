@@ -180,6 +180,111 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 });
 
 
+// Categories Controller
+app.controller('CategoryCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'
+		}).then(function(response){
+			$scope.categories=response.data.DATA;
+			console.log($scope.document);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+// Document Controller 
+app.controller('DocumentCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/document',
+			method:'GET'
+		}).then(function(response){
+			$scope.document=response.data.DATA;
+			console.log($scope.document);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+//Comment Controller 
+app.controller('CommentCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/comment',
+			method:'GET'
+		}).then(function(response){
+			$scope.comment=response.data.DATA;
+			console.log($scope.document);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+//Feedback Controller 
+app.controller('FeedbackCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/feedback',
+			method:'GET'
+		}).then(function(response){
+			$scope.feedback=response.data.DATA;
+			console.log($scope.feedback);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+//User Controller 
+app.controller('UserCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/user',
+			method:'GET'
+		}).then(function(response){
+			$scope.user=response.data.DATA;
+			console.log($scope.user);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+//Report Controller 
+app.controller('ReportCtrl', function($scope, $http, $sce){
+
+	$scope.getAllData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/report',
+			method:'GET'
+		}).then(function(response){
+			$scope.report=response.data.DATA;
+			console.log($scope.reports);
+		}, function(response){
+
+		});
+	}
+	$scope.getAllData();
+});
+
+
+
+
 
 
 
