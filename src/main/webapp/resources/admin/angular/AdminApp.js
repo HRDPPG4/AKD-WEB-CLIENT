@@ -1,6 +1,5 @@
 var app = angular.module('MainApp', []);
 
-
 //Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 	
@@ -18,6 +17,69 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 	}
 	$scope.getUserData();
 
+//	insert data to user db
+	$scope.insertUser = function() {
+		alert($scope.grole);
+		$http({
+			url : 'http://localhost:1111/api/v1/user',
+			method : "POST",
+			data : {
+				'USER_ID' : $scope.gid,
+				'USER_NAME' : $scope.gname,
+				'PASSWORD' : $scope.gpass,
+				'EMAIL':$scope.gemail,
+				'PHONE':$scope.gphone,
+				'CREATED_DATE':$scope.gdate,
+				'REMARK':$scope.gremark,
+				'STATUS':$scope.gstatus,
+				'USER_ROLE':$scope.grole
+			}
+		}).then(function(respone){
+			$scope.getUserData();
+			alert("success");
+		}, function(respone){
+			alert("faild");
+		});
+	}
+//	Delete user from db
+	$scope.removeUser = function(id) {
+		$http({
+			url : 'http://localhost:1111/api/v1/user/' + id,
+			method : 'DELETE'
+		}).then(function() {
+			$scope.getUserData();
+			alert("success");
+		}, function() {
+			alert("Fiald");
+		});
+	}
+
+//	get date from user db to update	
+	$scope.getDataForUpdate = function(user){
+		$scope.aid = user.u.id;
+		$scope.aname = user.u.name;
+		$scope.apassword =  user.u.password;
+		$scope.aemail = user.u.email;
+	}
+	
+//	do update user
+	$scope.update = function(){
+    	$http({
+    		url: 'http://localhost:4444/user',
+    		method: 'PUT',
+    		data:{
+    			'name': $scope.aname,
+    			'password': $scope.apassword,
+    			'email': $scope.aemail,
+    			'id': $scope.aid
+    		}
+    	}).then(function() {
+    		$scope.getAllData();
+		}, function() {
+			alert("fiald");
+		});
+    }
+	
 	
 //	Method for manipulating report
 	$scope.getReportData = function(){
@@ -95,15 +157,10 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 	$scope.uploadFolder=function(event) {
 		event.preventDefault();
 		var frmData = new FormData();
-		
-		
 		frmData.append("folderID", $scope.ParentID);
 		frmData.append("folderName", $scope.folderName);
 		frmData.append("folderDes", $scope.des);
 		frmData.append("folderStatus", $scope.sta);
-		
-		
-		
 		$http({
 			url : 'http://localhost:1111/api/uploadFolder',
 			method :'POST',
@@ -120,9 +177,7 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 			$scope.message = response.data.message;
 		}, function(response) {
 			console.log(response);
-		});
-		
-		/*alert("Alert In Upload Folder in new place");*/
+		});		
 	};
 	
 	
@@ -130,3 +185,4 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 	
 	
 });
+
