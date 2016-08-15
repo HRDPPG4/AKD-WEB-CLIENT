@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
@@ -127,7 +127,7 @@
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm" ng-click="removeUser(u.USER_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -135,15 +135,25 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#register">Add
+										<th><button class="btn btn-flat btn-primary" ng-click="insertUser()">Add
 												User</button></th>
+									</tr>
+									<tr>ID<input type="text" name="id" ng-model="gid"/><br/>
+									name<input type="text" name="name" ng-model="gname"/><br/>
+									pass<input type="text" name="pass" ng-model="gpass"/><br/>
+									email<input type="text" name="email" ng-model="gemail"/><br/>
+									phone<input type="text" name="phone" ng-model="gphone"/><br/>
+									date<input type="text" name="date" ng-model="gdate"/><br/>
+									remark<input type="text" name="remark" ng-model="gremark"/><br/>
+									status<input type="text" name="status" ng-model="gstatus"/><br/>
+									role<input type="text" name="role" ng-model="grole"/><br/>
+									
 									</tr>
 								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
-						
-						<jsp:include page="../user/include/register.jsp"></jsp:include>
+						<%-- <%@include file="include/add-user.jsp"%> --%>
 					</div>
 					<!-- /.box -->
 				</div>
