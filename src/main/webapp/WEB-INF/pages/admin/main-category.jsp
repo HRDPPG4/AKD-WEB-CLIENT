@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<html ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
-
+<script
+	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/angular/categoryAngular.js"></script>
 </head>
-<body class="skin-blue sidebar-mini" ng-app="MainApp">
+<body class="skin-blue sidebar-mini" ><!-- ng-app="MainApp" -->
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>
@@ -87,7 +89,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content">
+			<section class="content" ng-controller="myCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -99,21 +101,21 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Title</th>
-										<th>Sub Title</th>
-										<th>Create Date</th>
+										<th>Name</th>
+										<th>Date</th>
+										<th>Describe</th>
+										<th>Type</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1001</td>
-										<td>Science</td>
-										<td>3</td>
-										<td>12/12/2014</td>
-										<td><span class="label label-success">Active</span></td>
+									<tr ng-repeat="c in categories">
+										<td>{{c.CAT_NAME}}</td>
+										<td>{{c.CREATED_DATE}}</td>
+										<td>{{c.REMARK}}</td>
+										<td>{{c.PARENT_ID}}</td>
+										<td>{{c.STATUS}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
@@ -138,7 +140,7 @@
 									</tr>
 
 									<!-- Modal -->
-									<div class="modal fade" id="addMainModal" role="dialog" ng-controller="UploadCtrl">
+									<div class="modal fade" id="addMainModal" role="dialog">
 										<div class="modal-dialog">
 
 											<!-- Modal content-->
