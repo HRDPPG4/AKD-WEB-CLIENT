@@ -34,6 +34,7 @@
 		   </div>
 		</div>				 		  					
 		</form>  	
+			<div ng-show="theFile">
 			<form role="form">
 			    <div class="form-group">
 			      <label>Title:</label>
@@ -57,7 +58,7 @@
 			      <input type="text" class="form-control" placeholder="Description" ng-model="des" >
 			    </div>
 		  	</form>       					       
-		
+			</div>
 	      </div>
       <div class="modal-footer">
         <button class="btn btn-primary"​ alignt="center"​​ id="btnSave" ng-click="uploadFile($event)">រក្សាទុក</button>   
