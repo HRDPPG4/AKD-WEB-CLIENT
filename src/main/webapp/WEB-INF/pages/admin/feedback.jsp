@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="myApp">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Admin | Feedback</title>
 	<%@include file="include/admin-link.jsp" %>
+
+<script src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js" ></script>
+<script src="${pageContext.request.contextPath}/resources/admin/angular/feedbackAngular.js" ></script>
 	 
 </head>
 <body class="skin-blue sidebar-mini">
@@ -99,7 +102,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" ng-controller="myCtrl">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
@@ -112,74 +115,23 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>User</th>
+                  <th>Date</th>
                   <th>Desciption</th>
-                  <th>Post Date</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>F1001</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
+                <tr ng-repeat="f in feedback">
+                  <td>{{f.FEEDBACK_ID}}</td>
+                  <td>{{f.CREATE_DATE}}</td>
+                  <td>{{f.DES}}</td>
+                  <td>{{f.STATUS}}</td>
                   <td>
                       <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                       <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
                   </td>
                 </tr>
-                <tr>
-                  <td>F1002</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
-                  <td>
-                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>F1003</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
-                  <td>
-                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>F1004</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
-                  <td>
-                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>F1005</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
-                  <td>
-                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>F1006</td>
-                  <td>Rany</td>
-                  <td>I think you should add video or file for download.</td>
-                  <td>12/12/2014</td>
-                  <td>
-                      <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
-                      <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-eraser"></i></button>
-                  </td>
-                </tr>
-                
                 </tbody>
               </table>
             </div>
