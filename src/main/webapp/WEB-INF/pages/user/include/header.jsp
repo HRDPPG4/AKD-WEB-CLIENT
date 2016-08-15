@@ -50,7 +50,7 @@
 	 <span class="navbar-logo-main">
 			   	<a href="#" class="navbar-brand logo-main-menu">All Khmer Docs</a>
 	</span>
-		<div class="main-menu">
+		 <div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 			  <li><a class="menu actives-main" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
@@ -81,8 +81,8 @@
 			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
 			  </li>
 			</ul>
-		</div>
+		</div> 
 	</div>
 </nav>
 </div>
-	
+
