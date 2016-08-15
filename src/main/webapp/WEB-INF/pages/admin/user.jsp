@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | User</title>
 <%@include file="include/admin-link.jsp"%>
-
+<script
+	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/angular/userAngular.js"></script>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -90,7 +93,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content">
+			<section class="content" ng-controller="myCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -104,26 +107,22 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Photo</th>
 										<th>Name</th>
 										<th>Email</th>
-										<th>Register Date</th>
-										<th>Type</th>
-										<th>Status</th>
+										<th>Date</th>
+										<th>Remark</th>
+										<th>Role</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Kim Bunhong</td>
-										<td>kim_bunhong@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
+									<tr ng-repeat="u in user">
+										<td>{{u.USER_ID}}</td>
+										<td>{{u.USER_NAME}}</td>
+										<td>{{u.EMAIL}}</td>
+										<td>{{u.CREATED_DATE}}</td>
+										<td>{{u.REMARK}}</td>
+										<td>{{u.USER_ROLE}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
@@ -133,312 +132,7 @@
 											</button>
 										</td>
 									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Kimhao</td>
-										<td>kim_hao@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chem Minea</td>
-										<td>Minea@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Hum Vorm</td>
-										<td>humvorn@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Kong Kea</td>
-										<td>kongkea@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1001</td>
-										<td><img
-											src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-											class="img-circle" alt="User Image" width="50" height="50"></td>
-										<td>Chea Chandara</td>
-										<td>cheachandara@gmail.com</td>
-										<td>05/05/2012</td>
-										<td>Admin</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-
-								</tbody>
+																	</tbody>
 								<tfoot>
 									<tr>
 										<th><button class="btn btn-flat btn-primary">Add
