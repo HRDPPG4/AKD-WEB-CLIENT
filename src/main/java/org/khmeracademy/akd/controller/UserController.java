@@ -73,10 +73,15 @@ public class UserController {
 	
 	
 	
-	@RequestMapping(value="/detail",method=RequestMethod.GET)
+	/*@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public String details(@RequestParam("url") String url, ModelMap model){
 		model.put("url", url);
 		System.out.print(url);
+		return "user/details";
+	}*/
+	
+	@RequestMapping(value="/detail",method=RequestMethod.GET)
+	public String details(){
 		return "user/details";
 	}
 	

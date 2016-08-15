@@ -40,6 +40,7 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		var frmData = new FormData();
 		var id="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 		
+		
 		frmData.append("folderID", id);
 		frmData.append("folderName", $scope.folderName);
 		frmData.append("folderDes", $scope.des);

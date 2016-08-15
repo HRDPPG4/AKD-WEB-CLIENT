@@ -22,13 +22,30 @@ app.controller('UploadCtrl', function($scope, $http,$timeout) {
 		}).then(function(response) {
 			$(".progress-bar").css("width", "100%"); 
 			//alert("Click in AngularJS");
-			alert("Success");
+		//	alert("Success");
+			
+			console.log("Success Block");
+			console.log(response);
+				
+			
+			// Listen to fileuploadstop event
+			$scope.$on(frmData, function(){
+
+			    // Your code here
+			    console.log('All uploads have finished');
+			});
 			
 			
 		}, function(response) {
 		//	console.log(response);	
-			$(".progress-bar").css("width", "100%"); 
-			alert("Error");
+			$scope.width="100%";
+			$(".progress-bar").css("width", $scope.width); 
+			//alert("Error");
+			
+			console.log("Error Block");
+			console.log(response);
+			
+			
 		});
 		
 		

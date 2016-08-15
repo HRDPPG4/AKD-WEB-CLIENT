@@ -35,18 +35,7 @@ $(document).ready(function() {
 	                                    <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
 	                                </ul>\
 	                            </div>\
-	       	 <div class="form-group">\
-				<label for="sel1">ជ្រើសរើសផ្នែក:</label>\
-				<select class="form-control" id="sel1">\
-				    <option></option>\
-				<option>បច្ចេកវិទ្យា</option>\
-				<option>កិសិកម្ម</option>\
-				<option>ពានិជ្ជកម្ម</option>\
-				<option>ច្បាប់</option>\
-				</select>\
-		</div>\
 	        			<div class="form-group">\
-						<label for="pwd">ឈ្មោះឯកសារ:</label>\
 						\
 	        			</div>\
 	                        </div>\
@@ -71,18 +60,7 @@ $(document).ready(function() {
 	                                        <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
 	                                    </ul>\
 	                                </div>\
-	        	 <div class="form-group">\
-				<label for="sel1">ជ្រើសរើសផ្នែក:</label>\
-				<select class="form-control" id="sel1">\
-				    <option></option>\
-				<option>បច្ចេកវិទ្យា</option>\
-				<option>កិសិកម្ម</option>\
-				<option>ពានិជ្ជកម្ម</option>\
-				<option>ច្បាប់</option>\
-				</select>\
-		</div>\
 	        			<div class="form-group">\
-						<label for="pwd">ឈ្មោះឯកសារ:</label>\
 						\
 	        			</div>\
 	                            </div>\

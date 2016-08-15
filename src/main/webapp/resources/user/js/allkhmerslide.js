@@ -1,11 +1,13 @@
 
 
-$(document).ready(function(){
+//
+
+/*$(document).ready(function(){
 	$('a.menu').click(function() {
 	    $('a.menu').removeClass("actives-main");
 	    $(this).addClass("actives-main");
 	});
-});
+});*/
 
 /*$(document).ready(function(){
 	$('.main-category a').click(function(){
