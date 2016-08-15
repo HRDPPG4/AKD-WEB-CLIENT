@@ -127,54 +127,7 @@
 											</button>
 										</td>
 									</tr>
-									<tr>
-										<td>1102</td>
-										<td>Web Development</td>
-										<td>Technology</td>
-										<td>12/12/2015</td>
-										<td>9</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1201</td>
-										<td>Leadership</td>
-										<td>Management</td>
-										<td>12/12/2014</td>
-										<td>3</td>
-										<td><span class="label label-success">Active</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-									<tr>
-										<td>1302</td>
-										<td>Economic</td>
-										<td>Business</td>
-										<td>12/12/2014</td>
-										<td>5</td>
-										<td><span class="label label-danger">Pending</span></td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
+									
 								</tbody>
 								<tfoot>
 									<tr>
@@ -205,7 +158,8 @@
 																	placeholder="Sub Category title ">
 															</div>
 
-															<label>Categories</label> <select
+															<label>Categories</label> 
+															<select
 																class="form-control select2" style="width: 50%;">
 																<option>Business</option>
 																<option>Social</option>

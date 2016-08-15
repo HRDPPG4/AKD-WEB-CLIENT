@@ -7,9 +7,9 @@
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
 <script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js">
+</script>
+
 </head>
 <body class="skin-blue sidebar-mini" ng-app="MainApp"><!--  -->
 	<div class="wrapper">
@@ -94,7 +94,17 @@
 				<div class="col-xs-12">
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Data Table With Full Features</h3>
+							<h3 class="box-title">Data Table With Full Features</h3>	<br><br>															
+										
+							<button class="btn btn-flat btn-primary" data-toggle="modal"
+								data-target="#addMainModal" ng-click="showCatBox=false">Add Categories
+							</button>
+						
+						
+							<button class="btn btn-flat btn-primary" data-toggle="modal"
+								data-target="#addMainModal" ng-click="showCatBox=true">Add Sub Categories
+							</button>
+							
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
@@ -131,16 +141,19 @@
 								
 								</tbody>
 								<tfoot>
-									<tr>
-										<!-- <th><a href="add-category.html"><button class="btn btn-flat btn-primary">Add Categories</button></a></th> -->
+									<!-- <tr>									
 										<th>
 											<button class="btn btn-flat btn-primary" data-toggle="modal"
-												data-target="#addMainModal">Add Categories</button>
+												data-target="#addMainModal" ng-click="showCatBox=false">Add Categories</button>
 										</th>
-									</tr>
+										<th>
+											<button class="btn btn-flat btn-primary" data-toggle="modal"
+												data-target="#addMainModal" ng-click="showCatBox=true">Add Sub Categories</button>
+										</th>
+									</tr> -->
 
 									<!-- Modal -->
-									<div class="modal fade" id="addMainModal" role="dialog" ng-controller="UploadCtrl">
+									<div class="modal fade" id="addMainModal" role="dialog">
 										<div class="modal-dialog">
 
 											<!-- Modal content-->
@@ -157,6 +170,14 @@
 																	type="text" class="form-control"
 																	placeholder="Category title " name="folderName" ng-model="folderName">
 															</div>
+															
+															<div class="form-group" ng-show="showCatBox">
+														      <label>Category:</label>		      
+														        <select class="form-control" ng-model="ParentID">			       
+											                        <option ng-repeat="x in category" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
+											                   	</select>
+														    </div>
+															
 
 															<div class="form-group">
 																<label for="description">Description</label>
@@ -190,6 +211,7 @@
 									</div>
 
 									<!-- End Modal -->
+																		
 								</tfoot>
 							</table>
 						</div>
