@@ -7,12 +7,12 @@ $(document).ready(function() {
 		    $('#btnSave').prop('disabled', true);	    
 		}
 		else{
-			$('#btnSave').prop('disabled', false);
-			
+			$('#btnSave').prop('disabled', false);						
 		}
 		
-		
-		
+		var filename = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '');
+		var finalName=filename.substring(0, filename.indexOf('.'))
+		document.getElementById("title").value=finalName;
     }); 
 	
 
