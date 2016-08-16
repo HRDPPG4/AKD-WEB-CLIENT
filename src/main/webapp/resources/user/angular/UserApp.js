@@ -28,7 +28,7 @@ app.directive('bindFile', [function () {
 }]);
 
 //	MAIN CONTROLLER FOR USER
-app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
+app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
 	
 	$scope.theFile = null;
 	//	CATEGORY	
@@ -37,7 +37,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
 		}).then(function(response){
-			console.log(response.data.DATA);
+		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;
 		}, function(response){
 		
@@ -47,6 +47,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 	
 	//	UPLOAD FILE BLOCK
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.des="";
 	$scope.uploadFile = function(event) {
 		event.preventDefault();	
 		var files = event.target.files;
@@ -84,15 +85,21 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
-			console.log("Document Bock");
-			console.log($scope.document);
+		//	console.log("Document Bock");
+		//	console.log($scope.document);
 		}, function(response){
 
 		});
 	}
+	
+	
 	$scope.display();
+	
+	 $scope.trustSrc = function(src) {
+		    return $sce.trustAsResourceUrl(src);
+		  }
 
-		$scope.slideURL=$sce.trustAsResourceUrl("https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21434&authkey=AABcOreYLL7cv-I&em=2&wdAr=1.7777777777777777");	
+	/*	$scope.slideURL=$sce.trustAsResourceUrl("https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21434&authkey=AABcOreYLL7cv-I&em=2&wdAr=1.7777777777777777");	
 	    $scope.newURL="NewURL";
 	    
 	    $scope.slides = [
@@ -105,13 +112,13 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 	                     {"id":7, "url":'https://docs.google.com/presentation/d/1V04AzauwIJ73BImLZgcniAzUvr3i1fWoaJ8hzB8XsN0'},
 	                     {"id":8, "url":'https://docs.google.com/presentation/d/1Kqllz530rJqevpW_c2eTNCbkfnkv4otSkCY_hiF5FIE'}
 	                  
-	                    ];
+	                    ];*/
 	 
 
-	    $scope.getSlideURL = function(slide){
-		    $scope.newURL = slide.name;
+	   /* $scope.getSlideURL = function(doc){
+		    $scope.newURL = doc.EMBEDED_LINK;
 			$scope.slideURL = $sce.trustAsResourceUrl($scope.newURL);
-		}
+		}*/
 	    $scope.escapeUrl = function(url){
 	    	return escape(url);
 	    }
@@ -158,9 +165,22 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 			
 			};
 		
+	var id="";
+	$rootScope.getDocumentById=function(id){		
+		$http({
+			url:'http://localhost:1111/api/v1/document/'+id,
+			method:'GET'
+		}).then(function(response){
+			
+			$scope.doc=response.data.DATA;
+			console.log($scope.doc);
+			//console.log("DocID: "+$scope.docID);
+		}, function(response){
 
-
+		});	
+	}
 	
-	
+	$rootScope.getDocumentById(id);
 });
+
 

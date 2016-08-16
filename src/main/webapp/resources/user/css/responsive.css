@@ -129,6 +129,27 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
     float: right;
     display: inline-block;
   }
+  
+  ul.menu-basic li a#search{
+	display: inline-block;
+    color: #fff;
+    position: relative;
+    top: 5.5px;
+    left:1px;
+    text-align: center;
+    text-decoration: none;
+      font-size: 18px;
+}
+ul.menu-basic li a#search:hover{
+    color: #fff;
+    position: relative;
+    top: 5.5px;
+    text-align: center;
+    background-color:transparent !important;
+    /* padding: 10px 16px; */
+    text-decoration: none;
+      font-size: 18px;
+}
 }
 
 
@@ -154,6 +175,8 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 	position:relative;
 	display: none !important;
 }
+
+/*  */
 .navbar > .container .form-contain ,
 .form-group .form-search{
   position: relative;
@@ -507,9 +530,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
       /*width: 300px;*/
    left:5% !important;
     } 
-    #min-width-sm{
-      width: 350px;
-    }
+    
     .container{
       width: 100%;
     }
@@ -520,7 +541,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
    /*  display: none; */
     }
     .body-cates{
-      width: 300px;
+     
    left: 0% !important;
     } 
     
@@ -594,7 +615,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
    /*  display: none; */
     }
     .body-cates{
-      width: 300px;
+     
    left: 0% !important;
     } 
     

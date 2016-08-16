@@ -3,7 +3,7 @@
 
 
 <div class="container">
-	<div class="modal fade" id="addUser" role="dialog">
+	<div class="modal fade" id="updateUser" role="dialog">
 		<div class="modal-dialog modal-md">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -121,10 +121,11 @@
 									</div>
 								</div>
 
-								<button type="button" id="btnAdd"
+								<button type="button" id="btnUpdate"
 									class="btn btn-primary btn-flat btn-block login-button btn-flat"
-									ng-click="insertUser()" data-dismiss="modal">Add</button>
-															</form>
+									ng-click="updateUser()" data-dismiss="modal">Update</button>
+
+							</form>
 						</div>
 					</div>
 				</div>

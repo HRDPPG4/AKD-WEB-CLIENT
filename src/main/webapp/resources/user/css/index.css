@@ -151,23 +151,45 @@ li#avatar-user:hover ul.tooltiptext {
     list-style-type: none;
     border: 1px solid #000;
 }
-ul li > ul.tooltiptext li {
-	padding:10px 0;
+ul li > ul.tooltiptext  {
+	margin:0px;
+     padding:0px;
+     width:160px;
+	 background-color: white;
+	 list-style-type:none;
+	/* padding:10px 0;
 	width:160px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #000; */
 }
-ul li > ul.tooltiptext li a{
-	text-decoration:none;
+ul li > ul.tooltiptext li {
+	padding:10px;
+	background-color: white;
+	 text-decoration:none;
 	color:#000;
-	
 }
-ul li > ul.tooltiptext li:hover{
-	background:#003666 !important;
-	cursor: pointer;
+
+ul li > ul.tooltiptext li a{
+	display: block;
+    color: #000;
+    margin-bottom:-9px;
+    text-decoration:none;
+    margin-top:-9px;
+    line-height:40px;
+    margin-left:-10px;
+    margin-right:-10px;
+    text-decoration: none;
 }
-ul li > ul.tooltiptext li:hover > a {
-	color:white !important;
-	/* background-color: #000; */
+ul li > ul.tooltiptext li a:hover{
+	display: block;
+    color: #fff;
+    margin-bottom:-9px;
+    text-decoration:none;
+    background-color:#003666;
+    margin-top:-9px;
+     line-height:40px;
+    margin-left:-10px;
+    margin-right:-10px;
+    text-decoration: none;
 }
 /*////////////////////////////////////////////////////////////*/
 .main-menu-contain{
@@ -200,7 +222,7 @@ ul li > ul.tooltiptext li:hover > a {
  /* Float the list items side by side */
  .main-menu{
  	position: relative;
- 	margin-left: 170px;
+ 	/* margin-left: 170px; */
 
  }
 
@@ -239,6 +261,28 @@ ul.menu-basic li > a:hover{
     text-align: center;
     padding: 10px 16px;
     background-color: #fff !important;
+    text-decoration: none;
+      font-size: 18px;
+}
+ul.menu-basic li a#search{
+	display: none;
+    color: #fff;
+    position: relative;
+     left:60px;
+    top: 5.5px;
+    text-align: center;
+    /* padding: 10px 16px; */
+    text-decoration: none;
+      font-size: 18px;
+}
+
+ul.menu-basic li a#search:hover{
+    color: #fff;
+    position: relative;
+    top: 5.5px;
+    text-align: center;
+    background-color:transparent !important;
+    /* padding: 10px 16px; */
     text-decoration: none;
       font-size: 18px;
 }
