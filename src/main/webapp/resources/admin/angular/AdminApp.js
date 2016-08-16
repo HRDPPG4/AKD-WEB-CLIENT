@@ -198,12 +198,11 @@ app.controller('MainCtrl', function($scope, $http, $sce){
 
 //	insert data to user db
 	$scope.insertUser = function() {
-		alert($scope.grole);
 		$http({
 			url : 'http://localhost:1111/api/v1/user',
 			method : "POST",
 			data : {
-				'USER_ID' : $scope.gid,
+//				'USER_ID' : $scope.gid,
 				'USER_NAME' : $scope.gname,
 				'PASSWORD' : $scope.gpass,
 				'EMAIL':$scope.gemail,
@@ -215,7 +214,6 @@ app.controller('MainCtrl', function($scope, $http, $sce){
 			}
 		}).then(function(respone){
 			$scope.getUserData();
-			alert("success");
 		}, function(respone){
 			alert("faild");
 		});
@@ -234,30 +232,38 @@ app.controller('MainCtrl', function($scope, $http, $sce){
 	}
 
 //	get date from user db to update	
-	$scope.getDataForUpdate = function(user){
-		$scope.aid = user.u.id;
-		$scope.aname = user.u.name;
-		$scope.apassword =  user.u.password;
-		$scope.aemail = user.u.email;
-	}
+/*	$scope.getDataForUpdate = function(){
+		alert("hello");
+		$scope.gid= user.u.id;
+		$scope.gname= user.u.name;
+		$scope.gpass=user.u.pass;
+		$scope.gemail=user.u.email;
+		$scope.gphone=user.u.phone;
+		$scope.gdate=user.u.date;
+		$scope.gremark=user.u.remark;
+		$scope.gstatus=user.u.status;
+		$scope.grole=user.u.role;
+	}*/
+	
+
 	
 //	do update user
-	$scope.update = function(){
-    	$http({
-    		url: 'http://localhost:4444/user',
-    		method: 'PUT',
-    		data:{
-    			'name': $scope.aname,
-    			'password': $scope.apassword,
-    			'email': $scope.aemail,
-    			'id': $scope.aid
-    		}
-    	}).then(function() {
-    		$scope.getAllData();
-		}, function() {
-			alert("fiald");
-		});
-    }
+//	$scope.update = function(){
+//    	$http({
+//    		url: 'http://localhost:4444/user',
+//    		method: 'PUT',
+//    		data:{
+//    			'name': $scope.aname,
+//    			'password': $scope.apassword,
+//    			'email': $scope.aemail,
+//    			'id': $scope.aid
+//    		}
+//    	}).then(function() {
+//    		$scope.getAllData();
+//		}, function() {
+//			alert("fiald");
+//		});
+//    }
 	
 	
 //	Method for manipulating report

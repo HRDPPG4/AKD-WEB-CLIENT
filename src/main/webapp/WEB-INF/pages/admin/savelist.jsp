@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Admin | Report</title>
+<title>Admin | Savelist</title>
 <%@include file="include/admin-link.jsp"%>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
@@ -62,31 +62,32 @@
 
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
-			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
-					<span class="label label-primary pull-right">4</span> </a></li>
+			<li class="active"><a href="comment"><i
+					class="fa fa-comment"></i> <span>Comments</span> <span
+					class="label label-primary pull-right">4</span> </a></li>
 
-<li><a href="savelist"> <i class="fa fa-list"></i>
+			<li class="active"><a href="savelist"> <i class="fa fa-list"></i>
 					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
+		
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
-
-			<li class="active"><a href="report"> <i
-					class="fa fa-exclamation-circle"></i> <span>Report</span> <span
-					class="label label-primary pull-right">8</span>
+			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
+					<span>Report</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
+		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 			<h1>
-				Feedback Data <small>advanced tables</small>
+				Comments Tables <small>advanced tables</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active"><a href="#">Feedback</a></li>
+				<li class="active"><a href="#">Comment</a></li>
 			</ol>
 			</section>
 
@@ -96,7 +97,7 @@
 				<div class="col-xs-12">
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Feedbacks Table</h3>
+							<h3 class="box-title">Comments Table</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
@@ -104,21 +105,21 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>User</th>
 										<th>Date</th>
 										<th>Desciption</th>
+										<th>User</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="r in report">
-										<td>{{r.REPORT_ID}}</td>
-										<td>{{r.USER_ID}}</td>
-										<td>{{r.CREATED_DATE}}</td>
-										<td>{{r.REMARK}}</td>
+									<tr ng-repeat="c in comment">
+										<td>{{c.COMMENT_ID}}</td>
+										<td>{{c.CREATED_DATE}}</td>
+										<td>{{c.REMARK}}</td>
+										<td>{{c.USER_ID}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
+												<i class="fa fa-reply"></i>
 											</button>
 											<button type="button" class="btn btn-danger btn-sm">
 												<i class="fa fa-eraser"></i>
@@ -127,6 +128,7 @@
 									</tr>
 
 								</tbody>
+
 							</table>
 						</div>
 						<!-- /.box-body -->

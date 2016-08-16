@@ -66,6 +66,10 @@
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
 					<span class="label label-primary pull-right">4</span> </a></li>
 
+<li><a href="savelist"> <i class="fa fa-list"></i>
+					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+			</a></li>
+
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>

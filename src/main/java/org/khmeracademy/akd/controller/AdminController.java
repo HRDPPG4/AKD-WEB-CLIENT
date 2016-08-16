@@ -30,6 +30,12 @@ public class AdminController {
 		return "admin/comment";
 	}
 	
+	@RequestMapping(value="/admin/savelist",method=RequestMethod.GET)
+	public String savelist(){
+		return "admin/report";
+	}
+	
+	
 	@RequestMapping(value="/admin/feedback",method=RequestMethod.GET)
 	public String feedback(){
 		return "admin/feedback";
