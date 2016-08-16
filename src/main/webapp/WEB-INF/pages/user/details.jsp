@@ -107,7 +107,7 @@
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-												ហ៊ុំ ជីវ័ន
+												ហ៊ុំ ជីវ័ន {{doc.DOC_TYPE_NUM}}
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>

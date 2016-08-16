@@ -16,11 +16,11 @@ $(document).ready(function() {
 		document.getElementById("title").value=finalName;		
 		jQuery('#title').trigger('input');*/
 		
-	/*	var fileName=document.getElementById("title").value;
+		var fileName=document.getElementById("title").value;
 		var finalName=fileName.substring(0, fileName.lastIndexOf('.'));
-		document.getElementById("title").value=finalName;*/
+		document.getElementById("title").value=finalName;
 		
-		$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
+		//$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
 
 	
 		
