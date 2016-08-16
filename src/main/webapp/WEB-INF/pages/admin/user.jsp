@@ -1,11 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | User</title>
 <%@include file="include/admin-link.jsp"%>
+<style>
+.form-horizontal .form-group {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.btn-flat {
+    border-radius: 0;
+ 	margin-left: 20px;
+}
+</style>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
@@ -66,6 +76,10 @@
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
 					<span class="label label-primary pull-right">4</span> </a></li>
 
+			<li><a href="savelist"> <i class="fa fa-list"></i>
+					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+			</a></li>
+			
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
@@ -93,7 +107,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="MainCtrl">
+			<section class="content" ng-controller="UserCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -124,10 +138,12 @@
 										<td>{{u.REMARK}}</td>
 										<td>{{u.USER_ROLE}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<button type="button" class="btn btn-primary btn-sm"
+											    ng-click="myTest()">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm" ng-click="removeUser(u.USER_ID)">
+											<button type="button" class="btn btn-danger btn-sm"
+												ng-click="removeUser(u.USER_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -135,26 +151,45 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th><button class="btn btn-flat btn-primary" ng-click="insertUser()">Add
-												User</button></th>
+										<th><button class="btn btn-flat btn-primary" 
+												data-toggle="modal" data-target="#addUser"
+												>Add User</button></th>
 									</tr>
-									<tr>ID<input type="text" name="id" ng-model="gid"/><br/>
-									name<input type="text" name="name" ng-model="gname"/><br/>
-									pass<input type="text" name="pass" ng-model="gpass"/><br/>
-									email<input type="text" name="email" ng-model="gemail"/><br/>
-									phone<input type="text" name="phone" ng-model="gphone"/><br/>
-									date<input type="text" name="date" ng-model="gdate"/><br/>
-									remark<input type="text" name="remark" ng-model="gremark"/><br/>
-									status<input type="text" name="status" ng-model="gstatus"/><br/>
-									role<input type="text" name="role" ng-model="grole"/><br/>
-									
-									</tr>
+									<!-- <tr>
+										ID
+										<input type="text" name="id" ng-model="gid" />
+										<br /> name
+										<input type="text" name="name" ng-model="gname" />
+										<br /> pass
+										<input type="text" name="pass" ng-model="gpass" />
+										<br /> email
+										<input type="text" name="email" ng-model="gemail" />
+										<br /> phone
+										<input type="text" name="phone" ng-model="gphone" />
+										<br /> date
+										<input type="text" name="date" ng-model="gdate" />
+										<br /> remark
+										<input type="text" name="remark" ng-model="gremark" />
+										<br /> status
+										<input type="text" name="status" ng-model="gstatus" />
+										<br /> role
+										<input type="text" name="role" ng-model="grole" />
+										<br />
+
+									</tr> -->
 								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
-						<%-- <%@include file="include/add-user.jsp"%> --%>
+					
 					</div>
+
+
+					<!-- Modal Start-->
+
+						<%@include file="include/add-user.jsp"%>
+					<!-- Modal End -->
+
 					<!-- /.box -->
 				</div>
 				<!-- /.col -->
