@@ -63,7 +63,7 @@
 
 </style>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" >
+<body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentById('${id}')">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -76,7 +76,6 @@
 
 <jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
 
-
 <div>
 	<content>
 	<div id="page-content-wrapper">
@@ -87,22 +86,10 @@
 						 <div class="show-slide-view">
 							<div class="col-md-9 content-slide-view">
 								<div class="row col-md-12">
-															
-
 									<div class="slide-container" id="SlideBox">	
 									
-									 <%--  <iframe src="${urld}" id="pptx"></iframe> --%>   
-									  
-									  
-										<%-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
-											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
-										</a>  --%> 
-
-											  <!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview"></iframe>  -->
-
-										<%--  <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> --%> 
-										 
-									<iframe src="https://docs.google.com/presentation/d/1kWWZD61itwmEw149Akdarqhr1RbXPX9BcH1Pb4KhOS4/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
+									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}'></iframe> 
 									</div>
 									
 									<div class="detail-slide">
@@ -135,7 +122,6 @@
 										<div id="description">Description: 
 											<div>
 												ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
-												
 											</div>
 										</div>
 									</div>
@@ -188,25 +174,23 @@
 <footer>
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
+	
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
-
 	
 	<!-- library jquery for file upload -->
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 	<!-- Online Link -->
-	
 	<script>
 	$(document).ready(function() {
+		// var docID='${id}';
+		//var docID=$("#myspan").text();
 		  function setHeight() {
 		    windowHeight = $(window).innerHeight()-180;
-		 //   alert(windowHeight);
 		    $('#SlideBox iframe').css('min-height', windowHeight);
 		  };
 		  setHeight();
@@ -215,7 +199,5 @@
 		    setHeight();
 		  }); 
 		});
-	</script>
-	
-	
+	</script>	
 </body>

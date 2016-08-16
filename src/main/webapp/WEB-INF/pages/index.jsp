@@ -116,10 +116,10 @@
 							</a> -->
 							
 							
-							<a href="/detail" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
 								<span class="title">{{slide.TITLE}}</span>
 								<span class="user-name">{{slide.USER_ID}}</span>
@@ -136,8 +136,7 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
-							
+							</a> 
 							
 							
 						</div>
@@ -750,8 +749,6 @@
    </footer>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 

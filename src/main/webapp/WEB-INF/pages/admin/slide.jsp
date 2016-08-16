@@ -67,6 +67,10 @@
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
 					<span class="label label-primary pull-right">4</span> </a></li>
 
+<li><a href="savelist"> <i class="fa fa-list"></i>
+					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+			</a></li>
+
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
@@ -93,7 +97,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="MainCtrl">
+			<section class="content" ng-controller="DocumentCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -105,7 +109,6 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>ID</th>
 										<th>Title</th>
 										<th>Desciption</th>
 										<th>Post Date</th>
@@ -117,7 +120,6 @@
 								</thead>
 								<tbody>
 									<tr ng-repeat="d in document">
-										<td>{{d.DOC_ID}}</td>
 										<td>{{d.TITLE}}</td>
 										<td>{{d.DES}}</td>
 										<td>{{d.CREATED_DATE}}</td>
