@@ -1,7 +1,5 @@
-var app = angular.module('MainApp', []);
-
-//START UPLOAD FILE BLOCK
-
+var app = angular.module('UserApp', []);
+// DIRECTIVE FOR USER. USER IN UPLOAD FILE
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
@@ -29,7 +27,9 @@ app.directive('bindFile', [function () {
 
 }]);
 
-app.controller('UploadCtrl', function($scope, $http,$timeout,$rootScope) {	
+//	MAIN CONTROLLER FOR USER
+app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
+	
 	$scope.theFile = null;
 	//	CATEGORY	
 	$scope.showCategory = function(){		
@@ -45,13 +45,12 @@ app.controller('UploadCtrl', function($scope, $http,$timeout,$rootScope) {
 	}	
 	$scope.showCategory();
 	
-	
+	//	UPLOAD FILE BLOCK
+	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.uploadFile = function(event) {
-		event.preventDefault();
-		
+		event.preventDefault();	
 		var files = event.target.files;
-		var frmData = new FormData();
-						
+		var frmData = new FormData();					
 		var file = $('#filer_input')[0].files[0];
 		frmData.append("files", file);				
 		frmData.append("title", $scope.theFile.name);
@@ -67,92 +66,32 @@ app.controller('UploadCtrl', function($scope, $http,$timeout,$rootScope) {
 			}
 		}).then(function(response) {
 			$(".progress-bar").css("width", "100%"); 
-			//alert("Click in AngularJS");
-			//alert("Success");
-			
-			console.log("Success Block");
-			console.log(response);
-				
-			
-			// Listen to fileuploadstop event
+			alert("Success");
 			$scope.$on(frmData, function(){
-
-			    // Your code here
-			    console.log('All uploads have finished');
 			});
-			
-		//	alert($scope.fileTitle);
-			
 		}, function(response) {
-		//	console.log(response);	
 			$scope.width="100%";
-			$(".progress-bar").css("width", $scope.width); 
-		//	alert("Error");
-			
-			console.log("Error Block");
-			console.log(response);
-			//alert($scope.fileTitle);
-			
+			//$(".progress-bar").css("width", $scope.width); 
+			alert("Error");
 		});
-		
-		
-		
-
-		/*alert("Click in AngularJS");*/
 	};
 	
-//	END UPLOAD FILE BLOCK
 	
-	
-	
-	$scope.uploadFolder=function(event) {
-		event.preventDefault();
-		var frmData = new FormData();
-		var id="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
-		
-		frmData.append("folderID", id);
-		frmData.append("folderName", $scope.folderName);
-		frmData.append("folderDes", $scope.des);
-		$http({
-			url : 'http://localhost:1111/api/uploadFolder',
-			method :'POST',
-			data : frmData,
-			transformRequest : angular.identity,
-			headers : {
-				'Content-Type' : undefined
-			}
-		}).then(function(response) {
-			alert("Folder upload Successful");
-			console.log("Check Upload Foler here!!");
-			console.log(response);
-			$scope.message = response.data.message;
-		}, function(response) {
-			console.log(response);
-		});
-
-	//	alert("Upload Folder");
-	};
-
-});
-
-
-app.controller('DocumentCtrl', function($scope, $http, $sce){
-
+	//	CODE FROM DOCUMENT CONTROLLER
 	$scope.display = function(){
 		$http({
 			url:'http://localhost:1111/api/v1/document',
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
+			console.log("Document Bock");
 			console.log($scope.document);
 		}, function(response){
 
 		});
 	}
 	$scope.display();
-	
-	
-	app.controller('relatedSlideCtrl', function($scope,$sce) {
+
 		$scope.slideURL=$sce.trustAsResourceUrl("https://onedrive.live.com/embed?cid=41468BA873DB6994&resid=41468BA873DB6994%21434&authkey=AABcOreYLL7cv-I&em=2&wdAr=1.7777777777777777");	
 	    $scope.newURL="NewURL";
 	    
@@ -170,21 +109,15 @@ app.controller('DocumentCtrl', function($scope, $http, $sce){
 	 
 
 	    $scope.getSlideURL = function(slide){
-			
-
-	    $scope.newURL = slide.name;
-		$scope.slideURL = $sce.trustAsResourceUrl($scope.newURL);
-		
+		    $scope.newURL = slide.name;
+			$scope.slideURL = $sce.trustAsResourceUrl($scope.newURL);
 		}
-	    
 	    $scope.escapeUrl = function(url){
 	    	return escape(url);
 	    }
 
-	});
 
-
+	
+	
 });
-
-
 

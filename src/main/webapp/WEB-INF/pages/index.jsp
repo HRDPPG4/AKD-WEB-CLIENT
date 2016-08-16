@@ -52,7 +52,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="MainApp">
+<body ng-app="UserApp" ng-controller="UserCtrl">
 <jsp:include page="user/include/register.jsp"></jsp:include>
 <jsp:include page="user/include/login.jsp"></jsp:include>
 <jsp:include page="user/include/upload.jsp"></jsp:include>
@@ -88,7 +88,7 @@
 
 				<div class="tab-content">
 
-					<div id="design" class="tab-pane fade in active" ng-controller="DocumentCtrl">
+					<div id="design" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
 						ng-repeat="slide in document  | limitTo : 4">
@@ -752,7 +752,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/MainApp.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 	

@@ -52,8 +52,18 @@
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
+
+<style>
+	.slide-container 
+	{
+		height:100% !important;	
+		*position: absolute;
+	}
+
+
+</style>
 </head>
-<body ng-app="MainApp">		<!-- indexApp -->	<!-- ng-app="MainApp" -->
+<body ng-app="UserApp" ng-controller="UserCtrl" >
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -79,17 +89,20 @@
 								<div class="row col-md-12">
 															
 
-									<div class="slide-container">	
-									<%--  <iframe src="${url}" id="pptx"></iframe>  --%>
-										<!-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
-											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
-										</a>  -->	
-
-											<!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview" width="640" height="480"></iframe> -->
-
-										 <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
-										 
+									<div class="slide-container" id="SlideBox">	
 									
+									 <%--  <iframe src="${urld}" id="pptx"></iframe> --%>   
+									  
+									  
+										<%-- <a href="" data-toggle="modal" data-target="#ViewByGoogleDrive">
+											<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">  
+										</a>  --%> 
+
+											  <!-- <iframe src="https://drive.google.com/file/d/0BwxmFmAg8DYKU2hHdzRkX2RFZEk/preview"></iframe>  -->
+
+										<%--  <iframe src="${url}/embed?start=false&loop=false&delayms=3000"  allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> --%> 
+										 
+									<iframe src="https://docs.google.com/presentation/d/1kWWZD61itwmEw149Akdarqhr1RbXPX9BcH1Pb4KhOS4/embed?start=false&loop=false&delayms=3000" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 									</div>
 									
 									<div class="detail-slide">
@@ -122,6 +135,7 @@
 										<div id="description">Description: 
 											<div>
 												ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
+												
 											</div>
 										</div>
 									</div>
@@ -136,35 +150,23 @@
 						</div> 
 
 	
-							 <div class="related-slide" ng-controller="DocumentCtrl" >
+							 <div class="related-slide">
 								<div class="col-md-3">
 									<div class="row col-sm-12" >
 										<div class="related-container">
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" "slide in document  | limitTo : 4">  									 		 
+												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  									 		 
 												 		<div class="col-md-6">												 			
-															<!-- <a href="/detail?url={{escapeUrl(slide.url)}}" >
-													 		<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt="">
-													 		</a> -->
-
-
-
-
+															
 													 		<a href="/detail" >
-													 		<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
-
-
-
-
 												 		</div>
 												 		<div class="col-md-6">
-												 			ដំណាំស្រូវជាដំណាំដ៏សំខាន់សម្រាប់ទ្រទ្រង់ជីវភាព...
+												 			{{slide.TITLE}}
 												 		</div>	
-												 		
-
 												 </div> 												
 											</div>	
 										</div>
@@ -182,18 +184,7 @@
 		     <!-- end page-content-wrapper -->
 	</content>
 	</div> 	
-   <script>
-      $(document).ready(function(){
-    	  $("button").click(function({
-    		  alert("helo");
-    	  });
-    		 
-    	  
-    	  
-      });
-   </script>
 
-   
 <footer>
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
@@ -201,7 +192,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/MainApp.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 	
@@ -210,6 +201,21 @@
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 	<!-- Online Link -->
+	
+	<script>
+	$(document).ready(function() {
+		  function setHeight() {
+		    windowHeight = $(window).innerHeight()-180;
+		 //   alert(windowHeight);
+		    $('#SlideBox iframe').css('min-height', windowHeight);
+		  };
+		  setHeight();
+		  
+		  $(window).resize(function() {
+		    setHeight();
+		  }); 
+		});
+	</script>
 	
 	
 </body>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<div class="modal fade" id="upload" role="dialog" ng-controller="UploadCtrl">
+<div class="modal fade" id="upload" role="dialog" ng-controller="UserCtrl">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -10,20 +10,6 @@
       <!--   <h4><span class="glyphicon glyphicon-lock"></span>បញ្ជូលឯកសារនៅទីនេះ</h4> -->                  
       </div>
       <div class="modal-body" style="padding:40px 50px;">
-      
-     
-		    <!-- <div ng-show="theFile">
-		        {{theFile.name}}<br />
-		        {{theFile.size}} byte(s)<br/>
-		        {{theFile.type}}
-		
-		        <input type="text" ng-model="theFile.name">
-		    </div> -->
-	
-		
-		
-		
-   
    		 <form method="post" enctype="multipart/form-data">     			
 	 		<input type="file" name="file" id="filer_input" multiple="multiple" data-bind-file="" data-ng-model="theFile">		  		  
 		  <div class = "progress progress-striped active">
@@ -43,14 +29,10 @@
 			    </div>
 				
 			    <div class="form-group">
-			    
-			    
 			      <label>Category:</label>		      
 			        <select class="form-control" ng-model="catID">			       
                         <option ng-repeat="x in category" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
                    	</select>
-               					
-			    <!--   <input type="text" class="form-control" placeholder="Gender" ng-model="gender" ng-pattern="genderFormat"> -->
 			    </div>
 			    
 			    <div class="form-group">

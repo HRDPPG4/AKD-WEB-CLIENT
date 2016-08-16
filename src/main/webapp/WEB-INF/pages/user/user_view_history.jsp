@@ -52,7 +52,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="MainApp">
+<body ng-app="UserApp" ng-controller="UserCtrl">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -190,7 +190,7 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/requestAPI/MainApp.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 	
