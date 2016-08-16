@@ -65,6 +65,8 @@ jQuery(document).ready(function($) {
 			my_nav.addClass( 'stick' );
 			my_header.hide();
 			$('.logo-main-menu').show();
+			
+			$('li a#search').css({'position':'inline-block'});
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"visible"});
 			
@@ -72,8 +74,9 @@ jQuery(document).ready(function($) {
 		} else {
 			my_nav.removeClass( 'stick' );
 			my_header.show();
-		
 			$('.logo-main-menu').hide();
+			$('li a#search').css({'position':'none'});
+			
 			// $('.navbar-collapse .navbar-nav').css({"margin":"0 auto","right":"0px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"hidden"});
 		   

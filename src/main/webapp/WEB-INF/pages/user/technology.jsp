@@ -66,39 +66,44 @@
 
 <content>
 <div id="page-content-wrapper">
+<!-- <section id="banner-technology" class=" container-fluid banner">
+									<div class="img-bg">
+									<h1>បច្ចេកវិទ្យា</h1>
+									</div>
+				</section> -->
 	<div class="container" id="container-cate">
 		<section id="cates-view">
 				<div class="row section nav-left topspace-cates">
+				
 				<div class="row-nav-left-content">
-				
-				
 					<div class="row">
 					   <div class="col-sm-3" id="left-side-nav" >
-					   	   <ul class="category-menu">
+					   	   <ul class="category-menu nav nav-pills nav-stacked">
 					   	   		<li class="bg-cate"><span><i class="fa fa-flask"></i>
 			  	   					</span>បច្ចេកវិទ្យា
 			  	   				</li>
-			  	   				<li class="cates-main">
-			  	   				<a href="#">Design</a> 
+			  	   				<li class="cates-main active">
+			  	   				<a data-toggle="pill" href="#design">Design</a> 
 			  	   				</li>
 			  	   				<li class="cates-main">
-			  	   				<a href="#">Network</a> 
+			  	   				<a data-toggle="pill" href="#network">Network</a> 
 			  	   				</li>
 			  	   				<li class="cates-main">
-			  	   				<a href="#">Mobile</a> 
+			  	   				<a data-toggle="pill" href="#mobile">Mobile</a> 
 			  	   				</li>
 			  	   				<li class="cates-main">
-			  	   				<a href="#">Programming</a> 
+			  	   				<a  data-toggle="pill" href="#program">Programming</a> 
 			  	   				</li>
 			  	   				<li class="cates-main">
-			  	   				<a href="#">Web</a> 
+			  	   				<a data-toggle="pill" href="#web">Web</a> 
 			  	   				</li>
 					   	   </ul>
 					   </div>
 						<!--  -->
 						
-						<div class="col-sm-9 col-xs-12">
-							<div class="body-cates">
+						<div class="col-sm-9">	
+							<div class="body-cates tab-content">
+							<div id="design" class="tab-pane fade in active">
 							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
 								<span class="img">
@@ -121,6 +126,105 @@
 								</span>
 								</a>
 							</div>
+							</div>
+							<!--  -->
+								<div id="network" class="tab-pane fade">
+									<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
+										<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+										<span class="img">
+										<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+										</span>
+										<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
+										<span class="user-name">ជឹម មិនា</span>
+										<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+										<span class="view-count">១០០០ បានមើល</span>
+										<span class="socials">
+											<a href="#" alt="like" class="like">
+												<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+											</a>
+											<a href="#" alt="download" class="download">
+												<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+												</a>
+											<a href="#" alt="share" class="share">
+												<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+											</a>
+										</span>
+										</a>
+									</div>
+							</div>
+							<div id="mobile" class="tab-pane fade">
+									<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
+										<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+										<span class="img">
+										<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+										</span>
+										<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
+										<span class="user-name">ជឹម មិនា</span>
+										<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+										<span class="view-count">១០០០ បានមើល</span>
+										<span class="socials">
+											<a href="#" alt="like" class="like">
+												<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+											</a>
+											<a href="#" alt="download" class="download">
+												<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+												</a>
+											<a href="#" alt="share" class="share">
+												<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+											</a>
+										</span>
+										</a>
+									</div>
+							</div>
+							<div id="program" class="tab-pane fade">
+									<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
+										<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+										<span class="img">
+										<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+										</span>
+										<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
+										<span class="user-name">ជឹម មិនា</span>
+										<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+										<span class="view-count">១០០០ បានមើល</span>
+										<span class="socials">
+											<a href="#" alt="like" class="like">
+												<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+											</a>
+											<a href="#" alt="download" class="download">
+												<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+												</a>
+											<a href="#" alt="share" class="share">
+												<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+											</a>
+										</span>
+										</a>
+									</div>
+							</div>
+							<div id="web" class="tab-pane fade">
+									<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
+										<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+										<span class="img">
+										<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+										</span>
+										<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
+										<span class="user-name">ជឹម មិនា</span>
+										<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
+										<span class="view-count">១០០០ បានមើល</span>
+										<span class="socials">
+											<a href="#" alt="like" class="like">
+												<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+											</a>
+											<a href="#" alt="download" class="download">
+												<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
+												</a>
+											<a href="#" alt="share" class="share">
+												<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+											</a>
+										</span>
+										</a>
+									</div>
+							</div>
+							
 							</div>
 							</div>
 						</div>

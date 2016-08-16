@@ -43,7 +43,6 @@
 </nav>
 </div>
 <!-- main menu -->
-
 <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
@@ -52,7 +51,7 @@
 	</span>
 		 <div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
-			  <li><a class="menu actives-main" href="/">
+			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
@@ -76,6 +75,9 @@
 			  <li><a class="menu" href="/other">
 			  	   <span><i class="fa fa-tags" aria-hidden="true"></i>
 			  	   </span>ផ្សេងៗ</a>
+			  </li>
+			  <li><a id="search" href="#">
+			  	  <i class="fa fa-search" aria-hidden="true"></i></a>
 			  </li>
 			  <li class="icon">
 			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
