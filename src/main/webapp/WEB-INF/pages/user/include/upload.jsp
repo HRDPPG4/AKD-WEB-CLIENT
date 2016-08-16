@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<div class="modal fade" id="upload" role="dialog" ng-controller="UploadCtrl">
+<div class="modal fade" id="upload" role="dialog" ng-controller="UserCtrl">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
