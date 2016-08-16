@@ -11,14 +11,14 @@
 	color:white;
  ​ text-align: center;
 }
-.slide-container{
+/* .slide-container{
   max-height: 75%;
   font-size: 16px;
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
   background-color:  #003666;
-}
+} */
 .detail-slide,.slide-detail-more{
   font-size: 16px;
   text-align: left;

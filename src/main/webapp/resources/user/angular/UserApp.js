@@ -66,13 +66,13 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope){
 			}
 		}).then(function(response) {
 			$(".progress-bar").css("width", "100%"); 
-			//alert("Success");
+			alert("Success");
 			$scope.$on(frmData, function(){
 			});
 		}, function(response) {
 			$scope.width="100%";
-			$(".progress-bar").css("width", $scope.width); 
-		//	alert("Error");
+			//$(".progress-bar").css("width", $scope.width); 
+			alert("Error");
 		});
 	};
 	
