@@ -3,7 +3,7 @@ var app = angular.module('UserApp', []);
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
-        restrict: 'A',
+      //  restrict: 'A',
         link: function ($scope, el, attrs, ngModel) {
             el.bind('change', function (event) {
                 ngModel.$setViewValue(event.target.files[0]);
@@ -26,6 +26,46 @@ app.directive('bindFile', [function () {
     };
 
 }]);
+
+/*app.filter('cut', function () {
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
+
+        max = parseInt(max, 10);
+        if (!max) return value;
+        if (value.length <= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace != -1) {
+              //Also remove . and , so its gives a cleaner result.
+              if (value.charAt(lastspace-1) == '.' || value.charAt(lastspace-1) == ',') {
+                lastspace = lastspace - 1;
+              }
+              value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
+    };
+});*/
+
+//	FILTER STRING WITH LIMIT LEGNH
+
+app.filter('strLimit', ['$filter', function($filter) {
+	   return function(input, limit) {
+	     if (! input) return;
+	     if (input.length <= limit) {
+	          return input;
+	      }
+	    
+	      return $filter('limitTo')(input, limit) + '...';
+	   };
+	}]);
+
+
+
 
 //	MAIN CONTROLLER FOR USER
 app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){

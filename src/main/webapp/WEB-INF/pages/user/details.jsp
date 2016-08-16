@@ -66,6 +66,21 @@
 	bottom: 0px;
 	background-color: #003666;
 }
+#btn-hide
+{
+	position: absolute;
+	right: 15px;
+	top: 13px;
+	background-color: white;
+	height:10%;
+	width:10%;
+	opacity:0;
+}
+div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-viewer-button
+{
+	background-color: #003666 !importants;
+	display:none !important;
+}
 
 
 </style>
@@ -96,18 +111,19 @@
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
+									<button id="btn-hide" class="btn btn-primary">Hide</button>
 									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
 									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ng-click="showCategory()"><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
 									</div>
 									
 									<div class="detail-slide">
 									     <div class="Slide-Owner">											
-											<div id="title"><p>វិធីដាំដំណាំស្រូវអោយទទួលបានផលច្រើន</p></div>
+											<div id="title"><p>{{doc.TITLE | strLimit: 60}}</p></div>
 											<div id="owner">
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-												ហ៊ុំ ជីវ័ន {{doc.DOC_TYPE_NUM}}
+												ហ៊ុំ ជីវ័ន <!-- {{doc.DOC_TYPE_NUM}} -->
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>
@@ -124,12 +140,12 @@
 									</div>
 
 									 <div class="slide-detail-more">
-									 	<div id="publish">Publish on Aug 13 2016</div>
+									 	<div id="publish">Publish on: {{doc.CREATED_DATE}}</div>
 										<div id="category">Category: Technology</div>
 										<hr>
 										<div id="description">Description: 
 											<div>
-												ការពន្យាកំណើតជួយកាត់បន្ថយនូវបន្ទុកក្នុងគ្រួសារ។
+												{{doc.DES}}
 											</div>
 										</div>
 									</div>

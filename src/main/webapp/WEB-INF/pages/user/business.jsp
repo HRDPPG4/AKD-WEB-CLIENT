@@ -93,18 +93,37 @@
 					   	   </ul>
 					   </div>
 						
+						
+						
+						
+						
+						
+						
+							
+							
+							
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						<div class="col-sm-9">
 							<div class="body-cates tab-content">
 							<div id="account" class="tab-pane fade in active">
-							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
-								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							
+							<div ng-repeat="slide in document" class="col-lg-4 col-sm-6 col-xs-12">
+								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE | strLimit: 22}}</span>
+								<!-- <span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span> -->
+								<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -118,18 +137,20 @@
 								</span>
 								</a>
 							</div>
+							
 							</div>
 							
 							<div id="admin" class="tab-pane fade in active">
-							<div ng-repeat="slide in slides" class="col-lg-4 col-sm-6 col-xs-12">
-								<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							
+							<div ng-repeat="slide in document" class="col-lg-4 col-sm-6 col-xs-12">
+								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
+								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title" >{{ slide.TITLE | strLimit: 22 }}</span>
+								<!-- <span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span> -->
+								<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -143,8 +164,9 @@
 								</span>
 								</a>
 							</div>
+							
 							</div>
-							</div>
+							</div><!--  -->
 							</div>
 						</div>
 					</div>				
@@ -164,8 +186,6 @@
    </footer>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/index.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 

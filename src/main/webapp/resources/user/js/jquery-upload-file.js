@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('#filer_input').on('change',function ()
     {
 		var ext = $('#filer_input').val().split('.').pop().toLowerCase();
-		if($.inArray(ext, ['pdf','pptx','ppt']) == -1) {
+		if($.inArray(ext, ['pdf','pptx','ppt','doc','docx']) == -1) {
 		    alert('សូមអភ័យទោស! លោកអ្នកអាចធ្វើការចែកចាយឯកសារបានតែប្រភេទ  PDF, Word និង PowerPoint តែប៉ុណ្ណោះ!');	    
 		    $('#btnSave').prop('disabled', true);	    
 		}
@@ -16,9 +16,9 @@ $(document).ready(function() {
 		document.getElementById("title").value=finalName;		
 		jQuery('#title').trigger('input');*/
 		
-		var fileName=document.getElementById("title").value;
+		/*var fileName=document.getElementById("title").value;
 		var finalName=fileName.substring(0, fileName.lastIndexOf('.'));
-		document.getElementById("title").value=finalName;
+		document.getElementById("title").value=finalName;*/
 		
 		//$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
 

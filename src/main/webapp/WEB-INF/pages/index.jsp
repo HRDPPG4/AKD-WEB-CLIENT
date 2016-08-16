@@ -93,29 +93,6 @@
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
 						ng-repeat="slide in document  | limitTo : 4">
 							
-							<!-- <a href="/detail?url={{escapeUrl(slide.EMBEDED_LINK)}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> -->
-							
-							
 							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
@@ -147,17 +124,17 @@
 					<div id="network" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides  | limitTo : 4">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/002.png" alt="">
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -169,27 +146,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="mobile" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides  | limitTo : 4">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/003.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -201,27 +177,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="programming" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides  | limitTo : 4">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/004.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -233,27 +208,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="web" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides  | limitTo : 4">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/006.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -265,7 +239,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 			</div>
@@ -299,20 +275,17 @@
 					<div id="chemical" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/002.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -324,7 +297,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 					</div>
 					
@@ -333,20 +308,17 @@
 					<div id="historical" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Agriculture/006.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -358,27 +330,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="inter-nation" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Business/006.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -390,27 +361,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="religion" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Business/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -422,27 +392,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="proverb" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -454,7 +423,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 			</div>
@@ -487,20 +458,17 @@
 					<div id="khmer" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -512,7 +480,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 					</div>
 					
@@ -521,20 +491,17 @@
 					<div id="culture" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -546,27 +513,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="poem" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -578,27 +544,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="history" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -610,27 +575,26 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
 				<div id="hgeography" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -642,7 +606,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 			</div>
@@ -671,20 +637,17 @@
 					<div id="account" class="tab-pane fade in active">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -696,7 +659,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 					</div>
 					
@@ -705,20 +670,17 @@
 					<div id="admin" class="tab-pane fade">
 						
 						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in slides">
+						ng-repeat="slide in document  | limitTo : 4">
 							
-							<a href="/detail?url={{escapeUrl(slide.url)}}" class="thumbnail">
+							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
-								<img src="${pageContext.request.contextPath}/resources/user/img/Law/011.png" alt=""> 
-								
-								
-								
-								<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">គណិតវិទ្យាថ្នាក់ទី១០</span>
-								<span class="user-name">ជឹម មិនា</span>
-								<span class="descript">សៀវភៅដែលចេញដោយក្រសួងអប់រំ មានទៅដោយច</span>
-								<span class="view-count">១០០០ បានមើល</span>
+								<span class="title">{{slide.TITLE}}</span>
+								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="descript">{{slide.DES}}</span>
+								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
 										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -730,7 +692,9 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>
+							</a> 
+							
+							
 						</div>
 				</div>
 				
