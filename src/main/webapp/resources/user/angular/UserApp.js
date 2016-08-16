@@ -1,31 +1,31 @@
 var app = angular.module('UserApp', []);
 // DIRECTIVE FOR USER. USER IN UPLOAD FILE
-app.directive('bindFile', [function () {
-    return {
-        require: "ngModel",
-        restrict: 'A',
-        link: function ($scope, el, attrs, ngModel) {
-            el.bind('change', function (event) {
-                ngModel.$setViewValue(event.target.files[0]);
-                $scope.$apply();
-              //  alert($scope.theFile.name);
-               // $rootScope.name=$scope.theFile.name;
-            });
-            
-            $scope.$watch(function () {
-            //	$rootScope.name=$scope.theFile.name;
-
-                return ngModel.$viewValue;
-            }, function (value) {
-                if (!value) {
-                    el.val("");
-                }
-            });
-        }
-
-    };
-
-}]);
+//app.directive('bindFile', [function () {
+//    return {
+//        require: "ngModel",
+//        restrict: 'A',
+//        link: function ($scope, el, attrs, ngModel) {
+//            el.bind('change', function (event) {
+//                ngModel.$setViewValue(event.target.files[0]);
+//                $scope.$apply();
+//              //  alert($scope.theFile.name);
+//               // $rootScope.name=$scope.theFile.name;
+//            });
+//            
+//            $scope.$watch(function () {
+//            //	$rootScope.name=$scope.theFile.name;
+//
+//                return ngModel.$viewValue;
+//            }, function (value) {
+//                if (!value) {
+//                    el.val("");
+//                }
+//            });
+//        }
+//
+//    };
+//
+//}]);
 
 //	MAIN CONTROLLER FOR USER
 app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
@@ -128,7 +128,6 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			url:'http://localhost:1111/api/v1/document/'+id,
 			method:'GET'
 		}).then(function(response){
-			
 			$scope.doc=response.data.DATA;
 			console.log($scope.doc);
 			//console.log("DocID: "+$scope.docID);

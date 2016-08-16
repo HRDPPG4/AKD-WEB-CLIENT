@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-
+<% if(1==2) {%>
 <div id="Slide-Detail">
     <div class="modal fade" id="ViewByGoogleDrive" role="dialog">
     <div class="modal-dialog#">
@@ -22,3 +22,4 @@
     </div>
   </div>  
 </div> 
+<% } %>

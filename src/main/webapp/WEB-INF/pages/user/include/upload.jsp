@@ -20,7 +20,7 @@
 		   </div>
 		</div>				 		  					
 		</form>  	
-			<div ng-show="theFile">
+			<div>
 			<form role="form">
 			    <div class="form-group">
 			      <label>Title:</label>

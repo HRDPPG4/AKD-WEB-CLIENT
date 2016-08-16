@@ -19,6 +19,8 @@ $(document).ready(function() {
 	/*	var fileName=document.getElementById("title").value;
 		var finalName=fileName.substring(0, fileName.lastIndexOf('.'));
 		document.getElementById("title").value=finalName;*/
+		
+		$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
 
 	
 		

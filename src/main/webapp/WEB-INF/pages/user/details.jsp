@@ -109,8 +109,8 @@
 											</span>
 												ហ៊ុំ ជីវ័ន
 											</div>
-											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  100</span></div>
-											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  88</span></div>
+											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
+											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>
 											<div id="line">
 												<hr>
 											</div>
@@ -152,8 +152,7 @@
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
 												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  									 		 
-												 		<div class="col-md-6">												 			
-															
+												 		<div class="col-md-6">												 																		
 													 		<a href="/detail/{{slide.DOC_ID}}">
 													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
