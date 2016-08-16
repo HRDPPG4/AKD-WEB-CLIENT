@@ -62,7 +62,7 @@
 
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
-			<li class="active"><a href="comment"><i
+			<li><a href="comment"><i
 					class="fa fa-comment"></i> <span>Comments</span> <span
 					class="label label-primary pull-right">4</span> </a></li>
 
@@ -83,11 +83,11 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 			<h1>
-				Comments Tables <small>advanced tables</small>
+				Savelist Tables <small>advanced tables</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active"><a href="#">Comment</a></li>
+				<li class="active"><a href="#">Savelist</a></li>
 			</ol>
 			</section>
 
@@ -97,7 +97,7 @@
 				<div class="col-xs-12">
 					<div class="box">
 						<div class="box-header">
-							<h3 class="box-title">Comments Table</h3>
+							<h3 class="box-title">Savelist Table</h3>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">

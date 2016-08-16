@@ -109,7 +109,6 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>ID</th>
 										<th>Title</th>
 										<th>Desciption</th>
 										<th>Post Date</th>
@@ -121,7 +120,6 @@
 								</thead>
 								<tbody>
 									<tr ng-repeat="d in document">
-										<td>{{d.DOC_ID}}</td>
 										<td>{{d.TITLE}}</td>
 										<td>{{d.DES}}</td>
 										<td>{{d.CREATED_DATE}}</td>

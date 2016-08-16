@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
@@ -65,8 +65,8 @@
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
 					<span class="label label-primary pull-right">4</span> </a></li>
 
-<li><a href="savelist"> <i class="fa fa-list"></i>
-					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
+					<span class="label label-primary pull-right">8</span>
 			</a></li>
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
@@ -82,11 +82,11 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 			<h1>
-				Feedback Data <small>advanced tables</small>
+				Report Data <small>advanced tables</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-				<li class="active"><a href="#">Feedback</a></li>
+				<li class="active"><a href="#">Report</a></li>
 			</ol>
 			</section>
 

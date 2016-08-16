@@ -32,7 +32,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/savelist",method=RequestMethod.GET)
 	public String savelist(){
-		return "admin/report";
+		return "admin/savelist";
 	}
 	
 	

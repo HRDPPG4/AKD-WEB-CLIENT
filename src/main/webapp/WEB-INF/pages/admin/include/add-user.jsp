@@ -118,7 +118,7 @@
 								</div>
 
 								<button type="button"
-									class="btn btn-primary btn-lg btn-block login-button"
+									class="btn btn-primary btn-lg btn-block login-button btn-flat"
 									ng-click="insertUser()" data-dismiss="modal">Register</button>
 
 							</form>

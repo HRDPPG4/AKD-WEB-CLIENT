@@ -11,6 +11,10 @@
     margin-right: 20px;
     margin-left: 20px;
 }
+.btn-flat {
+    border-radius: 0;
+ 	margin-left: 20px;
+}
 </style>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
