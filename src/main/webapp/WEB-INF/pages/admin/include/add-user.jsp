@@ -39,8 +39,8 @@
 											<span class="input-group-addon"><i
 												class="fa fa-key fa" aria-hidden="true"></i></span>
 											<input
-												type="text" class="form-control" name="name" ng-model="gpass"
-												placeholder="Ex: Bunhong" />
+												type="password" class="form-control" name="name" ng-model="gpass"
+												placeholder="Ex: *******" />
 										</div>
 									</div>
 								</div>
@@ -52,7 +52,7 @@
 												class="fa fa-envelope-o fa" aria-hidden="true"></i></span>
 											<input
 												type="text" class="form-control" name="name" ng-model="gemail"
-												placeholder="Ex: Bunhong" />
+												placeholder="Ex: bunhong@gmail.com" />
 										</div>
 									</div>
 								</div>
@@ -64,7 +64,7 @@
 												class="fa fa-phone fa" aria-hidden="true"></i></span>
 											<input
 												type="text" class="form-control" name="name" ng-model="gphone"
-												placeholder="Ex: Bunhong" />
+												placeholder="Ex: 012-345-678" />
 										</div>
 									</div>
 								</div>
@@ -76,7 +76,7 @@
 												class="fa fa-calendar fa" aria-hidden="true"></i></span>
 											<input
 												type="text" class="form-control" name="name" ng-model="gdate"
-												placeholder="Ex: Bunhong" />
+												placeholder="Ex: dd-mm-yyyy" />
 										</div>
 									</div>
 								</div>
@@ -88,7 +88,7 @@
 												class="fa fa-sticky-note fa" aria-hidden="true"></i></span>
 											<input
 												type="text" class="form-control" name="name" ng-model="gremark"
-												placeholder="Ex: Bunhong" />
+												placeholder="Remark" />
 										</div>
 									</div>
 								</div>
@@ -100,7 +100,7 @@
 												class="fa fa-pencil fa" aria-hidden="true"></i></span>
 											<input
 												type="text" class="form-control" name="name" ng-model="gstatus"
-												placeholder="Ex: Bunhong" />
+												placeholder="0" />
 										</div>
 									</div>
 								</div>
@@ -110,9 +110,13 @@
 										<div class="input-group">
 											<span class="input-group-addon"><i
 												class="fa fa-users fa" aria-hidden="true"></i></span>
-											<input
+											<select name="role" ng-model="grole" class="form-control">
+												<option value="Admin">Admin</option>
+												<option value="User">User</option>
+											</select>
+											<!-- <input
 												type="text" class="form-control" name="name" ng-model="grole"
-												placeholder="Ex: Bunhong" />
+												placeholder="Ex: Bunhong" /> -->
 										</div>
 									</div>
 								</div>

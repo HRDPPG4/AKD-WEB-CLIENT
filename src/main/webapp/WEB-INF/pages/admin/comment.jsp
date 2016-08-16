@@ -92,7 +92,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="MainCtrl">
+			<section class="content" ng-controller="CommentCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
