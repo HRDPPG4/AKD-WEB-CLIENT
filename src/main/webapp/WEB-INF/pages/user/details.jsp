@@ -54,11 +54,18 @@
 </script>
 
 <style>
-	.slide-container 
-	{
-		height:100% !important;	
-		*position: absolute;
-	}
+	
+#SlideBox
+{
+	position: relative;
+}
+#btn-fullscreen
+{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background-color: #003666;
+}
 
 
 </style>
@@ -89,7 +96,8 @@
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
-									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}'></iframe> 
+									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ng-click="showCategory()"><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
 									</div>
 									
 									<div class="detail-slide">
@@ -146,7 +154,7 @@
 												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  									 		 
 												 		<div class="col-md-6">												 			
 															
-													 		<a href="/detail" >
+													 		<a href="/detail/{{slide.DOC_ID}}">
 													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
 												 		</div>
@@ -187,11 +195,11 @@
 	<!-- Online Link -->
 	<script>
 	$(document).ready(function() {
-		// var docID='${id}';
-		//var docID=$("#myspan").text();
 		  function setHeight() {
-		    windowHeight = $(window).innerHeight()-180;
-		    $('#SlideBox iframe').css('min-height', windowHeight);
+		    windowHeight = $(window).innerHeight();
+		    $('#SlideBox iframe').css('min-height', windowHeight-180);
+		    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
+		    
 		  };
 		  setHeight();
 		  
