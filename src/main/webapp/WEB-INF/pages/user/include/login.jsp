@@ -26,11 +26,11 @@
         <form role="form">
           <div class="form-group">
             <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-            <input type="text" class="form-control" id="usrname" placeholder="សូមបញ្ចូល Email">
+            <input type="text" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល Email">
           </div>
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-            <input type="text" class="form-control" id="psw" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
+            <input type="text" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
           </div>
           <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
