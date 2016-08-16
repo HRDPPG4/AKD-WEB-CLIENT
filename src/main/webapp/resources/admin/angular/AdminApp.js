@@ -199,3 +199,20 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 	$scope.getReportData();
 
 });
+
+//Savelist Controller
+app.controller('SavelistCtrl', function($scope, $http, $window) {
+	$scope.getSavelistData = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/savelist',
+			method:'GET'
+		}).then(function(response){
+			$scope.savelist=response.data.DATA;
+			console.log($scope.savelist);
+		}, function(response){
+
+		});
+	}
+	$scope.getSavelistData();
+
+});

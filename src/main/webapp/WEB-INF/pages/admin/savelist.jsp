@@ -92,7 +92,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content" ng-controller="MainCtrl">
+			<section class="content" ng-controller="SavelistCtrl">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">
@@ -105,18 +105,22 @@
 								<thead>
 									<tr>
 										<th>ID</th>
+										<th>Name</th>
 										<th>Date</th>
 										<th>Desciption</th>
 										<th>User</th>
+										<th>Docs</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="c in comment">
-										<td>{{c.COMMENT_ID}}</td>
-										<td>{{c.CREATED_DATE}}</td>
-										<td>{{c.REMARK}}</td>
-										<td>{{c.USER_ID}}</td>
+									<tr ng-repeat="s in savelist">
+										<td>{{s.LIST_ID}}</td>
+										<td>{{s.LIST_NAME}}</td>
+										<td>{{s.CREATED_DATE}}</td>
+										<td>{{s.REMARK}}</td>
+										<td>{{s.USER_ID}}</td>
+										<td>{{s.DOC_ID}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-reply"></i>
