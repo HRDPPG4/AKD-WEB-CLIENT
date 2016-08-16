@@ -138,12 +138,11 @@
 										<td>{{u.REMARK}}</td>
 										<td>{{u.USER_ROLE}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm"
-											    ng-click="myTest()">
+											<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
+												data-target="#updateUser" ng-click="">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm"
-												ng-click="removeUser(u.USER_ID)">
+											<button type="button" class="btn btn-danger btn-sm"	ng-click="removeUser(u.USER_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -151,8 +150,7 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th><button class="btn btn-flat btn-primary" 
-												data-toggle="modal" data-target="#addUser"
+										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#addUser" 
 												>Add User</button></th>
 									</tr>
 									<!-- <tr>
@@ -188,6 +186,7 @@
 					<!-- Modal Start-->
 
 						<%@include file="include/add-user.jsp"%>
+						<%@include file="include/update-user.jsp"%>
 					<!-- Modal End -->
 
 					<!-- /.box -->

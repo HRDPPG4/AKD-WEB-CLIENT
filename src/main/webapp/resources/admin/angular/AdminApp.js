@@ -90,12 +90,12 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout){
 			$scope.user=response.data.DATA;
 			console.log($scope.user);
 		}, function(response){
-
+			
 		});
 	}
+	
 	$scope.getUserData();
-
-
+	
 	$scope.insertUser = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/user',
@@ -129,6 +129,15 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout){
 			alert("Fiald");
 		});
 	}
+	
+//	$scope.getDataForUpdate = function(user){
+//		$scope.gid = user.u.id;
+//		$scope.gname = user.u.name;
+//		$scope.gpassword =  user.u.password;
+//		$scope.aemail = user.u.email;
+//	}
+	
+	
 });
 
 //	Document Controller

@@ -122,6 +122,49 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	    $scope.escapeUrl = function(url){
 	    	return escape(url);
 	    }
+	    
+	    
+	    // register
+	    $scope.saveUser = function(){	
+
+			$http({
+				url:'http://localhost:1111/api/v1/user',
+				method:'POST',
+				data:{
+					  'CREATED_DATE': new Date(),
+					  'EMAIL': $scope.userEmail,
+					  'PASSWORD': $scope.userPassword,
+					  'PHONE': $scope.userPhone,
+					  'REMARK': "",
+					  
+					  'STATUS': 1,	
+					  'USER_NAME': $scope.userName,
+					  'USER_ROLE': "user"
+				}
+			}).then(function(response){
+				alert("success");
+				$scope.userName="";
+				$scope.userPassword="";
+				
+			}, function(response){
+			 console.log(response);
+			});
+		}	
+		
+		$scope.error = false;
+		$scope.$watch('userPassword',function() {$scope.check();});
+		$scope.$watch('userConfirmpassword',function() {$scope.check();});
+		
+		$scope.check = function() {
+			  if ($scope.userPassword !== $scope.userConfirmpassword) {
+			    $scope.error = true;
+			    } else {
+			    $scope.error = false;
+			  }
+			
+			
+			};
+		
 	var id="";
 	$rootScope.getDocumentById=function(id){		
 		$http({
@@ -137,12 +180,6 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	}
 	
 	$rootScope.getDocumentById(id);
-	
-	
-
-
-	
-	
 });
 
 
