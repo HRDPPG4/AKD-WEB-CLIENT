@@ -34,13 +34,15 @@
    			 				<div class="form-group" id="catsavelist" style="display:none;">
   								
   								<select class="form-control">
-						         </select>
+  									<option>កម្រងប្រវត្តសាស្រ្តខ្មែរ</option>
+  									<option>កម្រងមេរៀនអាយធី</option>
+						        </select>
 							 </div>
-   			 				   <p>hello{{doc.CREATED_DATE}}</p>
+   			 				  
    			 				
    			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; display:none;"  >
    			 			
-   			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; " ng-repeat="slide in getDocumentById" >
+   			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; "  >
    			 				 
   			
   						
@@ -49,8 +51,8 @@
 							
 							<div class="form-group" style="padding-top:10px;padding-top:20px; " >
 							    <input   type="text" class="form-control" ng-model="saveListname">
-							    <input   type="hidden" class="form-control" ng-model="saveDocID">
-							    <input   type="hidden" class="form-control" ng-model="saveUserID">
+							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" ng-model="saveDocID">
+							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" ng-model="saveUserID">
 							   
   								<button type="button" class="btn btn-info" id="btn-savelist">បង្កើត</button>
 							</div>
