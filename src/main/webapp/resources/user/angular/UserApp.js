@@ -123,8 +123,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	    	return escape(url);
 	    }
 	    
+	    	//	 form register
 	    
-	    // register
 	    $scope.saveUser = function(){	
 
 			$http({
