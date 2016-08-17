@@ -191,11 +191,11 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DOC_ID': "0B6u494K0lyadTmhjTnJYV1FJclE" ,
+				  'DOC_ID': $('#doc_id').val(),
 				  'LIST_NAME': $scope.saveListname,
 				  'REMARK': "",
 				  'STATUS':1 ,
-				  'USER_ID': 2,
+				  'USER_ID': $('#user_id').val();,
 
 			}
 		}).then(function(response){
