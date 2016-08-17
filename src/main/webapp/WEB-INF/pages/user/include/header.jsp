@@ -29,9 +29,9 @@
 
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
-            <li class="col-sm-1" id="avatar-user"><a href="#"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
+            <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
-                	<li><a href="#"> ជឹម មិនា</a></li>
+                	<li><a href="/profile"> ជឹម មិនា</a></li>
                 	<li><a href="#"> ស្លាយរបស់ខ្ញុំ</a></li>
                 	<li><a href="#"> ចាកចេញ</a></li>
                 </ul>
