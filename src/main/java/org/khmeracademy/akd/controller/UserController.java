@@ -67,6 +67,11 @@ public class UserController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value="/profile",method=RequestMethod.GET)
+	public String profile(){
+		return "user/profile";
+	}
+	
 	
 	
 	
