@@ -195,7 +195,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				  'LIST_NAME': $scope.saveListname,
 				  'REMARK': "",
 				  'STATUS':1 ,
-				  'USER_ID': $('#user_id').val();,
+				  'USER_ID': $('#user_id').val()
 
 			}
 		}).then(function(response){
