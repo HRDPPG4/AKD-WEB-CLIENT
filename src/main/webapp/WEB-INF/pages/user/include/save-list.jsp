@@ -31,7 +31,8 @@
       				         
    			 			
    			 				<button type="button" class="btn btn-success" id="list-save">Create Savelist</button>
-   			 				<div id="frmsavelist" style="padding-bottom:40px;padding-top:20px; display:none; " >
+   			 				
+   			 				<div id="showSavelist" style="padding-bottom:40px;padding-top:20px;"  >
    			 				 <div class="form-group" style="padding-bottom:40px;padding-top:20px; " >
   								<label class="label-save-list" for="usr">Name:</label>
   								<input class="input-save-list"  type="text" class="form-control" id="usr">
