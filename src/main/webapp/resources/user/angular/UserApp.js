@@ -72,10 +72,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	$scope.theFile = null;
 	//	CATEGORY	
-	$scope.showCategory = function(){	
-		
-		
-		
+	$scope.showCategory = function(){			
 		$http({
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
