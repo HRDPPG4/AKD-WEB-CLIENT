@@ -25,8 +25,7 @@
 			    <div class="form-group">
 			      <label>Title:</label>
 			      <input type="text" class="form-control" placeholder="Title" ng-model="theFile.name" id="title" ng-readonly="false">		<!-- ng-model="fileTitle" id="title" -->
-			    <p>Title: {{theFile.name}}</p>
-			     <p>Type: {{theFile.type}}</p>
+			   <!--  <p>Title: {{theFile.name}}</p> -->
 			  <!--    <p>Type: {{theFile.type}}</p> -->
 			    </div>
 				

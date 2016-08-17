@@ -3,7 +3,7 @@
 
 
 
-<div id="Slide-Detail" ng-if="doc.DOC_TYPE_NUM == 2">
+<div id="Slide-Detail" ng-if="doc.DOC_TYPE_NUM == 2 || doc.DOC_TYPE_NUM == 3">
     <div class="modal fade" id="ViewByGoogleDrive" role="dialog">
     <div class="modal-dialog#">
       <div class="modal-content">
