@@ -20,6 +20,9 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet"/>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -138,11 +141,12 @@
 										<td>{{u.REMARK}}</td>
 										<td>{{u.USER_ROLE}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" 
-												data-target="#updateUser" ng-click="">
+											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)" 
+											data-toggle="modal" data-target="#updateUser">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm"	ng-click="removeUser(u.USER_ID)">
+											
+											<button type="button" class="btn btn-danger btn-sm"	ng-click="alertDelete(u.USER_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -153,8 +157,8 @@
 										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#addUser" 
 												>Add User</button></th>
 									</tr>
-									<!-- <tr>
-										ID
+									<tr>
+									<!-- 	ID
 										<input type="text" name="id" ng-model="gid" />
 										<br /> name
 										<input type="text" name="name" ng-model="gname" />
@@ -173,8 +177,10 @@
 										<br /> role
 										<input type="text" name="role" ng-model="grole" />
 										<br />
-
-									</tr> -->
+									
+									<button class="btn btn-flat btn-primary" ng-click="updateUser()">Update</button>
+									 -->
+									</tr>
 								</tfoot>
 							</table>
 						</div>

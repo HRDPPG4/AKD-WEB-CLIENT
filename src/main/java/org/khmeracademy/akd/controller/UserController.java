@@ -67,6 +67,11 @@ public class UserController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value="/profile",method=RequestMethod.GET)
+	public String profile(){
+		return "user/profile";
+	}
+	
 	
 	@RequestMapping(value="/detail/{id}", method=RequestMethod.GET)
 	public String detail(@PathVariable("id") String id, ModelMap model){
