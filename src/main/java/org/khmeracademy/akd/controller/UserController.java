@@ -68,20 +68,6 @@ public class UserController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public String details(@RequestParam("url") String url, ModelMap model){
-		model.put("url", url);
-		System.out.print(url);
-		return "user/details";
-	}
-	
 	@RequestMapping(value="/detail/{id}", method=RequestMethod.GET)
 	public String detail(@PathVariable("id") String id, ModelMap model){
 		System.out.println("ID==>" + id);
@@ -89,9 +75,5 @@ public class UserController {
 		return "user/details";
 	}
 	
-	/*@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public String details(){
-		return "user/details";
-	}*/
-	
 }
+

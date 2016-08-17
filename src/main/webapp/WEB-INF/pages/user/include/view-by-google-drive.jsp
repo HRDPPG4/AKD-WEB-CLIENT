@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<% if(1==1) {%>
-<div id="Slide-Detail">
+
+
+<div id="Slide-Detail" ng-if="doc.DOC_TYPE_NUM == 2">
     <div class="modal fade" id="ViewByGoogleDrive" role="dialog">
     <div class="modal-dialog#">
       <div class="modal-content">
@@ -22,4 +23,9 @@
     </div>
   </div>  
 </div> 
-<% } %>
+
+
+
+<%-- <% if(2==2) {%>
+ 
+<% } %> --%>
