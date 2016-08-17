@@ -202,7 +202,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
 		});	
 	}
-	// for Savelist
+	// Creat save list
     $scope.saveList = function(){	
 
         var docID = $('#doc_id').val();
@@ -229,7 +229,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			console.log(response);
 			
 		});
-	}	
+	}
+    
 	//$rootScope.getDocumentById(id);
 });
 

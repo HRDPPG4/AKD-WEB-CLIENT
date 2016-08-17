@@ -4,6 +4,7 @@ $(document).ready(function(){
     });
     $("#btn-savelist").click(function(){
     	$("#catsavelist").show();
+    	$("#savelistname").hide();
     });
   
 });

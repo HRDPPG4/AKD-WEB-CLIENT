@@ -49,9 +49,9 @@
   						
 							</div>
 							
-							<div class="form-group" style="padding-top:10px;padding-top:20px; " >
+							<div class="form-group" style="padding-top:10px;padding-top:20px; " id="savelistname" >
 							    <input   type="text" class="form-control" ng-model="saveListname">						      
-							    <input   type="text" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
+							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
 							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
 							   
   								<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">បង្កើត</button>
