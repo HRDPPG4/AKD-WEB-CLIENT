@@ -50,11 +50,11 @@
 							</div>
 							
 							<div class="form-group" style="padding-top:10px;padding-top:20px; " >
-							    <input   type="text" class="form-control" ng-model="saveListname">
-							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" ng-model="saveDocID">
-							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" ng-model="saveUserID">
+							    <input   type="text" class="form-control" ng-model="saveListname">						      
+							    <input   type="text" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
+							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
 							   
-  								<button type="button" class="btn btn-info" id="btn-savelist">បង្កើត</button>
+  								<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">បង្កើត</button>
 							</div>
    			 			    </div>
    			 		 </div>
