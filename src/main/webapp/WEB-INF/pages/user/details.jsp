@@ -209,11 +209,12 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script> 
 	<!-- Online Link -->
 	<script>
-	 $(document).ready(function() {				
+	// $(document).ready(function() {				
 		  function setHeight() {
 		    windowHeight = $(window).innerHeight();
 		    $('#SlideBox iframe').css('min-height', windowHeight-180);
 		    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
+		    $('#ViewByGoogleDrive').css('min-height', windowHeight);
 		    
 		  };
 		  setHeight();
@@ -221,6 +222,6 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 		  $(window).resize(function() {
 		    setHeight();
 		  }); 
-		}); 
+	//	}); 
 	</script>	
 </body>
