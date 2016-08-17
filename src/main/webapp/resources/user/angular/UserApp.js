@@ -123,8 +123,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	    	return escape(url);
 	    }
 	    
+	    	//	 form register
 	    
-	    // register
 	    $scope.saveUser = function(){	
 
 			$http({
@@ -179,7 +179,35 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
 		});	
 	}
-	
+	// Creat save list
+    $scope.saveList = function(){	
+
+        var docID = $('#doc_id').val();
+        var userID = $('#user_id').val();
+       
+         
+		$http({
+			url:'http://localhost:1111/api/v1/savelist',
+			method:'POST',
+			data:{
+				  'CREATED_DATE': new Date(),
+				  'DOC_ID': "0B6u494K0lyadTmhjTnJYV1FJclE" ,
+				  'LIST_NAME': $scope.saveListname,
+				  'REMARK': "",
+				  'STATUS':1 ,
+				  'USER_ID': 2,
+
+			}
+		}).then(function(response){
+			alert("success");
+			
+			
+		}, function(response){
+			console.log(response);
+			
+		});
+	}
+    
 	//$rootScope.getDocumentById(id);
 });
 

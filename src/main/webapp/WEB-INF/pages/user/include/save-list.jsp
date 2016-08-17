@@ -24,27 +24,37 @@
      			<div class="row">
   					  
   					   		<div id="message" style="background:#98bf21;height:30px;width:800px;position:absolute;display:none;">
-  					   		   <p>Save Succesfully</p>
+  					   		   <p>hello</p>
   					   		</div>
     						<div class="thumbnail">
      						 <img src="${pageContext.request.contextPath}/resources/user/img/book.jpg" alt="Thumbnail" style=" width:400px; height:300px;position:relative;" >
       				         
    			 			
-   			 				<button type="button" class="btn btn-success" id="list-save">Create Savelist</button>
-   			 				
-   			 				<div id="showSavelist" style="padding-bottom:40px;padding-top:20px;"  >
-   			 				 <div class="form-group" style="padding-bottom:40px;padding-top:20px; " >
-  								<label class="label-save-list" for="usr">Name:</label>
-  								<input class="input-save-list"  type="text" class="form-control" id="usr">
-							</div>
-							<div class="form-group">
-  								<label  class="label-save-list"  for="pwd" >Password:</label>
-  								<input type="password" class="input-save-list" id="pwd" >
+   			 				<button type="button" class="btn btn-success" id="list-save">SaveList</button>
+   			 				<div class="form-group" id="catsavelist" style="display:none;">
   								
+  								<select class="form-control">
+  									<option>កម្រងប្រវត្តសាស្រ្តខ្មែរ</option>
+  									<option>កម្រងមេរៀនអាយធី</option>
+						        </select>
+							 </div>
+   			 				  
+   			 				
+   			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; display:none;"  >
+   			 			
+   			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; "  >
+   			 				 
+  			
+  						
+  						
 							</div>
 							
-							<div class="form-group" style="padding-top:40px;padding-top:20px; " >
-  								<button type="button" class="btn btn-info" id="btn-savelist">Save</button>
+							<div class="form-group" style="padding-top:10px;padding-top:20px; " id="savelistname" >
+							    <input   type="text" class="form-control" ng-model="saveListname">						      
+							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
+							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
+							   
+  								<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">បង្កើត</button>
 							</div>
    			 			    </div>
    			 		 </div>
