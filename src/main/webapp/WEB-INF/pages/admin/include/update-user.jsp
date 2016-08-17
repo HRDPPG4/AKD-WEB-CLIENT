@@ -8,6 +8,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>Update User</h4>
 					<div class="imgcontainer">
 						<img
 							src="${pageContext.request.contextPath}/resources/user/img/login.png"
@@ -114,9 +115,7 @@
 												<option value="Admin">Admin</option>
 												<option value="User">User</option>
 											</select>
-											<!-- <input
-												type="text" class="form-control" name="name" ng-model="grole"
-												placeholder="Ex: Bunhong" /> -->
+											
 										</div>
 									</div>
 								</div>

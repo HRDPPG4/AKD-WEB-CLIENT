@@ -117,7 +117,46 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout){
 			alert("faild");
 		});
 	}
-
+	
+	$scope.getDataForUpdate= function(user){
+	
+//		alert(user.u.EMAIL);
+//		console.log(user.u.EMAIL);
+		
+		$scope.gid= user.u.USER_ID;
+		$scope.gname= user.u.USER_NAME;
+		$scope.gpass= user.u.PASSWORD;
+		$scope.gemail= user.u.EMAIL;
+		$scope.gphone= user.u.PHONE;
+		$scope.gdate= user.u.CREATED_DATE;
+		$scope.gremark= user.u.REMARK;
+		$scope.gstatus= user.u.STATUS;
+		$scope.grole= user.u.USER_ROLE;
+		
+	}
+	
+	$scope.updateUser = function(){
+		$http({
+    		url: 'http://localhost:1111/api/v1/user',
+    		method: 'PUT',
+    		data:{
+    			'USER_NAME' : $scope.gname,
+				'PASSWORD' : $scope.gpass,
+				'EMAIL':$scope.gemail,
+				'PHONE':$scope.gphone,
+				'CREATED_DATE':$scope.gdate,
+				'REMARK':$scope.gremark,
+				'STATUS':$scope.gstatus,
+				'USER_ROLE':$scope.grole,
+				'USER_ID' : $scope.gid
+    		}
+    	}).then(function() {
+    		$scope.getUserData();
+		}, function() {
+			alert("fiald");
+		});
+	}
+	
 	$scope.removeUser = function(id) {
 		$http({
 			url : 'http://localhost:1111/api/v1/user/' + id,
@@ -130,12 +169,6 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout){
 		});
 	}
 	
-//	$scope.getDataForUpdate = function(user){
-//		$scope.gid = user.u.id;
-//		$scope.gname = user.u.name;
-//		$scope.gpassword =  user.u.password;
-//		$scope.aemail = user.u.email;
-//	}
 	
 	
 });
