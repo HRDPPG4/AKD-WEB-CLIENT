@@ -65,6 +65,18 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	}	
 	$scope.showCategory();
 	
+	$rootScope.getCategoryByParentID=function(parentID){		
+		$http({
+			url:'http://localhost:1111/api/v1/getCategoryByParentID/'+parentID,
+			method:'GET'
+		}).then(function(response){
+			$scope.parentCategory=response.data.DATA;
+			console.log($scope.parentCategory);
+		}, function(response){
+
+		});	
+	}
+	
 	//	UPLOAD FILE BLOCK
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
@@ -179,6 +191,10 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
 		});	
 	}
+	
+	
+	
+	
 	// Creat save list
     $scope.saveList = function(){	
 

@@ -80,5 +80,12 @@ public class UserController {
 		return "user/details";
 	}
 	
+	@RequestMapping(value="/view/{ParentID}", method=RequestMethod.GET)
+	public String viewPageByCategoryID(@PathVariable("ParentID") String ParentID, ModelMap model){
+		System.out.println("ID==>" + ParentID);
+		model.put("ParentID", ParentID);
+		return "user/viewPageByCategoryID";
+	}
+	
 }
 
