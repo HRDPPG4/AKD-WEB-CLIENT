@@ -122,7 +122,7 @@
 
 								<button type="button" id="btnUpdate"
 									class="btn btn-primary btn-flat btn-block login-button btn-flat"
-									ng-click="updateUser()" data-dismiss="modal">Update</button>
+									ng-click="alertUpdate()" data-dismiss="modal">Update</button>
 
 							</form>
 						</div>

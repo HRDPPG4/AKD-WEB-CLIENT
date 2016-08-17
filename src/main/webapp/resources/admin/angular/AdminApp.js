@@ -1,58 +1,51 @@
 var app = angular.module('MainApp', []);
 
-//Main Controller for admin
-app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
+// Main Controller for admin
+app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 
-//	get date from user db to update	
-/*	$scope.getDataForUpdate = function(){
-		alert("hello");
-		$scope.gid= user.u.id;
-		$scope.gname= user.u.name;
-		$scope.gpass=user.u.pass;
-		$scope.gemail=user.u.email;
-		$scope.gphone=user.u.phone;
-		$scope.gdate=user.u.date;
-		$scope.gremark=user.u.remark;
-		$scope.gstatus=user.u.status;
-		$scope.grole=user.u.role;
-	}*/
-//	do update user
-//	$scope.update = function(){
-//    	$http({
-//    		url: 'http://localhost:4444/user',
-//    		method: 'PUT',
-//    		data:{
-//    			'name': $scope.aname,
-//    			'password': $scope.apassword,
-//    			'email': $scope.aemail,
-//    			'id': $scope.aid
-//    		}
-//    	}).then(function() {
-//    		$scope.getAllData();
-//		}, function() {
-//			alert("fiald");
-//		});
-//    }
-
-		
-//	Method for manipulating feedback
-	$scope.getFeedbackData = function(){
+	// get date from user db to update
+	/*
+	 * $scope.getDataForUpdate = function(){ alert("hello"); $scope.gid=
+	 * user.u.id; $scope.gname= user.u.name; $scope.gpass=user.u.pass;
+	 * $scope.gemail=user.u.email; $scope.gphone=user.u.phone;
+	 * $scope.gdate=user.u.date; $scope.gremark=user.u.remark;
+	 * $scope.gstatus=user.u.status; $scope.grole=user.u.role; }
+	 */
+	// do update user
+	// $scope.update = function(){
+	// $http({
+	// url: 'http://localhost:4444/user',
+	// method: 'PUT',
+	// data:{
+	// 'name': $scope.aname,
+	// 'password': $scope.apassword,
+	// 'email': $scope.aemail,
+	// 'id': $scope.aid
+	// }
+	// }).then(function() {
+	// $scope.getAllData();
+	// }, function() {
+	// alert("fiald");
+	// });
+	// }
+	// Method for manipulating feedback
+	$scope.getFeedbackData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/feedback',
-			method:'GET'
-		}).then(function(response){
-			$scope.feedback=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/feedback',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.feedback = response.data.DATA;
 			console.log($scope.feedback);
-		}, function(response){
+		}, function(response) {
 
 		});
 	}
 	$scope.getFeedbackData();
-	
-//	UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
-	$scope.ParentID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
-	$scope.sta=1;
-	$scope.uploadFolder=function(event) {
+
+	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
+	$scope.ParentID = "0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.sta = 1;
+	$scope.uploadFolder = function(event) {
 		event.preventDefault();
 		var frmData = new FormData();
 		frmData.append("folderID", $scope.ParentID);
@@ -61,7 +54,7 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 		frmData.append("folderStatus", $scope.sta);
 		$http({
 			url : 'http://localhost:1111/api/uploadFolder',
-			method :'POST',
+			method : 'POST',
 			data : frmData,
 			transformRequest : angular.identity,
 			headers : {
@@ -69,127 +62,145 @@ app.controller('MainCtrl', function($scope, $http, $sce,$timeout){
 			}
 		}).then(function(response) {
 			alert("Folder create Successful");
-			//alert("ID: "+$scope.ParentID);
+			// alert("ID: "+$scope.ParentID);
 			console.log("Check Upload Foler here!!");
 			console.log(response);
 			$scope.message = response.data.message;
 		}, function(response) {
 			console.log(response);
-		});		
+		});
 	};
 });
 
-
-//	User Controller 
-app.controller('UserCtrl', function($scope, $http, $sce,$timeout){
-	$scope.getUserData = function(){
+// User Controller
+app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
+	$scope.getUserData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/user',
-			method:'GET'
-		}).then(function(response){
-			$scope.user=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/user',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.user = response.data.DATA;
 			console.log($scope.user);
-		}, function(response){
-			
+		}, function(response) {
+
 		});
 	}
-	
+
 	$scope.getUserData();
-	
+
 	$scope.insertUser = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/user',
 			method : "POST",
 			data : {
-//				'USER_ID' : $scope.gid,
+				// 'USER_ID' : $scope.gid,
 				'USER_NAME' : $scope.gname,
 				'PASSWORD' : $scope.gpass,
-				'EMAIL':$scope.gemail,
-				'PHONE':$scope.gphone,
-				'CREATED_DATE':$scope.gdate,
-				'REMARK':$scope.gremark,
-				'STATUS':$scope.gstatus,
-				'USER_ROLE':$scope.grole
+				'EMAIL' : $scope.gemail,
+				'PHONE' : $scope.gphone,
+				'CREATED_DATE' : $scope.gdate,
+				'REMARK' : $scope.gremark,
+				'STATUS' : $scope.gstatus,
+				'USER_ROLE' : $scope.grole
 			}
-		}).then(function(respone){
+		}).then(function(respone) {
 			$scope.getUserData();
-		}, function(respone){
+		}, function(respone) {
 			alert("faild");
 		});
 	}
-	
-	$scope.getDataForUpdate= function(user){
-	
-//		alert(user.u.EMAIL);
-//		console.log(user.u.EMAIL);
-		
-		$scope.gid= user.u.USER_ID;
-		$scope.gname= user.u.USER_NAME;
-		$scope.gpass= user.u.PASSWORD;
-		$scope.gemail= user.u.EMAIL;
-		$scope.gphone= user.u.PHONE;
-		$scope.gdate= user.u.CREATED_DATE;
-		$scope.gremark= user.u.REMARK;
-		$scope.gstatus= user.u.STATUS;
-		$scope.grole= user.u.USER_ROLE;
-		
+
+	$scope.getDataForUpdate = function(user) {
+
+		// alert(user.u.EMAIL);
+		// console.log(user.u.EMAIL);
+
+		$scope.gid = user.u.USER_ID;
+		$scope.gname = user.u.USER_NAME;
+		$scope.gpass = user.u.PASSWORD;
+		$scope.gemail = user.u.EMAIL;
+		$scope.gphone = user.u.PHONE;
+		$scope.gdate = user.u.CREATED_DATE;
+		$scope.gremark = user.u.REMARK;
+		$scope.gstatus = user.u.STATUS;
+		$scope.grole = user.u.USER_ROLE;
+
 	}
-	
-	$scope.updateUser = function(){
+
+	$scope.updateUser = function() {
 		$http({
-    		url: 'http://localhost:1111/api/v1/user',
-    		method: 'PUT',
-    		data:{
-    			'USER_NAME' : $scope.gname,
+			url : 'http://localhost:1111/api/v1/user',
+			method : 'PUT',
+			data : {
+				'USER_NAME' : $scope.gname,
 				'PASSWORD' : $scope.gpass,
-				'EMAIL':$scope.gemail,
-				'PHONE':$scope.gphone,
-				'CREATED_DATE':$scope.gdate,
-				'REMARK':$scope.gremark,
-				'STATUS':$scope.gstatus,
-				'USER_ROLE':$scope.grole,
+				'EMAIL' : $scope.gemail,
+				'PHONE' : $scope.gphone,
+				'CREATED_DATE' : $scope.gdate,
+				'REMARK' : $scope.gremark,
+				'STATUS' : $scope.gstatus,
+				'USER_ROLE' : $scope.grole,
 				'USER_ID' : $scope.gid
-    		}
-    	}).then(function() {
-    		$scope.getUserData();
+			}
+		}).then(function() {
+			$scope.getUserData();
 		}, function() {
 			alert("fiald");
 		});
 	}
-	
+
+	$scope.alertUpdate = function() {
+		$scope.updateUser();
+		swal("Good job!", "You clicked the button!", "success")
+	}
+
 	$scope.removeUser = function(id) {
 		$http({
 			url : 'http://localhost:1111/api/v1/user/' + id,
 			method : 'DELETE'
 		}).then(function() {
 			$scope.getUserData();
-			alert("success");
 		}, function() {
 			alert("Fiald");
 		});
 	}
-	
-	
-	
+
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeUser(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
+
 });
 
-//	Document Controller
-app.controller('DocumentCtrl', function($scope, $http, $sce,$timeout){
-	$scope.getDocumentData = function(){
+// Document Controller
+app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
+	$scope.getDocumentData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/document',
-			method:'GET'
-		}).then(function(response){
-			$scope.document=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/document',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.document = response.data.DATA;
 			console.log($scope.document);
-		}, function(response){
+		}, function(response) {
 
 		});
 	}
 	$scope.getDocumentData();
 });
 
-//	Comment Controller
+// Comment Controller
 app.controller('CommentCtrl', function($scope, $http, $window) {
 	$scope.getAllData = function() {
 		$http({
@@ -198,7 +209,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			console.log(response);
 			$scope.comment = response.data.DATA;
-			
+
 		}, function(response) {
 			alert("Client Failed");
 		});
@@ -207,17 +218,16 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 	$scope.getAllData();
 });
 
-
-//	Feedback Controller
+// Feedback Controller
 app.controller('FeedbackCtrl', function($scope, $http, $window) {
-	$scope.getFeedbackData = function(){
+	$scope.getFeedbackData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/feedback',
-			method:'GET'
-		}).then(function(response){
-			$scope.feedback=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/feedback',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.feedback = response.data.DATA;
 			console.log($scope.feedback);
-		}, function(response){
+		}, function(response) {
 
 		});
 	}
@@ -225,16 +235,16 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 
 });
 
-//Report Controller
+// Report Controller
 app.controller('ReportCtrl', function($scope, $http, $window) {
-	$scope.getReportData = function(){
+	$scope.getReportData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/report',
-			method:'GET'
-		}).then(function(response){
-			$scope.report=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/report',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.report = response.data.DATA;
 			console.log($scope.report);
-		}, function(response){
+		}, function(response) {
 
 		});
 	}
@@ -242,16 +252,16 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 
 });
 
-//Savelist Controller
+// Savelist Controller
 app.controller('SavelistCtrl', function($scope, $http, $window) {
-	$scope.getSavelistData = function(){
+	$scope.getSavelistData = function() {
 		$http({
-			url:'http://localhost:1111/api/v1/savelist',
-			method:'GET'
-		}).then(function(response){
-			$scope.savelist=response.data.DATA;
+			url : 'http://localhost:1111/api/v1/savelist',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.savelist = response.data.DATA;
 			console.log($scope.savelist);
-		}, function(response){
+		}, function(response) {
 
 		});
 	}

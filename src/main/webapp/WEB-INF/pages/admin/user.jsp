@@ -20,6 +20,9 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet"/>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -143,7 +146,7 @@
 												<i class="fa fa-edit"></i>
 											</button>
 											
-											<button type="button" class="btn btn-danger btn-sm"	ng-click="removeUser(u.USER_ID)">
+											<button type="button" class="btn btn-danger btn-sm"	ng-click="alertDelete(u.USER_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
