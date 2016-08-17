@@ -80,23 +80,23 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 {
 	background-color: #003666 !importants;
 	display:none !important;
+	opacity:0;
 }
 
 
 </style>
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentById('${id}')">
-<jsp:include page="include/register.jsp"></jsp:include>
+ <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include>
+<jsp:include page="include/update-slide.jsp"></jsp:include> 
 				  
 <header id="header">
-<jsp:include page="include/header.jsp"></jsp:include>
+ <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
-
-<jsp:include page="include/view-by-google-drive.jsp"></jsp:include>
+ <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
 
 <div>
 	<content>
@@ -123,7 +123,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-												ហ៊ុំ ជីវ័ន <!-- {{doc.DOC_TYPE_NUM}} -->
+												{{doc.DOC_TYPE_NUM}} <!-- {{doc.DOC_TYPE_NUM}} -->
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>
@@ -169,7 +169,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 												<hr>
 												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  									 		 
 												 		<div class="col-md-6">												 																		
-													 		<a href="/detail/{{slide.DOC_ID}}">
+													 		<a href="/detail/{{slide.DOC_ID}}" ng-click="getDocumentById(slide.DOC_ID)">
 													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
 												 		</div>
@@ -198,18 +198,18 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
 	
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script> 
 	
 	<!-- library jquery for file upload -->
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+	   <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
+	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script> 
 	<!-- Online Link -->
 	<script>
-	$(document).ready(function() {
+	 $(document).ready(function() {				
 		  function setHeight() {
 		    windowHeight = $(window).innerHeight();
 		    $('#SlideBox iframe').css('min-height', windowHeight-180);
@@ -221,6 +221,6 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 		  $(window).resize(function() {
 		    setHeight();
 		  }); 
-		});
+		}); 
 	</script>	
 </body>

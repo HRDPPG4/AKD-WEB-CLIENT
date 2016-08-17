@@ -8,6 +8,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4>Add New User</h4>
 					<div class="imgcontainer">
 						<img
 							src="${pageContext.request.contextPath}/resources/user/img/login.png"

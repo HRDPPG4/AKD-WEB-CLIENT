@@ -72,13 +72,19 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	$scope.theFile = null;
 	//	CATEGORY	
-	$scope.showCategory = function(){		
+	$scope.showCategory = function(){	
+		
+		
+		
 		$http({
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
 		}).then(function(response){
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;
+			
+			//console.log($scope.category);
+			
 		}, function(response){
 		
 		});
@@ -167,7 +173,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				$scope.userPassword="";
 				
 			}, function(response){
-			 console.log(response);
+			// console.log(response);
 			});
 		}	
 		
@@ -185,21 +191,22 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			
 			};
 		
-	var id="";
+	
+	
 	$rootScope.getDocumentById=function(id){		
 		$http({
 			url:'http://localhost:1111/api/v1/document/'+id,
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
-			console.log($scope.doc);
+			console.log($scope.doc.DOC_TYPE_NUM);
 			//console.log("DocID: "+$scope.docID);
 		}, function(response){
 
 		});	
 	}
 	
-	$rootScope.getDocumentById(id);
+	//$rootScope.getDocumentById(id);
 });
 
 
