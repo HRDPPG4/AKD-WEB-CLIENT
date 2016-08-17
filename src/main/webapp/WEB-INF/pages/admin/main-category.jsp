@@ -11,7 +11,7 @@
 </script>
 
 </head>
-<body class="skin-blue sidebar-mini" ng-app="MainApp"><!--  -->
+<body class="skin-blue sidebar-mini" ng-app="MainApp" ng-controller="MainCtrl">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>
@@ -93,7 +93,7 @@
 			</section>
 
 			<!-- Main content -->
-			<section class="content"  ng-controller="MainCtrl">
+			<section class="content">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="box">

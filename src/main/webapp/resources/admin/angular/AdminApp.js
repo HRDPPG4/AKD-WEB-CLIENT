@@ -2,32 +2,19 @@ var app = angular.module('MainApp', []);
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
-
-	// get date from user db to update
-	/*
-	 * $scope.getDataForUpdate = function(){ alert("hello"); $scope.gid=
-	 * user.u.id; $scope.gname= user.u.name; $scope.gpass=user.u.pass;
-	 * $scope.gemail=user.u.email; $scope.gphone=user.u.phone;
-	 * $scope.gdate=user.u.date; $scope.gremark=user.u.remark;
-	 * $scope.gstatus=user.u.status; $scope.grole=user.u.role; }
-	 */
-	// do update user
-	// $scope.update = function(){
-	// $http({
-	// url: 'http://localhost:4444/user',
-	// method: 'PUT',
-	// data:{
-	// 'name': $scope.aname,
-	// 'password': $scope.apassword,
-	// 'email': $scope.aemail,
-	// 'id': $scope.aid
-	// }
-	// }).then(function() {
-	// $scope.getAllData();
-	// }, function() {
-	// alert("fiald");
-	// });
-	// }
+//	CATEGORY	
+	$scope.showCategory = function(){			
+		$http({
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.category=response.data.DATA;			
+		}, function(response){		
+		});
+	}	
+	$scope.showCategory();
+	
 	// Method for manipulating feedback
 	$scope.getFeedbackData = function() {
 		$http({

@@ -69,25 +69,28 @@
 <div id="page-content-wrapper">
 	<section id="profile">
 		<div class="container">
-			<div class="row section nav-left-profile topspace-profile">
-										<div id="left-profile">
-											 <ul class="profile-menu nav nav-pills nav-stacked">
-											 	<li class="pro-img">
-											 	<img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
-											 	</li>
-											 	<li>hello</li>
-											 	<li>hello</li>
-											 	<li>hello</li>
-											 </ul>
-										</div>
-										
-										
-											<div class="body-profile">
-											hello
-											</div>
-										
+			<div class="row section profile topspace-profile">
 								
+						<div class="left-profile">
+						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
+						<div class="user-name">ជឹម មិនា</div>
+							<ul class="title-profile">
+								<li class="about"><a href="#">អំពីខ្ញុំ </a></li>
+								<li class="about"><a href="#">ការរក្សាទុកស្លាយរបស់ខ្ញុំ</a></li>
+								<li class="about"><a href="#">ស្លាយដែលបានមើល</a></li>
+							</ul>
+						</div>
+						<div class="content-profile">
+							<div class="banner-profile">
+								<img alt="" src="${pageContext.request.contextPath}/resources/user/img/business.jpg">
+							</div>
+							<div class="header-profile">
+								
+							</div>
+						</div>				
+								
+						
 			</div>
 		</div>
 		
