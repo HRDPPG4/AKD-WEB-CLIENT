@@ -102,92 +102,57 @@
 							</div>	
 						
 						<div id="content-pdf-ppt-doc">
-							<div class="view-pdf">
-									<div class="header-view-pdf">
-									   pdf
-									</div>
-									<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
-											<div style="width:150px;float:left;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-			
-														</span>
-													</a>
-													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											
-											</div>
-											<div style="width:150px;float:right;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-														</span>
-													</a>
-											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											</div>
-									</div>
-							</div>
-							
-							<div style="clear:right"></div>
-							<div class="view-ppt">
-								<div class="header-view-ppt">
-									   ppt
-									</div>
-															<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
-											<div style="width:150px;float:left;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-			
-														</span>
-													</a>
-													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											
-											</div>
-											<div style="width:150px;float:right;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-														</span>
-													</a>
-											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											</div>
-									</div>
-							</div>
-							
-							<div class="view-doc">
-								<div class="header-view-doc">
-									   doc
-									</div>
-															<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
-											<div style="width:150px;float:left;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-			
-														</span>
-													</a>
-													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											
-											</div>
-											<div style="width:150px;float:right;">
-													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-														<span class="img">
-														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-														</span>
-													</a>
-											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
-											</div>
-									</div>
-							</div>
+								<ul class="nav nav-tabs">
+									    <li class="active"><a data-toggle="tab" href="#pdf">PDF</a></li>
+									    <li><a data-toggle="tab" href="#ppt">PPT</a></li>
+									    <li><a data-toggle="tab" href="#doc">DOC</a></li>
+									    
+									  </ul>
+									
+									  <div class="tab-content">
+									    <div id="pdf" class="tab-pane fade in active">
+									      <h3>PDF</h3>
+									      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									    </div>
+									    <div id="ppt" class="tab-pane fade">
+									      <h3>PPT</h3>
+									      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									    </div>
+									    <div id="doc" class="tab-pane fade">
+									      <h3>DOC</h3>
+									      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+									    </div>
+									    
+									  </div>
 						</div>		
 						
 			      </div>
 			      
-			      <div id="mydoc" class="tab-pane fade">
-			         <div class="">
-			         
-			         </div>
+			      <div id="aboutme" class="tab-pane fade aboutme">
+					<form class="form-style-4" action="" method="post">
+							<label for="field1">
+							<span>ឈ្មោះអ្នកប្រើប្រាស់</span><input type="text" name="field1" value="ជឹម មិនា"​ required="true"/>
+							</label>
+							<label for="field2">
+							<span>អ៊ីម៉ែល</span><input type="email" name="field2" value="minea.chem@gmail.com"​ required="true"/>
+							</label>
+							<label for="field3">
+							<span>អាស័យដ្ឋាន</span><input type="text" name="field3" value="ភ្នំពេញ" required="true"/>
+							</label>
+							<label for="field4">
+							<span>វាចារ</span><textarea name="field4" onkeyup="adjust_textarea(this)" required="true"​> ពេញចិត្ត</textarea>
+							</label>
+				
+							<span>&nbsp;</span><input type="submit" value="កែប្រែ" />
+							
+					</form> 
+			      </div>
+			      
+			      <div id="mydoc" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 1
+			      </div>
+			       <div id="viewed" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 2
 			      </div>
 			    </div>
 		</div>
