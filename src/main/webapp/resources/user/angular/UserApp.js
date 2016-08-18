@@ -118,7 +118,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		});
 	}
 		
-	//$scope.getAllDocument();
+	$scope.getAllDocument();
 	
 	$scope.getAllDocumentByCatID=function(CatID){
 		$http({
