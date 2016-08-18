@@ -75,23 +75,93 @@
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
-							<ul class="title-profile">
-								<li class="about"><a href="#">អំពីខ្ញុំ </a></li>
-								<li class="about"><a href="#">ការរក្សាទុកស្លាយរបស់ខ្ញុំ</a></li>
-								<li class="about"><a href="#">ស្លាយដែលបានមើល</a></li>
+							<ul class="title-profile nav nav-pills nav-stacked">
+								<li class="about"><a data-toggle="tab" href="#home">អំពីខ្ញុំ </a></li>
+								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
+								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
 							</ul>
 						</div>
-						<div class="content-profile">
-							<div class="banner-profile">
-								<img alt="" src="${pageContext.request.contextPath}/resources/user/img/business.jpg">
-							</div>
-							<div class="header-profile">
-								
-							</div>
-						</div>				
-								
+						<!-- right side -->
+				<div class="dashboard-content tab-content">
+					 <div id="home" class="tab-pane fade in active">
+							<div class="preview-all">
+								<ul id="dashboard-header">
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+								</ul>
+							</div>	
 						
-			</div>
+						<div id="content-pdf-ppt-doc">
+							<div class="view-pdf">
+									<div class="header-view-pdf">
+									   pdf
+									</div>
+									<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
+											<div style="width:150px;float:left;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+			
+														</span>
+													</a>
+													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											
+											</div>
+											<div style="width:150px;float:right;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+														</span>
+													</a>
+											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											</div>
+									</div>
+							</div>
+							
+							
+							<div class="view-ppt">
+								<div class="header-view-ppt">
+									   pdf
+									</div>
+															<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
+											<div style="width:150px;float:left;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+			
+														</span>
+													</a>
+													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											
+											</div>
+											<div style="width:150px;float:right;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+														</span>
+													</a>
+											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											</div>
+									</div>
+							</div>
+						</div>		
+						
+			      </div>
+			      
+			      <div id="mydoc" class="tab-pane fade">
+			         hello
+			      </div>
+			    </div>
 		</div>
 		
 	</section>

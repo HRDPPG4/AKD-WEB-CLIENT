@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#list-save").click(function(){
+    $("#savelist").click(function(){
        $("#showSavelist").show();
     });
     $("#btn-savelist").click(function(){

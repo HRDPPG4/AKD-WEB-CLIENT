@@ -31,8 +31,7 @@
             </li>
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
-                	<li><a href="/profile"> ជឹម មិនា</a></li>
-                	<li><a href="#"> ស្លាយរបស់ខ្ញុំ</a></li>
+                	<li><a href="/profile" target="_self"> ទំព័ររបស់ខ្ញុំ</a></li>
                 	<li><a href="#"> ចាកចេញ</a></li>
                 </ul>
             </a>
@@ -59,7 +58,7 @@
 			  
 			  <li ng-repeat="mainCat in mainCategory">
 			  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
-					   <span><i class="fa fa-home" aria-hidden="true"></i>
+					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
 			  </li>

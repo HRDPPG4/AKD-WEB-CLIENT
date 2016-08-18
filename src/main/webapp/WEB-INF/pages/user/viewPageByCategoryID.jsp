@@ -62,6 +62,18 @@
 				  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
+
+<style>
+.tab-content #documentBox div.col-lg-4.col-sm-6.col-xs-12
+{
+	min-width:289.98px;
+	min-height:264px;
+	
+	/* max-width:273.98px;
+	max-height:264px; */
+}
+
+</style>
 </header>
 
 <content>
@@ -76,7 +88,7 @@
 					   	   <ul class="category-menu nav nav-pills nav-stacked" >
 					   	   		 <li class="bg-cate">
 					   	   		 <span><i class="fa fa-flask"></i>
-			  	   					</span>{{mainCat.CAT_NAME}}
+			  	   					</span>{{parentCategory.CAT_NAME}}
 			  	   				</li>
 			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
 			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
@@ -87,7 +99,7 @@
 						
 						<div class="col-sm-9" ng-if(documentByCatID)>	
 							<div class="body-cates tab-content">							
-								<div id="account" class="tab-pane fade in active">
+								<div id="documentBox" class="tab-pane fade in active">
 						
 							<div ng-repeat="slide in documentByCatID" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
