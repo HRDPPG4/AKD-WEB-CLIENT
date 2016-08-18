@@ -114,7 +114,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 									<button id="btn-hide" class="btn btn-primary">Hide</button>
 									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
 									 <div ng-show="doc.DOC_TYPE_NUM == 2 || doc.DOC_TYPE_NUM == 3">
-									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ng-click="showCategory()"><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
+									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
 									</div>
 									</div>
 									

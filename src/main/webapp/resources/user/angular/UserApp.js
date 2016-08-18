@@ -1,5 +1,5 @@
 var app = angular.module('UserApp', []);
-// DIRECTIVE FOR USER. USER IN UPLOAD FILE
+///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
@@ -26,9 +26,10 @@ app.directive('bindFile', [function () {
     };
 
 }]);
+///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
-//	FILTER STRING WITH LIMIT LEGNH
+///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 app.filter('strLimit', ['$filter', function($filter) {
 	   return function(input, limit) {
@@ -40,16 +41,17 @@ app.filter('strLimit', ['$filter', function($filter) {
 	      return $filter('limitTo')(input, limit) + '...';
 	   };
 	}]);
+///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 
 
 
-//	MAIN CONTROLLER FOR USER
+///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
+
+	////////////////////	START CATEGORY BLOCK	/////////////////
 	
-	$scope.theFile = null;
-	//	CATEGORY	
-	$scope.showCategory = function(){			
+	$scope.getAllCategory = function(){			
 		$http({
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
@@ -57,27 +59,200 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;
 			
-			//console.log($scope.category);
+		//	console.log($scope.category);
 			
 		}, function(response){
 		
 		});
 	}	
-	$scope.showCategory();
+	$scope.getAllCategory();
 	
-	$rootScope.getCategoryByParentID=function(parentID){		
+	$scope.getCategoryByParentID=function(parentID){		
 		$http({
 			url:'http://localhost:1111/api/v1/getCategoryByParentID/'+parentID,
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
-			console.log($scope.parentCategory);
+		//	console.log($scope.parentCategory);
 		}, function(response){
 
 		});	
 	}
 	
-	//	UPLOAD FILE BLOCK
+	//	GET MAIN CATEGORY
+	$scope.getMainCategory=function(parentID){		
+		$http({
+			url:'http://localhost:1111/api/v1/getCategoryByParentIDAndStatusEnable/0B4RhbtI4DXY_QWVOWkFiSTlRY1E',
+			method:'GET'
+		}).then(function(response){
+			$scope.mainCategory=response.data.DATA;
+			console.log($scope.mainCategory);
+		}, function(response){
+
+		});	
+	}
+	$scope.getMainCategory();
+	
+	////////////////////	END CATEGORY BLOCK	/////////////////
+	
+	///////////////////		START COMMENT BLOCK	/////////////////
+	
+	
+	
+	
+	///////////////////		END COMMENT BLOCK	/////////////////
+	
+	///////////////////		START DOCUMENT BLOCK	/////////////////
+	
+	$scope.getAllDocument = function(){
+		$http({
+			url:'http://localhost:1111/api/v1/document',
+			method:'GET'
+		}).then(function(response){
+			$scope.document=response.data.DATA;
+		//	console.log("Document Bock");
+		//	console.log($scope.document);
+		}, function(response){
+
+		});
+	}
+		
+	//$scope.getAllDocument();
+	
+	$scope.getAllDocumentByCatID=function(CatID){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
+			method:'GET'
+		}).then(function(response){
+			$scope.documentByCatID=response.data.DATA;
+			console.log("Document By CatID Block");
+			console.log($scope.documentByCatID);
+		}, function(response){
+
+		});
+		
+		//alert("Get All Document By Category ID"+ CatID);
+	}
+	
+	
+	
+	$rootScope.getDocumentById=function(id){		
+		$http({
+			url:'http://localhost:1111/api/v1/document/'+id,
+			method:'GET'
+		}).then(function(response){
+			$scope.doc=response.data.DATA;
+			console.log($scope.doc.DOC_TYPE_NUM);
+			//console.log("DocID: "+$scope.docID);
+		}, function(response){
+
+		});	
+	}
+	
+	///////////////////		END DOCUMENT BLOCK	/////////////////
+	
+	///////////////////		START FEEDBACK BLOCK	/////////////////
+	
+	
+	
+	
+	///////////////////		END FEEDBACK BLOCK	/////////////////
+	
+	///////////////////		START LOG BLOCK	/////////////////
+	
+	
+	
+	
+	///////////////////		END LOG BLOCK	/////////////////
+	
+	///////////////////		START REPORT BLOCK	/////////////////
+	
+	
+	
+	
+	///////////////////		END REPORT BLOCK	/////////////////
+	
+	///////////////////		START SAVELIST BLOCK	/////////////////
+	
+	  $scope.saveList = function(){	
+
+	        var docID = $('#doc_id').val();
+	        var userID = $('#user_id').val();
+	       
+	         
+			$http({
+				url:'http://localhost:1111/api/v1/savelist',
+				method:'POST',
+				data:{
+					  'CREATED_DATE': new Date(),
+					  'DOC_ID': $('#doc_id').val(),
+					  'LIST_NAME': $scope.saveListname,
+					  'REMARK': "",
+					  'STATUS':1 ,
+					  'USER_ID': $('#user_id').val()
+
+				}
+			}).then(function(response){
+				alert("success");
+				
+				
+			}, function(response){
+				console.log(response);
+				
+			});
+		}
+	
+	
+	  ///////////////////	END SAVELIST BLOCK	/////////////////
+	
+	  ///////////////////	START USER BLOCK	/////////////////
+	
+	$scope.saveUser = function(){	
+
+		$http({
+			url:'http://localhost:1111/api/v1/user',
+			method:'POST',
+			data:{
+				  'CREATED_DATE': new Date(),
+				  'EMAIL': $scope.userEmail,
+				  'PASSWORD': $scope.userPassword,
+				  'PHONE': $scope.userPhone,
+				  'REMARK': "",
+				  
+				  'STATUS': 1,	
+				  'USER_NAME': $scope.userName,
+				  'USER_ROLE': "user"
+			}
+		}).then(function(response){
+			alert("success");
+			$scope.userName="";
+			$scope.userPassword="";
+			
+		}, function(response){
+		// console.log(response);
+		});
+	}	
+	
+	$scope.error = false;
+	$scope.$watch('userPassword',function() {$scope.check();});
+	$scope.$watch('userConfirmpassword',function() {$scope.check();});
+	
+	$scope.check = function() {
+	  if ($scope.userPassword !== $scope.userConfirmpassword) {
+	    $scope.error = true;
+	    } else {
+	    $scope.error = false;
+	  }
+	};
+	
+	
+	///////////////////		END USER BLOCK	/////////////////
+	
+	
+	
+	////////////////////	START UPLOAD BLOCK	/////////////////
+	
+	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
@@ -103,128 +278,24 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			$scope.$on(frmData, function(){
 			});
 		}, function(response) {
-			$scope.width="100%";
-			//$(".progress-bar").css("width", $scope.width); 
 			alert("Error");
 		});
 	};
 	
-	
-	//	CODE FROM DOCUMENT CONTROLLER
-	$scope.display = function(){
-		$http({
-			url:'http://localhost:1111/api/v1/document',
-			method:'GET'
-		}).then(function(response){
-			$scope.document=response.data.DATA;
-		//	console.log("Document Bock");
-		//	console.log($scope.document);
-		}, function(response){
+	 $scope.trustSrc = function(src){
+		 return $sce.trustAsResourceUrl(src);
+	 }
 
-		});
-	}
-	
-	
-	$scope.display();
-	
-	 $scope.trustSrc = function(src) {
-		    return $sce.trustAsResourceUrl(src);
-		  }
-
-	    $scope.escapeUrl = function(url){
-	    	return escape(url);
-	    }
-	    
-	    	//	 form register
-	    
-	    $scope.saveUser = function(){	
-
-			$http({
-				url:'http://localhost:1111/api/v1/user',
-				method:'POST',
-				data:{
-					  'CREATED_DATE': new Date(),
-					  'EMAIL': $scope.userEmail,
-					  'PASSWORD': $scope.userPassword,
-					  'PHONE': $scope.userPhone,
-					  'REMARK': "",
-					  
-					  'STATUS': 1,	
-					  'USER_NAME': $scope.userName,
-					  'USER_ROLE': "user"
-				}
-			}).then(function(response){
-				alert("success");
-				$scope.userName="";
-				$scope.userPassword="";
-				
-			}, function(response){
-			// console.log(response);
-			});
-		}	
+	 $scope.escapeUrl = function(url){
+    	return escape(url);
+	 }
 		
-		$scope.error = false;
-		$scope.$watch('userPassword',function() {$scope.check();});
-		$scope.$watch('userConfirmpassword',function() {$scope.check();});
-		
-		$scope.check = function() {
-			  if ($scope.userPassword !== $scope.userConfirmpassword) {
-			    $scope.error = true;
-			    } else {
-			    $scope.error = false;
-			  }
-			
-			
-			};
-		
+	////////////////////	END UPLOAD BLOCK	/////////////////
 	
 	
-	$rootScope.getDocumentById=function(id){		
-		$http({
-			url:'http://localhost:1111/api/v1/document/'+id,
-			method:'GET'
-		}).then(function(response){
-			$scope.doc=response.data.DATA;
-			console.log($scope.doc.DOC_TYPE_NUM);
-			//console.log("DocID: "+$scope.docID);
-		}, function(response){
 
-		});	
-	}
-	
-	
-	
-	
-	// Creat save list
-    $scope.saveList = function(){	
-
-        var docID = $('#doc_id').val();
-        var userID = $('#user_id').val();
-       
-         
-		$http({
-			url:'http://localhost:1111/api/v1/savelist',
-			method:'POST',
-			data:{
-				  'CREATED_DATE': new Date(),
-				  'DOC_ID': $('#doc_id').val(),
-				  'LIST_NAME': $scope.saveListname,
-				  'REMARK': "",
-				  'STATUS':1 ,
-				  'USER_ID': $('#user_id').val()
-
-			}
-		}).then(function(response){
-			alert("success");
-			
-			
-		}, function(response){
-			console.log(response);
-			
-		});
-	}
-    
-	//$rootScope.getDocumentById(id);
+  
 });
+///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
 

@@ -49,24 +49,41 @@
 	 <span class="navbar-logo-main">
 			   	<a href="#" class="navbar-brand logo-main-menu">All Khmer Docs</a>
 	</span>
-	
 		 <div class="main-menu">
 			<ul class="menu-basic" id="myTopnav">
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>
 			  </li>
-			  
-			  <li ng-repeat="mainCat in mainCategory">
-			  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
-					   <span><i class="fa fa-home" aria-hidden="true"></i>
-					   </span>{{mainCat.CAT_NAME}}
-				 	</a>
+			  <li><a class="menu" href="/technology">
+			  		<span><i class="fa fa-flask"></i></span>បច្ចេកវិទ្យា</a>
+			  </li>
+			  <li><a class="menu" href="/general-knowledge">
+				   <span><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				   </span>ចំណេះដឹងទូទៅ</a>
+			  </li>
+			  <li><a class="menu" href="/literal">
+				   <span><i class="fa fa-book" aria-hidden="true">
+				   </i>
+				   </span>អក្សរសាស្ត្រ</a>
 			  </li>
 			  
+			  <li><a class="menu" href="/business">
+				   <span><i class="fa fa-cubes" aria-hidden="true"></i>
+				   </span>មុខជំនួញ</a>
+			  </li>
+			  <li><a class="menu" href="/other">
+			  	   <span><i class="fa fa-tags" aria-hidden="true"></i>
+			  	   </span>ផ្សេងៗ</a>
+			  </li>
+			  <li><a id="search" href="#">
+			  	  <i class="fa fa-search" aria-hidden="true"></i></a>
+			  </li>
+			  <li class="icon">
+			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+			  </li>
 			</ul>
 		</div> 
-		
 	</div>
 </nav>
 </div>

@@ -73,28 +73,23 @@
 				<div class="row-nav-left-content">
 					<div class="row">
 					   <div class="col-sm-3" id="left-side-nav" >
-					   	   <ul class="category-menu nav nav-pills nav-stacked">
-					   	   		 <li class="bg-cate"><span><i class="fa fa-flask"></i>
-			  	   					</span>បច្ចេកវិទ្យា
+					   	   <ul class="category-menu nav nav-pills nav-stacked" >
+					   	   		 <li class="bg-cate">
+					   	   		 <span><i class="fa fa-flask"></i>
+			  	   					</span>{{mainCat.CAT_NAME}}
 			  	   				</li>
-			  	   				
-			  	   				
-			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory">
-			  	   				<a data-toggle="pill" href="#design">{{parentCat.CAT_NAME}}</a> 
-			  	   				</li>
-			  	   				
-			  	   		
-			  	   				
+			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
+			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
+			  	   				</li>			  	   				
 					   	   </ul>
 					   </div>
 						<!--  -->
 						
-						<div class="col-sm-9">	
-							<div class="body-cates tab-content">
-							
+						<div class="col-sm-9" ng-if(documentByCatID)>	
+							<div class="body-cates tab-content">							
 								<div id="account" class="tab-pane fade in active">
-							
-							<div ng-repeat="slide in document" class="col-lg-4 col-sm-6 col-xs-12">
+						
+							<div ng-repeat="slide in documentByCatID" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
@@ -121,6 +116,8 @@
 							
 							</div>
 							</div>
+							
+							
 						</div>
 						
 					</div>				
@@ -141,7 +138,6 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 	
 	<!-- library jquery for file upload -->
