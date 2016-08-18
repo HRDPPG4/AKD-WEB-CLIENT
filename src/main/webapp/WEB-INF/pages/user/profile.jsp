@@ -72,18 +72,19 @@
 			<div class="row section profile topspace-profile">
 								
 						<div class="left-profile">
-						<div class="img-pro"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg"></a>
+						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
-								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
+							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
+								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
 							</ul>
 						</div>
 						<!-- right side -->
 				<div class="dashboard-content tab-content">
-					 <div id="#" class="tab-pane fade in active">
+					 <div id="dashbord" class="tab-pane fade in active">
 							<div class="preview-all">
 								<ul id="dashboard-header">
 									<li>
@@ -128,6 +129,15 @@
 						
 			      </div>
 			      
+			      
+			      
+			      <div id="mydoc" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 1
+			      </div>
+			       <div id="viewed" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 2
+			      </div>
+			      
 			      <div id="aboutme" class="tab-pane fade aboutme">
 					<form class="form-style-4" action="" method="post">
 							<label for="field1">
@@ -146,13 +156,6 @@
 							<span>&nbsp;</span><input type="submit" value="កែប្រែ" />
 							
 					</form> 
-			      </div>
-			      
-			      <div id="mydoc" class="tab-pane fade" style="width:800px; background-color: white;">
-			          testing 1
-			      </div>
-			       <div id="viewed" class="tab-pane fade" style="width:800px; background-color: white;">
-			          testing 2
 			      </div>
 			    </div>
 		</div>
