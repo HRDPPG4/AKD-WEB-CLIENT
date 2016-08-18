@@ -114,7 +114,7 @@ float: left;
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
 }
-.header-view-pdf .header-view-ppt{
+.header-view-pdf .header-view-ppt .header-view-doc{
 	margin:0;
 	padding:0;
 	width:300px;
@@ -135,3 +135,22 @@ float: left;
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
 }
+
+.view-doc{
+	float: left;
+	 padding-top: 10px;
+    padding-left:50px;
+    width: 414px;
+    position:relative;
+    top:10px;
+    min-height:300px;
+      background-color: #fff !important;
+       border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+}
+
+
+/* /* tab 2 */ */

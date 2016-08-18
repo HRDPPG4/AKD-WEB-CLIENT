@@ -72,18 +72,18 @@
 			<div class="row section profile topspace-profile">
 								
 						<div class="left-profile">
-						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
+						<div class="img-pro"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg"></a>
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
-								<li class="about"><a data-toggle="tab" href="#home">អំពីខ្ញុំ </a></li>
+								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
 							</ul>
 						</div>
 						<!-- right side -->
 				<div class="dashboard-content tab-content">
-					 <div id="home" class="tab-pane fade in active">
+					 <div id="#" class="tab-pane fade in active">
 							<div class="preview-all">
 								<ul id="dashboard-header">
 									<li>
@@ -128,10 +128,36 @@
 									</div>
 							</div>
 							
-							
+							<div style="clear:right"></div>
 							<div class="view-ppt">
 								<div class="header-view-ppt">
-									   pdf
+									   ppt
+									</div>
+															<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
+											<div style="width:150px;float:left;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+			
+														</span>
+													</a>
+													<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											
+											</div>
+											<div style="width:150px;float:right;">
+													<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+														<span class="img">
+														<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+														</span>
+													</a>
+											<div style="text-align: center;line-height: 40px;font-family: "Times New Roman"; ">HTML</div>
+											</div>
+									</div>
+							</div>
+							
+							<div class="view-doc">
+								<div class="header-view-doc">
+									   doc
 									</div>
 															<div style="width:320px;height:200px;" ng-repeat="slide in document  | limitTo :1">
 											<div style="width:150px;float:left;">
@@ -159,7 +185,9 @@
 			      </div>
 			      
 			      <div id="mydoc" class="tab-pane fade">
-			         hello
+			         <div class="">
+			         
+			         </div>
 			      </div>
 			    </div>
 		</div>
