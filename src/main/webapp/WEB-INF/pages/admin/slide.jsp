@@ -11,6 +11,30 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/js/jquery.filer.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/js/jquery-upload-file.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/admin/js/jquery-latest.js"></script>
+<link
+	href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer.css"
+	rel="stylesheet" />
+<link
+	href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer-dragdropbox-theme.css"
+	rel="stylesheet" />
+
+<style>
+.form-horizontal .form-group {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.btn-flat {
+	border-radius: 0;
+	margin-left: 20px;
+}
+</style>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -106,6 +130,11 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
+							
+								<button class="btn btn-flat btn-primary" 
+								data-toggle="modal"	data-target="#addDocument">Add Slide</button>
+						
+						
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
@@ -138,15 +167,17 @@
 
 								</tbody>
 								<tfoot>
-									<tr>
-										<th><a href="add-slide.html"><button
-													class="btn btn-flat btn-primary">Add Slide</button></a></th>
-									</tr>
 								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
 					</div>
+					
+					<!-- Modal Start -->
+					
+					<%@include file="include/add-document.jsp"%>
+					
+					<!-- Modal End -->
 					<!-- /.box -->
 				</div>
 				<!-- /.col -->

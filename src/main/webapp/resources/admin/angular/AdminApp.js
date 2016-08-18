@@ -138,7 +138,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 
 	$scope.alertUpdate = function() {
 		$scope.updateUser();
-		swal("Good job!", "You clicked the button!", "success")
+		swal("Updated!", "You updated the user!", "success")
 	}
 
 	$scope.removeUser = function(id) {
