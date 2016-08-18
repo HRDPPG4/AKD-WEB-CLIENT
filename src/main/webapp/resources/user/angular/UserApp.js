@@ -75,7 +75,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
 			
-			console.log($scope.parentCategory[0]);
+			//console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
@@ -135,6 +135,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	$scope.getAllDocument();
 	
 	$scope.getAllDocumentByCatID=function(CatID){
+	//	alert("getAllDocumentByCatID");
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
@@ -149,16 +150,19 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		//alert("Get All Document By Category ID"+ CatID);
 	}
 	
-	
-	
-	$rootScope.getDocumentById=function(id){		
+	$rootScope.getDocumentById=function(id){
+		//$scope.getAllDocumentByCatID(id);
+	//	$scope.getAllDocumentByCatID(parentCat.CAT_ID)
 		$http({
 			url:'http://localhost:1111/api/v1/document/'+id,
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
+			
+			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
 			//console.log($scope.doc.DOC_TYPE_NUM);
 			//console.log("DocID: "+$scope.docID);
+			//console.log($scope.doc);
 		}, function(response){
 
 		});	
