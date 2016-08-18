@@ -11,6 +11,7 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+
 <script
 	src="${pageContext.request.contextPath}/resources/admin/js/jquery.filer.js"></script>
 <script

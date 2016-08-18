@@ -170,8 +170,9 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	}
 
 });
+//============================End of User Controller===============
 
-// Document Controller
+//============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.getDocumentData = function() {
 		$http({
@@ -185,9 +186,56 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 		});
 	}
 	$scope.getDocumentData();
+	
+	$scope.myAlert= function(){
+		alert("Test");
+	}
+
+	$scope.theFile = null;
+	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.des="";
+	$scope.uploadFile = function(event) {
+		event.preventDefault();	
+		var files = event.target.files;
+		var frmData = new FormData();					
+		var file = $('#filer_input')[0].files[0];
+		frmData.append("files", file);				
+		frmData.append("title", $scope.theFile.name);
+		frmData.append("des", $scope.des);
+		frmData.append("catID", $scope.catID);	
+		$http({
+			url : 'http://localhost:1111/api/uploadFile',
+			method :'POST',
+			data : frmData,
+			transformRequest : angular.identity,
+			headers : {
+				'Content-Type' : undefined
+			}
+		}).then(function(response) {
+			$(".progress-bar").css("width", "100%"); 
+			alert("Success");
+			$scope.$on(frmData, function(){
+			});
+		}, function(response) {
+			alert("Error");
+		});
+	};
+	
+	 $scope.trustSrc = function(src){
+		 return $sce.trustAsResourceUrl(src);
+	 }
+
+	 $scope.escapeUrl = function(url){
+    	return escape(url);
+	 }
+
+
 });
 
-// Comment Controller
+//============================End of Document Controller===============
+
+
+//============================Start Commnet Controller===============
 app.controller('CommentCtrl', function($scope, $http, $window) {
 	$scope.getAllData = function() {
 		$http({
