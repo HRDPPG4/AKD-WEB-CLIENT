@@ -52,7 +52,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl">
+<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -64,58 +64,32 @@
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
 
-
 <content>
 <div id="page-content-wrapper">
 	<div class="container" id="container-cate">
 		<section id="cates-view">
 				<div class="row section nav-left topspace-cates">
-				<!-- <section id="banner-business" class="banner">
-									<div class="img-bg">
-									<h1>មុខជំនួញ</h1>
-									</div>
-				</section> -->
+				
 				<div class="row-nav-left-content">
-				
-				
 					<div class="row">
-						<div class="col-sm-3" id="left-side-nav" >
-					   	   <ul class="category-menu nav nav-pills nav-stacked">
-					   	   		<li class="bg-cate"><span><i class="fa fa-cubes" aria-hidden="true"></i>
-				   				</span>មុខជំនួញ
+					   <div class="col-sm-3" id="left-side-nav" >
+					   	   <ul class="category-menu nav nav-pills nav-stacked" >
+					   	   		 <li class="bg-cate">
+					   	   		<!--  <span><i class="fa fa-flask"></i>
+			  	   					</span>{{mainCategory.CAT_NAME}} -->
 			  	   				</li>
-			  	   				<li class="cates-main active">
-			  	   				<a data-toggle="pill" href="#account">គណនី</a> 
-			  	   				</li>
-			  	   				<li class="cates-main">
-			  	   				<a  data-toggle="pill" href="#admin">រដ្ឋបាល</a> 
-			  	   				</li>
+			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
+			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
+			  	   				</li>			  	   				
 					   	   </ul>
 					   </div>
+						<!--  -->
 						
+						<div class="col-sm-9" ng-if(documentByCatID)>	
+							<div class="body-cates tab-content">							
+								<div id="account" class="tab-pane fade in active">
 						
-						
-						
-						
-						
-						
-							
-							
-							
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						<div class="col-sm-9">
-							<div class="body-cates tab-content">
-							<div id="account" class="tab-pane fade in active">
-							
-							<div ng-repeat="slide in document" class="col-lg-4 col-sm-6 col-xs-12">
+							<div ng-repeat="slide in documentByCatID" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
@@ -140,35 +114,12 @@
 							
 							</div>
 							
-							<div id="admin" class="tab-pane fade in active">
-							
-							<div ng-repeat="slide in document" class="col-lg-4 col-sm-6 col-xs-12">
-								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
-								</span>
-								<span class="title" >{{ slide.TITLE | strLimit: 22 }}</span>
-								<!-- <span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span> -->
-								<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-								</a>
+							</div>
 							</div>
 							
-							</div>
-							</div><!--  -->
-							</div>
+							
 						</div>
+						
 					</div>				
 					
 					</div>
@@ -186,8 +137,7 @@
    </footer>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 
 	
 	<!-- library jquery for file upload -->

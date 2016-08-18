@@ -20,11 +20,6 @@ public class UserController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/technology",method=RequestMethod.GET)
-	public String technology(){
-		return "user/technology";
-	}
-	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
 		return "user/user_view";
@@ -38,27 +33,6 @@ public class UserController {
 	public String user_information(){
 		return "user/user_information";
 	}
-	
-	@RequestMapping(value="/general-knowledge",method=RequestMethod.GET)
-	public String generalKnowledge(){
-		return "user/general_knowledge";
-	}
-	
-	@RequestMapping(value="/literal",method=RequestMethod.GET)
-	public String literal(){
-		return "user/literal";
-	}
-	
-	@RequestMapping(value="/business",method=RequestMethod.GET)
-	public String business(){
-		return "user/business";
-	}
-	
-	@RequestMapping(value="/other",method=RequestMethod.GET)
-	public String other(){
-		return "user/other";
-	}
-	
 	
 	
 	
@@ -78,6 +52,13 @@ public class UserController {
 		System.out.println("ID==>" + id);
 		model.put("id", id);
 		return "user/details";
+	}
+	
+	@RequestMapping(value="/view/{ParentID}", method=RequestMethod.GET)
+	public String viewPageByCategoryID(@PathVariable("ParentID") String ParentID, ModelMap model){
+		System.out.println("ID==>" + ParentID);
+		model.put("ParentID", ParentID);
+		return "user/viewPageByCategoryID";
 	}
 	
 }
