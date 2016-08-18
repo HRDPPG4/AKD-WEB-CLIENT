@@ -35,10 +35,10 @@
    			 				    
   							 <div ng-if="getuserSavelist[0]">
   							 
-  								  
-  									<select class="form-control" ng-model="savelistcategory" ng-init="{{c.LIST_ID != null}}">
+  								  	<p>{{saveListname}}</p>
+  									<select class="form-control" id ="catsavelist" ng-model="saveListname">
   								     
-  										 <option ng-repeat=" c in getuserSavelist "  value="{{c.LIST_ID}}">{{c.LIST_NAME}}</option>
+  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_NAME}}">{{c.LIST_NAME}}</option>
   									
 						       		 </select>
 						       	</div> 
