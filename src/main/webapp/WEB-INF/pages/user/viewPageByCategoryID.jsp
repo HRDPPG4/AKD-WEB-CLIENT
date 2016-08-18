@@ -87,8 +87,8 @@
 					   <div class="col-sm-3" id="left-side-nav" >
 					   	   <ul class="category-menu nav nav-pills nav-stacked" >
 					   	   		 <li class="bg-cate">
-					   	   		 <span><i class="fa fa-flask"></i>
-			  	   					</span>{{parentCategory.CAT_NAME}}
+					   	   		 <span><i class="{{getCategoryByID.ICON}}"></i>
+			  	   					</span>{{getCategoryByID.CAT_NAME}}
 			  	   				</li>
 			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
 			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
@@ -145,7 +145,7 @@
 </content>
 
   <footer>
-	<jsp:include page="include/footer.jsp"></jsp:include>
+<%-- 	<jsp:include page="include/footer.jsp"></jsp:include> --%>
    </footer>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
