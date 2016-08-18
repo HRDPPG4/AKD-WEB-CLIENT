@@ -113,7 +113,9 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
 									<button id="btn-hide" class="btn btn-primary">Hide</button>
 									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+									 <div ng-show="doc.DOC_TYPE_NUM == 2 || doc.DOC_TYPE_NUM == 3">
 									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ng-click="showCategory()"><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
+									</div>
 									</div>
 									
 									<div class="detail-slide">
@@ -123,7 +125,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-												{{doc.DOC_TYPE_NUM}} <!-- {{doc.DOC_TYPE_NUM}} -->
+												ហ៊ុំ ជីវ័ន <!-- {{doc.DOC_TYPE_NUM}} -->
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>
@@ -131,7 +133,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 												<hr>
 											</div>
 											<div id="btn">
-												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list"><span><i class="fa fa-plus" aria-hidden="true" id="savelist" ></i>Add To SaveList</span></button>
+												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list"><span><i class="fa fa-plus" aria-hidden="true" id="savelist" ng-click="getDocumentById()" ></i>Add To SaveList</span></button>
 												
 												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
 											</div>
