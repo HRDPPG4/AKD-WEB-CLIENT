@@ -8,12 +8,13 @@
 <%@include file="include/admin-link.jsp"%>
 <style>
 .form-horizontal .form-group {
-    margin-right: 20px;
-    margin-left: 20px;
+	margin-right: 20px;
+	margin-left: 20px;
 }
+
 .btn-flat {
-    border-radius: 0;
- 	margin-left: 20px;
+	border-radius: 0;
+	margin-left: 20px;
 }
 </style>
 <script
@@ -22,7 +23,9 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
-<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet"/>
+<link
+	href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css"
+	rel="stylesheet" />
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -79,10 +82,10 @@
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
 					<span class="label label-primary pull-right">4</span> </a></li>
 
-			<li><a href="savelist"> <i class="fa fa-list"></i>
-					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
+					<span class="label label-primary pull-right">8</span>
 			</a></li>
-			
+
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
@@ -120,45 +123,53 @@
 						<!-- /.box-header -->
 						<div class="box-body">
 
-							<table id="example1" class="table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Date</th>
-										<th>Remark</th>
-										<th>Role</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr ng-repeat="u in user">
-										<td>{{u.USER_ID}}</td>
-										<td>{{u.USER_NAME}}</td>
-										<td>{{u.EMAIL}}</td>
-										<td>{{u.CREATED_DATE}}</td>
-										<td>{{u.REMARK}}</td>
-										<td>{{u.USER_ROLE}}</td>
-										<td>
-											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)" 
-											data-toggle="modal" data-target="#updateUser">
-												<i class="fa fa-edit"></i>
-											</button>
-											
-											<button type="button" class="btn btn-danger btn-sm"	ng-click="alertDelete(u.USER_ID)">
-												<i class="fa fa-eraser"></i>
-											</button>
-										</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th><button class="btn btn-flat btn-primary" data-toggle="modal" data-target="#addUser" 
-												>Add User</button></th>
-									</tr>
-									<tr>
-									<!-- 	ID
+							
+								<button class="btn btn-flat btn-primary" data-toggle="modal"
+									data-target="#addUser">Add User</button>
+								<br />
+								<br />
+
+
+								<table id="example1" class="table table-bordered table-striped">
+
+
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Email</th>
+											<th>Date</th>
+											<th>Remark</th>
+											<th>Role</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="u in user">
+											<td>{{u.USER_ID}}</td>
+											<td>{{u.USER_NAME}}</td>
+											<td>{{u.EMAIL}}</td>
+											<td>{{u.CREATED_DATE}}</td>
+											<td>{{u.REMARK}}</td>
+											<td>{{u.USER_ROLE}}</td>
+											<td>
+												<button type="button" class="btn btn-primary btn-sm"
+													ng-click="getDataForUpdate(this)" data-toggle="modal"
+													data-target="#updateUser">
+													<i class="fa fa-edit"></i>
+												</button>
+
+												<button type="button" class="btn btn-danger btn-sm"
+													ng-click="alertDelete(u.USER_ID)">
+													<i class="fa fa-eraser"></i>
+												</button>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+
+
+										<!-- 	ID
 										<input type="text" name="id" ng-model="gid" />
 										<br /> name
 										<input type="text" name="name" ng-model="gname" />
@@ -180,19 +191,19 @@
 									
 									<button class="btn btn-flat btn-primary" ng-click="updateUser()">Update</button>
 									 -->
-									</tr>
-								</tfoot>
-							</table>
+										</tr>
+									</tfoot>
+								</table>
 						</div>
 						<!-- /.box-body -->
-					
+
 					</div>
 
 
 					<!-- Modal Start-->
 
-						<%@include file="include/add-user.jsp"%>
-						<%@include file="include/update-user.jsp"%>
+					<%@include file="include/add-user.jsp"%>
+					<%@include file="include/update-user.jsp"%>
 					<!-- Modal End -->
 
 					<!-- /.box -->
