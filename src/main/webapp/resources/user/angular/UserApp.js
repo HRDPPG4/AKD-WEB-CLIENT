@@ -75,7 +75,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
 			
-			//console.log($scope.parentCategory);
+			console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
@@ -87,7 +87,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.getCategoryByID=response.data.DATA;
-			//console.log($scope.getCategoryByID);
+		//	console.log($scope.getCategoryByID);
 		}, function(response){
 
 		});	
