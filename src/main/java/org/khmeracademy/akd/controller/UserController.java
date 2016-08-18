@@ -47,6 +47,7 @@ public class UserController {
 	}
 	
 	
+	
 	@RequestMapping(value="/detail/{id}", method=RequestMethod.GET)
 	public String detail(@PathVariable("id") String id, ModelMap model){
 		System.out.println("ID==>" + id);

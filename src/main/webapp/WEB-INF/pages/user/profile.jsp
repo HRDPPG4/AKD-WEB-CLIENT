@@ -75,23 +75,89 @@
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
-							<ul class="title-profile">
-								<li class="about"><a href="#">អំពីខ្ញុំ </a></li>
-								<li class="about"><a href="#">ការរក្សាទុកស្លាយរបស់ខ្ញុំ</a></li>
-								<li class="about"><a href="#">ស្លាយដែលបានមើល</a></li>
+							<ul class="title-profile nav nav-pills nav-stacked">
+							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
+								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
+								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
+								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
 							</ul>
 						</div>
-						<div class="content-profile">
-							<div class="banner-profile">
-								<img alt="" src="${pageContext.request.contextPath}/resources/user/img/business.jpg">
-							</div>
-							<div class="header-profile">
-								
-							</div>
-						</div>				
-								
+						<!-- right side -->
+				<div class="dashboard-content tab-content">
+					 <div id="dashbord" class="tab-pane fade in active">
+							<div class="preview-all">
+								<ul id="dashboard-header">
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+									<li>
+										<div class="view-value">25</div>
+										<div class="view-name">មើល</div>
+									</li>
+								</ul>
+							</div>	
 						
-			</div>
+						<div id="content-pdf-ppt-doc">
+								<ul class="nav nav-tabs">
+									    <li class="active"><a data-toggle="tab" href="#pdf">PDF</a></li>
+									    <li><a data-toggle="tab" href="#ppt">PPT</a></li>
+									    <li><a data-toggle="tab" href="#doc">DOC</a></li>
+									    
+									  </ul>
+									
+									  <div class="tab-content">
+									    <div id="pdf" class="tab-pane fade in active">
+									      <h3>PDF</h3>
+									      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+									    </div>
+									    <div id="ppt" class="tab-pane fade">
+									      <h3>PPT</h3>
+									      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									    </div>
+									    <div id="doc" class="tab-pane fade">
+									      <h3>DOC</h3>
+									      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+									    </div>
+									    
+									  </div>
+						</div>		
+						
+			      </div>
+			      
+			      
+			      
+			      <div id="mydoc" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 1
+			      </div>
+			       <div id="viewed" class="tab-pane fade" style="width:800px; background-color: white;">
+			          testing 2
+			      </div>
+			      
+			      <div id="aboutme" class="tab-pane fade aboutme">
+					<form class="form-style-4" action="" method="post">
+							<label for="field1">
+							<span>ឈ្មោះអ្នកប្រើប្រាស់</span><input type="text" name="field1" value="ជឹម មិនា"​ required="true"/>
+							</label>
+							<label for="field2">
+							<span>អ៊ីម៉ែល</span><input type="email" name="field2" value="minea.chem@gmail.com"​ required="true"/>
+							</label>
+							<label for="field3">
+							<span>អាស័យដ្ឋាន</span><input type="text" name="field3" value="ភ្នំពេញ" required="true"/>
+							</label>
+							<label for="field4">
+							<span>វាចារ</span><textarea name="field4" onkeyup="adjust_textarea(this)" required="true"​> ពេញចិត្ត</textarea>
+							</label>
+				
+							<span>&nbsp;</span><input type="submit" value="កែប្រែ" />
+							
+					</form> 
+			      </div>
+			    </div>
 		</div>
 		
 	</section>
