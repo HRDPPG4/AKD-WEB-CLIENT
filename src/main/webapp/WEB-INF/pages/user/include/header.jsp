@@ -59,7 +59,7 @@
 			  
 			  <li ng-repeat="mainCat in mainCategory">
 			  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
-					   <span><i class="fa fa-home" aria-hidden="true"></i>
+					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
 			  </li>

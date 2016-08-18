@@ -75,8 +75,8 @@
 					   <div class="col-sm-3" id="left-side-nav" >
 					   	   <ul class="category-menu nav nav-pills nav-stacked" >
 					   	   		 <li class="bg-cate">
-					   	   		 <span><i class="fa fa-flask"></i>
-			  	   					</span>{{mainCat.CAT_NAME}}
+					   	   		<!--  <span><i class="fa fa-flask"></i>
+			  	   					</span>{{mainCategory.CAT_NAME}} -->
 			  	   				</li>
 			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
 			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
