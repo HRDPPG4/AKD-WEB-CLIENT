@@ -66,7 +66,7 @@
 <style>
 .tab-content #documentBox div.col-lg-4.col-sm-6.col-xs-12
 {
-	min-width:273.98px;
+	min-width:289.98px;
 	min-height:264px;
 	
 	/* max-width:273.98px;
