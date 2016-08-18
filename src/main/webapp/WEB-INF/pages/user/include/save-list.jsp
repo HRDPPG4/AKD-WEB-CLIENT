@@ -36,13 +36,13 @@
   							 <div ng-if="getuserSavelist[0]">
   							 
   								  	<p>{{saveListname}}</p>
-  									<select class="form-control"  id ="saveListname">
-  								     
+  									<select class="form-control"  id ="saveListnames">
+  								         <option  value=""></option>
   										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_NAME}}">{{c.LIST_NAME}}</option>
   									
 						       		 </select>
 						       	</div> 
-						       	<button type="button" class="btn btn-info" id="bnt-create"​ >បង្កើត</button>
+						       	<button type="button" class="btn btn-info" id="bnt-create"​ >បង្កើតថ្មី</button>
 						       	<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button>
 							 </div>
    			 				   
@@ -56,7 +56,7 @@
   						
 							</div>
 							
-							<div class="form-group" style="padding-top:10px;padding-top:20px; " id="savelistname" >
+							<div class="form-group" style="padding-top:10px;padding-top:20px; "  >
 							    <input   type="text" class="form-control" ng-model="saveListname">						      
 							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
 							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">

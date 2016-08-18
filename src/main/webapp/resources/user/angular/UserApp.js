@@ -194,11 +194,13 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
      $scope.saveList = function(){   
     	  var Savelistname = "";
     	  
-          var catename = $("#saveListname").val();
+          var catename = $("#saveListnames").val();
           var listname = $scope.saveListname;
-          if(catename != null){
+          alert(listname);
+         
+          if(catename != ""){
         	  Savelistname = catename;
-          }else if(listname !=null){
+          }else if(listname !=""){
         	  Savelistname = listname;
         	  
           }else{
@@ -228,9 +230,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		});
 	}
      
-     $scope.AddTosavelistDetail = function(){
-    	 
-     }
+
      //--------End create saveList------------
      
      //--------- getUserList-----------------
