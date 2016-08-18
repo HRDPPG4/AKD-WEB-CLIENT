@@ -56,16 +56,8 @@
 
 			<li><a href="slide"><i class="fa fa-slideshare"></i> <span>Slides</span></a></li>
 
-			<li class="treeview"><a href="#"> <i class="fa fa-files-o"></i>
-					<span>Categories</span> <i class="fa fa-angle-left pull-right"></i>
-			</a>
-				<ul class="treeview-menu">
-					<li><a href="main-category"><i class="fa fa-circle-o"></i>
-							Main Categories</a></li>
-					<li><a href="sub-category"><i class="fa fa-circle-o"></i>
-							Sub Categories</a></li>
-				</ul></li>
-
+			<li><a href="main-category"> <i class="fa fa-list"></i> <span>Categories</span></a></li>
+			
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
@@ -75,7 +67,7 @@
 					<span class="label label-primary pull-right">8</span>
 			</a></li>
 
-			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
+			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feed
 						Back</span> <span class="label label-primary pull-right">8</span>
 			</a></li>
 
