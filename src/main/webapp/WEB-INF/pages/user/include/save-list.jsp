@@ -36,7 +36,7 @@
   							 <div ng-if="getuserSavelist[0]">
   							 
   								  	<p>{{saveListname}}</p>
-  									<select class="form-control" id ="catsavelist" ng-model="saveListname">
+  									<select class="form-control"  id ="saveListname">
   								     
   										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_NAME}}">{{c.LIST_NAME}}</option>
   									

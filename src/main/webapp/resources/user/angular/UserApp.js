@@ -194,26 +194,29 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	 ///////////////////		START SAVELIST BLOCK	/////////////////
 	
       // create saveList
-	$scope.saveListname="";
-     $scope.saveList = function(){
-    	 var listname ="";
-    	var cat = $("#catsavelist").val();
-    	 alert(cat);
-    	var name = $scope.saveListname;
-    	if (cat != null){
-    	   listname = cat;
-    	}else{
-    	   listname = name;
-    	}
-    	
-  
+
+     $scope.saveList = function(){   
+    	  var Savelistname = "";
+    	  
+          var catename = $("#saveListname").val();
+          var listname = $scope.saveListname;
+          if(catename != null){
+        	  Savelistname = catename;
+          }else if(listname !=null){
+        	  Savelistname = listname;
+        	  
+          }else{
+        	  Savelistname;
+          }
+          
+        
 		$http({
 			url:'http://localhost:1111/api/v1/savelist',
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
 				  'DOC_ID': $('#doc_id').val(),
-				  'LIST_NAME': $scope.saveListname,
+				  'LIST_NAME': Savelistname,
 				  'REMARK': "",
 				  'STATUS':1 ,
 				  'USER_ID': $('#user_id').val()
@@ -228,6 +231,10 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			
 		});
 	}
+     
+     $scope.AddTosavelistDetail = function(){
+    	 
+     }
      //--------End create saveList------------
      
      //--------- getUserList-----------------
