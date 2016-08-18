@@ -18,7 +18,7 @@
 			          
         
       </div>
-      <div class="modal-body" style="padding:40px 50px;">
+      <div class="modal-body" style="padding:40px 50px;"  >
 
      		<form action="#" method="post" enctype="multipart/form-data">
      			<div class="row">
@@ -30,16 +30,23 @@
      						 <img src="${pageContext.request.contextPath}/resources/user/img/book.jpg" alt="Thumbnail" style=" width:400px; height:300px;position:relative;" >
       				         
    			 			
-   			 				<button type="button" class="btn btn-success" id="list-save">SaveList</button>
-   			 				<div class="form-group" id="catsavelist" style="display:none;">
-  								
-  								<select class="form-control">
-  									<option>កម្រងប្រវត្តសាស្រ្តខ្មែរ</option>
-  									<option>កម្រងមេរៀនអាយធី</option>
-						        </select>
+   			 			<!-- 	<button type="button" class="btn btn-success" id="list-save" >SaveList</button> -->
+   			 				<div class="form-group" id="catsavelist"  >
+   			 				    
+  							 <div ng-if="getuserSavelist[0]">
+  							 
+  								  	<p>{{saveListname}}</p>
+  									<select class="form-control" id ="catsavelist" ng-model="saveListname">
+  								     
+  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_NAME}}">{{c.LIST_NAME}}</option>
+  									
+						       		 </select>
+						       	</div> 
+						       	<button type="button" class="btn btn-info" id="bnt-create"​ >បង្កើត</button>
+						       	<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button>
 							 </div>
-   			 				  
-   			 				
+   			 				   
+   			 				 
    			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; display:none;"  >
    			 			
    			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; "  >
@@ -54,7 +61,7 @@
 							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
 							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
 							   
-  								<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">បង្កើត</button>
+  								
 							</div>
    			 			    </div>
    			 		 </div>
