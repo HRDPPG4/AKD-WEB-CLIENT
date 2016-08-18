@@ -132,8 +132,8 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 											<div id="line">
 												<hr>
 											</div>
-											<div id="btn">
-												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list"><span><i class="fa fa-plus" aria-hidden="true" id="savelist" ng-click="getDocumentById()" ></i>Add To SaveList</span></button>
+											<div id="btn" >
+												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(doc.USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>Add To SaveList</span></button>
 												
 												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
 											</div>
@@ -169,7 +169,8 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  									 		 
+												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  
+												       									 		 
 												 		<div class="col-md-6">												 																		
 													 		<a href="/detail/{{slide.DOC_ID}}" ng-click="getDocumentById(slide.DOC_ID)">
 													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 

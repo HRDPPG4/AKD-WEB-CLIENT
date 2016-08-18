@@ -180,12 +180,19 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		});	
 	}
 	// Creat save list
-    $scope.saveList = function(){	
-
-        var docID = $('#doc_id').val();
-        var userID = $('#user_id').val();
-       
-         
+    $scope.saveList = function(){
+    	var listname ="";
+    	var cat = $scope.savelistcategory;
+    	alert(cat);
+    	var name = $scope.saveListname;
+    	if (cat != null){
+    	   listname = cat;
+    	  
+    	}else{
+    	   listname = name;
+    	}
+    	
+  
 		$http({
 			url:'http://localhost:1111/api/v1/savelist',
 			method:'POST',
@@ -208,7 +215,23 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		});
 	}
     
-	//$rootScope.getDocumentById(id);
+    //get UserSavelist
+    $scope.getSavelistUser=function(userID){
+    	
+    //	alert("Savelist");
+    
+		$http({
+			url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
+			method:'GET'
+		}).then(function(response){
+			$scope.getuserSavelist=response.data.DATA;
+		
+		}, function(response){
+
+		});	
+	}
+ //   $scope.getSavelistUser();
+	
 });
 
 
