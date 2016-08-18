@@ -67,13 +67,27 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	}	
 	$scope.getAllCategory();
 	
-	$scope.getCategoryByParentID=function(parentID){		
+	$scope.getCategoryByParentID=function(parentID){	
+		$scope.getCategoryByID(parentID);
 		$http({
 			url:'http://localhost:1111/api/v1/getCategoryByParentID/'+parentID,
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
+			
 			//console.log($scope.parentCategory);
+		}, function(response){
+
+		});	
+	}
+	
+	$scope.getCategoryByID=function(CatID){		
+		$http({
+			url:'http://localhost:1111/api/v1/category/'+CatID,
+			method:'GET'
+		}).then(function(response){
+			$scope.getCategoryByID=response.data.DATA;
+			//console.log($scope.getCategoryByID);
 		}, function(response){
 
 		});	
@@ -86,8 +100,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
-			console.log()
-			console.log($scope.mainCategory);
+		//	console.log()
+			//console.log($scope.mainCategory);
 		}, function(response){
 
 		});	
@@ -126,8 +140,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.documentByCatID=response.data.DATA;
-			console.log("Document By CatID Block");
-			console.log($scope.documentByCatID);
+			//console.log("Document By CatID Block");
+			//console.log($scope.documentByCatID);
 		}, function(response){
 
 		});
@@ -143,7 +157,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
-			console.log($scope.doc.DOC_TYPE_NUM);
+			//console.log($scope.doc.DOC_TYPE_NUM);
 			//console.log("DocID: "+$scope.docID);
 		}, function(response){
 
@@ -206,7 +220,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			
 			
 		}, function(response){
-			console.log(response);
+			//console.log(response);
 			
 		});
 	}
