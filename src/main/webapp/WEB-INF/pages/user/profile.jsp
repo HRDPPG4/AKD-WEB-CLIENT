@@ -79,93 +79,227 @@
 							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
+								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
 							</ul>
 						</div>
 						<!-- right side -->
-				<div class="dashboard-content tab-content">
-					 <div id="dashbord" class="tab-pane fade in active">
-							<div class="preview-all">
-								<ul id="dashboard-header">
-									<li>
-										<div class="view-value">25</div>
-										<div class="view-name">មើល</div>
-									</li>
-									<li>
-										<div class="view-value">25</div>
-										<div class="view-name">មើល</div>
-									</li>
-									<li>
-										<div class="view-value">25</div>
-										<div class="view-name">មើល</div>
-									</li>
-								</ul>
-							</div>	
-						
-						<div id="content-pdf-ppt-doc">
-								<ul class="nav nav-tabs">
+				
+					<div class="tab-content">
+						 <div id="dashbord" class="tab-pane fade in active">
+							<div class="dashboard-content">
+										<div class="preview-all">
+											<ul id="dashboard-header">
+												<li>
+													<div class="view-value">25</div>
+													<div class="view-name">មើល</div>
+												</li>
+												<li>
+													<div class="view-value">25</div>
+													<div class="view-name">មើល</div>
+												</li>
+												<li>
+													<div class="view-value">25</div>
+													<div class="view-name">មើល</div>
+												</li>
+											</ul>
+										</div>
+							</div>
+							<div class="content-pdf-ppt-doc">
+										<ul class="nav nav-tabs">
 									    <li class="active"><a data-toggle="tab" href="#pdf">PDF</a></li>
 									    <li><a data-toggle="tab" href="#ppt">PPT</a></li>
 									    <li><a data-toggle="tab" href="#doc">DOC</a></li>
-									    
-									  </ul>
-									
-									  <div class="tab-content">
+								   </ul>
+								   <div class="pdf-ppt-doc tab-content">
+									  
 									    <div id="pdf" class="tab-pane fade in active">
-									      <h3>PDF</h3>
-									      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									    </div>
+									      <div class="pdf-preview">
+									    		<div ng-repeat="slide in document  | limitTo :2">
+									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+													<span class="img">
+													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+													</span>
+													<span class="title-pdf-pre">
+												    HTML
+												   </span>
+												   <span class="count-view-pdf">
+												    200 មើល
+												    </span>
+												</a>
+												
+												</div>	
+										 </div>
+										</div>	
+										<!-- pdf -->
 									    <div id="ppt" class="tab-pane fade">
-									      <h3>PPT</h3>
-									      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									     	<div class="ppt-preview">
+									    		<div ng-repeat="slide in document  | limitTo :4">
+									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail_ppt">
+													<span class="img_ppt">
+													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+													</span>
+													<span class="title-ppt-pre">
+												    HTML
+												   </span>
+												   <span class="count-view-ppt">
+												    200 មើល
+												   </span>
+												 
+												</a>
+												</div>	
+										 </div>
 									    </div>
+									    <!--ppt tab  -->
 									    <div id="doc" class="tab-pane fade">
-									      <h3>DOC</h3>
-									      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+									      <div class="doc-preview">
+									    		<div ng-repeat="slide in document  | limitTo :2">
+									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+													<span class="img">
+													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
+													</span>
+													<span class="title-doc-pre">
+												    HTML
+												   </span>
+												   <span class="count-view-doc">
+												    200 មើល
+												   </span>
+												 
+												</a>
+												</div>	
+										 </div>
+										 <!--doc tab  -->
 									    </div>
-									    
-									  </div>
-						</div>		
-						
-			      </div>
-			      
-			      
-			      
-			      <div id="mydoc" class="tab-pane fade" style="width:800px; background-color: white;">
-			          testing 1
-			      </div>
-			       <div id="viewed" class="tab-pane fade" style="width:800px; background-color: white;">
-			          testing 2
-			      </div>
-			      
-			      <div id="aboutme" class="tab-pane fade aboutme">
-					<form class="form-style-4" action="" method="post">
-							<label for="field1">
-							<span>ឈ្មោះអ្នកប្រើប្រាស់</span><input type="text" name="field1" value="ជឹម មិនា"​ required="true"/>
-							</label>
-							<label for="field2">
-							<span>អ៊ីម៉ែល</span><input type="email" name="field2" value="minea.chem@gmail.com"​ required="true"/>
-							</label>
-							<label for="field3">
-							<span>អាស័យដ្ឋាន</span><input type="text" name="field3" value="ភ្នំពេញ" required="true"/>
-							</label>
-							<label for="field4">
-							<span>វាចារ</span><textarea name="field4" onkeyup="adjust_textarea(this)" required="true"​> ពេញចិត្ត</textarea>
-							</label>
-				
-							<span>&nbsp;</span><input type="submit" value="កែប្រែ" />
+									 </div>
+							    </div>
+							</div>
+							<!-- tab dashboard -->
+							<!-- //////////////////////////////////////////////////////////////////////////////// -->
+							<div id="mydoc" class="tab-pane fade">
+								<div class="content-mydoc">
+					           	<ul class="nav nav-tabs">
+									    <li class="active"><a data-toggle="tab" href="#pdf-edit">PDF</a></li>
+									    <li><a data-toggle="tab" href="#ppt-edit">PPT</a></li>
+									    <li><a data-toggle="tab" href="#doc-edit">DOC</a></li>
+								   </ul>
+								   <div class="pdf-ppt-doc-edit tab-content">
+								   		 <div id="pdf-edit" class="tab-pane fade in active">
+								   		 		
+								   		 	<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+
+								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								
+													<div class="media">
+											        	<span class="label label-danger pull-right">3 Pendentes</span>
+														<div class="checkbox pull-left">
+												    		<label>
+																<input type="checkbox" value="">				
+															</label>
+														</div>
+														<div class="pull-left">
+															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+														</div>
+														<div class="media-body">
+															<h4 class="media-heading">Ana Maria Braga</h4>
+															<p>Página Ativa</p>
+														</div>
+								
+													</div>					
+											        
+											    </a>
+											    <!-- <a href="#" class="list-group-item">
+								
+													<div class="media">
+											        	<span class="label label-danger pull-right">3 Pendentes</span>
+														<div class="checkbox pull-left">
+												    		<label>
+																<input type="checkbox" value="">				
+															</label>
+														</div>
+														<div class="pull-left">
+															<img class="media-object" src="http://placehold.it/100x70" alt="Image">
+														</div>
+														<div class="media-body">
+															<h4 class="media-heading">Festival de Tiradentes</h4>
+															<p>Página Ativa</p>
+														</div>
+								
+													</div>					
+											        	
+											        <div class="clearfix"></div>
+											        
+											    </a>				 -->
+								
+											</div>
+								   		 		
+								   		 </div>
+								   		 <!--edit pdf  -->
+								   		 <div id="ppt-edit" class="tab-pane fade">
+								   		 ppt-edit
+								   		 </div>
+								   		 
+								   		 <div id="doc-edit" class="tab-pane fade">
+								   		 doc-edit
+								   		 </div>
+								   </div>
+					          </div>
+					        </div>
+					      <!-- tab mydoc -->
+					       <div id="viewed" class="tab-pane fade">
+						         <div class="content-viewed-all">
+						         		<div id="header-view-history">
+						         			<ul>
+						         				<li class="history-title">ប្រវត្តិការមើល</li>
+						         			</ul>
+						         		</div>
+						         		<div id="content-view-history">
+								         		<div class="btn-clear-history">
+								         			<button>សំអាតប្រវត្តិមើលទាំងអស់</button>
+								         		</div>
+							         		
+							         		<div class="history-view">
+							         			<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+	
+									    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+									
+														<div class="media">
+												     
+															<div class="checkbox pull-right">
+													    		<label>
+																	<span><i class="fa fa-times" aria-hidden="true"></i></span>				
+																</label>
+															</div>
+															<div class="pull-left">
+																<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+															</div>
+															<div class="media-body">
+																<h4 class="media-heading">HTML</h4>
+																<p>HTML ជាភាសាមួយក្នុងការចាប់ផ្តើម</p>
+															</div>
+									
+														</div>					
+												        
+												    </a>
+												 </div>
+							         		</div>
+						         		</div>
+						         </div>
+					      </div>
+			      				<!-- tab viewed -->
+						      <div id="aboutme" class="tab-pane fade aboutme">
+								 testing 3
+						      </div>
+							<!-- tab about me -->
+					  </div>
 							
-					</form> 
-			      </div>
-			    </div>
-		</div>
+		       </div>
 		
 	</section>
 </div>
 </content>
 
  <footer>
-	<jsp:include page="include/footer.jsp"></jsp:include>
+	<%-- <jsp:include page="include/footer.jsp"></jsp:include> --%>
    </footer>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
