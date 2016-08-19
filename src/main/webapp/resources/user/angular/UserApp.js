@@ -77,7 +77,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
 	$scope.currentSubCategory="currentSubCategory";
 	$rootScope.currentMainCategory="";
-	$rootScope.currentDocumentID="";
+	$scope.currentDocumentID="";
 	
 	
 	
@@ -155,8 +155,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			url:'http://localhost:1111/api/v1/comment',
 			method:'POST',
 			data:{				
-				"CREATED_DATE": "string",
-				"DOC_ID": $rootScope.currentDocumentID,
+				"CREATED_DATE": new Date(),
+				"DOC_ID": $scope.currentDocumentID,
 				"REMARK": $scope.newComment,
 				"STATUS": 1,
 				"USER_ID": 2
@@ -169,22 +169,22 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}, function(response){
 			alert("Error");
 		});	
-		//alert($rootScope.currentDocumentID);
 	}
 	
-	/*$scope.getAllCommentByDocID=function(1){		
+	$scope.getAllCommentByDocID=function(DocID){	
+		console.log(DocID);
 		$http({
 			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCommentByDocID=response.data.DATA;
-		//	console.log($scope.getAllCommentByDocID);
+			console.log($scope.getAllCommentByDocID);
 		}, function(response){
 
 		});	
 		
-		alert("getCommentByDocID");
-	}*/
+	//	alert("getCommentByDocID");
+	}
 	
 	
 	
@@ -220,7 +220,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}).then(function(response){
 			//alert($scope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			console.log("DOC BY CATE",$scope.documentByCatID);
+		//	console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});
@@ -235,8 +235,10 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
 			$scope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
-		//	alert($scope.currentSubCategory);		
-		//	$scope.getAllCommentByDocID($scope.currentDocumentID);
+			$scope.currentDocumentID=$scope.doc.DOC_ID;
+			//	alert($scope.currentSubCategory);	
+			
+			$scope.getAllCommentByDocID($scope.doc.DOC_ID);
 			
 			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
 		//	$scope.getAllDocumentByCatID($scope.currentSubCategory);
