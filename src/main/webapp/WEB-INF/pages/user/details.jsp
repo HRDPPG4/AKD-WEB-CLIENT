@@ -154,7 +154,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 									
 
 									<div class="commend-visitor">
-											<jsp:include page="include/comment.jsp"></jsp:include>
+										 <jsp:include page="include/comment.jsp"></jsp:include> 
 									</div>
 									
 								</div>
