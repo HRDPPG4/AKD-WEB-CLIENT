@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+ <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
 <div class="modal fade" id="upload" role="dialog" ng-controller="UserCtrl">
@@ -61,4 +61,3 @@
 		}) 
  
 </script> -->
-
