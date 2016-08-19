@@ -166,18 +166,18 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 								<div class="col-md-3">
 									<div class="row col-sm-12" >
 										<div class="related-container">
-											<div class="row">									
+											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  
 												       									 		 
 												 		<div class="col-md-6">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)">
-													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
+													 		<a href="/detail/{{slide.DOC_ID}}" ng-click="getDocumentById(slide.DOC_ID)">
+													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
 												 		</div>
 												 		<div class="col-md-6">
-												 			{{related.TITLE}}
+												 			{{slide.TITLE}}
 												 		</div>	
 												 </div> 												
 											</div>	
