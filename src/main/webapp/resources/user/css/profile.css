@@ -2,7 +2,6 @@
 	overflow: hidden;
    margin-top: 20px;
     margin-bottom: 20px;
-    min-height:700px;
 }
 .left-profile{
 	background-color: #fff !important;
@@ -50,7 +49,12 @@ ul.title-profile{
 	border-left:5px solid #003666;
 	color:#000;
 }
-
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    text-decoration: none;
+  background:#dee0e3;
+	border-left:5px solid #003666;
+	color:#000;
+}
 /*  */
 
 
@@ -64,9 +68,8 @@ ul.title-profile{
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
-	padding:10px;
+	/* padding:10px; */
 	width:830px;
-	position:relative;
 	background-color:#fff;
 	padding: 13px 18px;
 	margin-right: 1px;
@@ -95,152 +98,187 @@ ul.title-profile{
     display: inline-block;
 }
 
-#content-pdf-ppt-doc{
-	margin: 10px auto;
-    width: 828px;
-    overflow: hidden;
-    position: absolute;
-   /*  background-color: white; */
-    
-}
-.aboutme{
+.content-pdf-ppt-doc{
 	width:828px;
-	padding:50px;
-	 background-color: white;
+	padding:10px;
+	margin-left:205px;
+	position:absolute;
+	margin-top:10px;
+	background-color:#fff;
 	 border: 1px solid;
 	border-top-color: rgb(229, 230, 233);
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
 }
-/* .view-pdf{
-float: left;
-    width: 414px;
-    padding-top: 10px;
-    padding-left:50px;
-    min-height:300px;
-    background-color: #fff !important;
-    border: 1px solid;
-    border-top-color: rgb(229, 230, 233);
-    border-right-color: rgb(223, 224, 228);
-    border-bottom-color: rgb(208, 209, 213);
-    border-left-color: rgb(223, 224, 228);
-}
-.header-view-pdf .header-view-ppt .header-view-doc{
-	margin:0;
-	padding:0;
+.pdf-preview{
+	float:left;
 	width:300px;
-	color: #000;
-}
-.view-ppt{
-	float: left;
-	 padding-top: 10px;
-    padding-left:50px;
-    width: 414px;
-    position:relative;
-    left:10px;
-    min-height:300px;
-      background-color: #fff !important;
-       border: 1px solid;
-	border-top-color: rgb(229, 230, 233);
-    border-right-color: rgb(223, 224, 228);
-    border-bottom-color: rgb(208, 209, 213);
-    border-left-color: rgb(223, 224, 228);
+	margin-left:10px;
+	padding-top:10px;
 }
 
-.view-doc{
-	float: left;
-	 padding-top: 10px;
-    padding-left:50px;
-    width: 414px;
-    position:relative;
-    top:10px;
-    min-height:300px;
-      background-color: #fff !important;
-       border: 1px solid;
-	border-top-color: rgb(229, 230, 233);
-    border-right-color: rgb(223, 224, 228);
-    border-bottom-color: rgb(208, 209, 213);
-    border-left-color: rgb(223, 224, 228);
-} */
-
-
-/* /* tab1 */ */
-.form-style-4{
-    width: 450px;
-    font-size: 16px;
-   /*  background: #495C70; */
-    padding: 30px 30px 15px 30px;
-    border: 5px solid #53687E;
+.pdf-preview img{
+	border:1px solid gray;
+	margin-bottom:2px;
+	width:100px;
 }
-.form-style-4 input[type=submit],
-.form-style-4 input[type=button],
-.form-style-4 input[type=text],
-.form-style-4 input[type=email],
-.form-style-4 textarea,
-.form-style-4 label
-{
-    font-family: "Khmer OS Battambang";
-    font-size: 16px;
-    position:relative;
-    color: #000;
-     line-height:40px; 
-
-}
-.form-style-4 label {
-    display:block;
-    margin-bottom: 10px;
-}
-.form-style-4 label > span{
-    display: inline-block;
-    float: left;
-    width: 150px;
-}
-.form-style-4 input[type=text],
-.form-style-4 input[type=email] 
-{
-    background: transparent;
+	a.thumbnail {
+    text-decoration: none;
     border: none;
-    border-bottom: 1px dashed #83A4C5;
-    width: 275px;
-    outline: none;
-    padding: 0px;
+    background:transparent;
+    margin-bottom:-50px;
 }
-.form-style-4 textarea{
-    padding: 0px;
-    background: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 1px dashed #83A4C5;
-    width: 275px;
+.title-pdf-pre{
+	display:inline-block;
+	margin-left:-10px;
+	position: relative;
+	top:-130px;
+}
+.count-view-pdf{
+	display:inline-block;
+	margin-left:-50px;
+	position: relative;
+	top:-110px;
+}
+/*  */
+.doc-preview{
+	float:left;
+	width:300px;
+	margin-left:10px;
+	padding-top:10px;
+}
+.doc-preview img{
+	border:1px solid gray;
+	margin-bottom:2px;
+	width:100px;
+}
+.thumbnail .img {
+    display: block;
+    width: 100%;
     overflow: hidden;
-    resize:none;
-    height:40px;
-   
+    height: 180px;
+    margin: 0 0 5px;
+    position: relative;
+    text-decoration: none;
+}
+.title-doc-pre{
+	display:inline-block;
+	margin-left:-10px;
+	position: relative;
+	top:-130px;
+}
+.count-view-doc{
+	display:inline-block;
+	margin-left:-50px;
+	position: relative;
+	top:-110px;
+}
+/*  */
+.ppt-preview{
+	float:left;
+	width:300px;
+	margin-left:10px;
+	padding-top:10px;
+}
+.ppt-preview img{
+	border:1px solid gray;
+	margin-bottom:2px;
+	width:100px;
+}
+a.thumbnail_ppt {
+    text-decoration: none;
+    border: none;
+    background:transparent;
+    margin-bottom:-70px;
+}
+.thumbnail_ppt .img_ppt{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 0 5px;
+    position: relative;
+    text-decoration: none;
+}
+.title-ppt-pre{
+	color:#000;
+	display:inline-block;
+	margin-left:120px;
+	position: relative;
+	top:-130px;
+}
+.count-view-ppt{
+	color:#000;
+	display:inline-block;
+	margin-left:-50px;
+	position: relative;
+	top:-110px;
+}
+/*  */
+.content-mydoc{
+	 width:828px;
+	padding:10px;
+	margin-left:205px;
+	position:absolute;
+	background-color:#fff;
+	 border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+}
+/*  */
+.content-viewed-all{
+	 width:828px;
+	padding:10px;
+	margin-left:205px;
+	position:absolute;
+	background-color:#fff;
+	 border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
 }
 
-.form-style-4 textarea:focus, 
-.form-style-4 input[type=text]:focus,
-.form-style-4 input[type=email]:focus,
-.form-style-4 input[type=email] :focus
-{
-    border-bottom: 1px dashed #D9FFA9;
+
+#header-view-history ul{
+	list-style-type:none;
+	margin-top: 10px;
+    padding: 0 20px;
+    border-bottom: 1px solid #e2e2e2;
+    clear: both;
+}
+li.history-title{
+	color:#000;
+	
+}
+li.history-title:hover{
+	color:#000;
+	cursor:pointer;
+	width:80px;
+	clear:both;
+	border-bottom: 2px solid #003666;
+}
+.btn-clear-history{
+	padding-top:5px;
+	padding-bottom:10px;
+	 border-bottom: 1px solid #e2e2e2;
+	 clear:both;
+}
+.history-view{
+	padding-top:1px;
 }
 
-.form-style-4 input[type=submit],
-.form-style-4 input[type=button]{
-    background: #fff;
-    border: 1px solid #003666;
-    padding-left:10px;
-    padding-right:10px;
-    border-bottom:5px solid gray;
-    border-radius: 5px;
-    color: #000;
+.pull-left img{
+	width:100px;
 }
-.form-style-4 input[type=submit]:hover,
-.form-style-4 input[type=button]:hover{
-background: #003666;
-border-bottom:5px solid gray;
-border-radius: 5px;
- color: #fff;
+.history-view .list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    border:none;
+     border-bottom: 1px solid #e2e2e2;
 }

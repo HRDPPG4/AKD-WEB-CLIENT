@@ -90,22 +90,20 @@
 					   	   		 <span><i class="{{getCategoryByID.ICON}}"></i>
 			  	   					</span>{{getCategoryByID.CAT_NAME}}
 			  	   				</li>
-			  	   				<li class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!-- ng-click="getAllDocumentByCatID({{parentCat.CAT_ID}})" -->
-			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> <!--  href="http://localhost:1111/api/v1/getDocumentByCatID/{{parentCat.CAT_ID}}" -->
+			  	   				<li  class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)">
+			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> 
 			  	   				</li>			  	   				
 					   	   </ul>
 					   </div>
 						<!--  -->
 						
+					
 						
-						
-						
-						
-					 	<div class="col-sm-9" ng-if="parentCategory[0]">	
+					  	<div class="col-sm-9" ng-if="parentCategory[0]">	
 							<div class="body-cates tab-content">							
 								<div id="documentBox" class="tab-pane fade in active" ng-init="getAllDocumentByCatID(parentCategory[0].CAT_ID)">
 						
-							<div ng-repeat="slide in documentByCatID" class="col-lg-4 col-sm-6 col-xs-12">
+							<div ng-repeat="slide in documentByCatID track by $index" class="col-lg-4 col-sm-6 col-xs-12">
 								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
@@ -131,7 +129,7 @@
 							</div>
 							
 							</div>
-							</div> 
+						</div>  
 						
 						
 						
@@ -143,7 +141,7 @@
 						<!-- WE CAN USE THIS CODE ALSO BUT IF WE USE THIS WE NEED TO CLICK ON SUB_CATEGORY FIRST TO SHOW DOCUMENTS THAT IN A SUB_CATEGORY -->
 						<!--  IF WE WANT TO USE WANT OF THEM WE NEED TO REMOVE ONE OR DISABLE BLOCK OF CODE.-->
 						
-						<!-- <div class="col-sm-9" ng-if(documentByCatID)>	
+						<!--  <div class="col-sm-9" ng-if(documentByCatID)>	
 							<div class="body-cates tab-content">							
 								<div id="documentBox" class="tab-pane fade in active">
 						
@@ -173,7 +171,7 @@
 							</div>
 							
 							</div>
-							</div> -->
+							</div>  -->
 							
 							
 						</div>

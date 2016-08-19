@@ -197,44 +197,115 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
      $scope.saveList = function(){   
     	  var Savelistname = "";
-    	  
-          var catename = $("#saveListname").val();
-          var listname = $scope.saveListname;
-          if(catename != null){
+    	  var catename = "";
+    	 // var doc ="";
+    	  var listname ="";
+          catename = $("#saveListnames").val();
+          alert(catename);
+         
+          listname = $scope.saveListname;
+          alert(listname);
+          doc = $('#doc_id').val();
+        
+         
+          if(catename != ""){
+        	  alert("Case CatList have" +catename);
         	  Savelistname = catename;
-          }else if(listname !=null){
-        	  Savelistname = listname;
+        		$http({
+        			url:'http://localhost:1111/api/v1/savelistDetail',
+        			method:'POST',
+        			data:{
+        				  'CREATED_DATE': new Date(),
+        				  'DOC_ID': $('#doc_id').val(),
+        				  'LIST_ID': Savelistname
+        				 
+        			}
+        		}).then(function(response){
+        			alert("success");
+        			
+        			
+        		}, function(response){
+        			console.log(response);
+        			
+        		});
         	  
+          }else if( doc =="" ){
+        	  alert("Case listname have and document is empty" +doc);
+        	  Savelistname = listname;
+        	  alert("listname" +Savelistname);
+        	  $http({
+      			url:'http://localhost:1111/api/v1/saveSavelistOnly',
+      			method:'POST',
+      			data:{
+      				  'CREATED_DATE': new Date(),
+      				  'LIST_NAME': Savelistname,
+      				  'REMARK': "",
+      				  'STATUS':1 ,
+      				  'USER_ID': $('#user_id').val()
+
+      			}
+      		}).then(function(response){
+      			alert("success");
+      			
+      			
+      		}, function(response){
+      			console.log(response);
+      			
+      		});
+        	  
+          }else if(listname != "" && doc != ""){
+        	  alert("Case listname and document not empty" +listname);
+        	  Savelistname = listname;
+        	  $http({
+        			url:'http://localhost:1111/api/v1/savelist',
+        			method:'POST',
+        			data:{
+        				  'CREATED_DATE': new Date(),
+        				  'DOC_ID': $('#doc_id').val(),
+        				  'LIST_NAME': Savelistname,
+        				  'REMARK': "",
+        				  'STATUS':1 ,
+        				  'USER_ID': $('#user_id').val()
+
+        			}
+        		}).then(function(response){
+        			alert("success");
+        			
+        			
+        		}, function(response){
+        			console.log(response);
+        			
+        		});
           }else{
-        	  Savelistname;
+        	  Savelistname = listname;
+        	  $http({
+        			url:'http://localhost:1111/api/v1/savelist',
+        			method:'POST',
+        			data:{
+        				  'CREATED_DATE': new Date(),
+        				  'DOC_ID': $('#doc_id').val(),
+        				  'LIST_NAME': Savelistname,
+        				  'REMARK': "",
+        				  'STATUS':1 ,
+        				  'USER_ID': $('#user_id').val()
+
+        			}
+        		}).then(function(response){
+        			alert("success");
+        			
+        			
+        		}, function(response){
+        			console.log(response);
+        			
+        		});
           }
           
+          
         
-		$http({
-			url:'http://localhost:1111/api/v1/savelist',
-			method:'POST',
-			data:{
-				  'CREATED_DATE': new Date(),
-				  'DOC_ID': $('#doc_id').val(),
-				  'LIST_NAME': Savelistname,
-				  'REMARK': "",
-				  'STATUS':1 ,
-				  'USER_ID': $('#user_id').val()
-
-			}
-		}).then(function(response){
-			alert("success");
-			
-			
-		}, function(response){
-			//console.log(response);
-			
-		});
+		
 	}
      
-     $scope.AddTosavelistDetail = function(){
-    	 
-     }
+
      //--------End create saveList------------
      
      //--------- getUserList-----------------

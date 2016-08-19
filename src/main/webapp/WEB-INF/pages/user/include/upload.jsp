@@ -6,7 +6,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header"  >
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
       <!--   <h4><span class="glyphicon glyphicon-lock"></span>បញ្ជូលឯកសារនៅទីនេះ</h4> -->                  
       </div>
       <div class="modal-body" style="padding:40px 50px;">
@@ -50,4 +50,15 @@
     
   </div>
 </div>
+<!-- <script>
+ 
+	 $('#upload').on('hidden.bs.modal', function () {
+		  // do something…
+		 /*  alert("close")
+		  angular.element(document).find('#upload').scope().myfun();
+		  angular.element(document).find('#upload').scope().$apply()  */
+		
+		}) 
+ 
+</script> -->
 

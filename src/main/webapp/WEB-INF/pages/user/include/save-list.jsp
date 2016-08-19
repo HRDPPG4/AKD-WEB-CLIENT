@@ -32,22 +32,40 @@
    			 			
    			 			<!-- 	<button type="button" class="btn btn-success" id="list-save" >SaveList</button> -->
    			 				<div class="form-group" id="catsavelist"  >
-   			 				    
+   			 				    <p>{{c.LIST_ID}}</p>
   							 <div ng-if="getuserSavelist[0]">
   							 
-  								  	<p>{{saveListname}}</p>
-  									<select class="form-control"  id ="saveListname">
-  								     
-  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_NAME}}">{{c.LIST_NAME}}</option>
+  								  	
+  									<select class="form-control"  id ="saveListnames">
+  								         <option  value=""></option>
+  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_ID}}">{{c.LIST_NAME}}</option>
   									
 						       		 </select>
+						       		 
+						       		 
 						       	</div> 
-						       	<button type="button" class="btn btn-info" id="bnt-create"​ >បង្កើត</button>
-						       	<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button>
+						     <button type="button" class="btn btn-info" id="bnt-create"​ >បង្កើតថ្មី</button>
+						    <div class="form-group" style="padding-top:10px;padding-top:20px;display:none;" id="newsavelist" >
+						    
+							   	<input   type="text" class="form-control" ng-model="saveListname">					      
+							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
+							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
+							  ​​	
+  								
+							</div>
+							 
+							<div class="form-group" style="padding-top:10px;padding-top:20px;"  >
+						    
+							   ​<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button>
+  								
+							</div>
+							
+						       
+						       	
 							 </div>
    			 				   
    			 				 
-   			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; display:none;"  >
+   			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; "  >
    			 			
    			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; "  >
    			 				 
@@ -56,13 +74,7 @@
   						
 							</div>
 							
-							<div class="form-group" style="padding-top:10px;padding-top:20px; " id="savelistname" >
-							    <input   type="text" class="form-control" ng-model="saveListname">						      
-							    <input   type="hidden" class="form-control" value="{{doc.DOC_ID}}" id="doc_id">
-							    <input   type="hidden" class="form-control" value="{{doc.USER_ID}}" id="user_id">
-							   
-  								
-							</div>
+							
    			 			    </div>
    			 		 </div>
   					
