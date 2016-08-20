@@ -12,8 +12,8 @@
 	height:50% !important;
 	color:  white;
 	margin-top: 30px;
-	text-align:justify-all;
-	break-word:word-break;
+	text-align:left;
+	word-wrap:break-word !important;
 }
 
 
@@ -134,155 +134,26 @@
 							
 						</div>
 					</div>
-					
-					<!-- end home hab -->
-					
-					<!-- <div id="network" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
-				
-				<!-- <div id="mobile" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
-				
-			<!-- 	<div id="programming" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
-				
-				<!-- <div id="web" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
+				</div>
 			</div>
 		</section>
 	</div>
 </content>
 
+<footer>
+<jsp:include page="user/include/footer.jsp"></jsp:include>
+</footer>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 
-
- 
-    <footer>
-	<jsp:include page="user/include/footer.jsp"></jsp:include>
-   </footer>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
-
-	
-	<!-- library jquery for file upload -->
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
-	<!-- Online Link -->
+<!-- library jquery for file upload -->
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
+<!-- Online Link -->
 	
 	
 </body>
