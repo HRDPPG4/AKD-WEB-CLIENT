@@ -77,7 +77,7 @@
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
 							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
-								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីររក្សាឯកសាររបស់ខ្ញុំ</a></li>
+								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
 								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
@@ -304,9 +304,23 @@
 									dkdlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll<br>
 									</div>
 						          </div>
-						           <div style="position:relative; z-index:300px; top:60px;background-color: red;width:500px;left:206px;">helloworld</div>
+						           <div class="createlist-tooltip">
+						           		<div class="tooltip-header-list">
+						           		</div>
+						           		<div class="body-list">
+						           			<div>
+						           			
+						           			</div>
+						           		</div>
+						           </div>
 						        </div>
-						         	
+						         	<script type="text/javascript">
+										$(document).ready(function(){
+											$('.btn-add').click(function(){
+												$('.createlist-tooltip').toggle();
+											});
+										});
+									</script>
 						      <!--  -->
 						      <div id="aboutme" class="tab-pane fade">
 								 testing 3

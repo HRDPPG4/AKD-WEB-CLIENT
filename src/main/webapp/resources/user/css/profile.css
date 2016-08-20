@@ -336,6 +336,36 @@ li.savelist {
     background: #fff;
     border: 1px solid #c5c5c5;
  }
-
-
+.createlist-tooltip{
+position:relative; 
+z-index:500px;
+ top:50px;
+ left:360px;
+ display: none;
+}
+.tooltip-header-list{
+	 content: "";
+    position: absolute;
+    left: 70px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+	/* border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228); */
+}
+.body-list{
+	width:300px;
+	background:#fff;
+	top:10px;
+	position: absolute;
+	 border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+}
 
