@@ -95,7 +95,8 @@
 						  </span>	
 				</div>
 				<!-- end section-title -->
-				   <ul class="nav nav-tabs" > 	<!-- ng-init="getCategoryByParentID(mainCategory.CAT_ID)" -->
+				
+				   <ul class="nav nav-tabs" ng-repe > 	<!-- ng-init="getCategoryByParentID(mainCategory.CAT_ID)" -->
 						     <li class="active"><a data-toggle="tab" href="#design">Design</a></li>
 						    <!-- <li><a data-toggle="tab" href="#network">Network</a></li>
 						    <li><a data-toggle="tab" href="#mobile">Mobile</a></li>
