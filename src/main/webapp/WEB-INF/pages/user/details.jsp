@@ -1,4 +1,5 @@
 
+
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 	
@@ -81,6 +82,10 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 	background-color: #003666 !importants;
 	display:none !important;
 	opacity:0;
+}
+body
+{	
+	word-wrap:break-word !important;
 }
 
 
@@ -169,7 +174,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  
+												 <!-- <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  
 												       									 		 
 												 		<div class="col-md-6">												 																		
 													 		<a href="/detail/{{slide.DOC_ID}}" ng-click="getDocumentById(slide.DOC_ID)">
@@ -179,12 +184,29 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 												 		<div class="col-md-6">
 												 			{{slide.TITLE}}
 												 		</div>	
-												 </div> 												
+												 </div>  -->	
+												 
+												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												       									 		 
+												 		<div class="col-md-6">												 																		
+													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)">
+													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
+													 		</a>
+												 		</div>
+												 		<div class="col-md-6">
+												 			{{related.TITLE}}
+												 		</div>	
+												 </div> 
+												 
+												 
+												 											
 											</div>	
 										</div>
 									</div>
 								</div>
 							</div> 
+							
+							
 
 						</div>
 						

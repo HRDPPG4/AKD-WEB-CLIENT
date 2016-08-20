@@ -32,7 +32,25 @@
 	padding: 15px;
 	float: right;
 }
-#commentBox #commentBoxArea
+#commentBox #commentBoxArea,#listCommentBox
 {
 	clear: both;
+}
+#listCommentBox
+{
+	heigh:50%;
+	width:100%;
+	
+	background-color:red;
+}
+#listCommentBox #img-user-commented
+{
+	float: left;
+	clear: both;
+}
+#listCommentBox #comment-list
+{
+	clear: both;
+	float: left;
+	text-align:left;
 }

@@ -1,9 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+
+ <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 	
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:left;
+	word-wrap:break-word !important;
+}
+
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -51,6 +65,8 @@
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
+
+
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getAllDocument()">
 <jsp:include page="user/include/register.jsp"></jsp:include>
@@ -64,36 +80,42 @@
 </header>
 
 
+
 <content>
 <div class="container">
 	<section id="technology">
 		<!-- section-title -->
-		<div class="row section technology topspace-second">
+		<div class="row section technology topspace-second" ng-repeat="mainCat in getAllCategoryAndSubcategory">
 				<div class="section-title">
 						  <span​ class="col-xs-12 col-lg-12" id="left-title">
-						  <span><i class="fa fa-flask"></i></span>
-						  បច្ចេកវិទ្យា
+						  <span><i class="{{mainCat.ICON}}"></i></span>
+							{{mainCat.CAT_NAME}}
 						  </span>
-						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/technology">មើលលំអិត</a>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/view/{{mainCat.CAT_ID}}">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
+				
+				
 				   <ul class="nav nav-tabs">
-						     <li class="active"><a data-toggle="tab" href="#design">Design</a></li>
-						    <li><a data-toggle="tab" href="#network">Network</a></li>
-						    <li><a data-toggle="tab" href="#mobile">Mobile</a></li>
-						    <li><a data-toggle="tab" href="#programming">Programming</a></li>
-						   <li><a data-toggle="tab" href="#web">Web</a></li>
+					     <li class="active#" ng-repeat="sub in mainCat.SUB_CATEGORIES" >
+					     	<a data-toggle="tab" data-id={{sub.CAT_ID}} href="{{'#'+sub.CAT_NAME}}">{{sub.CAT_NAME}}</a><!-- href="'#'{{sub.CAT_NAME}}" -->
+					     	
+					     </li>						   
 					</ul>
 
-				<div class="tab-content">
+				 <div class="tab-content">	<!--  ng-repeat="SubTab in mainCat.SUB_CATEGORIES" -->
 
-					<div id="design" class="tab-pane fade in active">
+					<div ng-repeat="sub in mainCat.SUB_CATEGORIES" id="{{sub.CAT_NAME}}" class="tab-pane fade in active" >
+					
+					
 						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" > 	<!-- ng-repeat="slide in document  | limitTo : 4" -->
+						 Data of  {{sub.CAT_NAME}}
+						
+						
+						
+							 <!--  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
@@ -113,160 +135,34 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a> 
+							</a>   -->
 							
 							
-						</div>
+						</div> 
 					</div>
-					
-					<!-- end home hab -->
-					
-					<!-- <div id="network" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
+				</div> 
 				
-				<!-- <div id="mobile" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
 				
-			<!-- 	<div id="programming" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
 				
-				<!-- <div id="web" class="tab-pane fade">
-						
-						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" 
-						ng-repeat="slide in document  | limitTo : 4">
-							
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a> 
-							
-							
-						</div>
-				</div> -->
 			</div>
 		</section>
 	</div>
 </content>
 
+<footer>
+<jsp:include page="user/include/footer.jsp"></jsp:include>
+</footer>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 
-
- 
-    <footer>
-	<jsp:include page="user/include/footer.jsp"></jsp:include>
-   </footer>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
-
-	
-	<!-- library jquery for file upload -->
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
-	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
-	<!-- Online Link -->
+<!-- library jquery for file upload -->
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
+<!-- Online Link -->
 	
 	
 </body>

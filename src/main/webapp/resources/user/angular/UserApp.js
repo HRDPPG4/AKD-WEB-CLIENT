@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var app = angular.module('UserApp', []);
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
 app.directive('bindFile', [function () {
@@ -26,6 +40,17 @@ app.directive('bindFile', [function () {
     };
 
 }]);
+app.directive('myModal', function() {
+	   return {
+	     restrict: 'A',
+	     link: function(scope, element, attr) {
+	       scope.dismiss = function() {
+	    	   alert('custom')
+	           element.modal('hide');
+	       };
+	     }
+	   } 
+	});
 ///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
@@ -48,6 +73,19 @@ app.filter('strLimit', ['$filter', function($filter) {
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
+ 
+	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
+	$scope.currentSubCategory="currentSubCategory";
+	$rootScope.currentMainCategory="";
+	$scope.currentDocumentID="";
+	
+	
+	
+	////////////////////	END INITAILIZE VARIABLE BLOCK	/////////////////
+	
+	
+	
+	
 
 	////////////////////	START CATEGORY BLOCK	/////////////////
 	
@@ -74,12 +112,28 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
-			
-			//console.log($scope.parentCategory[0]);
+			console.log("ParentCat: ");
+			console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
 	}
+	//	-----------------Get All Category and Subcategory-----------------------
+	
+	$scope.getAllCategoryAndSubcategory=function(){	
+		//$scope.getCategoryByID(parentID);
+		$http({
+			url:'http://localhost:1111/api/v1/getCategoryByParentID/0B4RhbtI4DXY_QWVOWkFiSTlRY1E',
+			method:'GET'
+		}).then(function(response){
+			$scope.getAllCategoryAndSubcategory=response.data.DATA;
+			console.log("Get All Cat and Sub: ");
+			console.log($scope.getAllCategoryAndSubcategory);
+		}, function(response){
+
+		});	
+	}
+	$scope.getAllCategoryAndSubcategory();
 	
 	$scope.getCategoryByID=function(CatID){		
 		$http({
@@ -100,17 +154,58 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
-		//	console.log()
-			//console.log($scope.mainCategory);
+			// Get SubCat here!!
+		//	$scope.getCategoryByParentID(mainCategory[0].CAT_ID);
+			console.log("Main Category")
+			
+			console.log($scope.mainCategory);
 		}, function(response){
 
 		});	
 	}
-	$scope.getMainCategory();
+//	$scope.getMainCategory();
 	
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
+	
+	$scope.insertComment = function(){		
+		$http({
+			url:'http://localhost:1111/api/v1/comment',
+			method:'POST',
+			data:{				
+				"CREATED_DATE": new Date(),
+				"DOC_ID": $scope.currentDocumentID,
+				"REMARK": $scope.newComment,
+				"STATUS": 1,
+				"USER_ID": 2
+			}	
+			
+		}).then(function(response){
+			alert("Success");
+			//$scope.display();
+			//console.log(response.config.data);
+		}, function(response){
+			alert("Error");
+		});	
+	}
+	
+	$scope.getAllCommentByDocID=function(DocID){	
+		console.log(DocID);
+		$http({
+			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
+			method:'GET'
+		}).then(function(response){
+			$scope.getAllCommentByDocID=response.data.DATA;
+			console.log($scope.getAllCommentByDocID);
+		}, function(response){
+
+		});	
+		
+	//	alert("getCommentByDocID");
+	}
+	
+	
 	
 	
 	
@@ -135,14 +230,16 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	$scope.getAllDocument();
 	
 	$scope.getAllDocumentByCatID=function(CatID){
-	//	alert("getAllDocumentByCatID");
+		
+		$scope.currentSubCategory=CatID;
+	//	alert($scope.currentSubCategory);
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
 		}).then(function(response){
+			//alert($scope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			//console.log("Document By CatID Block");
-			//console.log($scope.documentByCatID);
+		//	console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});
@@ -150,19 +247,21 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		//alert("Get All Document By Category ID"+ CatID);
 	}
 	
-	$rootScope.getDocumentById=function(id){
-		//$scope.getAllDocumentByCatID(id);
-	//	$scope.getAllDocumentByCatID(parentCat.CAT_ID)
+	$scope.getDocumentById=function(id){
 		$http({
 			url:'http://localhost:1111/api/v1/document/'+id,
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
+			$scope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
+			$scope.currentDocumentID=$scope.doc.DOC_ID;
+			//	alert($scope.currentSubCategory);	
+			
+			$scope.getAllCommentByDocID($scope.doc.DOC_ID);
 			
 			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
-			//console.log($scope.doc.DOC_TYPE_NUM);
-			//console.log("DocID: "+$scope.docID);
-			//console.log($scope.doc);
+		//	$scope.getAllDocumentByCatID($scope.currentSubCategory);
+		//	alert($scope.currentSubCategory);
 		}, function(response){
 
 		});	
@@ -197,115 +296,44 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
      $scope.saveList = function(){   
     	  var Savelistname = "";
-    	  var catename = "";
-    	 // var doc ="";
-    	  var listname ="";
-          catename = $("#saveListnames").val();
-          alert(catename);
-         
-          listname = $scope.saveListname;
-          alert(listname);
-          doc = $('#doc_id').val();
-        
-         
-          if(catename != ""){
-        	  alert("Case CatList have" +catename);
+    	  
+          var catename = $("#saveListname").val();
+          var listname = $scope.saveListname;
+          if(catename != null){
         	  Savelistname = catename;
-        		$http({
-        			url:'http://localhost:1111/api/v1/savelistDetail',
-        			method:'POST',
-        			data:{
-        				  'CREATED_DATE': new Date(),
-        				  'DOC_ID': $('#doc_id').val(),
-        				  'LIST_ID': Savelistname
-        				 
-        			}
-        		}).then(function(response){
-        			alert("success");
-        			
-        			
-        		}, function(response){
-        			console.log(response);
-        			
-        		});
-        	  
-          }else if( doc =="" ){
-        	  alert("Case listname have and document is empty" +doc);
+          }else if(listname !=null){
         	  Savelistname = listname;
-        	  alert("listname" +Savelistname);
-        	  $http({
-      			url:'http://localhost:1111/api/v1/saveSavelistOnly',
-      			method:'POST',
-      			data:{
-      				  'CREATED_DATE': new Date(),
-      				  'LIST_NAME': Savelistname,
-      				  'REMARK': "",
-      				  'STATUS':1 ,
-      				  'USER_ID': $('#user_id').val()
-
-      			}
-      		}).then(function(response){
-      			alert("success");
-      			
-      			
-      		}, function(response){
-      			console.log(response);
-      			
-      		});
         	  
-          }else if(listname != "" && doc != ""){
-        	  alert("Case listname and document not empty" +listname);
-        	  Savelistname = listname;
-        	  $http({
-        			url:'http://localhost:1111/api/v1/savelist',
-        			method:'POST',
-        			data:{
-        				  'CREATED_DATE': new Date(),
-        				  'DOC_ID': $('#doc_id').val(),
-        				  'LIST_NAME': Savelistname,
-        				  'REMARK': "",
-        				  'STATUS':1 ,
-        				  'USER_ID': $('#user_id').val()
-
-        			}
-        		}).then(function(response){
-        			alert("success");
-        			
-        			
-        		}, function(response){
-        			console.log(response);
-        			
-        		});
           }else{
-        	  Savelistname = listname;
-        	  $http({
-        			url:'http://localhost:1111/api/v1/savelist',
-        			method:'POST',
-        			data:{
-        				  'CREATED_DATE': new Date(),
-        				  'DOC_ID': $('#doc_id').val(),
-        				  'LIST_NAME': Savelistname,
-        				  'REMARK': "",
-        				  'STATUS':1 ,
-        				  'USER_ID': $('#user_id').val()
-
-        			}
-        		}).then(function(response){
-        			alert("success");
-        			
-        			
-        		}, function(response){
-        			console.log(response);
-        			
-        		});
+        	  Savelistname;
           }
           
-          
         
-		
+		$http({
+			url:'http://localhost:1111/api/v1/savelist',
+			method:'POST',
+			data:{
+				  'CREATED_DATE': new Date(),
+				  'DOC_ID': $('#doc_id').val(),
+				  'LIST_NAME': Savelistname,
+				  'REMARK': "",
+				  'STATUS':1 ,
+				  'USER_ID': $('#user_id').val()
+
+			}
+		}).then(function(response){
+			alert("success");
+			
+			
+		}, function(response){
+			//console.log(response);
+			
+		});
 	}
      
-
+     $scope.AddTosavelistDetail = function(){
+    	 
+     }
      //--------End create saveList------------
      
      //--------- getUserList-----------------
@@ -401,15 +429,24 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			//alert($scope.currentSubCategory);
+			//getAllDocumentByCatID(parentCat.CAT_ID)
+			
 			$(".progress-bar").css("width", "100%"); 
-			alert("Success");
+	
 			$scope.$on(frmData, function(){
+				
 			});
+			
+		
+		
+			
 		}, function(response) {
 			alert("Error");
+			
 		});
 	};
-	
+
 	 $scope.trustSrc = function(src){
 		 return $sce.trustAsResourceUrl(src);
 	 }
@@ -423,5 +460,52 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 });
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
