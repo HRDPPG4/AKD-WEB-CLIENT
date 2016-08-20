@@ -1,9 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+
+ <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 	
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:justify-all;
+	break-word:word-break;
+}
+
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -51,6 +65,8 @@
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
+
+
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getAllDocument()">
 <jsp:include page="user/include/register.jsp"></jsp:include>
