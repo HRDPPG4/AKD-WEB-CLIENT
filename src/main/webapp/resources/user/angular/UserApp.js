@@ -118,6 +118,22 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
 		});	
 	}
+	//	-----------------Get All Category and Subcategory-----------------------
+	
+	$scope.getAllCategoryAndSubcategory=function(){	
+		//$scope.getCategoryByID(parentID);
+		$http({
+			url:'http://localhost:1111/api/v1/getCategoryByParentID/0B4RhbtI4DXY_QWVOWkFiSTlRY1E',
+			method:'GET'
+		}).then(function(response){
+			$scope.getAllCategoryAndSubcategory=response.data.DATA;
+			console.log("Get All Cat and Sub: ");
+			console.log($scope.getAllCategoryAndSubcategory);
+		}, function(response){
+
+		});	
+	}
+	$scope.getAllCategoryAndSubcategory();
 	
 	$scope.getCategoryByID=function(CatID){		
 		$http({
@@ -147,7 +163,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 
 		});	
 	}
-	$scope.getMainCategory();
+//	$scope.getMainCategory();
 	
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
