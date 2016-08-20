@@ -80,6 +80,7 @@
 </header>
 
 
+
 <content>
 <div class="container">
 	<section id="technology">
@@ -87,19 +88,19 @@
 		<div class="row section technology topspace-second" ng-repeat="mainCat in mainCategory">
 				<div class="section-title">
 						  <span​ class="col-xs-12 col-lg-12" id="left-title">
-						  <span><i class="fa fa-flask"></i></span>
-						<!--   បច្ចេកវិទ្យា -->{{mainCat.CAT_NAME}}
+						  <span><i class="{{mainCat.ICON}}"></i></span>
+							{{mainCat.CAT_NAME}}
 						  </span>
 						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/view/{{mainCat.CAT_ID}}">មើលលំអិត</a>
 						  </span>	
 				</div>
 				<!-- end section-title -->
-				   <ul class="nav nav-tabs" >
+				   <ul class="nav nav-tabs" > 	<!-- ng-init="getCategoryByParentID(mainCategory.CAT_ID)" -->
 						     <li class="active"><a data-toggle="tab" href="#design">Design</a></li>
-						    <li><a data-toggle="tab" href="#network">Network</a></li>
+						    <!-- <li><a data-toggle="tab" href="#network">Network</a></li>
 						    <li><a data-toggle="tab" href="#mobile">Mobile</a></li>
 						    <li><a data-toggle="tab" href="#programming">Programming</a></li>
-						   <li><a data-toggle="tab" href="#web">Web</a></li>
+						   <li><a data-toggle="tab" href="#web">Web</a></li> -->
 					</ul>
 
 				<div class="tab-content">

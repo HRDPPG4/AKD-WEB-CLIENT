@@ -112,8 +112,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
-			
-			//console.log($scope.parentCategory[0]);
+			console.log("ParentCat: ");
+			console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
@@ -138,8 +138,11 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
-		//	console.log()
-			//console.log($scope.mainCategory);
+			// Get SubCat here!!
+		//	$scope.getCategoryByParentID(mainCategory[0].CAT_ID);
+			console.log("Main Category")
+			
+			console.log($scope.mainCategory);
 		}, function(response){
 
 		});	
