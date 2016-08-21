@@ -230,7 +230,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	$scope.getAllDocument();
 	
 	$scope.getAllDocumentByCatID=function(CatID){
-		
+	//	alert("GetDocByCatID"+CatID);
 		$scope.currentSubCategory=CatID;
 	//	alert($scope.currentSubCategory);
 		$http({

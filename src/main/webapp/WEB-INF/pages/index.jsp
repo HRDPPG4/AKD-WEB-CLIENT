@@ -50,18 +50,10 @@
 	<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
      <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
 	
-	
-	
-	
 	<!-- Font -->
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	 <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-	
-
-	
-	<!--  Cannot use because Minea overwrite it-->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> 
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
@@ -99,23 +91,23 @@
 				
 				   <ul class="nav nav-tabs">
 					     <li class="active#" ng-repeat="sub in mainCat.SUB_CATEGORIES" >
-					     	<a data-toggle="tab" data-id={{sub.CAT_ID}} href="{{'#'+sub.CAT_NAME}}">{{sub.CAT_NAME}}</a><!-- href="'#'{{sub.CAT_NAME}}" -->
+					     	<a ng-click="getAllDocumentByCatID(sub.CAT_ID)" data-toggle="tab" data-id={{sub.CAT_ID}} href="{{'#'+sub.CAT_NAME}}">{{sub.CAT_NAME}}</a>
 					     	
 					     </li>						   
 					</ul>
 
 				 <div class="tab-content">	<!--  ng-repeat="SubTab in mainCat.SUB_CATEGORIES" -->
 
-					<div ng-repeat="sub in mainCat.SUB_CATEGORIES" id="{{sub.CAT_NAME}}" class="tab-pane fade in active" >
+					<div ng-repeat="sub in mainCat.SUB_CATEGORIES" id="{{sub.CAT_NAME}}" class="tab-pane fade " >
 					
 					
 						
-						 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" > 	<!-- ng-repeat="slide in document  | limitTo : 4" -->
-						 Data of  {{sub.CAT_NAME}}
+						 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat=" slide in documentByCatID"> 	<!-- ng-repeat="slide in document  | limitTo : 4" -->
+						<!--  Data of  {{sub.CAT_NAME}} -->
 						
 						
 						
-							 <!--  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+							  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
@@ -135,7 +127,7 @@
 										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 									</a>
 								</span>
-							</a>   -->
+							</a>  
 							
 							
 						</div> 
