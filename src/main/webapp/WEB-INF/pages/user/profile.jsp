@@ -286,7 +286,7 @@
 						         </div>
 					      </div>
 			      				<!-- tab viewed -->
-			      				 <div id="savelist" class="tab-pane fade">
+			      			<div id="savelist" class="tab-pane fade">
 			      				 <div class="content-savelist-all">
 								 	<div id="header-view-savelist">
 								 		<ul class="view-savelist">
@@ -297,23 +297,50 @@
 										  </button>
 										  </li>
 										</ul>
-									</div>
-									<div>helldldllllllllllllllllllllllllllllllllllllllllllllllllllkdkdkdddddddddddddddd
-									dkdlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll<br>
-									helldldllllllllllllllllllllllllllllllllllllllllllllllllllkdkdkdddddddddddddddd
-									dkdlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll<br>
-									</div>
-						          </div>
-						           <div class="createlist-tooltip">
-						           		<div class="tooltip-header-list">
-						           		</div>
+								    </div>
+								    <div>
+								    		<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+	
+									    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+									
+														<div class="media">
+												     
+															<div class="checkbox pull-right">
+															</div>
+															<div class="pull-left">
+																<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+															</div>
+															<div class="media-body">
+																<h4 class="media-heading">HTML</h4>
+																<p>HTML ជាភាសាមួយក្នុងការចាប់ផ្តើម</p>
+															</div>
+									
+														</div>					
+												        
+												    </a>
+												 </div>
+								    </div>
+								</div>
+								
+								<div class="createlist-tooltip">
+						           		<div class="tooltip-header-list"></div>
 						           		<div class="body-list">
-						           			<div>
-						           			
+						           			<div​​​​​ class="header-list">
+						           			 ចំណង​ជើង​បញ្ជី​ដាក់ឯកសារ
+							           			 <div class="descript-list">
+							           				<input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ"/>
+							           			</div>
+							           			<div class="footer-list">
+							           					<div class="create-playlist-section">
+							           						<button class="btn-content-list">បោះបង់</button>
+							           						<button class="btn-create">បង្កើត</button>
+							           					</div>
+							           			</div>
 						           			</div>
+						           			
 						           		</div>
 						           </div>
-						        </div>
+						    </div>
 						         	<script type="text/javascript">
 										$(document).ready(function(){
 											$('.btn-add').click(function(){

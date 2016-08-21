@@ -19,6 +19,10 @@ public class UserController {
 	public String findAll(){
 		return "index";
 	}
+	@RequestMapping(value="/home",method=RequestMethod.GET)
+	public String home(){
+		return "index-01";
+	}
 	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
