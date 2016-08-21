@@ -64,14 +64,45 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.getUserData = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/user',
-			method : 'GET'
+			method : 'GET',
+			params : $scope.filter
 		}).then(function(response) {
 			$scope.user = response.data.DATA;
 			console.log($scope.user);
+			
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES)
+			
 		}, function(response) {
 
 		});
 	}
+	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 2
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,           // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	PAGINATION.on("page", function(event, num){
+		alert(num);
+		$scope.filter.page = num;
+		$scope.getUserData();
+	});
+	
 
 	$scope.getUserData();
 

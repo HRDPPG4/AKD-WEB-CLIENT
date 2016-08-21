@@ -204,7 +204,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		
 	//	alert("getCommentByDocID");
 	}
-	
+	$scope.getAllCommentByDocID($scope.currentDocumentID);
 	
 	
 	
