@@ -1,17 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var app = angular.module('UserApp', []);
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
 app.directive('bindFile', [function () {
@@ -127,8 +115,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
-			console.log("Get All Cat and Sub: ");
-			console.log($scope.getAllCategoryAndSubcategory);
+			//console.log("Get All Cat and Sub: ");
+			//console.log($scope.getAllCategoryAndSubcategory);
 		}, function(response){
 
 		});	
@@ -204,7 +192,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		
 	//	alert("getCommentByDocID");
 	}
-	
+	//$scope.getAllCommentByDocID($scope.currentDocumentID);
 	
 	
 	
@@ -213,6 +201,30 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	///////////////////		END COMMENT BLOCK	/////////////////
 	
 	///////////////////		START DOCUMENT BLOCK	/////////////////
+	
+	
+	
+	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
+			method:'GET'
+		}).then(function(response){
+			$scope.docDetail=response.data.DATA;
+			$scope.commentByDocID=response.data.DATA[0].COMMENT;
+			$scope.currentSubCategory=response.data.DATA[0].CAT_ID;
+			
+		//	console.log("Document Detail");
+		//	console.log($scope.docDetail.DOC_TYPE_NUM);
+		//	console.log(response.data.DATA[0].USERS[0].USER_NAME);
+		//	console.log($scope.commentByDocID);
+			//console.log($scope.currentSubCategory);
+			$scope.getAllDocumentByCatID($scope.currentSubCategory);
+		}, function(response){
+
+		});
+	}
+	
+	
 	
 	$scope.getAllDocument = function(){
 		$http({
@@ -231,8 +243,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	$scope.getAllDocumentByCatID=function(CatID){
 	//	alert("GetDocByCatID"+CatID);
-		$scope.currentSubCategory=CatID;
-	//	alert($scope.currentSubCategory);
+		//$scope.currentSubCategory=CatID;
+		//alert($scope.currentSubCategory);
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
@@ -460,52 +472,5 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 });
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

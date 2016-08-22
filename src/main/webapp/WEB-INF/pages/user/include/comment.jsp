@@ -18,14 +18,14 @@
 		</div>
 		
 		
-		<div id="listCommentBox" ng-repeat="commentByDocID in getAllCommentByDocID">	
+		<div id="listCommentBox" ng-repeat="comment in commentByDocID">	<!-- ng-repeat="commentByDocID in getAllCommentByDocID" -->
 			<div id="img-user-commented">
 				<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 				Kim Bunhong
 			</div>
 			
 			<div id="comment-list">
-				 {{commentByDocID.REMARK}}
+				 {{comment.REMARK}}
 			</div>
 		
 		
