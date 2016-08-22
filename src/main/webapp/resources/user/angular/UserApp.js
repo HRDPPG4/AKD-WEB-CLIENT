@@ -1,70 +1,17 @@
 
 
 var app = angular.module('UserApp', []);
-///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
-app.directive('bindFile', [function () {
-    return {
-        require: "ngModel",
-      //  restrict: 'A',
-        link: function ($scope, el, attrs, ngModel) {
-            el.bind('change', function (event) {
-                ngModel.$setViewValue(event.target.files[0]);
-                $scope.$apply();
-              //  alert($scope.theFile.name);
-               // $rootScope.name=$scope.theFile.name;
-            });
-            
-            $scope.$watch(function () {
-            //	$rootScope.name=$scope.theFile.name;
 
-                return ngModel.$viewValue;
-            }, function (value) {
-                if (!value) {
-                    el.val("");
-                }
-            });
-        }
-
-    };
-
-}]);
-app.directive('myModal', function() {
-	   return {
-	     restrict: 'A',
-	     link: function(scope, element, attr) {
-	       scope.dismiss = function() {
-	    	   alert('custom')
-	           element.modal('hide');
-	       };
-	     }
-	   } 
-	});
-///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
-
-
-///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
-
-app.filter('strLimit', ['$filter', function($filter) {
-	   return function(input, limit) {
-	     if (! input) return;
-	     if (input.length <= limit) {
-	          return input;
-	      }
-	    
-	      return $filter('limitTo')(input, limit) + '...';
-	   };
-	}]);
-///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 
 
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
+app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
  
 	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
 	$scope.currentSubCategory="currentSubCategory";
-	$rootScope.currentMainCategory="";
+	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
 	
 	
@@ -157,7 +104,24 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
 	
-	$scope.insertComment = function(){		
+	$scope.getAllCommentByDocID=function(DocID){	
+		console.log(DocID);
+		$http({
+			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
+			method:'GET'
+		}).then(function(response){
+			$scope.commentByDoc=response.data.DATA;
+			console.log($scope.commentByDoc);
+		}, function(response){
+
+		});	
+		
+	//	alert("getCommentByDocID");
+	}
+	//$scope.getAllCommentByDocID($scope.currentDocumentID);
+	
+	$scope.UserID="";
+	$scope.insertComment = function(){	
 		$http({
 			url:'http://localhost:1111/api/v1/comment',
 			method:'POST',
@@ -166,11 +130,14 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				"DOC_ID": $scope.currentDocumentID,
 				"REMARK": $scope.newComment,
 				"STATUS": 1,
-				"USER_ID": 2
+				"USER_ID": $scope.UserID
 			}	
 			
 		}).then(function(response){
-			alert("Success");
+		//	alert($scope.currentDocumentID);
+			$scope.getAllCommentByDocID($scope.currentDocumentID);
+		//	alert("Success");
+		//	alert($scope.UserID);
 			//$scope.display();
 			//console.log(response.config.data);
 		}, function(response){
@@ -178,21 +145,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		});	
 	}
 	
-	$scope.getAllCommentByDocID=function(DocID){	
-		console.log(DocID);
-		$http({
-			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
-			method:'GET'
-		}).then(function(response){
-			$scope.getAllCommentByDocID=response.data.DATA;
-			console.log($scope.getAllCommentByDocID);
-		}, function(response){
-
-		});	
-		
-	//	alert("getCommentByDocID");
-	}
-	//$scope.getAllCommentByDocID($scope.currentDocumentID);
+	
 	
 	
 	
@@ -212,6 +165,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			$scope.docDetail=response.data.DATA;
 			$scope.commentByDocID=response.data.DATA[0].COMMENT;
 			$scope.currentSubCategory=response.data.DATA[0].CAT_ID;
+			$scope.currentDocumentID=DocID;
+			$scope.getAllCommentByDocID(DocID);
 			
 		//	console.log("Document Detail");
 		//	console.log($scope.docDetail.DOC_TYPE_NUM);
@@ -251,7 +206,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 		}).then(function(response){
 			//alert($scope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-		//	console.log("DOC BY CATE",$scope.documentByCatID);
+			console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});
@@ -472,5 +427,60 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 });
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
+
+///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
+app.directive('bindFile', [function () {
+    return {
+        require: "ngModel",
+      //  restrict: 'A',
+        link: function ($scope, el, attrs, ngModel) {
+            el.bind('change', function (event) {
+                ngModel.$setViewValue(event.target.files[0]);
+                $scope.$apply();
+              //  alert($scope.theFile.name);
+               // $rootScope.name=$scope.theFile.name;
+            });
+            
+            $scope.$watch(function () {
+            //	$rootScope.name=$scope.theFile.name;
+
+                return ngModel.$viewValue;
+            }, function (value) {
+                if (!value) {
+                    el.val("");
+                }
+            });
+        }
+
+    };
+
+}]);
+/*app.directive('myModal', function() {
+	   return {
+	     restrict: 'A',
+	     link: function(scope, element, attr) {
+	       scope.dismiss = function() {
+	    	   alert('custom')
+	           element.modal('hide');
+	       };
+	     }
+	   } 
+	});*/
+///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
+
+
+///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
+
+app.filter('strLimit', ['$filter', function($filter) {
+	   return function(input, limit) {
+	     if (! input) return;
+	     if (input.length <= limit) {
+	          return input;
+	      }
+	    
+	      return $filter('limitTo')(input, limit) + '...';
+	   };
+	}]);
+///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 
