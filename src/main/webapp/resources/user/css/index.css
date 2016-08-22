@@ -310,6 +310,13 @@ ul.menu-basic li.icon {display: none;}
   letter-spacing: 1px;
 	background-color:#003666;
 }
+.popular-title{
+	position:relative;
+	padding:20px;
+	border-bottom: 1px solid #003666;
+}
+
+/*  */
 .topspace-second > .section-title #left-title{
 	text-align:left;
 	float: left;
