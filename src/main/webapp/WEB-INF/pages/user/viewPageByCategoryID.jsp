@@ -66,8 +66,8 @@
 <style>
 .tab-content #documentBox div.col-lg-4.col-sm-6.col-xs-12
 {
-	min-width:289.98px;
-	min-height:264px;
+	/* min-width:289.98px;
+	min-height:264px; */
 	
 	/* max-width:273.98px;
 	max-height:264px; */
@@ -110,7 +110,7 @@
 								</span>
 								<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
+								<span class="descript">{{slide.DES | strLimit: 22}}</span>
 								<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">

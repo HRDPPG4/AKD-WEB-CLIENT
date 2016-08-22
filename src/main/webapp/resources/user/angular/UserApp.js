@@ -2,15 +2,11 @@
 
 var app = angular.module('UserApp', []);
 
-
-
-
-
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
  
 	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
-	$scope.currentSubCategory="currentSubCategory";
+	$rootScope.currentSubCategory="currentSubCategory";
 	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
 	
@@ -164,7 +160,7 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 		}).then(function(response){
 			$scope.docDetail=response.data.DATA;
 			$scope.commentByDocID=response.data.DATA[0].COMMENT;
-			$scope.currentSubCategory=response.data.DATA[0].CAT_ID;
+			$rootScope.currentSubCategory=response.data.DATA[0].CAT_ID;
 			$scope.currentDocumentID=DocID;
 			$scope.getAllCommentByDocID(DocID);
 			
@@ -172,8 +168,8 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 		//	console.log($scope.docDetail.DOC_TYPE_NUM);
 		//	console.log(response.data.DATA[0].USERS[0].USER_NAME);
 		//	console.log($scope.commentByDocID);
-			//console.log($scope.currentSubCategory);
-			$scope.getAllDocumentByCatID($scope.currentSubCategory);
+			//console.log($rootScope.currentSubCategory);
+			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
 		}, function(response){
 
 		});
@@ -198,15 +194,15 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 	
 	$scope.getAllDocumentByCatID=function(CatID){
 	//	alert("GetDocByCatID"+CatID);
-		//$scope.currentSubCategory=CatID;
-		//alert($scope.currentSubCategory);
+		$rootScope.currentSubCategory=CatID;		//First It is close!!
+		//alert($rootScope.currentSubCategory);
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
 		}).then(function(response){
-			//alert($scope.currentSubCategory);
+			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			console.log("DOC BY CATE",$scope.documentByCatID);
+			console.log("DOC BY CATE",$rootScope.currentSubCategory);
 		}, function(response){
 
 		});
@@ -220,15 +216,15 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
-			$scope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
+			$rootScope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
 			$scope.currentDocumentID=$scope.doc.DOC_ID;
-			//	alert($scope.currentSubCategory);	
+			//	alert($rootScope.currentSubCategory);	
 			
 			$scope.getAllCommentByDocID($scope.doc.DOC_ID);
 			
 			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
-		//	$scope.getAllDocumentByCatID($scope.currentSubCategory);
-		//	alert($scope.currentSubCategory);
+		//	$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+		//	alert($rootScope.currentSubCategory);
 		}, function(response){
 
 		});	
@@ -379,6 +375,7 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
+		//alert($rootScope.currentSubCategory);
 		event.preventDefault();	
 		var files = event.target.files;
 		var frmData = new FormData();					
@@ -396,7 +393,7 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
-			//alert($scope.currentSubCategory);
+			//alert($rootScope.currentSubCategory);
 			//getAllDocumentByCatID(parentCat.CAT_ID)
 			
 			$(".progress-bar").css("width", "100%"); 
@@ -405,7 +402,9 @@ app.controller('UserCtrl', function($scope,$http,$sce){	//$rootScope, $scope, $h
 				
 			});
 			
-		
+			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+			
+			
 		
 			
 		}, function(response) {
@@ -455,17 +454,7 @@ app.directive('bindFile', [function () {
     };
 
 }]);
-/*app.directive('myModal', function() {
-	   return {
-	     restrict: 'A',
-	     link: function(scope, element, attr) {
-	       scope.dismiss = function() {
-	    	   alert('custom')
-	           element.modal('hide');
-	       };
-	     }
-	   } 
-	});*/
+
 ///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
