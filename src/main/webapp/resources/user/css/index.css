@@ -285,9 +285,13 @@ ul.menu-basic li a#search:hover{
     text-decoration: none;
       font-size: 18px;
 }
+a.logo-main-menu{
+	 background-color:transparent !important;
+}
 
-
-
+.navbar-logo-main{
+	width:200px;
+}
  
 /* Hide the list item that contains the link that should open and close the topnav on small screens */
 ul.menu-basic li.icon {display: none;}
