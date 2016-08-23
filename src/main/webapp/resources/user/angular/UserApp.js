@@ -1,82 +1,13 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var app = angular.module('UserApp', []);
-///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
-app.directive('bindFile', [function () {
-    return {
-        require: "ngModel",
-      //  restrict: 'A',
-        link: function ($scope, el, attrs, ngModel) {
-            el.bind('change', function (event) {
-                ngModel.$setViewValue(event.target.files[0]);
-                $scope.$apply();
-              //  alert($scope.theFile.name);
-               // $rootScope.name=$scope.theFile.name;
-            });
-            
-            $scope.$watch(function () {
-            //	$rootScope.name=$scope.theFile.name;
-
-                return ngModel.$viewValue;
-            }, function (value) {
-                if (!value) {
-                    el.val("");
-                }
-            });
-        }
-
-    };
-
-}]);
-app.directive('myModal', function() {
-	   return {
-	     restrict: 'A',
-	     link: function(scope, element, attr) {
-	       scope.dismiss = function() {
-	    	   alert('custom')
-	           element.modal('hide');
-	       };
-	     }
-	   } 
-	});
-///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
-
-
-///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
-
-app.filter('strLimit', ['$filter', function($filter) {
-	   return function(input, limit) {
-	     if (! input) return;
-	     if (input.length <= limit) {
-	          return input;
-	      }
-	    
-	      return $filter('limitTo')(input, limit) + '...';
-	   };
-	}]);
-///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
-
-
-
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$interpolate,$parse){
+app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
  
 	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
-	$scope.currentSubCategory="currentSubCategory";
-	$rootScope.currentMainCategory="";
+	$rootScope.currentSubCategory="currentSubCategory";
+	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
 	
 	
@@ -127,8 +58,8 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
-			console.log("Get All Cat and Sub: ");
-			console.log($scope.getAllCategoryAndSubcategory);
+			//console.log("Get All Cat and Sub: ");
+			//console.log($scope.getAllCategoryAndSubcategory);
 		}, function(response){
 
 		});	
@@ -169,7 +100,24 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
 	
-	$scope.insertComment = function(){		
+	$scope.getAllCommentByDocID=function(DocID){	
+		console.log(DocID);
+		$http({
+			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
+			method:'GET'
+		}).then(function(response){
+			$scope.commentByDoc=response.data.DATA;
+			console.log($scope.commentByDoc);
+		}, function(response){
+
+		});	
+		
+	//	alert("getCommentByDocID");
+	}
+	//$scope.getAllCommentByDocID($scope.currentDocumentID);
+	
+	$scope.UserID="";
+	$scope.insertComment = function(){	
 		$http({
 			url:'http://localhost:1111/api/v1/comment',
 			method:'POST',
@@ -178,41 +126,52 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				"DOC_ID": $scope.currentDocumentID,
 				"REMARK": $scope.newComment,
 				"STATUS": 1,
-				"USER_ID": 2
+				"USER_ID": $scope.UserID
 			}	
 			
 		}).then(function(response){
-			alert("Success");
+		//	alert($scope.currentDocumentID);
+			$scope.getAllCommentByDocID($scope.currentDocumentID);
+		//	alert("Success");
+		//	alert($scope.UserID);
 			//$scope.display();
 			//console.log(response.config.data);
 		}, function(response){
 			alert("Error");
 		});	
 	}
-	
-	$scope.getAllCommentByDocID=function(DocID){	
-		console.log(DocID);
-		$http({
-			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
-			method:'GET'
-		}).then(function(response){
-			$scope.getAllCommentByDocID=response.data.DATA;
-			console.log($scope.getAllCommentByDocID);
-		}, function(response){
 
-		});	
-		
-	//	alert("getCommentByDocID");
-	}
-	$scope.getAllCommentByDocID($scope.currentDocumentID);
-	
-	
-	
 	
 	
 	///////////////////		END COMMENT BLOCK	/////////////////
 	
 	///////////////////		START DOCUMENT BLOCK	/////////////////
+	
+	
+	
+	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
+			method:'GET'
+		}).then(function(response){
+			$scope.docDetail=response.data.DATA;
+			$scope.commentByDocID=response.data.DATA[0].COMMENT;
+			$rootScope.currentSubCategory=response.data.DATA[0].CAT_ID;
+			$scope.currentDocumentID=DocID;
+			$scope.getAllCommentByDocID(DocID);
+			
+		//	console.log("Document Detail");
+		//	console.log($scope.docDetail.DOC_TYPE_NUM);
+		//	console.log(response.data.DATA[0].USERS[0].USER_NAME);
+		//	console.log($scope.commentByDocID);
+			//console.log($rootScope.currentSubCategory);
+			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+		}, function(response){
+
+		});
+	}
+	
+	
 	
 	$scope.getAllDocument = function(){
 		$http({
@@ -231,15 +190,15 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	
 	$scope.getAllDocumentByCatID=function(CatID){
 	//	alert("GetDocByCatID"+CatID);
-		$scope.currentSubCategory=CatID;
-	//	alert($scope.currentSubCategory);
+		$rootScope.currentSubCategory=CatID;		//First It is close!!
+		//alert($rootScope.currentSubCategory);
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
 		}).then(function(response){
-			//alert($scope.currentSubCategory);
+			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-		//	console.log("DOC BY CATE",$scope.documentByCatID);
+			console.log("DOC BY CATE",$rootScope.currentSubCategory);
 		}, function(response){
 
 		});
@@ -253,15 +212,15 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
-			$scope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
+			$rootScope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
 			$scope.currentDocumentID=$scope.doc.DOC_ID;
-			//	alert($scope.currentSubCategory);	
+			//	alert($rootScope.currentSubCategory);	
 			
 			$scope.getAllCommentByDocID($scope.doc.DOC_ID);
 			
 			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
-		//	$scope.getAllDocumentByCatID($scope.currentSubCategory);
-		//	alert($scope.currentSubCategory);
+		//	$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+		//	alert($rootScope.currentSubCategory);
 		}, function(response){
 
 		});	
@@ -412,6 +371,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
+		//alert($rootScope.currentSubCategory);
 		event.preventDefault();	
 		var files = event.target.files;
 		var frmData = new FormData();					
@@ -429,7 +389,7 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
-			//alert($scope.currentSubCategory);
+			//alert($rootScope.currentSubCategory);
 			//getAllDocumentByCatID(parentCat.CAT_ID)
 			
 			$(".progress-bar").css("width", "100%"); 
@@ -438,7 +398,9 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 				
 			});
 			
-		
+			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+			
+			
 		
 			
 		}, function(response) {
@@ -461,51 +423,49 @@ app.controller('UserCtrl', function($scope, $http, $sce,$timeout,$rootScope,$int
 });
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
+///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
+app.directive('bindFile', [function () {
+    return {
+        require: "ngModel",
+      //  restrict: 'A',
+        link: function ($scope, el, attrs, ngModel) {
+            el.bind('change', function (event) {
+                ngModel.$setViewValue(event.target.files[0]);
+                $scope.$apply();
+              //  alert($scope.theFile.name);
+               // $rootScope.name=$scope.theFile.name;
+            });
+            
+            $scope.$watch(function () {
+            //	$rootScope.name=$scope.theFile.name;
+
+                return ngModel.$viewValue;
+            }, function (value) {
+                if (!value) {
+                    el.val("");
+                }
+            });
+        }
+
+    };
+
+}]);
+
+///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
+///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.filter('strLimit', ['$filter', function($filter) {
+	   return function(input, limit) {
+	     if (! input) return;
+	     if (input.length <= limit) {
+	          return input;
+	      }
+	    
+	      return $filter('limitTo')(input, limit) + '...';
+	   };
+	}]);
+///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 

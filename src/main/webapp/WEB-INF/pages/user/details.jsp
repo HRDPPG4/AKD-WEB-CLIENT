@@ -91,7 +91,7 @@ body
 
 </style>
 </head>
-<body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentById('${id}')">
+<body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
  <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -117,28 +117,29 @@ body
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
 									<button id="btn-hide" class="btn btn-primary">Hide</button>
-									 <iframe ng-src='{{trustSrc(doc.EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
-									 <div ng-show="doc.DOC_TYPE_NUM == 2 || doc.DOC_TYPE_NUM == 3">
+									 <iframe ng-src='{{trustSrc(docDetail[0].EMBEDED_LINK)}}' allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> 
+									 <div ng-show="docDetail[0].DOC_TYPE_NUM == 2 || docDetail[0].DOC_TYPE_NUM == 3">
 									 <button id="btn-fullscreen" class="btn btn-primary" data-toggle="modal" data-target="#ViewByGoogleDrive" ><span> <i class="fa fa-arrows-alt" aria-hidden="true"></i></span></button>
 									</div>
 									</div>
 									
 									<div class="detail-slide">
 									     <div class="Slide-Owner">											
-											<div id="title"><p>{{doc.TITLE | strLimit: 60}}</p></div>
+											<div id="title"><p>{{docDetail[0].TITLE | strLimit: 60}}</p></div>
 											<div id="owner">
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-												ហ៊ុំ ជីវ័ន <!-- {{doc.DOC_TYPE_NUM}} -->
+											<!-- {{UserID}}  -->
+											{{docDetail[0].USERS[0].USER_NAME}}
 											</div>
-											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="doc.VIEW"></span></span></div>
-											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="doc.SHARE"></span></span></div>
+											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].VIEW"></span></span></div>
+											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].SHARE"></span></span></div>
 											<div id="line">
 												<hr>
 											</div>
 											<div id="btn" >
-												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(doc.USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>Add To SaveList</span></button>
+												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>Add To SaveList</span></button>
 												
 												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
 											</div>
@@ -147,12 +148,12 @@ body
 									</div>
 
 									 <div class="slide-detail-more">
-									 	<div id="publish">Publish on: {{doc.CREATED_DATE}}</div>
-										<div id="category">Category: Technology</div>
+									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
+										<div id="category">Category: {{docDetail[0].CATEGORY[0].CAT_NAME}}</div>
 										<hr>
 										<div id="description">Description: 
 											<div>
-												{{doc.DES}}
+												{{docDetail[0].DES}}
 											</div>
 										</div>
 									</div>
@@ -174,18 +175,6 @@ body
 											<div class="row">												
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												 <!-- <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="slide in document | limitTo : 10">  
-												       									 		 
-												 		<div class="col-md-6">												 																		
-													 		<a href="/detail/{{slide.DOC_ID}}" ng-click="getDocumentById(slide.DOC_ID)">
-													 		<img src="{{slide.THUMBNAIL_URL}}" alt="Image"> 
-													 		</a>
-												 		</div>
-												 		<div class="col-md-6">
-												 			{{slide.TITLE}}
-												 		</div>	
-												 </div>  -->	
-												 
 												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
 												       									 		 
 												 		<div class="col-md-6">												 																		
@@ -226,6 +215,8 @@ body
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
+		
+		
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script> 
 	
 	<!-- library jquery for file upload -->

@@ -97,6 +97,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	        maxVisible: 10
 		});		
 	}
+	+
 	PAGINATION.on("page", function(event, num){
 		alert(num);
 		$scope.filter.page = num;

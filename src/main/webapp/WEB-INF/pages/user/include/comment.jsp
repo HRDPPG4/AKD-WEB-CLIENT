@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<div id="commentBox"> <!-- data-ng-init="getAllCommentByDocID(doc.DOC_ID)" --> <!-- Call When load page is better but not use this -->
+<div id="commentBox"> 
 	<h3>បញ្ចេញមតិរបស់អ្នកចំពោះអត្ថបទនេះ</h3>
 	<form action="">
 		<div id="img-user">
@@ -18,18 +18,26 @@
 		</div>
 		
 		
-		<div id="listCommentBox" ng-repeat="commentByDocID in getAllCommentByDocID">	
+		<%-- <div id="listCommentBox" ng-repeat="comment in commentByDocID">	
 			<div id="img-user-commented">
 				<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 				Kim Bunhong
 			</div>
 			
 			<div id="comment-list">
-				 {{commentByDocID.REMARK}}
+				 {{comment.REMARK}}
 			</div>
+		</div> --%>
 		
-		
+		<div ng-if="commentByDoc" id="listCommentBox" ng-repeat="comment in commentByDoc">	
+			<div id="img-user-commented">
+				<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
+				Kim Bunhong
+			</div>
 			
+			<div id="comment-list">
+				 {{comment.REMARK}}
+			</div>
 		</div>
 
 	</form>
