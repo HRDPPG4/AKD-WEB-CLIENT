@@ -125,7 +125,7 @@
 					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
 				<div class="row" style="padding:15px;">
-				<div style="clear:both;">
+				<div>
 					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
