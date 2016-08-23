@@ -245,27 +245,32 @@ a.thumbnail_ppt {
 
 #header-view-history ul{
 	list-style-type:none;
-	margin-top: 10px;
+/* 	margin-top: 10px; */
     padding: 0 20px;
     border-bottom: 1px solid #e2e2e2;
     clear: both;
 }
 li.history-title{
-	color:#000;
+	color:#003666;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 40px;
 	
 }
-li.history-title:hover{
-	color:#000;
-	cursor:pointer;
-	width:80px;
-	clear:both;
-	border-bottom: 2px solid #003666;
+.media-body{
+	padding:10px;
 }
 .btn-clear-history{
-	padding-top:5px;
+	padding-top:0px;
 	padding-bottom:10px;
 	 border-bottom: 1px solid #e2e2e2;
 	 clear:both;
+}
+button.clear-history{
+	color:#fff;
+	padding:10px;
+	background:#003666;
+	border:1px solid #fff;
 }
 .history-view{
 	padding-top:1px;

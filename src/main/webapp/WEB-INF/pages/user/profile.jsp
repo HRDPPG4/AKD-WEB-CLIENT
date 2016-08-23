@@ -77,7 +77,6 @@
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
-								<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
 								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
@@ -97,7 +96,7 @@
 									  		</form>
 									</div>
 							</div>
-						 <div id="dashbord" class="tab-pane fade">
+						<!--  <div id="dashbord" class="tab-pane fade">
 							<div class="dashboard-content">
 										<div class="preview-all">
 											<ul id="dashboard-header">
@@ -142,7 +141,7 @@
 												</div>	
 										 </div>
 										</div>	
-										<!-- pdf -->
+										pdf
 									    <div id="ppt" class="tab-pane fade">
 									     	<div class="ppt-preview">
 									    		<div ng-repeat="slide in document  | limitTo :4">
@@ -161,7 +160,7 @@
 												</div>	
 										 </div>
 									    </div>
-									    <!--ppt tab  -->
+									    ppt tab 
 									    <div id="doc" class="tab-pane fade">
 									      <div class="doc-preview">
 									    		<div ng-repeat="slide in document  | limitTo :2">
@@ -179,11 +178,11 @@
 												</a>
 												</div>	
 										 </div>
-										 <!--doc tab  -->
+										 doc tab 
 									    </div>
 									 </div>
 							    </div>
-							</div>
+							</div> -->
 							<!-- tab dashboard -->
 							<!-- //////////////////////////////////////////////////////////////////////////////// -->
 							<div id="mydoc" class="tab-pane fade">
@@ -201,7 +200,6 @@
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
-											        	<span class="label label-danger pull-right">3 Pendentes</span>
 														<div class="checkbox pull-left">
 												    		<label>
 																<input type="checkbox" value="">				
@@ -210,9 +208,9 @@
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
-														<div class="media-body">
-															<h4 class="media-heading">Ana Maria Braga</h4>
-															<p>Página Ativa</p>
+														<div class="media-body" style="padding-top:20px;">
+															<h4 class="media-heading">គណិតវិទ្យា</h4>
+															<p>ជាសៀវភៅដល់ល្អ</p>
 														</div>
 								
 													</div>					
@@ -225,11 +223,59 @@
 								   		 </div>
 								   		 <!--edit pdf  -->
 								   		 <div id="ppt-edit" class="tab-pane fade">
-								   		 ppt-edit
+								   		 <div class="list-group" ng-repeat="slide in document  | limitTo :2">
+
+								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								
+													<div class="media">
+											        
+														<div class="checkbox pull-left">
+												    		<label>
+																<input type="checkbox" value="">				
+															</label>
+														</div>
+														<div class="pull-left">
+															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+														</div>
+														<div class="media-body">
+															<h4 class="media-heading">គណិតវិទ្យា</h4>
+															<p>ជាសៀវភៅដល់ល្អ</p>
+														</div>
+								
+													</div>					
+											        
+											    </a>
+											   
+								
+											</div>
 								   		 </div>
 								   		 <!--edit doc  -->
 								   		 <div id="doc-edit" class="tab-pane fade">
-								   		 doc-edit
+								   		 <div class="list-group" ng-repeat="slide in document  | limitTo :2">
+
+								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								
+													<div class="media">
+											        	
+														<div class="checkbox pull-left">
+												    		<label>
+																<input type="checkbox" value="">				
+															</label>
+														</div>
+														<div class="pull-left">
+															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+														</div>
+														<div class="media-body"​>
+															<h4 class="media-heading">គណិតវិទ្យា</h4>
+															<p>ជាសៀវភៅដល់ល្អ</p>
+														</div>
+								
+													</div>					
+											        
+											    </a>
+											   
+								
+											</div>
 								   		 </div>
 								   </div>
 								   
@@ -246,7 +292,7 @@
 						         		</div>
 						         		<div id="content-view-history">
 								         		<div class="btn-clear-history">
-								         			<button>សំអាតប្រវត្តិមើលទាំងអស់</button>
+								         			<button class="clear-history">សំអាតប្រវត្តិមើលទាំងអស់</button>
 								         		</div>
 							         		
 							         		<div class="history-view">
