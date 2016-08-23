@@ -124,8 +124,8 @@
 					<h2 class="section-title"><span id="left">ពេញនិយម</span>
 					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
-				<div class="row" style="padding:15px;">
-				<div>
+				<div class="row">
+				<div class="col-lg-12" style="margin-left:10px;">
 					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">

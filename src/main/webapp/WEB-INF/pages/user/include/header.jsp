@@ -50,10 +50,10 @@
 	<!-- </div> -->
 	
 		 <div class="main-menu">
+		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
+			 	</div>
 			<ul class="menu-basic" id="myTopnav">
-			<li>
-			 	<a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;position:relative;top:-8px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
-			</li>
+			
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
 				   </span>ទំព័រដើម</a>

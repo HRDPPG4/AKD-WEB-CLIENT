@@ -92,9 +92,12 @@
 											ព័ត៌មានផ្ទាល់ខ្លួន
 										</div>
 										<div>
+										<div class="span12">
 									  		<form action="">
+									  		<label></label>
 									  		
 									  		</form>
+									  	</div>
 									  	</div>
 									</div>
 							</div>
