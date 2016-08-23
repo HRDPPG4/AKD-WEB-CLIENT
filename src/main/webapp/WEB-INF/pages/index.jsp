@@ -129,8 +129,13 @@
 					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
+<<<<<<< HEAD
 							<img src="${pageContext.request.contextPath}/resources/user/img/literal.jpg" alt=""> 
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+=======
+							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
+							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
+>>>>>>> c035e2ec4f47dfb79deef869a698ee8da3216541
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
