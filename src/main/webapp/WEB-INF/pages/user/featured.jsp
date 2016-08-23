@@ -73,7 +73,7 @@ a.thumbnail {
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
-    min-height: 337.79px;
+    min-height: 338.79px;
 }
 </style>
 
@@ -96,9 +96,9 @@ a.thumbnail {
 		<div class="row section feature topspace-second">
 			<div id="content-feature">
 				<ul class="feature-header"​>
-					<li><a ng-click="getDocumentByRecommended()">ឯកសារណែនាំ</a></li>
-					<li><a ng-click="getDocumentByPopular()">ឯកសារពេញនិយម</a></li>
-					<li><a ng-click="getDocumentByNewPost()">ឯកសារថ្មីៗ</a></li>
+					<li><a ng-click="getDocumentByRecommended()" href="#">ឯកសារណែនាំ</a></li>
+					<li><a ng-click="getDocumentByPopular()" href="#">ឯកសារពេញនិយម</a></li>
+					<li><a ng-click="getDocumentByNewPost()" href="#">ឯកសារថ្មីៗ</a></li>
 				</ul>
 			 </div>
 			<div class="row" style="padding:12px;">
@@ -127,6 +127,7 @@ a.thumbnail {
 						</a>  
 					</div>
 				</div>	 
+
 				
 				<div class="col-md-12" ng-if="showPopular">
 					<div  ng-repeat="slide in popular" class="col-md-3" style="margin-bottom:10px;">

@@ -16,11 +16,24 @@ ul.feature-header{
 ul.feature-header li{
 	padding:15px;
 	display: inline-block;
-	 border-right: 1px solid #003666;
+	text-decoration:none;
+	border-right: 1px solid #003666;
 }
 
 ul.feature-header li:last-child{
 	padding:10px;
+	text-decoration:none;
 	display: inline-block;
 	border:none;
+}
+
+ li a{
+ color:#003666;
+ font-size:16px;
+	text-decoration: none;
+}
+li a:hover{
+ color:#003666;
+ border-bottom: 2px solid #003666;
+	text-decoration: none;
 }

@@ -283,7 +283,7 @@ ul.menu-basic li a#search:hover{
     background-color:transparent !important;
     /* padding: 10px 16px; */
     text-decoration: none;
-      font-size: 18px;
+      font-size: 16px;
 }
 
 
@@ -478,8 +478,8 @@ a.thumbnail{
   background-clip: padding-box;
   font-size: 12px;
   font-size: 1.20rem;
-  -webkit-transform:translate(0%,0);
-  -moz-transform:translate(0%,0);
+  -webkit-transform:translate(0,0);
+  -moz-transform:translate(0,0);
   -webkit-transition: all 1s ease;
   text-transform: uppercase;
   text-shadow: 0 1px 0px #3B5998;
