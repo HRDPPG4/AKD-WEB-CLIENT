@@ -313,9 +313,8 @@ ul.menu-basic li.icon {display: none;}
 	background-color:#003666;
 }
 .popular-title{
-	margin-left:10px;
+	margin:0;
 	padding:0;
-	overflow: hidden;
 }
 
 /* Section - Recent works */
@@ -335,10 +334,11 @@ ul.menu-basic li.icon {display: none;}
 .section-title > #left{
   float: left;
   position: relative;
-  left:5px;
+   padding-left:10px;
 }
 .section-title > #right{
   float: right;
+  padding-right:10px;
 }
 #right a{
 	color:white;
