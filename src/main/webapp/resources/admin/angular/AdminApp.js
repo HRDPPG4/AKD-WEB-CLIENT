@@ -15,6 +15,19 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	}	
 	$scope.showCategory();
 	
+	$scope.getCategoryCount = function() {
+		$http({
+			url : 'http://localhost:1111/api/v1/getCategoryCount',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.CategoryCount = response.data.COUNT;
+			console.log($scope.CategoryCount);
+		}, function(response) {
+
+		});
+	}
+	$scope.getCategoryCount();
+	
 	// Method for manipulating feedback
 	$scope.getFeedbackData = function() {
 		$http({
@@ -200,6 +213,19 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 							"success");
 				});
 	}
+	
+	$scope.getUserCount = function() {
+		$http({
+			url : 'http://localhost:1111/api/v1/getUserCount',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.UserCount = response.data.COUNT;
+			console.log($scope.UserCount);
+		}, function(response) {
+
+		});
+	}
+	$scope.getUserCount();
 
 });
 //============================End of User Controller===============
@@ -212,7 +238,7 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 			method : 'GET'
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
-			console.log($scope.document);
+			//console.log($scope.document);
 		}, function(response) {
 
 		});
@@ -222,6 +248,19 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.myAlert= function(){
 		alert("Test");
 	}
+	
+	$scope.getDocumentCount = function() {
+		$http({
+			url : 'http://localhost:1111/api/v1/getDocumentCount',
+			method : 'GET'
+		}).then(function(response) {
+			$scope.documentCount = response.data.COUNT;
+			console.log($scope.documentCount);
+		}, function(response) {
+
+		});
+	}
+	$scope.getDocumentCount();
 
 	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
