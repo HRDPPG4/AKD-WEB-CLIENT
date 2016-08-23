@@ -24,6 +24,11 @@ public class UserController {
 		return "index-01";
 	}
 	
+	@RequestMapping(value="/feature",method=RequestMethod.GET)
+	public String feature(){
+		return "user/featured";
+	}
+	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
 		return "user/user_view";

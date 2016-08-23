@@ -409,3 +409,26 @@ button.btn-create{
     color: #000;
     border-radius:5px;
 }
+
+
+/*  */
+.content-aboutme{
+	width:828px;
+	/* padding:10px; */
+	margin-left:205px;
+	position:absolute;
+	font-family:"Khmer OS Battambang";
+	background-color:#fff;
+	 border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+}
+.header-infor{
+	background-image: url(../img/banner-user.png);
+	background-position:top;
+	padding:10px;
+	height:150px;
+	color:#fff;
+}

@@ -140,11 +140,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			alert("Error");
 		});	
 	}
-	
-	
-	
-	
-	
+
 	
 	
 	///////////////////		END COMMENT BLOCK	/////////////////

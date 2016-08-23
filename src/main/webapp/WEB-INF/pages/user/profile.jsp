@@ -76,17 +76,28 @@
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
-							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
+							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
+								<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
 								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
-								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
+								
 							</ul>
 						</div>
 						<!-- right side -->
 				
 					<div class="tab-content">
-						 <div id="dashbord" class="tab-pane fade in active">
+							<div id="infor" class="tab-pane fade in active">
+									<div class="content-aboutme">
+										<div class="header-infor">
+											ព័ត៌មានផ្ទាល់ខ្លួន
+										</div>
+									  		<form action="">
+									  		
+									  		</form>
+									</div>
+							</div>
+						 <div id="dashbord" class="tab-pane fade">
 							<div class="dashboard-content">
 										<div class="preview-all">
 											<ul id="dashboard-header">
@@ -207,28 +218,7 @@
 													</div>					
 											        
 											    </a>
-											    <!-- <a href="#" class="list-group-item">
-								
-													<div class="media">
-											        	<span class="label label-danger pull-right">3 Pendentes</span>
-														<div class="checkbox pull-left">
-												    		<label>
-																<input type="checkbox" value="">				
-															</label>
-														</div>
-														<div class="pull-left">
-															<img class="media-object" src="http://placehold.it/100x70" alt="Image">
-														</div>
-														<div class="media-body">
-															<h4 class="media-heading">Festival de Tiradentes</h4>
-															<p>Página Ativa</p>
-														</div>
-								
-													</div>					
-											        	
-											        <div class="clearfix"></div>
-											        
-											    </a>				 -->
+											   
 								
 											</div>
 								   		 		
@@ -237,11 +227,13 @@
 								   		 <div id="ppt-edit" class="tab-pane fade">
 								   		 ppt-edit
 								   		 </div>
-								   		 
+								   		 <!--edit doc  -->
 								   		 <div id="doc-edit" class="tab-pane fade">
 								   		 doc-edit
 								   		 </div>
 								   </div>
+								   
+								   <!-- end sub content -->
 					          </div>
 					        </div>
 					      <!-- tab mydoc -->
@@ -340,21 +332,17 @@
 						           			
 						           		</div>
 						           </div>
-						    </div>
-						         	<script type="text/javascript">
-										$(document).ready(function(){
-											$('.btn-add').click(function(){
-												$('.createlist-tooltip').toggle();
-											});
-										});
-									</script>
+						          <!--  <script type="text/javascript">
+										
+									</script> -->
 						      <!--  -->
-						      <div id="aboutme" class="tab-pane fade">
-								 testing 3
-						      </div>
+						    </div>
+						    
 							<!-- tab about me -->
+						         	
+						      
 					  </div>
-							
+						<!-- end tab content left nav -->	
 		       </div>
 		
 	</section>

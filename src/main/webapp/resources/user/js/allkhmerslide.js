@@ -1,4 +1,8 @@
-
+$(document).ready(function(){
+	$('.btn-add').click(function(){
+	$('.createlist-tooltip').toggle();
+	});
+});
 
 //
 
