@@ -95,7 +95,7 @@
 			  	   				</li>			  	   				
 					   	   </ul>
 					   </div>
-						<!--  -->
+						
 						
 					
 						
@@ -109,7 +109,7 @@
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
 								</span>
 								<span class="title">{{slide.TITLE | strLimit: 22}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
+								<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
 								<span class="descript">{{slide.DES | strLimit: 22}}</span>
 								<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
 								<span class="socials">
@@ -176,15 +176,14 @@
 							
 						</div>
 						
-					</div>				
-					
+					</div>		
 					</div>
 			         
-				</div>
+			
 	  </section>
-  </div>
+  </div> 
 		<!-- end container -->
-</div>
+ </div>  
 	     <!-- end page-content-wrapper -->
 </content>
 

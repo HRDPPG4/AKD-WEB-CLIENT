@@ -83,10 +83,24 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 	display:none !important;
 	opacity:0;
 }
+.related-slide .related-container #User,.related-slide .related-container #Des,.related-slide .related-container #Title
+{
+  padding: 3px;
+}
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:left;
+	word-wrap:break-word !important;
+}
 body
 {	
 	word-wrap:break-word !important;
 }
+
 
 
 </style>
@@ -183,7 +197,15 @@ body
 													 		</a>
 												 		</div>
 												 		<div class="col-md-6">
-												 			{{related.TITLE}}
+												 			<div id="Title">
+												 			{{related.TITLE | strLimit: 23}}
+												 			</div>
+												 			<div id="User">
+												 			{{related.USERS[0].USER_NAME | strLimit: 10}}
+												 			</div>
+												 			<div id="Des">
+												 			{{related.DES | strLimit: 23}}
+												 			</div>
 												 		</div>	
 												 </div> 
 												 

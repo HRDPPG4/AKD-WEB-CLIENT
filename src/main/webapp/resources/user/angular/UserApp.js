@@ -202,7 +202,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}).then(function(response){
 			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			console.log("DOC BY CATE",$rootScope.currentSubCategory);
+			console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});

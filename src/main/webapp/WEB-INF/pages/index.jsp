@@ -112,9 +112,9 @@
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
+								<span class="title">{{slide.TITLE | strLimit: 22}}</span>
+								<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
+								<span class="descript">{{slide.DES | strLimit: 22}}</span>
 								<span class="view-count">{{slide.VIEW}}</span>
 								<span class="socials">
 									<a href="#" alt="like" class="like">
