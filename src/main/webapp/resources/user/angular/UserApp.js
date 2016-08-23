@@ -148,6 +148,21 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	///////////////////		START DOCUMENT BLOCK	/////////////////
 	
 	
+	$scope.getDocumentByPopular=function(){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
+			method:'GET'
+		}).then(function(response){
+			$scope.popular=response.data.DATA;
+			console.log($scope.popular);
+		}, function(response){
+
+		});
+	}
+	//Will Close Later After index is ready
+	//$scope.getDocumentByPopular();
+	
+	
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
 		$http({
