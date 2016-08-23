@@ -29,6 +29,11 @@ public class UserController {
 		return "user/featured";
 	}
 	
+	@RequestMapping(value="/search",method=RequestMethod.GET)
+	public String search(){
+		return "user/result-search";
+	}
+	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
 		return "user/user_view";
