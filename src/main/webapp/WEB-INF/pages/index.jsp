@@ -122,10 +122,15 @@
 		<div class="row section popular topspace-second">
 				<div class="popular-title">
 					<h2 class="section-title"><span id="left">ពេញនិយម</span>
-					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
+					<span id="right"><a href="">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
+<<<<<<< HEAD
 				<div class="row">
 				<div class="col-lg-12" style="margin-left:10px;">
+=======
+				<div class="row" style="padding:15px;">
+				
+>>>>>>> ab69d5c3d87a828ed85438a1473c0b04fc860d71
 					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
@@ -148,7 +153,7 @@
 							</span>
 						</a>  
 					</div>
-				</div>
+				
 			
 			</div>
 		</div>
