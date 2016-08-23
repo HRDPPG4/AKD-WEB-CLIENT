@@ -81,18 +81,18 @@
 <div class="container">
 	<section id="recommend">
 		<!-- section-title -->
-		<div class="row section recommend topspace-second">
+		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">បានណែនាំ</span>
 				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
-			<%-- <div class="row" style="padding:15px;">
+			 <div class="row" style="padding:15px;">
 				<div style="clear:both;">
-					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
-							<img src="${pageContext.request.contextPath}/resources/user/img/literal.jpg" alt=""> 
-							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
+							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
+							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -113,23 +113,24 @@
 					</div>
 				</div>
 			
-			</div> --%>
+			</div> 
 		</div>
 	</section>
 	
 	<section id="popular">
 		<!-- section-title -->
-		<div class="row section popular topspace-second">
-				<div class="popular-title">
-					<h2 class="section-title"><span id="left">ពេញនិយម</span>
-					<span id="right"><a href="">បង្ហាញទាំងអស់</a></span></h2>
-				 </div>
-				<div class="row" style="padding:15px;">
-				
-					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
+			<div class="popular-title">
+				<h2 class="section-title"><span id="left">ពេញនិយម</span>
+				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
+			 </div>
+			 <div class="row" style="padding:15px;">
+				<div style="clear:both;">
+					<div  ng-repeat="slide in popular | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
-							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
+							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
+						<!-- 	<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -148,43 +149,44 @@
 							</span>
 						</a>  
 					</div>
-				
+				</div>
 			
-			</div>
+			</div> 
 		</div>
 	</section>
 	
+	
 	<section id="ឯកសារថ្មីៗ">
 		<!-- section-title -->
-		<div class="row section popular topspace-second">
+		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()">
 				<div class="popular-title">
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
 					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
 				<div class="row" style="padding:15px;">
 					<div style="clear:both;">
-						<div class="col-md-3" style="margin-bottom:10px;">
+						<div ng-repeat="slide in newDocument | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
 							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+							<span class="img">
+							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
+						<!-- 	<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+							</span>
+							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
+							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
+							<span class="descript">{{slide.DES | strLimit: 22}}</span>
+							<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
+							<span class="socials">
+								<a href="#" alt="like" class="like">
+									<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+								</a>
+								<a href="#" alt="download" class="download">
+									<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
 									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
+								<a href="#" alt="share" class="share">
+									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+								</a>
+							</span>
+						</a>
 						</div>
 					</div>
 				</div>

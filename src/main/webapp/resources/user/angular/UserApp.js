@@ -149,18 +149,42 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	
 	$scope.getDocumentByPopular=function(){
+		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
 			method:'GET'
 		}).then(function(response){
 			$scope.popular=response.data.DATA;
-			console.log($scope.popular);
+			//console.log($scope.popular);
 		}, function(response){
 
 		});
 	}
-	//Will Close Later After index is ready
-	//$scope.getDocumentByPopular();
+	
+	$scope.getDocumentByRecommended=function(){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
+			method:'GET'
+		}).then(function(response){
+			$scope.recommend=response.data.DATA;
+			//console.log($scope.recommend);
+		}, function(response){
+
+		});
+	}
+	
+	$scope.getDocumentByNewPost=function(){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
+			method:'GET'
+		}).then(function(response){
+			$scope.newDocument=response.data.DATA;
+			console.log($scope.newDocument);
+		}, function(response){
+
+		});
+	}
+	
 	
 	
 	
