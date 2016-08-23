@@ -78,7 +78,7 @@
 							<ul class="title-profile nav nav-pills nav-stacked">
 							<li class="about"><a data-toggle="tab" href="#dashbord">ផ្ទាំងគ្រប់គ្រងព័ត៌មាន </a></li>
 								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
-								<li class="about"><a data-toggle="tab" href="#viewed">ឯកសារដែលបានមើល</a></li>
+								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser(2)" href="#viewed">ឯកសារដែលបានមើល</a></li>
 								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
 								<li class="about"><a data-toggle="tab" href="#aboutme">អំពីខ្ញុំ </a></li>
 							</ul>
@@ -245,7 +245,7 @@
 					          </div>
 					        </div>
 					      <!-- tab mydoc -->
-					       <div id="viewed" class="tab-pane fade">
+					       <div id="viewed" class="tab-pane fade" >
 						         <div class="content-viewed-all">
 						         		<div id="header-view-history">
 						         			<ul>
@@ -258,9 +258,9 @@
 								         		</div>
 							         		
 							         		<div class="history-view">
-							         			<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+							         			<div class="list-group" ng-repeat="log in getLogByUser" | limitTo :5">
 	
-									    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+									    			<a href="/detail/{{log.DOCUMENT.DOC_ID}}" class="list-group-item">
 									
 														<div class="media">
 												     
@@ -270,11 +270,11 @@
 																</label>
 															</div>
 															<div class="pull-left">
-																<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+																<img class="media-object" src="{{log.DOCUMENT.THUMBNAIL_URL}}" alt="Image">
 															</div>
 															<div class="media-body">
-																<h4 class="media-heading">HTML</h4>
-																<p>HTML ជាភាសាមួយក្នុងការចាប់ផ្តើម</p>
+																<h4 class="media-heading">{{log.DOCUMENT.TITLE}}</h4>
+																<p>{{log.DOCUMENT.DES}}</p>
 															</div>
 									
 														</div>					
