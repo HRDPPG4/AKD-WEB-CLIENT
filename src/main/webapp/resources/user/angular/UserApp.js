@@ -155,7 +155,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'GET'
 		}).then(function(response){
 			$scope.popular=response.data.DATA;
-			//console.log($scope.popular);
+			console.log("Popular: "+$scope.popular);
 		}, function(response){
 
 		});
@@ -167,7 +167,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'GET'
 		}).then(function(response){
 			$scope.recommend=response.data.DATA;
-			//console.log($scope.recommend);
+			console.log("Recomand: "+$scope.recommend);
 		}, function(response){
 
 		});
@@ -179,7 +179,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'GET'
 		}).then(function(response){
 			$scope.newDocument=response.data.DATA;
-			console.log($scope.newDocument);
+			console.log("New: "+$scope.newDocument);
 		}, function(response){
 
 		});
