@@ -1,0 +1,26 @@
+#content-feature {
+	margin:0;
+	padding:0;
+	width:100%;
+}
+
+ul.feature-header{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    overflow: hidden;
+   
+}
+
+ul.feature-header li{
+	padding:15px;
+	display: inline-block;
+	 border-right: 1px solid #003666;
+}
+
+ul.feature-header li:last-child{
+	padding:10px;
+	display: inline-block;
+	border:none;
+}

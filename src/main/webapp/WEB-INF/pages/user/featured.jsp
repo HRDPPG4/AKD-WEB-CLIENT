@@ -25,6 +25,7 @@
 	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.min.css">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/feature.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
@@ -79,11 +80,15 @@
 
 <content>
 <div class="container">
-	<section id="recommend">
+	<section id="feature">
 		<!-- section-title -->
-		<div class="row section recommend topspace-second">
-				<div class="popular-title" style="text-align:center;padding:10px;background:#003666;color:white;">
-					ពេញនិយមបំផុត
+		<div class="row section feature topspace-second">
+				<div id="content-feature">
+					<ul class="feature-header"​>
+						<li>បានណែនាំ</li>
+						<li>ពេញនិយម</li>
+						<li>ឯកសារថ្មីៗ</li>
+					</ul>
 				 </div>
 				<div class="row" style="padding:15px;">
 				<div style="clear:both;">
@@ -280,207 +285,7 @@
 		</div>
 	</section>
 	
-	<section id="popular">
-		<!-- section-title -->
-		<div class="row section popular topspace-second">
-				<div class="popular-title">
-					<h2 class="section-title"><span id="left">ពេញនិយម</span>
-					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
-				 </div>
-				<div class="row" style="padding:15px;">
-				<div style="clear:both;">
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				</div>
-				
-				<div style="clear:both;">
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				<div class="col-md-3" style="margin-bottom:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-								<span class="img">
-								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
-								</span>
-								<span class="title">{{slide.TITLE}}</span>
-								<span class="user-name">{{slide.USER_ID}}</span>
-								<span class="descript">{{slide.DES}}</span>
-								<span class="view-count">{{slide.VIEW}}</span>
-								<span class="socials">
-									<a href="#" alt="like" class="like">
-										<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-									</a>
-									<a href="#" alt="download" class="download">
-										<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-										</a>
-									<a href="#" alt="share" class="share">
-										<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-									</a>
-								</span>
-							</a>  
-				</div>
-				</div>
-				
-				</div>
-		</div>
-	</section>
+	
 </div>
 </content>
 
