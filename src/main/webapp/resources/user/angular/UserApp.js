@@ -148,6 +148,45 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	///////////////////		START DOCUMENT BLOCK	/////////////////
 	
 	
+	$scope.getDocumentByPopular=function(){
+		
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
+			method:'GET'
+		}).then(function(response){
+			$scope.popular=response.data.DATA;
+			//console.log($scope.popular);
+		}, function(response){
+
+		});
+	}
+	
+	$scope.getDocumentByRecommended=function(){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
+			method:'GET'
+		}).then(function(response){
+			$scope.recommend=response.data.DATA;
+			//console.log($scope.recommend);
+		}, function(response){
+
+		});
+	}
+	
+	$scope.getDocumentByNewPost=function(){
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
+			method:'GET'
+		}).then(function(response){
+			$scope.newDocument=response.data.DATA;
+			console.log($scope.newDocument);
+		}, function(response){
+
+		});
+	}
+	
+	
+	
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
 		$http({
@@ -198,7 +237,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}).then(function(response){
 			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			console.log("DOC BY CATE",$rootScope.currentSubCategory);
+			console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});

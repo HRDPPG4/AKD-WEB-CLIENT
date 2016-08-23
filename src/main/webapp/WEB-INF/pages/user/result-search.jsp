@@ -67,25 +67,21 @@
 
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
-<jsp:include page="user/include/register.jsp"></jsp:include>
-<jsp:include page="user/include/login.jsp"></jsp:include>
-<jsp:include page="user/include/upload.jsp"></jsp:include>
-<jsp:include page="user/include/save-list.jsp"></jsp:include>
-<jsp:include page="user/include/update-slide.jsp"></jsp:include>
+<jsp:include page="include/register.jsp"></jsp:include>
+<jsp:include page="include/login.jsp"></jsp:include>
+<jsp:include page="include/upload.jsp"></jsp:include>
+<jsp:include page="include/save-list.jsp"></jsp:include>
+<jsp:include page="include/update-slide.jsp"></jsp:include>
 				  
 <header id="header">
-<jsp:include page="user/include/header.jsp"></jsp:include>
+<jsp:include page="include/header.jsp"></jsp:include>
 </header>
 
 <content>
 <div class="container">
-	<section id="recommend">
+	<section id="search">
 		<!-- section-title -->
-		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()">
-			<div class="popular-title">
-				<h2 class="section-title"><span id="left">បានណែនាំ</span>
-				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
-			 </div>
+		<div class="row section search topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
@@ -117,89 +113,13 @@
 		</div>
 	</section>
 	
-	<section id="popular">
-		<!-- section-title -->
-		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
-			<div class="popular-title">
-				<h2 class="section-title"><span id="left">ពេញនិយម</span>
-				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
-			 </div>
-			<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-					<div  ng-repeat="slide in popular | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
 
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-							<span class="img">
-							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
-							</span>
-							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
-							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
-							<span class="descript">{{slide.DES | strLimit: 22}}</span>
-							<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
-							<span class="socials">
-								<a href="#" alt="like" class="like">
-									<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-								</a>
-								<a href="#" alt="download" class="download">
-									<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-									</a>
-								<a href="#" alt="share" class="share">
-									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-								</a>
-							</span>
-						</a>  
-				</div>
-			 </div>
-		 </div>
-
-	</div>
-	</section>
-	
-
-	
-	<section id="ឯកសារថ្មីៗ">
-		<!-- section-title -->
-		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()">
-				<div class="popular-title">
-					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
-					<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
-				 </div>
-				<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-						<div ng-repeat="slide in newDocument | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
-							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-							<span class="img">
-							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-						<!-- 	<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
-							</span>
-							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
-							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
-							<span class="descript">{{slide.DES | strLimit: 22}}</span>
-							<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
-							<span class="socials">
-								<a href="#" alt="like" class="like">
-									<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-								</a>
-								<a href="#" alt="download" class="download">
-									<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-									</a>
-								<a href="#" alt="share" class="share">
-									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-								</a>
-							</span>
-						</a>
-						</div>
-					</div>
-				</div>
-		</div>
-	</section>
 </div>
 </content>
 
 
 <footer>
-<jsp:include page="user/include/footer.jsp"></jsp:include>
+<jsp:include page="include/footer.jsp"></jsp:include>
 </footer>
  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>

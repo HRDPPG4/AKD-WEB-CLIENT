@@ -245,27 +245,32 @@ a.thumbnail_ppt {
 
 #header-view-history ul{
 	list-style-type:none;
-	margin-top: 10px;
+/* 	margin-top: 10px; */
     padding: 0 20px;
     border-bottom: 1px solid #e2e2e2;
     clear: both;
 }
 li.history-title{
-	color:#000;
+	color:#003666;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 40px;
 	
 }
-li.history-title:hover{
-	color:#000;
-	cursor:pointer;
-	width:80px;
-	clear:both;
-	border-bottom: 2px solid #003666;
+.media-body{
+	padding:10px;
 }
 .btn-clear-history{
-	padding-top:5px;
+	padding-top:0px;
 	padding-bottom:10px;
 	 border-bottom: 1px solid #e2e2e2;
 	 clear:both;
+}
+button.clear-history{
+	color:#fff;
+	padding:10px;
+	background:#003666;
+	border:1px solid #fff;
 }
 .history-view{
 	padding-top:1px;
@@ -408,4 +413,27 @@ button.btn-create{
      background:#fff;
     color: #000;
     border-radius:5px;
+}
+
+
+/*  */
+.content-aboutme{
+	width:828px;
+	/* padding:10px; */
+	margin-left:205px;
+	position:absolute;
+	font-family:"Khmer OS Battambang";
+	background-color:#fff;
+	 border: 1px solid;
+	border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+}
+.header-infor{
+	background-image: url(../img/banner-user.png);
+	background-position:top;
+	padding:10px;
+	height:150px;
+	color:#fff;
 }

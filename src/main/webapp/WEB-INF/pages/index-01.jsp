@@ -1,5 +1,7 @@
+
  <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,18 +50,10 @@
 	<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
      <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
 	
-	
-	
-	
 	<!-- Font -->
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	 <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-	
-
-	
-	<!--  Cannot use because Minea overwrite it-->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> 
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
@@ -77,16 +71,43 @@
 <jsp:include page="user/include/header.jsp"></jsp:include>
 </header>
 
+
+
 <content>
 <div class="container">
-	<section id="popular">
+	<section id="technology">
 		<!-- section-title -->
-		<div class="row section popular topspace-second">
-				<div class="popular-title">
-					
+		<div class="row section technology topspace-second" ng-repeat="mainCat in getAllCategoryAndSubcategory">
+				<div class="section-title">
+						  <span​ class="col-xs-12 col-lg-12" id="left-title">
+						  <span><i class="{{mainCat.ICON}}"></i></span>
+							{{mainCat.CAT_NAME}}
+						  </span>
+						  <span class="col-xs-6 col-lg-4 col-lg-offset-2" id="right-title"><a href="/view/{{mainCat.CAT_ID}}">មើលលំអិត</a>
+						  </span>	
 				</div>
-				<div class="col-md-3" style="margin-top:10px;">
-					 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+				<!-- end section-title -->
+				
+				
+				   <ul class="nav nav-tabs">
+					     <li class="active#" ng-repeat="sub in mainCat.SUB_CATEGORIES" >
+					     	<a ng-click="getAllDocumentByCatID(sub.CAT_ID)" data-toggle="tab" data-id={{sub.CAT_ID}} href="{{'#'+sub.CAT_NAME}}">{{sub.CAT_NAME}}</a>
+					     	
+					     </li>						   
+					</ul>
+
+				 <div class="tab-content">	<!--  ng-repeat="SubTab in mainCat.SUB_CATEGORIES" -->
+
+					<div ng-repeat="sub in mainCat.SUB_CATEGORIES" id="{{sub.CAT_NAME}}" class="tab-pane fade " >
+					
+					
+						
+						 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat=" slide in documentByCatID"> 	<!-- ng-repeat="slide in document  | limitTo : 4" -->
+						<!--  Data of  {{sub.CAT_NAME}} -->
+						
+						
+						
+							  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
 								<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
@@ -107,12 +128,18 @@
 									</a>
 								</span>
 							</a>  
-				</div>
-		</div>
-	</section>
-</div>
+							
+							
+						</div> 
+					</div>
+				</div> 
+				
+				
+				
+			</div>
+		</section>
+	</div>
 </content>
-
 
 <footer>
 <jsp:include page="user/include/footer.jsp"></jsp:include>
