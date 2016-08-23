@@ -86,8 +86,8 @@
 				<h2 class="section-title"><span id="left">បានណែនាំ</span>
 				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
-			 <div class="row" style="padding:15px;">
-				<div style="clear:both;">
+			<div class="row" style="padding:12px;">
+					<div class="col-md-12">
 					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
@@ -119,26 +119,15 @@
 	
 	<section id="popular">
 		<!-- section-title -->
-<<<<<<< HEAD
-		<div class="row section popular topspace-second">
-				<div class="popular-title">
-					<h2 class="section-title"><span id="left">ពេញនិយម</span>
-					<span id="right"><a href="">បង្ហាញទាំងអស់</a></span></h2>
-				 </div>
-
-				<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
-=======
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ពេញនិយម</span>
 				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
-			 <div class="row" style="padding:15px;">
-				<div style="clear:both;">
+			<div class="row" style="padding:12px;">
+					<div class="col-md-12">
 					<div  ng-repeat="slide in popular | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
->>>>>>> 81bd034a42e71d725fbbdfb4517cba8cf0ecfdde
+
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
@@ -160,17 +149,11 @@
 								</a>
 							</span>
 						</a>  
-<<<<<<< HEAD
 				</div>
 			 </div>
 		 </div>
-=======
-					</div>
-				</div>
-			
-			</div> 
-		</div>
->>>>>>> 81bd034a42e71d725fbbdfb4517cba8cf0ecfdde
+
+	</div>
 	</section>
 	
 
@@ -182,15 +165,9 @@
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
 					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
-<<<<<<< HEAD
-				<div class="row" style="padding:10px;">
+				<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-						<div class="col-md-3" style="margin-bottom:10px;">
-=======
-				<div class="row" style="padding:15px;">
-					<div style="clear:both;">
 						<div ng-repeat="slide in newDocument | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
->>>>>>> 81bd034a42e71d725fbbdfb4517cba8cf0ecfdde
 							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
