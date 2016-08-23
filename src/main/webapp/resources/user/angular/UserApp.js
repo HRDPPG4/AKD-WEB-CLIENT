@@ -149,6 +149,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	
 	$scope.getDocumentByPopular=function(){
+		$scope.showRecomment=false;
+		$scope.showNewPost=false;
+		$scope.showPopular=true;
 		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
@@ -162,6 +165,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	}
 	
 	$scope.getDocumentByRecommended=function(){
+		$scope.showRecomment=true;
+		$scope.showNewPost=false;
+		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
 			method:'GET'
@@ -174,6 +180,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	}
 	
 	$scope.getDocumentByNewPost=function(){
+		$scope.showRecomment=false;
+		$scope.showNewPost=true;
+		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
 			method:'GET'

@@ -3,19 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.footer{
-	background-color: #374458;
-	width: 100% !important;
-	height:50% !important;
-	color:  white;
-	margin-top: 30px;
-	text-align:left;
-	word-wrap:break-word !important;
-}
 
-
-</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -63,7 +51,27 @@
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
+<style>
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:left;
+	word-wrap:break-word !important;
+}
+a.thumbnail {
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+    min-height: 338.79px;
+}
 
+</style>
 
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
@@ -83,8 +91,8 @@
 		<!-- section-title -->
 		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
-				<h2 class="section-title"><span id="left">បានណែនាំ</span>
-				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
+				<h2 class="section-title"><span id="left">ឯកសារណែនាំ</span>
+				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
@@ -121,12 +129,12 @@
 		<!-- section-title -->
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
-				<h2 class="section-title"><span id="left">ពេញនិយម</span>
+				<h2 class="section-title"><span id="left">ឯកសារពេញនិយម</span>
 				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-					<div  ng-repeat="slide in popular | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
+					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
@@ -167,7 +175,7 @@
 				 </div>
 				<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-						<div ng-repeat="slide in newDocument | limitTo : 4" class="col-md-3" style="margin-bottom:10px;">
+						<div ng-repeat="slide in newDocument | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
