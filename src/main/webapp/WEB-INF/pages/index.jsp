@@ -84,7 +84,7 @@
 		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">បានណែនាំ</span>
-				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
+				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
@@ -122,7 +122,7 @@
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ពេញនិយម</span>
-				<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
+				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
@@ -163,7 +163,7 @@
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()">
 				<div class="popular-title">
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
-					<span id="right"><a href="#">បង្ហាញទាំងអស់</a></span></h2>
+					<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
 				<div class="row" style="padding:12px;">
 					<div class="col-md-12">
