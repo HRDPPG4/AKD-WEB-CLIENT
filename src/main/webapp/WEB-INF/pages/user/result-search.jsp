@@ -82,10 +82,6 @@
 	<section id="search">
 		<!-- section-title -->
 		<div class="row section search topspace-second" data-ng-init="getDocumentByRecommended()">
-			<div class="popular-title">
-				<h2 class="section-title"><span id="left">បានណែនាំ</span>
-				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
-			 </div>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
