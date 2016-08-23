@@ -17,15 +17,10 @@
 	margin-left: 20px;
 }
 </style>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
-<link
-	href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css"
-	rel="stylesheet" />
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -155,34 +150,9 @@
 										</td>
 									</tr>
 								</tbody>
-								<tfoot>
-
-
-									<!-- 	ID
-										<input type="text" name="id" ng-model="gid" />
-										<br /> name
-										<input type="text" name="name" ng-model="gname" />
-										<br /> pass
-										<input type="text" name="pass" ng-model="gpass" />
-										<br /> email
-										<input type="text" name="email" ng-model="gemail" />
-										<br /> phone
-										<input type="text" name="phone" ng-model="gphone" />
-										<br /> date
-										<input type="text" name="date" ng-model="gdate" />
-										<br /> remark
-										<input type="text" name="remark" ng-model="gremark" />
-										<br /> status
-										<input type="text" name="status" ng-model="gstatus" />
-										<br /> role
-										<input type="text" name="role" ng-model="grole" />
-										<br />
-									
-									<button class="btn btn-flat btn-primary" ng-click="updateUser()">Update</button>
-									 -->
-									</tr>
-								</tfoot>
 							</table>
+							
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 
@@ -203,6 +173,6 @@
 			<!-- /.content -->
 		</div>
 	</div>
-
+	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
 </body>
 </html>
