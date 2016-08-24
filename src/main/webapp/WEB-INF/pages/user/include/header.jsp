@@ -40,6 +40,11 @@
         </ul>
      </div>
 </nav>
+<div>
+	<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
+		hello
+	</nav>
+</div>
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">

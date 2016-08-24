@@ -366,6 +366,13 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   background-color:#3B5998;
   text-decoration: none;
 }
+.navbar >  .navbar-logo .brand-logo{
+  position: relative;
+  left: 0;
+  display:none;
+  color: #3B5998;
+  font-weight: 400px;
+}
 }
 
   @media screen and (max-width:810px){
@@ -394,7 +401,7 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
     color: #000;
     background: transparent;
   }
- /*////////////////////////////////////////////////////////////*/
+ 
  
 /*upload,sign in,sign up*/
 
@@ -426,7 +433,12 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   text-decoration: none;
 }
 
+.navbar >  .navbar-logo .brand-logo{
+  position: relative;
+ display: none;
 }
+}
+
 @media screen and (max-width: 768px) {
 .left-side-nav{
      left:0%;
