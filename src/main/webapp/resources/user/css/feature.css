@@ -13,26 +13,26 @@ ul.feature-header{
    
 }
 
-ul.feature-header li{
+ul.feature-header li.view-feature{
 	padding:15px;
 	display: inline-block;
 	text-decoration:none;
 	border-right: 1px solid #003666;
 }
 
-ul.feature-header li:last-child{
+ul.feature-header li.view-feature:last-child{
 	padding:10px;
 	text-decoration:none;
 	display: inline-block;
 	border:none;
 }
 
- li a{
+ li.view-feature a{
  color:#003666;
  font-size:16px;
 	text-decoration: none;
 }
-li a:hover{
+li.view-feature a:hover{
  color:#003666;
  border-bottom: 2px solid #003666;
 	text-decoration: none;
