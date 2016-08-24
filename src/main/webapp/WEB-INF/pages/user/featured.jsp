@@ -136,9 +136,9 @@ a.thumbnail {
 		<div class="row section feature topspace-second">
 			<div id="content-feature">
 				<ul class="feature-header"​>
-					<li><a ng-click="getDocumentByRecommended()" href="#">ឯកសារណែនាំ</a></li>
-					<li><a ng-click="getDocumentByPopular()" href="#">ឯកសារពេញនិយម</a></li>
-					<li><a ng-click="getDocumentByNewPost()" href="#">ឯកសារថ្មីៗ</a></li>
+					<li class="view-feature"><a ng-click="getDocumentByRecommended()" href="#">ឯកសារណែនាំ</a></li>
+					<li  class="view-feature"><a ng-click="getDocumentByPopular()" href="#">ឯកសារពេញនិយម</a></li>
+					<li class="view-feature"><a ng-click="getDocumentByNewPost()" href="#">ឯកសារថ្មីៗ</a></li>
 				</ul>
 			 </div>
 			<div class="row" style="padding:12px;">

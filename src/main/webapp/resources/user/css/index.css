@@ -184,6 +184,7 @@ ul li > ul.tooltiptext li a:hover{
     margin-bottom:-9px;
     text-decoration:none;
     background-color:#003666;
+    border:none;
     margin-top:-9px;
      line-height:40px;
     margin-left:-10px;
