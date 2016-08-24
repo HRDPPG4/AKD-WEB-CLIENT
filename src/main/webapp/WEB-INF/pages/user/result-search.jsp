@@ -3,19 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.footer{
-	background-color: #374458;
-	width: 100% !important;
-	height:50% !important;
-	color:  white;
-	margin-top: 30px;
-	text-align:left;
-	word-wrap:break-word !important;
-}
 
-
-</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -72,10 +60,33 @@
   	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   -->
 	
 	<!-- END SEARCH BLOCK -->
+	
+	<style>
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:left;
+	word-wrap:break-word !important;
+}
+a.thumbnail {
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-top-color: rgb(229, 230, 233);
+    border-right-color: rgb(223, 224, 228);
+    border-bottom-color: rgb(208, 209, 213);
+    border-left-color: rgb(223, 224, 228);
+    min-height: 338.79px​ !important;
+}
+
+
+</style>
 
 
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
+<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByLikeTitle('${title}')">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -90,10 +101,10 @@
 <div class="container">
 	<section id="search">
 		<!-- section-title -->
-		<div class="row section search topspace-second" data-ng-init="getDocumentByRecommended()">
+		<div class="row section search topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px;">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  

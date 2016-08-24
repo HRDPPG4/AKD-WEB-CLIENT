@@ -30,10 +30,12 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/search",method=RequestMethod.GET)
-	public String search(){
+	@RequestMapping(value="/search/{title}",method=RequestMethod.GET)
+	public String search(@PathVariable("title") String title, ModelMap model){
+		model.put("title", title);
 		return "user/result-search";
 	}
+	
 	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
