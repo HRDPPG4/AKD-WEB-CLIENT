@@ -65,6 +65,9 @@
 		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 			 	</div>
 			<ul class="menu-basic" id="myTopnav">
+			<li class="icon">
+			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+			  </li>
 			
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
@@ -76,10 +79,6 @@
 					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
-			  </li>
-			  
-			  <li class="icon">
-			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
 			  </li>
 			  
 			</ul>
