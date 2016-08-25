@@ -72,7 +72,7 @@
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
-
+<jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
 <div id="page-content-wrapper">
 	<section id="profile">
@@ -422,6 +422,8 @@
  <footer>
 	<%-- <jsp:include page="include/footer.jsp"></jsp:include> --%>
    </footer>
+    <a href="#0" class="cd-top">Top</a>
+   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/slide-detail.js"></script>
