@@ -168,10 +168,10 @@ a.thumbnail {
 								<div id="documentBox" class="tab-pane fade in active" ng-init="getAllDocumentByCatID(parentCategory[0].CAT_ID)">
 						
 							<div ng-repeat="slide in documentByCatID track by $index" class="col-lg-4 col-sm-6 col-xs-12">
-							     <!-- for Track user log -->
-						  			<input   type="hidden" class="form-control" value="{{slide.DOC_ID}}" id="slide_id">
-					      			<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
-								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="trackLog()">
+							    
+							     <!-- for Track user log -->	
+					      		<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
+								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail"  ng-click="countView(slide.DOC_ID)">
 								
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 

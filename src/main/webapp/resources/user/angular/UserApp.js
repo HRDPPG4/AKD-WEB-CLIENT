@@ -338,7 +338,20 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		});
 	 
 	}
-
+    $scope.countView = function(docID){
+    	
+    	
+    	$http({
+    		url : 'http://localhost:1111/api/v1/document/counview/'+docID,
+    		method : 'PUT',
+    		
+    	}).then(function(response){
+    		alert("Count Success");
+    		$scope.trackLog(docID);
+    	},function(response){
+    		console.log(response);
+    	});
+    }
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
@@ -369,15 +382,15 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
-	 $scope.trackLog=function(){
+	 $scope.trackLog=function(docID){
 
-	     
+	      
 			$http({
 				url:'http://localhost:1111/api/v1/log',
 				method:'POST',
 				data :{
 					  'CREATED_DATE': new Date(),
-					  'DOC_ID': $('#slide_id').val(), 
+					  'DOC_ID': docID, 
 					  'REMARK': "",
 					  'STATUS': 0,
 					  'USER_ID': $('#slide_user_id').val()
