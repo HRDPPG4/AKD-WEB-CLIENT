@@ -92,9 +92,9 @@
 				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			 <jsp:include page="user/include/toolbar-right.jsp"></jsp:include>
-			<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+			 
+					
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat="slide in recommend | limitTo : 8">
 					      <!-- for Track user log -->
 						  
 					      <input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
@@ -124,9 +124,7 @@
 							</span>
 						</a>  
 					</div>
-				</div>
-			
-			</div> 
+				
 		</div>
 	</section>
 	
@@ -137,12 +135,13 @@
 				<h2 class="section-title"><span id="left">ឯកសារពេញនិយម</span>
 				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
-			<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-					<div  ng-repeat="slide in popular | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+
+			
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"  ng-repeat="slide in popular | limitTo : 5">
 
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 						 <input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
+
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
@@ -163,9 +162,9 @@
 								</a>
 							</span>
 						</a>  
-				</div>
+				
 			 </div>
-		 </div>
+	
 
 	</div>
 	</section>
@@ -179,9 +178,9 @@
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
 					<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
-				<div class="row" style="padding:12px;">
-					<div class="col-md-12">
-						<div ng-repeat="slide in newDocument | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
+
+				
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat="slide in newDocument | limitTo :8">
 							 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							 <input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
 							<span class="img">
@@ -205,8 +204,6 @@
 							</span>
 						</a>
 						</div>
-					</div>
-				</div>
 		</div>
 	</section>
 </div>
