@@ -130,13 +130,13 @@ body
 <div>
 	<content>
 	<div id="page-content-wrapper">
-		 <div class="container">
-			<section id="slide-view" style="width:100%;" >
+		 <div class="container-fluid">
+			<section id="slide-view">
 					<div class="row section nav-left topspace-right-slide">
 						<div class="row">
 						 <div class="show-slide-view">
-							<div class="col-md-9 content-slide-view">
-								<div class="row col-md-12">
+							<div class="col-md-8 content-slide-view">
+								<div class="row col-md-11 col-md-offset-1">
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
@@ -218,7 +218,7 @@ body
 
 	
 							 <div class="related-slide">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="row col-sm-12" >
 										<div class="related-container">
 											<div class="row">												
