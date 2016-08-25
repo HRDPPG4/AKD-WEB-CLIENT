@@ -1,9 +1,17 @@
+
+//savelist
 $(document).ready(function(){
 	$('.btn-add').click(function(){
 	$('.createlist-tooltip').toggle();
 	});
 });
-
+//report
+/*$(document).ready(function(){
+	alert('hello');
+	$('.btn-report-detail').click(function(){
+		$('.content-report').show();
+	});
+});*/
 //
 
 /*$(document).ready(function(){

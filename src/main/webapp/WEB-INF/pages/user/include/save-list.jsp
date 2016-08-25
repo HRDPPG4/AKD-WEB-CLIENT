@@ -66,7 +66,6 @@
    			 				   
    			 				 
    			 				<div id="showSavelist" style="padding-bottom:10px;padding-top:20px; "  >
-   			 			
    			 				 <div class="form-group" style="padding-bottom:10px;padding-top:20px; "  >
    			 				 
   			
