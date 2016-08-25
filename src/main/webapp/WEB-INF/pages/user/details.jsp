@@ -135,8 +135,8 @@ body
 					<div class="row section nav-left topspace-right-slide">
 						<div class="row">
 						 <div class="show-slide-view">
-							<div class="col-md-8 content-slide-view">
-								<div class="row col-md-11 col-md-offset-1">
+							<div class="col-md-8  content-slide-view">
+								<div class="row col-md-12 col-md-offset-0">
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
@@ -221,34 +221,39 @@ body
 								<div class="col-md-4">
 									<div class="row col-sm-12" >
 										<div class="related-container">
-											<div class="row">												
+																				
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												  <div class="col-xs-12 col-sm-6 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
 												       									 		 
-												 		<div class="col-md-6">	
+												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
-													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
-													 		</a>
-												 		</div>
-												 		<div class="col-md-6">
-												 			<div id="Title">
-												 			{{related.TITLE | strLimit: 23}}
+												 		 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+															<div class="img-detail">
+															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
+															</div>
+														</a>
+														</div>
+														<div style="width:170px;position:relative;float:left;left:10px;top:20px;">
+														<div class="title-detail">
+															<div id="Title">
+												 			{{related.TITLE | strLimit: 30}}
 												 			</div>
-												 			<div id="User">
-												 			{{related.USERS[0].USER_NAME | strLimit: 10}}
+												 			<div id="View">
+												 			{{slide.VIEW}}
+												 			{{related.USERS[0].USER_NAME | strLimit: 30}}
 												 			</div>
 												 			<div id="Des">
-												 			{{related.DES | strLimit: 23}}
+												 			{{related.DES | strLimit: 30}}
 												 			</div>
-												 		</div>	
-												 </div> 
+														</div>
+									
+												     </div> 
 												 
 												 
 												 											
-											</div>	
+											
 										</div>
 									</div>
 								</div>
@@ -258,6 +263,7 @@ body
 
 						</div>
 						
+					</div>
 					</div>
 		</section>
 	  </div> 
