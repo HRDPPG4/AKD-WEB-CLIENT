@@ -126,7 +126,7 @@ a.thumbnail {
 <header id="header">
 <jsp:include page="user/include/header.jsp"></jsp:include>
 </header>
-
+<jsp:include page="user/include/toolbar-right.jsp"></jsp:include>
 <content>
 <div class="container">
 	<section id="recommend">

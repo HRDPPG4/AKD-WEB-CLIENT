@@ -36,7 +36,7 @@
 	border:1px solid #eee;
   text-align: left;
   margin-top:-5px;
-  margin-left:200px;
+  left:200px;
   margin-bottom:5px;
   color: #333;
   width:300px;
@@ -214,4 +214,3 @@ input[type="button"]{
 	border:1px solid #fff;
 	background:#003666 !important;
 }
-
