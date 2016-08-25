@@ -165,5 +165,21 @@ color:white;
  * text-align: justify;
 }
 
-
-
+.btn-savelist-detail{
+	padding:5px;
+	background:#003666;
+	color:#fff;
+	border:1px solid #fff;
+}
+.btn-share-detail{
+	padding:5px;
+	background:#003666;
+	color:#fff;
+	border:1px solid #fff;
+}
+.btn-report-detail{
+	padding:5px;
+	background:#003666;
+	color:#fff;
+	border:1px solid #fff;
+}

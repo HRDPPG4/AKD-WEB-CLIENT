@@ -13,40 +13,6 @@
 }
 @media screen and (max-width: 1199px) {
     /*search contain*/
-.navbar > .container .form-contain ,
-.form-group .form-search{
-  position: relative;
-   /*padding: 10px 15px;*/
-   border-style: none;
-  margin-top: 1px;
-  margin-right: -15px;
-  margin-bottom: 1px;
-  margin-left: 70px;
-  }
- .navbar > .container .form-search{
-  position: relative;
-  width: 300px;
-  background-color: #eee;
-  }
-  .navbar > .container button[type="submit"]{
-    position: absolute;
-    bottom: 10px;
-    left: 330px;
-    border:0;
-    width: 50px;
-    color: #888;
-    display:inline;
-    background: transparent;
-  }
-  i.fa-search{
-    font-size: 18px;
-  }
-  
-  .navbar > .container button[type="submit"]:hover{
-    position: absolute;
-    color: #000;
-    background: transparent;
-  }
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
@@ -156,44 +122,11 @@ ul.menu-basic li a#search:hover{
   }
 #avatar-user a img{
 	position:relative;
-	display: none !important;
+	/* display: none !important; */
 }
 
 /*  */
-.navbar > .container .form-contain ,
-.form-group .form-search{
-  position: relative;
-   /*padding: 10px 15px;*/
-   border-style: none;
-  margin-top: 2px;
-  margin-right: -15px;
-  margin-bottom: 2px;
-  margin-left: 50px;
-  }
- .navbar > .container .form-search{
-  position: relative;
-  width: 300px;
-  background-color: #eee;
-  }
-  .navbar > .container button[type="submit"]{
-    position: absolute;
-    bottom: 10px;
-    left: 295px;
-    border:0;
-    width: 50px;
-    color: #888;
-    display: line;
-    background: transparent;
-  }
-  i.fa-search{
-    font-size: 18px;
-  }
-  
-  .navbar > .container button[type="submit"]:hover{
-    position: absolute;
-    color: #000;
-    background: transparent;
-  }
+
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
@@ -221,40 +154,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 
 }
 @media screen and (max-width: 967px){
- .navbar > .container .form-contain ,
-.form-group .form-search{
-  position: relative;
-   /*padding: 10px 15px;*/
-   border-style: none;
-  margin-top: 2px;
-  margin-right: -15px;
-  margin-bottom: 2px;
-  margin-left: 50px;
-  }
- .navbar > .container .form-search{
-  position: relative;
-  width: 200px;
-  background-color: #eee;
-  }
-  .navbar > .container button[type="submit"]{
-    position: absolute;
-    bottom: 10px;
-    left: 220px;
-    border:0;
-    width: 50px;
-    color: #888;
-    display: line;
-    background: transparent;
-  }
-  i.fa-search{
-    font-size: 18px;
-  }
-  
-  .navbar > .container button[type="submit"]:hover{
-    position: absolute;
-    color: #000;
-    background: transparent;
-  }
+
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
@@ -310,31 +210,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   }
 
   @media screen and (max-width:886px){
-.navbar > .container .form-contain ,
-.form-group .form-search{
-  position: relative;
-   /*padding: 10px 15px;*/
-   border-style: none;
-  margin-top: 4px;
-  margin-right: -15px;
-  margin-bottom:30px;
-  margin-left: 1px;
-  }
- .navbar > .container .form-search{
- display: none;
-  }
-  .navbar > .container button[type="submit"]{
-   display: none;
-  }
-  i.fa-search{
-    font-size: 18px;
-  }
-  
-  .navbar > .container button[type="submit"]:hover{
-    position: absolute;
-    color: #000;
-    background: transparent;
-  }
+
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
@@ -365,37 +241,17 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 
   background-color:#3B5998;
   text-decoration: none;
+}
+.navbar >  .navbar-logo .brand-logo{
+  position: relative;
+  left: 0;
+  display:none;
+  color: #3B5998;
+  font-weight: 400px;
 }
 }
 
   @media screen and (max-width:810px){
- .navbar > .container .form-contain ,
-.form-group .form-search{
-  position: relative;
-   /*padding: 10px 15px;*/
-   border-style: none;
-  margin-top: 4px;
-  margin-right: -15px;
-  margin-bottom:20px;
-  margin-left: 1px;
-  }
- .navbar > .container .form-search{
- display: none;
-  }
-  .navbar > .container button[type="submit"]{
-   display: none;
-  }
-  i.fa-search{
-    font-size: 18px;
-  }
-  
-  .navbar > .container button[type="submit"]:hover{
-    position: absolute;
-    color: #000;
-    background: transparent;
-  }
- /*////////////////////////////////////////////////////////////*/
- 
 /*upload,sign in,sign up*/
 
 .upload-signup-signin{
@@ -426,45 +282,25 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   text-decoration: none;
 }
 
+.navbar >  .navbar-logo .brand-logo{
+  position: relative;
+ display: none;
 }
+}
+
 @media screen and (max-width: 768px) {
-.left-side-nav{
-     left:0%;
-    /*   z-index: 300; */
-    }
-    .body-cates{
-      /*width: 300px;*/
-   left:4% !important;
-    } 
-    #min-width-sm{
-      width: 730px;
-    }
+
     .container{
       width: 100%;
     }
   }
-  @media screen and (max-width: 534px) {
-    .left-side-nav{
-      left:0%;
-     /*  z-index: 300; */
-    }
-    .body-cates{
-   left: 0% !important;
-    } 
-    #min-width-sm{
-      width: 525px;
-    }
-    .container{
+  @media screen and (max-width: 534px) {   
+     .container{
       width: 100%;
     }
   }
   /*Nexus 5x*/
 @media screen and (max-width: 412px) {
-.left-side-nav{
-     left:0%;
-    /*   z-index: 300; */
-    }
-    .body-cates{
     .container{
       width: 100%;
     }
@@ -489,15 +325,10 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
    @media screen and (max-width: 375px) {
 .left-side-nav{
      left:0%;
-     /*  z-index: 300; */
+   
     }
-    .body-cates{
-      /*width: 300px;*/
-   left:5% !important;
-    } 
-    #min-width-sm{
-      width: 365px;
-    }
+
+ 
     .container{
       width: 100%;
     }

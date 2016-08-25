@@ -1,10 +1,36 @@
 
 
-var app = angular.module('UserApp', []);
+var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+	
+	////////////////////START SEARCH BLOCK	/////////////////
+	var _selected;
+	$scope.selected = undefined;
+
+	$scope.searchPage = function(){
+		location.href= "/search/"+$scope.selected;
+		//alert($scope.selected);
+	}
+	
+	
+	$scope.getDocumentByLikeTitle = function(title){			
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
+			method:'GET'			
+		}).then(function(response){
+			$scope.documentSearch=response.data.DATA;
+			console.log($scope.documentSearch);
+			
+		}, function(response){
+		
+		});
+	}
  
+	  //////////////////// END SEARCH BLOCK	/////////////////
+	  
+	  
 	////////////////////	START INITAILIZE VARIABLE BLOCK	/////////////////
 	$rootScope.currentSubCategory="currentSubCategory";
 	$scope.currentMainCategory="";
@@ -44,8 +70,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
-			console.log("ParentCat: ");
-			console.log($scope.parentCategory[0]);
+			//console.log("ParentCat: ");
+			//console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
@@ -88,9 +114,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			$scope.mainCategory=response.data.DATA;
 			// Get SubCat here!!
 		//	$scope.getCategoryByParentID(mainCategory[0].CAT_ID);
-			console.log("Main Category")
+			//console.log("Main Category")
 			
-			console.log($scope.mainCategory);
+		//	console.log($scope.mainCategory);
 		}, function(response){
 
 		});	
@@ -102,13 +128,13 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	///////////////////		START COMMENT BLOCK	/////////////////
 	
 	$scope.getAllCommentByDocID=function(DocID){	
-		console.log(DocID);
+		//console.log(DocID);
 		$http({
 			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.commentByDoc=response.data.DATA;
-			console.log($scope.commentByDoc);
+		//	console.log($scope.commentByDoc);
 		}, function(response){
 
 		});	
@@ -150,37 +176,46 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	
 	$scope.getDocumentByPopular=function(){
+		$scope.showRecomment=false;
+		$scope.showNewPost=false;
+		$scope.showPopular=true;
 		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
 			method:'GET'
 		}).then(function(response){
 			$scope.popular=response.data.DATA;
-			//console.log($scope.popular);
+		//	console.log("Popular: "+$scope.popular);
 		}, function(response){
 
 		});
 	}
 	
 	$scope.getDocumentByRecommended=function(){
+		$scope.showRecomment=true;
+		$scope.showNewPost=false;
+		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
 			method:'GET'
 		}).then(function(response){
 			$scope.recommend=response.data.DATA;
-			//console.log($scope.recommend);
+			//console.log("Recomand: "+$scope.recommend);
 		}, function(response){
 
 		});
 	}
 	
 	$scope.getDocumentByNewPost=function(){
+		$scope.showRecomment=false;
+		$scope.showNewPost=true;
+		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
 			method:'GET'
 		}).then(function(response){
 			$scope.newDocument=response.data.DATA;
-			console.log($scope.newDocument);
+			//console.log("New: "+$scope.newDocument);
 		}, function(response){
 
 		});
@@ -219,8 +254,10 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
+			$scope.allDocTitle=response.data.DATA;
 		//	console.log("Document Bock");
-		//	console.log($scope.document);
+			//console.log($scope.document);
+			//console.log($scope.allDocTitle);
 		}, function(response){
 
 		});
@@ -238,7 +275,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}).then(function(response){
 			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			console.log("DOC BY CATE",$scope.documentByCatID);
+			//console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});
@@ -336,7 +373,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
   				method:'GET'
   			}).then(function(response){
   				$scope.getLogByUser=response.data.DATA;
-  			    console.log($scope.getLogByUser);
+  			  //  console.log($scope.getLogByUser);
   			}, function(response){
                 alert("fail");
   			});	
@@ -395,7 +432,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            			
            			
            		}, function(response){
-           			console.log(response);
+           			//console.log(response);
            			
            		});
        	  
@@ -416,9 +453,10 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            			
            			
            		}, function(response){
-           			console.log(response);
+           		//	console.log(response);
            			
            		});
+
          }else{
         	 alert("Case listname have and document is empty" +doc);
           	  Savelistname = listname;
@@ -442,6 +480,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
         			console.log(response);
         			
         		});
+
+        
          }
          
          
@@ -466,7 +506,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
     			}).then(function(response){
     				$scope.getuserSavelist=response.data.DATA;
     			
-      			    console.log($scope.getuserSavelist);
+      			   // console.log($scope.getuserSavelist);
     			
     			}, function(response){
 
@@ -631,3 +671,16 @@ app.filter('strLimit', ['$filter', function($filter) {
 ///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 
+app.directive('myEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+});

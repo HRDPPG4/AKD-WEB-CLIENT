@@ -29,10 +29,13 @@ public class UserController {
 		return "user/featured";
 	}
 	
-	@RequestMapping(value="/search",method=RequestMethod.GET)
-	public String search(){
+	
+	@RequestMapping(value="/search/{title}",method=RequestMethod.GET)
+	public String search(@PathVariable("title") String title, ModelMap model){
+		model.put("title", title);
 		return "user/result-search";
 	}
+	
 	
 	@RequestMapping(value="/user_view",method=RequestMethod.GET)
 	public String user_view(){
@@ -64,14 +67,14 @@ public class UserController {
 	
 	@RequestMapping(value="/detail/{id}", method=RequestMethod.GET)
 	public String detail(@PathVariable("id") String id, ModelMap model){
-		System.out.println("ID==>" + id);
+		//System.out.println("ID==>" + id);
 		model.put("id", id);
 		return "user/details";
 	}
 	
 	@RequestMapping(value="/view/{ParentID}", method=RequestMethod.GET)
 	public String viewPageByCategoryID(@PathVariable("ParentID") String ParentID, ModelMap model){
-		System.out.println("ID==>" + ParentID);
+		//System.out.println("ID==>" + ParentID);
 		model.put("ParentID", ParentID);
 		return "user/viewPageByCategoryID";
 	}
