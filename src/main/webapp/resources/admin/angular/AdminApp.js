@@ -6,10 +6,12 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.showCategory = function(){			
 		$http({
 			url:'http://localhost:1111/api/v1/category',
-			method:'GET'			
+			method:'GET',
+			params : $scope.filter
 		}).then(function(response){
 		//	console.log(response.data.DATA);
-			$scope.category=response.data.DATA;			
+			$scope.category=response.data.DATA;	
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response){		
 		});
 	}	
@@ -28,20 +30,33 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	}
 	$scope.getCategoryCount();
 	
-	// Method for manipulating feedback
-	$scope.getFeedbackData = function() {
-		$http({
-			url : 'http://localhost:1111/api/v1/feedback',
-			method : 'GET'
-		}).then(function(response) {
-			$scope.feedback = response.data.DATA;
-			console.log($scope.feedback);
-		}, function(response) {
-
-		});
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
 	}
-	$scope.getFeedbackData();
-
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.showCategory();
+	});
+	
+	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
 	$scope.ParentID = "0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.sta = 1;
@@ -72,7 +87,9 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	};
 });
 
-// User Controller
+
+
+// ======================User Controller===========================
 app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.getUserData = function() {
 		$http({
@@ -82,8 +99,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(response) {
 			$scope.user = response.data.DATA;
 			console.log($scope.user);
-			
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES)
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 
@@ -93,14 +109,14 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	//TODO: default filter
 	$scope.filter = {
 		page: 1,
-		limit: 2
+		limit: 10
 	};
 	
 	var PAGINATION = angular.element("#PAGINATION");
 	$scope.setPagination = function(totalPage){
 		PAGINATION.bootpag({
 			total: totalPage,          // total pages
-			page: $scope.filter.page,           // default page
+			page: $scope.filter.page,   // default page
 			leaps: true,
 	        firstLastUse: true,
 	        first: '←',
@@ -110,9 +126,8 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	        maxVisible: 10
 		});		
 	}
-	+
+	
 	PAGINATION.on("page", function(event, num){
-		alert(num);
 		$scope.filter.page = num;
 		$scope.getUserData();
 	});
@@ -232,27 +247,12 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 
 //============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
-	$scope.getDocumentData = function() {
-		$http({
-			url : 'http://localhost:1111/api/v1/document',
-			method : 'GET'
-		}).then(function(response) {
-			$scope.document = response.data.DATA;
-			//console.log($scope.document);
-		}, function(response) {
-
-		});
-	}
-	$scope.getDocumentData();
-	
-	$scope.myAlert= function(){
-		alert("Test");
-	}
-	
+		
 	$scope.getDocumentCount = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/getDocumentCount',
 			method : 'GET'
+			
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
 			console.log($scope.documentCount);
@@ -260,8 +260,50 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 
 		});
 	}
+	$scope.getDocumentData = function() {
+		$http({
+			url : 'http://localhost:1111/api/v1/document',
+			method : 'GET',
+			params : $scope.filter
+		}).then(function(response) {
+			$scope.document = response.data.DATA;
+			console.log($scope.document);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		}, function(response) {
+			
+		});
+	}
+	$scope.getDocumentData();
+	
 	$scope.getDocumentCount();
 
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getDocumentData();
+	});
+	
+	
 	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
@@ -291,15 +333,6 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 			alert("Error");
 		});
 	};
-	
-	 $scope.trustSrc = function(src){
-		 return $sce.trustAsResourceUrl(src);
-	 }
-
-	 $scope.escapeUrl = function(url){
-    	return escape(url);
-	 }
-
 
 });
 
@@ -308,69 +341,183 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 
 //============================Start Commnet Controller===============
 app.controller('CommentCtrl', function($scope, $http, $window) {
-	$scope.getAllData = function() {
+	$scope.getCommentData = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/comment',
-			method : 'GET'
+			method : 'GET',
+			params : $scope.filter
+			
 		}).then(function(response) {
 			console.log(response);
 			$scope.comment = response.data.DATA;
-
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			alert("Client Failed");
 		});
 	}
 
-	$scope.getAllData();
+	$scope.getCommentData();
+	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getCommentData();
+	});
+	
 });
 
-// Feedback Controller
+// =======================Feedback Controller======================
 app.controller('FeedbackCtrl', function($scope, $http, $window) {
 	$scope.getFeedbackData = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/feedback',
-			method : 'GET'
+			method : 'GET',
+			params : $scope.filter
 		}).then(function(response) {
 			$scope.feedback = response.data.DATA;
 			console.log($scope.feedback);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
 	}
 	$scope.getFeedbackData();
-
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getFeedbackData();
+	});
+	
 });
+//=================================================================
 
-// Report Controller
+// =======================Report Controller========================
 app.controller('ReportCtrl', function($scope, $http, $window) {
 	$scope.getReportData = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/report',
-			method : 'GET'
+			method : 'GET',
+			params : $scope.filter
 		}).then(function(response) {
 			$scope.report = response.data.DATA;
 			console.log($scope.report);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
 	}
 	$scope.getReportData();
 
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getReportData();
+	});
+	
+	
 });
 
-// Savelist Controller
+//=================== Savelist Controller======================
 app.controller('SavelistCtrl', function($scope, $http, $window) {
 	$scope.getSavelistData = function() {
 		$http({
 			url : 'http://localhost:1111/api/v1/savelist',
-			method : 'GET'
+			method : 'GET',
+			params : $scope.filter
 		}).then(function(response) {
 			$scope.savelist = response.data.DATA;
 			console.log($scope.savelist);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
 	}
 	$scope.getSavelistData();
-
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getReportData();
+	});
+	
+	
 });
