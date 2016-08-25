@@ -163,10 +163,15 @@ body
 												<hr>
 											</div>
 											<div id="btn" >
-												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>Add To SaveList</span></button>
+												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
 												
-												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>		
+
+													
 																				
+
+												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>របាយការណ៍របស់ខ្ញុំ</button>											
+
 											</div>
 											
 										 </div>										
