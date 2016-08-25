@@ -139,7 +139,7 @@ a.thumbnail {
 
 </style>
 </header>
-
+<jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
 <div id="page-content-wrapper">
 	<div class="container" id="container-cate">
@@ -168,7 +168,11 @@ a.thumbnail {
 								<div id="documentBox" class="tab-pane fade in active" ng-init="getAllDocumentByCatID(parentCategory[0].CAT_ID)">
 						
 							<div ng-repeat="slide in documentByCatID track by $index" class="col-lg-4 col-sm-6 col-xs-12">
-								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+							    
+							     <!-- for Track user log -->	
+					      		<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
+								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail"  ng-click="countView(slide.DOC_ID)">
+								
 								<span class="img">
 								<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
 								</span>
@@ -254,6 +258,8 @@ a.thumbnail {
   <footer>
 <%-- 	<jsp:include page="include/footer.jsp"></jsp:include> --%>
    </footer>
+    <a href="#0" class="cd-top">Top</a>
+   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>

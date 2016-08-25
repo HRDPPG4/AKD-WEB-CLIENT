@@ -131,8 +131,7 @@ body
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
- 
-
+ <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <div>
 	<content>
 	<div id="page-content-wrapper">
@@ -169,14 +168,39 @@ body
 												<hr>
 											</div>
 											<div id="btn" >
-												<button class="btn btn-primary" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>Add To SaveList</span></button>
-												
-												<button class="btn btn-primary"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>Share</button>											
+
+												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
+
+												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+
+																						
+
+
+
 											</div>
 											
 										 </div>										
 									</div>
-
+									
+									<div class="content-report">
+										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
+										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										</div>
+										
+										<form action="" class=" form-report">
+										<textarea class=" form-control" rows="2" id="comment"></textarea>
+											<input type="button" value="បញ្ជូន"/>
+										</form>	
+										<script>
+											$(document).ready(function(){
+												$('.btn-report-detail').click(function(){
+													$('.content-report').toggle();
+												});
+											});
+										</script>				
+									</div>
+									
 									 <div class="slide-detail-more">
 									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
 										<div id="category">Category: {{docDetail[0].CATEGORY[0].CAT_NAME}}</div>
@@ -207,8 +231,10 @@ body
 												<hr>
 												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
 												       									 		 
-												 		<div class="col-md-6">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)">
+												 		<div class="col-md-6">	
+							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
+							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
+													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
 												 		</div>
@@ -269,7 +295,8 @@ body
 
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
-	
+  <a href="#0" class="cd-top">Top</a>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>

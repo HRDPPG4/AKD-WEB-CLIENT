@@ -10,6 +10,11 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<style>
+#PAGINATION{
+	text-align:center;
+}
+</style>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -55,18 +60,17 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i
-					class="fa fa-comment"></i> <span>Comments</span> <span
-					class="label label-primary pull-right">4</span> </a></li>
+					class="fa fa-comment"></i> <span>Comments</span></a></li>
 
 			<li class="active"><a href="savelist"> <i class="fa fa-list"></i>
-					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+					<span>Savelist</span> 
 			</a></li>
 		
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span> 
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
@@ -126,6 +130,7 @@
 								</tbody>
 
 							</table>
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -139,5 +144,6 @@
 
 
 	</div>
+	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
 </body>
 </html>

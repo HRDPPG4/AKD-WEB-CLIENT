@@ -10,19 +10,26 @@
 					 </a>
 			</span>
 	<div class="container">
-		<form class="navbar-form navbar-left form-contain" role="search">
+	<div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+            <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+	<!-- search form -->
+		<!-- <form class="navbar-form navbar-left form-contain" role="search">
         <div class="form-group typeahead-demo">          
           <input myEnter="searchPage()" placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">        
         </div>
-        
-        
-        
-         <button type="submit" ng-click="searchPage()">
-        	 <i class="fa fa-search" aria-hidden="true"></i>
-        </button> 
-        
-      </form>
-     <!--  <span>Model: {{selected | json}}</span> -->
+      </form> -->
 	</div>
 	<div class="upload-signup-signin" >
      	<ul>            
@@ -58,6 +65,9 @@
 		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 			 	</div>
 			<ul class="menu-basic" id="myTopnav">
+			<li class="icon">
+			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+			  </li>
 			
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
@@ -69,10 +79,6 @@
 					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
-			  </li>
-			  
-			  <li class="icon">
-			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
 			  </li>
 			  
 			</ul>
