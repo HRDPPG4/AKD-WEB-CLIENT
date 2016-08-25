@@ -104,7 +104,7 @@ a.thumbnail {
 		<div class="row section search topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px;">
+					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  

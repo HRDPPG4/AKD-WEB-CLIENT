@@ -5,6 +5,10 @@ var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
 	
+	
+	/*$http.defaults.headers.common.Authorization = 'Basic Q2hpdm9ybjphZG1pbg==' ;	*/
+	
+	
 	////////////////////START SEARCH BLOCK	/////////////////
 	var _selected;
 	$scope.selected = undefined;

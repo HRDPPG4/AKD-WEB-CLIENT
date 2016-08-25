@@ -2,6 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 	
 <!DOCTYPE html>
 <html>
@@ -116,16 +118,20 @@ body
 </style>
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+
+
  <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include> 
-				  
+
+		  
 <header id="header">
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
+ 
 
 <div>
 	<content>
@@ -241,6 +247,26 @@ body
 	</div> 	
 
 <footer>
+
+
+
+
+
+
+
+<h1>Hello <sec:authentication property="principal.name"/>!!!</h1>
+
+<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
+		THIS BLOCK CAN SEE ONLY ADMIN AND DBA
+</sec:authorize>
+
+
+
+
+
+
+
+
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
 	
