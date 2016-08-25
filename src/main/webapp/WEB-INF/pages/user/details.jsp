@@ -207,8 +207,10 @@ body
 												<hr>
 												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
 												       									 		 
-												 		<div class="col-md-6">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)">
+												 		<div class="col-md-6">	
+							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
+							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
+													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
 													 		</a>
 												 		</div>

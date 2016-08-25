@@ -301,6 +301,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}, function(response){
 
 		});	
+		$scope.trackLog();
 	}
 	$scope.getDocumentByUser=function(userID,docTypeNum){
 		
@@ -343,12 +344,51 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	///////////////////		START FEEDBACK BLOCK	/////////////////
 	
-	
+	$scope.saveFeedBack = function(){	
+
+		$http({
+			url:'http://localhost:1111/api/v1/feedback',
+			method:'POST',
+			data:{
+				  'CREATED_DATE': new Date(),
+				  'DES': $scope.userEmail,
+				  'STATUS': 1,	
+				  
+			}
+		}).then(function(response){
+			alert("success");
+		
+			
+		}, function(response){
+		 console.log(response);
+		});
+	}
 	
 	
 	///////////////////		END FEEDBACK BLOCK	/////////////////
 	
 	///////////////////		START LOG BLOCK	/////////////////
+	
+	 $scope.trackLog=function(){
+
+	     
+			$http({
+				url:'http://localhost:1111/api/v1/log',
+				method:'POST',
+				data :{
+					  'CREATED_DATE': new Date(),
+					  'DOC_ID': $('#slide_id').val(), 
+					  'REMARK': "",
+					  'STATUS': 0,
+					  'USER_ID': $('#slide_user_id').val()
+				}
+			}).then(function(response){
+				alert("Success");
+			
+			}, function(response){
+				console.log(response);
+			});	
+		}
 	
 	 $scope.deleteLog =function(docID){
 	     	var userID = $("#userID").val();
