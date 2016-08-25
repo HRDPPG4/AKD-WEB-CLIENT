@@ -10,16 +10,29 @@
 					 </a>
 			</span>
 	<div class="container">
-		<form class="navbar-form navbar-left form-contain" role="search">
+	<div class="row">
+        <div class="col-sm-4 col-sm-offset-2">
+            <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>
+                </div>
+            </div>
+        </div>
+	</div>
+		<!-- <form class="navbar-form navbar-left form-contain" role="search">
         <div class="form-group typeahead-demo">          
           <input placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">        
         </div>
-        
         <button type="submit">
         	 <i class="fa fa-search" aria-hidden="true"></i>
         </button>
         
-      </form>
+      </form> -->
      <!--  <span>Model: {{selected | json}}</span> -->
 	</div>
 	<div class="upload-signup-signin" >
@@ -43,11 +56,6 @@
         </ul>
      </div>
 </nav>
-<div>
-	<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
-		hello
-	</nav>
-</div>
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">

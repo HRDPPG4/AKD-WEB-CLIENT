@@ -36,10 +36,10 @@ html,body {
 }
 
 /*search contain*/
-.navbar > .container .form-contain ,
-.form-group .form-search{
+/* .navbar > .container .form-contain ,
+.form-group{
   position: relative;
-   /*padding: 10px 15px;*/
+   padding: 10px 15px;
    border-style: none;
   margin-top: 1px;
   margin-right: -15px;
@@ -51,12 +51,14 @@ html,body {
   width: 400px;
   background-color: #eee;
   }
+ 
   .navbar > .container button[type="submit"]{
     position: absolute;
     bottom: 6px;
     left: 440px;
     border:0;
-    width: 50px;
+    padding-left:10px;
+    width: 40px;
     color: #888;
     display: line;
     background: transparent;
@@ -69,7 +71,23 @@ html,body {
     position: absolute;
     color: #000;
     background: transparent;
-  }
+  } */
+  
+  #imaginary_container{
+    margin-top:0; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
  /*////////////////////////////////////////////////////////////*/
  
 /*upload,sign in,sign up*/
