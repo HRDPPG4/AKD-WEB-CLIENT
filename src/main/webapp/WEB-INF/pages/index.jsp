@@ -210,6 +210,8 @@
 <footer>
 <jsp:include page="user/include/footer.jsp"></jsp:include>
 </footer>
+ <a href="#0" class="cd-top">Top</a>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
