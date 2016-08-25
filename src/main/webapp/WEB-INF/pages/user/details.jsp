@@ -164,6 +164,10 @@ body
 											</div>
 											<div id="btn" >
 												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
+<<<<<<< HEAD
+												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+=======
 												
 
 													
@@ -172,11 +176,27 @@ body
 												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>របាយការណ៍របស់ខ្ញុំ</button>											
 
+>>>>>>> e8b1579dfa903bd419eb34c37a35b144ece46e4e
 											</div>
 											
 										 </div>										
 									</div>
-
+									
+									<div class="content-report">
+										<div class="header-report">ការវាយតម្លៃស្លាយនេះ</div>
+										<form action="" class=" form-report">
+										<textarea class=" form-control" rows="2" id="comment"></textarea>
+											<input type="button" value="បញ្ជូន"/>
+										</form>	
+										<script>
+											$(document).ready(function(){
+												$('.btn-report-detail').click(function(){
+													$('.content-report').toggle();
+												});
+											});
+										</script>				
+									</div>
+									
 									 <div class="slide-detail-more">
 									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
 										<div id="category">Category: {{docDetail[0].CATEGORY[0].CAT_NAME}}</div>

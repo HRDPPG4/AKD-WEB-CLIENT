@@ -29,6 +29,20 @@
   background-color: white;
   padding: 10px;
 }
+.content-report{
+	display:none;
+	font-size: 16px;
+	position:absolute;
+	border:1px solid #eee;
+  text-align: left;
+  margin-top:-5px;
+  margin-left:200px;
+  margin-bottom:5px;
+  color: #333;
+  width:300px;
+  background-color: white !important;
+  padding: 10px;
+}
 .commend-visitor{
 	font-size: 16px;
   text-align: center;
@@ -183,3 +197,21 @@ color:white;
 	color:#fff;
 	border:1px solid #fff;
 }
+
+.header-report{
+	padding-bottom:5px;
+	border-bottom: 1px solid #003666;
+}
+.form-report{
+	padding-top:10px;
+}
+input[type="button"]{
+	padding:5px;
+	margin-top:5px;
+	float:right;
+	color:#fff;
+	font-size:14px;
+	border:1px solid #fff;
+	background:#003666 !important;
+}
+
