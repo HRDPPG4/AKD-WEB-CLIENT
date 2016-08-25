@@ -140,12 +140,15 @@ a.thumbnail {
 					<div class="col-md-12">
 					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
 					      <!-- for Track user log -->
-						  <input   type="hidden" class="form-control" value="{{slide.DOC_ID}}" id="slide_id">
+						  
 					      <input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="trackLog()">
+						  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail"  ng-click="countView(slide.DOC_ID)">
 						 	
 							<span class="img">
-							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
+							
+							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
+				
+
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
