@@ -8,7 +8,15 @@
 	margin-top: 30px;
 	text-align:justify-all;
 } */
-
+.footer{
+	background-color: #374458;
+	width: 100% !important;
+	height:50% !important;
+	color:  white;
+	margin-top: 30px;
+	text-align:left;
+	word-wrap:break-word !important;
+}
 .footer .list{
 	padding: 0;
 	margin: 0;

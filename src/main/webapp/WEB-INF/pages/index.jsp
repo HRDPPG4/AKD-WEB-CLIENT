@@ -66,52 +66,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 <style>
-.footer{
-	background-color: #374458;
-	width: 100% !important;
-	height:50% !important;
-	color:  white;
-	margin-top: 30px;
-	text-align:left;
-	word-wrap:break-word !important;
-}
-a.thumbnail {
-    text-decoration: none;
-    border: 1px solid #fff;
-    border-top-color: rgb(229, 230, 233);
-    border-right-color: rgb(223, 224, 228);
-    border-bottom-color: rgb(208, 209, 213);
-    border-left-color: rgb(223, 224, 228);
-    min-height: 338.79px;
-}
 
-/*  SEARCH BLOCK	*/
-
-.typeahead-demo .custom-popup-wrapper {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    display: none;
-    background-color: #f9f9f9;
-  }
-
-  .typeahead-demo .custom-popup-wrapper > .message {
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    color: #868686;
-  }
-
-  .typeahead-demo .custom-popup-wrapper > .dropdown-menu {
-    position: static;
-    float: none;
-    display: block;
-    min-width: 160px;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
 
 </style>
 
