@@ -388,6 +388,12 @@ ul.menu-basic li.icon {display: none;}
 }
 #right a{
 	color:white;
+	cursor:pointer;
+	text-decoration: none;
+}
+#right a:hover{
+	color:white;
+	cursor:pointer;
 	text-decoration: none;
 }
 .thumbnails {

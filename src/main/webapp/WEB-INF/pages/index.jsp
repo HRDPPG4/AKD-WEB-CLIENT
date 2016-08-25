@@ -81,7 +81,7 @@
 <header id="header">
 <jsp:include page="user/include/header.jsp"></jsp:include>
 </header>
-<jsp:include page="user/include/toolbar-right.jsp"></jsp:include>
+
 <content>
 <div class="container">
 	<section id="recommend">
@@ -91,6 +91,7 @@
 				<h2 class="section-title"><span id="left">ឯកសារណែនាំ</span>
 				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
+			 <jsp:include page="user/include/toolbar-right.jsp"></jsp:include>
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in recommend | limitTo : 8" class="col-md-3" style="margin-bottom:10px;">
