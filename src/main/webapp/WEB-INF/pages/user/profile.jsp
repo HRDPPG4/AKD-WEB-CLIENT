@@ -77,15 +77,15 @@
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
-								<li class="about"><a data-toggle="tab" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
+								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser(2,2)" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser(2)" href="#viewed">ឯកសារដែលបានមើល</a></li>
-								<li class="about"><a data-toggle="tab" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
+								<li class="about"><a data-toggle="tab" ng-click ="getSavelistUser(2)" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
 								
 							</ul>
 						</div>
 						<!-- right side -->
 				
-					<div class="tab-content">
+					 <div class="tab-content">
 							<div id="infor" class="tab-pane fade in active">
 									<div class="content-aboutme">
 										<div class="header-infor">
@@ -193,29 +193,31 @@
 							<div id="mydoc" class="tab-pane fade">
 								<div class="content-mydoc">
 					           	<ul class="nav nav-tabs">
-									    <li class="active"><a data-toggle="tab" href="#pdf-edit">PDF</a></li>
-									    <li><a data-toggle="tab" href="#ppt-edit">PPT</a></li>
-									    <li><a data-toggle="tab" href="#doc-edit">DOC</a></li>
+									    <li class="active"><a data-toggle="tab" ng-click="getDocumentByUser(2,2)" href="#pdf-edit">PDF</a></li>
+									    <li><a data-toggle="tab" ng-click="getDocumentByUser(2,1)" href="#ppt-edit">PPT</a></li>
+									    <li><a data-toggle="tab" ng-click="getDocumentByUser(2,3)" href="#doc-edit">DOC</a></li>
 								   </ul>
 								   <div class="pdf-ppt-doc-edit tab-content">
 								   		 <div id="pdf-edit" class="tab-pane fade in active">
 								   		 		
-								   		 	<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+								   		 	<div class="list-group" ng-repeat ="slide in DocumentUser  ">
 
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
-														<div class="checkbox pull-left">
+														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
-																<input type="checkbox" value="">				
+																<input type="checkbox" value="2" id ="userDoc">
+																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
 														</div>
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
 														<div class="media-body" style="padding-top:20px;">
-															<h4 class="media-heading">គណិតវិទ្យា</h4>
-															<p>ជាសៀវភៅដល់ល្អ</p>
+															<h4 class="media-heading">{{slide.TITLE}}</h4>
+															<p>{{slide.DES}}</p>
+															<p>{{slide.CREATED_DATE}}</p>
 														</div>
 								
 													</div>					
@@ -227,24 +229,26 @@
 								   		 		
 								   		 </div>
 								   		 <!--edit pdf  -->
-								   		 <div id="ppt-edit" class="tab-pane fade">
-								   		 <div class="list-group" ng-repeat="slide in document  | limitTo :2">
+								   		 <div id="ppt-edit" class="tab-pane fade" >
+								   		 <div class="list-group" ng-repeat ="slide in DocumentUser  | limitTo :20">
 
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
 											        
-														<div class="checkbox pull-left">
+														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
-																<input type="checkbox" value="">				
+																<input type="checkbox" value="2" id ="userDoc">
+																<input type="hidden" value="1" id ="typeDoc">				
 															</label>
 														</div>
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
 														<div class="media-body">
-															<h4 class="media-heading">គណិតវិទ្យា</h4>
-															<p>ជាសៀវភៅដល់ល្អ</p>
+														    <h4 class="media-heading">{{slide.TITLE}}</h4>
+															<p>{{slide.DES}}</p>
+															<p>{{slide.CREATED_DATE}}</p>
 														</div>
 								
 													</div>					
@@ -256,23 +260,26 @@
 								   		 </div>
 								   		 <!--edit doc  -->
 								   		 <div id="doc-edit" class="tab-pane fade">
-								   		 <div class="list-group" ng-repeat="slide in document  | limitTo :2">
+								   		 <div class="list-group" ng-repeat ="slide in DocumentUser  | limitTo :20">
 
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
 											        	
-														<div class="checkbox pull-left">
+														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
-																<input type="checkbox" value="">				
+																<input type="checkbox" value="2" id ="userDoc">
+																<input type="hidden" value="3" id ="typeDoc">				
 															</label>
 														</div>
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
 														<div class="media-body"​>
-															<h4 class="media-heading">គណិតវិទ្យា</h4>
-															<p>ជាសៀវភៅដល់ល្អ</p>
+															<h4 class="media-heading">{{slide.TITLE}}</h4>
+															<p>{{slide.DES}}</p>
+															<p>{{slide.CREATED_DATE}}</p>
+														
 														</div>
 								
 													</div>					
@@ -301,14 +308,17 @@
 								         		</div>
 							         		
 							         		<div class="history-view">
-							         			<div class="list-group" ng-repeat="log in getLogByUser" | limitTo :5">
+							         			<div class="list-group" ng-repeat="log in getLogByUser" >
 	
 									    			<a href="/detail/{{log.DOCUMENT.DOC_ID}}" class="list-group-item">
 									
 														<div class="media">
+														
+														   
 												     
-															<div class="checkbox pull-right">
+															<div class="checkbox pull-right" ng-click="deleteLog(log.LOG_ID)">
 													    		<label>
+													    	        <input type="hidden" value="{{log.DOCUMENT.USER_ID}}" id="userID">
 																	<span><i class="fa fa-times" aria-hidden="true"></i></span>				
 																</label>
 															</div>
@@ -342,20 +352,21 @@
 										</ul>
 								    </div>
 								    <div>
-								    		<div class="list-group" ng-repeat="slide in document  | limitTo :2">
+								    		<div class="list-group" ng-repeat="list in getuserSavelist ">
 	
-									    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+									    			<a href="/detail/{{list.SAVELISTDETAIL[0].DOCUMENT[0].DOC_ID}}" class="list-group-item">
 									
 														<div class="media">
 												     
 															<div class="checkbox pull-right">
 															</div>
 															<div class="pull-left">
-																<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
+																<img class="media-object" src="{{list.SAVELISTDETAIL[0].DOCUMENT[0].THUMBNAIL_URL}}" alt="Image">
 															</div>
 															<div class="media-body">
-																<h4 class="media-heading">HTML</h4>
-																<p>HTML ជាភាសាមួយក្នុងការចាប់ផ្តើម</p>
+																<h4 class="media-heading">{{list.SAVELISTDETAIL[0].DOCUMENT[0].TITLE}}</h4>
+																<p>{{list.SAVELISTDETAIL[0].DOCUMENT[0].DES}}</p>
+																<p>បង្កើតថ្ងៃទីៈ{{list.CREATED_DATE}}</p>
 															</div>
 									
 														</div>					
@@ -369,14 +380,14 @@
 						           		<div class="tooltip-header-list"></div>
 						           		<div class="body-list">
 						           			<div​​​​​ class="header-list">
-						           			 ចំណង​ជើង​បញ្ជី​ដាក់ឯកសារ
+						           			 
 							           			 <div class="descript-list">
-							           				<input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ"/>
+							           				<input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ" ng-model="saveListname"/>
 							           			</div>
 							           			<div class="footer-list">
 							           					<div class="create-playlist-section">
 							           						<button class="btn-content-list">បោះបង់</button>
-							           						<button class="btn-create">បង្កើត</button>
+							           						<button class="btn-create" ng-click="saveList()">បង្កើត</button>
 							           					</div>
 							           			</div>
 						           			</div>
