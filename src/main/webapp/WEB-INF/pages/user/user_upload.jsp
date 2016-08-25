@@ -63,7 +63,7 @@
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
-
+<jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <div class="container">
   	<div class="main-tab">
   		<ul class="tab">
