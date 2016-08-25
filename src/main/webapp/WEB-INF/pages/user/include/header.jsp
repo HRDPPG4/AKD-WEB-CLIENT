@@ -24,6 +24,7 @@
             </div>
         </div>
 	</div>
+	<!-- search form -->
 		<!-- <form class="navbar-form navbar-left form-contain" role="search">
         <div class="form-group typeahead-demo">          
           <input placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">        
@@ -33,7 +34,6 @@
         </button>
         
       </form> -->
-     <!--  <span>Model: {{selected | json}}</span> -->
 	</div>
 	<div class="upload-signup-signin" >
      	<ul>            
