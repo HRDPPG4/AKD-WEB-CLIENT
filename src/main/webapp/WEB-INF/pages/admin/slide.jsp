@@ -7,23 +7,13 @@
 <title>Admin | Slide</title>
 <%@include file="include/admin-link.jsp"%>
 
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-
-<script
-	src="${pageContext.request.contextPath}/resources/admin/js/jquery.filer.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/js/jquery-upload-file.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/js/jquery-latest.js"></script>
-<link
-	href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer.css"
-	rel="stylesheet" />
-<link
-	href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer-dragdropbox-theme.css"
-	rel="stylesheet" />
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery.filer.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery-upload-file.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery-latest.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
 
 <style>
 .form-horizontal .form-group {
@@ -34,6 +24,9 @@
 .btn-flat {
 	border-radius: 0;
 	margin-left: 20px;
+}
+#PAGINATION{
+	text-align:center;
 }
 </style>
 </head>
@@ -82,17 +75,17 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
-					<span class="label label-primary pull-right">4</span> </a></li>
+					 </a></li>
 
 			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
-					<span class="label label-primary pull-right">8</span>
+					
 			</a></li>
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span> 
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
@@ -159,9 +152,9 @@
 									</tr>
 
 								</tbody>
-								<tfoot>
-								</tfoot>
+								
 							</table>
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -175,12 +168,14 @@
 				</div>
 				<!-- /.col -->
 			</div>
-			<!-- /.row --> </section>
+			<!-- /.row --> 
+			</section>
 			<!-- /.content -->
 		</div>
 	</div>
 	</div>
 
 	</div>
+	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
 </body>
 </html>
