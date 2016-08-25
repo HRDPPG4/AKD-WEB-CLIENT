@@ -38,6 +38,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	
 	
+	
 	////////////////////	END INITAILIZE VARIABLE BLOCK	/////////////////
 	
 	
@@ -301,6 +302,42 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
 		});	
 	}
+	$scope.getDocumentByUser=function(userID,docTypeNum){
+		
+		$http({
+			url:'http://localhost:1111/api/v1/document/user/'+userID,
+			method:'GET',
+			params: {
+				docTypeNum : docTypeNum
+			}
+		
+		}).then(function(response){
+			$scope.DocumentUser=response.data.DATA;
+			console.log($scope.DocumentUser);
+		}, function(response){
+
+		});
+	}
+	
+	$scope.deleteDocument=function(docID){
+		var userID = $("#userDoc").val();
+		
+		var typeDoc = $("#typeDoc").val();
+	
+		$http({
+			url:'http://localhost:1111/api/v1/document/'+docID,
+			method:'DELETE',
+		
+		
+		}).then(function(response){
+		   alert("Deleted!");
+		 	$scope.getDocumentByUser(userID,typeDoc);
+		}, function(response){
+           alert("Fail");
+		});
+	 
+	}
+
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
@@ -313,10 +350,24 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
+	 $scope.deleteLog =function(docID){
+	     	var userID = $("#userID").val();
+	     	alert(docID);
+		 
+			$http({
+				url:'http://localhost:1111/api/v1/log/'+docID,
+				method:'DELETE',
+			}).then(function(response){
+				alert("Success");
+				$scope.getLogByUser(userID);
+			}, function(response){
+               console.log(response);
+              
+			});	
+		}
+	 
 	  $scope.getLogByUser =function(userID){
-	     	
-  	 
-  	    
+	     
   			$http({
   				url:'http://localhost:1111/api/v1/user/log/'+userID,
   				method:'GET'
@@ -327,6 +378,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
                 alert("fail");
   			});	
   		}
+	
+	 
+	
 	
 	
 	///////////////////		END LOG BLOCK	/////////////////
@@ -355,9 +409,10 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
          listname = $scope.saveListname;
       
          doc = $('#doc_id').val();
+         alert(doc);
+         alert(listname);
         
-        
-         if(catename == undefined){
+         if(catename == undefined && doc != ""){
           	  alert("Case listname and document not empty" +listname);
            	  Savelistname = listname;
            	  $http({
@@ -401,52 +456,32 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		//	console.log(response);
            			
            		});
-         }else if( doc == undefined ){
-       	  alert("Case listname have and document is empty" +doc);
-       	  Savelistname = listname;
-       	  alert("listname" +Savelistname);
-       	  $http({
-     			url:'http://localhost:1111/api/v1/saveSavelistOnly',
-     			method:'POST',
-     			data:{
-     				  'CREATED_DATE': new Date(),
-     				  'LIST_NAME': Savelistname,
-     				  'REMARK': "",
-     				  'STATUS':1 ,
-     				  'USER_ID': $('#user_id').val()
 
-     			}
-     		}).then(function(response){
-     			alert("success");
-     			
-     			
-     		}, function(response){
-     			//console.log(response);
-     			
-     		});
-       	  
          }else{
-       	  Savelistname = listname;
-       	  $http({
-       			url:'http://localhost:1111/api/v1/savelist',
-       			method:'POST',
-       			data:{
-       				  'CREATED_DATE': new Date(),
-       				  'DOC_ID': $('#doc_id').val(),
-       				  'LIST_NAME': Savelistname,
-       				  'REMARK': "",
-       				  'STATUS':1 ,
-       				  'USER_ID': $('#user_id').val()
+        	 alert("Case listname have and document is empty" +doc);
+          	  Savelistname = listname;
+          	 
+          	  $http({
+        			url:'http://localhost:1111/api/v1/saveSavelistOnly',
+        			method:'POST',
+        			data:{
+        				  'CREATED_DATE': new Date(),
+        				  'LIST_NAME': Savelistname,
+        				  'REMARK': "",
+        				  'STATUS':1 ,
+        				  'USER_ID': $('#user_id').val()
 
-       			}
-       		}).then(function(response){
-       			alert("success");
-       			
-       			
-       		}, function(response){
-       			//console.log(response);
-       			
-       		});
+        			}
+        		}).then(function(response){
+        			alert("success");
+        			
+        			
+        		}, function(response){
+        			console.log(response);
+        			
+        		});
+
+        
          }
          
          
