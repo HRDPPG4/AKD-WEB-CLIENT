@@ -27,12 +27,8 @@
 	<!-- search form -->
 		<!-- <form class="navbar-form navbar-left form-contain" role="search">
         <div class="form-group typeahead-demo">          
-          <input placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">        
+          <input myEnter="searchPage()" placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8" class="form-control form-search">        
         </div>
-        <button type="submit">
-        	 <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        
       </form> -->
 	</div>
 	<div class="upload-signup-signin" >

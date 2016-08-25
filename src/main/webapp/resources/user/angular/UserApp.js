@@ -8,8 +8,25 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	////////////////////START SEARCH BLOCK	/////////////////
 	var _selected;
 	$scope.selected = undefined;
-	$scope.states = ['Chivorn', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-	//console.log($scope.states );
+
+	$scope.searchPage = function(){
+		location.href= "/search/"+$scope.selected;
+		//alert($scope.selected);
+	}
+	
+	
+	$scope.getDocumentByLikeTitle = function(title){			
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
+			method:'GET'			
+		}).then(function(response){
+			$scope.documentSearch=response.data.DATA;
+			console.log($scope.documentSearch);
+			
+		}, function(response){
+		
+		});
+	}
  
 	  //////////////////// END SEARCH BLOCK	/////////////////
 	  
@@ -619,3 +636,16 @@ app.filter('strLimit', ['$filter', function($filter) {
 ///////////////////		END FILTER STRING WITH LIMIT LEGNH	/////////////////
 
 
+app.directive('myEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                scope.$apply(function (){
+                    scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+});
