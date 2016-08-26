@@ -130,13 +130,13 @@ body
 <div>
 	<content>
 	<div id="page-content-wrapper">
-		 <div class="container">
-			<section id="slide-view" style="width:100%;" >
+		 <div class="container-fluid">
+			<section id="slide-view">
 					<div class="row section nav-left topspace-right-slide">
 						<div class="row">
 						 <div class="show-slide-view">
-							<div class="col-md-9 content-slide-view">
-								<div class="row col-md-12">
+							<div class="col-md-8  content-slide-view">
+								<div class="row col-md-12 col-md-offset-0">
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
@@ -163,9 +163,15 @@ body
 												<hr>
 											</div>
 											<div id="btn" >
-												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>ដាក់ចូលបញ្ជី</span></button>
+
+												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
+
 												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
-												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>																					
+												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+
+																						
+
+
 
 											</div>
 											
@@ -212,38 +218,45 @@ body
 
 	
 							 <div class="related-slide">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="row col-sm-12" >
 										<div class="related-container">
-											<div class="row">												
+																				
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												
+												  <div class="col-xs-12 col-sm-6 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												       		
 												       									 		 
-												 		<div class="col-md-6">	
+												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
-													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
-													 		</a>
-												 		</div>
-												 		<div class="col-md-6">
-												 			<div id="Title">
-												 			{{related.TITLE | strLimit: 23}}
+												 		 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+															<div class="img-detail">
+															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
+															</div>
+														</a>
+														</div>
+														<div style="width:170px;position:relative;float:left;left:10px;top:20px;">
+														<div class="title-detail">
+															<div id="Title">
+												 			{{related.TITLE | strLimit: 30}}
 												 			</div>
-												 			<div id="User">
-												 			{{related.USERS[0].USER_NAME | strLimit: 10}}
+												 			<div id="View">
+												 			{{slide.VIEW}}
+												 			{{related.USERS[0].USER_NAME | strLimit: 30}}
 												 			</div>
 												 			<div id="Des">
-												 			{{related.DES | strLimit: 23}}
+												 			{{related.DES | strLimit: 30}}
 												 			</div>
-												 		</div>	
-												 </div> 
-												 
+														</div>
+									
+												     </div> 
+												 </div>
 												 
 												 											
-											</div>	
-										</div>
+											
+										
 									</div>
 								</div>
 							</div> 
@@ -252,6 +265,7 @@ body
 
 						</div>
 						
+					</div>
 					</div>
 		</section>
 	  </div> 
@@ -264,7 +278,8 @@ body
 <footer>
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
-	
+  <a href="#0" class="cd-top">Top</a>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
