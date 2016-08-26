@@ -131,7 +131,7 @@ body
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
-<%--  <jsp:include page="include/toolbar-right.jsp"></jsp:include> --%>
+  <jsp:include page="include/toolbar-right.jsp"></jsp:include> 
 <div>
 	<content>
 	<div id="page-content-wrapper">
