@@ -65,7 +65,17 @@
   	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   -->
 	
 	<!-- END SEARCH BLOCK -->
+	
+	<!-- Report and Share Linked -->
+	<script src="../resources/user/js/report.js"></script>
+	<script src="../resources/user/js/countShare.js"></script>
 
+    	<!--facebook meta tag--> 
+   <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Your Website Title" />
+	<meta property="og:description"   content="Your description" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 <style>
 	
 #SlideBox
@@ -120,6 +130,27 @@ body
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
 
+/////////////////		Facebook Configuration			////////////////
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1910861819140575', 
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
  <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -131,7 +162,10 @@ body
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
-<%--  <jsp:include page="include/toolbar-right.jsp"></jsp:include> --%>
+
+  <jsp:include page="include/toolbar-right.jsp"></jsp:include> 
+
+
 <div>
 	<content>
 	<div id="page-content-wrapper">
@@ -171,12 +205,10 @@ body
 
 												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
 
-												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
+												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+
 												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
-
-																						
-
-
 
 											</div>
 											
@@ -189,17 +221,13 @@ body
 										</div>
 										
 										<form action="" class=" form-report">
-										<textarea class=" form-control" rows="2" id="comment"></textarea>
-											<input type="button" value="បញ្ជូន"/>
+										<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
+											<input type="button" id="btnReport" value="បញ្ជូន" ng-click="insertReport()">
 										</form>	
-										<script>
-											$(document).ready(function(){
-												$('.btn-report-detail').click(function(){
-													$('.content-report').toggle();
-												});
-											});
-										</script>				
+										
 									</div>
+									
+									 
 									
 									 <div class="slide-detail-more">
 									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
@@ -236,7 +264,7 @@ body
 												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-												 		 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 															<div class="img-detail">
 															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>
@@ -247,8 +275,7 @@ body
 															<div id="Title">
 												 			{{related.TITLE | strLimit: 30}}
 												 			</div>
-												 			<div id="View">
-												 			{{slide.VIEW}}
+												 			<div id="View">												 		
 												 			{{related.USERS[0].USER_NAME | strLimit: 30}}
 												 			</div>
 												 			<div id="Des">
@@ -257,11 +284,8 @@ body
 														</div>
 									
 												     </div> 
-												 </div>
+												 </div> 
 												 
-												 											
-											
-										
 									</div>
 								</div>
 							</div> 
@@ -279,6 +303,8 @@ body
 		     <!-- end page-content-wrapper -->
 	</content>
 	</div> 	
+	
+	
 
 <footer>
 
@@ -333,4 +359,25 @@ body
 		  }); 
 	//	}); 
 	</script>	
+	
+	///////////////			Sharing To Facebook			///////////////
+	<script>
+	
+	  
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'feed',
+    display: 'popup',
+    caption: 'TESTING',
+    link: 'localhost:2222',
+    
+  }, function(response){
+	  
+  });
+}
+
+</script>
 </body>
+
+ 
+

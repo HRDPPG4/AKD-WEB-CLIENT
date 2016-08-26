@@ -10,11 +10,6 @@
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
-        
-        <span>
-        
-        
-        </span>
 
     <div class="imgcontainer">	
     <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
@@ -25,12 +20,12 @@
       <div class="modal-body" style="padding:40px 50px;">
         <form role="form" id="frmLogin">
           <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-            <input type="text" name="username" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល Email">
+            <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> អ៊ីម៉ែល</label>
+            <input type="text" name="username" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល អ៊ីម៉ែល">
           </div>
           <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-            <input name="password" type="text" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
+            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> ពាក្យសំងាត់</label>
+            <input name="password" type="password" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
           </div>
           <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>

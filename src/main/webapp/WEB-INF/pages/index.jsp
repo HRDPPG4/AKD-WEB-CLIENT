@@ -133,7 +133,7 @@
 
 		</div>
 	</section>
-	
+	<div class="container">
 	<section id="popular">
 		<!-- section-title -->
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
@@ -174,9 +174,9 @@
 
 	</div>
 	</section>
-	
+	</div>
 
-	
+	<div class="container">
 	<section id="ឯកសារថ្មីៗ">
 		<!-- section-title -->
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()">

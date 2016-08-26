@@ -305,7 +305,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}, function(response){
 
 		});	
-		$scope.trackLog();
+		$scope.countView(id);
 	}
 	$scope.getDocumentByUser=function(userID,docTypeNum){
 		
@@ -350,7 +350,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
     		method : 'PUT',
     		
     	}).then(function(response){
-    		alert("Count Success");
+    		
+    		
+    		//alert("Count Success");
     		$scope.trackLog(docID);
     	},function(response){
     		console.log(response);
@@ -409,7 +411,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 $scope.deleteLog =function(docID){
 	     	var userID = $("#userID").val();
-	     	alert(docID);
+	     //	alert(docID);
 		 
 			$http({
 				url:'http://localhost:1111/api/v1/log/'+docID,
@@ -445,11 +447,38 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	    
 	///////////////////		START REPORT BLOCK	/////////////////
+	  
+
+
 	
+	  $scope.UserID="";
+		$scope.insertReport = function(){	
+			$http({
+				url:'http://localhost:1111/api/v1/report',
+				method:'POST',
+				data:{	
+					"CREATED_DATE": new Date(),
+					"DOC_ID": $scope.currentDocumentID,
+					"REMARK": $scope.currentReport,
+					"STATUS": 1,
+					"USER_ID": $scope.UserID
+				}	
+				
+			}).then(function(response){
+			
+				$scope.report = response.data.DATA;
+			
+			}, function(response){
+				
+			});	
+		}
+
 	
 	
 	
 	 ///////////////////		END REPORT BLOCK	/////////////////
+		
+	
 	
 	 ///////////////////		START SAVELIST BLOCK	/////////////////
 	
@@ -470,7 +499,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
        
         
          if(groupname == undefined && doc != "" && listname !=""){
-          	 
+
            	  Savelistname = listname;
            	  $http({
            			url:'http://localhost:1111/api/v1/savelist',
@@ -494,7 +523,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
        	  
          }else if(listname ==undefined){
-        	 
+
            	  Savelistname = catename;
            		$http({
            			url:'http://localhost:1111/api/v1/savelistDetail',
@@ -514,8 +543,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            			
            		});
 
-         }else{
-        	
+
           	  Savelistname = listname;
           	 
           	  $http({
