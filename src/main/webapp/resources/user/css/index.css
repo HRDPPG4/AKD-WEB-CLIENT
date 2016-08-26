@@ -472,7 +472,7 @@ a.thumbnail{
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
-    min-height: 336.79px;
+    min-height: 338px;
    
   *  min-height: 315px;
 }
@@ -498,14 +498,14 @@ a.thumbnail{
 
 }
 
-.thumbnail img {
+/* .thumbnail img {
     width: 100%;
     text-decoration: none;
     position: absolute;
     top: 0;
     left: 0;
     max-height: 100%;
-}
+} */
 .title-cover{
   position: absolute;
   right: 90px;
@@ -576,10 +576,21 @@ a.thumbnail{
   width: 100%;
   text-decoration: none;
   position: absolute;
+  
   top: 0;
   left: 0;
 }
-
+.thumbnail img:hover {
+  width: 100%;
+  text-decoration: none;
+  position: absolute;
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  top: 0;
+  left: 0;
+}
+  
 .thumbnail .title {
   text-transform: uppercase;
   margin: 0 1em;
@@ -689,20 +700,20 @@ i.fa-bars{
 
 #side-toolbar{
 	position:fixed;
-	z-index:300;
+	z-index:30;
 	right:0;
 	margin-top:20px;
 }
 .content-toolbar{
 margin:0;
 padding:0;
+
 }
 
 ul.ul-toolbar{
 	position:relative;
 	 margin: 0;
      padding: 0;
-      width:290px;
      list-style-type: none;
 }
 ul.ul-toolbar> li{
