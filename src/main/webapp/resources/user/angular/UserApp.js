@@ -456,8 +456,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	 // create saveList
 
     $scope.saveList = function(){   
-   	  var Savelistname = "";
-   	  var groupname = "";
+   	  	var Savelistname = "";
+   	  	var groupname = "";
   
    	  	var listname ="";
    	    groupname  = $("#saveListnames").val();
