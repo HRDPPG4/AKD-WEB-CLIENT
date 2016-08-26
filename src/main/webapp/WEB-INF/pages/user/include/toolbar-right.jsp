@@ -8,9 +8,9 @@
 				<li class="search">
 					<a> 
 				            <form method="" action="" class="form-inline" >
-				            <span><i class="fa fa-search" aria-hidden="true"></i></span>
-				                <input type="text"​ class="side-search" placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8"/>
-				                <button type="submit" class="btn-side-search"> <span class="glyphicon glyphicon-search"></span></button>
+				            <span><i class="fa fa-search typeahead-demo" aria-hidden="true"></i></span>
+				                <input type="text"​ myEnter="searchPage()"  class="side-search" placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8"/>
+				                <button type="submit" class="btn-side-search" ng-click="searchPage()"> <span class="glyphicon glyphicon-search"></span></button>
 				            </form>
 						
 					</a>
