@@ -10,11 +10,6 @@
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
-        
-        <span>
-        
-        
-        </span>
 
     <div class="imgcontainer">	
     <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     

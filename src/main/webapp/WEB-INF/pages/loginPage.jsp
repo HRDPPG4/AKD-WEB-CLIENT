@@ -14,8 +14,13 @@
 
 	
 	<style>
+body
+{
+	font-family:Khmer OS Battambang;
+}
 form {
     border: 3px solid #f1f1f1;
+    
 }
 
 input[type=text], input[type=password] {
@@ -78,19 +83,7 @@ span.psw {
 
 </head>
 <body class="container">
-	<!-- <h1>Login</h1>
-        <form action="/login" method="POST" id="frmLogin">
-          <div class="form-group">           	
-            <input type="text" name="username">
-          </div>
-          <div class="form-group">
-            
-            <input type="password" name="password">
-          </div>
-         <input type="submit" value="Login">
-            <button type="submit" >Login</button>
-        </form> -->
-        <h2 style="text-align: center">Login Form</h2>
+        <h2 style="text-align: center">ចូលប្រើគណនីរបស់អ្នក</h2>
 
 <form action="/login" method="POST" id="frmLogin">
   
@@ -100,32 +93,19 @@ span.psw {
   <center>
   	<table style="width:100%;">  
   		<tr>
-  			<td style="text-align: center"><label><b>Email:</b></label></td>
-  			<td><input  type="text" placeholder="Enter Email" name="username" required></td>
+  			<td style="text-align: center"><label><b>អ៊ីម៉ែល:</b></label></td>
+  			<td><input  type="text" placeholder="សូមបញ្ចូល អ៊ីម៉ែល" name="username" required></td>
   		</tr>
   		<tr>
-  			<td style="text-align: center"><label><b>Password</b></label></td>
-  			<td><input  type="password" placeholder="Enter Password" name="password" required></td>
+  			<td style="text-align: center"><label><b>ពាក្យសំងាត់</b></label></td>
+  			<td><input  type="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់" name="password" required></td>
   		</tr>
   		<tr>
-  	 <td style="position:relative;left:180px;"><button type="submit">Login</button></td>
+  	 <td style="position:relative;left:180px;"><button type="submit">ចូលប្រើ</button></td>
   	 </tr>
   	</table>
   </center>	
   	</div>
-    <!-- <div><label><b>Email:</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-	</div>
-	<div>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-    </div>
-       <button type="submit">Login</button>
-      
-   
-   
-  </div> -->
-
   <div style="background-color:#f1f1f1">
    
     
