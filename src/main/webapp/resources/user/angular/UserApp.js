@@ -350,7 +350,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
     		method : 'PUT',
     		
     	}).then(function(response){
-    		alert("Count Success");
+    		
+    		
+    		//alert("Count Success");
     		$scope.trackLog(docID);
     	},function(response){
     		console.log(response);
@@ -409,7 +411,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 $scope.deleteLog =function(docID){
 	     	var userID = $("#userID").val();
-	     	alert(docID);
+	     //	alert(docID);
 		 
 			$http({
 				url:'http://localhost:1111/api/v1/log/'+docID,
@@ -470,7 +472,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
        
         
          if(groupname == undefined && doc != "" && listname !=""){
-          	  alert("Case listname and document not empty" +listname);
+          	//  alert("Case listname and document not empty" +listname);
            	  Savelistname = listname;
            	  $http({
            			url:'http://localhost:1111/api/v1/savelist',
@@ -494,7 +496,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
        	  
          }else if(listname ==undefined){
-        	  alert("Case CatList have" +catename);
+        	//  alert("Case CatList have" +catename);
            	  Savelistname = catename;
            		$http({
            			url:'http://localhost:1111/api/v1/savelistDetail',
@@ -515,7 +517,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
 
          }else{
-        	 alert("Case listname have and document is empty" +doc);
+        //	 alert("Case listname have and document is empty" +doc);
           	  Savelistname = listname;
           	 
           	  $http({
