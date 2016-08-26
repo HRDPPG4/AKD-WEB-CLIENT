@@ -151,11 +151,6 @@ body
 </script>
 
 
-
-
-
-
-
  <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -213,6 +208,8 @@ body
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 
+												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+
 											</div>
 											
 										 </div>										
@@ -267,7 +264,7 @@ body
 												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" >
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 															<div class="img-detail">
 															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>
