@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="UserCtrl">
 	<div id="side-toolbar">
 		<div class="content-toolbar">
 			<ul class="ul-toolbar">
@@ -20,8 +20,8 @@
 							<div id="comment-side">
 									<form method="" action="" class="form-inline" >
 							            <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
-							            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side"></textarea>
-							            <button type="submit" class="btn-comment">ផ្ងើ</button>
+							            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" ng-model="recommend"></textarea>
+							            <button type="submit" class="btn-comment" ng-click="saveFeedBack()">ផ្ងើ</button>
 				            </form>
 							</div>
 						</a>

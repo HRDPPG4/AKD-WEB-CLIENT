@@ -119,7 +119,13 @@ jQuery(document).ready(function($) {
 
 });
 
-// 
+// Botton Share
+$(document).ready(function(){
+	$('.share').click(function(d, s, id) {
+		 
+});
+
+
 
 
 

@@ -364,7 +364,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $scope.userEmail,
+				  'DES': $scope.recommend,
 				  'STATUS': 1,	
 				  
 			}
@@ -453,19 +453,19 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
     $scope.saveList = function(){   
    	  var Savelistname = "";
-   	  var catename = "";
+   	  var groupname = "";
   
    	  var listname ="";
-         catename = $("#saveListnames").val();
+   	   groupname  = $("#saveListnames").val();
          
         
          listname = $scope.saveListname;
       
          doc = $('#doc_id').val();
-         alert(doc);
-         alert(listname);
+         
+       
         
-         if(catename == undefined && doc != ""){
+         if(groupname == undefined && doc != "" && listname !=""){
           	  alert("Case listname and document not empty" +listname);
            	  Savelistname = listname;
            	  $http({
