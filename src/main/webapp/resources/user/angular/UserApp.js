@@ -455,8 +455,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
    	  var Savelistname = "";
    	  var groupname = "";
   
-   	  var listname ="";
-   	   groupname  = $("#saveListnames").val();
+   	  	var listname ="";
+   	    groupname  = $("#saveListnames").val();
          
         
          listname = $scope.saveListname;
@@ -466,7 +466,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
        
         
          if(groupname == undefined && doc != "" && listname !=""){
-          	  alert("Case listname and document not empty" +listname);
+          	 
            	  Savelistname = listname;
            	  $http({
            			url:'http://localhost:1111/api/v1/savelist',
@@ -490,7 +490,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
        	  
          }else if(listname ==undefined){
-        	  alert("Case CatList have" +catename);
+        	 
            	  Savelistname = catename;
            		$http({
            			url:'http://localhost:1111/api/v1/savelistDetail',
@@ -511,7 +511,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
 
          }else{
-        	 alert("Case listname have and document is empty" +doc);
+        	
           	  Savelistname = listname;
           	 
           	  $http({
@@ -543,9 +543,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	}
 
      
-     $scope.AddTosavelistDetail = function(){
-    	 
-     }
+
      //--------End create saveList------------
      
      //--------- getUserList-----------------
