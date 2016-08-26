@@ -236,7 +236,7 @@ body
 												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-												 		 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 															<div class="img-detail">
 															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>
@@ -247,8 +247,7 @@ body
 															<div id="Title">
 												 			{{related.TITLE | strLimit: 30}}
 												 			</div>
-												 			<div id="View">
-												 			{{slide.VIEW}}
+												 			<div id="View">												 		
 												 			{{related.USERS[0].USER_NAME | strLimit: 30}}
 												 			</div>
 												 			<div id="Des">
@@ -257,11 +256,8 @@ body
 														</div>
 									
 												     </div> 
-												 </div>
+												 </div> 
 												 
-												 											
-											
-										
 									</div>
 								</div>
 							</div> 
