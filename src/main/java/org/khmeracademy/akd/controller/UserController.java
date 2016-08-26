@@ -60,5 +60,10 @@ public class UserController {
 		return "user/viewPageByCategoryID";
 	}
 	
+	@RequestMapping(value="/user/feature",method=RequestMethod.GET)
+	public String feature11(){
+		return "user/featured";
+	}
+	
 }
 

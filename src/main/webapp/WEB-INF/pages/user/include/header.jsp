@@ -1,5 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+ <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+   <sec:authentication  property="principal.userID" var="userID"/>
+   <sec:authentication  property="principal.name" var="userName"/>
+</sec:authorize>
+
+<script>
+userID = "${userID}";
+userName = "${userName}";
+
+	//alert("Username: "+userName+ "And UserID: "+userID);
+
+</script>
+
 
 <!-- top menu -->
 	<div class="top-menu">
@@ -14,9 +29,9 @@
         <div class="col-sm-4 col-sm-offset-2">
             <div id="imaginary_container"> 
                 <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8">
+                    <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8">
                     <span class="input-group-addon">
-                        <button type="submit">
+                        <button type="submit" ng-click="searchPage()">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>  
                     </span>
@@ -35,12 +50,19 @@
      	<ul>            
             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a>
             </li>
-
+			
+			<!-- If not yet login -->
+			<sec:authorize access="isAnonymous()">Login
             <li id="signin"><a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
 
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
+            </sec:authorize>
+            
+            <!-- If login already-->
+            <sec:authorize access="isAuthenticated()">
+            <%-- <li><sec:authentication property="principal.name"/></li> --%>
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self"> ទំព័ររបស់ខ្ញុំ</a></li>
@@ -48,6 +70,7 @@
                 </ul>
             </a>
             </li>
+            </sec:authorize>
           
         </ul>
      </div>

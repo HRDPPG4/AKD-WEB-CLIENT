@@ -1,32 +1,43 @@
 package org.khmeracademy.akd.entity;
 
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User implements UserDetails{
+	@JsonProperty("USER_ID")
 	private int userID;
 	
+	@JsonProperty("USER_NAME")
 	private String name;
 	
+	@JsonProperty("PASSWORD")
 	private String password;
 	
+	@JsonProperty("EMAIL")
 	private String email;
 	
+	@JsonProperty("PHONE")
 	private String phone;
 	
+	@JsonProperty("CREATED_DATE")
 	private String createdDate;
 	
+	@JsonProperty("REMARK")
 	private String remark;
 	
+	@JsonProperty("STATUS")
 	private int status;
 	
+	@JsonProperty("USER_ROLE")
 	private String role;
+	
+	@JsonProperty("ROLES")
+	private List<Role> roles;
 	
 	
 	public int getUserID() {
@@ -85,14 +96,13 @@ public class User implements UserDetails{
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>(); 		
-		authorities.add(new SimpleGrantedAuthority("ROLE_" + role.toUpperCase()));
-		return authorities;
+		// TODO Auto-generated method stub
+		return roles;
 	}
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
@@ -114,5 +124,12 @@ public class User implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+	
 	
 }

@@ -131,7 +131,7 @@ body
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
- <jsp:include page="include/toolbar-right.jsp"></jsp:include>
+<%--  <jsp:include page="include/toolbar-right.jsp"></jsp:include> --%>
 <div>
 	<content>
 	<div id="page-content-wrapper">
@@ -280,11 +280,11 @@ body
 
 
 
-<h1>Hello <sec:authentication property="principal.name"/>!!!</h1>
+<%-- <h1>Hello <sec:authentication property="principal.name"/>!!!</h1>
 
 <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
 		THIS BLOCK CAN SEE ONLY ADMIN AND DBA
-</sec:authorize>
+</sec:authorize> --%>
 
 
 
