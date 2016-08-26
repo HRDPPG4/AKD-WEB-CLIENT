@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class AdminController {
 	
-	
-	
 	@RequestMapping(value={"/admin/dashboard","/admin/"},method=RequestMethod.GET)
 	public String findAll(){
 		return "admin/dashboard";
