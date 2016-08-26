@@ -52,7 +52,7 @@ userName = "${userName}";
             </li>
 			
 			<!-- If not yet login -->
-			<sec:authorize access="isAnonymous()">Login
+			<sec:authorize access="isAnonymous()">
             <li id="signin"><a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
 
@@ -66,7 +66,7 @@ userName = "${userName}";
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self"> ទំព័ររបស់ខ្ញុំ</a></li>
-                	<li><a href="#"> ចាកចេញ</a></li>
+                	<li><a href="logout?logout"> ចាកចេញ</a></li>
                 </ul>
             </a>
             </li>
@@ -85,8 +85,8 @@ userName = "${userName}";
 	<!-- </div> -->
 	
 		 <div class="main-menu">
-		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
-			 	</div>
+		<%--  <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a> --%>
+		</div>
 			<ul class="menu-basic" id="myTopnav">
 			<li class="icon">
 			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
@@ -105,8 +105,9 @@ userName = "${userName}";
 			  </li>
 			  
 			</ul>
-		</div> 
+</div> 
 		
-	</div>
+
 </nav>
-</div>
+	</div>
+<!-- </div> -->
