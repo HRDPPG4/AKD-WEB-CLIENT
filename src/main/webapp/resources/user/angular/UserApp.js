@@ -305,7 +305,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		}, function(response){
 
 		});	
-		$scope.trackLog();
+		$scope.countView(id);
 	}
 	$scope.getDocumentByUser=function(userID,docTypeNum){
 		
