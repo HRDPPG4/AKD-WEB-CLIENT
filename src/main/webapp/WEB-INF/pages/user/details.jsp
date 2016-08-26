@@ -220,7 +220,7 @@ body
 										
 									</div>
 									
-									
+									 
 									
 									 <div class="slide-detail-more">
 									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
