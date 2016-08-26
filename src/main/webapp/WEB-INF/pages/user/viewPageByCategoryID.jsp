@@ -171,6 +171,7 @@ a.thumbnail {
 							    
 							     <!-- for Track user log -->	
 					      		<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
+					      		
 								<a href="/detail/{{slide.DOC_ID}}" class="thumbnail"  ng-click="countView(slide.DOC_ID)">
 								
 								<span class="img">

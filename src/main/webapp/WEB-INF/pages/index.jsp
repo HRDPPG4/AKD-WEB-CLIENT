@@ -115,15 +115,17 @@
 								<a href="#" alt="like" class="like">
 									<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
 								</a>
-								<a href="#" alt="download" class="download">
+								<a href="" alt="download" class="download">
 									<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
 									</a>
-								<a href="#" alt="share" class="share">
+									
+								<a href="http://localhost:2222/detail/0B6u494K0lyadVzVXSkZjUVVWSVE" alt="share" class="share">
 									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 								</a>
-							</span>
+								</span>
 						</a>  
 					</div>
+					
 				</div>
 			
 			</div> 
@@ -229,7 +231,7 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
-	
+ 
 	
 </body>
 </html>
