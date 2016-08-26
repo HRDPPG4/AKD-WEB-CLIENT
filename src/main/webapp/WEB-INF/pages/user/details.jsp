@@ -63,7 +63,17 @@
   	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   -->
 	
 	<!-- END SEARCH BLOCK -->
+	
+	<!-- Report and Share Linked -->
+	<script src="../resources/user/js/report.js"></script>
+	<script src="../resources/user/js/countShare.js"></script>
 
+    	<!--facebook meta tag--> 
+   <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Your Website Title" />
+	<meta property="og:description"   content="Your description" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
 <style>
 	
 #SlideBox
@@ -116,6 +126,30 @@ body
 </style>
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+
+/////////////////		Facebook Configuration			////////////////
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1910861819140575', /* '293339291044332' */
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+ 
+
+
  <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -126,7 +160,11 @@ body
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
-
+<!-- 4 LINES FOR SHARING TO SOCIALS -->
+<!-- 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50bee8c15741ef8d" async="async"></script> -->
+<!-- 	<!-- Go to www.addthis.com/dashboard to customize your tools --> -->
+<!-- 	<div class="addthis_sharing_toolbox" style="float:left; margin-right:100px"></div> -->
+<!-- 	<div class="fb-like" style="float:left; padding-top:5px;" data-href="http://localhost:2222/detail/0B6u494K0lyadblVDeWIwN2N4bnc" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
 <div>
 	<content>
 	<div id="page-content-wrapper">
@@ -164,19 +202,10 @@ body
 											</div>
 											<div id="btn" >
 												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
-<<<<<<< HEAD
-												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
+												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
-=======
-												
 
-													
-																				
-
-												<button class="btn-share-detail"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
-												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>របាយការណ៍របស់ខ្ញុំ</button>											
-
->>>>>>> e8b1579dfa903bd419eb34c37a35b144ece46e4e
 											</div>
 											
 										 </div>										
@@ -185,17 +214,13 @@ body
 									<div class="content-report">
 										<div class="header-report">ការវាយតម្លៃស្លាយនេះ</div>
 										<form action="" class=" form-report">
-										<textarea class=" form-control" rows="2" id="comment"></textarea>
-											<input type="button" value="បញ្ជូន"/>
+										<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
+											<input type="button" id="btnReport" value="បញ្ជូន" ng-click="insertReport()">
 										</form>	
-										<script>
-											$(document).ready(function(){
-												$('.btn-report-detail').click(function(){
-													$('.content-report').toggle();
-												});
-											});
-										</script>				
+										
 									</div>
+									
+									
 									
 									 <div class="slide-detail-more">
 									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
@@ -267,6 +292,8 @@ body
 		     <!-- end page-content-wrapper -->
 	</content>
 	</div> 	
+	
+	
 
 <footer>
 	<jsp:include page="include/footer.jsp"></jsp:include>
@@ -300,4 +327,25 @@ body
 		  }); 
 	//	}); 
 	</script>	
+	
+	///////////////			Sharing To Facebook			///////////////
+	<script>
+	
+	  
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'feed',
+    display: 'popup',
+    caption: 'TESTING',
+    link: 'localhost:2222',
+    
+  }, function(response){
+	  
+  });
+}
+
+</script>
 </body>
+
+ 
+

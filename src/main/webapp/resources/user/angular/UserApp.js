@@ -428,11 +428,38 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	    
 	///////////////////		START REPORT BLOCK	/////////////////
+	  
+
+
 	
+	  $scope.UserID="";
+		$scope.insertReport = function(){	
+			$http({
+				url:'http://localhost:1111/api/v1/report',
+				method:'POST',
+				data:{	
+					"CREATED_DATE": new Date(),
+					"DOC_ID": $scope.currentDocumentID,
+					"REMARK": $scope.currentReport,
+					"STATUS": 1,
+					"USER_ID": $scope.UserID
+				}	
+				
+			}).then(function(response){
+			
+				$scope.report = response.data.DATA;
+			
+			}, function(response){
+				
+			});	
+		}
+
 	
 	
 	
 	 ///////////////////		END REPORT BLOCK	/////////////////
+		
+	
 	
 	 ///////////////////		START SAVELIST BLOCK	/////////////////
 	
