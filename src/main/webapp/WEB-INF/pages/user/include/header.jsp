@@ -65,7 +65,7 @@ userName = "${userName}";
             <%-- <li><sec:authentication property="principal.name"/></li> --%>
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
-                	<li><a href="/profile" target="_self"> ទំព័ររបស់ខ្ញុំ</a></li>
+                	<li><a href="/profile" target="_self">${userName}</a></li>
                 	<li><a href="logout?logout"> ចាកចេញ</a></li>
                 </ul>
             </a>
