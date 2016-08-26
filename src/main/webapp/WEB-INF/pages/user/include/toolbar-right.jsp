@@ -20,7 +20,7 @@
 							<div id="comment-side">
 									<form method="" action="" class="form-inline" >
 							            <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
-							            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" ng-model="recommend"></textarea>
+							            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" id ="recomend"></textarea>
 							            <button type="submit" class="btn-comment" ng-click="saveFeedBack()">ផ្ងើ</button>
 				            </form>
 							</div>

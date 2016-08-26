@@ -370,8 +370,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $scope.recommend,
-				  'STATUS': 1,	
+				  'DES': $('#recomend').val(),
+				  'STATUS': 1
 				  
 			}
 		}).then(function(response){
