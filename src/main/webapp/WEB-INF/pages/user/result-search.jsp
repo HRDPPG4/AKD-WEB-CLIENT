@@ -96,7 +96,7 @@ a.thumbnail {
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
-
+<jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
 <div class="container">
 	<section id="search">
@@ -104,7 +104,7 @@ a.thumbnail {
 		<div class="row section search topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px;">
+					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
@@ -141,6 +141,8 @@ a.thumbnail {
 <footer>
 <jsp:include page="include/footer.jsp"></jsp:include>
 </footer>
+ <a href="#0" class="cd-top">Top</a>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>

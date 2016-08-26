@@ -1,20 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Comments</title>
 <%@include file="include/admin-link.jsp"%>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
+<style>
+#PAGINATION{
+	text-align:center;
+}
+</style>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
-		<%-- <%@include file="../include/navigation.jsp" %> --%>
 		<aside class="main-sidebar"> <!-- sidebar: style can be found in sidebar.less -->
 		<section class="sidebar"> <!-- Sidebar user panel -->
 		<div class="user-panel">
@@ -29,7 +32,6 @@
 
 			</div>
 		</div>
-		<!-- search form -->
 		<form action="#" method="get" class="sidebar-form">
 			<div class="input-group">
 				<input type="text" name="q" class="form-control"
@@ -41,13 +43,14 @@
 				</span>
 			</div>
 		</form>
-		<!-- /.search form --> <!-- sidebar menu: : style can be found in sidebar.less -->
 		<ul class="sidebar-menu">
 			<li class="header">MAIN NAVIGATION</li>
-			<li class="treeview"><a href="dashboard"> <i
-					class="fa fa-dashboard"></i> <span>Dashboard</span>
-			</a></li>
-
+				<li class="treeview">
+					<a href="dashboard">
+						<i class="fa fa-dashboard"></i>
+						<span>Dashboard</span>
+					</a>
+				</li>
 			<li><a href="slide"><i class="fa fa-slideshare"></i> <span>Slides</span></a></li>
 
 			<li><a href="main-category"> <i class="fa fa-list"></i> <span>Categories</span></a></li>
@@ -55,18 +58,17 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li class="active"><a href="comment"><i
-					class="fa fa-comment"></i> <span>Comments</span> <span
-					class="label label-primary pull-right">4</span> </a></li>
+					class="fa fa-comment"></i> <span>Comments</span></a></li>
 
 			<li><a href="savelist"> <i class="fa fa-list"></i>
-					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+					<span>Savelist</span> 
 			</a></li>
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span>
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
@@ -113,8 +115,9 @@
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-reply"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
+											<button type="button" class="btn btn-danger btn-sm"
+															ng-click="alertDelete(c.COMMENT_ID)">
+												<i class="fa fa-edit"></i>
 											</button>
 										</td>
 									</tr>
@@ -122,6 +125,7 @@
 								</tbody>
 
 							</table>
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -135,5 +139,6 @@
 
 
 	</div>
+	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
 </body>
 </html>

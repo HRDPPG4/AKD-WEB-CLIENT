@@ -5,6 +5,10 @@ var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
 	
+	
+	/*$http.defaults.headers.common.Authorization = 'Basic Q2hpdm9ybjphZG1pbg==' ;	*/
+	
+	
 	////////////////////START SEARCH BLOCK	/////////////////
 	var _selected;
 	$scope.selected = undefined;
@@ -338,7 +342,22 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		});
 	 
 	}
-
+    $scope.countView = function(docID){
+    	
+    	
+    	$http({
+    		url : 'http://localhost:1111/api/v1/document/counview/'+docID,
+    		method : 'PUT',
+    		
+    	}).then(function(response){
+    		
+    		
+    		//alert("Count Success");
+    		$scope.trackLog(docID);
+    	},function(response){
+    		console.log(response);
+    	});
+    }
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
@@ -351,7 +370,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $scope.userEmail,
+				  'DES': $scope.recommend,
 				  'STATUS': 1,	
 				  
 			}
@@ -369,15 +388,15 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
-	 $scope.trackLog=function(){
+	 $scope.trackLog=function(docID){
 
-	     
+	      
 			$http({
 				url:'http://localhost:1111/api/v1/log',
 				method:'POST',
 				data :{
 					  'CREATED_DATE': new Date(),
-					  'DOC_ID': $('#slide_id').val(), 
+					  'DOC_ID': docID, 
 					  'REMARK': "",
 					  'STATUS': 0,
 					  'USER_ID': $('#slide_user_id').val()
@@ -392,7 +411,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 $scope.deleteLog =function(docID){
 	     	var userID = $("#userID").val();
-	     	alert(docID);
+	     //	alert(docID);
 		 
 			$http({
 				url:'http://localhost:1111/api/v1/log/'+docID,
@@ -467,20 +486,20 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
     $scope.saveList = function(){   
    	  var Savelistname = "";
-   	  var catename = "";
+   	  var groupname = "";
   
    	  var listname ="";
-         catename = $("#saveListnames").val();
+   	   groupname  = $("#saveListnames").val();
          
         
          listname = $scope.saveListname;
       
          doc = $('#doc_id').val();
-         alert(doc);
-         alert(listname);
+         
+       
         
-         if(catename == undefined && doc != ""){
-          	  alert("Case listname and document not empty" +listname);
+         if(groupname == undefined && doc != "" && listname !=""){
+          	//  alert("Case listname and document not empty" +listname);
            	  Savelistname = listname;
            	  $http({
            			url:'http://localhost:1111/api/v1/savelist',
@@ -504,7 +523,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
        	  
          }else if(listname ==undefined){
-        	  alert("Case CatList have" +catename);
+        	//  alert("Case CatList have" +catename);
            	  Savelistname = catename;
            		$http({
            			url:'http://localhost:1111/api/v1/savelistDetail',
@@ -525,7 +544,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
            		});
 
          }else{
-        	 alert("Case listname have and document is empty" +doc);
+        //	 alert("Case listname have and document is empty" +doc);
           	  Savelistname = listname;
           	 
           	  $http({

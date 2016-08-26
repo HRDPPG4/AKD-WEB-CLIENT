@@ -10,6 +10,11 @@
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<style>
+#PAGINATION{
+	text-align:center;
+}
+</style>
 </head>
 <body class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -55,18 +60,17 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i
-					class="fa fa-comment"></i> <span>Comments</span> <span
-					class="label label-primary pull-right">4</span> </a></li>
+					class="fa fa-comment"></i> <span>Comments</span></a></li>
 
 			<li class="active"><a href="savelist"> <i class="fa fa-list"></i>
-					<span>Savelist</span> <span class="label label-primary pull-right">8</span>
+					<span>Savelist</span> 
 			</a></li>
 		
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span> 
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
@@ -99,9 +103,9 @@
 										<th>ID</th>
 										<th>Name</th>
 										<th>Date</th>
-										<th>Desciption</th>
+										<!-- <th>Desciption</th> -->
 										<th>User</th>
-										<th>Docs</th>
+										<!-- <th>Docs</th> -->
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -110,15 +114,15 @@
 										<td>{{s.LIST_ID}}</td>
 										<td>{{s.LIST_NAME}}</td>
 										<td>{{s.CREATED_DATE}}</td>
-										<td>{{s.REMARK}}</td>
+										<!-- <td>{{s.REMARK}}</td> -->
 										<td>{{s.USER_ID}}</td>
-										<td>{{s.DOC_ID}}</td>
+										<!-- <td>{{s.DOC_ID}}</td> -->
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<!-- <button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-reply"></i>
-											</button>
-											<button type="button" class="btn btn-danger btn-sm">
-												<i class="fa fa-eraser"></i>
+											</button> -->
+											<button type="button" class="btn btn-primary btn-sm">
+												<i class="fa fa-edit"></i>
 											</button>
 										</td>
 									</tr>
@@ -126,6 +130,7 @@
 								</tbody>
 
 							</table>
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -139,5 +144,6 @@
 
 
 	</div>
+	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
 </body>
 </html>

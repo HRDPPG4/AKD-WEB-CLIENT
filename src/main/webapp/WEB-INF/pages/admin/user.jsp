@@ -11,10 +11,12 @@
 	margin-right: 20px;
 	margin-left: 20px;
 }
-
 .btn-flat {
 	border-radius: 0;
 	margin-left: 20px;
+}
+#PAGINATION{
+	text-align:center;
 }
 </style>
 <script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
@@ -52,7 +54,7 @@
 				</span>
 			</div>
 		</form>
-		<!-- /.search form --> <!-- sidebar menu: : style can be found in sidebar.less -->
+		
 		<ul class="sidebar-menu">
 			<li class="header">MAIN NAVIGATION</li>
 			<li class="treeview"><a href="dashboard"> <i
@@ -67,18 +69,18 @@
 					<span>Users</span></a></li>
 
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
-					<span class="label label-primary pull-right">4</span> </a></li>
+					 </a></li>
 
 			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
-					<span class="label label-primary pull-right">8</span>
+					
 			</a></li>
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span>
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
@@ -123,7 +125,6 @@
 										<th>Name</th>
 										<th>Email</th>
 										<th>Date</th>
-										<th>Remark</th>
 										<th>Role</th>
 										<th>Action</th>
 									</tr>
@@ -134,7 +135,6 @@
 										<td>{{u.USER_NAME}}</td>
 										<td>{{u.EMAIL}}</td>
 										<td>{{u.CREATED_DATE}}</td>
-										<td>{{u.REMARK}}</td>
 										<td>{{u.USER_ROLE}}</td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm"
@@ -159,7 +159,7 @@
 					</div>
 
 
-					<!-- Modal Start-->
+					<!-- ===================================MOdal============================== -->
 
 					<%@include file="include/add-user.jsp"%>
 					<%@include file="include/update-user.jsp"%>

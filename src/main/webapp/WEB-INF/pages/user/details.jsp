@@ -2,6 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 	
 <!DOCTYPE html>
 <html>
@@ -127,12 +129,13 @@ body
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
+
 /////////////////		Facebook Configuration			////////////////
 
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1910861819140575', /* '293339291044332' */
+      appId      : '1910861819140575', 
       xfbml      : true,
       version    : 'v2.7'
     });
@@ -147,7 +150,10 @@ body
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
- 
+
+
+
+
 
 
  <jsp:include page="include/register.jsp"></jsp:include>
@@ -155,26 +161,26 @@ body
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include> 
-				  
+
+		  
 <header id="header">
  <jsp:include page="include/header.jsp"></jsp:include> 
 </header>
  <jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
-<!-- 4 LINES FOR SHARING TO SOCIALS -->
-<!-- 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50bee8c15741ef8d" async="async"></script> -->
-<!-- 	<!-- Go to www.addthis.com/dashboard to customize your tools --> -->
-<!-- 	<div class="addthis_sharing_toolbox" style="float:left; margin-right:100px"></div> -->
-<!-- 	<div class="fb-like" style="float:left; padding-top:5px;" data-href="http://localhost:2222/detail/0B6u494K0lyadblVDeWIwN2N4bnc" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div> -->
+
+  <jsp:include page="include/toolbar-right.jsp"></jsp:include> 
+
+
 <div>
 	<content>
 	<div id="page-content-wrapper">
-		 <div class="container">
-			<section id="slide-view" style="width:100%;" >
+		 <div class="container-fluid">
+			<section id="slide-view">
 					<div class="row section nav-left topspace-right-slide">
 						<div class="row">
 						 <div class="show-slide-view">
-							<div class="col-md-9 content-slide-view">
-								<div class="row col-md-12">
+							<div class="col-md-8  content-slide-view">
+								<div class="row col-md-12 col-md-offset-0">
 									<div class="slide-container" id="SlideBox">	
 									
 									<!--  IFRAME BLOCK TO DISPLAY SLIDE AND PDF -->	
@@ -201,10 +207,11 @@ body
 												<hr>
 											</div>
 											<div id="btn" >
+
 												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
+
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
-												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
 
 											</div>
 											
@@ -212,7 +219,10 @@ body
 									</div>
 									
 									<div class="content-report">
-										<div class="header-report">ការវាយតម្លៃស្លាយនេះ</div>
+										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
+										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										</div>
+										
 										<form action="" class=" form-report">
 										<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
 											<input type="button" id="btnReport" value="បញ្ជូន" ng-click="insertReport()">
@@ -244,38 +254,41 @@ body
 
 	
 							 <div class="related-slide">
-								<div class="col-md-3">
+								<div class="col-md-4">
 									<div class="row col-sm-12" >
 										<div class="related-container">
-											<div class="row">												
+																				
 												<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 												<hr>
-												  <div class="col-xs-6 col-sm-4 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												
+												  <div class="col-xs-12 col-sm-6 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  
+												       		
 												       									 		 
-												 		<div class="col-md-6">	
+												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-													 		<a href="/detail/{{related.DOC_ID}}" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
-													 		<img src="{{related.THUMBNAIL_URL}}" alt="Image"> 
-													 		</a>
-												 		</div>
-												 		<div class="col-md-6">
-												 			<div id="Title">
-												 			{{related.TITLE | strLimit: 23}}
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+															<div class="img-detail">
+															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
+															</div>
+														</a>
+														</div>
+														<div style="width:170px;position:relative;float:left;left:10px;top:20px;">
+														<div class="title-detail">
+															<div id="Title">
+												 			{{related.TITLE | strLimit: 30}}
 												 			</div>
-												 			<div id="User">
-												 			{{related.USERS[0].USER_NAME | strLimit: 10}}
+												 			<div id="View">												 		
+												 			{{related.USERS[0].USER_NAME | strLimit: 30}}
 												 			</div>
 												 			<div id="Des">
-												 			{{related.DES | strLimit: 23}}
+												 			{{related.DES | strLimit: 30}}
 												 			</div>
-												 		</div>	
+														</div>
+									
+												     </div> 
 												 </div> 
 												 
-												 
-												 											
-											</div>	
-										</div>
 									</div>
 								</div>
 							</div> 
@@ -284,6 +297,7 @@ body
 
 						</div>
 						
+					</div>
 					</div>
 		</section>
 	  </div> 
@@ -296,9 +310,30 @@ body
 	
 
 <footer>
+
+
+
+
+
+
+
+<%-- <h1>Hello <sec:authentication property="principal.name"/>!!!</h1>
+
+<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
+		THIS BLOCK CAN SEE ONLY ADMIN AND DBA
+</sec:authorize> --%>
+
+
+
+
+
+
+
+
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
-	
+  <a href="#0" class="cd-top">Top</a>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>

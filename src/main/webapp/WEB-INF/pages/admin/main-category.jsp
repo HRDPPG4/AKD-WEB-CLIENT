@@ -6,11 +6,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js">
-	
-</script>
-
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
+<style>
+.form-horizontal .form-group {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.btn-flat {
+	border-radius: 0;
+	margin-left: 20px;
+}
+#PAGINATION{
+	text-align:center;
+}
+</style>
 </head>
 <body class="skin-blue sidebar-mini" ng-app="MainApp"
 	ng-controller="MainCtrl">
@@ -57,18 +68,17 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
-					<span class="label label-primary pull-right">4</span> </a></li>
+					</a></li>
 
 			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
-					<span class="label label-primary pull-right">8</span>
+					
 			</a></li>
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span> 
 			</a></li>
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
-			</a></li>
+					<span>Report</span> 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
 
@@ -126,10 +136,11 @@
 										<!-- <td>{{c.PARENT_ID}}</td> -->
 										<td>{{c.STATUS}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)"
+													data-toggle="modal"	data-target="#updateCategory">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm" ng-click="alertDelete(c.CAT_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -212,9 +223,16 @@
 
 								</tfoot>
 							</table>
+							<div id="PAGINATION"></div>
 						</div>
 						<!-- /.box-body -->
 					</div>
+					
+					<!-- =======================update modal ========================= -->
+				
+					<%@include file="include/update-category.jsp"%>
+					
+					<!-- =======================end update modal ========================= -->
 					<!-- /.box -->
 				</div>
 				<!-- /.col -->
@@ -226,8 +244,8 @@
 	</div>
 <body>
 
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-
+	<script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
+<script src="/resources/admin/angular/angular.min.js"></script>
 </body>
 </html>

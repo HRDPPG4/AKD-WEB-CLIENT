@@ -23,14 +23,14 @@
         
       </div>
       <div class="modal-body" style="padding:40px 50px;">
-        <form role="form">
+        <form role="form" id="frmLogin">
           <div class="form-group">
             <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-            <input type="text" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល Email">
+            <input type="text" name="username" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល Email">
           </div>
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-            <input type="text" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
+            <input name="password" type="text" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
           </div>
           <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
@@ -47,3 +47,46 @@
     
   </div>
 </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+        
+        $(function() {
+        	
+        	$("#frmLogin").submit(function(e){
+       		
+       		  e.preventDefault();
+       			
+       		  $.ajax({
+  	            url: "${pageContext.request.contextPath}/login",
+  	            type: "POST",
+  	            data: $("#frmLogin").serialize(),
+//   	            beforeSend: function (xhr) {
+//   	                xhr.setRequestHeader("X-Ajax-call", "true");
+//   	            },
+  	            success: function(data) {
+  	            	if(data == "User account is locked"){
+  	            		alert(data);
+  	            	}else if(data == "User is disabled"){
+  	            		alert(data);
+  	            	}else if(data == "Bad credentials"){
+  	            		alert(data);
+  	            	}else{
+  	            		alert("Logined success.");
+  	            		location.href = "${pageContext.request.contextPath}/"+data;
+  	            	}
+  	            	
+  	            },
+  	         	error: function(data){
+  	         		console.log(data);
+  				}
+  	        });
+       			
+       		});
+	      
+        	
+        
+        });
+        </script>

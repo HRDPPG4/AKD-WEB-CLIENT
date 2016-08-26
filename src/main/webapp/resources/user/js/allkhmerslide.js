@@ -62,6 +62,7 @@ $(document).ready(function(){
 jQuery(document).ready(function($) {
 	var my_nav = $('.navbar-sticky'); 
 	var my_header=$('.navbar-bg');
+	var my_search_side=$('.search');
 //	var my_left_bar =$('.left-side-nav');
 
 	
@@ -77,8 +78,9 @@ jQuery(document).ready(function($) {
 			my_nav.addClass( 'stick' );
 			my_header.hide();
 			$('.logo-main-menu').show();
+			$('#side-toolbar').css({'margin-top':'-40px'});
+			my_search_side.show();
 			
-			$('li a#search').css({'position':'inline-block'});
 			// $('.navbar-collapse .navbar-nav').css({"right":"37px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"visible"});
 			
@@ -87,7 +89,8 @@ jQuery(document).ready(function($) {
 			my_nav.removeClass( 'stick' );
 			my_header.show();
 			$('.logo-main-menu').hide();
-			$('li a#search').css({'position':'none'});
+			$('#side-toolbar').css({'margin-top':'20px'});
+			my_search_side.hide();
 			
 			// $('.navbar-collapse .navbar-nav').css({"margin":"0 auto","right":"0px"});
 			// $('li.search, span.glyphicon-search').css({"visibility":"hidden"});
@@ -116,7 +119,13 @@ jQuery(document).ready(function($) {
 
 });
 
-// 
+// Botton Share
+$(document).ready(function(){
+	$('.share').click(function(d, s, id) {
+		 
+});
+
+
 
 
 

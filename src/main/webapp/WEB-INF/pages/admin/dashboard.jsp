@@ -61,19 +61,19 @@
 			<li><a href="user"><i class="fa fa-user"></i> <span>Users</span></a></li>
 
 			<li><a href="comment"><i class="fa fa-comment"></i> <span>Comments</span>
-					<span class="label label-primary pull-right">4</span> </a></li>
+					</a></li>
 
 			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
-					<span class="label label-primary pull-right">8</span>
+					
 			</a></li>
 
 			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feed
-						Back</span> <span class="label label-primary pull-right">8</span>
+						Back</span>
 			</a></li>
 
 
 			<li><a href="report"> <i class="fa fa-exclamation-circle"></i>
-					<span>Report</span> <span class="label label-primary pull-right">8</span>
+					<span>Report</span> 
 			</a></li>
 		</ul>
 		</section> <!-- /.sidebar --> </aside>
