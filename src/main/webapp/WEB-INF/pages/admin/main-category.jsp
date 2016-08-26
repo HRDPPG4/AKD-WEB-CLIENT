@@ -140,9 +140,9 @@
 													data-toggle="modal"	data-target="#updateCategory">
 												<i class="fa fa-edit"></i>
 											</button>
-											<!-- <button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm" ng-click="alertDelete(c.CAT_ID)">
 												<i class="fa fa-eraser"></i>
-											</button> -->
+											</button>
 										</td>
 									</tr>
 

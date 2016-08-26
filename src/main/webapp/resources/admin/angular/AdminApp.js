@@ -17,9 +17,37 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	}	
 	$scope.showCategory();
 	
+	$scope.removeCategory = function(id) {
+		$http({
+			url : 'http://localhost:1111/api/v1/category/' + id,
+			method : 'DELETE'
+		}).then(function() {
+			$scope.showCategory();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeCategory(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
+
+	
 	$scope.getDataForUpdate = function(category) {
 
-//		alert(category.c.CAT_NAME);
 		$scope.folderName = category.c.CAT_NAME;
 		$scope.des = category.c.REMARK;
 		$scope.sta = category.c.STATUS;
