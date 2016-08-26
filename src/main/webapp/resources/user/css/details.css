@@ -50,6 +50,44 @@
   margin-bottom:5px;
   background-color:  #003666;
 }
+/*  */
+.thumbnail-detail{
+  display: block;
+  border-radius: 0;
+  border: 1px solid #eee;
+  margin-bottom: 2px;
+  padding: 0px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+a.thumbnail-detail{
+	text-decoration: none;
+   height: 20%;
+    margin-bottom:10px;
+}
+
+.thumbnail-detail .img-detail {
+ display: block;
+  width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  min-height:100%;
+ 
+  min-height: 110px;
+  position: relative;
+  text-decoration: none;
+
+}
+
+.thumbnail-detail img {
+    width: 100%;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+}
 
 /*///////////*/
 .show-slides-cates{

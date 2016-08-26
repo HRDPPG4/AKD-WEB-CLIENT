@@ -103,7 +103,7 @@
 										<th>Date</th>
 										<th>Desciption</th>
 										<th>Status</th>
-										<th>Action</th>
+										<!-- <th>Action</th> -->
 									</tr>
 								</thead>
 								<tbody>
@@ -112,14 +112,14 @@
 										<td>{{f.CREATE_DATE}}</td>
 										<td>{{f.DES}}</td>
 										<td>{{f.STATUS}}</td>
-										<td>
+										<!-- <td>
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
 											</button>
 											<button type="button" class="btn btn-danger btn-sm">
 												<i class="fa fa-eraser"></i>
 											</button>
-										</td>
+										</td> -->
 									</tr>
 								</tbody>
 							</table>

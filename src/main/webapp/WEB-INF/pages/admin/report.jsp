@@ -8,6 +8,8 @@
 <%@include file="include/admin-link.jsp"%>
 <script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 <style>
 #PAGINATION{
 	text-align:center;
@@ -63,7 +65,7 @@
 			<li><a href="savelist"> <i class="fa fa-list"></i> <span>Savelist</span>
 					
 			</a></li>
-			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds
+			<li><a href="feedback"> <i class="fa fa-th"></i> <span>Feeds Back
 			
 			</a></li>
 
@@ -114,7 +116,8 @@
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm"
+											  		ng-click="alertDelete(r.REPORT_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>

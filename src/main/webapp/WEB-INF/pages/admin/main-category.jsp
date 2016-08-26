@@ -6,11 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
-<script
-	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js">
-	
-</script>
+<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 <style>
+.form-horizontal .form-group {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.btn-flat {
+	border-radius: 0;
+	margin-left: 20px;
+}
 #PAGINATION{
 	text-align:center;
 }
@@ -129,10 +136,11 @@
 										<!-- <td>{{c.PARENT_ID}}</td> -->
 										<td>{{c.STATUS}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)"
+													data-toggle="modal"	data-target="#updateCategory">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm" ng-click="alertDelete(c.CAT_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -219,6 +227,12 @@
 						</div>
 						<!-- /.box-body -->
 					</div>
+					
+					<!-- =======================update modal ========================= -->
+				
+					<%@include file="include/update-category.jsp"%>
+					
+					<!-- =======================end update modal ========================= -->
 					<!-- /.box -->
 				</div>
 				<!-- /.col -->
