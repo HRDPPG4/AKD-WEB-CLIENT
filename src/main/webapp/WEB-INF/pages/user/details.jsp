@@ -130,7 +130,7 @@ body
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
 
-/////////////////		Facebook Configuration			////////////////
+<!-- /////////////////		Facebook Configuration			//////////////// -->
 
 <script>
   window.fbAsyncInit = function() {
