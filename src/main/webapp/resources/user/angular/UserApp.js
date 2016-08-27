@@ -395,8 +395,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $scope.recommend,
-				  'STATUS': 1,	
+				  'DES': $('#recomend').val(),
+				  'STATUS': 1
 				  
 			}
 		}).then(function(response){
@@ -509,101 +509,99 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 // create saveList
 
-    $scope.saveList = function(){   
-   	  var Savelistname = "";
-   	  var groupname = "";
-  
-   	  var listname ="";
-   	   groupname  = $("#saveListnames").val();
-         
-        
-         listname = $scope.saveListname;
-      
-         doc = $('#doc_id').val();
-         
-       
-        
-         if(groupname == undefined && doc != "" && listname !=""){
-          	//  alert("Case listname and document not empty" +listname);
-           	  Savelistname = listname;
-           	  $http({
-           			url:'http://localhost:1111/api/v1/savelist',
-           			method:'POST',
-           			data:{
-           				  'CREATED_DATE': new Date(),
-           				  'DOC_ID': $('#doc_id').val(),
-           				  'LIST_NAME': Savelistname,
-           				  'REMARK': "",
-           				  'STATUS':1 ,
-           				  'USER_ID': $('#user_id').val()
+		$scope.saveList = function(){   
+		   	  var Savelistname = "";
+		   	  var catename = "";
+		  
+		   	  var listname ="";
+		         catename = $("#saveListnames").val();
+		         
+		        
+		         listname = $scope.saveListname;
+		      
+		         doc = $('#doc_id').val();
+		     //    alert(doc);
+		      //   alert(listname);
+		        
+		         if(catename == undefined && doc != ""){
+		          
+		           	  Savelistname = listname;
+		           	  $http({
+		           			url:'http://localhost:1111/api/v1/savelist',
+		           			method:'POST',
+		           			data:{
+		           				  'CREATED_DATE': new Date(),
+		           				  'DOC_ID': $('#doc_id').val(),
+		           				  'LIST_NAME': Savelistname,
+		           				  'REMARK': "",
+		           				  'STATUS':1 ,
+		           				  'USER_ID': $('#user_id').val()
 
-           			}
-           		}).then(function(response){
-           			alert("success");
-           			
-           			
-           		}, function(response){
-           			//console.log(response);
-           			
-           		});
-       	  
-         }else if(listname ==undefined){
-        	//  alert("Case CatList have" +catename);
-           	  Savelistname = catename;
-           		$http({
-           			url:'http://localhost:1111/api/v1/savelistDetail',
-           			method:'POST',
-           			data:{
-           				  'CREATED_DATE': new Date(),
-           				  'DOC_ID': $('#doc_id').val(),
-           				  'LIST_ID': Savelistname
-           				 
-           			}
-           		}).then(function(response){
-           			alert("success");
-           			
-           			
-           		}, function(response){
-           		//	console.log(response);
-           			
-           		});
+		           			}
+		           		}).then(function(response){
+		           			alert("success");
+		           			
+		           			
+		           		}, function(response){
+		           			//console.log(response);
+		           			
+		           		});
+		       	  
+		         }else if(listname ==undefined){
+		        	 
+		           	  Savelistname = catename;
+		           		$http({
+		           			url:'http://localhost:1111/api/v1/savelistDetail',
+		           			method:'POST',
+		           			data:{
+		           				  'CREATED_DATE': new Date(),
+		           				  'DOC_ID': $('#doc_id').val(),
+		           				  'LIST_ID': Savelistname
+		           				 
+		           			}
+		           		}).then(function(response){
+		           			alert("success");
+		           			
+		           			
+		           		}, function(response){
+		           		//	console.log(response);
+		           			
+		           		});
 
-         }else{
-        //	 alert("Case listname have and document is empty" +doc);
-          	  Savelistname = listname;
-          	 
-          	  $http({
-        			url:'http://localhost:1111/api/v1/saveSavelistOnly',
-        			method:'POST',
-        			data:{
-        				  'CREATED_DATE': new Date(),
-        				  'LIST_NAME': Savelistname,
-        				  'REMARK': "",
-        				  'STATUS':1 ,
-        				  'USER_ID': $('#user_id').val()
+		         }else{
+		        	
+		          	  Savelistname = listname;
+		          	 
+		          	  $http({
+		        			url:'http://localhost:1111/api/v1/saveSavelistOnly',
+		        			method:'POST',
+		        			data:{
+		        				  'CREATED_DATE': new Date(),
+		        				  'LIST_NAME': Savelistname,
+		        				  'REMARK': "",
+		        				  'STATUS':1 ,
+		        				  'USER_ID': $('#user_id').val()
 
-        			}
-        		}).then(function(response){
-        			alert("success");
-        			
-        			
-        		}, function(response){
-        			console.log(response);
-        			
-        		});
+		        			}
+		        		}).then(function(response){
+		        			alert("success");
+		        			
+		        			
+		        		}, function(response){
+		        			console.log(response);
+		        			
+		        		});
 
-        
-         }
-         
-         
-       
-		
-	}
+		        
+		         }
+		         
+		         
+		       
+				
+			}
 
      
-     $scope.AddTosavelistDetail = function(){
-    	 
-     }
+
      //--------End create saveList------------
      
      //--------- getUserList-----------------
@@ -645,7 +643,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 				  
 				  'STATUS': 1,	
 				  'USER_NAME': $scope.userName,
-				  'USER_ROLE': "user"
+				  'USER_ROLE': "ROLE_USER"
 			}
 		}).then(function(response){
 			alert("success");
