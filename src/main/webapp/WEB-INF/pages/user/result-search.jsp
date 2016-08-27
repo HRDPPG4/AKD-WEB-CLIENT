@@ -42,6 +42,10 @@
 	 <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 	
+	<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 	
 	<!--  Cannot use because Minea overwrite it-->
@@ -84,7 +88,6 @@ a.thumbnail {
 
 </style>
 
-
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByLikeTitle('${title}')">
 <jsp:include page="include/register.jsp"></jsp:include>
@@ -105,10 +108,10 @@ a.thumbnail {
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -125,7 +128,8 @@ a.thumbnail {
 									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 								</a>
 							</span>
-						</a>  
+						</a>   
+				
 					</div>
 				</div>
 			
@@ -154,6 +158,8 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
+
+
 	
 	
 </body>

@@ -117,6 +117,8 @@ a.thumbnail {
 
 </style>
 
+
+
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getAllDocument()">
 <jsp:include page="include/register.jsp"></jsp:include>
@@ -144,6 +146,8 @@ a.thumbnail {
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12" ng-if="showRecomment">
 					<div  ng-repeat="slide in recommend" class="col-md-3" style="margin-bottom:10px;">
+					
+							
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
@@ -239,6 +243,7 @@ a.thumbnail {
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
+
 
 
 <!-- library jquery for file upload -->

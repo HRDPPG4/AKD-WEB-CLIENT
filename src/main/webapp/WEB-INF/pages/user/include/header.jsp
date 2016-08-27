@@ -50,7 +50,8 @@ userName = "${userName}";
 	</div>
 	<div class="upload-signup-signin" >
      	<ul>            
-            <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a>
+            <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
+             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
             </li>
 			
 			<!-- If not yet login -->

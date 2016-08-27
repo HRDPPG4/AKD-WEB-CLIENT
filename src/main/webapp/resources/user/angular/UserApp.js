@@ -1,9 +1,16 @@
-
+/*var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','ngLoadingSpinner']);*/
 
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+	
+//	Loading Box
+	
+	$scope.startAjax = function() {
+	    $http.get('/display/')
+	  };
+	
 	
 	
 	/*$http.defaults.headers.common.Authorization = 'Basic Q2hpdm9ybjphZG1pbg==' ;	*/
@@ -24,6 +31,12 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
+			/*swal({  
+				title: "Record Found!",   
+				text: "",   
+				timer: 800,   
+				onfirmButton: false 
+			});*/
 			$scope.documentSearch=response.data.DATA;
 			console.log($scope.documentSearch);
 			
@@ -51,7 +64,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
 	////////////////////	START CATEGORY BLOCK	/////////////////
 	
-	$scope.getAllCategory = function(){			
+/*	$scope.showCategory = function(){			
 		$http({
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
@@ -59,13 +72,29 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;
 			
-		//	console.log($scope.category);
+			console.log($scope.category);
 			
 		}, function(response){
 		
 		});
 	}	
-	$scope.getAllCategory();
+	$scope.showCategory();*/
+	
+	$scope.getAllCategory = function(){			
+		$http({
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.category=response.data.DATA;
+			console.log("GET ALL CAT");
+			console.log($scope.category);
+			
+		}, function(response){
+		
+		});
+	}	
+/*	$scope.getAllCategory();*/
 	
 	$scope.getCategoryByParentID=function(parentID){	
 		$scope.getCategoryByID(parentID);
@@ -221,7 +250,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			params : $scope.filter	
 		}).then(function(response){
 			$scope.newDocument=response.data.DATA;
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
 		}, function(response){
 
@@ -704,6 +733,13 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			//alert($rootScope.currentSubCategory);
 			//getAllDocumentByCatID(parentCat.CAT_ID)
 			
+			swal({  
+				title: "File Upload Successful!",   
+				text: "",   
+				timer: 800,   
+				onfirmButton: false 
+			});
+			
 			$(".progress-bar").css("width", "100%"); 
 	
 			$scope.$on(frmData, function(){
@@ -716,7 +752,12 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		
 			
 		}, function(response) {
-			alert("Error");
+			swal({  
+				title: "File Upload Fail!",   
+				text: "",   
+				timer: 800,   
+				onfirmButton: false 
+			});
 			
 		});
 	};
