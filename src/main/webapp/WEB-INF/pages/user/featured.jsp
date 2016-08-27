@@ -220,7 +220,9 @@ a.thumbnail {
 						</a>  
 					</div>
 				</div>
-	
+				
+				<div id="PAGINATION"></div>
+				
 			</div> 
 		</div>
 	</section>
@@ -244,7 +246,7 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
-	
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery.bootpage.min.js"></script>
 	
 </body>
 </html>

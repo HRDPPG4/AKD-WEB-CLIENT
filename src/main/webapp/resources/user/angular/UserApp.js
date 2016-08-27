@@ -216,17 +216,42 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
-			method:'GET'
+			method:'GET',
+			params : $scope.filter	
 		}).then(function(response){
 			$scope.newDocument=response.data.DATA;
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
 		}, function(response){
 
 		});
 	}
 	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
 	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
 	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getDocumentByNewPost();
+	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
 		$http({
