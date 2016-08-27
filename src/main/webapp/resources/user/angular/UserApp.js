@@ -167,6 +167,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		//	alert($scope.UserID);
 			//$scope.display();
 			//console.log(response.config.data);
+			$scope.newComment="";
 		}, function(response){
 			alert("Error");
 		});	
