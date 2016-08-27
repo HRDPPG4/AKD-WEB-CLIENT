@@ -68,7 +68,7 @@ userName = "${userName}";
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
-                	<li><a href="logout?logout"> ចាកចេញ</a></li>
+                	<li><a href="/login"> ចាកចេញ</a></li>
                 </ul>
             </a>
             </li>
