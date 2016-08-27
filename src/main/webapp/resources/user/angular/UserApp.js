@@ -617,7 +617,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 				  
 				  'STATUS': 1,	
 				  'USER_NAME': $scope.userName,
-				  'USER_ROLE': "user"
+				  'USER_ROLE': "ROLE_USER"
 			}
 		}).then(function(response){
 			alert("success");
