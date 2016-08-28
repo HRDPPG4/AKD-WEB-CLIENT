@@ -104,7 +104,7 @@ window.userID = "${userID}";
 				   </span>ទំព័រដើម</a>
 			  </li>
 			  
-			  <li ng-repeat="mainCat in getAllCategoryAndSubcategory">
+			  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak>
 			  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
 					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}

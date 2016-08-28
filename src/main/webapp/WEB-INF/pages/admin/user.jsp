@@ -24,7 +24,7 @@
 <script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
 <link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 </head>
-<body class="skin-blue sidebar-mini">
+<body ng-cloak class="skin-blue sidebar-mini">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<aside class="main-sidebar"> <!-- sidebar: style can be found in sidebar.less -->

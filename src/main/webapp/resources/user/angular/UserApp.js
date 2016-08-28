@@ -467,9 +467,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
-	 $scope.trackLog=function(docID){
-
-	      
+//	$rootScope.UserID=
+	 $scope.trackLog=function(docID){	      
 			$http({
 				url:'http://localhost:1111/api/v1/log',
 				method:'POST',
@@ -478,7 +477,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 					  'DOC_ID': docID, 
 					  'REMARK': "",
 					  'STATUS': 0,
-					  'USER_ID': $('#slide_user_id').val()
+					  'USER_ID': $rootScope.UserID
 				}
 			}).then(function(response){
 				alert("Success");
