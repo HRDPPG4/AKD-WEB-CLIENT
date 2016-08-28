@@ -8,23 +8,27 @@
 </sec:authorize>
 
 <script>
-userID = "${userID}";
-userName = "${userName}";
+var userLoginID = "${userID}";
+var userLoginName = "${userName}";
 
-	//alert("Username: "+userName+ "And UserID: "+userID);
 
+/* var globalVariable = "${userID}";
+window.windowVariable = "${userID}"; */
+
+// var globalVariable = "${userID}";
+window.userID = "${userID}"; 
 </script>
 
 
 
 
 <!-- top menu -->
-	<div class="top-menu">
+	<div class="top-menu" ng-init="getUserID(memIdAngular)">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span class="navbar-logo">
 					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-					 <span>All Khmer Docs</span>
-					 </a>
+					 <span>All Khmer Docs</span>					 
+					 </a>					
 			</span>
 	<div class="container">
 	<div class="row">

@@ -10,29 +10,18 @@
 		</div>
 
 		<div id="commentBoxArea">
-			<textarea placeholder = "សូមបញ្ចេញមតិរបស់អ្នក..." ng-model="newComment"></textarea> 
+			 <textarea myEnter="insertComment()" placeholder = "សូមបញ្ចេញមតិរបស់អ្នក..." ng-model="newComment"></textarea> 
+			<!-- <input type="text" myEnter="insertComment()" placeholder = "សូមបញ្ចេញមតិរបស់អ្នក..." ng-model="newComment"> -->
 		</div>
 
 		<div id="btnPost">
 			<input type="button" value="ដាក់ប្រកាស" class="btn btn-primary" ng-click="insertComment()">
 		</div>
 		
-		
-		<%-- <div id="listCommentBox" ng-repeat="comment in commentByDocID">	
-			<div id="img-user-commented">
-				<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
-				Kim Bunhong
-			</div>
-			
-			<div id="comment-list">
-				 {{comment.REMARK}}
-			</div>
-		</div> --%>
-		
 		<div ng-if="commentByDoc" id="listCommentBox" ng-repeat="comment in commentByDoc">	
 			<div id="img-user-commented">
 				<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
-				Kim Bunhong
+				{{comment.USERS[0].USER_NAME}}
 			</div>
 			
 			<div id="comment-list">

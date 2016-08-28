@@ -1,15 +1,17 @@
 /*var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','ngLoadingSpinner']);*/
 
+
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+
 	
 //	Loading Box
 	
-	$scope.startAjax = function() {
+	/*$scope.startAjax = function() {
 	    $http.get('/display/')
-	  };
+	  };*/
 	
 	
 	
@@ -53,6 +55,10 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
 	
+	//$scope.globalVariable = globalVariable;
+	//$scope.windowVariable = $window.windowVariable;
+	
+	$rootScope.userID = $window.userID;
 	
 	
 	
@@ -159,15 +165,24 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
+	/*$scope.UserID=$window.userLoginID;*/
+//	$scope.UserID=userLoginID;
+	
+	$rootScope.UserID=$window.userID;
 	
 	$scope.getAllCommentByDocID=function(DocID){	
 		//console.log(DocID);
+		//alert(userLoginID+"                   "+userLoginName);
+		//alert($rootScope.UserID);
+		//alert(	$scope.memIdAngular);
+		
 		$http({
 			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.commentByDoc=response.data.DATA;
-		//	console.log($scope.commentByDoc);
+			console.log("CommentByDoc");
+			console.log($scope.commentByDoc);
 		}, function(response){
 
 		});	
@@ -176,8 +191,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	}
 	//$scope.getAllCommentByDocID($scope.currentDocumentID);
 	
-	$scope.UserID="";
+	
 	$scope.insertComment = function(){	
+		//alert($rootScope.UserID);
 		$http({
 			url:'http://localhost:1111/api/v1/comment',
 			method:'POST',
@@ -186,7 +202,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 				"DOC_ID": $scope.currentDocumentID,
 				"REMARK": $scope.newComment,
 				"STATUS": 1,
-				"USER_ID": $scope.UserID
+				"USER_ID": $rootScope.UserID
 			}	
 			
 		}).then(function(response){
@@ -284,6 +300,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
+		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
 			method:'GET'
@@ -773,7 +790,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	////////////////////	END UPLOAD BLOCK	/////////////////
 	
 	
-});
+}]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
