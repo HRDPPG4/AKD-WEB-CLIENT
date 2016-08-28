@@ -97,7 +97,7 @@
 							<div id="infor" class="tab-pane fade in active">
 									<div class="content-aboutme">
 										<div class="header-infor">
-											ព័ត៌មានផ្ទាល់ខ្លួន
+											<h1>ព័ត៌មានផ្ទាល់ខ្លួន</h1>
 										</div>
 										<div>
 										<div class="span12">
