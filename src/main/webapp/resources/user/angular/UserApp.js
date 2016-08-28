@@ -679,21 +679,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      
         //---------getSavelistUser----------
     	    $scope.getSavelistMenuUser=function(userID){
-    	    
-    	    	$scope.showsavelist = true;
-        	    //	alert("Savelist");
-        	    
-        			$http({
-        				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
-        				method:'GET'
-        			}).then(function(response){
-        				$scope.getSavelistMenu=response.data.DATA;
-        			
-          			   console.log($scope.getSavelistMenu);
-        			
-        			}, function(response){
+    	    	if($scope.showsavelist == true){
+    	    		$scope.showsavelist = false;
+    	    	}else{
+    	    		$scope.showsavelist = true;
+    	    	}
 
-        			});	
+    			$http({
+    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
+    				method:'GET'
+	    			}).then(function(response){
+	    				$scope.getSavelistMenu=response.data.DATA;
+	    			
+	      			   console.log($scope.getSavelistMenu);
+	    			
+	    			}, function(response){
+	
+	    			});	
         		}
      //-----------getSavelistMenuUser---------------//
     	    
