@@ -4,6 +4,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    
+    <!-- AngularJS -->
+    
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Login</title>
 <meta charset="UTF-8">
@@ -137,8 +146,24 @@ span.psw {
   	            	}else if(data == "Bad credentials"){
   	            		alert(data);
   	            	}else{
-  	            		alert("Logined success.");
-  	            		location.href = "${pageContext.request.contextPath}/"+data;
+  	            		
+  	            		/* swal({  
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "dd",   
+	  	      				timer: 2000,   
+	  	      				showConfirmButton: false
+	  	      			}); */
+  	            		
+  	            		swal({  
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "",   
+	  	      				timer: 600,   
+	  	      				showConfirmButton: false
+	  	      			},function(){
+	  	      				location.href = "${pageContext.request.contextPath}/"+data;
+	  	      			});
+  	            		
+  	            		
   	            	}
   	            	
   	            },

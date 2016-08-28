@@ -13,5 +13,12 @@ $(document).ready(function(){
     	
     	
     });
+    
+    $("#toggleSavelist").click(function(){
+    	
+    	$("li").show();
+    });
+    
+    
   
 });

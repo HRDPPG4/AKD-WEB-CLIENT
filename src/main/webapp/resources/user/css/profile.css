@@ -50,6 +50,10 @@ ul.title-profile{
 	border-left:5px solid #003666;
 	color:#000;
 }
+li a : .active {
+    background-color: #84b1d8;
+    color: black;
+}
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     text-decoration: none;
   background:#dee0e3;
@@ -64,7 +68,7 @@ ul.title-profile{
 	left:205px;
 }
 .preview-all{
-	 border: 1px solid;
+	border: 1px solid;
 	border-top-color: rgb(229, 230, 233);
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);

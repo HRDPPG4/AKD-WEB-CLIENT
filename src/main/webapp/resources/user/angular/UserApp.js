@@ -1,9 +1,18 @@
+/*var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','ngLoadingSpinner']);*/
 
 
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+
+	
+//	Loading Box
+	
+	/*$scope.startAjax = function() {
+	    $http.get('/display/')
+	  };*/
+	
 	
 	
 	/*$http.defaults.headers.common.Authorization = 'Basic Q2hpdm9ybjphZG1pbg==' ;	*/
@@ -24,6 +33,12 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
+			swal({  
+				title: "Record Found!",   
+				text: "",   
+				timer: 2000,   
+				showConfirmButton: false
+			});
 			$scope.documentSearch=response.data.DATA;
 			console.log($scope.documentSearch);
 			
@@ -40,6 +55,10 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
 	
+	//$scope.globalVariable = globalVariable;
+	//$scope.windowVariable = $window.windowVariable;
+	
+	$rootScope.userID = $window.userID;
 	
 	
 	
@@ -51,7 +70,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
 	////////////////////	START CATEGORY BLOCK	/////////////////
 	
-	$scope.getAllCategory = function(){			
+/*	$scope.showCategory = function(){			
 		$http({
 			url:'http://localhost:1111/api/v1/category',
 			method:'GET'			
@@ -59,13 +78,29 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;
 			
-		//	console.log($scope.category);
+			console.log($scope.category);
 			
 		}, function(response){
 		
 		});
 	}	
-	$scope.getAllCategory();
+	$scope.showCategory();*/
+	
+	$scope.getAllCategory = function(){			
+		$http({
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.category=response.data.DATA;
+			console.log("GET ALL CAT");
+			console.log($scope.category);
+			
+		}, function(response){
+		
+		});
+	}	
+/*	$scope.getAllCategory();*/
 	
 	$scope.getCategoryByParentID=function(parentID){	
 		$scope.getCategoryByID(parentID);
@@ -130,15 +165,24 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
+	/*$scope.UserID=$window.userLoginID;*/
+//	$scope.UserID=userLoginID;
+	
+	$rootScope.UserID=$window.userID;
 	
 	$scope.getAllCommentByDocID=function(DocID){	
 		//console.log(DocID);
+		//alert(userLoginID+"                   "+userLoginName);
+		//alert($rootScope.UserID);
+		//alert(	$scope.memIdAngular);
+		
 		$http({
 			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.commentByDoc=response.data.DATA;
-		//	console.log($scope.commentByDoc);
+			console.log("CommentByDoc");
+			console.log($scope.commentByDoc);
 		}, function(response){
 
 		});	
@@ -147,30 +191,38 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	}
 	//$scope.getAllCommentByDocID($scope.currentDocumentID);
 	
-	$scope.UserID="";
-	$scope.insertComment = function(){	
-		$http({
-			url:'http://localhost:1111/api/v1/comment',
-			method:'POST',
-			data:{				
-				"CREATED_DATE": new Date(),
-				"DOC_ID": $scope.currentDocumentID,
-				"REMARK": $scope.newComment,
-				"STATUS": 1,
-				"USER_ID": $scope.UserID
-			}	
+	
+	$scope.insertComment = function(){
+		if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+		{
+			location.href= "/login";
+		}else{
 			
-		}).then(function(response){
-		//	alert($scope.currentDocumentID);
-			$scope.getAllCommentByDocID($scope.currentDocumentID);
-		//	alert("Success");
-		//	alert($scope.UserID);
-			//$scope.display();
-			//console.log(response.config.data);
-			$scope.newComment="";
-		}, function(response){
-			alert("Error");
-		});	
+			//alert($rootScope.UserID);
+			$http({
+				url:'http://localhost:1111/api/v1/comment',
+				method:'POST',
+				data:{				
+					"CREATED_DATE": new Date(),
+					"DOC_ID": $scope.currentDocumentID,
+					"REMARK": $scope.newComment,
+					"STATUS": 1,
+					"USER_ID": $rootScope.UserID
+				}	
+				
+			}).then(function(response){
+			//	alert($scope.currentDocumentID);
+				$scope.getAllCommentByDocID($scope.currentDocumentID);
+			//	alert("Success");
+			//	alert($scope.UserID);
+				//$scope.display();
+				//console.log(response.config.data);
+				$scope.newComment="";
+			}, function(response){
+				alert("Error");
+			});	
+		}
+		
 	}
 
 	
@@ -221,7 +273,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			params : $scope.filter	
 		}).then(function(response){
 			$scope.newDocument=response.data.DATA;
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
 		}, function(response){
 
@@ -255,6 +307,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
+		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
 			method:'GET'
@@ -334,7 +387,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		$scope.countView(id);
 	}
 	$scope.getDocumentByUser=function(userID,docTypeNum){
-		
+		$scope.showsavelist= false;
 		$http({
 			url:'http://localhost:1111/api/v1/document/user/'+userID,
 			method:'GET',
@@ -414,9 +467,8 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
-	 $scope.trackLog=function(docID){
-
-	      
+//	$rootScope.UserID=
+	 $scope.trackLog=function(docID){	      
 			$http({
 				url:'http://localhost:1111/api/v1/log',
 				method:'POST',
@@ -425,7 +477,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 					  'DOC_ID': docID, 
 					  'REMARK': "",
 					  'STATUS': 0,
-					  'USER_ID': $('#slide_user_id').val()
+					  'USER_ID': $rootScope.UserID
 				}
 			}).then(function(response){
 				alert("Success");
@@ -510,6 +562,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 // create saveList
 
+
 		$scope.saveList = function(){   
 		   	  var Savelistname = "";
 		   	  var catename = "";
@@ -521,6 +574,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		         listname = $scope.saveListname;
 		      
 		         doc = $('#doc_id').val();
+
 		     //    alert(doc);
 		      //   alert(listname);
 		        
@@ -605,11 +659,9 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 
      //--------End create saveList------------
      
-     //--------- getUserList-----------------
+     //--------- getSavelistUser-----------------
      $scope.getSavelistUser=function(userID){
      	
-    	    //	alert("Savelist");
-    	    
     			$http({
     				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
     				method:'GET'
@@ -621,10 +673,90 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
     			}, function(response){
 
     			});	
+    			
     		}
-    	 //   $scope.getSavelistUser();
+    	    $scope.getSavelistUser();
      
-        //---------END getUserList----------
+        //---------getSavelistUser----------
+    	    $scope.getSavelistMenuUser=function(userID){
+    	    	if($scope.showsavelist == true){
+    	    		$scope.showsavelist = false;
+    	    	}else{
+    	    		$scope.showsavelist = true;
+    	    	}
+
+    			$http({
+    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
+    				method:'GET'
+	    			}).then(function(response){
+	    				$scope.getSavelistMenu=response.data.DATA;
+	    			
+	      			   console.log($scope.getSavelistMenu);
+	    			
+	    			}, function(response){
+	
+	    			});	
+        		}
+     //-----------getSavelistMenuUser---------------//
+    	    
+    		$scope.getDocumentByEachSavelist=function(userID,savelistID){
+    			alert(savelistID);
+    			$http({
+    				url:'http://localhost:1111/api/v1/getEachSavelist/'+userID,
+    				method:'GET',
+    				params: {
+    					savelistID : savelistID
+    				}
+    			
+    			}).then(function(response){
+    				$scope.getDocumentInSavelist=response.data.DATA[0].SAVELISTDETAIL;
+    				console.log($scope.getDocumentInSavelist);
+    			}, function(response){
+
+    			});
+    		}
+     
+    //------------getEachSavelist------------------//	
+    		$scope.getDocumentByUser=function(userID,docTypeNum){
+    		$scope.showsavelist= false;
+    		$http({
+    			url:'http://localhost:1111/api/v1/document/user/'+userID,
+    			method:'GET',
+    			params: {
+    				docTypeNum : docTypeNum
+    			}
+    		
+    		}).then(function(response){
+    			$scope.DocumentUser=response.data.DATA;
+    			console.log($scope.DocumentUser);
+    		}, function(response){
+
+    		});
+    	}
+    	    
+    	    
+    //------------EndgetEachSavelist---------------//
+    //------------deletSavelistDetail--------------//
+    		 $scope.deleteSavelistDetail =function(docID){
+    	           var listID = $('#listID').val();
+    	          
+    	           
+    			 
+    				$http({
+    					url:'http://localhost:1111/api/v1/savelist/deleteSavelistDetail/'+docID,
+    					method:'DELETE',
+    				}).then(function(response){
+    					alert("Success");
+    					
+    				}, function(response){
+    	               console.log(response);
+    	              
+    				});	
+    			}
+    //------------EnddeleteSavelistDetail----------//
+     
+     //-----------EndgetSavelistMenuUser------------//
+     
  
 	  ///////////////////	END SAVELIST BLOCK	/////////////////
 	
@@ -704,6 +836,13 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 			//alert($rootScope.currentSubCategory);
 			//getAllDocumentByCatID(parentCat.CAT_ID)
 			
+			swal({  
+				title: "File Upload Successful!",   
+				text: "",   
+				timer: 800,   
+				onfirmButton: false 
+			});
+			
 			$(".progress-bar").css("width", "100%"); 
 	
 			$scope.$on(frmData, function(){
@@ -716,7 +855,12 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		
 			
 		}, function(response) {
-			alert("Error");
+			swal({  
+				title: "File Upload Fail!",   
+				text: "",   
+				timer: 800,   
+				onfirmButton: false 
+			});
 			
 		});
 	};
@@ -732,7 +876,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	////////////////////	END UPLOAD BLOCK	/////////////////
 	
 	
-});
+}]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
