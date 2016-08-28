@@ -9,7 +9,6 @@ import org.khmeracademy.akd.entity.Role;
 import org.khmeracademy.akd.entity.User;
 import org.khmeracademy.akd.entity.UserLogin;
 import org.khmeracademy.akd.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;

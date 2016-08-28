@@ -8,21 +8,27 @@
 </sec:authorize>
 
 <script>
-userID = "${userID}";
-userName = "${userName}";
+var userLoginID = "${userID}";
+var userLoginName = "${userName}";
 
-	//alert("Username: "+userName+ "And UserID: "+userID);
 
+/* var globalVariable = "${userID}";
+window.windowVariable = "${userID}"; */
+
+// var globalVariable = "${userID}";
+window.userID = "${userID}"; 
 </script>
 
 
+
+
 <!-- top menu -->
-	<div class="top-menu">
+	<div class="top-menu" ng-init="getUserID(memIdAngular)">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span class="navbar-logo">
 					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-					 <span>All Khmer Docs</span>
-					 </a>
+					 <span>All Khmer Docs</span>					 
+					 </a>					
 			</span>
 	<div class="container">
 	<div class="row">
@@ -48,7 +54,8 @@ userName = "${userName}";
 	</div>
 	<div class="upload-signup-signin" >
      	<ul>            
-            <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a>
+            <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
+             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
             </li>
 			
 			<!-- If not yet login -->
@@ -66,7 +73,7 @@ userName = "${userName}";
             <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
-                	<li><a href="logout?logout"> ចាកចេញ</a></li>
+                	<li><a href="/logout?logout"> ចាកចេញ</a></li>
                 </ul>
             </a>
             </li>
@@ -97,7 +104,7 @@ userName = "${userName}";
 				   </span>ទំព័រដើម</a>
 			  </li>
 			  
-			  <li ng-repeat="mainCat in getAllCategoryAndSubcategory">
+			  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak>
 			  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
 					   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 					   </span>{{mainCat.CAT_NAME}}

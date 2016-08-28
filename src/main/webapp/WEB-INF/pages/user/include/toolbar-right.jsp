@@ -7,22 +7,22 @@
 			<ul class="ul-toolbar">
 				<li class="search">
 					<a> 
-				            <form method="" action="" class="form-inline" >
-				            <span><i class="fa fa-search typeahead-demo" aria-hidden="true"></i></span>
-				                <input type="text"​ myEnter="searchPage()"  class="side-search" placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8"/>
-				                <button type="submit" class="btn-side-search" ng-click="searchPage()"> <span class="glyphicon glyphicon-search"></span></button>
-				            </form>
+			            <form method="" action="" class="form-inline" >
+			            <span><i class="fa fa-search " aria-hidden="true"></i></span>
+			                <input type="text"​ myEnter="searchPage()"  class="side-search typeahead-demo " placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title.TITLE  for title in allDocTitle | filter:$viewValue | limitTo:8">
+			                <button type="submit" class="btn-side-search" ng-click="searchPage()"> <span class="glyphicon glyphicon-search"></span></button>
+			            </form>
 						
 					</a>
 				</li>
 				<li class="feedback">
 						<a>
 							<div id="comment-side">
-									<form method="" action="" class="form-inline" >
-							            <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
-							            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" id ="recomend"></textarea>
-							            <button type="submit" class="btn-comment" ng-click="saveFeedBack()">ផ្ងើ</button>
-				            </form>
+								<form method="" action="" class="form-inline" >
+						            <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+						            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" id ="recomend"></textarea>
+						            <button type="submit" class="btn-comment" ng-click="saveFeedBack()">ផ្ងើ</button>
+					            </form>
 							</div>
 						</a>
 				</li>

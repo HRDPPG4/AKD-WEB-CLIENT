@@ -17,7 +17,7 @@
 	rel="stylesheet" />
 
 </head>
-<body class="skin-blue sidebar-mini">
+<body ng-cloak class="skin-blue sidebar-mini">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>

@@ -66,7 +66,28 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 <style>
-
+	.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
 
 </style>
 
@@ -86,7 +107,7 @@
 <div class="container">
 	<section id="recommend">
 		<!-- section-title -->
-		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()">
+		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak>
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ឯកសារណែនាំ</span>
 				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>
@@ -136,7 +157,7 @@
 	<div class="container">
 	<section id="popular">
 		<!-- section-title -->
-		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()">
+		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak> 
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ឯកសារពេញនិយម</span>
 				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
@@ -179,7 +200,7 @@
 	<div class="container">
 	<section id="ឯកសារថ្មីៗ">
 		<!-- section-title -->
-		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()">
+		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()" ng-cloak>
 				<div class="popular-title">
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
 					<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
