@@ -308,7 +308,7 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 		$scope.countView(id);
 	}
 	$scope.getDocumentByUser=function(userID,docTypeNum){
-		
+		$scope.showsavelist= false;
 		$http({
 			url:'http://localhost:1111/api/v1/document/user/'+userID,
 			method:'GET',
@@ -484,105 +484,104 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
 	
 	 // create saveList
 
-    $scope.saveList = function(){   
-   	  	var Savelistname = "";
-   	  	var groupname = "";
-  
-   	  	var listname ="";
-   	    groupname  = $("#saveListnames").val();
-         
-        
-         listname = $scope.saveListname;
-      
-         doc = $('#doc_id').val();
-         
-       
-        
-         if(groupname == undefined && doc != "" && listname !=""){
+		  $scope.saveList = function(){   
+		   	  var Savelistname = "";
+		   	  var catename = "";
+		  
+		   	  var listname ="";
+		         catename = $("#saveListnames").val();
+		         
+		        
+		         listname = $scope.saveListname;
+		      
+		         doc = $('#doc_id').val();
+		         alert(doc);
+		         alert(listname);
+		        
+		         if(catename == undefined && doc != ""){
+		          
+		           	  Savelistname = listname;
+		           	  $http({
+		           			url:'http://localhost:1111/api/v1/savelist',
+		           			method:'POST',
+		           			data:{
+		           				  'CREATED_DATE': new Date(),
+		           				  'DOC_ID': $('#doc_id').val(),
+		           				  'LIST_NAME': Savelistname,
+		           				  'REMARK': "",
+		           				  'STATUS':1 ,
+		           				  'USER_ID': $('#user_id').val()
 
-           	  Savelistname = listname;
-           	  $http({
-           			url:'http://localhost:1111/api/v1/savelist',
-           			method:'POST',
-           			data:{
-           				  'CREATED_DATE': new Date(),
-           				  'DOC_ID': $('#doc_id').val(),
-           				  'LIST_NAME': Savelistname,
-           				  'REMARK': "",
-           				  'STATUS':1 ,
-           				  'USER_ID': $('#user_id').val()
+		           			}
+		           		}).then(function(response){
+		           			alert("success");
+		           			
+		           			
+		           		}, function(response){
+		           			//console.log(response);
+		           			
+		           		});
+		       	  
+		         }else if(listname ==undefined){
+		        	 
+		           	  Savelistname = catename;
+		           		$http({
+		           			url:'http://localhost:1111/api/v1/savelistDetail',
+		           			method:'POST',
+		           			data:{
+		           				  'CREATED_DATE': new Date(),
+		           				  'DOC_ID': $('#doc_id').val(),
+		           				  'LIST_ID': Savelistname
+		           				 
+		           			}
+		           		}).then(function(response){
+		           			alert("success");
+		           			
+		           			
+		           		}, function(response){
+		           		//	console.log(response);
+		           			
+		           		});
 
-           			}
-           		}).then(function(response){
-           			alert("success");
-           			
-           			
-           		}, function(response){
-           			//console.log(response);
-           			
-           		});
-       	  
-         }else if(listname ==undefined){
+		         }else{
+		        	
+		          	  Savelistname = listname;
+		          	 
+		          	  $http({
+		        			url:'http://localhost:1111/api/v1/saveSavelistOnly',
+		        			method:'POST',
+		        			data:{
+		        				  'CREATED_DATE': new Date(),
+		        				  'LIST_NAME': Savelistname,
+		        				  'REMARK': "",
+		        				  'STATUS':1 ,
+		        				  'USER_ID': $('#user_id').val()
 
-           	  Savelistname = catename;
-           		$http({
-           			url:'http://localhost:1111/api/v1/savelistDetail',
-           			method:'POST',
-           			data:{
-           				  'CREATED_DATE': new Date(),
-           				  'DOC_ID': $('#doc_id').val(),
-           				  'LIST_ID': Savelistname
-           				 
-           			}
-           		}).then(function(response){
-           			alert("success");
-           			
-           			
-           		}, function(response){
-           		//	console.log(response);
-           			
-           		});
+		        			}
+		        		}).then(function(response){
+		        			alert("success");
+		        			
+		        			
+		        		}, function(response){
+		        			console.log(response);
+		        			
+		        		});
 
-
-          	  Savelistname = listname;
-          	 
-          	  $http({
-        			url:'http://localhost:1111/api/v1/saveSavelistOnly',
-        			method:'POST',
-        			data:{
-        				  'CREATED_DATE': new Date(),
-        				  'LIST_NAME': Savelistname,
-        				  'REMARK': "",
-        				  'STATUS':1 ,
-        				  'USER_ID': $('#user_id').val()
-
-        			}
-        		}).then(function(response){
-        			alert("success");
-        			
-        			
-        		}, function(response){
-        			console.log(response);
-        			
-        		});
-
-        
-         }
-         
-         
-       
-		
-	}
+		        
+		         }
+		         
+		         
+		       
+				
+			}
 
      
 
      //--------End create saveList------------
      
-     //--------- getUserList-----------------
+     //--------- getSavelistUser-----------------
      $scope.getSavelistUser=function(userID){
      	
-    	    //	alert("Savelist");
-    	    
     			$http({
     				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
     				method:'GET'
@@ -594,10 +593,88 @@ app.controller('UserCtrl', function($scope,$rootScope,$http,$sce){	//$rootScope,
     			}, function(response){
 
     			});	
+    			
     		}
-    	 //   $scope.getSavelistUser();
+    	    $scope.getSavelistUser();
      
-        //---------END getUserList----------
+        //---------getSavelistUser----------
+    	    $scope.getSavelistMenuUser=function(userID){
+    	    
+    	    	$scope.showsavelist = true;
+        	    //	alert("Savelist");
+        	    
+        			$http({
+        				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
+        				method:'GET'
+        			}).then(function(response){
+        				$scope.getSavelistMenu=response.data.DATA;
+        			
+          			   console.log($scope.getSavelistMenu);
+        			
+        			}, function(response){
+
+        			});	
+        		}
+     //-----------getSavelistMenuUser---------------//
+    	    
+    		$scope.getDocumentByEachSavelist=function(userID,savelistID){
+    			alert(savelistID);
+    			$http({
+    				url:'http://localhost:1111/api/v1/getEachSavelist/'+userID,
+    				method:'GET',
+    				params: {
+    					savelistID : savelistID
+    				}
+    			
+    			}).then(function(response){
+    				$scope.getDocumentInSavelist=response.data.DATA[0].SAVELISTDETAIL;
+    				console.log($scope.getDocumentInSavelist);
+    			}, function(response){
+
+    			});
+    		}
+     
+    //------------getEachSavelist------------------//	
+    		$scope.getDocumentByUser=function(userID,docTypeNum){
+    		$scope.showsavelist= false;
+    		$http({
+    			url:'http://localhost:1111/api/v1/document/user/'+userID,
+    			method:'GET',
+    			params: {
+    				docTypeNum : docTypeNum
+    			}
+    		
+    		}).then(function(response){
+    			$scope.DocumentUser=response.data.DATA;
+    			console.log($scope.DocumentUser);
+    		}, function(response){
+
+    		});
+    	}
+    	    
+    	    
+    //------------EndgetEachSavelist---------------//
+    //------------deletSavelistDetail--------------//
+    		 $scope.deleteSavelistDetail =function(docID){
+    	           var listID = $('#listID').val();
+    	          
+    	           
+    			 
+    				$http({
+    					url:'http://localhost:1111/api/v1/savelist/deleteSavelistDetail/'+docID,
+    					method:'DELETE',
+    				}).then(function(response){
+    					alert("Success");
+    					
+    				}, function(response){
+    	               console.log(response);
+    	              
+    				});	
+    			}
+    //------------EnddeleteSavelistDetail----------//
+     
+     //-----------EndgetSavelistMenuUser------------//
+     
  
 	  ///////////////////	END SAVELIST BLOCK	/////////////////
 	

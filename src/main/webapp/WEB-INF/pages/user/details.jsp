@@ -151,7 +151,7 @@ body
 </script>
 
 
- <jsp:include page="include/register.jsp"></jsp:include>
+<jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
