@@ -192,30 +192,37 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	//$scope.getAllCommentByDocID($scope.currentDocumentID);
 	
 	
-	$scope.insertComment = function(){	
-		//alert($rootScope.UserID);
-		$http({
-			url:'http://localhost:1111/api/v1/comment',
-			method:'POST',
-			data:{				
-				"CREATED_DATE": new Date(),
-				"DOC_ID": $scope.currentDocumentID,
-				"REMARK": $scope.newComment,
-				"STATUS": 1,
-				"USER_ID": $rootScope.UserID
-			}	
+	$scope.insertComment = function(){
+		if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+		{
+			location.href= "/login";
+		}else{
 			
-		}).then(function(response){
-		//	alert($scope.currentDocumentID);
-			$scope.getAllCommentByDocID($scope.currentDocumentID);
-		//	alert("Success");
-		//	alert($scope.UserID);
-			//$scope.display();
-			//console.log(response.config.data);
-			$scope.newComment="";
-		}, function(response){
-			alert("Error");
-		});	
+			//alert($rootScope.UserID);
+			$http({
+				url:'http://localhost:1111/api/v1/comment',
+				method:'POST',
+				data:{				
+					"CREATED_DATE": new Date(),
+					"DOC_ID": $scope.currentDocumentID,
+					"REMARK": $scope.newComment,
+					"STATUS": 1,
+					"USER_ID": $rootScope.UserID
+				}	
+				
+			}).then(function(response){
+			//	alert($scope.currentDocumentID);
+				$scope.getAllCommentByDocID($scope.currentDocumentID);
+			//	alert("Success");
+			//	alert($scope.UserID);
+				//$scope.display();
+				//console.log(response.config.data);
+				$scope.newComment="";
+			}, function(response){
+				alert("Error");
+			});	
+		}
+		
 	}
 
 	

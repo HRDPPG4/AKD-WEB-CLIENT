@@ -15,7 +15,7 @@
 		</div>
 
 		<div id="btnPost">
-			<input type="button" value="ដាក់ប្រកាស" class="btn btn-primary" ng-click="insertComment()">
+			<input type="button" value="ដាក់ប្រកាស" class="btn btn-primary" ng-click="insertComment()" ng-disabled="!newComment">
 		</div>
 		
 		<div ng-if="commentByDoc" id="listCommentBox" ng-repeat="comment in commentByDoc">	

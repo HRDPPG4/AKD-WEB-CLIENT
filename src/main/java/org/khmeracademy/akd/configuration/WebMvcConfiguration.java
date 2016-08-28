@@ -26,6 +26,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		// STILL CAN USE WHEN DYNAMIC
 		registry.addViewController("/accessDenied").setViewName("error/403");	//	WHEN MEET /accessDenied IT WILL GO TO OPEN PAGE IN FOLDER error/403
 		registry.addViewController("/login").setViewName("loginPage");
+		registry.addViewController("/logout?logout").setViewName("loginPage");
 	
 	
 	}

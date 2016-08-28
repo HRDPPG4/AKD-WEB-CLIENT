@@ -137,8 +137,14 @@ span.psw {
   	            	}else if(data == "Bad credentials"){
   	            		alert(data);
   	            	}else{
-  	            		alert("Logined success.");
   	            		location.href = "${pageContext.request.contextPath}/"+data;
+  	            		swal({  
+  	      				title: "Login Successful!",   
+  	      				text: "",   
+  	      				timer: 800,   
+  	      				onfirmButton: false 
+  	      			});
+  	            		
   	            	}
   	            	
   	            },
