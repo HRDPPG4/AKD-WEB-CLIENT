@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     
+    <!-- AngularJS -->
+    
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Login</title>
 <meta charset="UTF-8">
@@ -143,13 +147,22 @@ span.psw {
   	            		alert(data);
   	            	}else{
   	            		
+  	            		/* swal({  
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "dd",   
+	  	      				timer: 2000,   
+	  	      				showConfirmButton: false
+	  	      			}); */
+  	            		
   	            		swal({  
-  	      				title: "Login Successful!",   
-  	      				text: "",   
-  	      				timer: 6000,   
-  	      				onfirmButton: false 
-  	      			});
-  	            		location.href = "${pageContext.request.contextPath}/"+data;
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "",   
+	  	      				timer: 600,   
+	  	      				showConfirmButton: false
+	  	      			},function(){
+	  	      				location.href = "${pageContext.request.contextPath}/"+data;
+	  	      			});
+  	            		
   	            		
   	            	}
   	            	

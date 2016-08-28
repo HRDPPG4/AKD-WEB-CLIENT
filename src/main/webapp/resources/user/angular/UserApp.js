@@ -33,12 +33,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
-			/*swal({  
+			swal({  
 				title: "Record Found!",   
 				text: "",   
-				timer: 800,   
-				onfirmButton: false 
-			});*/
+				timer: 2000,   
+				showConfirmButton: false
+			});
 			$scope.documentSearch=response.data.DATA;
 			console.log($scope.documentSearch);
 			
