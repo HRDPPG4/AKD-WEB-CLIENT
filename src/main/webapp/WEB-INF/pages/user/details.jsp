@@ -266,7 +266,7 @@ body
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
 												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 															<div class="img-detail">
-															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
+															<img id="thumnail" src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>
 														</a>
 														</div>
@@ -360,16 +360,18 @@ body
 	//	}); 
 	</script>	
 	
-	///////////////			Sharing To Facebook			///////////////
+	
 	<script>
 	
-	  
+	
 document.getElementById('shareBtn').onclick = function() {
+	var thumnail =$("#thumnail").attr("src");
   FB.ui({
-    method: 'feed',
+    method: 'share',
     display: 'popup',
     caption: 'TESTING',
-    link: 'localhost:2222',
+    href: 'window.location',
+    picture: thumnail,
     
   }, function(response){
 	  
