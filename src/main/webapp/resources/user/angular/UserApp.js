@@ -40,6 +40,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				showConfirmButton: false
 			});
 			$scope.documentSearch=response.data.DATA;
+			console.log("search");
 			console.log($scope.documentSearch);
 			
 		}, function(response){

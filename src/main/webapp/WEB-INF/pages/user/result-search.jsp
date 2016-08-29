@@ -47,9 +47,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
-	
-	<!--  Cannot use because Minea overwrite it-->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> 
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
@@ -59,10 +56,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.2/ui-bootstrap-tpls.js"></script>
-   <!--   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   -->
-	
+
 	<!-- END SEARCH BLOCK -->
 	
 	<style>
@@ -101,14 +95,14 @@ a.thumbnail {
 </header>
 <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
-<div class="container">
-	<section id="search">
+<div class="container#">
+	<section id="search#">
 		<!-- section-title -->
-		<div class="row section search topspace-second">
+		<div class="row section search# topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
-						  <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
@@ -128,7 +122,9 @@ a.thumbnail {
 									<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 								</a>
 							</span>
-						</a>   
+						</a>  
+						
+						
 				
 					</div>
 				</div>
