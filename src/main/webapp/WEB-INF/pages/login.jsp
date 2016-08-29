@@ -22,16 +22,16 @@
 <!-- strat-contact-form -->	
 <div class="contact-form">
 <!-- start-form -->
-	<form class="contact_form" action="#" method="post"​ id="frmLogin" name="contact_form">
+	<form class="contact_form" action="/login" method="POST" id="frmLogin" name="contact_form">
 		<h4>ចូលប្រើប្រាស់គណនីនៅទីនេះ</h4>
 	    <ul>
 	        <li>
-	            <input type="email" class="textbox1" name="email" placeholder="អីុម៉ែល" required />
+	            <input type="email" class="textbox1" name="username" placeholder="អីុម៉ែល" required />
 	            <span class="form_hint">សូមបញ្ចូលអ៊ីម៉ែលឲ្យបានត្រឹមត្រូវ</span>
 	             <p class="mail"><img src="${pageContext.request.contextPath}/resources/user/img/login/contact.png" alt=""></p>
 	        </li>
 	        <li>
-	            <input type="password" name="website" class="textbox2" placeholder="លេខសំងាត់">
+	            <input type="password" name="password" class="textbox2" placeholder="លេខសំងាត់">
 	            <p class="psw"><img src="${pageContext.request.contextPath}/resources/user/img/login/lock.png" alt=""></p>
 	        </li>
          </ul>
@@ -57,36 +57,7 @@
 <!-- end-contact-form -->
 <div class="footer">
 </div>
-</div>
-       <!--  <h2 style="text-align: center">ចូលប្រើគណនីរបស់អ្នក</h2>
-
-<form action="/login" method="POST" id="frmLogin">
-  
-  
-  <div style="width:100%;">
-  
-  <center>
-  	<table style="width:100%;">  
-  		<tr>
-  			<td style="text-align: center"><label><b>អ៊ីម៉ែល:</b></label></td>
-  			<td><input  type="text" placeholder="សូមបញ្ចូល អ៊ីម៉ែល" name="username" required></td>
-  		</tr>
-  		<tr>
-  			<td style="text-align: center"><label><b>ពាក្យសំងាត់</b></label></td>
-  			<td><input  type="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់" name="password" required></td>
-  		</tr>
-  		<tr>
-  	 <td style="position:relative;left:180px;"><button type="submit">ចូលប្រើ</button></td>
-  	 </tr>
-  	</table>
-  </center>	
-  	</div>
-  <div style="background-color:#f1f1f1">
-   
-    
-  </div>
-</form> -->
-        
+</div>    
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
