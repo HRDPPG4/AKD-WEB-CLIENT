@@ -23,7 +23,7 @@
 }
 </style>
 </head>
-<body class="skin-blue sidebar-mini" ng-app="MainApp"
+<body ng-cloak class="skin-blue sidebar-mini" ng-app="MainApp"
 	ng-controller="MainCtrl">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>

@@ -581,6 +581,7 @@ a.thumbnail{
   top: 0;
   left: 0;
 }
+
 .thumbnail img:hover {
   width: 100%;
   text-decoration: none;
@@ -591,6 +592,7 @@ a.thumbnail{
   top: 0;
   left: 0;
 }
+
   
 .thumbnail .title {
   text-transform: uppercase;
