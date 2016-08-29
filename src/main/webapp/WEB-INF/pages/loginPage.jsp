@@ -22,20 +22,20 @@
 <!-- strat-contact-form -->	
 <div class="contact-form">
 <!-- start-form -->
-	<form class="contact_form" action="#" method="post"​ id="frmLogin" name="contact_form">
+	<form class="contact_form" action="/login" method="post"​ id="frmLogin" name="contact_form">
 		<h4>ចូលប្រើប្រាស់គណនីនៅទីនេះ</h4>
 	    <ul>
 	        <li>
-	            <input type="email" class="textbox1" name="email" placeholder="អីុម៉ែល" required />
+	            <input type="email" class="textbox1"name="username" placeholder="អីុម៉ែល" required />
 	            <span class="form_hint">សូមបញ្ចូលអ៊ីម៉ែលឲ្យបានត្រឹមត្រូវ</span>
 	             <p class="mail"><img src="${pageContext.request.contextPath}/resources/user/img/login/contact.png" alt=""></p>
 	        </li>
 	        <li>
-	            <input type="password" name="website" class="textbox2" placeholder="លេខសំងាត់">
+	            <input type="password" name="password" class="textbox2" placeholder="លេខសំងាត់">
 	            <p class="psw"><img src="${pageContext.request.contextPath}/resources/user/img/login/lock.png" alt=""></p>
 	        </li>
          </ul>
-       	 	<input type="submit" name="Sign In" value="ចូលប្រើប្រាស់"/>
+       	 	<input type="submit" value="ចូលប្រើប្រាស់"/>
 			<div class="clear"></div>	
 			<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember me</label>
 		<div class="forgot">
