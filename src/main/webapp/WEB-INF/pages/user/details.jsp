@@ -55,6 +55,12 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 
+<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
 <!-- START SEARCH BLOCK-->
 	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
@@ -121,6 +127,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 body
 {	
 	word-wrap:break-word !important;
+	font-family:Khmer OS Battambang;	
 }
 
 
@@ -129,6 +136,11 @@ body
 </head>
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -263,7 +275,7 @@ body
 							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
 												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
 															<div class="img-detail">
-															<img src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
+															<img id="thumnail" src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>
 														</a>
 														</div>
@@ -357,16 +369,18 @@ body
 	//	}); 
 	</script>	
 	
-	///////////////			Sharing To Facebook			///////////////
+	
 	<script>
 	
-	  
+	
 document.getElementById('shareBtn').onclick = function() {
+	var thumnail =$("#thumnail").attr("src");
   FB.ui({
-    method: 'feed',
+    method: 'share',
     display: 'popup',
     caption: 'TESTING',
-    link: 'localhost:2222',
+    href: 'window.location',
+    picture: thumnail,
     
   }, function(response){
 	  
