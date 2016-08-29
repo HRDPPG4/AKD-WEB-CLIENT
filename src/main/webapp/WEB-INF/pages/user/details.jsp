@@ -55,6 +55,12 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 
+<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
 <!-- START SEARCH BLOCK-->
 	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
@@ -121,6 +127,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 body
 {	
 	word-wrap:break-word !important;
+	font-family:Khmer OS Battambang;	
 }
 
 
@@ -130,7 +137,6 @@ body
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
 
-/////////////////		Facebook Configuration			////////////////
 
 <script>
   window.fbAsyncInit = function() {

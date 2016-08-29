@@ -529,26 +529,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 
 	
-	  $scope.UserID="";
-		$scope.insertReport = function(){	
-			$http({
-				url:'http://localhost:1111/api/v1/report',
-				method:'POST',
-				data:{	
-					"CREATED_DATE": new Date(),
-					"DOC_ID": $scope.currentDocumentID,
-					"REMARK": $scope.currentReport,
-					"STATUS": 1,
-					"USER_ID": $scope.UserID
-				}	
+	
+		$scope.insertReport = function(){
+			if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+			{
+				location.href= "/login";
+			}else{
+				$http({
+					url:'http://localhost:1111/api/v1/report',
+					method:'POST',
+					data:{	
+						"CREATED_DATE": new Date(),
+						"DOC_ID": $scope.currentDocumentID,
+						"REMARK": $scope.currentReport,
+						"STATUS": 1,
+						"USER_ID": $rootScope.UserID
+					}	
+					
+				}).then(function(response){
+					swal({  
+						title: "វាយតម្លៃបានជោកជ័យ!",   
+						text: "សូមអរគុណចំពោះការវាយតម្លៃរបស់អ្នក!",   
+						timer: 800,   
+						showConfirmButton: false 
+					});
 				
-			}).then(function(response){
-			
-				$scope.report = response.data.DATA;
-			
-			}, function(response){
+					$scope.report = response.data.DATA;
+					$scope.currentReport="";
 				
-			});	
+				}, function(response){
+					
+				});					
+			}			
 		}
 
 	
@@ -661,21 +673,25 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      
      //--------- getSavelistUser-----------------
      $scope.getSavelistUser=function(userID){
-     	
-    			$http({
-    				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
-    				method:'GET'
-    			}).then(function(response){
-    				$scope.getuserSavelist=response.data.DATA;
-    			
-      			   // console.log($scope.getuserSavelist);
-    			
-    			}, function(response){
+    	if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+ 		{
+ 			location.href= "/login";
+ 		}else{
+ 			$http({
+				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
+				method:'GET'
+			}).then(function(response){
+				$scope.getuserSavelist=response.data.DATA;
+			
+  			   // console.log($scope.getuserSavelist);
+			
+			}, function(response){
 
-    			});	
-    			
-    		}
-    	    $scope.getSavelistUser();
+			});	
+ 		}     	
+   	}
+     
+    	 //   $scope.getSavelistUser();
      
         //---------getSavelistUser----------
     	    $scope.getSavelistMenuUser=function(userID){
@@ -840,7 +856,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				title: "File Upload Successful!",   
 				text: "",   
 				timer: 800,   
-				onfirmButton: false 
+				showConfirmButton: false 
 			});
 			
 			$(".progress-bar").css("width", "100%"); 
@@ -859,7 +875,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				title: "File Upload Fail!",   
 				text: "",   
 				timer: 800,   
-				onfirmButton: false 
+				showConfirmButton: false 
 			});
 			
 		});
