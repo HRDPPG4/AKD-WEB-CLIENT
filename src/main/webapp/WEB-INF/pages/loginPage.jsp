@@ -47,7 +47,7 @@
 <!-- start-account -->
 <div class="account">
 	<h4>មិនមានគណនីឬ? សូមចុះឈ្មោះជាមួយគណនីបណ្តាញសង្គម!</h4>
-    <div class="span"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/facebook.png" alt=""/><i>ចូលប្រើជាមួយហ៊្វែសប៊ុក</i><div class="clear"></div></a></div>	
+    <div class="span"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/facebook.png" alt=""/><i>ចូលប្រើជាមួយ Facebook</i><div class="clear"></div></a></div>	
   <%--   <div class="span1"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/twitter.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយធ្វីសធើ</i><div class="clear"></div></a></div>
     <div class="span2"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/gplus.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្គោហ្គោលផ្លើស</i><div class="clear"></div></a></div> --%>
 </div>	
