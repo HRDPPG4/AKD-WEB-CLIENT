@@ -61,7 +61,7 @@
 	
 	<!-- END SEARCH BLOCK -->
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -76,10 +76,10 @@
 <content>
 <div id="page-content-wrapper">
 	<section id="profile">
-		<div class="container">
+		<div class="container" >
 			<div class="row section profile topspace-profile">
 								
-						<div class="left-profile">
+						<div class="left-profile" >
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
 						<div class="user-name">ជឹម មិនា</div>
@@ -87,9 +87,21 @@
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser(2,2)" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser(2)" href="#viewed">ឯកសារដែលបានមើល</a></li>
-								<li class="about"><a data-toggle="tab" ng-click ="getSavelistUser(2)" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>
+								
 								
 							</ul>
+							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser(2)" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
+						 
+							<ul class="title-profile nav nav-pills nav-stacked"  >
+								
+								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser(2)" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
+								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(2,savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+						
+								
+							
+							</ul>
+							
+						 
 						</div>
 						<!-- right side -->
 				
@@ -97,7 +109,7 @@
 							<div id="infor" class="tab-pane fade in active">
 									<div class="content-aboutme">
 										<div class="header-infor">
-											ព័ត៌មានផ្ទាល់ខ្លួន
+											<h1>ព័ត៌មានផ្ទាល់ខ្លួន</h1>
 										</div>
 										<div>
 										<div class="span12">
@@ -303,6 +315,58 @@
 					          </div>
 					        </div>
 					      <!-- tab mydoc -->
+					      
+					 					      
+					      
+	                    <div id="mysavelist" class="tab-pane fade">
+								<div class="content-mydoc">
+					           	
+								   <div class="pdf-ppt-doc-edit tab-content">
+								   		 <div id="pdf-edit" class="tab-pane fade in active">
+								   		 		
+								   		 	<div class="list-group" ng-repeat ="slide in getDocumentInSavelist  ">
+
+								    			<a href="/detail/{{slide.DOCUMENT[0].DOC_ID}}" class="list-group-item">
+								
+													<div class="media">
+														<div class="checkbox pull-left" ng-click="deleteSavelistDetail(slide.DOCUMENT[0].DOC_ID)">
+												    		<label>
+																<input type="checkbox" value="2" id ="userDoc">
+																<input type="hidden" value="{{slide.LIST_ID}}" id ="listID">				
+															</label>
+														</div>
+														<div class="pull-left">
+															<img class="media-object" src="{{slide.DOCUMENT[0].THUMBNAIL_URL}}" alt="Image">
+														</div>
+														<div class="media-body" style="padding-top:20px;">
+															<h4 class="media-heading">{{slide.DOCUMENT[0].TITLE}}</h4>
+															<p>{{slide.DOCUMENT[0].DES}}</p>
+															<p>{{slide.DOCUMENT[0].CREATED_DATE}}</p>
+														</div>
+								
+													</div>					
+											        
+											    </a>
+											   
+								
+											</div>
+								   		 		
+								   		 </div>
+								   	 <!--edit pdf  -->
+							
+								   </div>
+								   
+								   <!-- end sub content -->
+					          </div>
+					        </div>
+					      <!-- tab mydoc -->
+					      
+					      
+					      
+					      
+					      
+					      
+					
 					       <div id="viewed" class="tab-pane fade" >
 						         <div class="content-viewed-all">
 						         		<div id="header-view-history">

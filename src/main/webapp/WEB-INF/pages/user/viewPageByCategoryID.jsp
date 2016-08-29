@@ -116,7 +116,7 @@ a.thumbnail {
 </style>
 
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -146,7 +146,7 @@ a.thumbnail {
 		<section id="cates-view">
 				<div class="row section nav-left topspace-cates">
 				
-				<div class="row-nav-left-content">
+				<div class="row-nav-left-content" ng-cloak>
 					<div class="row">
 					   <div class="col-sm-3" id="left-side-nav" >
 					   	   <ul class="category-menu nav nav-pills nav-stacked" >

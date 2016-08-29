@@ -52,7 +52,7 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>

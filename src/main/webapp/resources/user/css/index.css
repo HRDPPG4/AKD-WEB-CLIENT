@@ -532,7 +532,7 @@ a.thumbnail{
   font-size: 1.20rem;
   -webkit-transform:translate(0,0);
   -moz-transform:translate(0,0);
-  -webkit-transition: all 1s ease;
+  -webkit-transition: all 0.5s ease;
   text-transform: uppercase;
   text-shadow: 0 1px 0px #3B5998;
   background: #3B5998;
@@ -574,22 +574,25 @@ a.thumbnail{
 
 .thumbnail img {
   width: 100%;
+  -webkit-transition: all 0.5s ease;
   text-decoration: none;
   position: absolute;
   
   top: 0;
   left: 0;
 }
+
 .thumbnail img:hover {
   width: 100%;
   text-decoration: none;
   position: absolute;
-  -moz-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
   top: 0;
   left: 0;
 }
+
   
 .thumbnail .title {
   text-transform: uppercase;
