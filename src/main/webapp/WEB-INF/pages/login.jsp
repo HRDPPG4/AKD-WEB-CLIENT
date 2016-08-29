@@ -1,49 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
-
-<div class="modal fade" id="login" role="dialog">
-  <div class="modal-dialog">
-  
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header"  >
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
-
-    <div class="imgcontainer">	
-    <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
-    </div>
-			          
-        
-      </div>
-      <div class="modal-body" style="padding:40px 50px;">
-        <form role="form" id="frmLogin">
-          <div class="form-group">
-            <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> អ៊ីម៉ែល</label>
-            <input type="text" name="username" class="form-control" id="usrname" data-ng-model="email"placeholder="សូមបញ្ចូល អ៊ីម៉ែល">
-          </div>
-          <div class="form-group">
-            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> ពាក្យសំងាត់</label>
-            <input name="password" type="password" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
-          </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
-          </div>
-            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <!-- <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button> -->
-        <p>មិនទាន់ជាសមាជិក? <a href="#" data-toggle="modal" data-target="#register" data-dismiss="modal">ចុះឈ្មោះ</a></p>
-        <p> <a href="#">ភ្លេចពាក្យសំងាត់?</a></p>
-      </div>
-    </div>
     
-  </div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/style_login.css">
+    <!-- AngularJS -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Login</title>
+<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.min.css">	
+</head>
+<body>
+<div class="wrap">
+<!-- strat-contact-form -->	
+<div class="contact-form">
+<!-- start-form -->
+	<form class="contact_form" action="/login" method="POST" id="frmLogin" name="contact_form">
+		<h4>ចូលប្រើប្រាស់គណនីនៅទីនេះ</h4>
+	    <ul>
+	        <li>
+	            <input type="email" class="textbox1" name="username" placeholder="អីុម៉ែល" required />
+	            <span class="form_hint">សូមបញ្ចូលអ៊ីម៉ែលឲ្យបានត្រឹមត្រូវ</span>
+	             <p class="mail"><img src="${pageContext.request.contextPath}/resources/user/img/login/contact.png" alt=""></p>
+	        </li>
+	        <li>
+	            <input type="password" name="password" class="textbox2" placeholder="លេខសំងាត់">
+	            <p class="psw"><img src="${pageContext.request.contextPath}/resources/user/img/login/lock.png" alt=""></p>
+	        </li>
+         </ul>
+       	 	<input type="submit" name="Sign In" value="ចូលប្រើប្រាស់"/>
+			<div class="clear"></div>	
+			<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember me</label>
+		<div class="forgot">
+			<a href="#">forgot password?</a>
+		</div>	 -->
+		<div class="clear"></div>	
+	</form>
+<!-- end-form -->
+<!-- start-account -->
+<div class="account">
+	<h4>មិនមានគណនីឬ? សូមចុះឈ្មោះជាមួយគណនីបណ្តាញសង្គម!</h4>
+    <div class="span"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/facebook.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្វែ៊សប៊ុក</i><div class="clear"></div></a></div>	
+  <%--   <div class="span1"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/twitter.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយធ្វីសធើ</i><div class="clear"></div></a></div>
+    <div class="span2"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/gplus.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្គោហ្គោលផ្លើស</i><div class="clear"></div></a></div> --%>
+</div>	
+<!-- end-account -->
+<div class="clear"></div>	
 </div>
-
-
+<!-- end-contact-form -->
+<div class="footer">
+</div>
+</div>    
+        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
         
@@ -68,8 +83,24 @@
   	            	}else if(data == "Bad credentials"){
   	            		alert(data);
   	            	}else{
-  	            		alert("Logined success.");
-  	            		location.href = "${pageContext.request.contextPath}/"+data;
+  	            		
+  	            		/* swal({  
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "dd",   
+	  	      				timer: 2000,   
+	  	      				showConfirmButton: false
+	  	      			}); */
+  	            		
+  	            		swal({  
+	  	      				title: "អបអរសាទរ!",   
+	  	      				text: "",   
+	  	      				timer: 600,   
+	  	      				showConfirmButton: false
+	  	      			},function(){
+	  	      				location.href = "${pageContext.request.contextPath}/"+data;
+	  	      			});
+  	            		
+  	            		
   	            	}
   	            	
   	            },
@@ -84,3 +115,6 @@
         
         });
         </script>
+        
+</body>
+</html>
