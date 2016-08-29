@@ -329,9 +329,10 @@
 								    			<a href="/detail/{{slide.DOCUMENT[0].DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
-														<div class="checkbox pull-left" ng-click="deleteSavelistDetail(slide.DOCUMENT[0].DOC_ID)">
+														<div class="checkbox pull-left" >
 												    		<label>
-																<input type="checkbox" value="2" id ="userDoc">
+																<input type="checkbox" ng-click="deleteSavelistDetail(slide.DOCUMENT[0].DOC_ID)">
+																<input type="hidden" value="{{slide.DOCUMENT[0].USER_ID}}" id ="userID">
 																<input type="hidden" value="{{slide.LIST_ID}}" id ="listID">				
 															</label>
 														</div>
