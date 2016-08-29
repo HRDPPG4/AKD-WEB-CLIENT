@@ -95,10 +95,10 @@ a.thumbnail {
 </header>
 <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
-<div class="container#">
-	<section id="search#">
+<div class="container">
+	<section id="search">
 		<!-- section-title -->
-		<div class="row section search# topspace-second">
+		<div class="row section topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
@@ -124,8 +124,6 @@ a.thumbnail {
 							</span>
 						</a>  
 						
-						
-				
 					</div>
 				</div>
 			
