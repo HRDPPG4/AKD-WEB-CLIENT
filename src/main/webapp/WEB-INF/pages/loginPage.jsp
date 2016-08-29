@@ -26,7 +26,7 @@
 		<h4>ចូលប្រើប្រាស់គណនីនៅទីនេះ</h4>
 	    <ul>
 	        <li>
-	            <input type="email" class="textbox1"name="username" placeholder="អីុម៉ែល" required />
+	            <input type="email" class="textbox1" name="username" placeholder="អីុម៉ែល" required />
 	            <span class="form_hint">សូមបញ្ចូលអ៊ីម៉ែលឲ្យបានត្រឹមត្រូវ</span>
 	             <p class="mail"><img src="${pageContext.request.contextPath}/resources/user/img/login/contact.png" alt=""></p>
 	        </li>
