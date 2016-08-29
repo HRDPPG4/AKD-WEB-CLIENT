@@ -136,8 +136,11 @@ body
 </head>
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({

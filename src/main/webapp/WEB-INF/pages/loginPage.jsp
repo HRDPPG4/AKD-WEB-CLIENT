@@ -8,91 +8,57 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/style_login.css">
     <!-- AngularJS -->
-    
-     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Login</title>
 <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.min.css">	
-
-	
-	<style>
-body
-{
-	font-family:Khmer OS Battambang;
-}
-form {
-    border: 3px solid #f1f1f1;
-    
-}
-
-input[type=text], input[type=password] {
-    width: 60%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #003666;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    position:relative;
-    left:120px;
-    cursor: pointer;
-    width: 30%;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-</style>
-
 </head>
-<body class="container">
-        <h2 style="text-align: center">ចូលប្រើគណនីរបស់អ្នក</h2>
+<body>
+<div class="wrap">
+<!-- strat-contact-form -->	
+<div class="contact-form">
+<!-- start-form -->
+	<form class="contact_form" action="#" method="post"​ id="frmLogin" name="contact_form">
+		<h4>ចូលប្រើប្រាស់គណនីនៅទីនេះ</h4>
+	    <ul>
+	        <li>
+	            <input type="email" class="textbox1" name="email" placeholder="អីុម៉ែល" required />
+	            <span class="form_hint">សូមបញ្ចូលអ៊ីម៉ែលឲ្យបានត្រឹមត្រូវ</span>
+	             <p class="mail"><img src="${pageContext.request.contextPath}/resources/user/img/login/contact.png" alt=""></p>
+	        </li>
+	        <li>
+	            <input type="password" name="website" class="textbox2" placeholder="លេខសំងាត់">
+	            <p class="psw"><img src="${pageContext.request.contextPath}/resources/user/img/login/lock.png" alt=""></p>
+	        </li>
+         </ul>
+       	 	<input type="submit" name="Sign In" value="ចូលប្រើប្រាស់"/>
+			<div class="clear"></div>	
+			<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember me</label>
+		<div class="forgot">
+			<a href="#">forgot password?</a>
+		</div>	 -->
+		<div class="clear"></div>	
+	</form>
+<!-- end-form -->
+<!-- start-account -->
+<div class="account">
+	<h4>មិនមានគណនីឬ? សូមចុះឈ្មោះជាមួយគណនីបណ្តាញសង្គម!</h4>
+    <div class="span"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/facebook.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្វែ៊សប៊ុក</i><div class="clear"></div></a></div>	
+  <%--   <div class="span1"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/twitter.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយធ្វីសធើ</i><div class="clear"></div></a></div>
+    <div class="span2"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/gplus.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្គោហ្គោលផ្លើស</i><div class="clear"></div></a></div> --%>
+</div>	
+<!-- end-account -->
+<div class="clear"></div>	
+</div>
+<!-- end-contact-form -->
+<div class="footer">
+</div>
+</div>
+       <!--  <h2 style="text-align: center">ចូលប្រើគណនីរបស់អ្នក</h2>
 
 <form action="/login" method="POST" id="frmLogin">
   
@@ -119,7 +85,7 @@ span.psw {
    
     
   </div>
-</form>
+</form> -->
         
         
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
