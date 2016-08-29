@@ -24,7 +24,7 @@
   text-align: left;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
- * background-color:  #003666;
+ * background-color:  #106CC8;
   color: #333;
   background-color: white;
   padding: 10px;
@@ -48,7 +48,7 @@
   text-align: center;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
-  background-color:  #003666;
+  background-color:  #106CC8;
 }
 /*  */
 .thumbnail-detail{
@@ -103,7 +103,7 @@ color:white;
   border-bottom:1px solid #fff;
   margin-bottom:5px;
  * padding: 10px 5px 10px 10px;
- * background-color:  #003666;
+ * background-color: #106CC8;
 }
 /*////////////*/
 .watch-titles{
@@ -147,7 +147,7 @@ color:white;
 }
 #read,#share
 {
-  border:1px solid #003666;
+  border:1px solid #106CC8;
   border-radius: 5%;
   padding: 5px;
   margin: 2px 5px;
@@ -219,26 +219,26 @@ color:white;
 
 .btn-savelist-detail{
 	padding:5px;
-	background:#003666;
+	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
 .btn-share-detail{
 	padding:5px;
-	background:#003666;
+	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
 .btn-report-detail{
 	padding:5px;
-	background:#003666;
+	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
 
 .header-report{
 	padding-bottom:5px;
-	border-bottom: 1px solid #003666;
+	border-bottom: 1px solid #106CC8;
 }
 .form-report{
 	padding-top:10px;
@@ -250,5 +250,5 @@ input[type="button"]{
 	color:#fff;
 	font-size:14px;
 	border:1px solid #fff;
-	background:#003666 !important;
+	background:#106CC8 !important;
 }

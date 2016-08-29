@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 <div class="container-fluid" ng-controller="UserCtrl">
 	<div id="side-toolbar">
@@ -20,7 +24,7 @@
 							<div id="comment-side">
 								<form method="" action="" class="form-inline" >
 						            <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
-						            <textarea rows="1" value="សូមសរសេរមតិរបស់អ្នកនៅទីនេះ"​ class="comment-side" id ="recomend"></textarea>
+						            <textarea rows="1" placeholder="សូមសរសេរមតិរបស់អ្នក"​ class="comment-side" id ="recomend" ng-model="feeback_text"></textarea>
 						            <button type="submit" class="btn-comment" ng-click="saveFeedBack()">ផ្ងើ</button>
 					            </form>
 							</div>

@@ -94,7 +94,7 @@
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
 <jsp:include page="user/include/register.jsp"></jsp:include>
-<jsp:include page="login.jsp"></jsp:include>
+<jsp:include page="user/include/login.jsp"></jsp:include>
 <jsp:include page="user/include/upload.jsp"></jsp:include>
 <jsp:include page="user/include/save-list.jsp"></jsp:include>
 <jsp:include page="user/include/update-slide.jsp"></jsp:include>
