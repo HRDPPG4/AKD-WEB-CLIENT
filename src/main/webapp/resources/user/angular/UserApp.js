@@ -441,20 +441,25 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
 	///////////////////		START FEEDBACK BLOCK	/////////////////
-	
+    $scope.feeback_text="";
 	$scope.saveFeedBack = function(){	
-
 		$http({
 			url:'http://localhost:1111/api/v1/feedback',
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $('#recomend').val(),
+				  'DES': $scope.feeback_text,
 				  'STATUS': 1
 				  
 			}
 		}).then(function(response){
-			alert("success");
+			$scope.feeback_text="";
+			swal({  
+				title: "ជោកជ័យ!",   
+				text: "សូមអរគុណចំពោះការកែរកំហុសឆ្គងរបស់យើង!",   
+				timer: 800,   
+				showConfirmButton: false 
+			});
 		
 			
 		}, function(response){
@@ -778,6 +783,19 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	  ///////////////////	START USER BLOCK	/////////////////
 	
+    		 
+    		
+    		 
+ $scope.checkUserLogin = function(){	
+	 if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+		{
+			location.href= "/login";
+		}else{
+			
+		}
+	}
+    		 
+    
 	$scope.saveUser = function(){	
 
 		$http({

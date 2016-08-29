@@ -214,7 +214,7 @@ body
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 
-												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+												<button class="btn-report-detail"​ ng-click="checkUserLogin()"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
 
 											</div>
 											
