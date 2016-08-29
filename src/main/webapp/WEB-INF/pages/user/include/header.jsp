@@ -8,8 +8,8 @@
 </sec:authorize>
 
 <script>
-var userLoginID = "${userID}";
-var userLoginName = "${userName}";
+/* var userLoginID = "${userID}";
+var userLoginName = "${userName}"; */
 
 
 /* var globalVariable = "${userID}";
