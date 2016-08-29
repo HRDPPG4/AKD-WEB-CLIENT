@@ -36,9 +36,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			swal({  
 				title: "Record Found!",   
 				text: "",   
-				timer: 2000,   
+				timer: 800,   
 				showConfirmButton: false
 			});
+			
 			$scope.documentSearch=response.data.DATA;
 			console.log("search");
 			console.log($scope.documentSearch);
@@ -700,7 +701,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	 //   $scope.getSavelistUser();
      
         //---------getSavelistUser----------
-    	    $scope.getSavelistMenuUser=function(userID){
+    	    $scope.getSavelistMenuUser=function(){
     	    	if($scope.showsavelist == true){
     	    		$scope.showsavelist = false;
     	    	}else{
@@ -708,7 +709,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	    	}
 
     			$http({
-    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
+    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+$rootScope.userID,
     				method:'GET'
 	    			}).then(function(response){
 	    				$scope.getSavelistMenu=response.data.DATA;
