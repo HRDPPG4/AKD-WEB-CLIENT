@@ -10,14 +10,14 @@
     border-right-color: rgb(223, 224, 228);
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
+    min-height:500px;
 	float: left;
 }
 .left-profile > .img-pro img{
 	position:relative;
-	border:5px solid #fff;
-	 border-radius: 160px;
-	-webkit-border-radius: 160px;
-	-moz-border-radius: 160px;
+	border:3px solid #fff;
+	
+	top:5px;
 	left:30px;
 	width:150px;
 	height:160px;
@@ -74,7 +74,7 @@ li a : .active {
     border-bottom-color: rgb(208, 209, 213);
     border-left-color: rgb(223, 224, 228);
 	/* padding:10px; */
-	width:830px;
+	width:950px;
 	background-color:#fff;
 	padding: 13px 18px;
 	margin-right: 1px;
@@ -104,7 +104,7 @@ li a : .active {
 }
 
 .content-pdf-ppt-doc{
-	width:828px;
+	width:950px;
 	padding:10px;
 	margin-left:205px;
 	position:absolute;
@@ -221,7 +221,7 @@ a.thumbnail_ppt {
 }
 /*  */
 .content-mydoc{
-	 width:828px;
+	 width:950px;
 	padding:10px;
 	margin-left:205px;
 	position:absolute;
@@ -234,7 +234,7 @@ a.thumbnail_ppt {
 }
 /*  */
 .content-viewed-all{
-	 width:828px;
+	 width:950px;
 	padding:10px;
 	margin-left:205px;
 	position:absolute;
@@ -294,7 +294,7 @@ button.clear-history{
 }
 /*  */
 .content-savelist-all{
-	 width:828px;
+	 width:950px;
 	padding:10px;
 	margin-left:205px;
 	position:absolute;
@@ -393,8 +393,8 @@ z-index:500px;
 .footer-list{
 	min-width: 250px;
 	background:#003666;
-	padding-top:15px;
-	padding-bottom:15px;
+	padding-top:8px;
+	padding-bottom:8px;
 	margin-left:-10px;
 	margin-right:-10px;
 	margin-bottom:-10px;
@@ -407,7 +407,7 @@ button.btn-content-list{
     padding: 5px;
     color: #000;
     background:#fff;
-    border-radius:5px;
+   
 }
 button.btn-create{
 	  top: 0;
@@ -416,13 +416,13 @@ button.btn-create{
     position: relative;
      background:#fff;
     color: #000;
-    border-radius:5px;
+   
 }
 
 
 /*  */
 .content-aboutme{
-	width:828px;
+	width:950px;
 	/* padding:10px; */
 	margin-left:205px;
 	position:absolute;
@@ -440,4 +440,10 @@ button.btn-create{
 	padding:10px;
 	height:150px;
 	color:#fff;
+}
+.header-infor h1{
+	position:relative;
+	top:20px;
+	text-shadow: 0.1em 0.1em 0.1em #000;
+	text-align: center;
 }
