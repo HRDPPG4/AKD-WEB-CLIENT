@@ -651,7 +651,7 @@ a .fa-thumbs-up{
   top: -40px;
   float: right;
   right: 20px;
-  color:#003666; 
+  color:#106cc8; 
   font-size: 20px;
   margin:0 0.4em; 
 }
@@ -663,7 +663,7 @@ a .fa-thumbs-up:hover{
   top: -40px;
   float: right;
   right: 20px;
-  color:#000; 
+  color:#ff0000; 
   font-size: 20px;
  margin:0 0.4em; 
 }
