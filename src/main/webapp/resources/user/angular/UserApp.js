@@ -386,12 +386,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}, function(response){
 
 		});	
+		$scope.trackLog($rootScope.userID);
 		$scope.countView(id);
 	}
-	$scope.getDocumentByUser=function(userID,docTypeNum){
+	$scope.getDocumentByUser=function(docTypeNum){
 		$scope.showsavelist= false;
 		$http({
-			url:'http://localhost:1111/api/v1/document/user/'+userID,
+			url:'http://localhost:1111/api/v1/document/user/'+$rootScope.userID,
 			method:'GET',
 			params: {
 				docTypeNum : docTypeNum
@@ -406,7 +407,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	$scope.deleteDocument=function(docID){
-		var userID = $("#userDoc").val();
+		
 		
 		var typeDoc = $("#typeDoc").val();
 	
@@ -417,7 +418,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		}).then(function(response){
 		   alert("Deleted!");
-		 	$scope.getDocumentByUser(userID,typeDoc);
+		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
 		}, function(response){
            alert("Fail");
 		});
@@ -431,7 +432,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		method : 'PUT',
     		
     	}).then(function(response){
-    		
     		
     		//alert("Count Success");
     		$scope.trackLog(docID);
@@ -495,15 +495,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}
 	
 	 $scope.deleteLog =function(docID){
-	     	var userID = $("#userID").val();
-	     //	alert(docID);
+	    
 		 
 			$http({
 				url:'http://localhost:1111/api/v1/log/'+docID,
 				method:'DELETE',
 			}).then(function(response){
 				alert("Success");
-				$scope.getLogByUser(userID);
+				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
                console.log(response);
               
@@ -609,7 +608,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           				  'LIST_NAME': Savelistname,
 		           				  'REMARK': "",
 		           				  'STATUS':1 ,
-		           				  'USER_ID': $('#user_id').val()
+		           				  'USER_ID': $rootScope.userID
 
 		           			}
 		           		}).then(function(response){
@@ -654,7 +653,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        				  'LIST_NAME': Savelistname,
 		        				  'REMARK': "",
 		        				  'STATUS':1 ,
-		        				  'USER_ID': $('#user_id').val()
+		        				  'USER_ID': $rootScope.userID
 
 		        			}
 		        		}).then(function(response){
@@ -707,6 +706,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	    	}else{
     	    		$scope.showsavelist = true;
     	    	}
+    	    	
+    	    	alert(userID);
 
     			$http({
     				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+$rootScope.userID,
@@ -723,7 +724,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      //-----------getSavelistMenuUser---------------//
     	    
     		$scope.getDocumentByEachSavelist=function(userID,savelistID){
-    			alert(savelistID);
+    			
     			$http({
     				url:'http://localhost:1111/api/v1/getEachSavelist/'+userID,
     				method:'GET',
@@ -740,10 +741,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		}
      
     //------------getEachSavelist------------------//	
-    		$scope.getDocumentByUser=function(userID,docTypeNum){
+    		$scope.getDocumentByUser=function(docTypeNum){
     		$scope.showsavelist= false;
     		$http({
-    			url:'http://localhost:1111/api/v1/document/user/'+userID,
+    			url:'http://localhost:1111/api/v1/document/user/'+$rootScope.userID,
     			method:'GET',
     			params: {
     				docTypeNum : docTypeNum
@@ -762,19 +763,21 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     //------------deletSavelistDetail--------------//
     		 $scope.deleteSavelistDetail =function(docID){
     	           var listID = $('#listID').val();
-    	          
-    	           
-    			 
+    	       
+    	         
     				$http({
     					url:'http://localhost:1111/api/v1/savelist/deleteSavelistDetail/'+docID,
     					method:'DELETE',
     				}).then(function(response){
     					alert("Success");
+    					$scope.getDocumentByEachSavelist($rootScope.userID,listID);
     					
     				}, function(response){
     	               console.log(response);
     	              
     				});	
+    				
+    			  
     			}
     //------------EnddeleteSavelistDetail----------//
      
