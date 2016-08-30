@@ -124,7 +124,7 @@ a.thumbnail {
 						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
+							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
