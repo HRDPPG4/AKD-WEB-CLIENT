@@ -402,7 +402,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
-		
+		fbThumbnail = DocID;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
 			method:'GET'

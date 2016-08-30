@@ -382,12 +382,13 @@ body
 	
 	
 document.getElementById('shareBtn').onclick = function() {
-	var thumnail =$("#thumnail").attr("src");
+	 var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
   FB.ui({
     method: 'share',
     display: 'popup',
     caption: 'TESTING',
-    href: 'window.location',
+    href:  url ,
     picture: thumnail,
     
   }, function(response){
