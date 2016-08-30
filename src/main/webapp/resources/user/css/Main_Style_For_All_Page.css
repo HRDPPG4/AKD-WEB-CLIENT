@@ -3,7 +3,8 @@
 
 /* loading */
 .preloader{
-  background:rgba(255,255,255,0.9);
+ * background:rgba(255,255,255,0.9);
+ background:white;
   position:fixed;
   top:0px;
   left:0px;
