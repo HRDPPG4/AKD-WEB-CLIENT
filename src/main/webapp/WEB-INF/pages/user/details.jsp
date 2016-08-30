@@ -134,13 +134,9 @@ body
 
 </style>
 </head>
-<body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+<body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+		<!-- Facebook Configuration -->			
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -160,7 +156,7 @@ body
 </script>
 
 
-<jsp:include page="include/register.jsp"></jsp:include>
+ <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
