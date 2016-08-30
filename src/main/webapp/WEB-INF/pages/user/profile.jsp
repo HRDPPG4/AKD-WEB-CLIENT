@@ -85,16 +85,16 @@
 						<div class="user-name">ជឹម មិនា</div>
 							<ul class="title-profile nav nav-pills nav-stacked">
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
-								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser(2)" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
+								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">ឯកសារដែលបានមើល</a></li>
 								
 								
 							</ul>
-							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser(2)" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
+							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
 						 
 							<ul class="title-profile nav nav-pills nav-stacked"  >								
 								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
-								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(2,savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
 							</ul>
 							
 						 
@@ -209,7 +209,7 @@
 							<div id="mydoc" class="tab-pane fade">
 								<div class="content-mydoc">
 					           	<ul class="nav nav-tabs">
-									    <li class="active"><a data-toggle="tab" ng-click="getDocumentByUser(2,2)" href="#pdf-edit">PDF</a></li>
+									    <li class="active"><a data-toggle="tab" ng-click="getDocumentByUser(2)" href="#pdf-edit">PDF</a></li>
 									    <li><a data-toggle="tab" ng-click="getDocumentByUser(1)" href="#ppt-edit">PPT</a></li>
 									    <li><a data-toggle="tab" ng-click="getDocumentByUser(3)" href="#doc-edit">DOC</a></li>
 								   </ul>
