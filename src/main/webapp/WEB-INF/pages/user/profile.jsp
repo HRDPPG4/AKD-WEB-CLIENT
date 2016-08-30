@@ -67,8 +67,9 @@
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include>
+<jsp:include page="include/upload-profile.jsp"></jsp:include>
 
-				  
+  			  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
@@ -77,10 +78,30 @@
 <div id="page-content-wrapper">
 	<section id="profile">
 		<div class="container" >
-			<div class="row section profile topspace-profile">
-								
+			<div class="row section profile topspace-profile">	
 						<div class="left-profile" >
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
+						<div class="edit-profileImage">
+						<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myProfileImage"><i class="fa fa-instagram" aria-hidden="true" id="camera"></i><div class="profileImage">រូបភាពព័ត៌មានផ្ទាល់ខ្លួន</div></a>
+						</div>
+						<script>
+						   $(document).ready(function(){
+							   var profile ='close';
+							   $('.img-pro').hover(function(){
+								   if (profile=="close") {
+								   $('.edit-profileImage').css({'visibility':'visible'}).slideDown();
+								   $('.upload-proflie').css({'visibility':'visible'}).slideDown();
+								  /*  $('#camera').css({'font-size':'15px','top':'20px'}).slideDown(); */
+								   profile ='open';
+								   }else{
+									   $('.edit-profileImage').css({'visibility':'hidden'}).slideDown();
+									   $('.upload-proflie').css({'visibility':'hidden'}).slideDown();
+									   /* $('#camera').css({'font-size':'20px','top':'30px'}).slideDown(); */
+									   profile ='close';
+								   }
+							   });
+						   });
+						</script>
 						</div>
 						<!-- <div class="user-name">ជឹម មិនា</div> -->
 							<ul class="title-profile nav nav-pills nav-stacked">
