@@ -9,12 +9,10 @@
     <div class="modal-content">
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
-
     <div class="imgcontainer">	
     <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
     </div>
-			          
+		<!-- <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4> -->	          
         
       </div>
       <div class="modal-body" style="padding:40px 50px;">
@@ -34,7 +32,7 @@
             <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
 =======
           </div> -->
-            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+            <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
 
         </form>
       </div>

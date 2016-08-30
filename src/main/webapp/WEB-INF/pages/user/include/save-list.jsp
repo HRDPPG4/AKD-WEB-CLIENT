@@ -10,8 +10,6 @@
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4><span class="glyphicon glyphicon-lock"></span>តារាងឯកសារសំខាន់</h4>
-        
-        
     <div class="imgcontainer">						     
     
     </div>
