@@ -27,16 +27,21 @@
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> ពាក្យសំងាត់</label>
             <input name="password" type="password" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
           </div>
-          <div class="checkbox">
+          <!-- <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
+<<<<<<< HEAD
           </div>
             <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
+=======
+          </div> -->
+            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+>>>>>>> 685a969c8e9dad3d66734039dd962d7f282fde16
         </form>
       </div>
       <div class="modal-footer">
         <!-- <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button> -->
         <p>មិនទាន់ជាសមាជិក? <a href="#" data-toggle="modal" data-target="#register" data-dismiss="modal">ចុះឈ្មោះ</a></p>
-        <p> <a href="#">ភ្លេចពាក្យសំងាត់?</a></p>
+        <!-- <p> <a href="#">ភ្លេចពាក្យសំងាត់?</a></p> -->
       </div>
     </div>
     
