@@ -81,6 +81,7 @@
 								
 						<div class="left-profile" >
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
+						<div class="edit-profileImage"><span>hello</span></div>
 						</div>
 						<!-- <div class="user-name">ជឹម មិនា</div> -->
 							<ul class="title-profile nav nav-pills nav-stacked">

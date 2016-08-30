@@ -83,7 +83,7 @@ window.userID = "${userID}";
 	<!-- </div> -->
 	
 		 <div class="main-menu">
-		<%--  <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a> --%>
+		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 		</div>
 			<ul class="menu-basic" id="myTopnav">
 			<li class="icon">
