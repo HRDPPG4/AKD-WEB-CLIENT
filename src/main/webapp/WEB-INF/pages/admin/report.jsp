@@ -107,8 +107,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="r in report">
-										<td>{{r.REPORT_ID}}</td>
+									<tr ng-repeat="r in report" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{r.USER_ID}}</td>
 										<td>{{r.CREATED_DATE}}</td>
 										<td>{{r.REMARK}}</td>

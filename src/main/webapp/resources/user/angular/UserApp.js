@@ -320,16 +320,45 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
-			method:'GET'
+			method:'GET',
+			params : $scope.filter
 		}).then(function(response){
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.popular=response.data.DATA;
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		//	console.log("Popular: "+$scope.popular);
 		}, function(response){
 
 		});
 	}
+	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		alert(num);
+		$scope.filter.page = num;
+		$scope.showCategory();
+	});
 	
 	$scope.getDocumentByRecommended=function(){
 		 preloader.style.opacity = 1;
@@ -359,8 +388,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showPopular=false;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
-			method:'GET',
-			params : $scope.filter	
+			method:'GET'
 		}).then(function(response){
 			
 			preloader.style.opacity = 0;
@@ -374,32 +402,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		});
 	}
 	
-	//TODO: default filter
-	$scope.filter = {
-		page: 1,
-		limit: 10
-	};
 	
-	var PAGINATION = angular.element("#PAGINATION");
-	
-	$scope.setPagination = function(totalPage){
-		PAGINATION.bootpag({
-			total: totalPage,          // total pages
-			page: $scope.filter.page,   // default page
-			leaps: true,
-	        firstLastUse: true,
-	        first: '←',
-	        last: '→',
-	        next: 'Next',
-	        prev: 'Prev',
-	        maxVisible: 10
-		});		
-	}
-	
-	PAGINATION.on("page", function(event, num){
-		$scope.filter.page = num;
-		$scope.getDocumentByNewPost();
-	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
 		
