@@ -55,6 +55,12 @@
 	PATH_UI = "http://192.168.178.202:2222";
 </script>
 
+<!-- Sweet Alert -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
 <!-- START SEARCH BLOCK-->
 	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
@@ -121,6 +127,7 @@ div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-
 body
 {	
 	word-wrap:break-word !important;
+	font-family:Khmer OS Battambang;	
 }
 
 
@@ -129,9 +136,15 @@ body
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
 		<!-- Facebook Configuration -->			
+=======
+>>>>>>> 770698c5039f1b2557ca16ba81fed28bc9a285ab
 
+>>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -208,7 +221,7 @@ body
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 
-												<button class="btn-report-detail"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
+												<button class="btn-report-detail"​ ng-click="checkUserLogin()"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
 
 											</div>
 											
@@ -263,8 +276,8 @@ body
 												       									 		 
 												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
-							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+							 												 																		
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" >
 															<div class="img-detail">
 															<img id="thumnail" src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>

@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
-	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
-	  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/feature.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/feature.css">
 	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
@@ -53,7 +53,7 @@
 	
 	
 	<!-- START SEARCH BLOCK-->
-	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.2/ui-bootstrap-tpls.js"></script>
@@ -148,7 +148,7 @@ a.thumbnail {
 					<div  ng-repeat="slide in recommend" class="col-md-3" style="margin-bottom:10px;">
 					
 							
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
@@ -175,7 +175,7 @@ a.thumbnail {
 				
 				<div class="col-md-12" ng-if="showPopular">
 					<div  ng-repeat="slide in popular" class="col-md-3" style="margin-bottom:10px;">
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
@@ -201,7 +201,7 @@ a.thumbnail {
 				
 				<div class="col-md-12" ng-if="showNewPost">
 					<div  ng-repeat="slide in newDocument" class="col-md-3" style="margin-bottom:10px;">
-						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
@@ -239,7 +239,7 @@ a.thumbnail {
 </footer>
  <a href="#0" class="cd-top">Top</a>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>

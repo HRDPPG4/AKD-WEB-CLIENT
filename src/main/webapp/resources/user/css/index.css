@@ -144,7 +144,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   color:#eee;
 
-  background-color:#003666;
+  background-color:#106CC8;
   text-decoration: none;
 }
 
@@ -187,7 +187,7 @@ li#avatar-user ul.tooltiptext::after {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent #003666 transparent;
+    border-color: transparent transparent #106CC8 transparent;
 }
 
 li#avatar-user:hover ul.tooltiptext {
@@ -228,7 +228,7 @@ ul li > ul.tooltiptext li a:hover{
     color: #fff;
     margin-bottom:-9px;
     text-decoration:none;
-    background-color:#003666;
+    background-color:#106CC8;
     border:none;
     margin-top:-9px;
      line-height:40px;
@@ -244,7 +244,7 @@ ul li > ul.tooltiptext li a:hover{
     position: fixed;
     width: 100%;
   z-index: 300;
-  background-color: #003666;
+  background-color: #106CC8;
   border-width: 1px 0;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -356,7 +356,7 @@ ul.menu-basic li.icon {display: none;}
   font-size: 16px;
 	line-height: 30px;
   letter-spacing: 1px;
-	background-color:#003666;
+	background-color:#106CC8;
 }
 .popular-title{
 	margin:0;
@@ -432,7 +432,7 @@ ul.nav-tabs{
       list-style: none;
 }
 ul.nav-tabs li a{
-  background:#003666;
+  background:#106CC8;
       color: #fff; 
       border-radius: 2px;
       display: inline-block;
@@ -627,7 +627,7 @@ a.thumbnail{
    text-decoration: none;
   display: block;
   text-indent: 0;
-  border-bottom: 0.1em solid #003666;
+  border-bottom: 0.1em solid #106CC8;
 }
 .thumbnail .socials{
   position: relative;
@@ -651,7 +651,7 @@ a .fa-thumbs-up{
   top: -40px;
   float: right;
   right: 20px;
-  color:#003666; 
+  color:#106cc8; 
   font-size: 20px;
   margin:0 0.4em; 
 }
@@ -663,7 +663,7 @@ a .fa-thumbs-up:hover{
   top: -40px;
   float: right;
   right: 20px;
-  color:#000; 
+  color:#ff0000; 
   font-size: 20px;
  margin:0 0.4em; 
 }
@@ -755,7 +755,7 @@ ul.ul-toolbar > li.feedback:hover{
     color: #000;
     padding: 10px;
     text-decoration: none;
-     background-color:#003666 !important;
+     background-color:#106CC8 !important;
   border:1px solid #fff;
 }
 
@@ -764,7 +764,7 @@ ul.ul-toolbar > li.feedback a{
     color: #000;
     padding: 5px;
     text-decoration: none;
-    background-color:#003666 !important;
+    background-color:#106CC8 !important;
   border:1px solid #fff;
 }
 

@@ -36,10 +36,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			swal({  
 				title: "Record Found!",   
 				text: "",   
-				timer: 2000,   
+				timer: 800,   
 				showConfirmButton: false
 			});
+			
 			$scope.documentSearch=response.data.DATA;
+			console.log("search");
 			console.log($scope.documentSearch);
 			
 		}, function(response){
@@ -384,12 +386,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}, function(response){
 
 		});	
+		$scope.trackLog($rootScope.userID);
 		$scope.countView(id);
 	}
-	$scope.getDocumentByUser=function(userID,docTypeNum){
+	$scope.getDocumentByUser=function(docTypeNum){
 		$scope.showsavelist= false;
 		$http({
-			url:'http://localhost:1111/api/v1/document/user/'+userID,
+			url:'http://localhost:1111/api/v1/document/user/'+$rootScope.userID,
 			method:'GET',
 			params: {
 				docTypeNum : docTypeNum
@@ -404,7 +407,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	$scope.deleteDocument=function(docID){
-		var userID = $("#userDoc").val();
+		
 		
 		var typeDoc = $("#typeDoc").val();
 	
@@ -415,7 +418,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		}).then(function(response){
 		   alert("Deleted!");
-		 	$scope.getDocumentByUser(userID,typeDoc);
+		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
 		}, function(response){
            alert("Fail");
 		});
@@ -430,7 +433,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		
     	}).then(function(response){
     		
-    		
     		//alert("Count Success");
     		$scope.trackLog(docID);
     	},function(response){
@@ -441,20 +443,25 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
 	///////////////////		START FEEDBACK BLOCK	/////////////////
-	
+    $scope.feeback_text="";
 	$scope.saveFeedBack = function(){	
-
 		$http({
 			url:'http://localhost:1111/api/v1/feedback',
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
-				  'DES': $('#recomend').val(),
+				  'DES': $scope.feeback_text,
 				  'STATUS': 1
 				  
 			}
 		}).then(function(response){
-			alert("success");
+			$scope.feeback_text="";
+			swal({  
+				title: "ជោកជ័យ!",   
+				text: "សូមអរគុណចំពោះការកែរកំហុសឆ្គងរបស់យើង!",   
+				timer: 800,   
+				showConfirmButton: false 
+			});
 		
 			
 		}, function(response){
@@ -488,15 +495,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}
 	
 	 $scope.deleteLog =function(docID){
-	     	var userID = $("#userID").val();
-	     //	alert(docID);
+	    
 		 
 			$http({
 				url:'http://localhost:1111/api/v1/log/'+docID,
 				method:'DELETE',
 			}).then(function(response){
 				alert("Success");
-				$scope.getLogByUser(userID);
+				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
                console.log(response);
               
@@ -529,26 +535,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 
 	
-	  $scope.UserID="";
-		$scope.insertReport = function(){	
-			$http({
-				url:'http://localhost:1111/api/v1/report',
-				method:'POST',
-				data:{	
-					"CREATED_DATE": new Date(),
-					"DOC_ID": $scope.currentDocumentID,
-					"REMARK": $scope.currentReport,
-					"STATUS": 1,
-					"USER_ID": $scope.UserID
-				}	
+	
+		$scope.insertReport = function(){
+			if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+			{
+				location.href= "/login";
+			}else{
+				$http({
+					url:'http://localhost:1111/api/v1/report',
+					method:'POST',
+					data:{	
+						"CREATED_DATE": new Date(),
+						"DOC_ID": $scope.currentDocumentID,
+						"REMARK": $scope.currentReport,
+						"STATUS": 1,
+						"USER_ID": $rootScope.UserID
+					}	
+					
+				}).then(function(response){
+					swal({  
+						title: "វាយតម្លៃបានជោកជ័យ!",   
+						text: "សូមអរគុណចំពោះការវាយតម្លៃរបស់អ្នក!",   
+						timer: 800,   
+						showConfirmButton: false 
+					});
 				
-			}).then(function(response){
-			
-				$scope.report = response.data.DATA;
-			
-			}, function(response){
+					$scope.report = response.data.DATA;
+					$scope.currentReport="";
 				
-			});	
+				}, function(response){
+					
+				});					
+			}			
 		}
 
 	
@@ -590,7 +608,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           				  'LIST_NAME': Savelistname,
 		           				  'REMARK': "",
 		           				  'STATUS':1 ,
-		           				  'USER_ID': $('#user_id').val()
+		           				  'USER_ID': $rootScope.userID
 
 		           			}
 		           		}).then(function(response){
@@ -635,7 +653,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        				  'LIST_NAME': Savelistname,
 		        				  'REMARK': "",
 		        				  'STATUS':1 ,
-		        				  'USER_ID': $('#user_id').val()
+		        				  'USER_ID': $rootScope.userID
 
 		        			}
 		        		}).then(function(response){
@@ -661,32 +679,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      
      //--------- getSavelistUser-----------------
      $scope.getSavelistUser=function(userID){
-     	
-    			$http({
-    				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
-    				method:'GET'
-    			}).then(function(response){
-    				$scope.getuserSavelist=response.data.DATA;
-    			
-      			   // console.log($scope.getuserSavelist);
-    			
-    			}, function(response){
+    	if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+ 		{
+ 			location.href= "/login";
+ 		}else{
+ 			$http({
+				url:'http://localhost:1111/api/v1/getuserSavelist/'+userID,
+				method:'GET'
+			}).then(function(response){
+				$scope.getuserSavelist=response.data.DATA;
+			
+  			   // console.log($scope.getuserSavelist);
+			
+			}, function(response){
 
-    			});	
-    			
-    		}
-    	    $scope.getSavelistUser();
+			});	
+ 		}     	
+   	}
+     
+    	 //   $scope.getSavelistUser();
      
         //---------getSavelistUser----------
-    	    $scope.getSavelistMenuUser=function(userID){
+    	    $scope.getSavelistMenuUser=function(){
     	    	if($scope.showsavelist == true){
     	    		$scope.showsavelist = false;
     	    	}else{
     	    		$scope.showsavelist = true;
     	    	}
+    	    	
+    	    	alert(userID);
 
     			$http({
-    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+userID,
+    				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+$rootScope.userID,
     				method:'GET'
 	    			}).then(function(response){
 	    				$scope.getSavelistMenu=response.data.DATA;
@@ -700,7 +724,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      //-----------getSavelistMenuUser---------------//
     	    
     		$scope.getDocumentByEachSavelist=function(userID,savelistID){
-    			alert(savelistID);
+    			
     			$http({
     				url:'http://localhost:1111/api/v1/getEachSavelist/'+userID,
     				method:'GET',
@@ -717,10 +741,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		}
      
     //------------getEachSavelist------------------//	
-    		$scope.getDocumentByUser=function(userID,docTypeNum){
+    		$scope.getDocumentByUser=function(docTypeNum){
     		$scope.showsavelist= false;
     		$http({
-    			url:'http://localhost:1111/api/v1/document/user/'+userID,
+    			url:'http://localhost:1111/api/v1/document/user/'+$rootScope.userID,
     			method:'GET',
     			params: {
     				docTypeNum : docTypeNum
@@ -739,19 +763,21 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     //------------deletSavelistDetail--------------//
     		 $scope.deleteSavelistDetail =function(docID){
     	           var listID = $('#listID').val();
-    	          
-    	           
-    			 
+    	       
+    	         
     				$http({
     					url:'http://localhost:1111/api/v1/savelist/deleteSavelistDetail/'+docID,
     					method:'DELETE',
     				}).then(function(response){
     					alert("Success");
+    					$scope.getDocumentByEachSavelist($rootScope.userID,listID);
     					
     				}, function(response){
     	               console.log(response);
     	              
     				});	
+    				
+    			  
     			}
     //------------EnddeleteSavelistDetail----------//
      
@@ -762,6 +788,19 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	  ///////////////////	START USER BLOCK	/////////////////
 	
+    		 
+    		
+    		 
+ $scope.checkUserLogin = function(){	
+	 if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
+		{
+			location.href= "/login";
+		}else{
+			
+		}
+	}
+    		 
+    
 	$scope.saveUser = function(){	
 
 		$http({
@@ -840,7 +879,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				title: "File Upload Successful!",   
 				text: "",   
 				timer: 800,   
-				onfirmButton: false 
+				showConfirmButton: false 
 			});
 			
 			$(".progress-bar").css("width", "100%"); 
@@ -859,7 +898,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				title: "File Upload Fail!",   
 				text: "",   
 				timer: 800,   
-				onfirmButton: false 
+				showConfirmButton: false 
 			});
 			
 		});
