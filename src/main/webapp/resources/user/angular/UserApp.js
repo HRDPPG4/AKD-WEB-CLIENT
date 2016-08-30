@@ -578,7 +578,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	///////////////////		START LOG BLOCK	/////////////////
 	
 //	$rootScope.UserID=
-<<<<<<< HEAD
+
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
@@ -603,26 +603,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		   }
 			
 		}
-=======
-	 $scope.trackLog=function(docID){	      
-		$http({
-			url:'http://localhost:1111/api/v1/log',
-			method:'POST',
-			data :{
-				  'CREATED_DATE': new Date(),
-				  'DOC_ID': docID, 
-				  'REMARK': "",
-				  'STATUS': 0,
-				  'USER_ID': $rootScope.UserID
-			}
-		}).then(function(response){
-			alert("Success");
-		
-		}, function(response){
-			console.log(response);
-		});	
-	}
->>>>>>> d11df5ec454808088546dd7a27af76422584dec5
+
 	
 	 $scope.deleteLog =function(docID){
 	    
