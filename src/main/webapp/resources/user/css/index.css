@@ -750,7 +750,7 @@ ul.ul-toolbar > li.feedback:hover{
 	height: 50px;
 }
 
- ul.ul-toolbar > li.search a{
+ ul.ul-toolbar > li.search{
     display: block;
     color: #000;
     padding: 10px;
@@ -758,7 +758,24 @@ ul.ul-toolbar > li.feedback:hover{
      background-color:#106CC8 !important;
   border:1px solid #fff;
 }
-
+ul.ul-toolbar > a{
+	position:relative;
+	display: block;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+     background-color:#106CC8 !important;
+  border:1px solid #fff;
+}
+ul.ul-toolbar > a:hover{
+	position:relative;
+	display: block;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+     background-color:#106CC8 !important;
+  border:1px solid #fff;
+}
 ul.ul-toolbar > li.feedback a{
     display: block;
     color: #000;

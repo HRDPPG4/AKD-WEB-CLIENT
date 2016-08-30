@@ -35,7 +35,7 @@
 =======
           </div> -->
             <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
->>>>>>> 685a969c8e9dad3d66734039dd962d7f282fde16
+
         </form>
       </div>
       <div class="modal-footer">
