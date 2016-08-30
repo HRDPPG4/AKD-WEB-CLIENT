@@ -815,3 +815,23 @@ button.btn-side-search{
 	padding:5px 10px 5px 10px;
 	border-radius:5px;
  }
+ 
+ .btn-upload{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
+ }
+ .btn-login{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
+ }
+ 
+ .btn-register{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
+ }

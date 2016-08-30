@@ -30,7 +30,7 @@
           <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
           </div>
-            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+            <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
         </form>
       </div>
       <div class="modal-footer">

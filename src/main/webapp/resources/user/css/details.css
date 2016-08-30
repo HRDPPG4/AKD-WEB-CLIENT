@@ -36,13 +36,30 @@
 	border:1px solid #eee;
   text-align: left;
   margin-top:-5px;
-  left:200px;
+  left:210px;
   margin-bottom:5px;
   color: #333;
   width:300px;
   background-color: white !important;
   padding: 10px;
 }
+
+.content-savelist{
+	display:none;
+	font-size: 16px;
+	position:absolute;
+	border:1px solid #eee;
+  text-align: left;
+  margin-top:-5px;
+  left:20px;
+  margin-bottom:5px;
+  color: #333;
+  width:300px;
+  background-color: white !important;
+  padding: 10px;
+}
+
+
 .commend-visitor{
 	font-size: 16px;
   text-align: center;
@@ -240,7 +257,15 @@ color:white;
 	padding-bottom:5px;
 	border-bottom: 1px solid #106CC8;
 }
+
+.header-savelist{
+	padding-bottom:5px;
+	border-bottom: 1px solid #106CC8;
+}
 .form-report{
+	padding-top:10px;
+}
+.form-savelist{
 	padding-top:10px;
 }
 input[type="button"]{

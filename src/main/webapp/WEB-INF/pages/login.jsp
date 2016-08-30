@@ -32,10 +32,11 @@
 	        </li>
 	        <li>
 	            <input type="password" name="password" class="textbox2" placeholder="លេខសំងាត់">
+	            <span class="form_hint">សូមបញ្ចូលលេខសំងាត់ឲ្យបានត្រឹមត្រូវ</span>
 	            <p class="psw"><img src="${pageContext.request.contextPath}/resources/user/img/login/lock.png" alt=""></p>
 	        </li>
          </ul>
-       	 	<input type="submit"  value="ចូលប្រើប្រាស់"/>
+       	 	<input class="input-login" style="width:30%;position:relative;left:20%;" type="submit"  value="ចូលប្រើប្រាស់"/>
 			<div class="clear"></div>	
 			<!-- <label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember me</label>
 		<div class="forgot">
@@ -45,12 +46,12 @@
 	</form>
 <!-- end-form -->
 <!-- start-account -->
-<div class="account">
+<%-- <div class="account">
 	<h4>មិនមានគណនីឬ? សូមចុះឈ្មោះជាមួយគណនីបណ្តាញសង្គម!</h4>
     <div class="span"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/facebook.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយ Facebook</i><div class="clear"></div></a></div>	
-  <%--   <div class="span1"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/twitter.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយធ្វីសធើ</i><div class="clear"></div></a></div>
-    <div class="span2"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/gplus.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្គោហ្គោលផ្លើស</i><div class="clear"></div></a></div> --%>
-</div>	
+    <div class="span1"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/twitter.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយធ្វីសធើ</i><div class="clear"></div></a></div>
+    <div class="span2"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/img/login/gplus.png" alt=""/><i>ចូលប្រើប្រាស់ជាមួយហ្គោហ្គោលផ្លើស</i><div class="clear"></div></a></div>
+</div>	 --%>
 <!-- end-account -->
 <div class="clear"></div>	
 </div>
