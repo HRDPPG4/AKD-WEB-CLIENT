@@ -135,16 +135,8 @@ body
 </style>
 </head>
 <body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
-
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
 		<!-- Facebook Configuration -->			
-=======
->>>>>>> 770698c5039f1b2557ca16ba81fed28bc9a285ab
 
->>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({
