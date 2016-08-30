@@ -10,8 +10,6 @@
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4><span class="glyphicon glyphicon-lock"></span>តារាងឯកសារសំខាន់</h4>
-        
-        
     <div class="imgcontainer">						     
     
     </div>
@@ -24,7 +22,7 @@
      			<div class="row">
   					  
   					   		<div id="message" style="background:#98bf21;height:30px;width:800px;position:absolute;display:none;">
-  					   		   <p>hello</p>
+  					   		  
   					   		</div>
     						<div class="thumbnail">
      						 <img src="${pageContext.request.contextPath}/resources/user/img/book.jpg" alt="Thumbnail" style=" width:400px; height:300px;position:relative;" >
@@ -49,7 +47,7 @@
 						    
 							   	<input   type="text" class="form-control" ng-model="saveListname">					      
 							    <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
-							    <input   type="hidden" class="form-control" value="{{docDetail[0].USER_ID}}" id="user_id">
+							   
 							  ​​	
   								
 							</div>
