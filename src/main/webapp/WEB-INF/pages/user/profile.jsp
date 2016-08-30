@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>    
+    <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+   <sec:authentication  property="principal.userID" var="userID"/>
+   <sec:authentication  property="principal.name" var="userName"/>
+</sec:authorize>
+
+<script>
+window.userID = "${userID}"; 
+/* window.userName="${userName}"; */
+</script>	
     
     <!DOCTYPE html>
 <html>
@@ -61,7 +72,7 @@
 	
 	<!-- END SEARCH BLOCK -->
 </head>
-<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -136,20 +147,20 @@
 										<div class="profile-wrap">
 										<form action="">
 										<div class="profile-name-content">
-										 <span class="profile-name-label" style=""><label>ឈ្មោះ</label></span>
-										  <span class="profile-name"><input type="text" value="ជឹម មិនា" class="input-name"/></span>
+										 <span class="profile-name-label" style=""><label>ឈ្មោះ </label></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.USER_NAME}} class="input-name"/></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-email-label"><label> អីុម៉ែល</label></span>
-										  <span class="profile-name"><input type="text" value="minea.chem@gmail.com"  class="input-name" /></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.EMAIL}} class="input-name" /></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-phone-label"><label class="left-phone">លេខទូរស័ព្ទ</label></span>
-										  <span class="profile-name"><input type="text" value="086 460714" class="input-name"/></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.PHONE}} class="input-name"/></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-psw-label" ><label class="left-psw">លេខសំងាត់</label></span>
-										  <span class="profile-name"><input type="password" value="086 460714" class="input-name"/></span>
+										  <span class="profile-name"><input type="password" value={{getUserByID.PASSWORD}} class="input-name"/></span>
 										</div>
 										<input type="submit" value="កែប្រែ" class="submit-profile"/>
 									  </div>
