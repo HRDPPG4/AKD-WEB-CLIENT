@@ -165,19 +165,25 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	////////////////////	START CATEGORY BLOCK	/////////////////
 	
 	
-	$scope.getAllCategory = function(){			
-		$http({
-			url:'http://localhost:1111/api/v1/category',
-			method:'GET'			
-		}).then(function(response){
-		//	console.log(response.data.DATA);
-			$scope.category=response.data.DATA;
-			console.log("GET ALL CAT");
-			console.log($scope.category);
+	$scope.getAllCategory = function(){
+		if($scope.checkUserLogin()){
 			
-		}, function(response){
+		}else{
+			$http({
+				url:'http://localhost:1111/api/v1/category',
+				method:'GET'			
+			}).then(function(response){
+			//	console.log(response.data.DATA);
+				$scope.category=response.data.DATA;
+				console.log("GET ALL CAT");
+				console.log($scope.category);
+				
+			}, function(response){
+			
+			});
+		}
 		
-		});
+		
 	}	
 /*	$scope.getAllCategory();*/
 	
@@ -244,16 +250,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
 	///////////////////		START COMMENT BLOCK	/////////////////
-	/*$scope.UserID=$window.userLoginID;*/
-//	$scope.UserID=userLoginID;
+
 	
 	$rootScope.UserID=$window.userID;
 	
 	$scope.getAllCommentByDocID=function(DocID){	
-		//console.log(DocID);
-		//alert(userLoginID+"                   "+userLoginName);
-		//alert($rootScope.UserID);
-		//alert(	$scope.memIdAngular);
+
 		
 		$http({
 			url:'http://localhost:1111/api/v1/getAllCommentByDocID/'+DocID,
@@ -268,7 +270,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 	//	alert("getCommentByDocID");
 	}
-	//$scope.getAllCommentByDocID($scope.currentDocumentID);
+
 	
 	
 	$scope.insertComment = function(){
@@ -580,7 +582,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	///////////////////		START LOG BLOCK	/////////////////
 	
-//	$rootScope.UserID=
 
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
