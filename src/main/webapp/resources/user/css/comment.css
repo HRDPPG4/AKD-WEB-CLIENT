@@ -34,7 +34,7 @@
 }
 #commentBox #commentBoxArea,#listCommentBox
 {
-	clear: both;
+	*clear: both;
 }
 #listCommentBox
 {

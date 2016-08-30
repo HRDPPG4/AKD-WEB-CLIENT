@@ -6,7 +6,6 @@
 	<form action="">
 		<div id="img-user">
 			<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
-			Hum Chivorn
 		</div>
 
 		<div id="commentBoxArea">
