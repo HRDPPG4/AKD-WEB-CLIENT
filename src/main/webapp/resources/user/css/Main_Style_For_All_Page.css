@@ -24,5 +24,10 @@
   left:45%;
 }
 
+[uib-typeahead-popup].dropdown-menu {
+    display: block;
+    background: white !important;
+}
+
 
 
