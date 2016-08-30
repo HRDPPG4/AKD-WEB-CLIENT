@@ -47,9 +47,7 @@ img.avatar {
 
 .navbar-logo img
 {
-	max-width:35px;
-
-
+	width:100%;
 }
 #header .top-menu .navbar-logo a
 {

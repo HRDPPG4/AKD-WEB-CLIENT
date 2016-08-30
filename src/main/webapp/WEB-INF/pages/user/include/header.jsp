@@ -18,8 +18,7 @@ window.userID = "${userID}";
 	<div class="top-menu" ng-init="getUserID(memIdAngular)">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span class="navbar-logo">
-					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-					 <span>All Khmer Docs</span>					 
+					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/logo-4.png"/>					 
 					 </a>					
 			</span>
 	<div class="container">

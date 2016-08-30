@@ -59,6 +59,18 @@
   padding: 10px;
 }
 
+#comment-savelist{
+	position:relative;
+	padding:10px;
+	color:#000;
+	border:1px solid #eee;
+	display: none;
+
+}
+
+#btnSavelist{
+	display: none;
+}
 
 .commend-visitor{
 	font-size: 16px;
@@ -276,4 +288,11 @@ input[type="button"]{
 	font-size:14px;
 	border:1px solid #fff;
 	background:#106CC8 !important;
+}
+
+.btn-create-new{
+	padding:5px;
+	background:#106CC8;
+	color:#fff;
+	border:1px solid #fff;
 }
