@@ -29,8 +29,13 @@
           </div>
           <!-- <div class="checkbox">
             <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
+<<<<<<< HEAD
+          </div>
+            <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
+=======
           </div> -->
             <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+>>>>>>> 685a969c8e9dad3d66734039dd962d7f282fde16
         </form>
       </div>
       <div class="modal-footer">

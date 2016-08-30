@@ -381,6 +381,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	};
 	
 	var PAGINATION = angular.element("#PAGINATION");
+	
 	$scope.setPagination = function(totalPage){
 		PAGINATION.bootpag({
 			total: totalPage,          // total pages

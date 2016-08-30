@@ -23,7 +23,7 @@
      		<form action="#" method="post" enctype="multipart/form-data">
      			
      			 		<input type="file" name="files[]" id="filer_input" multiple="multiple">
-     					<button type="button" class="btn btn-primary"​ alignt="center">រក្សាទុក</button>
+     					<button type="button" class="btn-update-slide"​ alignt="center">រក្សាទុក</button>
      					
 			</form>
         

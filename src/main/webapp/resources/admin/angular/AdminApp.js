@@ -17,17 +17,30 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	}	
 	$scope.showCategory();
 	
-	$scope.removeCategory = function(id) {
-		$http({
-			url : 'http://localhost:1111/api/v1/category/' + id,
-			method : 'DELETE'
-		}).then(function() {
-			$scope.showCategory();
-		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-		});
-	}
+//	$scope.removeCategory = function(id) {
+//		$http({
+//			url : 'http://localhost:1111/api/v1/category/' + id,
+//			method : 'DELETE'
+//		}).then(function() {
+//			$scope.showCategory();
+//		}, function() {
+//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+//		});
+//	}
 
+	$scope.remove = function(id) {
+	alert(id);
+	$http({
+		url : 'http://localhost:1111/api/v1/category/' + id,
+		method : 'PUT'
+	}).then(function() {
+		$scope.showCategory();
+		alert("success");
+	}, function() {
+		alert("Fiald");
+	});
+}
+	
 	$scope.alertDelete = function(id) {
 		swal({
 			title : "Are you sure?",
@@ -53,26 +66,26 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		$scope.sta = category.c.STATUS;
 	}
 	
-	$scope.updateCategory = function() {
-		$http({
-			url : 'http://localhost:1111/api/v1/category',
-			method : 'PUT',
-			data : {
-				'CAT_NAME' : $scope.folderName,
-				'REMARK' : $scope.des,
-				'STATUS' : $scope.sta
-			}
-		}).then(function(response) {
-			$scope.showCategory();
-		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-		});
-	}
+//	$scope.updateCategory = function() {
+//		$http({
+//			url : 'http://localhost:1111/api/v1/category',
+//			method : 'PUT',
+//			data : {
+//				'CAT_NAME' : $scope.folderName,
+//				'REMARK' : $scope.des,
+//				'STATUS' : $scope.sta
+//			}
+//		}).then(function(response) {
+//			$scope.showCategory();
+//		}, function() {
+//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+//		});
+//	}
 
-	$scope.alertUpdate = function() {
-		$scope.updateCategory();
-		swal("Updated!", "You updated the user!", "success")
-	}
+//	$scope.alertUpdate = function() {
+//		$scope.updateCategory();
+//		swal("Updated!", "You updated the user!", "success")
+//	}
 
 	
 	$scope.getCategoryCount = function() {
@@ -219,7 +232,6 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	}
 
 	$scope.getDataForUpdate = function(user) {
-
 		// alert(user.u.EMAIL);
 		$scope.gid = user.u.USER_ID;
 		$scope.gname = user.u.USER_NAME;
@@ -259,11 +271,11 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		$scope.updateUser();
 		swal("Updated!", "You updated the user!", "success")
 	}
-
+	
 	$scope.removeUser = function(id) {
 		$http({
-			url : 'http://localhost:1111/api/v1/user/' + id,
-			method : 'DELETE'
+			url : 'http://localhost:1111/api/v1/user/' + id ,
+			method : 'PUT'
 		}).then(function() {
 			$scope.getUserData();
 		}, function() {
@@ -447,7 +459,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 	$scope.removeComment = function(id) {
 		$http({
 			url : 'http://localhost:1111/api/v1/comment/' + id,
-			method : 'DELETE'
+			method : 'PUT'
 		}).then(function() {
 			$scope.getCommentData();
 		}, function() {

@@ -43,11 +43,12 @@ body{
 }
 /*start-contact-form*/
 .contact_form {
-	width: 45%;
-	border-right:2px solid #eee;
+	width: 100%;
+	/* border-right:2px solid #eee; */
 	/* background: url("../img/login/border.png") no-repeat 331px 77px; */
-	float: left;
+	/* float: left; */
 	position: relative;
+	left:10%;
 }
 .contact-form{
 	background:#fff;
@@ -110,7 +111,28 @@ body{
 		width: 9.3%;
 		cursor: pointer;
 	}
-	.contact_form input[type="submit"] {
+	.contact_form input[type="submit"]{
+	border: none;
+		outline: none;
+		cursor: pointer;
+		color: #fff;
+		background: #106cc8;
+		width: 30%;
+		padding: 12px;
+		font-size: 18px;
+		letter-spacing:1px;
+		margin: 28px 0 30px;
+		transition: all 0.5s ease-out;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-ms-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		border-radius: 2px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-o-border-radius: 2px;
+	}
+	/* .contact_form input[type="submit"] {
 		border: none;
 		outline: none;
 		cursor: pointer;
@@ -130,10 +152,10 @@ body{
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
 		-o-border-radius: 2px;
-	}	
+	}	*/
 .contact_form input[type="submit"]:hover {
 	background:#106cc8;
-}	
+}	 
 .contact_form input[type="checkbox"] {
 	width: 21px;
 	vertical-align: middle;
@@ -191,15 +213,15 @@ body{
 	border-top: 10px solid transparent;
 }
 .contact_form input:focus + .form_hint {display: inline;}
-.contact_form input:required:valid + .form_hint {color: #000;
+.contact_form input:required:valid + .form_hint {color: #fff;
 	background: #106cc8;}
 .contact_form input:required:valid + .form_hint::before {color:#28921f;}
 /*end-contact-form*/
 /*start-account*/
-.account{
+/* .account{
 	float:right;
 	width: 45%;
-}
+} */
 /* .account h2 a{
 	color:#71B8E4;
 	display: block;
@@ -503,7 +525,7 @@ body{
 		padding: 5px 14px;
 	}
 	.contact_form input[type="submit"] {
-		font-size: 1.2em;
+		font-size: 12px;
 		padding: 10px;
 		margin: 22px 0 30px;
 	}
@@ -562,12 +584,13 @@ body{
 	.contact_form {
 		width: 100%;
 		background:none;
+		left:0;
 	}
 	.contact_form li {
 		width: 99.5%;
 	}
 	.contact_form input[type="submit"] {
-		width: 100%;
+		min-width: 50%;
 		margin: 22px 0 13px;
 	}
 	.forgot {
@@ -608,15 +631,17 @@ body{
 	.wrap{
 		width:85%;
 	}
+	
 	.contact_form {
 		width: 100%;
 		background:none;
+		left:0;
 	}
 	.contact_form li {
 		width: 99.5%;
 	}
 	.contact_form input[type="submit"] {
-		width: 100%;
+		min-width: 50%;
 		margin: 22px 0 13px;
 	}
 	.forgot {

@@ -130,8 +130,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="u in user">
-										<td>{{u.USER_ID}}</td>
+									<tr ng-repeat="u in user" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{u.USER_NAME}}</td>
 										<td>{{u.EMAIL}}</td>
 										<td>{{u.CREATED_DATE}}</td>
