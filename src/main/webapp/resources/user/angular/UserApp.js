@@ -947,54 +947,61 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
-		//alert($rootScope.currentSubCategory);
-		event.preventDefault();	
-		var files = event.target.files;
-		var frmData = new FormData();					
-		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);				
-		frmData.append("title", $scope.theFile.name);
-		frmData.append("des", $scope.des);
-		frmData.append("catID", $scope.catID);	
-		$http({
-			url : 'http://localhost:1111/api/uploadFile',
-			method :'POST',
-			data : frmData,
-			transformRequest : angular.identity,
-			headers : {
-				'Content-Type' : undefined
-			}
-		}).then(function(response) {
+		if($scope.checkUserLogin()){
+			
+		}else{
 			//alert($rootScope.currentSubCategory);
-			//getAllDocumentByCatID(parentCat.CAT_ID)
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#filer_input')[0].files[0];
+			frmData.append("files", file);				
+			frmData.append("title", $scope.theFile.name);
+			frmData.append("des", $scope.des);
+			frmData.append("usreID", $rootScope.userID);		
+			frmData.append("catID", $scope.catID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadFile',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				//alert($rootScope.currentSubCategory);
+				//getAllDocumentByCatID(parentCat.CAT_ID)
+				
+				swal({  
+					title: "File Upload Successful!",   
+					text: "",   
+					timer: 800,   
+					showConfirmButton: false 
+				});
+				
+				$(".progress-bar").css("width", "100%"); 
+		
+				$scope.$on(frmData, function(){
+					
+				});
+				
+				$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+				
+				
 			
-			swal({  
-				title: "File Upload Successful!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});
-			
-			$(".progress-bar").css("width", "100%"); 
-	
-			$scope.$on(frmData, function(){
+				
+			}, function(response) {
+				swal({  
+					title: "File Upload Fail!",   
+					text: "",   
+					timer: 800,   
+					showConfirmButton: false 
+				});
 				
 			});
-			
-			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
-			
-			
+		}
 		
-			
-		}, function(response) {
-			swal({  
-				title: "File Upload Fail!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});
-			
-		});
+		
 	};
 
 	 $scope.trustSrc = function(src){
