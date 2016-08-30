@@ -134,11 +134,15 @@ body
 
 </style>
 </head>
-<body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+<body ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+		<!-- Facebook Configuration -->			
+=======
+>>>>>>> 770698c5039f1b2557ca16ba81fed28bc9a285ab
 
 >>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
@@ -160,7 +164,7 @@ body
 </script>
 
 
-<jsp:include page="include/register.jsp"></jsp:include>
+ <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
@@ -272,8 +276,8 @@ body
 												       									 		 
 												 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							 								<input   type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">
-							 								<input   type="hidden" class="form-control" value="{{related.USER_ID}}" id="slide_user_id">												 																		
-												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" ng-click="trackLog()">
+							 												 																		
+												 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" >
 															<div class="img-detail">
 															<img id="thumnail" src="{{related.THUMBNAIL_URL}}" alt="Thumbnail" style="">  
 															</div>

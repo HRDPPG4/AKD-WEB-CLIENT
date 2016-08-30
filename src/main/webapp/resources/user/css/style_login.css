@@ -245,15 +245,14 @@ body{
 	float: left;
 	
 }
-
-.span i {
+.span a i {
 	color: #fff;
 	padding: 12px 14px;
 	text-decoration:none;
 	/* float: left; */
 	position:relative;
 	top:10px;
-	font-size: 18px;
+	font-size:18px;
 	font-style: normal;
 }
 .span a:hover {
@@ -512,14 +511,19 @@ body{
 	.forgot a {
 		font-size: 1em;
 	}
-	.span i {
+	.span a i {
+		text-align:left;
+		left:5px;
 		padding: 11px 6px;
-		font-size: 1em;
+		font-size: 18px;
 		top:4px;
 	}
 	
 	.span img {
-		padding: 2px;
+		position:relative;
+		left:2px;
+		height:75px;
+		padding: 7px;
 	}
 	.span1 img {
 		padding: 2px;
