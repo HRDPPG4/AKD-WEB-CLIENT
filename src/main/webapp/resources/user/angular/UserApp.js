@@ -151,7 +151,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$rootScope.userID = $window.userID;
 	$rootScope.loading =$window.loading;
-	
+	$rootScope.finalName =$window.finalName;
 	
 	
 	
@@ -980,7 +980,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	////////////////////	START UPLOAD BLOCK	/////////////////
-	
+//	$rootScope.finalName=$window.fileName;
 	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
@@ -988,6 +988,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		if($scope.checkUserLogin()){
 			
 		}else{
+		//	alert($rootScope.finalName);
 			//alert($rootScope.currentSubCategory);
 			event.preventDefault();	
 			var files = event.target.files;

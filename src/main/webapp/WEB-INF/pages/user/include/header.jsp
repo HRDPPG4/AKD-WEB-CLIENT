@@ -9,6 +9,7 @@
 
 <script>
 window.userID = "${userID}"; 
+window.fileName="";
 </script>
 
 

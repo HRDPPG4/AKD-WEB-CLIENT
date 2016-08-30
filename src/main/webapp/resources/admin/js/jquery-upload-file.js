@@ -7,24 +7,14 @@ $(document).ready(function() {
 		    $('#btnSave').prop('disabled', true);	    
 		}
 		else{
-			$('#btnSave').prop('disabled', false);	
-			$(".progress-bar").css("width", "0%"); 
+			
 		}
 		
-		/*var filename = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '');
-		var finalName=filename.substring(0, filename.indexOf('.'))
+		var filename = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '');
+		var finalName=filename.substring(0, filename.lastIndexOf('.'));
+		$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
 		document.getElementById("title").value=finalName;		
-		jQuery('#title').trigger('input');*/
-		
-		/*var fileName=document.getElementById("title").value;
-		var finalName=fileName.substring(0, fileName.lastIndexOf('.'));
-		document.getElementById("title").value=finalName;*/
-		
-		//$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
-
-	
-		
-		
+		jQuery('#title').trigger('input');
     }); 
 	
 

@@ -1,3 +1,4 @@
+
  <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
@@ -20,10 +21,10 @@
 		   </div>
 		</div>				 		  					
 		</form>  	
-			<div ng-show="theFile">
+<!-- 			<div ng-show="theFile"> -->
 			<form role="form">
 			    <div class="form-group">
-			      <label>Title:</label>
+			      <label>Title:</label><!-- {{theFile.name}}FileName{{finalName}} -->
 			      <input type="text" class="form-control" placeholder="Title" ng-model="theFile.name" id="title" ng-readonly="false">		<!-- ng-model="fileTitle" id="title" -->
 			   <!--  <p>Title: {{theFile.name}}</p> -->
 			  <!--    <p>Type: {{theFile.type}}</p> -->
@@ -41,7 +42,7 @@
 			      <input type="text" class="form-control" placeholder="Description" ng-model="des" >
 			    </div>
 		  	</form>       					       
-			</div>
+<!-- 			</div> -->
 	      </div>
       <div class="modal-footer">
         <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadFile($event)">រក្សាទុក</button>   
