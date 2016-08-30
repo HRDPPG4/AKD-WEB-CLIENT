@@ -17,25 +17,46 @@
 .left-profile > .img-pro img{
 	position:relative;
 	width:100%;
+	cursor:pointer;
+	
 	border:2px solid #fff;
 	height:190px;
 }
 .edit-profileImage{
 	position: relative;
-	background-color:#000;
-	opacity: 1;
-	color:#fff;
-	/* -webkit-transform:translate(0%,0);
-  -moz-transform:translate(0%,0);
-  -webkit-transition: all 1s ease; */
-	text-align:center;
+	top:-1px;
+	margin-top:-63px;
+	opacity: 0.8;
+	margin-left:3px;
+	visibility:hidden;
+	margin-right:3px;
+	cursor:pointer;
+	background-color:#000 !important;
+}
+a.upload-proflie{
+	cursor:pointer;
 	min-width:200px;
-	height:30px;
+	height:40px;
+	visibility:hidden;
 	margin-left:3px;
 	margin-right:3px;
-	padding-top:5px;
-	top:-3px;
-	margin-top:-30px;
+	text-decoration: none;
+	
+}
+#camera{
+position:absolute;
+visibility:visible;
+	font-size:20px;
+	position:relative;
+	top:30px;
+	color:#fff;
+}
+.profileImage{
+	color:#fff;
+	position:relative;
+	left:40px;
+	text-decoration: none;
+	
 }
 
 
