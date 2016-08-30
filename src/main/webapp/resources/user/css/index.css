@@ -750,7 +750,7 @@ ul.ul-toolbar > li.feedback:hover{
 	height: 50px;
 }
 
- ul.ul-toolbar > li.search a{
+ ul.ul-toolbar > li.search{
     display: block;
     color: #000;
     padding: 10px;
@@ -758,7 +758,24 @@ ul.ul-toolbar > li.feedback:hover{
      background-color:#106CC8 !important;
   border:1px solid #fff;
 }
-
+ul.ul-toolbar > a{
+	position:relative;
+	display: block;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+     background-color:#106CC8 !important;
+  border:1px solid #fff;
+}
+ul.ul-toolbar > a:hover{
+	position:relative;
+	display: block;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+     background-color:#106CC8 !important;
+  border:1px solid #fff;
+}
 ul.ul-toolbar > li.feedback a{
     display: block;
     color: #000;
@@ -814,4 +831,24 @@ button.btn-side-search{
 	background: white;
 	padding:5px 10px 5px 10px;
 	border-radius:5px;
+ }
+ 
+ .btn-upload{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
+ }
+ .btn-login{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
+ }
+ 
+ .btn-register{
+ background-color:#106cc8;
+ color:#fff;
+ border:1px solid #fff;
+ padding:7px;
  }

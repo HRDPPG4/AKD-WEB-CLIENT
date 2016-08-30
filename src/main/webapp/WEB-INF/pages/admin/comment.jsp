@@ -106,8 +106,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="c in comment">
-										<td>{{c.COMMENT_ID}}</td>
+									<tr ng-repeat="c in comment" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>
 										<td>{{c.USER_ID}}</td>

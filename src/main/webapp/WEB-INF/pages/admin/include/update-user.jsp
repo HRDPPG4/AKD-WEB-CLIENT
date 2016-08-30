@@ -112,8 +112,8 @@
 											<span class="input-group-addon"><i
 												class="fa fa-users fa" aria-hidden="true"></i></span>
 											<select name="role" ng-model="grole" class="form-control">
-												<option value="Admin">Admin</option>
-												<option value="User">User</option>
+												<option value="ROLE_ADMIN">Admin</option>
+												<option value="ROLE_USER">User</option>
 											</select>
 											
 										</div>

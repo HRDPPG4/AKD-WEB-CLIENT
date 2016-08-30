@@ -1,6 +1,6 @@
 /*var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','ngLoadingSpinner']);*/
 
-
+var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
@@ -28,17 +28,106 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	
+	
+	
+	
+	
+	
+	/*var inputOptions = new Promise(function(resolve) {
+		  setTimeout(function() {
+		    resolve({
+		      '#ff0000': 'Red',
+		      '#00ff00': 'Green',
+		      '#0000ff': 'Blue'
+		    });
+		  }, 2000);
+		});*/
+
+		/*swal({
+		  title: 'Select color',
+		  input: 'radio',
+		  inputOptions: inputOptions,
+		  inputValidator: function(result) {
+		    return new Promise(function(resolve, reject) {
+		      if (result) {
+		        resolve();
+		      } else {
+		        reject('You need to select something!');
+		      }
+		    });
+		  }
+		}).then(function(result) {
+		  swal({
+		    type: 'success',
+		    html: 'You selected: ' + result
+		  });
+		});*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
-			swal({  
+			/*swal({  
 				title: "Record Found!",   
 				text: "",   
 				timer: 800,   
 				showConfirmButton: false
-			});
+			});*/
+			
+			/*var inputOptions = new Promise(function(resolve) {
+				  setTimeout(function() {
+				    resolve({
+				      '#ff0000': 'Red',
+				      '#00ff00': 'Green',
+				      '#0000ff': 'Blue'
+				    });
+				  }, 2000);
+				});
+			
+			
+			swal({
+				  title: 'Select color',
+				  input: 'radio',
+				  inputOptions: inputOptions,
+				  inputValidator: function(result) {
+				    return new Promise(function(resolve, reject) {
+				      if (result) {
+				        resolve();
+				      } else {
+				        reject('You need to select something!');
+				      }
+				    });
+				  }
+				}).then(function(result) {
+				  swal({
+				    type: 'success',
+				    html: 'You selected: ' + result
+				  });
+				});*/
+			
+		
+		//	$window.loading="none";
+			
+			
+			
+			
+			
+			
+			  var preloader = document.querySelector(".preloader");
+			  preloader.style.opacity = 0;
+			  preloader.style.display ="none";
+			
+			
+			
 			
 			$scope.documentSearch=response.data.DATA;
 			console.log("search");
@@ -61,6 +150,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	//$scope.windowVariable = $window.windowVariable;
 	
 	$rootScope.userID = $window.userID;
+	$rootScope.loading =$window.loading;
+	
+	
 	
 	
 	
@@ -72,21 +164,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 	////////////////////	START CATEGORY BLOCK	/////////////////
 	
-/*	$scope.showCategory = function(){			
-		$http({
-			url:'http://localhost:1111/api/v1/category',
-			method:'GET'			
-		}).then(function(response){
-		//	console.log(response.data.DATA);
-			$scope.category=response.data.DATA;
-			
-			console.log($scope.category);
-			
-		}, function(response){
-		
-		});
-	}	
-	$scope.showCategory();*/
 	
 	$scope.getAllCategory = function(){			
 		$http({
@@ -235,6 +312,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	$scope.getDocumentByPopular=function(){
+		 preloader.style.opacity = 1;
+		 preloader.style.display ="block";
 		$scope.showRecomment=false;
 		$scope.showNewPost=false;
 		$scope.showPopular=true;
@@ -243,6 +322,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
 			method:'GET'
 		}).then(function(response){
+			 preloader.style.opacity = 0;
+			 preloader.style.display ="none";
 			$scope.popular=response.data.DATA;
 		//	console.log("Popular: "+$scope.popular);
 		}, function(response){
@@ -251,6 +332,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	$scope.getDocumentByRecommended=function(){
+		 preloader.style.opacity = 1;
+		 preloader.style.display ="block";
 		$scope.showRecomment=true;
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
@@ -258,6 +341,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
 			method:'GET'
 		}).then(function(response){
+			 preloader.style.opacity = 0;
+			 preloader.style.display ="none";
 			$scope.recommend=response.data.DATA;
 			//console.log("Recomand: "+$scope.recommend);
 		}, function(response){
@@ -265,7 +350,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		});
 	}
 	
-	$scope.getDocumentByNewPost=function(){
+	$scope.getDocumentByNewPost=function(){		
+		 preloader.style.opacity = 1;
+		 preloader.style.display ="block";
+		 
 		$scope.showRecomment=false;
 		$scope.showNewPost=true;
 		$scope.showPopular=false;
@@ -274,6 +362,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET',
 			params : $scope.filter	
 		}).then(function(response){
+			
+			preloader.style.opacity = 0;
+			preloader.style.display ="none";
+			
 			$scope.newDocument=response.data.DATA;
 		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
@@ -289,6 +381,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	};
 	
 	var PAGINATION = angular.element("#PAGINATION");
+	
 	$scope.setPagination = function(totalPage){
 		PAGINATION.bootpag({
 			total: totalPage,          // total pages
@@ -485,6 +578,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	///////////////////		START LOG BLOCK	/////////////////
 	
 //	$rootScope.UserID=
+<<<<<<< HEAD
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
@@ -509,6 +603,26 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		   }
 			
 		}
+=======
+	 $scope.trackLog=function(docID){	      
+		$http({
+			url:'http://localhost:1111/api/v1/log',
+			method:'POST',
+			data :{
+				  'CREATED_DATE': new Date(),
+				  'DOC_ID': docID, 
+				  'REMARK': "",
+				  'STATUS': 0,
+				  'USER_ID': $rootScope.UserID
+			}
+		}).then(function(response){
+			alert("Success");
+		
+		}, function(response){
+			console.log(response);
+		});	
+	}
+>>>>>>> d11df5ec454808088546dd7a27af76422584dec5
 	
 	 $scope.deleteLog =function(docID){
 	    
@@ -889,54 +1003,61 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
-		//alert($rootScope.currentSubCategory);
-		event.preventDefault();	
-		var files = event.target.files;
-		var frmData = new FormData();					
-		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);				
-		frmData.append("title", $scope.theFile.name);
-		frmData.append("des", $scope.des);
-		frmData.append("catID", $scope.catID);	
-		$http({
-			url : 'http://localhost:1111/api/uploadFile',
-			method :'POST',
-			data : frmData,
-			transformRequest : angular.identity,
-			headers : {
-				'Content-Type' : undefined
-			}
-		}).then(function(response) {
+		if($scope.checkUserLogin()){
+			
+		}else{
 			//alert($rootScope.currentSubCategory);
-			//getAllDocumentByCatID(parentCat.CAT_ID)
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#filer_input')[0].files[0];
+			frmData.append("files", file);				
+			frmData.append("title", $scope.theFile.name);
+			frmData.append("des", $scope.des);
+			frmData.append("usreID", $rootScope.userID);		
+			frmData.append("catID", $scope.catID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadFile',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				//alert($rootScope.currentSubCategory);
+				//getAllDocumentByCatID(parentCat.CAT_ID)
+				
+				swal({  
+					title: "File Upload Successful!",   
+					text: "",   
+					timer: 800,   
+					showConfirmButton: false 
+				});
+				
+				$(".progress-bar").css("width", "100%"); 
+		
+				$scope.$on(frmData, function(){
+					
+				});
+				
+				$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
+				
+				
 			
-			swal({  
-				title: "File Upload Successful!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});
-			
-			$(".progress-bar").css("width", "100%"); 
-	
-			$scope.$on(frmData, function(){
+				
+			}, function(response) {
+				swal({  
+					title: "File Upload Fail!",   
+					text: "",   
+					timer: 800,   
+					showConfirmButton: false 
+				});
 				
 			});
-			
-			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
-			
-			
+		}
 		
-			
-		}, function(response) {
-			swal({  
-				title: "File Upload Fail!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});
-			
-		});
+		
 	};
 
 	 $scope.trustSrc = function(src){

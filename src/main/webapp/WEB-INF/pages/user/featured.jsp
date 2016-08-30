@@ -63,6 +63,9 @@
 	
 	<!-- END SEARCH BLOCK -->
 	
+    <!-- Loading -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
+	
 	
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
@@ -117,10 +120,11 @@ a.thumbnail {
 
 </style>
 
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getAllDocument()">
+<jsp:include page="include/loading.jsp"></jsp:include>
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -253,5 +257,13 @@ a.thumbnail {
 <!-- Online Link -->
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.bootpage.min.js"></script>
 	
+	<script>
+	$(window).bind("load", function(){
+		 var preloader = document.querySelector(".preloader");
+		  preloader.style.opacity = 0;
+		 preloader.style.display ="none";
+		 
+		}) ;
+	</script>
 </body>
 </html>

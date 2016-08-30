@@ -48,6 +48,9 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.passwordParameter("password")
 			.failureHandler(ajaxAuthenticationFailureHandler)
 			.successHandler(ajaxAuthenticationSuccessHandler);
+		http
+			.logout()
+			.logoutSuccessUrl("/");
 			
 		
 		http.csrf().disable();

@@ -82,19 +82,24 @@
 						<div class="left-profile" >
 						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
 						</div>
-						<div class="user-name">ជឹម មិនា</div>
+						<!-- <div class="user-name">ជឹម មិនា</div> -->
 							<ul class="title-profile nav nav-pills nav-stacked">
+
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">ឯកសារដែលបានមើល</a></li>
+
 								
 								
 							</ul>
 							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
 						 
 							<ul class="title-profile nav nav-pills nav-stacked"  >								
+
 								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
 								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+								
+							
 							</ul>
 							
 						 
@@ -103,108 +108,34 @@
 				
 					 <div class="tab-content">
 							<div id="infor" class="tab-pane fade in active">
-									<div class="content-aboutme">
+								<div class="content-aboutme">
 										<div class="header-infor">
 											<h1>ព័ត៌មានផ្ទាល់ខ្លួន</h1>
 										</div>
-										<div>
-										<div class="span12">
-									  		<form action="">
-									  		<label></label>
-									  		
-									  		</form>
-									  	</div>
-									  	</div>
-									</div>
-							</div>
-						<!--  <div id="dashbord" class="tab-pane fade">
-							<div class="dashboard-content">
-										<div class="preview-all">
-											<ul id="dashboard-header">
-												<li>
-													<div class="view-value">25</div>
-													<div class="view-name">មើល</div>
-												</li>
-												<li>
-													<div class="view-value">25</div>
-													<div class="view-name">មើល</div>
-												</li>
-												<li>
-													<div class="view-value">25</div>
-													<div class="view-name">មើល</div>
-												</li>
-											</ul>
+										<div class="profile-wrap">
+										<form action="">
+										<div class="profile-name-content">
+										 <span class="profile-name-label" style=""><label>ឈ្មោះ</label></span>
+										  <span class="profile-name"><input type="text" value="ជឹម មិនា" class="input-name"/></span>
 										</div>
-							</div>
-							<div class="content-pdf-ppt-doc">
-										<ul class="nav nav-tabs">
-									    <li class="active"><a data-toggle="tab" href="#pdf">PDF</a></li>
-									    <li><a data-toggle="tab" href="#ppt">PPT</a></li>
-									    <li><a data-toggle="tab" href="#doc">DOC</a></li>
-								   </ul>
-								   <div class="pdf-ppt-doc tab-content">
-									  
-									    <div id="pdf" class="tab-pane fade in active">
-									      <div class="pdf-preview">
-									    		<div ng-repeat="slide in document  | limitTo :2">
-									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-													<span class="img">
-													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-													</span>
-													<span class="title-pdf-pre">
-												    HTML
-												   </span>
-												   <span class="count-view-pdf">
-												    200 មើល
-												    </span>
-												</a>
-												
-												</div>	
-										 </div>
-										</div>	
-										pdf
-									    <div id="ppt" class="tab-pane fade">
-									     	<div class="ppt-preview">
-									    		<div ng-repeat="slide in document  | limitTo :4">
-									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail_ppt">
-													<span class="img_ppt">
-													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-													</span>
-													<span class="title-ppt-pre">
-												    HTML
-												   </span>
-												   <span class="count-view-ppt">
-												    200 មើល
-												   </span>
-												 
-												</a>
-												</div>	
-										 </div>
-									    </div>
-									    ppt tab 
-									    <div id="doc" class="tab-pane fade">
-									      <div class="doc-preview">
-									    		<div ng-repeat="slide in document  | limitTo :2">
-									    		<a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
-													<span class="img">
-													<img src="{{slide.THUMBNAIL_URL}}" alt=""> 
-													</span>
-													<span class="title-doc-pre">
-												    HTML
-												   </span>
-												   <span class="count-view-doc">
-												    200 មើល
-												   </span>
-												 
-												</a>
-												</div>	
-										 </div>
-										 doc tab 
-									    </div>
-									 </div>
-							    </div>
-							</div> -->
-							<!-- tab dashboard -->
+										<div class="profile-name-content">
+										 <span class="profile-email-label"><label> អីុម៉ែល</label></span>
+										  <span class="profile-name"><input type="text" value="minea.chem@gmail.com"  class="input-name" /></span>
+										</div>
+										<div class="profile-name-content">
+										 <span class="profile-phone-label"><label class="left-phone">លេខទូរស័ព្ទ</label></span>
+										  <span class="profile-name"><input type="text" value="086 460714" class="input-name"/></span>
+										</div>
+										<div class="profile-name-content">
+										 <span class="profile-psw-label" ><label class="left-psw">លេខសំងាត់</label></span>
+										  <span class="profile-name"><input type="password" value="086 460714" class="input-name"/></span>
+										</div>
+										<input type="submit" value="កែប្រែ" class="submit-profile"/>
+									  </div>
+									  </form>
+							   </div>
+							 </div>
+						
 							<!-- //////////////////////////////////////////////////////////////////////////////// -->
 							<div id="mydoc" class="tab-pane fade">
 								<div class="content-mydoc">

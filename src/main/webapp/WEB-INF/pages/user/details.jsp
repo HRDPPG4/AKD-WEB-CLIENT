@@ -135,12 +135,8 @@ body
 </style>
 </head>
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+		<!-- Facebook Configuration -->			
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 70b038d7aff93efcce7b270253254fe8e7b48a50
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -160,7 +156,7 @@ body
 </script>
 
 
-<jsp:include page="include/register.jsp"></jsp:include>
+ <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
@@ -212,7 +208,7 @@ body
 											</div>
 											<div id="btn" >
 
-												<button class="btn-savelist-detail" data-toggle="modal" data-target="#save-list" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
+												<button class="btn-savelist-detail" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
 
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
@@ -223,7 +219,19 @@ body
 											
 										 </div>										
 									</div>
-									
+									<!-- savelist -->
+									<div class="content-savelist">
+										<div class="header-savelist">ការរក្សាឯកសារទុក
+										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										</div>
+										
+										<form action="" class=" form-savelist">
+										<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
+											<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+										</form>	
+										
+									</div>
+									<!-- report -->
 									<div class="content-report">
 										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
 										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
@@ -343,7 +351,7 @@ body
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script> 
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/savelist.js"></script> 
 		
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script> 
 	

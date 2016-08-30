@@ -7,11 +7,13 @@
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
-           <%-- <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចុះឈ្មោះ</h4>
-          <div class="imgcontainer">						     
+        
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <div class="imgcontainer">						     
 	      <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">
-	    </div> --%>
+	    </div>
+        <!-- <h4><span class="glyphicon glyphicon-lock"></span> ចុះឈ្មោះ</h4> -->
+          
         </div>
         <div class="modal-body" >
           	<div class="row main">
@@ -79,12 +81,8 @@
 						
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button" ng-disabled="error" ng-click="saveUser()")>Register</button>
+							<button type="button" class="btn-register" ng-disabled="error" ng-click="saveUser()")><span class="glyphicon glyphicon-lock"></span>ចុះឈ្មោះ</button>
 						</div>
-						<p>Login Success</p>
-						<div class="login-register">
-				            <a href="index.php">Login</a>
-				         </div>
 					</form>
 				</div>
 			</div>

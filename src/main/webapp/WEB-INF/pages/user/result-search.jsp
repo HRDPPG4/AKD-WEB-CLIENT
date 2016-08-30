@@ -46,6 +46,18 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    
+    
+    <!-- Sweet Alert2 -->
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/4.2.4/sweetalert2.js"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/4.2.4/sweetalert2.min.js"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/4.2.4/sweetalert2.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/4.2.4/sweetalert2.min.css">
+     
+    <!-- Loading -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
+	
+    
 
 <script>
 	PATH_UI = "http://192.168.178.202:2222";
@@ -79,11 +91,18 @@ a.thumbnail {
     min-height: 338.79px​ !important;
 }
 
-
 </style>
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByLikeTitle('${title}')">
+<jsp:include page="include/loading.jsp"></jsp:include>
+
+
+
+
+
+
+
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -105,7 +124,7 @@ a.thumbnail {
 						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
+							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -154,6 +173,30 @@ a.thumbnail {
 <!-- Online Link -->
 
 
+
+ 
+<script>
+
+
+/*  window.onload = function(){
+	  var preloader = document.querySelector(".preloader");
+	  preloader.style.opacity = 0;
+	  setTimeout(function(){
+		 
+	  },0);
+	} 
+ 
+	//$(window).bind("load", function(){
+	
+	 preloader.style.display =loading;
+	 
+//	}) ; */
+	
+
+
+
+
+</script>
 	
 	
 </body>
