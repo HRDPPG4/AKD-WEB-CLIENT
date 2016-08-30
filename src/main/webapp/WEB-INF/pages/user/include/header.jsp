@@ -17,6 +17,7 @@ window.windowVariable = "${userID}"; */
 
 // var globalVariable = "${userID}";
 window.userID = "${userID}"; 
+window.loading = "Loading"; 
 </script>
 
 

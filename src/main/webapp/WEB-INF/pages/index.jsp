@@ -30,6 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/jquery.filer.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/themes/jquery.filer-dragdropbox-theme.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/save-list.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
 	
 	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> 
 	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
@@ -93,6 +94,7 @@
 
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
+<jsp:include page="user/include/loading.jsp"></jsp:include>
 <jsp:include page="user/include/register.jsp"></jsp:include>
 <jsp:include page="user/include/login.jsp"></jsp:include>
 <jsp:include page="user/include/upload.jsp"></jsp:include>
@@ -253,6 +255,13 @@
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
+
+$(window).bind("load", function(){
+	 var preloader = document.querySelector(".preloader");
+	  preloader.style.opacity = 0;
+	 preloader.style.display ="none";
+ 
+}) ;
  
 	
 </body>

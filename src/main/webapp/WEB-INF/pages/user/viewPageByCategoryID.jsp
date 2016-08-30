@@ -30,7 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/jquery.filer.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/themes/jquery.filer-dragdropbox-theme.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/save-list.css">
-	
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
 	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> 
 	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
@@ -117,6 +117,7 @@ a.thumbnail {
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
+<jsp:include page="include/loading.jsp"></jsp:include>
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -272,6 +273,14 @@ a.thumbnail {
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 	<!-- Online Link -->
 	
+	<script>
+	$(window).bind("load", function(){
+		 var preloader = document.querySelector(".preloader");
+		  preloader.style.opacity = 0;
+		 preloader.style.display ="none";
+		 
+		}) ;
+	</script>
 	
 </body>
 </html>
