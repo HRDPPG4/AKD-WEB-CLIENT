@@ -97,22 +97,15 @@ $(document).ready(function() {
 				else{
 					
 				}
-		/*		var filename = $('#userProfilePath').val();
-			//	var filename = $('#userProfilePath').val().replace(/C:\\fakepath\\/i, '');
-			//	var finalName=filename.substring(0, filename.lastIndexOf('.'));
-			//	$("#userProfilePath").val($('#userProfilePath').val().replace(/.*(\/|\\)/, ''));
-				document.getElementById("pathImage").value=filename;		
-				jQuery('#pathImage').trigger('input');
-				
-			//	window.fileName=finalName;
-				//alert(window.finalName);
-				alert(filename);*/
 		    }); 
 			
 
 			$('#user').filer({
-			    changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-folder"></i></div><div class="jFiler-input-text"><h3>Click on this box</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
-			    showThumbs: true,
+			  //  changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-folder"></i></div><div class="jFiler-input-text"><h3>Click on this box</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="jFiler-input-choose-btn blue">Browse Files</a></div></div>',
+			   
+				changeInput: '<div ></div><a class="jFiler-input-choose-btn blue">ជ្រើសរើសរូបភាព</a></div></div>',
+				
+				showThumbs: true,
 			    theme: "dragdropbox",
 			    templates: {
 			        box: '<ul class="jFiler-items-list jFiler-items-grid"></ul>',
