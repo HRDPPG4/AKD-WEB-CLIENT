@@ -490,7 +490,6 @@ a.thumbnail{
   overflow: hidden;
   max-height: 100%;
   min-height:100%;
- 
   min-height: 190px;
   margin: 0 0 5px;
   position: relative;
@@ -623,6 +622,7 @@ a.thumbnail{
 .thumbnail .descript{
    margin: 0 1.1em;
    padding-bottom: 10px;
+   height:25px;
    line-height: 25px;
    text-align: left;
    font-size: 16px;
@@ -650,7 +650,7 @@ a .fa-arrow-circle-o-down,
 a .fa-share-alt,
 a .fa-thumbs-up{
   position: relative;
-  top: -40px;
+  top: -45px;
   float: right;
   right: 20px;
   color:#106cc8; 
@@ -662,7 +662,7 @@ a .fa-arrow-circle-o-down:hover,
 a .fa-share-alt:hover,
 a .fa-thumbs-up:hover{
   position: relative;
-  top: -40px;
+  top: -45px;
   float: right;
   right: 20px;
   color:#ff0000; 
