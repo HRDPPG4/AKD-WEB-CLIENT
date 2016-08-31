@@ -40,11 +40,11 @@
       <div class="modal-body" style="padding:40px 50px;">
    		 <form method="post" enctype="multipart/form-data">     			
 	 		<input type="file" name="user" id="user" multiple="multiple" onchange="angular.element(this).scope().setFile(this)">	
-	 		<input type="text" class="form-control" placeholder="Title" id="pathImage" ng-model="theFile.name"> 			 			  				 		  				
+	 		<!-- <input type="text" class="form-control" placeholder="Title" id="pathImage" ng-model="theFile.name">  -->			 			  				 		  				
 		</form>  	     					       
 	      </div>
       <div class="modal-footer">
-        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadUserProfile($event)">រក្សាទុក</button>   
+        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadUserProfile($event)" data-dismiss="modal">កែរប្រែរូបភាព</button>   
       </div>
     </div>
     

@@ -1077,7 +1077,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
-				
+				 $scope.getUserByID();
+				 location.href= "/profile";
 			});
 		}
 		
