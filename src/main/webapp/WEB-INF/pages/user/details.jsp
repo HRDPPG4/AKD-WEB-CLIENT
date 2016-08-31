@@ -200,6 +200,9 @@ body
 											</span>
 											<!-- {{UserID}}  -->
 											{{docDetail[0].USERS[0].USER_NAME}}
+											
+											<input type="text" value={{docDetail[0].THUMBNAIL_URL}} id="thubnail" ng-show="false">
+											
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].SHARE"></span></span></div>
@@ -421,14 +424,20 @@ body
 	
 	
 document.getElementById('shareBtn').onclick = function() {
-	 var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
 	 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
+	 
+	 
+	 var image=document.getElementById("thubnail").value;
+	// alert(image);
+	 
   FB.ui({
     method: 'share',
     display: 'popup',
     caption: 'TESTING',
     href:  url ,
-    picture: thumnail,
+  //  picture: thumnail,
+    picture: image,
     
   }, function(response){
 	  
