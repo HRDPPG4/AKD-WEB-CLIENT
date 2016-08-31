@@ -103,6 +103,9 @@ a.thumbnail {
     background-color: #f9f9f9;
   }
 
+#PAGINATION{
+	text-align:center;
+}
   .typeahead-demo .custom-popup-wrapper > .message {
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
