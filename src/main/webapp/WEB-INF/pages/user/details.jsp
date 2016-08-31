@@ -224,25 +224,25 @@ body
 										<div class="header-savelist">ការរក្សាឯកសារទុក
 										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
-										<form action="" class=" form-savelist">
+										<form action=""  name="saveform" class=" form-savelist">
 											<div class="form-group" id="catsavelist"  >
    			 				 
   							 			<div ng-if="getuserSavelist[0]">
   							 
   								  	
-  									<select class="form-control"  id ="saveListnames">
+  									<select class="form-control" id ="saveListnames" >
   								         <option  value=""></option>
-  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_ID}}">{{c.LIST_NAME}}</option>
+  										 <option ng-repeat="c in getuserSavelist"  ng-model="hide"  value="{{c.LIST_ID}}" >{{c.LIST_NAME}} </option>
   									
 						       		 </select>
 						       		 
 						       		 
-						       	    </div> 
+						       	    </div>
 						     
 						    <div class="form-group" style="padding-top:10px;padding-top:20px;display:none;" id="newsavelist" >
 						    
 							   	<input   type="text" class="form-control" ng-model="saveListname">					      
-							    <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+							   
 							   
 							  ​​	
   								
@@ -254,19 +254,43 @@ body
   								
 							</div>
 							 </div>
-							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
+							 			<button type="button" class="btn-create-new"​ ng-disabled=""  >បង្កើតថ្មី</button>
 							 			
-										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
-										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+										<input class=" form-control"  id="comment-savelist" ng-model="saveListname"/>
+										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()">
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
+											
+											$("#saveListnames").on('change',function(){
+												console.log('select change')
+												alert('aaa')
+												/* if($(this).is(':selected')){
+													$('.btn-create-new').attr('disabled','true')
+												} */
+											})
+											
+											/* $("#saveListnames").change(function(){
+												console.log('select change')
+												alert('aaa')
+												if($(this).is(':selected')){
+													$('.btn-create-new').attr('disabled','true')
+												}
+											}) */
+											
 											$('.btn-create-new').click(function(){
+												alert('button click!')
+												/* 
 												$('#comment-savelist').show();
 												$('.btn-create-new').hide();
-												$('#btnSavelist').show();
+												$('#btnSavelist').show(); */
+											});
+											$('.form-control').click(function(){
+												$('.btn-create-new').hide();
+												$('#comment-savelist').hide();
 											});
 										});
 									</script>

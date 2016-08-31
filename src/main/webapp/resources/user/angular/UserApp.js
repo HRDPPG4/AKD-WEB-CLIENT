@@ -694,8 +694,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 
 		$scope.saveList = function(){   
-			 
-			 
+		
+			if($scope.hide =selected){
+				$scope.show == false;
+			}
+			
 			
 		   	  var Savelistname = 0;
 		   
@@ -732,7 +735,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		           			}
 		           		}).then(function(response){
-		           			alert("success");
+		           			
 		           			$scope.trackLog(docID,Des,status);
 		           			
 		           			
