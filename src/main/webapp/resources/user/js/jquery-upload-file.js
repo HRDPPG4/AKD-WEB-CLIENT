@@ -97,15 +97,16 @@ $(document).ready(function() {
 				else{
 					
 				}
+		/*		var filename = $('#userProfilePath').val();
+			//	var filename = $('#userProfilePath').val().replace(/C:\\fakepath\\/i, '');
+			//	var finalName=filename.substring(0, filename.lastIndexOf('.'));
+			//	$("#userProfilePath").val($('#userProfilePath').val().replace(/.*(\/|\\)/, ''));
+				document.getElementById("pathImage").value=filename;		
+				jQuery('#pathImage').trigger('input');
 				
-				/*var filename = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '');
-				var finalName=filename.substring(0, filename.lastIndexOf('.'));
-				$("#title").val($('input[type=file]').val().replace(/.*(\/|\\)/, ''));
-				document.getElementById("title").value=finalName;		
-				jQuery('#title').trigger('input');
-				
-				window.fileName=finalName;*/
+			//	window.fileName=finalName;
 				//alert(window.finalName);
+				alert(filename);*/
 		    }); 
 			
 
