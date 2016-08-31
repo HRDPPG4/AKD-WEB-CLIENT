@@ -691,9 +691,19 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 ///////////////////		START SAVELIST BLOCK	/////////////////
 	
 	 // create saveList
+		$scope.showNew = true;
+		$scope.showSave = false;
+		$scope.checkSavelist = function(listname){
+			
+			if (listname != 'undefined' || listname != '')
+				$scope.showNew = false;
+			   
+			    $scope.saveList(listname);
+			    
+		}
+	   $scope.showButtonSave = function(){ $scope.showSave = true;}
 
-
-		$scope.saveList = function(){   
+		$scope.saveList = function(savelistID){   
 			 
 			 
 			
@@ -703,10 +713,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var Des = "";
 		      var listname ="";
 		      var status =  0;
-		         catename = $("#saveListnames").val();
+		         catename = savelistID 
+
+		         alert(catename);
 		        
 		        
-		         listname = $scope.saveListname;
+		        listname = $scope.saveListname;
 		         
 		      
 		         doc = $('#doc_id').val();

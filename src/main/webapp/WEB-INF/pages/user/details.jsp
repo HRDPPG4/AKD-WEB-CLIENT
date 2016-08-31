@@ -200,9 +200,6 @@ body
 											</span>
 											<!-- {{UserID}}  -->
 											{{docDetail[0].USERS[0].USER_NAME}}
-											
-											<input type="text" value={{docDetail[0].THUMBNAIL_URL}} id="thubnail" ng-show="false">
-											
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].SHARE"></span></span></div>
@@ -227,25 +224,23 @@ body
 										<div class="header-savelist">ការរក្សាឯកសារទុក
 										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
-										<form action="" class=" form-savelist">
+										<form action=""  name="saveform" class=" form-savelist">
 											<div class="form-group" id="catsavelist"  >
    			 				 
   							 			<div ng-if="getuserSavelist[0]">
   							 
   								  	
-  									<select class="form-control"  id ="saveListnames">
-  								         <option  value=""></option>
-  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_ID}}">{{c.LIST_NAME}}</option>
-  									
+  									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
+  										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
 						       		 </select>
 						       		 
 						       		 
-						       	    </div> 
+						       	    </div>
 						     
 						    <div class="form-group" style="padding-top:10px;padding-top:20px;display:none;" id="newsavelist" >
 						    
 							   	<input   type="text" class="form-control" ng-model="saveListname">					      
-							    <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+							   
 							   
 							  ​​	
   								
@@ -257,17 +252,30 @@ body
   								
 							</div>
 							 </div>
-							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
+							 			<button type="button" class="btn-create-new" ng-show="showNew" ng-click="showButtonSave()">បង្កើតថ្មី</button>
 							 			
-										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
-										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
+							 			
+										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
+										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+										 <button type="button" class="bnt-savelist" ng-click="saveList()" ng-show="showSave">បញ្ជូន</button>
+										
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
+											
+										
 											$('.btn-create-new').click(function(){
+												//alert('button click!')
+												 
 												$('#comment-savelist').show();
+												$('.btn-create-new').hide();
+												$('#btnSavelist').show(); 
+											});
+											$('#saveListnamess').change(function(){
+												alert(1);
 												$('.btn-create-new').hide();
 												$('#btnSavelist').show();
 											});
@@ -424,20 +432,14 @@ body
 	
 	
 document.getElementById('shareBtn').onclick = function() {
-	// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	 var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
 	 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
-	 
-	 
-	 var image=document.getElementById("thubnail").value;
-	// alert(image);
-	 
   FB.ui({
     method: 'share',
     display: 'popup',
     caption: 'TESTING',
     href:  url ,
-  //  picture: thumnail,
-    picture: image,
+    picture: thumnail,
     
   }, function(response){
 	  
