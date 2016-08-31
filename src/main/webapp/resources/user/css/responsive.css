@@ -226,16 +226,17 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
   @media screen and (max-width:886px){
 
  /*////////////////////////////////////////////////////////////*/
- 
+ .top-menu{
+  height: 50px;
+}
 /*upload,sign in,sign up*/
 
 .upload-signup-signin{
   position: relative;
   float: right;
   right: 210px;
-  top: -40px;
+  top:-40px;
   padding: 0px;
- 
   margin-bottom:-30px;
   display: inline-block;
   list-style-type:none;
@@ -259,9 +260,14 @@ ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
 .navbar >  .navbar-logo .brand-logo{
   position: relative;
   left: 0;
-  display:none;
+  display:inline;
   color: #3B5998;
   font-weight: 400px;
+}
+
+#imaginary_container{
+	position:relative;
+	display: none;
 }
 }
 
