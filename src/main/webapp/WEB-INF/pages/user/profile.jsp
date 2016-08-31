@@ -91,7 +91,7 @@ window.userID = "${userID}";
 		<div class="container" >
 			<div class="row section profile topspace-profile">	
 						<div class="left-profile" >
-						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
+						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/img/user-profile/default-profile.png">
 						<div class="edit-profileImage">
 						<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myProfileImage"><i class="fa fa-instagram" aria-hidden="true" id="camera"></i><div class="profileImage">រូបភាពព័ត៌មានផ្ទាល់ខ្លួន</div></a>
 						</div>
