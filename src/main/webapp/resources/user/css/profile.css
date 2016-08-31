@@ -18,14 +18,13 @@
 	position:relative;
 	width:100%;
 	cursor:pointer;
-	
 	border:2px solid #fff;
 	height:190px;
 }
 .edit-profileImage{
 	position: relative;
 	top:-1px;
-	margin-top:-63px;
+	margin-top:-40px;
 	opacity: 0.8;
 	margin-left:3px;
 	visibility:hidden;
@@ -48,13 +47,14 @@ position:absolute;
 visibility:visible;
 	font-size:20px;
 	position:relative;
-	top:30px;
+	top:10px;
 	color:#fff;
 }
 .profileImage{
 	color:#fff;
 	position:relative;
 	left:40px;
+	top:-6px;
 	text-decoration: none;
 	
 }
