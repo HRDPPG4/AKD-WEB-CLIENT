@@ -26,51 +26,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		location.href= "/search/"+$scope.selected;
 		//alert($scope.selected);
 	}
-	
-	
-	
-	
-	
-	
-	
-	/*var inputOptions = new Promise(function(resolve) {
-		  setTimeout(function() {
-		    resolve({
-		      '#ff0000': 'Red',
-		      '#00ff00': 'Green',
-		      '#0000ff': 'Blue'
-		    });
-		  }, 2000);
-		});*/
 
-		/*swal({
-		  title: 'Select color',
-		  input: 'radio',
-		  inputOptions: inputOptions,
-		  inputValidator: function(result) {
-		    return new Promise(function(resolve, reject) {
-		      if (result) {
-		        resolve();
-		      } else {
-		        reject('You need to select something!');
-		      }
-		    });
-		  }
-		}).then(function(result) {
-		  swal({
-		    type: 'success',
-		    html: 'You selected: ' + result
-		  });
-		});*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
@@ -151,7 +107,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$rootScope.userID = $window.userID;
 	$rootScope.loading =$window.loading;
-	$rootScope.finalName =$window.finalName;
 	
 	
 	
@@ -340,13 +295,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
 		$http({
-			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
+			url:'http://localhost:1111/api/v1/getDocumentByRecommended/'+$rootScope.userID,
 			method:'GET'
 		}).then(function(response){
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.recommend=response.data.DATA;
-			//console.log("Recomand: "+$scope.recommend);
+			console.log("Recomand: "+$scope.recommend);
+			console.log($scope.recommend);
 		}, function(response){
 
 		});
@@ -962,7 +918,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				  'USER_ROLE': "ROLE_USER"
 			}
 		}).then(function(response){
-			alert("success");
+			swal({  
+    				title: "អបអរសាទរ!",   
+    				text: "",   
+    				timer: 600,   
+    				showConfirmButton: false
+    			},function(){
+    				location.href = "/login";
+    			});
 			$scope.userName="";
 			$scope.userPassword="";
 			
@@ -1058,7 +1021,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	
-	$scope.theFile = "";
 	$scope.uploadUserProfile = function(event) {
 		if($scope.checkUserLogin()){
 			
@@ -1080,13 +1042,51 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
-				 $scope.getUserByID();
+				 //$scope.getUserByID();
 				 location.href= "/profile";
 			});
 		}
 		
 		
 	};
+	
+	$scope.checkDocID = function(docID) {
+    //	alert(docID);
+    	$rootScope.docUpdateID=docID;
+            
+    }
+	
+	$rootScope.docUpdateID="default";
+	$scope.uploadDocThumbnail = function(event) {
+		//alert($rootScope.docUpdateID);
+		if($scope.checkUserLogin()){
+			
+		}else{
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#docThumbnail')[0].files[0];
+			frmData.append("files", file);	
+			frmData.append("docID", $rootScope.docUpdateID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadDocThumbnail',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				$scope.getDocumentByUser();
+				// location.href= "/profile";
+			});
+		}
+		
+		
+	};
+	
+	
+	
 
 	 $scope.trustSrc = function(src){
 		 return $sce.trustAsResourceUrl(src);
@@ -1104,8 +1104,15 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	            
 	        });
 	    };
-
+	    
+	    
 	 
+	    
+	    
+	    
+	    
+
+	    
 	
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
@@ -1172,6 +1179,9 @@ app.directive('myEnter', function () {
         });
     };
 });
+
+
+
 
 
 

@@ -109,7 +109,7 @@
 <div class="container">
 	<section id="recommend">
 		<!-- section-title -->
-		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak>
+		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak >
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ឯកសារណែនាំ</span>
 				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>

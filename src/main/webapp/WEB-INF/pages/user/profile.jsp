@@ -207,7 +207,7 @@ window.userID = "${userID}";
 											    </a>
 											    
 											    <div id="update">
-													<button class="btn btn-default" data-toggle="modal" data-target="#updateDocument" ng-click="getAllCategory()">UpdateThumbnail</button>
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">UpdateThumbnail</button>
 												</div>
 											   
 								

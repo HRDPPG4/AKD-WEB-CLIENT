@@ -5,12 +5,14 @@
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <div ng-init="getUserByID()"></div>
 </sec:authorize>
 
 <script>
 window.userID = "${userID}"; 
 /* window.userName="${userName}"; */
 window.fileName="";
+
 </script>
 
 
@@ -63,7 +65,10 @@ window.fileName="";
             <!-- If login already-->
             <sec:authorize access="isAuthenticated()">
             <%-- <li><sec:authentication property="principal.name"/></li> --%>
-            <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
+            <li class="col-sm-1" id="avatar-user"><a href="/profile">
+            
+            <%-- <img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"> --%>
+            <img alt="" src="http://localhost:1111/resources/img/user-profile/{{getUserByID.PROFILE}}">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
                 	<li><a href="/logout?logout"> ចាកចេញ</a></li>

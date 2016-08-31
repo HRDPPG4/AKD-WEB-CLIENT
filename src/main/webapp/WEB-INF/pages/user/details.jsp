@@ -196,7 +196,7 @@ body
 											<div id="title"><p>{{docDetail[0].TITLE | strLimit: 60}}</p></div>
 											<div id="owner">
 											<span id="img-user">
-												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
+												<img alt="" src="http://localhost:1111/resources/img/user-profile/{{docDetail[0].USERS[0].PROFILE}}">
 											</span>
 											<!-- {{UserID}}  -->
 											{{docDetail[0].USERS[0].USER_NAME}}

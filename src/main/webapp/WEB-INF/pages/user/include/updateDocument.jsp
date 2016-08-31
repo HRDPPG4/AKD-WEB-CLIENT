@@ -3,7 +3,7 @@
  <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
-<div class="modal fade" id="updateDocument" role="dialog" ng-controller="UserCtrl">
+<div class="modal fade" id="updateDocument" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -18,7 +18,8 @@
 		</form>  	     					       
 	      </div>
       <div class="modal-footer">
-        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadUserProfile($event)" data-dismiss="modal">កែរប្រែរូបភាព</button>   
+        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadDocThumbnail($event)" data-dismiss="modal">កែរប្រែរូបភាព</button>   
+     
       </div>
     </div>
     
