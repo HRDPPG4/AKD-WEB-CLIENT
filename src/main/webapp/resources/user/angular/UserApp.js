@@ -703,9 +703,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}
 	   $scope.showButtonSave = function(){ $scope.showSave = true;}
 
+
 		$scope.saveList = function(savelistID){   
 			 
 			 
+
 			
 		   	  var Savelistname = 0;
 		   
@@ -744,7 +746,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		           			}
 		           		}).then(function(response){
-		           			alert("success");
+		           			
 		           			$scope.trackLog(docID,Des,status);
 		           			
 		           			

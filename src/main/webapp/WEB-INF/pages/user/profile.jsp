@@ -79,7 +79,7 @@ window.userID = "${userID}";
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include>
 <jsp:include page="include/upload-profile.jsp"></jsp:include>
-
+<jsp:include page="include/updateDocument.jsp"></jsp:include>
   			  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
@@ -120,19 +120,21 @@ window.userID = "${userID}";
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">ឯកសារដែលបានមើល</a></li>
-
-								
-								
+								<li  class="about" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ </a>
+		
+										<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+							       
+								</li>
 							</ul>
 							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
 						 
-							<ul class="title-profile nav nav-pills nav-stacked"  >								
+							<!-- <ul class="title-profile nav nav-pills nav-stacked"  >								
 
 								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
 								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
 								
 							
-							</ul>
+							</ul> -->
 							
 						 
 						</div>
@@ -190,6 +192,7 @@ window.userID = "${userID}";
 																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
 														</div>
+														
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
@@ -202,6 +205,10 @@ window.userID = "${userID}";
 													</div>					
 											        
 											    </a>
+											    
+											    <div id="update">
+													<button class="btn btn-default" data-toggle="modal" data-target="#updateDocument" ng-click="getAllCategory()">UpdateThumbnail</button>
+												</div>
 											   
 								
 											</div>

@@ -230,8 +230,15 @@ body
   							 			<div ng-if="getuserSavelist[0]">
   							 
   								  	
+<<<<<<< HEAD
   									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
   										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
+=======
+  									<select class="form-control" id ="saveListnames" >
+  								         <option  value=""></option>
+  										 <option ng-repeat="c in getuserSavelist"  ng-model="hide"  value="{{c.LIST_ID}}" >{{c.LIST_NAME}} </option>
+  									
+>>>>>>> 36eacd8e99407235df7d3e916bc3fc6aedc79de1
 						       		 </select>
 						       		 
 						       		 
@@ -252,6 +259,7 @@ body
   								
 							</div>
 							 </div>
+
 							 			<button type="button" class="btn-create-new" ng-show="showNew" ng-click="showButtonSave()">បង្កើតថ្មី</button>
 							 			
 							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
@@ -260,12 +268,14 @@ body
 										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
 										 <button type="button" class="bnt-savelist" ng-click="saveList()" ng-show="showSave">បញ្ជូន</button>
 										
+
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
 											
+
 										
 											$('.btn-create-new').click(function(){
 												//alert('button click!')
@@ -274,11 +284,9 @@ body
 												$('.btn-create-new').hide();
 												$('#btnSavelist').show(); 
 											});
-											$('#saveListnamess').change(function(){
-												alert(1);
-												$('.btn-create-new').hide();
-												$('#btnSavelist').show();
-											});
+										
+											
+										
 										});
 									</script>
 									<!-- report -->
