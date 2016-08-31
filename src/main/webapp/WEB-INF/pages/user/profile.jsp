@@ -79,7 +79,7 @@ window.userID = "${userID}";
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include>
 <jsp:include page="include/upload-profile.jsp"></jsp:include>
-
+<jsp:include page="include/updateDocument.jsp"></jsp:include>
   			  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
@@ -192,6 +192,7 @@ window.userID = "${userID}";
 																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
 														</div>
+														
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
@@ -204,6 +205,10 @@ window.userID = "${userID}";
 													</div>					
 											        
 											    </a>
+											    
+											    <div id="update">
+													<button class="btn btn-default" data-toggle="modal" data-target="#updateDocument" ng-click="getAllCategory()">UpdateThumbnail</button>
+												</div>
 											   
 								
 											</div>
