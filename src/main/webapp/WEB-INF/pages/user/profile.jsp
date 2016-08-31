@@ -120,19 +120,21 @@ window.userID = "${userID}";
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">ឯកសារដែលបានមើល</a></li>
-
-								
-								
+								<li  class="about" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ </a>
+		
+										<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+							       
+								</li>
 							</ul>
 							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
 						 
-							<ul class="title-profile nav nav-pills nav-stacked"  >								
+							<!-- <ul class="title-profile nav nav-pills nav-stacked"  >								
 
 								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
 								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
 								
 							
-							</ul>
+							</ul> -->
 							
 						 
 						</div>
