@@ -1052,6 +1052,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		
 	};
+	
+	
+	
+	$scope.theFile = "";
+	$scope.uploadUserProfile = function(event) {
+		if($scope.checkUserLogin()){
+			
+		}else{
+		//	alert($rootScope.finalName);
+			//alert($rootScope.currentSubCategory);
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#user')[0].files[0];
+			frmData.append("files", file);	
+			frmData.append("userID", $rootScope.userID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadUserProfile',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				 $scope.getUserByID();
+				 location.href= "/profile";
+			});
+		}
+		
+		
+	};
 
 	 $scope.trustSrc = function(src){
 		 return $sce.trustAsResourceUrl(src);
@@ -1063,11 +1095,22 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 	////////////////////	END UPLOAD BLOCK	/////////////////
 	
+	 $scope.setFile = function(element) {
+	        $scope.$apply(function($scope) {
+	            $scope.theFile = element.files[0];
+	            
+	        });
+	    };
+
+	 
 	
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
+
+
+
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
@@ -1126,3 +1169,13 @@ app.directive('myEnter', function () {
         });
     };
 });
+
+
+
+
+
+
+    
+
+
+

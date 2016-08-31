@@ -36,6 +36,9 @@ public class User implements UserDetails{
 	@JsonProperty("USER_ROLE")
 	private String role;
 	
+	@JsonProperty("PROFILE")
+	private String profile;
+	
 	@JsonProperty("ROLES")
 	private List<Role> roles;
 	
@@ -129,6 +132,12 @@ public class User implements UserDetails{
 	}
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 	
 	

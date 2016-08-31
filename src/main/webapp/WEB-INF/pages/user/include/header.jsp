@@ -90,7 +90,7 @@ window.fileName="";
 			<ul class="menu-basic" id="myTopnav">
 			<li class="icon">
 			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-			  </li>
+			 </li>
 			
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
@@ -103,7 +103,6 @@ window.fileName="";
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
 			  </li>
-			  
 			</ul>
 </div> 
 		
