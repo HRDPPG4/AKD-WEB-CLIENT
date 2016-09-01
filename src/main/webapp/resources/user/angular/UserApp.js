@@ -197,11 +197,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.popular=response.data.DATA;
-<<<<<<< HEAD
-=======
+
 			$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
 		//	console.log("Popular: "+$scope.popular);
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		}, function(response){
 
 		});
@@ -290,13 +288,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			preloader.style.opacity = 0;
 			preloader.style.display ="none";
 			
-<<<<<<< HEAD
-			$scope.newDocument=response.data.DATA;;
-=======
 			$scope.newDocument=response.data.DATA;
 			$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		}, function(response){
 
 		});
@@ -442,15 +436,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
 		 		} 
 		 	});
-	
-		
-<<<<<<< HEAD
-		}).then(function(response){
-		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
-		}, function(response){
-		});
-=======
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 	 
 	}
     $scope.countView = function(docID){
@@ -506,10 +491,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
-<<<<<<< HEAD
-=======
-			  // alert ("not have user");
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
+
 		   }else{
 			   $http({
 					url:'http://localhost:1111/api/v1/log',
@@ -522,10 +504,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 						  'USER_ID': $rootScope.UserID
 					}
 				}).then(function(response){
-<<<<<<< HEAD
-=======
-					//alert("Success");
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
+
 				
 				}, function(response){
 					
@@ -544,10 +523,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			}).then(function(response){
 				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
-<<<<<<< HEAD
-=======
-              // console.log(response);
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
               
 			});	
 		}
@@ -647,11 +622,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var listname ="";
 		      var status =  0;
 		         catename = savelistID 
-<<<<<<< HEAD
-=======
-
-		      //   alert(catename);
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		        
 		        
 		        listname = $scope.saveListname;
