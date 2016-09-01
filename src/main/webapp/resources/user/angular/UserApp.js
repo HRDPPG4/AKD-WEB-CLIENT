@@ -277,16 +277,45 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByPopular/',
-			method:'GET'
+			method:'GET',
+			params : $scope.filter
 		}).then(function(response){
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.popular=response.data.DATA;
+			$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
 		//	console.log("Popular: "+$scope.popular);
 		}, function(response){
 
 		});
 	}
+	
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 20
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setDocumentPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		alert(num);
+		$scope.filter.page = num;
+		$scope.getDocumentByPopular();
+	});
 	
 	$scope.getDocumentByRecommended=function(){
 		 preloader.style.opacity = 1;
@@ -308,39 +337,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		});
 	}
 	
-	$scope.getDocumentByNewPost=function(){		
-		 preloader.style.opacity = 1;
-		 preloader.style.display ="block";
-		 
-		$scope.showRecomment=false;
-		$scope.showNewPost=true;
-		$scope.showPopular=false;
-		$http({
-			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
-			method:'GET',
-			params : $scope.filter	
-		}).then(function(response){
-			
-			preloader.style.opacity = 0;
-			preloader.style.display ="none";
-			
-			$scope.newDocument=response.data.DATA;
-		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
-			//console.log("New: "+$scope.newDocument);
-		}, function(response){
-
-		});
-	}
-	
-	//TODO: default filter
-	$scope.filter = {
-		page: 1,
-		limit: 10
-	};
-	
 	var PAGINATION = angular.element("#PAGINATION");
-	
-	$scope.setPagination = function(totalPage){
+	$scope.setDocumentByRecommentPagination = function(totalPage){
 		PAGINATION.bootpag({
 			total: totalPage,          // total pages
 			page: $scope.filter.page,   // default page
@@ -355,6 +353,59 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	PAGINATION.on("page", function(event, num){
+		alert(num);
+		$scope.filter.page = num;
+		$scope.getDocumentByRecommended();
+	});
+	
+	
+	$scope.getDocumentByNewPost=function(){		
+		 preloader.style.opacity = 1;
+		 preloader.style.display ="block";
+		 
+		$scope.showRecomment=false;
+		$scope.showNewPost=true;
+		$scope.showPopular=false;
+		$http({
+			url:'http://localhost:1111/api/v1/getDocumentByNewPost/',
+			method:'GET',
+			params : $scope.filter
+		}).then(function(response){
+			
+			preloader.style.opacity = 0;
+			preloader.style.display ="none";
+			
+			$scope.newDocument=response.data.DATA;
+			$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log("New: "+$scope.newDocument);
+		}, function(response){
+
+		});
+	}
+	
+//	//TODO: default filter
+//	$scope.filter = {
+//		page: 1,
+//		limit: 20
+//	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setNewPostPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		alert(num);
 		$scope.filter.page = num;
 		$scope.getDocumentByNewPost();
 	});
@@ -465,22 +516,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 	}
 	
-	$scope.deleteDocument=function(docID){
-		
-		
+	$scope.deleteDocument=function(docID){				
 		var typeDoc = $("#typeDoc").val();
+		
+		swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+			type: "warning",   showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "យល់ព្រម",   
+			cancelButtonText: "បដិសេធ",   
+			closeOnConfirm: false,   closeOnCancel: false },
+			function(isConfirm){   
+			 	if (isConfirm) {     
+			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+			 		$http({
+						url:'http://localhost:1111/api/v1/document/'+docID,
+						method:'DELETE',
+					
+					
+					}).then(function(response){
+					  // alert("Deleted!");
+					 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
+					}, function(response){
+			          // alert("Fail");
+					});
+			 	//	$scope.delete(i);
+			 	}
+		 		else {     
+		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+		 		} 
+		 	});
 	
-		$http({
-			url:'http://localhost:1111/api/v1/document/'+docID,
-			method:'DELETE',
 		
-		
-		}).then(function(response){
-		   alert("Deleted!");
-		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
-		}, function(response){
-           alert("Fail");
-		});
 	 
 	}
     $scope.countView = function(docID){
@@ -539,7 +606,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
-			   alert ("not have user");
+			  // alert ("not have user");
 		   }else{
 			   $http({
 					url:'http://localhost:1111/api/v1/log',
@@ -552,7 +619,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 						  'USER_ID': $rootScope.UserID
 					}
 				}).then(function(response){
-					alert("Success");
+					//alert("Success");
 				
 				}, function(response){
 					console.log(response);
@@ -572,7 +639,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				alert("Success");
 				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
-               console.log(response);
+              // console.log(response);
               
 			});	
 		}
@@ -673,7 +740,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var status =  0;
 		         catename = savelistID 
 
-		         alert(catename);
+		      //   alert(catename);
 		        
 		        
 		        listname = $scope.saveListname;

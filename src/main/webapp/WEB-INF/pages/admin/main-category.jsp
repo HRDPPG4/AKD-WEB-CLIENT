@@ -129,7 +129,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="c in category">
+									<tr ng-repeat="c in category" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{c.CAT_NAME}}</td>
 										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>

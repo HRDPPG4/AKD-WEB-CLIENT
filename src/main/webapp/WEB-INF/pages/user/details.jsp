@@ -229,6 +229,7 @@ body
    			 				 
   							 			<div ng-if="getuserSavelist[0]">
   							 
+<<<<<<< HEAD
   								  	
   									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
   										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
@@ -238,6 +239,10 @@ body
   										 <option ng-repeat="c in getuserSavelist"  ng-model="hide"  value="{{c.LIST_ID}}" >{{c.LIST_NAME}} </option> -->
   									
 
+=======
+  									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
+  										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
+>>>>>>> c6967012e0a1c4357855aed93d31e7a15acc9c60
 						       		 </select>
 						       		 
 						       		 
