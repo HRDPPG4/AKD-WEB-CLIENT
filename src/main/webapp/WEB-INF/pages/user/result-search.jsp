@@ -121,7 +121,7 @@ a.thumbnail {
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
 					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
-						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail">
+						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
 							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
