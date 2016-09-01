@@ -651,7 +651,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           			}
 		           		}).then(function(response){		
 		           			$scope.trackLog(docID,Des,status);
-		           			
+		           			$scope.saveListname="";
 		           			
 		           			
 		           		}, function(response){
@@ -677,7 +677,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           		}).then(function(response){
 		           		
 		           			$scope.trackLog(docID,Des,status);
-		           			
+		           			$scope.saveListname="";
 		           			
 		           		}, function(response){
 		           		
@@ -703,7 +703,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        		}).then(function(response){
 		        		
 		        			$scope.trackLog(docID,Des,status)
-		        			
+		        			$scope.saveListname="";
 		        			
 		        		}, function(response){
 		        			
