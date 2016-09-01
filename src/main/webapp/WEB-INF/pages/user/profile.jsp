@@ -183,7 +183,7 @@ window.userID = "${userID}";
 								   		 		
 								   		 	<div class="list-group" ng-repeat ="slide in DocumentUser  ">
 
-								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								    			<a href="/detail/{{slide.DOC_ID}}" class="">
 								
 													<div class="media">
 														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
@@ -218,7 +218,7 @@ window.userID = "${userID}";
 								   		 <div id="ppt-edit" class="tab-pane fade" >
 								   		 <div class="list-group" ng-repeat ="slide in DocumentUser  | limitTo :20">
 
-								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								    			<a href="/detail/{{slide.DOC_ID}}" class="">
 								
 													<div class="media">
 											        

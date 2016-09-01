@@ -7,6 +7,10 @@
 		$('#btnReport').click(function(){
 			$('.content-report').hide();
 		});
+		
+		$('#cross-report').click(function(){
+			$('.content-report').hide();
+		});
 	});	
 
 
