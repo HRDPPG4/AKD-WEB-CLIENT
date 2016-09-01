@@ -465,22 +465,38 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 	}
 	
-	$scope.deleteDocument=function(docID){
-		
-		
+	$scope.deleteDocument=function(docID){				
 		var typeDoc = $("#typeDoc").val();
+		
+		swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+			type: "warning",   showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "យល់ព្រម",   
+			cancelButtonText: "បដិសេធ",   
+			closeOnConfirm: false,   closeOnCancel: false },
+			function(isConfirm){   
+			 	if (isConfirm) {     
+			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+			 		$http({
+						url:'http://localhost:1111/api/v1/document/'+docID,
+						method:'DELETE',
+					
+					
+					}).then(function(response){
+					  // alert("Deleted!");
+					 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
+					}, function(response){
+			          // alert("Fail");
+					});
+			 	//	$scope.delete(i);
+			 	}
+		 		else {     
+		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+		 		} 
+		 	});
 	
-		$http({
-			url:'http://localhost:1111/api/v1/document/'+docID,
-			method:'DELETE',
 		
-		
-		}).then(function(response){
-		   alert("Deleted!");
-		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
-		}, function(response){
-           alert("Fail");
-		});
 	 
 	}
     $scope.countView = function(docID){
