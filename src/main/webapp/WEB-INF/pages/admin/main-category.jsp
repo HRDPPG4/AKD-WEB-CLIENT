@@ -120,9 +120,10 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
+									<th>#</th>
 										<th>Name</th>
 										<th>Date</th>
-										<th>Describe</th>
+										
 										<!-- <th>Type</th> -->
 										<th>Status</th>
 										<th>Action</th>
@@ -133,7 +134,7 @@
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{c.CAT_NAME}}</td>
 										<td>{{c.CREATED_DATE}}</td>
-										<td>{{c.REMARK}}</td>
+										
 										<!-- <td>{{c.PARENT_ID}}</td> -->
 										<td>{{c.STATUS}}</td>
 										<td>

@@ -9,7 +9,9 @@
 <script
 	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
+	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>\
+<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
+<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 <style>
 #PAGINATION{
 	text-align:center;
@@ -110,19 +112,20 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="s in savelist">
-										<td>{{s.LIST_ID}}</td>
+									<tr ng-repeat="s in savelist" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{s.LIST_NAME}}</td>
 										<td>{{s.CREATED_DATE}}</td>
 										<!-- <td>{{s.REMARK}}</td> -->
 										<td>{{s.USER_ID}}</td>
 										<!-- <td>{{s.DOC_ID}}</td> -->
 										<td>
-											<!-- <button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-reply"></i>
-											</button> -->
 											<button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
+											</button>
+											<button type="button" class="btn btn-danger btn-sm"
+											  		ng-click="alertDelete(s.SAVE_LIST_ID)">
+												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
 									</tr>

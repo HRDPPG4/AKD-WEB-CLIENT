@@ -93,11 +93,11 @@
 			<!-- Main content -->
 			<section class="content"> <!-- Small boxes (Stat box) -->
 			<div class="row">
-				<div class="col-lg-3 col-xs-6">
+				<div class="col-lg-4 col-xs-6" ng-controller="DocumentCtrl">
 					<!-- small box -->
 					<div class="small-box bg-aqua">
 						<div class="inner">
-							<h3>810</h3>
+							<h3>{{documentCount}}</h3>
 
 							<p>Slides</p>
 						</div>
@@ -111,11 +111,11 @@
 				</div>
 
 				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
+				<div class="col-lg-4 col-xs-6" ng-controller="MainCtrl">
 					<!-- small box -->
 					<div class="small-box bg-green">
 						<div class="inner">
-							<h3>5</h3>
+							<h3>{{CategoryCount}}</h3>
 
 							<p>Categories</p>
 						</div>
@@ -128,11 +128,11 @@
 					</div>
 				</div>
 				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
+				<div class="col-lg-4 col-xs-6" ng-controller="UserCtrl">
 					<!-- small box -->
 					<div class="small-box bg-yellow">
 						<div class="inner">
-							<h3>44</h3>
+							<h3>{{UserCount}}</h3>
 
 							<p>User Registrations</p>
 						</div>
@@ -145,22 +145,7 @@
 					</div>
 				</div>
 				<!-- ./col -->
-				<div class="col-lg-3 col-xs-6">
-					<!-- small box -->
-					<div class="small-box bg-red">
-						<div class="inner">
-							<h3>165</h3>
-
-							<p>Visitors</p>
-						</div>
-						<div class="icon">
-							<i class="ion ion-pie-graph"></i>
-						</div>
-						<a href="user" class="small-box-footer">More info
-							<i class="fa fa-arrow-circle-right"></i>
-						</a>
-					</div>
-				</div>
+				
 				<!-- ./col -->
 			</div>
 			<!-- /.row --> <!-- Main row -->

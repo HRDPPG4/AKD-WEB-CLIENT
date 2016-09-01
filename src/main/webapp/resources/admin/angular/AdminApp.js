@@ -717,9 +717,38 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 	}
 	
 	PAGINATION.on("page", function(event, num){
+		
 		$scope.filter.page = num;
-		$scope.getReportData();
+		$scope.getSavelistData();
 	});
+	
+	$scope.removeSavelist = function(id) {
+		$http({
+			url : 'http://localhost:1111/api/v1/savelist/' + id,
+			method : 'PUT'
+		}).then(function() {
+			$scope.getReportData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeSavelist(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
 	
 	
 });
