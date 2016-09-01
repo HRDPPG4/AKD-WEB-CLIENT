@@ -608,7 +608,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			    
 		}
 	   $scope.showButtonSave = function(){ $scope.showSave = true;}
-
+	   $scope.enableList=true;
 
 		$scope.saveList = function(savelistID){   
 			 
@@ -658,7 +658,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        				timer: 800,   
 		        				showConfirmButton: false 
 		        			});
-		           			
+		           			$scope.enableList=false;
 		           			
 		           		}, function(response){
 		          
@@ -690,7 +690,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        				timer: 800,   
 		        				showConfirmButton: false 
 		        			});
-		           			
+		           			$scope.enableList=false;
 		           		}, function(response){
 		           		
 		           			
@@ -722,7 +722,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        				timer: 800,   
 		        				showConfirmButton: false 
 		        			});
-		        			
+		        			$scope.enableList=false;
 		        		}, function(response){
 		        			
 		        		});
@@ -741,6 +741,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
      
      //--------- getSavelistUser-----------------
      $scope.getSavelistUser=function(){
+    	 $scope.enableList=true;
     	if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
  		{
  			location.href= "/login";

@@ -223,7 +223,7 @@ body
 										 </div>										
 									</div>
 									<!-- savelist -->
-									<div class="content-savelist">
+									<div class="content-savelist" ng-show="enableList">
 										<div class="header-savelist">ការរក្សាឯកសារទុក
 										<span><i class="fa fa-times " id="cross" style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
