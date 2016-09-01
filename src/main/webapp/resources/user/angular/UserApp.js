@@ -606,7 +606,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
-			   alert ("not have user");
+			  // alert ("not have user");
 		   }else{
 			   $http({
 					url:'http://localhost:1111/api/v1/log',
@@ -619,7 +619,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 						  'USER_ID': $rootScope.UserID
 					}
 				}).then(function(response){
-					alert("Success");
+					//alert("Success");
 				
 				}, function(response){
 					console.log(response);
@@ -639,7 +639,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				alert("Success");
 				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
-               console.log(response);
+              // console.log(response);
               
 			});	
 		}
@@ -740,7 +740,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var status =  0;
 		         catename = savelistID 
 
-		         alert(catename);
+		      //   alert(catename);
 		        
 		        
 		        listname = $scope.saveListname;
