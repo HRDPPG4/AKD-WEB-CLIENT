@@ -206,7 +206,7 @@ window.userID = "${userID}";
 											        
 											    </a>
 											    
-											    <div id="updateAndDelete">
+											    <div id="updateAndDelete" style="padding-top:10px;">
 													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
 													<button ng-click="deleteDocument(slide.DOC_ID)" class="btn btn-default">លុប</button>
 												</div>
