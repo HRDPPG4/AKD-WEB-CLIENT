@@ -957,6 +957,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	  ///////////////////	START USER BLOCK	/////////////////
 	
  $scope.getUserByID=function(){
+	 if($scope.checkUserLogin()){
+			
+		}else{
 			$http({
 				url:'http://localhost:1111/api/v1/user/'+$rootScope.UserID,
 				method:'GET'
@@ -966,7 +969,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			}, function(response){
 
 			});
-		} 
+		}
+	} 
     		 	
     		 
  $scope.checkUserLogin = function(){	
