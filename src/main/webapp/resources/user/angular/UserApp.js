@@ -652,6 +652,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           		}).then(function(response){		
 		           			$scope.trackLog(docID,Des,status);
 		           			$scope.saveListname="";
+		           			swal({  
+		        				title: "ជោកជ័យ!",   
+		        				text: "ឯកសាររបស់អ្នកត្រូវបានបញ្ចូលទៅក្នុងបញ្ជី!",   
+		        				timer: 800,   
+		        				showConfirmButton: false 
+		        			});
 		           			
 		           			
 		           		}, function(response){
@@ -678,6 +684,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           		
 		           			$scope.trackLog(docID,Des,status);
 		           			$scope.saveListname="";
+		           			swal({  
+		        				title: "ជោកជ័យ!",   
+		        				text: "ឯកសាររបស់អ្នកត្រូវបានបញ្ចូលទៅក្នុងបញ្ជី!",   
+		        				timer: 800,   
+		        				showConfirmButton: false 
+		        			});
 		           			
 		           		}, function(response){
 		           		
@@ -704,6 +716,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        		
 		        			$scope.trackLog(docID,Des,status)
 		        			$scope.saveListname="";
+		        			swal({  
+		        				title: "ជោកជ័យ!",   
+		        				text: "ឯកសាររបស់អ្នកត្រូវបានបញ្ចូលទៅក្នុងបញ្ជី!",   
+		        				timer: 800,   
+		        				showConfirmButton: false 
+		        			});
 		        			
 		        		}, function(response){
 		        			
