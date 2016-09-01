@@ -225,18 +225,19 @@ body
 									<!-- savelist -->
 									<div class="content-savelist">
 										<div class="header-savelist">ការរក្សាឯកសារទុក
-										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										<span><i class="fa fa-times " id="cross" style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
 										<form action="" class=" form-savelist">
 											<div class="form-group" id="catsavelist"  >
    			 				 
   							 			<div ng-if="getuserSavelist[0]">
   							 
+
   								  	
-  									<select class="form-control"  id ="saveListnames">
-  								         <option  value=""></option>
-  										 <option ng-repeat="c in getuserSavelist"  value="{{c.LIST_ID}}">{{c.LIST_NAME}}</option>
   									
+  									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
+  										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
+
 						       		 </select>
 						       		 
 						       		 
@@ -259,24 +260,46 @@ body
 							 </div>
 							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
 							 			
+<<<<<<< HEAD
 										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
 										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+=======
+							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
+							 			
+										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
+										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+										 <input type="button" id="btnSavelist" ng-click="saveList()" ng-show="showSave" value="បញ្ជូន"/>
+										
+
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
 											$('.btn-create-new').click(function(){
+<<<<<<< HEAD
+=======
+												//alert('button click!')
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 												$('#comment-savelist').show();
 												$('.btn-create-new').hide();
 												$('#btnSavelist').show();
 											});
+<<<<<<< HEAD
+=======
+										$('#cross').click(function(){
+											$('.content-savelist').hide();
+										});
+											
+										
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 										});
 									</script>
 									<!-- report -->
 									<div class="content-report">
 										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
-										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										<span><i class="fa fa-times" id="cross-report" style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
 										
 										<form action="" class=" form-report">

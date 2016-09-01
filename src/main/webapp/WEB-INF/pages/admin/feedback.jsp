@@ -107,8 +107,8 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="f in feedback">
-										<td>{{f.FEEDBACK_ID}}</td>
+									<tr ng-repeat="f in feedback" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{f.CREATE_DATE}}</td>
 										<td>{{f.DES}}</td>
 										<td>{{f.STATUS}}</td>

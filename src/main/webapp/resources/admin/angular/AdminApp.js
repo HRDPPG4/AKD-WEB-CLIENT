@@ -624,14 +624,14 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 	$scope.removeReport = function(id) {
 		$http({
 			url : 'http://localhost:1111/api/v1/report/' + id,
-			method : 'DELETE'
+			method : 'PUT'
 		}).then(function() {
 			$scope.getReportData();
 		}, function() {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
 	}
-
+	
 	$scope.alertDelete = function(id) {
 		swal({
 			title : "Are you sure?",

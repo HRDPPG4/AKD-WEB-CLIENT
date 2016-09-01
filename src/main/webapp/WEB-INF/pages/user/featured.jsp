@@ -35,7 +35,9 @@
 	
 	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> 
 	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.bootpage.min.js"></script>	
 	<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
+	
      <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
 	
 	
@@ -101,6 +103,9 @@ a.thumbnail {
     background-color: #f9f9f9;
   }
 
+#PAGINATION{
+	text-align:center;
+}
   .typeahead-demo .custom-popup-wrapper > .message {
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
@@ -175,7 +180,6 @@ a.thumbnail {
 						</a>  
 					</div>
 				</div>	 
-
 				
 				<div class="col-md-12" ng-if="showPopular">
 					<div  ng-repeat="slide in popular" class="col-md-3" style="margin-bottom:10px;">
@@ -228,9 +232,7 @@ a.thumbnail {
 						</a>  
 					</div>
 				</div>
-				
 				<div id="PAGINATION"></div>
-				
 			</div> 
 		</div>
 	</section>
@@ -255,8 +257,7 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery.bootpage.min.js"></script>
-	
+
 	<script>
 	$(window).bind("load", function(){
 		 var preloader = document.querySelector(".preloader");

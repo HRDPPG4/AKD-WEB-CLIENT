@@ -183,15 +183,15 @@ window.userID = "${userID}";
 								   		 		
 								   		 	<div class="list-group" ng-repeat ="slide in DocumentUser  ">
 
-								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								    			<a href="/detail/{{slide.DOC_ID}}" class="">
 								
 													<div class="media">
-														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
+														<!-- <div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
 																<input type="checkbox" >
 																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
-														</div>
+														</div> -->
 														
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
@@ -206,8 +206,9 @@ window.userID = "${userID}";
 											        
 											    </a>
 											    
-											    <div id="update">
-													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">UpdateThumbnail</button>
+											    <div id="updateAndDelete">
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
+													<button ng-click="deleteDocument(slide.DOC_ID)" class="btn btn-default">លុប</button>
 												</div>
 											   
 								
@@ -218,16 +219,16 @@ window.userID = "${userID}";
 								   		 <div id="ppt-edit" class="tab-pane fade" >
 								   		 <div class="list-group" ng-repeat ="slide in DocumentUser  | limitTo :20">
 
-								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
+								    			<a href="/detail/{{slide.DOC_ID}}" class="">
 								
 													<div class="media">
 											        
-														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
+														<!-- <div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
 																
 																<input type="hidden" value="1" id ="typeDoc">				
 															</label>
-														</div>
+														</div> -->
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
@@ -240,6 +241,11 @@ window.userID = "${userID}";
 													</div>					
 											        
 											    </a>
+											    
+											    <div id="updateAndDelete">
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
+													<button ng-click="deleteDocument(slide.DOC_ID)" class="btn btn-default">លុប</button>
+												</div>
 											   
 								
 											</div>
@@ -252,12 +258,12 @@ window.userID = "${userID}";
 								
 													<div class="media">
 											        	
-														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
+														<!-- <div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
 																<input type="checkbox" value="2" id ="userDoc">
 																<input type="hidden" value="3" id ="typeDoc">				
 															</label>
-														</div>
+														</div> -->
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
@@ -271,6 +277,11 @@ window.userID = "${userID}";
 													</div>					
 											        
 											    </a>
+											    
+											    <div id="updateAndDelete">
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
+													<button ng-click="deleteDocument(slide.DOC_ID)" class="btn btn-default">លុប</button>
+												</div>
 											   
 								
 											</div>
