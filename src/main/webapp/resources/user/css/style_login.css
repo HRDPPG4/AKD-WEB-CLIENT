@@ -31,7 +31,7 @@ body{
 	font-family: 'Khmer OS Battambang';
 	font-size:100%;
 	background-color:#106cc8;
-	background: url(../img/banner-user.png) no-repeat;
+	background: url(../img/login/bg.png) no-repeat;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
