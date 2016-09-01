@@ -183,8 +183,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	$scope.getDocumentByPopular=function(){
-		 preloader.style.opacity = 1;
-		 preloader.style.display ="block";
+		/* preloader.style.opacity = 1;
+		 preloader.style.display ="block";*/
 		$scope.showRecomment=false;
 		$scope.showNewPost=false;
 		$scope.showPopular=true;
@@ -194,8 +194,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
-			 preloader.style.opacity = 0;
-			 preloader.style.display ="none";
+			 /*preloader.style.opacity = 0;
+			 preloader.style.display ="none";*/
 			$scope.popular=response.data.DATA;
 
 			$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
@@ -233,8 +233,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	});
 	
 	$scope.getDocumentByRecommended=function(){
-		 preloader.style.opacity = 1;
-		 preloader.style.display ="block";
+		/* preloader.style.opacity = 1;
+		 preloader.style.display ="block";*/
 		$scope.showRecomment=true;
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
@@ -242,8 +242,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:'http://localhost:1111/api/v1/getDocumentByRecommended/'+$rootScope.userID,
 			method:'GET'
 		}).then(function(response){
-			 preloader.style.opacity = 0;
-			 preloader.style.display ="none";
+			 /*preloader.style.opacity = 0;
+			 preloader.style.display ="none";*/
 			$scope.recommend=response.data.DATA;
 		}, function(response){
 
@@ -273,8 +273,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	$scope.getDocumentByNewPost=function(){		
-		 preloader.style.opacity = 1;
-		 preloader.style.display ="block";
+		 /*preloader.style.opacity = 1;
+		 preloader.style.display ="block";*/
 		 
 		$scope.showRecomment=false;
 		$scope.showNewPost=true;
@@ -285,8 +285,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			params : $scope.filter
 		}).then(function(response){
 			
-			preloader.style.opacity = 0;
-			preloader.style.display ="none";
+			/*preloader.style.opacity = 0;
+			preloader.style.display ="none";*/
 			
 			$scope.newDocument=response.data.DATA;
 			$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);

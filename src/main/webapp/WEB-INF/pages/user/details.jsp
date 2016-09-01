@@ -260,10 +260,10 @@ body
 							 </div>
 							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
 							 			
-<<<<<<< HEAD
+
 										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
 										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
-=======
+
 							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
 							 			
 										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
@@ -271,29 +271,24 @@ body
 										 <input type="button" id="btnSavelist" ng-click="saveList()" ng-show="showSave" value="បញ្ជូន"/>
 										
 
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
+
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
 											$('.btn-create-new').click(function(){
-<<<<<<< HEAD
-=======
-												//alert('button click!')
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
+
 												$('#comment-savelist').show();
 												$('.btn-create-new').hide();
 												$('#btnSavelist').show();
 											});
-<<<<<<< HEAD
-=======
+
 										$('#cross').click(function(){
 											$('.content-savelist').hide();
 										});
 											
-										
->>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
+									
 										});
 									</script>
 									<!-- report -->
