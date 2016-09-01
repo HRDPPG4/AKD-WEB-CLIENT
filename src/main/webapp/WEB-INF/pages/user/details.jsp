@@ -196,10 +196,13 @@ body
 											<div id="title"><p>{{docDetail[0].TITLE | strLimit: 60}}</p></div>
 											<div id="owner">
 											<span id="img-user">
-												<img alt="" src="http://localhost:1111/resources/img/user-profile/{{docDetail[0].USERS[0].PROFILE}}">
+												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
 											<!-- {{UserID}}  -->
 											{{docDetail[0].USERS[0].USER_NAME}}
+											
+											<input type="text" value={{docDetail[0].THUMBNAIL_URL}} id="thubnail" ng-show="false">
+											
 											</div>
 											<div id="read"><span><i class="fa fa-eye" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].VIEW"></span></span></div>
 											<div id="share"><span><i class="fa fa-share-alt" aria-hidden="true"></i>:  <span ng-bind="docDetail[0].SHARE"></span></span></div>
@@ -222,24 +225,28 @@ body
 									<!-- savelist -->
 									<div class="content-savelist">
 										<div class="header-savelist">ការរក្សាឯកសារទុក
-										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										<span><i class="fa fa-times " id="cross" style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
-										<form action=""  name="saveform" class=" form-savelist">
+										<form action="" class=" form-savelist">
 											<div class="form-group" id="catsavelist"  >
    			 				 
   							 			<div ng-if="getuserSavelist[0]">
   							 
+
+  								  	
+  									
   									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
   										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
+
 						       		 </select>
 						       		 
 						       		 
-						       	    </div>
+						       	    </div> 
 						     
 						    <div class="form-group" style="padding-top:10px;padding-top:20px;display:none;" id="newsavelist" >
 						    
 							   	<input   type="text" class="form-control" ng-model="saveListname">					      
-							   
+							    <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
 							   
 							  ​​	
   								
@@ -251,40 +258,48 @@ body
   								
 							</div>
 							 </div>
-
-							 			<button type="button" class="btn-create-new" ng-show="showNew" ng-click="showButtonSave()">បង្កើតថ្មី</button>
+							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
 							 			
+<<<<<<< HEAD
+										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
+										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+=======
 							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
 							 			
 										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
 										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
-										 <button type="button" class="bnt-savelist" ng-click="saveList()" ng-show="showSave">បញ្ជូន</button>
+										 <input type="button" id="btnSavelist" ng-click="saveList()" ng-show="showSave" value="បញ្ជូន"/>
 										
 
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 										</form>	
 										
 									</div>
 									<script>
 										$(document).ready(function(){
-											
-
-										
 											$('.btn-create-new').click(function(){
+<<<<<<< HEAD
+=======
 												//alert('button click!')
-												 
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 												$('#comment-savelist').show();
 												$('.btn-create-new').hide();
-												$('#btnSavelist').show(); 
+												$('#btnSavelist').show();
 											});
-										
+<<<<<<< HEAD
+=======
+										$('#cross').click(function(){
+											$('.content-savelist').hide();
+										});
 											
 										
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 										});
 									</script>
 									<!-- report -->
 									<div class="content-report">
 										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
-										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
+										<span><i class="fa fa-times" id="cross-report" style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
 										
 										<form action="" class=" form-report">
@@ -432,14 +447,20 @@ body
 	
 	
 document.getElementById('shareBtn').onclick = function() {
-	 var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
 	 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
+	 
+	 
+	 var image=document.getElementById("thubnail").value;
+	// alert(image);
+	 
   FB.ui({
     method: 'share',
     display: 'popup',
     caption: 'TESTING',
     href:  url ,
-    picture: thumnail,
+  //  picture: thumnail,
+    picture: image,
     
   }, function(response){
 	  

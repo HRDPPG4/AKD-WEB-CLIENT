@@ -2,7 +2,13 @@
 //savelist
 $(document).ready(function(){
 	$('.btn-add').click(function(){
-	$('.createlist-tooltip').toggle();
+	$('.createlist-tooltip').show();
+	});
+	$('.btn-create').click(function(){
+		$('.createlist-tooltip').hide();
+	});
+	$('.btn-content-list').click(function(){
+		$('.createlist-tooltip').hide();
 	});
 });
 

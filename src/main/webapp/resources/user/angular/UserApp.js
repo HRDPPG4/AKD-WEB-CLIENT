@@ -1,4 +1,3 @@
-/*var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','ngLoadingSpinner']);*/
 
 var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
@@ -7,16 +6,6 @@ var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
 app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
 
 	
-//	Loading Box
-	
-	/*$scope.startAjax = function() {
-	    $http.get('/display/')
-	  };*/
-	
-	
-	
-	/*$http.defaults.headers.common.Authorization = 'Basic Q2hpdm9ybjphZG1pbg==' ;	*/
-	
 	
 	////////////////////START SEARCH BLOCK	/////////////////
 	var _selected;
@@ -24,7 +13,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 	$scope.searchPage = function(){
 		location.href= "/search/"+$scope.selected;
-		//alert($scope.selected);
 	}
 
 	$scope.getDocumentByLikeTitle = function(title){			
@@ -32,63 +20,15 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
-			/*swal({  
-				title: "Record Found!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false
-			});*/
-			
-			/*var inputOptions = new Promise(function(resolve) {
-				  setTimeout(function() {
-				    resolve({
-				      '#ff0000': 'Red',
-				      '#00ff00': 'Green',
-				      '#0000ff': 'Blue'
-				    });
-				  }, 2000);
-				});
-			
-			
-			swal({
-				  title: 'Select color',
-				  input: 'radio',
-				  inputOptions: inputOptions,
-				  inputValidator: function(result) {
-				    return new Promise(function(resolve, reject) {
-				      if (result) {
-				        resolve();
-				      } else {
-				        reject('You need to select something!');
-				      }
-				    });
-				  }
-				}).then(function(result) {
-				  swal({
-				    type: 'success',
-				    html: 'You selected: ' + result
-				  });
-				});*/
-			
 		
-		//	$window.loading="none";
-			
-			
-			
-			
-			
 			
 			  var preloader = document.querySelector(".preloader");
 			  preloader.style.opacity = 0;
 			  preloader.style.display ="none";
 			
 			
-			
-			
 			$scope.documentSearch=response.data.DATA;
-			console.log("search");
-			console.log($scope.documentSearch);
-			
+		
 		}, function(response){
 		
 		});
@@ -101,10 +41,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$rootScope.currentSubCategory="currentSubCategory";
 	$scope.currentMainCategory="";
 	$scope.currentDocumentID="";
-	
-	//$scope.globalVariable = globalVariable;
-	//$scope.windowVariable = $window.windowVariable;
-	
+		
 	$rootScope.userID = $window.userID;
 	$rootScope.loading =$window.loading;
 	
@@ -128,10 +65,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				url:'http://localhost:1111/api/v1/category',
 				method:'GET'			
 			}).then(function(response){
-			//	console.log(response.data.DATA);
+
 				$scope.category=response.data.DATA;
-				console.log("GET ALL CAT");
-				console.log($scope.category);
 				
 			}, function(response){
 			
@@ -140,7 +75,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		
 	}	
-/*	$scope.getAllCategory();*/
 	
 	$scope.getCategoryByParentID=function(parentID){	
 		$scope.getCategoryByID(parentID);
@@ -149,8 +83,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
-			//console.log("ParentCat: ");
-			//console.log($scope.parentCategory[0]);
 		}, function(response){
 
 		});	
@@ -158,14 +90,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	//	-----------------Get All Category and Subcategory-----------------------
 	
 	$scope.getAllCategoryAndSubcategory=function(){	
-		//$scope.getCategoryByID(parentID);
 		$http({
 			url:'http://localhost:1111/api/v1/getCategoryByParentID/0B4RhbtI4DXY_QWVOWkFiSTlRY1E',
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
-			//console.log("Get All Cat and Sub: ");
-			//console.log($scope.getAllCategoryAndSubcategory);
 		}, function(response){
 
 		});	
@@ -178,7 +107,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET'
 		}).then(function(response){
 			$scope.getCategoryByID=response.data.DATA;
-		//	console.log($scope.getCategoryByID);
 		}, function(response){
 
 		});	
@@ -191,16 +119,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
-			// Get SubCat here!!
-		//	$scope.getCategoryByParentID(mainCategory[0].CAT_ID);
-			//console.log("Main Category")
-			
-		//	console.log($scope.mainCategory);
+		
 		}, function(response){
 
 		});	
 	}
-//	$scope.getMainCategory();
 	
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
@@ -217,13 +140,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET'
 		}).then(function(response){
 			$scope.commentByDoc=response.data.DATA;
-			console.log("CommentByDoc");
-			console.log($scope.commentByDoc);
 		}, function(response){
 
 		});	
-		
-	//	alert("getCommentByDocID");
+
 	}
 
 	
@@ -233,8 +153,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		{
 			location.href= "/login";
 		}else{
-			
-			//alert($rootScope.UserID);
+
 			$http({
 				url:'http://localhost:1111/api/v1/comment',
 				method:'POST',
@@ -247,12 +166,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				}	
 				
 			}).then(function(response){
-			//	alert($scope.currentDocumentID);
 				$scope.getAllCommentByDocID($scope.currentDocumentID);
-			//	alert("Success");
-			//	alert($scope.UserID);
-				//$scope.display();
-				//console.log(response.config.data);
 				$scope.newComment="";
 			}, function(response){
 				alert("Error");
@@ -283,8 +197,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.popular=response.data.DATA;
+<<<<<<< HEAD
+=======
 			$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
 		//	console.log("Popular: "+$scope.popular);
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		}, function(response){
 
 		});
@@ -330,8 +247,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.recommend=response.data.DATA;
-			console.log("Recomand: "+$scope.recommend);
-			console.log($scope.recommend);
 		}, function(response){
 
 		});
@@ -375,9 +290,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			preloader.style.opacity = 0;
 			preloader.style.display ="none";
 			
+<<<<<<< HEAD
+			$scope.newDocument=response.data.DATA;;
+=======
 			$scope.newDocument=response.data.DATA;
 			$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		}, function(response){
 
 		});
@@ -421,12 +340,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			$rootScope.currentSubCategory=response.data.DATA[0].CAT_ID;
 			$scope.currentDocumentID=DocID;
 			$scope.getAllCommentByDocID(DocID);
-			
-		//	console.log("Document Detail");
-		//	console.log($scope.docDetail.DOC_TYPE_NUM);
-		//	console.log(response.data.DATA[0].USERS[0].USER_NAME);
-		//	console.log($scope.commentByDocID);
-			//console.log($rootScope.currentSubCategory);
 			$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
 		}, function(response){
 
@@ -442,9 +355,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}).then(function(response){
 			$scope.document=response.data.DATA;
 			$scope.allDocTitle=response.data.DATA;
-		//	console.log("Document Bock");
-			//console.log($scope.document);
-			//console.log($scope.allDocTitle);
 		}, function(response){
 
 		});
@@ -453,21 +363,15 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.getAllDocument();
 	
 	$scope.getAllDocumentByCatID=function(CatID){
-	//	alert("GetDocByCatID"+CatID);
 		$rootScope.currentSubCategory=CatID;		//First It is close!!
-		//alert($rootScope.currentSubCategory);
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByCatID/'+CatID,
 			method:'GET'
 		}).then(function(response){
-			//alert($rootScope.currentSubCategory);
 			$scope.documentByCatID=response.data.DATA;
-			//console.log("DOC BY CATE",$scope.documentByCatID);
 		}, function(response){
 
 		});
-		
-		//alert("Get All Document By Category ID"+ CatID);
 	}
 	
 	$scope.getDocumentById=function(docID){
@@ -480,16 +384,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
 			$rootScope.currentSubCategory=$scope.doc.CAT_ID;	//currentSubCategory can get new value here. I dont' know why old value lost???
-			$scope.currentDocumentID = $scope.doc.DOC_ID;
-			
-			
-			//	alert($rootScope.currentSubCategory);	
-			
-			$scope.getAllCommentByDocID($scope.doc.DOC_ID);
-			
+			$scope.currentDocumentID = $scope.doc.DOC_ID;				
+			$scope.getAllCommentByDocID($scope.doc.DOC_ID);			
 			$scope.getAllDocumentByCatID($scope.doc.CAT_ID);
-		//	$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
-		//	alert($rootScope.currentSubCategory);
 		}, function(response){
 
 		});	
@@ -509,7 +406,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		}).then(function(response){
 			$scope.DocumentUser=response.data.DATA;
-			console.log($scope.DocumentUser);
 		}, function(response){
 
 		});
@@ -548,6 +444,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		 	});
 	
 		
+<<<<<<< HEAD
+		}).then(function(response){
+		 	$scope.getDocumentByUser($rootScope.userID,typeDoc);
+		}, function(response){
+		});
+=======
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 	 
 	}
     $scope.countView = function(docID){
@@ -561,10 +464,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		
     	}).then(function(response){
     		
-    		//alert("Count Success");
-    		
     	},function(response){
-    		console.log(response);
     	});
     }
 	
@@ -606,7 +506,10 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 $scope.trackLog=function(docID="" ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
+<<<<<<< HEAD
+=======
 			  // alert ("not have user");
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		   }else{
 			   $http({
 					url:'http://localhost:1111/api/v1/log',
@@ -619,10 +522,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 						  'USER_ID': $rootScope.UserID
 					}
 				}).then(function(response){
+<<<<<<< HEAD
+=======
 					//alert("Success");
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 				
 				}, function(response){
-					console.log(response);
+					
 				});	
 		   }
 			
@@ -636,10 +542,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				url:'http://localhost:1111/api/v1/log/'+docID,
 				method:'DELETE',
 			}).then(function(response){
-				alert("Success");
 				$scope.getLogByUser($rootScope.userID);
 			}, function(response){
+<<<<<<< HEAD
+=======
               // console.log(response);
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
               
 			});	
 		}
@@ -651,9 +559,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
   				method:'GET'
   			}).then(function(response){
   				$scope.getLogByUser=response.data.DATA;
-  			  //  console.log($scope.getLogByUser);
+  			  
   			}, function(response){
-                alert("fail");
+                
   			});	
   		}
 	
@@ -739,8 +647,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var listname ="";
 		      var status =  0;
 		         catename = savelistID 
+<<<<<<< HEAD
+=======
 
 		      //   alert(catename);
+>>>>>>> 4b7f1ccdfc0e3fcc210875875b3df9e402a85e8a
 		        
 		        
 		        listname = $scope.saveListname;
@@ -768,14 +679,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           				  'USER_ID': $rootScope.userID
 
 		           			}
-		           		}).then(function(response){
-		           			
+		           		}).then(function(response){		
 		           			$scope.trackLog(docID,Des,status);
 		           			
 		           			
 		           			
 		           		}, function(response){
-		           			//console.log(response);
+		          
 		           			
 		           		});
 		       	  
@@ -795,12 +705,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		           				 
 		           			}
 		           		}).then(function(response){
-		           			alert("success");
+		           		
 		           			$scope.trackLog(docID,Des,status);
 		           			
 		           			
 		           		}, function(response){
-		           		//	console.log(response);
+		           		
 		           			
 		           		});
 
@@ -821,12 +731,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		        			}
 		        		}).then(function(response){
-		        			alert("success");
+		        		
 		        			$scope.trackLog(docID,Des,status)
 		        			
 		        			
 		        		}, function(response){
-		        			console.log(response);
 		        			
 		        		});
 
@@ -854,7 +763,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			}).then(function(response){
 				$scope.getuserSavelist=response.data.DATA;
 			
-  			   // console.log($scope.getuserSavelist);
 			
 			}, function(response){
 
@@ -878,9 +786,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     				url:'http://localhost:1111/api/v1/getuserSavelistMenu/'+$rootScope.userID,
     				method:'GET'
 	    			}).then(function(response){
-	    				$scope.getSavelistMenu=response.data.DATA;
-	    			
-	      			   console.log($scope.getSavelistMenu);
+	    				$scope.getSavelistMenu=response.data.DATA;	    			
 	    			
 	    			}, function(response){
 	
@@ -901,7 +807,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     			
     			}).then(function(response){
     				$scope.getDocumentInSavelist=response.data.DATA[0].SAVELISTDETAIL;
-    				console.log($scope.getDocumentInSavelist);
     			}, function(response){
 
     			});
@@ -920,7 +825,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		
     		}).then(function(response){
     			$scope.DocumentUser=response.data.DATA;
-    			console.log($scope.DocumentUser);
     		}, function(response){
 
     		});
@@ -937,11 +841,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     					url:'http://localhost:1111/api/v1/savelist/deleteSavelistDetail/'+docID,
     					method:'DELETE',
     				}).then(function(response){
-    					alert("Success");
+    					
     					$scope.getDocumentByEachSavelist($rootScope.userID,listID);
     					
     				}, function(response){
-    	               console.log(response);
+    	             
     	              
     				});	
     				
@@ -965,7 +869,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				method:'GET'
 			}).then(function(response){
 				$scope.getUserByID=response.data.DATA;
-				console.log("getUserByID",$scope.getUserByID);
+			
 			}, function(response){
 
 			});
@@ -1012,7 +916,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			$scope.userPassword="";
 			
 		}, function(response){
-		// console.log(response);
+
 		});
 	}
     
@@ -1046,8 +950,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		if($scope.checkUserLogin()){
 			
 		}else{
-		//	alert($rootScope.finalName);
-			//alert($rootScope.currentSubCategory);
+		
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1066,8 +969,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
-				//alert($rootScope.currentSubCategory);
-				//getAllDocumentByCatID(parentCat.CAT_ID)
 				
 				swal({  
 					title: "File Upload Successful!",   
@@ -1107,8 +1008,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		if($scope.checkUserLogin()){
 			
 		}else{
-		//	alert($rootScope.finalName);
-			//alert($rootScope.currentSubCategory);
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1133,14 +1032,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	};
 	
 	$scope.checkDocID = function(docID) {
-    //	alert(docID);
+   
     	$rootScope.docUpdateID=docID;
             
     }
 	
 	$rootScope.docUpdateID="default";
 	$scope.uploadDocThumbnail = function(event) {
-		//alert($rootScope.docUpdateID);
+		
 		if($scope.checkUserLogin()){
 			
 		}else{
@@ -1160,7 +1059,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				}
 			}).then(function(response) {
 				$scope.getDocumentByUser();
-				// location.href= "/profile";
+				
 			});
 		}
 		
@@ -1206,13 +1105,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
-      //  restrict: 'A',
+    
         link: function ($scope, el, attrs, ngModel) {
             el.bind('change', function (event) {
                 ngModel.$setViewValue(event.target.files[0]);
                 $scope.$apply();
-              //  alert($scope.theFile.name);
-               // $rootScope.name=$scope.theFile.name;
+              
             });
             
             $scope.$watch(function () {
