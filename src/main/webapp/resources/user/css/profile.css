@@ -17,8 +17,49 @@
 .left-profile > .img-pro img{
 	position:relative;
 	width:100%;
+	cursor:pointer;
+	border:2px solid #fff;
 	height:190px;
 }
+.edit-profileImage{
+	position: relative;
+	top:-1px;
+	margin-top:-40px;
+	opacity: 0.8;
+	margin-left:3px;
+	visibility:hidden;
+	margin-right:3px;
+	cursor:pointer;
+	background-color:#000 !important;
+}
+a.upload-proflie{
+	cursor:pointer;
+	min-width:200px;
+	height:40px;
+	visibility:hidden;
+	margin-left:3px;
+	margin-right:3px;
+	text-decoration: none;
+	
+}
+#camera{
+position:absolute;
+visibility:visible;
+	font-size:20px;
+	position:relative;
+	top:10px;
+	color:#fff;
+}
+.profileImage{
+	color:#fff;
+	position:relative;
+	left:40px;
+	top:-6px;
+	text-decoration: none;
+	
+}
+
+
 .user-name{
 	color:#fff;
 	text-align:center;
@@ -300,7 +341,7 @@ button.clear-history{
 .content-savelist-all{
 	 width:920px;
 	padding:10px;
-	margin-left:205px;
+	margin-left:230px;
 	position:absolute;
 	font-family:"Khmer OS Battambang";
 	background-color:#fff;

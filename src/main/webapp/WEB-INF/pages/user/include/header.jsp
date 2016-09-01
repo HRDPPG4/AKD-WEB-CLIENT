@@ -5,10 +5,14 @@
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <div ng-init="getUserByID()"></div>
 </sec:authorize>
 
 <script>
 window.userID = "${userID}"; 
+/* window.userName="${userName}"; */
+window.fileName="";
+
 </script>
 
 
@@ -18,8 +22,7 @@ window.userID = "${userID}";
 	<div class="top-menu" ng-init="getUserID(memIdAngular)">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span class="navbar-logo">
-					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-					 <span>All Khmer Docs</span>					 
+					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/logo-4.png"/>					 
 					 </a>					
 			</span>
 	<div class="container">
@@ -62,7 +65,10 @@ window.userID = "${userID}";
             <!-- If login already-->
             <sec:authorize access="isAuthenticated()">
             <%-- <li><sec:authentication property="principal.name"/></li> --%>
-            <li class="col-sm-1" id="avatar-user"><a href="/profile"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png">
+            <li class="col-sm-1" id="avatar-user"><a href="/profile">
+            
+            <%-- <img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"> --%>
+            <img alt="" src="http://localhost:1111/resources/img/user-profile/{{getUserByID.PROFILE}}">
                 <ul  class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
                 	<li><a href="/logout?logout"> ចាកចេញ</a></li>
@@ -84,12 +90,12 @@ window.userID = "${userID}";
 	<!-- </div> -->
 	
 		 <div class="main-menu">
-		<%--  <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a> --%>
+		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 		</div>
 			<ul class="menu-basic" id="myTopnav">
 			<li class="icon">
 			   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-			  </li>
+			 </li>
 			
 			  <li><a class="menu" href="/">
 				   <span><i class="fa fa-home" aria-hidden="true"></i>
@@ -102,7 +108,6 @@ window.userID = "${userID}";
 					   </span>{{mainCat.CAT_NAME}}
 				 	</a>
 			  </li>
-			  
 			</ul>
 </div> 
 		

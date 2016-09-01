@@ -196,7 +196,7 @@ body
 											<div id="title"><p>{{docDetail[0].TITLE | strLimit: 60}}</p></div>
 											<div id="owner">
 											<span id="img-user">
-												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
+												<img alt="" src="http://localhost:1111/resources/img/user-profile/{{docDetail[0].USERS[0].PROFILE}}">
 											</span>
 											<!-- {{UserID}}  -->
 											{{docDetail[0].USERS[0].USER_NAME}}
@@ -224,13 +224,63 @@ body
 										<div class="header-savelist">ការរក្សាឯកសារទុក
 										<span><i class="fa fa-times " style="font-size:10px;float:right;" aria-hidden="true"></i></span>
 										</div>
+										<form action=""  name="saveform" class=" form-savelist">
+											<div class="form-group" id="catsavelist"  >
+   			 				 
+  							 			<div ng-if="getuserSavelist[0]">
+  							 
+  									<select class="form-control" id ="saveListnames" ng-model="ListName"  ng-change="checkSavelist(ListName)">
+  										 <option ng-repeat="c in getuserSavelist" value="{{c.LIST_ID}}"  >{{c.LIST_NAME}} </option>  									
+						       		 </select>
+						       		 
+						       		 
+						       	    </div>
+						     
+						    <div class="form-group" style="padding-top:10px;padding-top:20px;display:none;" id="newsavelist" >
+						    
+							   	<input   type="text" class="form-control" ng-model="saveListname">					      
+							   
+							   
+							  ​​	
+  								
+							</div>
+							
+							<div class="form-group" style="padding-top:10px;padding-top:20px;"  >
+						    
+							 <!--   ​<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button> -->
+  								
+							</div>
+							 </div>
+
+							 			<button type="button" class="btn-create-new" ng-show="showNew" ng-click="showButtonSave()">បង្កើតថ្មី</button>
+							 			
+							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
+							 			
+										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
+										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
+										 <button type="button" class="bnt-savelist" ng-click="saveList()" ng-show="showSave">បញ្ជូន</button>
 										
-										<form action="" class=" form-savelist">
-										<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
-											<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+
 										</form>	
 										
 									</div>
+									<script>
+										$(document).ready(function(){
+											
+
+										
+											$('.btn-create-new').click(function(){
+												//alert('button click!')
+												 
+												$('#comment-savelist').show();
+												$('.btn-create-new').hide();
+												$('#btnSavelist').show(); 
+											});
+										
+											
+										
+										});
+									</script>
 									<!-- report -->
 									<div class="content-report">
 										<div class="header-report">ការវាយតម្លៃស្លាយនេះ
@@ -382,12 +432,13 @@ body
 	
 	
 document.getElementById('shareBtn').onclick = function() {
-	var thumnail =$("#thumnail").attr("src");
+	 var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
   FB.ui({
     method: 'share',
     display: 'popup',
     caption: 'TESTING',
-    href: 'window.location',
+    href:  url ,
     picture: thumnail,
     
   }, function(response){

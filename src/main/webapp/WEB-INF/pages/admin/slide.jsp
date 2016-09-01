@@ -1,8 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+	pageEncoding="utf-8"%>	
+	 <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+   <sec:authentication  property="principal.userID" var="userID"/>
+   <sec:authentication  property="principal.name" var="userName"/>
+</sec:authorize>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html ng-app="MainApp">
 <head>
+
+<script>
+window.userID = "${userID}"; 
+</script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Slide</title>
 <%@include file="include/admin-link.jsp"%>
@@ -14,6 +27,11 @@
 <script	src="${pageContext.request.contextPath}/resources/admin/js/jquery-latest.js"></script>
 <link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer.css" rel="stylesheet" />
 <link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+
+<!-- Sweet Alert -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 <style>
 .form-horizontal .form-group {
@@ -118,7 +136,7 @@
 						<div class="box-body">
 
 							<button class="btn btn-flat btn-primary" data-toggle="modal"
-								data-target="#addDocument">Add Slide</button>
+								data-target="#addDocument" ng-click="getAllCategory()">Add Slide</button>
 
 
 							<table id="example1" class="table table-bordered table-striped">

@@ -26,51 +26,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		location.href= "/search/"+$scope.selected;
 		//alert($scope.selected);
 	}
-	
-	
-	
-	
-	
-	
-	
-	/*var inputOptions = new Promise(function(resolve) {
-		  setTimeout(function() {
-		    resolve({
-		      '#ff0000': 'Red',
-		      '#00ff00': 'Green',
-		      '#0000ff': 'Blue'
-		    });
-		  }, 2000);
-		});*/
 
-		/*swal({
-		  title: 'Select color',
-		  input: 'radio',
-		  inputOptions: inputOptions,
-		  inputValidator: function(result) {
-		    return new Promise(function(resolve, reject) {
-		      if (result) {
-		        resolve();
-		      } else {
-		        reject('You need to select something!');
-		      }
-		    });
-		  }
-		}).then(function(result) {
-		  swal({
-		    type: 'success',
-		    html: 'You selected: ' + result
-		  });
-		});*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
 			url:'http://localhost:1111/api/v1/getDocumentByLikeTitle/'+title,
@@ -151,7 +107,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$rootScope.userID = $window.userID;
 	$rootScope.loading =$window.loading;
-	
 	
 	
 	
@@ -369,13 +324,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
 		$http({
-			url:'http://localhost:1111/api/v1/getDocumentByRecommended/',
+			url:'http://localhost:1111/api/v1/getDocumentByRecommended/'+$rootScope.userID,
 			method:'GET'
 		}).then(function(response){
 			 preloader.style.opacity = 0;
 			 preloader.style.display ="none";
 			$scope.recommend=response.data.DATA;
-			//console.log("Recomand: "+$scope.recommend);
+			console.log("Recomand: "+$scope.recommend);
+			console.log($scope.recommend);
 		}, function(response){
 
 		});
@@ -455,7 +411,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	});
 	
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
-		
+		fbThumbnail = DocID;
 		$http({
 			url:'http://localhost:1111/api/v1/getDocDetail/'+DocID,
 			method:'GET'
@@ -742,11 +698,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 ///////////////////		START SAVELIST BLOCK	/////////////////
 	
 	 // create saveList
+		$scope.showNew = true;
+		$scope.showSave = false;
+		$scope.checkSavelist = function(listname){
+			
+			if (listname != 'undefined' || listname != '')
+				$scope.showNew = false;
+			   
+			    $scope.saveList(listname);
+			    
+		}
+	   $scope.showButtonSave = function(){ $scope.showSave = true;}
 
 
-		$scope.saveList = function(){   
+		$scope.saveList = function(savelistID){   
 			 
 			 
+
 			
 		   	  var Savelistname = 0;
 		   
@@ -754,10 +722,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var Des = "";
 		      var listname ="";
 		      var status =  0;
-		         catename = $("#saveListnames").val();
+		         catename = savelistID 
+
+		         alert(catename);
 		        
 		        
-		         listname = $scope.saveListname;
+		        listname = $scope.saveListname;
 		         
 		      
 		         doc = $('#doc_id').val();
@@ -783,7 +753,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		           			}
 		           		}).then(function(response){
-		           			alert("success");
+		           			
 		           			$scope.trackLog(docID,Des,status);
 		           			
 		           			
@@ -970,8 +940,18 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	  ///////////////////	START USER BLOCK	/////////////////
 	
-    		 
-    		
+ $scope.getUserByID=function(){
+			$http({
+				url:'http://localhost:1111/api/v1/user/'+$rootScope.UserID,
+				method:'GET'
+			}).then(function(response){
+				$scope.getUserByID=response.data.DATA;
+				console.log("getUserByID",$scope.getUserByID);
+			}, function(response){
+
+			});
+		} 
+    		 	
     		 
  $scope.checkUserLogin = function(){	
 	 if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
@@ -1000,7 +980,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				  'USER_ROLE': "ROLE_USER"
 			}
 		}).then(function(response){
-			alert("success");
+			swal({  
+    				title: "អបអរសាទរ!",   
+    				text: "",   
+    				timer: 600,   
+    				showConfirmButton: false
+    			},function(){
+    				location.href = "/login";
+    			});
 			$scope.userName="";
 			$scope.userPassword="";
 			
@@ -1031,7 +1018,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	////////////////////	START UPLOAD BLOCK	/////////////////
-	
+//	$rootScope.finalName=$window.fileName;
 	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
@@ -1039,6 +1026,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		if($scope.checkUserLogin()){
 			
 		}else{
+		//	alert($rootScope.finalName);
 			//alert($rootScope.currentSubCategory);
 			event.preventDefault();	
 			var files = event.target.files;
@@ -1092,6 +1080,75 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		
 	};
+	
+	
+	
+	$scope.uploadUserProfile = function(event) {
+		if($scope.checkUserLogin()){
+			
+		}else{
+		//	alert($rootScope.finalName);
+			//alert($rootScope.currentSubCategory);
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#user')[0].files[0];
+			frmData.append("files", file);	
+			frmData.append("userID", $rootScope.userID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadUserProfile',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				 //$scope.getUserByID();
+				 location.href= "/profile";
+			});
+		}
+		
+		
+	};
+	
+	$scope.checkDocID = function(docID) {
+    //	alert(docID);
+    	$rootScope.docUpdateID=docID;
+            
+    }
+	
+	$rootScope.docUpdateID="default";
+	$scope.uploadDocThumbnail = function(event) {
+		//alert($rootScope.docUpdateID);
+		if($scope.checkUserLogin()){
+			
+		}else{
+			event.preventDefault();	
+			var files = event.target.files;
+			var frmData = new FormData();					
+			var file = $('#docThumbnail')[0].files[0];
+			frmData.append("files", file);	
+			frmData.append("docID", $rootScope.docUpdateID);	
+			$http({
+				url : 'http://localhost:1111/api/uploadDocThumbnail',
+				method :'POST',
+				data : frmData,
+				transformRequest : angular.identity,
+				headers : {
+					'Content-Type' : undefined
+				}
+			}).then(function(response) {
+				$scope.getDocumentByUser();
+				// location.href= "/profile";
+			});
+		}
+		
+		
+	};
+	
+	
+	
 
 	 $scope.trustSrc = function(src){
 		 return $sce.trustAsResourceUrl(src);
@@ -1103,11 +1160,29 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 	////////////////////	END UPLOAD BLOCK	/////////////////
 	
+	 $scope.setFile = function(element) {
+	        $scope.$apply(function($scope) {
+	            $scope.theFile = element.files[0];
+	            
+	        });
+	    };
+	    
+	    
+	 
+	    
+	    
+	    
+	    
+
+	    
 	
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
 ///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
+
+
+
 app.directive('bindFile', [function () {
     return {
         require: "ngModel",
@@ -1166,3 +1241,16 @@ app.directive('myEnter', function () {
         });
     };
 });
+
+
+
+
+
+
+
+
+
+    
+
+
+

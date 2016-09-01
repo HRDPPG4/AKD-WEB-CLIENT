@@ -9,12 +9,10 @@
     <div class="modal-content">
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4>
-
     <div class="imgcontainer">	
     <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
     </div>
-			          
+		<!-- <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4> -->	          
         
       </div>
       <div class="modal-body" style="padding:40px 50px;">
@@ -26,16 +24,8 @@
           <div class="form-group">
             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> ពាក្យសំងាត់</label>
             <input name="password" type="password" class="form-control" id="psw" data-ng-model="password" placeholder="សូមបញ្ចូលពាក្យសំងាត់">
-          </div>
-          <!-- <div class="checkbox">
-            <label><input type="checkbox" value="" checked>ចងចាំខ្ញុំ</label>
-<<<<<<< HEAD
-          </div>
+          </div>      
             <button type="submit" class="btn-login"><i class="fa fa-sign-in" aria-hidden="true"></i>ចូលប្រើប្រាស់</button>
-=======
-          </div> -->
-            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-
         </form>
       </div>
       <div class="modal-footer">

@@ -12,10 +12,13 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;	
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log("ALL Cat in admin"+$scope.category);
 		}, function(response){		
 		});
 	}	
 	$scope.showCategory();
+	
+	
 	
 //	$scope.removeCategory = function(id) {
 //		$http({
@@ -312,12 +315,63 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		});
 	}
 	$scope.getUserCount();
+	
 
 });
 //============================End of User Controller===============
 
 //============================Start Document Controller===============
-app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
+app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
+	$rootScope.userID = $window.userID;
+//	alert($scope.userID);
+	$scope.theFile = null;
+	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.des="";
+	$scope.uploadFile = function(event) {			
+		//alert("Upload Block");
+		event.preventDefault();	
+		var files = event.target.files;
+		var frmData = new FormData();					
+		var file = $('#filer_input')[0].files[0];
+		frmData.append("files", file);				
+		frmData.append("title", $scope.theFile.name);
+		frmData.append("des", $scope.des);
+		frmData.append("usreID", $rootScope.userID);		
+		frmData.append("catID", $scope.catID);	
+		$http({
+			url : 'http://localhost:1111/api/uploadFile',
+			method :'POST',
+			data : frmData,
+			transformRequest : angular.identity,
+			headers : {
+				'Content-Type' : undefined
+			}
+		}).then(function(response) {
+			//alert($rootScope.currentSubCategory);
+			//getAllDocumentByCatID(parentCat.CAT_ID)
+			
+			swal({  
+				title: "File Upload Successful!",   
+				text: "",   
+				timer: 800,   
+				showConfirmButton: false 
+			});
+			
+		}, function(response) {
+			swal({  
+				title: "File Upload Fail!",   
+				text: "",   
+				timer: 800,   
+				showConfirmButton: false 
+			});
+			
+		});
+		
+		
+	};
+	
+	
+	
 		
 	$scope.getDocumentCount = function() {
 		$http({
@@ -374,36 +428,21 @@ app.controller('DocumentCtrl', function($scope, $http, $sce, $timeout) {
 		$scope.getDocumentData();
 	});
 	
-	
-	$scope.theFile = null;
-	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
-	$scope.des="";
-	$scope.uploadFile = function(event) {
-		event.preventDefault();	
-		var files = event.target.files;
-		var frmData = new FormData();					
-		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);				
-		frmData.append("title", $scope.theFile.name);
-		frmData.append("des", $scope.des);
-		frmData.append("catID", $scope.catID);	
+	$rootScope.getAllCategory = function(){
 		$http({
-			url : 'http://localhost:1111/api/uploadFile',
-			method :'POST',
-			data : frmData,
-			transformRequest : angular.identity,
-			headers : {
-				'Content-Type' : undefined
-			}
-		}).then(function(response) {
-			$(".progress-bar").css("width", "100%"); 
-			alert("Success");
-			$scope.$on(frmData, function(){
-			});
-		}, function(response) {
-			alert("Error");
+			url:'http://localhost:1111/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.getAllCategory=response.data.DATA;
+			console.log("GET ALL CAT ADMIN");
+			console.log($scope.getAllCategory);
+			
+		}, function(response){
+		
 		});
-	};
+	}
+
 
 });
 

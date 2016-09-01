@@ -31,14 +31,14 @@ body{
 	font-family: 'Khmer OS Battambang';
 	font-size:100%;
 	background-color:#106cc8;
-	background: url(../img/login/bg.png) no-repeat;
+	background: url(../img/banner-user.png) no-repeat;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 }
 .wrap{
-	width: 50%;
+	width: 40%;
 	margin: 0 auto;
 }
 /*start-contact-form*/
@@ -390,7 +390,7 @@ body{
 }
 .checkbox input + i:after {
 	content: '';
-	background: url("../img/login/mark.png") no-repeat 3px 2px;
+	background: url("../img/mark.png") no-repeat 3px 2px;
 	top: -1px;
 	left: -1px;
 	width: 15px;
@@ -410,10 +410,12 @@ body{
 	margin-bottom: 4px;
 }
 /*end-checkbox*/
+
 /*-----start-responsive-design------*/
+
 @media only screen and (max-width: 1440px){
 	.wrap{
-		width:56%;
+		/* width:56%; */
 	}
 	.span i {
 		font-size: 1.4em;
@@ -430,7 +432,7 @@ body{
 }
 @media only screen and (max-width: 1366px){
 	.wrap{
-		width:59%;
+		/* width:59%; */
 	}
 	.span i {
 		font-size: 1.4em;

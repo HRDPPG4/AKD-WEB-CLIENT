@@ -75,11 +75,6 @@
 							</div>
 						</div>
 						
-				
-							
-						
-						
-
 						<div class="form-group ">
 							<button type="button" class="btn-register" ng-disabled="error" ng-click="saveUser()")><span class="glyphicon glyphicon-lock"></span>ចុះឈ្មោះ</button>
 						</div>

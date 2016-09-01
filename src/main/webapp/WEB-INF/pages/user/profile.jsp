@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>    
+    <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+   <sec:authentication  property="principal.userID" var="userID"/>
+   <sec:authentication  property="principal.name" var="userName"/>
+</sec:authorize>
+
+<script>
+window.userID = "${userID}"; 
+/* window.userName="${userName}"; */
+</script>	
     
     <!DOCTYPE html>
 <html>
@@ -61,14 +72,15 @@
 	
 	<!-- END SEARCH BLOCK -->
 </head>
-<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()">
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
 <jsp:include page="include/update-slide.jsp"></jsp:include>
-
-				  
+<jsp:include page="include/upload-profile.jsp"></jsp:include>
+<jsp:include page="include/updateDocument.jsp"></jsp:include>
+  			  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
@@ -77,10 +89,30 @@
 <div id="page-content-wrapper">
 	<section id="profile">
 		<div class="container" >
-			<div class="row section profile topspace-profile">
-								
+			<div class="row section profile topspace-profile">	
 						<div class="left-profile" >
-						<div class="img-pro"><img alt="" src="${pageContext.request.contextPath}/resources/user/img/minea.jpg">
+						<div class="img-pro"><img alt="" src="http://localhost:1111/resources/img/user-profile/{{getUserByID.PROFILE}}">
+						<div class="edit-profileImage">
+						<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myProfileImage"><i class="fa fa-instagram" aria-hidden="true" id="camera"></i><div class="profileImage">រូបភាពព័ត៌មានផ្ទាល់ខ្លួន</div></a>
+						</div>
+						<script>
+						   $(document).ready(function(){
+							   var profile ='close';
+							   $('.img-pro').hover(function(){
+								   if (profile=="close") {
+								   $('.edit-profileImage').css({'visibility':'visible'}).slideDown();
+								   $('.upload-proflie').css({'visibility':'visible'}).slideDown();
+								  /*  $('#camera').css({'font-size':'15px','top':'20px'}).slideDown(); */
+								   profile ='open';
+								   }else{
+									   $('.edit-profileImage').css({'visibility':'hidden'}).slideDown();
+									   $('.upload-proflie').css({'visibility':'hidden'}).slideDown();
+									   /* $('#camera').css({'font-size':'20px','top':'30px'}).slideDown(); */
+									   profile ='close';
+								   }
+							   });
+						   });
+						</script>
 						</div>
 						<!-- <div class="user-name">ជឹម មិនា</div> -->
 							<ul class="title-profile nav nav-pills nav-stacked">
@@ -88,19 +120,21 @@
 							<li class="about"><a data-toggle="tab" href="#infor">អំពីខ្ញុំ </a></li>
 								<li class="about"><a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">បញ្ជីរគ្រប់គ្រងឯកសារ</a></li>
 								<li class="about" ><a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">ឯកសារដែលបានមើល</a></li>
-
-								
-								
+								<li  class="about" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ </a>
+		
+										<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
+							       
+								</li>
 							</ul>
 							<!-- <li class="about"><a data-toggle="tab" ng-click ="getSavelistUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ</a></li>  -->
 						 
-							<ul class="title-profile nav nav-pills nav-stacked"  >								
+							<!-- <ul class="title-profile nav nav-pills nav-stacked"  >								
 
 								<li  class="active" id="toggleSavelist" ><a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#infor">បញ្ជីររក្សាទុកឯកសារ </a></li>
 								<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" ><a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a></li>
 								
 							
-							</ul>
+							</ul> -->
 							
 						 
 						</div>
@@ -115,20 +149,20 @@
 										<div class="profile-wrap">
 										<form action="">
 										<div class="profile-name-content">
-										 <span class="profile-name-label" style=""><label>ឈ្មោះ</label></span>
-										  <span class="profile-name"><input type="text" value="ជឹម មិនា" class="input-name"/></span>
+										 <span class="profile-name-label" style=""><label>ឈ្មោះ </label></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.USER_NAME}} class="input-name"/></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-email-label"><label> អីុម៉ែល</label></span>
-										  <span class="profile-name"><input type="text" value="minea.chem@gmail.com"  class="input-name" /></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.EMAIL}} class="input-name" /></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-phone-label"><label class="left-phone">លេខទូរស័ព្ទ</label></span>
-										  <span class="profile-name"><input type="text" value="086 460714" class="input-name"/></span>
+										  <span class="profile-name"><input type="text" value={{getUserByID.PHONE}} class="input-name"/></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-psw-label" ><label class="left-psw">លេខសំងាត់</label></span>
-										  <span class="profile-name"><input type="password" value="086 460714" class="input-name"/></span>
+										  <span class="profile-name"><input type="password" value={{getUserByID.PASSWORD}} class="input-name"/></span>
 										</div>
 										<input type="submit" value="កែប្រែ" class="submit-profile"/>
 									  </div>
@@ -152,12 +186,13 @@
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
-														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
+														<!-- <div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
 																<input type="checkbox" >
 																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
-														</div>
+														</div> -->
+														
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
 														</div>
@@ -170,6 +205,11 @@
 													</div>					
 											        
 											    </a>
+											    
+											    <div id="update">
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">លុប</button>
+												</div>
 											   
 								
 											</div>
