@@ -261,14 +261,14 @@ body
 							 			<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
 							 			
 
-										<input class=" form-control"  id="comment-savelist" ng-model="currentReport"/>
-										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="insertReport()">
+										<input class=" form-control"  id="comment-savelist" ng-model="saveListname"/>
+										<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()">
 
 							 			<!-- <input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()" ng-show="showSave"> -->
 							 			
-										<input class=" form-control"  id="comment-savelist" ng-model="saveListname">
+										<!-- <input class=" form-control"  id="comment-savelist" ng-model="saveListname">
 										 <input   type="hidden" class="form-control" value="{{docDetail[0].DOC_ID}}" id="doc_id">
-										 <input type="button" id="btnSavelist" ng-click="saveList()" ng-show="showSave" value="បញ្ជូន"/>
+										  <input type="button" id="btnSavelist" ng-click="saveList()" ng-show="showSave" value="បញ្ជូនjjj"/>  -->
 										
 
 
