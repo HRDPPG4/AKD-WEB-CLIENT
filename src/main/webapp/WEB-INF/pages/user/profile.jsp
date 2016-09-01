@@ -186,12 +186,12 @@ window.userID = "${userID}";
 								    			<a href="/detail/{{slide.DOC_ID}}" class="list-group-item">
 								
 													<div class="media">
-														<div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
+														<!-- <div class="checkbox pull-left" ng-click="deleteDocument(slide.DOC_ID)">
 												    		<label>
 																<input type="checkbox" >
 																<input type="hidden" value="2" id ="typeDoc">				
 															</label>
-														</div>
+														</div> -->
 														
 														<div class="pull-left">
 															<img class="media-object" src="{{slide.THUMBNAIL_URL}}" alt="Image">
@@ -207,7 +207,8 @@ window.userID = "${userID}";
 											    </a>
 											    
 											    <div id="update">
-													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">UpdateThumbnail</button>
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">កែរប្រែ</button>
+													<button ng-click="checkDocID(slide.DOC_ID)" class="btn btn-default" data-toggle="modal" data-target="#updateDocument">លុប</button>
 												</div>
 											   
 								
