@@ -30,7 +30,8 @@ window.fileName="";
         <div class="col-sm-4 col-sm-offset-2">
             <div id="imaginary_container"> 
                 <div class="input-group stylish-input-group">
-                    <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="allDocTitle.TITLE for allDocTitle in allDocTitle | filter:$viewValue | limitTo:8">
+                    <!-- <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="allDocTitle.TITLE for allDocTitle in allDocTitle | filter:$viewValue | limitTo:8"> -->
+                    <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title for title in allDocTitle | filter:$viewValue | limitTo:8">
                     <span class="input-group-addon">
                         <button type="submit" ng-click="searchPage()">
                             <span class="glyphicon glyphicon-search"></span>

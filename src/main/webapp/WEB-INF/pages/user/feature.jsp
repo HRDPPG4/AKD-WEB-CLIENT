@@ -142,18 +142,25 @@ a.thumbnail {
 <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
 <div class="container">
+<br><br><br><br><br>
 
-	<section id="feature">
+<div ng-repeat="name in allDocName">    
+a
 
-		<!-- section-title -->
+</div>
+
+
+	<!-- <section id="feature">
+
+		section-title
 		<div class="row section feature topspace-second">
 			<div id="content-feature">
 				
 				<ul class="feature-header"​>
-					<!-- <li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a ng-click="getDocumentByRecommended()" href="/feature/recommend">ឯកសារណែនាំ</a></li>
+					<li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a ng-click="getDocumentByRecommended()" href="/feature/recommend">ឯកសារណែនាំ</a></li>
 					<li  class="view-feature"><a ng-click="getDocumentByPopular()" href="/feature/popular">ឯកសារពេញនិយម</a></li>
 					<li class="view-feature"><a ng-click="getDocumentByNewPost()" href="/feature/new">ឯកសារថ្មីៗ</a></li>
-					 -->
+					
 					
 					<li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a href="/feature/recommend">ឯកសារណែនាំ</a></li>
 					<li  class="view-feature"><a  href="/feature/popular">ឯកសារពេញនិយម</a></li>
@@ -168,7 +175,7 @@ a.thumbnail {
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -195,7 +202,7 @@ a.thumbnail {
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -222,7 +229,7 @@ a.thumbnail {
 						 <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
-							<!-- <span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span> -->
+							<span class="cover"><span class="title-cover">គណិតវិទ្យា</span></span>
 							</span>
 							<span class="title">{{slide.TITLE | strLimit: 22}}</span>
 							<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
@@ -243,10 +250,10 @@ a.thumbnail {
 					</div>
 					<div id="PAGINATION"></div>
 				</div>
-				<!-- <div id="PAGINATION"></div> -->
+				<div id="PAGINATION"></div>
 			</div> 
 		</div>
-	</section>
+	</section> -->
 </div>
 </content>
 

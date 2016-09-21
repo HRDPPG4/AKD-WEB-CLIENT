@@ -373,18 +373,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	
-	
+	$scope.allDocTitle=[];
 	$scope.getAllDocument = function(){
 		$http({
 			url:'http://localhost:1111/api/v1/document',
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
-			$scope.allDocTitle=response.data.DATA;
+			$scope.allDocTitle=response.data.DATA;						
+			for (var i = 0; i < response.data.DATA.length; i++) {
+				$scope.allDocTitle[i] = response.data.DATA[i].TITLE;
+			   // console.log($scope.allDocTitle);
+			}
 		}, function(response){
 
 		});
 	}
+	
 		
 	$scope.getAllDocument();
 	
