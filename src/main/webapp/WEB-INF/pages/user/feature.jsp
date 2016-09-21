@@ -128,8 +128,8 @@ a.thumbnail {
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
 
 </head>
-<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getAllDocument()">
-<jsp:include page="include/loading.jsp"></jsp:include>
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="checkLocation()" data-ng-init="getAllDocument()">
+<%-- <jsp:include page="include/loading.jsp"></jsp:include> --%>
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
@@ -142,14 +142,22 @@ a.thumbnail {
 <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
 <div class="container">
+
 	<section id="feature">
+
 		<!-- section-title -->
 		<div class="row section feature topspace-second">
 			<div id="content-feature">
+				
 				<ul class="feature-header"​>
-					<li class="view-feature"><a ng-click="getDocumentByRecommended()" href="#">ឯកសារណែនាំ</a></li>
-					<li  class="view-feature"><a ng-click="getDocumentByPopular()" href="#">ឯកសារពេញនិយម</a></li>
-					<li class="view-feature"><a ng-click="getDocumentByNewPost()" href="#">ឯកសារថ្មីៗ</a></li>
+					<!-- <li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a ng-click="getDocumentByRecommended()" href="/feature/recommend">ឯកសារណែនាំ</a></li>
+					<li  class="view-feature"><a ng-click="getDocumentByPopular()" href="/feature/popular">ឯកសារពេញនិយម</a></li>
+					<li class="view-feature"><a ng-click="getDocumentByNewPost()" href="/feature/new">ឯកសារថ្មីៗ</a></li>
+					 -->
+					
+					<li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a href="/feature/recommend">ឯកសារណែនាំ</a></li>
+					<li  class="view-feature"><a  href="/feature/popular">ឯកសារពេញនិយម</a></li>
+					<li class="view-feature"><a  href="/feature/new">ឯកសារថ្មីៗ</a></li>
 				</ul>
 			 </div>
 			<div class="row" style="padding:12px;">
@@ -179,6 +187,7 @@ a.thumbnail {
 							</span>
 						</a>  
 					</div>
+					<div id="PAGINATION"></div>
 				</div>	 
 				
 				<div class="col-md-12" ng-if="showPopular">
@@ -205,6 +214,7 @@ a.thumbnail {
 							</span>
 						</a>  
 					</div>
+					<div id="PAGINATION"></div>
 				</div>
 				
 				<div class="col-md-12" ng-if="showNewPost">
@@ -231,8 +241,9 @@ a.thumbnail {
 							</span>
 						</a>  
 					</div>
+					<div id="PAGINATION"></div>
 				</div>
-				<div id="PAGINATION"></div>
+				<!-- <div id="PAGINATION"></div> -->
 			</div> 
 		</div>
 	</section>
@@ -258,13 +269,13 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
 
-	<script>
+	<!-- <script>
 	$(window).bind("load", function(){
 		 var preloader = document.querySelector(".preloader");
 		  preloader.style.opacity = 0;
 		 preloader.style.display ="none";
 		 
 		}) ;
-	</script>
+	</script> -->
 </body>
 </html>

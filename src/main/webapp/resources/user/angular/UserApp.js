@@ -14,6 +14,35 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.searchPage = function(){
 		location.href= "/search/"+$scope.selected;
 	}
+	
+	var url = window.location.href;
+	var lastPart = url.substr(url.lastIndexOf('/') + 1);
+	
+	$scope.checkLocation = function(){
+		//alert(lastPart);
+		if(lastPart=="recommend"){
+			$scope.showRecomment=true;
+			$scope.showNewPost=false;
+			$scope.showPopular=false;
+			$scope.getDocumentByRecommended();
+		}else if(lastPart=="popular"){
+			$scope.showRecomment=false;
+			$scope.showNewPost=false;
+			$scope.showPopular=true;
+			$scope.getDocumentByPopular();
+		}else if(lastPart=="new"){
+			$scope.showRecomment=false;
+			$scope.showNewPost=true;
+			$scope.showPopular=false;
+			$scope.getDocumentByNewPost();
+		}else{
+			$scope.showRecomment=false;
+			$scope.showNewPost=false;
+			$scope.showPopular=false;
+		}
+			
+		
+	}
 
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
@@ -181,6 +210,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	///////////////////		START DOCUMENT BLOCK	/////////////////
 	
+	$scope.showRecomment=false;
+	$scope.showNewPost=false;
+	$scope.showPopular=false;
 	
 	$scope.getDocumentByPopular=function(){
 		/* preloader.style.opacity = 1;

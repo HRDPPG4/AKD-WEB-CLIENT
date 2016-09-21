@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -16,9 +17,11 @@ public class UserController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/feature",method=RequestMethod.GET)
-	public String feature(){
-		return "user/featured";
+	@RequestMapping(value="/feature/{filter}", method=RequestMethod.GET)
+	public String feature(@PathVariable("filter") String filter, ModelMap model){
+		//System.out.println("ID==>" + id);
+		model.put("filter", filter);
+		return "user/feature";
 	}
 	
 	@RequestMapping(value="/search/{title}",method=RequestMethod.GET)

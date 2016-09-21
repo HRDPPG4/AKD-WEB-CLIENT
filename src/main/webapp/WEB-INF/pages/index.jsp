@@ -1,5 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,12 +108,12 @@
 
 <content>
 <div class="container">
-	<section id="recommend">
+	<section id="recommend" ng-if="UserID!='' ||UserID!=0">
 		<!-- section-title -->
 		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak >
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ឯកសារណែនាំ</span>
-				<span id="right"><a href="/feature" ng-click="showRecomment=true">បង្ហាញទាំងអស់</a></span></h2>
+				<span id="right"><a href="/feature/recommend">បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 			 <jsp:include page="user/include/toolbar-right.jsp"></jsp:include>
 			 
@@ -162,7 +163,7 @@
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak> 
 			<div class="popular-title">
 				<h2 class="section-title"><span id="left">ឯកសារពេញនិយម</span>
-				<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
+				<span id="right" ><a href="/feature/popular" >បង្ហាញទាំងអស់</a></span></h2>
 			 </div>
 
 			
@@ -205,7 +206,7 @@
 		<div class="row section popular topspace-second" data-ng-init="getDocumentByNewPost()" ng-cloak>
 				<div class="popular-title">
 					<h2 class="section-title"><span id="left">ឯកសារថ្មីៗ</span>
-					<span id="right"><a href="/feature">បង្ហាញទាំងអស់</a></span></h2>
+					<span id="right"><a href="/feature/new">បង្ហាញទាំងអស់</a></span></h2>
 				 </div>
 
 				
