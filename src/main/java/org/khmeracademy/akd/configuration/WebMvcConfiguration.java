@@ -24,17 +24,9 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 	private Environment environment;
 	
 	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		
-		//USE WHEN HAVE STATIC USER AND ROLE
-		
-		/*registry.addViewController("/").setViewName("index");
-		registry.addViewController("/admin/dashboard").setViewName("admin/dashboard");
-		registry.addViewController("/dba/index").setViewName("dba/index");*/
-		
-		
+	public void addViewControllers(ViewControllerRegistry registry) {	
 		// STILL CAN USE WHEN DYNAMIC
-		registry.addViewController("/accessDenied").setViewName("error/403");	//	WHEN MEET /accessDenied IT WILL GO TO OPEN PAGE IN FOLDER error/403
+		registry.addViewController("/accessDenied").setViewName("error/403");
 		registry.addViewController("/login").setViewName("login");
 		registry.addViewController("/logout?logout").setViewName("login");
 	

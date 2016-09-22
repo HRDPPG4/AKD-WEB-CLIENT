@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUserByEmail(UserLogin userlogin) {
+		String API_PATH="http://localhost:1111";
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -34,7 +35,7 @@ public class UserServiceImpl implements UserService {
 		System.out.println(userlogin.getEmail());
 		
 		HttpEntity<Object> request = new HttpEntity<Object>(userlogin,headers);
-		ResponseEntity<Map> response = rest.exchange("http://localhost:1111/api/v1/user/email", HttpMethod.POST , request , Map.class) ;
+		ResponseEntity<Map> response = rest.exchange(API_PATH+"/api/v1/user/email", HttpMethod.POST , request , Map.class) ;
 		Map<String, Object> map = (HashMap<String, Object>)response.getBody();
 		
 		if(map.get("DATA") != null){

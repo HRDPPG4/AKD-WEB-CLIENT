@@ -134,10 +134,7 @@ a.thumbnail {
 <%-- <jsp:include page="include/loading.jsp"></jsp:include> --%>
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
-<jsp:include page="include/upload.jsp"></jsp:include>
-<jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include>
-				  
+<jsp:include page="include/upload.jsp"></jsp:include>				  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>

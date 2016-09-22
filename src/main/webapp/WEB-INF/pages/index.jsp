@@ -2,18 +2,13 @@
     pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
     
-    <c:set var="ContextPath" value="http://192.168.178.46:2222" />
+    <c:set var="ContextPath" value="http://localhost:2222" />
 	
     
 <!DOCTYPE html>
 <html>
 <head>
 <title>Home</title>
-<script>
-	/* PATH_UI = "http://192.168.178.202:2222"; */
-	/* PATH_UI = "http://localhost:2222"; */
-
-</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="shortcut icon" href="${ContextPath}/resources/user/img/AKD.png">
