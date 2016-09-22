@@ -6,7 +6,7 @@
      
 <div class="preloader">
    <!-- <div><img src="http://mycodingtricks.com/wp-content/uploads/2015/05/Preloader_1.gif"/></div> -->
-   <img alt="Logo" style="width:80px;" src="${pageContext.request.contextPath}/resources/user/img/Preloader.gif"/>
+   <img alt="Logo" style="width:80px;" src="${ContextPath}/resources/user/img/Preloader.gif"/>
    
 </div> 
 

@@ -6,4 +6,5 @@ import org.khmeracademy.akd.entity.UserLogin;
 public interface UserService {
 
 	User findUserByEmail(UserLogin userlogin);
+    User findUserByUserId(String userId);
 }
