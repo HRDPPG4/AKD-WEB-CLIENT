@@ -2,14 +2,14 @@
     pageEncoding="utf-8"%>
     
 <style>
-.navbar-nav ul.dropdown-menu {
+#partner .navbar-nav ul.dropdown-menu {
     width: 335px !important;
     padding: 20px;
     min-height: 196px;
     overflow-y: auto;
     width: 320px;
 }
-.dropdown-item li {
+#partner .dropdown-item li {
     padding: 1px;
     margin: 1px;
     display: inline-block;
@@ -20,43 +20,43 @@
     height: 98px;
     text-align: center;
 } 
-.dropdown-item li a {
+#partner .dropdown-item li a {
     position: absolute;
     border-radius: 3px;
     border: 0.01em solid #fff;
 }
-.dropdown-item li a img {
+#partner .dropdown-item li a img {
     width: 48px;
     height: 48px;
 }
-.dropdown-item li a span {
+#partner .dropdown-item li a span {
     display: block;
     font-size: 10pt !important;
 }
-.navbar-collapse.collapse{
+#partner .navbar-collapse.collapse{
 	display: table-cell!important;
 }
-.nav>li>a {
+#partner .nav>li>a {
     padding: 0px 26px;
    	background-color: white;
    	color:black !important;
 }
-.nav>li>a:hover {
+#partner .nav>li>a:hover {
     color:black !important;
 }
 #partner
 {
 	font-size: 27px;
 }
-li#partner
+#partner li#partner
 {
 	font-size: 25px;
 }
 
-.navbar-nav>li>a {
+#partner .navbar-nav>li>a {
     line-height: 0px;
 }
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+#partner .navbar-inverse .navbar-nav>.open>a,#partner .navbar-inverse .navbar-nav>.open>a:focus,#partner  .navbar-inverse .navbar-nav>.open>a:hover {
     color:black !important;
     background-color: white;
 }
