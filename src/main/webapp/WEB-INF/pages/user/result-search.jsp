@@ -97,13 +97,6 @@ a.thumbnail {
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByLikeTitle('${title}')">
-<jsp:include page="include/loading.jsp"></jsp:include>
-
-
-
-
-
-
 
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
@@ -141,12 +134,11 @@ a.thumbnail {
 								</a>
 							</span>
 						</a>  
-						<%-- <div ng-if="slide==0" class="noRecord">
-							<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
-						</div> --%>						
+										
 					</div>
-					
-					
+					<div ng-if="recordNotFound" class="noRecord">
+						<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
+					</div>	
 				</div>
 			
 			</div> 
@@ -175,32 +167,5 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
 
-
-
- 
-<script>
-
-
-/*  window.onload = function(){
-	  var preloader = document.querySelector(".preloader");
-	  preloader.style.opacity = 0;
-	  setTimeout(function(){
-		 
-	  },0);
-	} 
- 
-	//$(window).bind("load", function(){
-	
-	 preloader.style.display =loading;
-	 
-//	}) ; */
-	
-
-
-
-
-</script>
-	
-	
 </body>
 </html>

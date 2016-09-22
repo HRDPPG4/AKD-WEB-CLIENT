@@ -44,23 +44,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 		
 	}
-
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
 			url:API_PATH+'/api/v1/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
-		
-			
-			  var preloader = document.querySelector(".preloader");
-			  preloader.style.opacity = 0;
-			  preloader.style.display ="none";
-			
 			
 			$scope.documentSearch=response.data.DATA;
-		
+			console.log("respone search.");
+			console.log(response);
+			
+			if(response.data.DATA==null){
+				$scope.recordNotFound=true;
+				//alert("norecord");
+				//alert($scope.recordNotFound);
+			}
 		}, function(response){
-		
+			
 		});
 	}
  
