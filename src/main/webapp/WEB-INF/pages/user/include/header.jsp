@@ -46,16 +46,19 @@ window.fileName="";
                 </div>
             </div>
         </div>
+        <span id="partner"><jsp:include page="partner.jsp"></jsp:include></span>
+	</div>	
+	
 	</div>
-	<!-- search form -->
-		<!-- <form class="navbar-form navbar-left form-contain" role="search">
-        <div class="form-group typeahead-demo">          
-          <input myEnter="searchPage()" placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE for title.TITLE in allDocTitle.TITLEdsd | filter:$viewValue | limitTo:8" class="form-control form-search">        
-        </div>
-      </form> -->
-	</div>
+	
+	
+		
 	<div class="upload-signup-signin" >
-     	<ul>            
+	
+     	<ul> 
+     	<li id="partner">
+     		<%-- <jsp:include page="partner.jsp"></jsp:include> --%>
+     	</li>           
             <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
              <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
             </li>
@@ -85,6 +88,7 @@ window.fileName="";
         </ul>
      </div>
 </nav>
+
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">

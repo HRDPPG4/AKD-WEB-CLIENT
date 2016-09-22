@@ -129,7 +129,7 @@ html,body {
   display: inline-block;
   list-style-type:none;
 }
-.upload-signup-signin > ul li#upload,li#signin ,li#signup{
+.upload-signup-signin > ul li#upload,li#signin ,li#signup,li#partner{
   position: relative;
   text-decoration: none;
   display: inline;
