@@ -158,7 +158,9 @@ li#avatar-user{
 #avatar-user a img{
 	position:relative;
 	top:-7px;
-	width:46px;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
 	list-style-type: none;
 }
 
@@ -854,3 +856,7 @@ button.btn-side-search{
  border:1px solid #fff;
  padding:7px;
  }
+/*  .navbar-default
+ {
+ 	background-color:#106cc8 !important;
+ } */

@@ -25,7 +25,7 @@
   					   		  
   					   		</div>
     						<div class="thumbnail">
-     						 <img src="${ContextPath}/resources/user/img/book.jpg" alt="Thumbnail" style=" width:400px; height:300px;position:relative;" >
+     						 <img src="${pageContext.request.contextPath}/resources/user/img/book.jpg" alt="Thumbnail" style=" width:400px; height:300px;position:relative;" >
       				         
    			 			
    			 			<!-- 	<button type="button" class="btn btn-success" id="list-save" >SaveList</button> -->
@@ -79,7 +79,7 @@
      			 		
      					
 			</form>
-        <script type="text/javascript" src="${ContextPath}/resources/user/js/save-list.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
       </div>
       <div class="modal-footer">
         

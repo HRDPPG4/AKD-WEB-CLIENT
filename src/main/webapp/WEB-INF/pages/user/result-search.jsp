@@ -4,36 +4,36 @@
 <html>
 <head>
 <title>Search</title>
-<link rel="shortcut icon" href="${ContextPath}/resources/user/img/AKD.png">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/bootstrap.min.css">	
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/index.css">
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/categories.css">
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/details.css">
-	 <link rel="stylesheet" href="${ContextPath}/resources/user/css/responsive.css">
-	<link href="${ContextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/footer.css">
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/header.css">
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/search.css" />
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/font-server/font.css" />
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/slide-detail.css" />
-	<link rel="stylesheet" href="${ContextPath}/resources/user/css/user_view.css">
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/comment.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/index.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/categories.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/details.css">
+	 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
+	<link href="${pageContext.request.contextPath}/resources/user/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/search.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/font-server/font.css" />
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/slide-detail.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/user_view.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/comment.css" />
 	<!-- Register -->
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/register.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/register.css">
 	<!-- style for file upload -->
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/jquery.filer.css">
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/themes/jquery.filer-dragdropbox-theme.css">
-	<link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/save-list.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/jquery.filer.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/themes/jquery.filer-dragdropbox-theme.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/save-list.css">
 	
 	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> --> 
-	<script src="${ContextPath}/resources/user/js/jquery.min.js"></script>
-	<script src="${ContextPath}/resources/user/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/user/js/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/user/js/bootstrap.min.js"></script>
      <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
 	
 	
@@ -57,7 +57,7 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/4.2.4/sweetalert2.min.css">
      
     <!-- Loading -->
-    <link rel="stylesheet" type="text/css" href="${ContextPath}/resources/user/css/Main_Style_For_All_Page.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/Main_Style_For_All_Page.css" />
 	
     
 
@@ -142,7 +142,7 @@ a.thumbnail {
 							</span>
 						</a>  
 						<%-- <div ng-if="slide==0" class="noRecord">
-							<img src="${ContextPath}/resources/user/img/norecord.png">
+							<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
 						</div> --%>						
 					</div>
 					
@@ -162,17 +162,17 @@ a.thumbnail {
 <jsp:include page="include/footer.jsp"></jsp:include>
 </footer>
  <a href="#0" class="cd-top">Top</a>
-<script type="text/javascript" src="${ContextPath}/resources/user/js/back-to-top.js"></script>
- <script type="text/javascript" src="${ContextPath}/resources/user/js/allkhmerslide.js"></script>	                        
-<script type="text/javascript" src="${ContextPath}/resources/user/js/login.js"></script>
-<script type="text/javascript" src="${ContextPath}/resources/user/angular/UserApp.js"></script>
-<script type="text/javascript" src="${ContextPath}/resources/user/js/save-list.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
+ <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script>
 
 
 <!-- library jquery for file upload -->
-<script src="${ContextPath}/resources/user/js/jquery-latest.min.js"></script>
-<script src="${ContextPath}/resources/user/js/jquery.filer.min.js"></script>
-<script src="${ContextPath}/resources/user/js/jquery-upload-file.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
 
 

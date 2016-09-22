@@ -10,7 +10,7 @@
       <div class="modal-header"  >
         <button type="button" class="close" data-dismiss="modal">&times;</button>
     <div class="imgcontainer">	
-    <img src="${ContextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
+    <img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="Avatar" class="avatar">					     
     </div>
 		<!-- <h4><span class="glyphicon glyphicon-lock"></span> ចូលប្រើប្រាស់</h4> -->	          
         
@@ -49,7 +49,7 @@
        		  e.preventDefault();
        			
        		  $.ajax({
-  	            url: "${ContextPath}/login",
+  	            url: "${pageContext.request.contextPath}/login",
   	            type: "POST",
   	            data: $("#frmLogin").serialize(),
 //   	            beforeSend: function (xhr) {
@@ -84,7 +84,7 @@
 	  	      				timer: 600,   
 	  	      				showConfirmButton: false
 	  	      			},function(){
-	  	      				location.href = "${ContextPath}/"+data;
+	  	      				location.href = "${pageContext.request.contextPath}/"+data;
 	  	      			});
   	            	}  	            	
   	            },

@@ -1,5 +1,4 @@
 package org.khmeracademy.akd.controller;
-
 import org.khmeracademy.akd.entity.User;
 import org.khmeracademy.akd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
 public class AutoLoginController {
 
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/auto-login" , method= RequestMethod.GET)
+	@RequestMapping(value="/auto-login" , method= RequestMethod.GET)
 	public String autoLogin(@RequestParam("user-id") String userId , @RequestParam(name="continue-site", required=false , defaultValue="http://www.knongdai.com") String continueSite) {
 
 		User user = userService.findUserByUserId(userId);

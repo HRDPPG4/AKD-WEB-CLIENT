@@ -8,6 +8,8 @@
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <sec:authentication  property="principal.email" var="userEmail"/> 
+   <sec:authentication  property="principal.profile" var="userProfile"/>         
    <div ng-init="getUserByID()"></div>
 </sec:authorize>
 
@@ -26,7 +28,7 @@ window.fileName="";
 	<div class="top-menu" ng-init="getUserID(memIdAngular)">
 		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
 			<span class="navbar-logo">
-					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" src="${ContextPath}/resources/user/img/logo-4.png"/>					 
+					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/logo-4.png"/>					 
 					 </a>					
 			</span>
 	<div class="container">
@@ -62,26 +64,19 @@ window.fileName="";
 			<sec:authorize access="isAnonymous()">
             <li id="signin">
             	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
-            	<a href="http://120.136.24.174:13300/login?continue-site=${ContextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
+            	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
-
-
-
-
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
             </sec:authorize>
             
             <!-- If login already-->
             <sec:authorize access="isAuthenticated()">
-            <%-- <li><sec:authentication property="principal.name"/></li> --%>
             <li class="col-sm-1" id="avatar-user"><a href="/profile">
-            
-            <%-- <img alt="" src="${ContextPath}/resources/user/img/avatar.png"> --%>
-            <img alt="" src="<sec:authentication property='principal.profile'/>">
-                <ul  class="tooltiptext">
+            	<img alt="" src="${userProfile}">
+                <ul class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
-                	<li><a href="/logout?logout"> ចាកចេញ</a></li>
+                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
                 </ul>
             </a>
             </li>
@@ -100,7 +95,7 @@ window.fileName="";
 	<!-- </div> -->
 	
 		 <div class="main-menu">
-		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${ContextPath}/resources/user/img/AKD.png"/></a>
+		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
 		</div>
 			<ul class="menu-basic" id="myTopnav">
 			<li class="icon">

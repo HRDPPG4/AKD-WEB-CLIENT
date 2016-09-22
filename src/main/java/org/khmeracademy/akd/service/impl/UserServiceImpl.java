@@ -106,6 +106,7 @@ public class UserServiceImpl implements UserService {
 				roles.add(role);
 			}
 			System.out.println(dataRole);
+			System.out.println("Email"+u.getEmail());
 			u.setRoles(roles);
 			System.out.println(map);
 			return u;
