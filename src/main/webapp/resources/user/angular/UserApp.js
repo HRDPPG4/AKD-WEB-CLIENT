@@ -519,6 +519,32 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	},function(response){
     	});
     }
+    
+    /*$scope.CountDocByCatID = function(catID) {
+    	//alert(catID);
+		$http({
+			url : API_PATH+'/api/v1/getDocumentCountByCatID/'+catID,
+			method : 'GET'
+		}).then(function(response) {
+			$scope.docCount = response.data.COUNT;
+			console.log($scope.docCount);
+		}, function(response) {
+			
+		});
+	}*/
+    
+    $scope.updateTotalDocByCatID = function(catID) {
+    	//alert(catID);
+		$http({
+			url : API_PATH+'/api/v1/document/updateTotalDocByCatID/'+catID,
+			method : 'PUT'
+		}).then(function(response) {
+			/*$scope.docUpdateByCatID = response.data.MESSAGE;
+			console.log($scope.docUpdateByCatID);*/
+		}, function(response) {
+			
+		});
+	}
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	

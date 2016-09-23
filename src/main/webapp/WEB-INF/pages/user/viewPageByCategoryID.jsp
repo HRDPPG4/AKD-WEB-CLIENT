@@ -149,13 +149,13 @@ a.thumbnail {
 				<div class="row-nav-left-content" ng-cloak>
 					<div class="row">
 					   <div class="col-sm-3" id="left-side-nav" >
-					   	   <ul class="category-menu nav nav-pills nav-stacked" >
+					   	   <ul class="category-menu nav nav-pills nav-stacked">
 					   	   		 <li class="bg-cate">
 					   	   		 <span><i class="{{getCategoryByID.ICON}}"></i>
 			  	   					</span>{{getCategoryByID.CAT_NAME}}
 			  	   				</li>
-			  	   				<li  class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)">
-			  	   				<a data-toggle="pill" >{{parentCat.CAT_NAME}}</a> 
+			  	   				<li  class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!--  ng-click="updateTotalDocByCatID(parentCat.CAT_ID)" -->
+			  	   					<a data-toggle="pill">{{parentCat.CAT_NAME}} ( {{parentCat.TOTAL_DOC}} )</a> 
 			  	   				</li>			  	   				
 					   	   </ul>
 					   </div>
