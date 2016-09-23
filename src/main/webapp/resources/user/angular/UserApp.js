@@ -430,6 +430,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET'
 		}).then(function(response){
 			$scope.documentByCatID=response.data.DATA;
+			if(response.data.DATA==null){
+				$scope.recordNotFound=true;
+			}
+			else{
+				$scope.recordNotFound=false;
+			}
 		}, function(response){
 
 		});
