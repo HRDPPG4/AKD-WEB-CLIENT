@@ -5,7 +5,36 @@ var API_PATH = "http://localhost:1111";
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
-
+	
+	$scope.partners = [
+		     		      {
+		     		        "SITE_URL"	: "http://localhost:2222",
+		     		        "SITE_NAME"	: "AKD",
+		     		        "SITE_LOGO"	: "http://localhost:2222/resources/user/img/AKD.png"
+		     		      },
+		     		      {
+		     		        "SITE_URL"	: "http://www.knongdai.com/",
+		     		        "SITE_NAME"	: "KNONGDAI",
+		     		        "SITE_LOGO"	: "http://www.knongdai.com/resources/static/images/favicon/favicon-16x16.png"
+		     		      },
+		     		      {
+		     		        "SITE_URL"	: "http://www.khmeracademy.org/",
+		     		        "SITE_NAME"	: "KA",
+		     		        "SITE_LOGO"	: "http://www.khmeracademy.org/resources/assets/img/favicon/android-icon-192x192.png"
+		     		      },
+		     		      {
+		     		        "SITE_URL"	: "http://news.khmeracademy.org/",
+		     		        "SITE_NAME"	: "AKN",
+		     		        "SITE_LOGO"	: "http://news.khmeracademy.org/resources/images/logo/akn.png"
+		     		      },
+		     		      {
+		     		        "SITE_URL"	: "http://www.kosign.com.kh/k2_layout.act",
+		     		        "SITE_NAME"	: "KOSIGN",
+		     		        "SITE_LOGO"	: "http://www.kosign.com.kh/img/ico/logo.png"
+		     		      }		     		      
+	     		    ];
+	     		
+	
 	
 	
 	////////////////////START SEARCH BLOCK	/////////////////

@@ -46,7 +46,7 @@ window.fileName="";
                 </div>
             </div>
         </div>
-        <span id="partner"><jsp:include page="partner.jsp"></jsp:include></span>
+        <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
 	</div>	
 	
 	</div>
