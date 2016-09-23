@@ -11,6 +11,11 @@
 {
 	padding-left: 5px;
 }
+button.searchBtn
+{
+	background-color: #106cc8;
+}
+
 </style>
 
 <div class="searchBlock"> 
@@ -29,7 +34,7 @@
 		    </ul>
 		</div> -->
 	    <span class="input-group-btn">	    	
-	    	<button class="btn btn-info searchBtn" ng-click="searchPage()">
+	    	<button class="btn btn-primary searchBtn" ng-click="searchPage()" ng-disabled="!selected">
 		    	<span >&nbsp</span> <span class="glyphicon glyphicon-search"></span>
 		    </button>
 	    </span>
