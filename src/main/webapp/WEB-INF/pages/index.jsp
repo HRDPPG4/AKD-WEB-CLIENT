@@ -109,7 +109,7 @@
 
 <content>
 <div class="container">
-	<section id="recommend" ng-if="UserID!='' ||UserID!=0">
+	<section id="recommend" ng-if="recordFound">
 		<!-- section-title -->
 		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak >
 			<div class="popular-title">

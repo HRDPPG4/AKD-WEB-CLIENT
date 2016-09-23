@@ -85,8 +85,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 			if(response.data.DATA==null){
 				$scope.recordNotFound=true;
-				//alert("norecord");
-				//alert($scope.recordNotFound);
 			}
 		}, function(response){
 			
@@ -304,13 +302,15 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			url:API_PATH+'/api/v1/getDocumentByRecommended/'+$rootScope.userID,
 			method:'GET'
 		}).then(function(response){
-			 /*preloader.style.opacity = 0;
-			 preloader.style.display ="none";*/
+			if(response.data.DATA==null){
+				$scope.recordFound=false;
+			}
 			$scope.recommend=response.data.DATA;
 		}, function(response){
 
 		});
 	}
+	
 	
 	var PAGINATION = angular.element("#PAGINATION");
 	$scope.setDocumentByRecommentPagination = function(totalPage){
