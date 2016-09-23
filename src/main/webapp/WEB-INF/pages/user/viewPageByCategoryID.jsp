@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Show Document By Category</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -117,12 +119,9 @@ a.thumbnail {
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
-<jsp:include page="include/loading.jsp"></jsp:include>
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
-<jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include>
 
 				  
 <header id="header">
@@ -273,14 +272,6 @@ a.thumbnail {
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 	<!-- Online Link -->
 	
-	<script>
-	$(window).bind("load", function(){
-		 var preloader = document.querySelector(".preloader");
-		  preloader.style.opacity = 0;
-		 preloader.style.display ="none";
-		 
-		}) ;
-	</script>
 	
 </body>
 </html>

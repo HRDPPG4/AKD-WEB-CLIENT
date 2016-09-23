@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Search</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
@@ -95,20 +97,10 @@ a.thumbnail {
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByLikeTitle('${title}')">
-<jsp:include page="include/loading.jsp"></jsp:include>
-
-
-
-
-
-
 
 <jsp:include page="include/register.jsp"></jsp:include>
 <jsp:include page="include/login.jsp"></jsp:include>
-<jsp:include page="include/upload.jsp"></jsp:include>
-<jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include>
-				  
+<jsp:include page="include/upload.jsp"></jsp:include>				  
 <header id="header">
 <jsp:include page="include/header.jsp"></jsp:include>
 </header>
@@ -120,7 +112,7 @@ a.thumbnail {
 		<div class="row section topspace-second">
 			<div class="row" style="padding:12px;">
 					<div class="col-md-12">
-					<div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
+					 <div  ng-repeat="slide in documentSearch" class="col-md-3" style="margin-bottom:10px; ">
 						   <a href="/detail/{{slide.DOC_ID}}" class="thumbnail" ng-click="countView(slide.DOC_ID)">
 							<span class="img">
 							<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">  
@@ -142,8 +134,11 @@ a.thumbnail {
 								</a>
 							</span>
 						</a>  
-						
+										
 					</div>
+					<div ng-if="recordNotFound" class="noRecord">
+						<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
+					</div>	
 				</div>
 			
 			</div> 
@@ -172,32 +167,5 @@ a.thumbnail {
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
 
-
-
- 
-<script>
-
-
-/*  window.onload = function(){
-	  var preloader = document.querySelector(".preloader");
-	  preloader.style.opacity = 0;
-	  setTimeout(function(){
-		 
-	  },0);
-	} 
- 
-	//$(window).bind("load", function(){
-	
-	 preloader.style.display =loading;
-	 
-//	}) ; */
-	
-
-
-
-
-</script>
-	
-	
 </body>
 </html>

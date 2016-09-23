@@ -1,5 +1,4 @@
 
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
@@ -8,6 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Document Detail</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -135,6 +136,8 @@ body
 </style>
 </head>
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
+		
+		
 		<!-- Facebook Configuration -->			
 
 <script>
@@ -160,7 +163,7 @@ body
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include> 
+
 
 		  
 <header id="header">
@@ -385,27 +388,22 @@ body
 
 <footer>
 
-
-
-
-
-
-
-<%-- <h1>Hello <sec:authentication property="principal.name"/>!!!</h1>
-
-<sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-		THIS BLOCK CAN SEE ONLY ADMIN AND DBA
-</sec:authorize> --%>
-
-
-
-
-
-
-
-
 	<jsp:include page="include/footer.jsp"></jsp:include>
  </footer>
+ <script>				
+	  function setHeight() {
+	    windowHeight = $(window).innerHeight();
+	    $('#SlideBox iframe').css('min-height', windowHeight-180);
+	    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
+	    $('#ViewByGoogleDrive').css('min-height', windowHeight);
+	    
+	  };
+	  setHeight();
+	  
+	  $(window).resize(function() {
+	    setHeight();
+	  }); 
+</script>
   <a href="#0" class="cd-top">Top</a>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
@@ -420,22 +418,7 @@ body
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 	  <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script> 
 	<!-- Online Link -->
-	<script>
-	// $(document).ready(function() {				
-		  function setHeight() {
-		    windowHeight = $(window).innerHeight();
-		    $('#SlideBox iframe').css('min-height', windowHeight-180);
-		    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
-		    $('#ViewByGoogleDrive').css('min-height', windowHeight);
-		    
-		  };
-		  setHeight();
-		  
-		  $(window).resize(function() {
-		    setHeight();
-		  }); 
-	//	}); 
-	</script>	
+		
 	
 	
 	<script>

@@ -5,6 +5,8 @@
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <sec:authentication  property="principal.email" var="userEmail"/> 
+   <sec:authentication  property="principal.profile" var="userProfile"/>
 </sec:authorize>
 
 <script>
@@ -15,6 +17,9 @@ window.userID = "${userID}";
     <!DOCTYPE html>
 <html>
 <head>
+<title>User Profile</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <meta charset="UTF-8">
@@ -56,11 +61,7 @@ window.userID = "${userID}";
 	
 
 	
-	<!--  Cannot use because Minea overwrite it-->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> 
-<script>
-	PATH_UI = "http://192.168.178.202:2222";
-</script>
+	
 <!-- START SEARCH BLOCK-->
 	 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
@@ -77,8 +78,6 @@ window.userID = "${userID}";
 <jsp:include page="include/login.jsp"></jsp:include>
 <jsp:include page="include/upload.jsp"></jsp:include>
 <jsp:include page="include/save-list.jsp"></jsp:include>
-<jsp:include page="include/update-slide.jsp"></jsp:include>
-<jsp:include page="include/upload-profile.jsp"></jsp:include>
 <jsp:include page="include/updateDocument.jsp"></jsp:include>
   			  
 <header id="header">
@@ -91,7 +90,7 @@ window.userID = "${userID}";
 		<div class="container" >
 			<div class="row section profile topspace-profile">	
 						<div class="left-profile" >
-						<div class="img-pro"><img alt="" src="http://localhost:1111/resources/img/user-profile/{{getUserByID.PROFILE}}">
+						<div class="img-pro"><img alt="" src="${userProfile}">
 						<div class="edit-profileImage">
 						<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myProfileImage"><i class="fa fa-instagram" aria-hidden="true" id="camera"></i><div class="profileImage">រូបភាពព័ត៌មានផ្ទាល់ខ្លួន</div></a>
 						</div>
@@ -150,21 +149,12 @@ window.userID = "${userID}";
 										<form action="">
 										<div class="profile-name-content">
 										 <span class="profile-name-label" style=""><label>ឈ្មោះ </label></span>
-										  <span class="profile-name"><input type="text" value={{getUserByID.USER_NAME}} class="input-name"/></span>
+										  <span class="profile-name"><input type="text" value="${userName}" class="input-name"/></span>
 										</div>
 										<div class="profile-name-content">
 										 <span class="profile-email-label"><label> អីុម៉ែល</label></span>
-										  <span class="profile-name"><input type="text" value={{getUserByID.EMAIL}} class="input-name" /></span>
-										</div>
-										<div class="profile-name-content">
-										 <span class="profile-phone-label"><label class="left-phone">លេខទូរស័ព្ទ</label></span>
-										  <span class="profile-name"><input type="text" value={{getUserByID.PHONE}} class="input-name"/></span>
-										</div>
-										<div class="profile-name-content">
-										 <span class="profile-psw-label" ><label class="left-psw">លេខសំងាត់</label></span>
-										  <span class="profile-name"><input type="password" value={{getUserByID.PASSWORD}} class="input-name"/></span>
-										</div>
-										<input type="submit" value="កែប្រែ" class="submit-profile"/>
+										  <span class="profile-name"><input type="text" value="${userEmail}" class="input-name" /></span>
+										</div>										
 									  </div>
 									  </form>
 							   </div>

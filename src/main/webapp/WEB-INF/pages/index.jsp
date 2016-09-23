@@ -1,12 +1,15 @@
  <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+    
+	 
 <!DOCTYPE html>
 <html>
 <head>
+<title>Home</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/user/img/AKD.png">
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
@@ -64,9 +67,7 @@
 	<!-- END SEARCH BLOCK -->
 	
 	
-<script>
-	PATH_UI = "http://192.168.178.202:2222";
-</script>
+
 <style>
 	.dropdown-menu {
     position: absolute;
@@ -95,12 +96,12 @@
 
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">
+
 <%-- <jsp:include page="user/include/loading.jsp"></jsp:include> --%>
 <jsp:include page="user/include/register.jsp"></jsp:include>
 <jsp:include page="user/include/login.jsp"></jsp:include>
 <jsp:include page="user/include/upload.jsp"></jsp:include>
 <jsp:include page="user/include/save-list.jsp"></jsp:include>
-<jsp:include page="user/include/update-slide.jsp"></jsp:include>
 				  
 <header id="header">
 <jsp:include page="user/include/header.jsp"></jsp:include>
@@ -108,7 +109,7 @@
 
 <content>
 <div class="container">
-	<section id="recommend" ng-if="UserID!='' ||UserID!=0">
+	<section id="recommend" ng-if="recordFound">
 		<!-- section-title -->
 		<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak >
 			<div class="popular-title">
@@ -239,7 +240,6 @@
 </div>
 </content>
 
-
 <footer>
 <jsp:include page="user/include/footer.jsp"></jsp:include>
 </footer>
@@ -263,7 +263,7 @@
 	 preloader.style.display ="none";
  
 }) ; -->
- 
-	
+
+
 </body>
 </html>

@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
- <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>      
+<c:set var="ContextPath" value="http://localhost:2222" />
+<%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <sec:authentication  property="principal.email" var="userEmail"/> 
+   <sec:authentication  property="principal.profile" var="userProfile"/>         
    <div ng-init="getUserByID()"></div>
 </sec:authorize>
+
 
 <script>
 window.userID = "${userID}"; 
@@ -40,39 +46,40 @@ window.fileName="";
                 </div>
             </div>
         </div>
+        <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+	</div>	
+	
 	</div>
-	<!-- search form -->
-		<!-- <form class="navbar-form navbar-left form-contain" role="search">
-        <div class="form-group typeahead-demo">          
-          <input myEnter="searchPage()" placeholder="ស្វែងរក" type="text" ng-model="selected" uib-typeahead="title.TITLE for title.TITLE in allDocTitle.TITLEdsd | filter:$viewValue | limitTo:8" class="form-control form-search">        
-        </div>
-      </form> -->
-	</div>
+	
+	
+		
 	<div class="upload-signup-signin" >
-     	<ul>            
+	
+     	<ul> 
+     	<li id="partner">
+     		<%-- <jsp:include page="partner.jsp"></jsp:include> --%>
+     	</li>           
             <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
              <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
             </li>
 			
 			<!-- If not yet login -->
 			<sec:authorize access="isAnonymous()">
-            <li id="signin"><a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
+            <li id="signin">
+            	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
+            	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
-
             <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
             </li>
             </sec:authorize>
             
             <!-- If login already-->
             <sec:authorize access="isAuthenticated()">
-            <%-- <li><sec:authentication property="principal.name"/></li> --%>
             <li class="col-sm-1" id="avatar-user"><a href="/profile">
-            
-            <%-- <img alt="" src="${pageContext.request.contextPath}/resources/user/img/avatar.png"> --%>
-            <img alt="" src="http://localhost:1111/resources/img/user-profile/{{getUserByID.PROFILE}}">
-                <ul  class="tooltiptext">
+            	<img alt="" src="${userProfile}">
+                <ul class="tooltiptext">
                 	<li><a href="/profile" target="_self">${userName}</a></li>
-                	<li><a href="/logout?logout"> ចាកចេញ</a></li>
+                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
                 </ul>
             </a>
             </li>
@@ -81,6 +88,7 @@ window.fileName="";
         </ul>
      </div>
 </nav>
+
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">
