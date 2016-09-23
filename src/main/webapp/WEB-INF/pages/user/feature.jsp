@@ -241,9 +241,9 @@ a.thumbnail {
 							</span>
 						</a>  
 					</div>
-					<div id="PAGINATION"></div>
+					<!-- <div id="PAGINATION"></div> -->
 				</div>
-				<!-- <div id="PAGINATION"></div> -->
+				<div id="PAGINATION"></div>
 			</div> 
 		</div>
 	</section>
