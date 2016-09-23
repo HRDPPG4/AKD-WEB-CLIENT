@@ -5,6 +5,16 @@
 <c:set var="ContextPath" value="http://localhost:2222" />
 <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
 
+<style>
+#searchBox, .navbar-logo {
+    float: left;
+    display: table-cell;
+    margin-right: 100px;
+}
+
+</style>
+
+
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
@@ -33,19 +43,7 @@ window.fileName="";
 			</span>
 	<div class="container">
 	<div class="row">
-        <div class="col-sm-4 col-sm-offset-2">
-            <div id="imaginary_container"> 
-                <div class="input-group stylish-input-group">
-                    <!-- <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="allDocTitle.TITLE for allDocTitle in allDocTitle | filter:$viewValue | limitTo:8"> -->
-                    <input myEnter="searchPage()" type="text" class="form-control form-search"  placeholder="ស្វែងរក"  ng-model="selected" uib-typeahead="title for title in allDocTitle | filter:$viewValue | limitTo:8">
-                    <span class="input-group-addon">
-                        <button type="submit" ng-click="searchPage()">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>  
-                    </span>
-                </div>
-            </div>
-        </div>
+        <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/search.jsp"></jsp:include></span>
         <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
 	</div>	
 	

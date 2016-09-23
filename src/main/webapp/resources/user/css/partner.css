@@ -42,15 +42,18 @@
 }
 #partner
 {
-	font-size: 27px;
+	*font-size: 27px;
+	
 }
 #partner li#partner
 {
-	font-size: 25px;
+	*font-size: 25px;
+	
 }
 
 #partner .navbar-nav>li>a {
     line-height: 0px;
+    font-size: 34px;
 }
 #partner .navbar-inverse .navbar-nav>.open>a,#partner .navbar-inverse .navbar-nav>.open>a:focus,#partner  .navbar-inverse .navbar-nav>.open>a:hover {
     color:black !important;
