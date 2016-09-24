@@ -19,7 +19,7 @@ public class AutoLoginController {
 	private UserService userService;
 	
 	@RequestMapping(value="/auto-login" , method= RequestMethod.GET)
-	public String autoLogin(@RequestParam("user-id") String userId , @RequestParam(name="continue-site", required=false , defaultValue="http://www.knongdai.com") String continueSite) {
+	public String autoLogin(@RequestParam("user-id") String userId , @RequestParam(name="continue-site", required=false , defaultValue="${pageContext.request.contextPath}") String continueSite) {
 
 		User user = userService.findUserByUserId(userId);
 

@@ -89,7 +89,7 @@
 			<div class="row" style="padding:12px;">
 				<div class="col-md-12">					 
 					<h1>Access Denied! <br> YOU DON'T HAVE PERMISSION TO ACCESS THIS PAGE.</h1>
-					<h1><a href="/login?logout">Login</a></h1>	
+					<h1><a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}">Login</a></h1>	
 				</div>			
 			</div> 
 		</div>

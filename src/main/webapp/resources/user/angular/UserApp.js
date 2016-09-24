@@ -287,7 +287,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	PAGINATION.on("page", function(event, num){
-		alert(num);
+		//alert(num);
 		$scope.filter.page = num;
 		$scope.getDocumentByPopular();
 	});
@@ -328,7 +328,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	PAGINATION.on("page", function(event, num){
-		alert(num);
+		//alert(num);
 		$scope.filter.page = num;
 		$scope.getDocumentByRecommended();
 	});
@@ -380,7 +380,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	
 	PAGINATION.on("page", function(event, num){
-		alert(num);
+		//alert(num);
 		$scope.filter.page = num;
 		$scope.getDocumentByNewPost();
 	});

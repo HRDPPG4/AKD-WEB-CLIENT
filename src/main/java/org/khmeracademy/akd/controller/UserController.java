@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -67,6 +68,11 @@ public class UserController {
 	public String feature11(){
 		return "user/featured";
 	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView method() {
+		return new ModelAndView("redirect:" + "http://120.136.24.174:13300/login?continue-site=http://localhost:2222");
+
+    }
 	
 }
 
