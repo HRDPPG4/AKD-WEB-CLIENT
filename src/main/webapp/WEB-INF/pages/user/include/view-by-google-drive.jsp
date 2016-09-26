@@ -16,9 +16,9 @@
           <iframe ng-src='{{trustSrc(docDetail[0].EMBEDED_LINK)}}'></iframe>
         	
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
                   
-        </div>
+        </div> -->
       </div>      
     </div>
   </div>  

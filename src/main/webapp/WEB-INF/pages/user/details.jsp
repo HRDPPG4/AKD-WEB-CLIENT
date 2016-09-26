@@ -129,6 +129,12 @@ body
 	word-wrap:break-word !important;
 	font-family:Khmer OS Battambang;	
 }
+.shareIcon .fa-share-alt:before,.shareIcon .fa-arrow-circle-o-down:before,.shareIcon .fa-thumbs-up:before{
+	color:white;
+}
+#share .fa-share-alt:before,#share .fa-arrow-circle-o-down:before,#share .fa-thumbs-up:before{
+	color:black;
+}
 
 
 
@@ -215,7 +221,7 @@ body
 												<button class="btn-savelist-detail" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)"><span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span></button>
 
 										<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
-												<button class="btn-share-detail" id="shareBtn"><span><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
+												<button class="btn-share-detail" id="shareBtn"><span​ class="shareIcon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>ចែករំលែក</button>
 
 												<button class="btn-report-detail"​ ng-click="checkUserLogin()"><span><i class="fa fa-flag" aria-hidden="true"></i></span>ការវាយតម្លៃ</button>											
 
@@ -308,10 +314,10 @@ body
 									 
 									
 									 <div class="slide-detail-more">
-									 	<div id="publish">Publish on: {{docDetail[0].CREATED_DATE}}</div>
-										<div id="category">Category: {{docDetail[0].CATEGORY[0].CAT_NAME}}</div>
+									 	<div id="publish">ថ្ងៃចែកចាយ: {{docDetail[0].CREATED_DATE}}</div>
+										<div id="category">ប្រភេទកញ្ចប់: {{docDetail[0].CATEGORY[0].CAT_NAME}}</div>
 										<hr>
-										<div id="description">Description: 
+										<div id="description">ការរៀបរាប់បន្ថែម: 
 											<div>
 												{{docDetail[0].DES}}
 											</div>
@@ -393,6 +399,7 @@ body
 	    windowHeight = $(window).innerHeight();
 	    $('#SlideBox iframe').css('min-height', windowHeight-180);
 	    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
+	    $('#Slide-Detail .modal-body').css('min-height', windowHeight-30);
 	    $('#ViewByGoogleDrive').css('min-height', windowHeight);
 	    
 	  };
