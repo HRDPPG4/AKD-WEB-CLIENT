@@ -116,7 +116,8 @@
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{s.LIST_NAME}}</td>
 										<td>{{s.CREATED_DATE}}</td>
-										<!-- <td>{{s.REMARK}}</td> -->
+										<td>{{s.USERS[0].USER_NAME}}</td>
+									
 										<td>{{s.USER_ID}}</td>
 										<!-- <td>{{s.DOC_ID}}</td> -->
 										<td>
