@@ -99,11 +99,12 @@
 {
 	position: absolute;
 	right: 15px;
-	top: 13px;
+	top: 10px;
 	background-color: white;
 	height:10%;
-	width:10%;
+	width:25%;
 	opacity:0;
+	cursor: default;
 }
 div.drive-viewer-popout-button drive-viewer-dark-button goog-inline-block drive-viewer-button
 {
