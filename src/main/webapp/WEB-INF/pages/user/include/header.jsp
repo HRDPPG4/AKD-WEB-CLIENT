@@ -71,6 +71,41 @@ img.userProfile
 {
 	float:right;
 }
+.navbar-right .dropdown-menu
+{
+	padding:15px;
+}
+.navbar-nav>li>.dropdown-menu
+{
+	margin-top: 15px;
+}
+ul.dropdown-menu.dropdown-item::before{
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: 84%;
+    border-width: 10px;
+    border-style: dashed dashed solid;
+    border-color: transparent;
+    border-bottom-color:white;
+    z-index: 2;
+    display:block;
+    
+}
+ul.dropdown-menu.dropdown-item::after{
+    content: "";
+    position: absolute;
+    top: -26%;								/* differenct from before  */
+    left: 84%;
+    border-width: 10px;
+    border-style: dashed dashed solid;
+    border-color: transparent;
+    border-bottom-color: #fff;				/* differenct from before  */
+    border-bottom-color: rgba(0,0,0,.2);	/* differenct from before  */
+    z-index: 1;								/* differenct from before  */
+    display:block;
+}
+
 </style>
 
 <sec:authorize access="isAuthenticated()">
@@ -127,7 +162,7 @@ window.fileName="";
 					  </ul>
 					</div>			    	
 		    	</span> 
-            </sec:authorize>			      
+            </sec:authorize>	
 		    <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
 		        <span class="upload-login-register">
 		        	<div class="user"> 
@@ -150,109 +185,30 @@ window.fileName="";
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">
-<nav class="navbar navbar-default navbar-sticky navbar-main-menu">
-	<div class="container">
-		 <div class="main-menu">
-			 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;">
-				 <a href="/" class="logo-main-menu" style="background-color:transparent !important;">
-				 	<img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
-				 </a>
-			</div>
-			<ul class="menu-basic nav" id="myTopnav">
-				<li class="icon">
-				   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-				 </li>			
-				  <li><a class="menu" href="/">
-					   <span><i class="fa fa-home" aria-hidden="true"></i>
-					   </span>ទំព័រដើម</a>
-				  </li>				  
-				  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak 
-				  	<%-- <c:if test="${page == 'pageContext.request.requestURI'}">
-			          class="activeNav"
-			    	</c:if> --%>	
-			    	<%-- <c:set var="active" value="${fn:endsWith(pageContext.request.requestURI, page.url)}" /> --%>
-			    			  
-				  >
-				  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
-						   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
-						   </span>{{mainCat.CAT_NAME}}
-					 	</a>
-				  </li>
-			</ul>
-</div> 
-		
-
-</nav>
-	</div>
-<!-- </div> -->
-
-
- <script>
-
-/* $(document).ready(function() {
-	var pathname = window.location.pathname;
-	console.log(pathname);
-	$('#myTopnav > li > a[href="'+pathname+'"]').parent().addClass('activeNav');	
-}); */
-
-/* $(function() {
-    var nav = document.getElementById("myTopnav"),
-        anchor = nav.getElementsByTagName("a"),
-        current = window.location;
-    
-    console.log("anchor");
-    console.log(anchor[0].href);
-   // console.log("current");
-   // console.log(current);
-    console.log("href");
-    console.log(current.href);
-
-    for (var i = 0; i < anchor.length; i++) {
-	    if(anchor[i].href == current.href) {
-	        anchor[i].parent().addClass('activeNav');
-	
-	    }
-	}
-}); */
-
-$(function () {
-    setNavigation();
-});
-
-function setNavigation() {
-    var path = window.location.pathname;    
-    path = path.replace(/\/$/, "");
-    path = decodeURIComponent(path);
-    
-    
-    var nav = document.getElementById("myTopnav"),
-    anchor = nav.getElementsByTagName("a"),
-    current = window.location,
-    href=current.href;
-    
-   /*  for (var i = 0; i < anchor.length; i++) {
-	    if(anchor[i].href == current.href) {
-	        anchor[i].parent().addClass('activeNav');
-	
-	    }
-	} */
-    
-  //  alert(path);
-    $("#myTopnav a").each(function () {
-       // var href = $(this).attr('href');
-      //  alert("Path URL: "+path);
-     //   alert("href: "+href);
-       // alert("anchor: "+anchor[0]);
-        if (href==anchor[1]) {
-            $(this).closest('li').addClass('activeNav');
-        }
-        
-        
-        
-        
-    });
-}
-
-
-</script>
-
+	<nav class="navbar navbar-default navbar-sticky navbar-main-menu">
+		<div class="container">
+			 <div class="main-menu">
+				 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;">
+					 <a href="/" class="logo-main-menu" style="background-color:transparent !important;">
+					 	<img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
+					 </a>
+				</div>
+				<ul class="menu-basic nav" id="myTopnav">
+					<li class="icon">
+					   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+					 </li>			
+					  <li><a class="menu" href="/">
+						   <span><i class="fa fa-home" aria-hidden="true"></i>
+						   </span>ទំព័រដើម</a>
+					  </li>				  
+					  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak >
+					  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
+							   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
+							   </span>{{mainCat.CAT_NAME}}
+						 	</a>
+					  </li>
+				</ul>
+			</div> 
+		</div>
+	</nav>
+</div>

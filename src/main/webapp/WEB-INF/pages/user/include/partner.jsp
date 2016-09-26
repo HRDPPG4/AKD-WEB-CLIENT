@@ -3,7 +3,7 @@
     
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/partner.css">	
 
- <!-- <div class="navbar-header">
+  <!-- <div class="navbar-header">
 	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myPartner" aria-expanded="false">
 	 	<span class="sr-only">Toggle navigation</span>
 		<span class="icon-bar"></span>
@@ -15,15 +15,17 @@
 <div class="collapse navbar-collapse" id="myPartner">  
   <ul class="nav navbar-nav navbar-right">	
 	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th"></span></a>
-	  <ul class="dropdown-menu dropdown-item" style="max-height: 346px; height: 396px;">
+	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	  	<span class="glyphicon glyphicon-th"></span>
+	  </a>
+	  <ul class="dropdown-menu dropdown-item partnerUL">
 			<li ng-repeat="partner in partners">
 				<a href="{{partner.SITE_URL}}">
 					<img class="img-rounded" alt="" src="{{partner.SITE_LOGO}}"/>
 					<span class="site-url">{{partner.SITE_NAME}}</span>
 				</a>
 			</li>			
-	  </ul>
+	  </ul>	  
 	</li>
 	<!-- <li>
 		<a href="#">
