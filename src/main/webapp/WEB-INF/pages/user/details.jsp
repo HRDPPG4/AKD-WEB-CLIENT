@@ -201,8 +201,7 @@ body
 											<span id="img-user">
 												<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
 											</span>
-											<!-- {{UserID}}  -->
-											{{docDetail[0].USERS[0].USER_NAME}}
+											 {{docDetail[0].USERS[0].USER_NAME}}
 											
 											<input type="text" value={{docDetail[0].THUMBNAIL_URL}} id="thubnail" ng-show="false">
 											
