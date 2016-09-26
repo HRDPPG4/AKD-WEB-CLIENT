@@ -65,7 +65,7 @@ window.fileName="";
 	<div class="container">
 	<div class="row">
         <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/search.jsp"></jsp:include></span>
-        <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+        <%-- <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span> --%>
 	</div>	
 	
 	</div>
@@ -88,7 +88,8 @@ window.fileName="";
             	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
             	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
             </li>
-            <li id="signup"><a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>
+            <li id="signup">
+            	<a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>            	
             </li>
             </sec:authorize>
             
@@ -102,9 +103,9 @@ window.fileName="";
                 </ul>
             </a>
             </li>
-            </sec:authorize>
-          
-        </ul>
+            </sec:authorize>    
+            <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+        </ul>        
      </div>
 </nav>
 
