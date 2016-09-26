@@ -55,9 +55,23 @@ img.userProfile
 	color:white;
 	padding: 7px 10px;
 }
-
+.navbar-collapse.collapse
+{
+	display: table-cell!important;
+}
+.navbar-nav>li>a
+{
+	padding:0px;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover
+{
+	background-color: white;
+}
+.account,#partner,.upload-login-register
+{
+	float:right;
+}
 </style>
-
 
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
@@ -90,18 +104,32 @@ window.fileName="";
 			<div class="row">
 		 	<span><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/search.jsp"></jsp:include></span> 	
 		 	<sec:authorize access="isAuthenticated()">
-		    	<span>
-		    		<a href="/profile" style="float:right;">
-			    		<img alt="" src="${userProfile}" class="userProfile">
-			    		<%-- <ul class="tooltiptext">
-		                	<li><a href="/profile" target="_self">${userName}</a></li>
-		                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
-		                </ul> --%>
-			    	</a>
+		    	<span class="account">
+					<div class="collapse navbar-collapse" id="userAccount"​>  
+					  <ul class="nav navbar-nav navbar-right">	
+						<li class="dropdown">
+						  <a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						  	<img alt="" src="${userProfile}" class="userProfile">
+						  </a>
+						  <ul class="dropdown-menu dropdown-item">
+								<li>
+									<a href="/profile">
+										<span>${userName}</span>
+									</a>
+								</li>
+								<li>
+									<a href="/logout?logout">
+										<span>ចាកចេញ</span>
+									</a>
+								</li>			
+						  </ul>
+						</li>
+					  </ul>
+					</div>			    	
 		    	</span> 
             </sec:authorize>			      
-		    <span id="partner" style="float:right;"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
-		        <span style="float:right;">
+		    <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+		        <span class="upload-login-register">
 		        	<div class="user"> 
 						<div class="input-group">								
 						    <span class="input-group-btn">	    	
@@ -118,40 +146,6 @@ window.fileName="";
 		        </span> 
 			</div>				
 		</div>
-		<%-- <div class="upload-signup-signin" >			
-	     	<ul> 
-		     	<li id="partner">
-		     		<jsp:include page="partner.jsp"></jsp:include>
-		     	</li>           
-	            <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
-	             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
-	            </li>
-				
-				<!-- If not yet login -->
-				<sec:authorize access="isAnonymous()">
-	            <li id="signin">
-	            	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
-	            	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
-	            </li>
-	            <li id="signup">
-	            	<a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>            	
-	            </li>
-	            </sec:authorize>
-	            
-	            <!-- If login already-->
-	            <sec:authorize access="isAuthenticated()">
-	            <li class="col-sm-1" id="avatar-user"><a href="/profile">
-	            	<img alt="" src="${userProfile}">
-	                <ul class="tooltiptext">
-	                	<li><a href="/profile" target="_self">${userName}</a></li>
-	                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
-	                </ul>
-	            </a>
-	            </li>
-	            </sec:authorize>    
-	            <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
-	        </ul>        
-	    </div> --%>
 	</nav>
 </div>
 <!-- main menu -->
