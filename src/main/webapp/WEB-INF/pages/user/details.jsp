@@ -398,8 +398,8 @@ body
 	  function setHeight() {
 	    windowHeight = $(window).innerHeight();
 	    $('#SlideBox iframe').css('min-height', windowHeight-180);
-	    $('#Slide-Detail iframe').css('min-height', windowHeight-30);
-	    $('#Slide-Detail .modal-body').css('min-height', windowHeight-30);
+	    $('#Slide-Detail iframe').css('min-height', windowHeight-60);
+	    $('#Slide-Detail .modal-body').css('min-height', windowHeight-50);
 	    $('#ViewByGoogleDrive').css('min-height', windowHeight);
 	    
 	  };
