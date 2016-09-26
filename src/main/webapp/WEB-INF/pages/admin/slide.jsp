@@ -144,7 +144,8 @@ window.userID = "${userID}";
 									<tr>
 										<th>#</th>
 										<th>Title</th>
-										<th>Post Date</th>
+										<th>Posted By</th>
+										<th>Posted Date</th>
 										<th>View</th>
 										<th>Share</th>
 										<th>Status</th>
@@ -154,7 +155,8 @@ window.userID = "${userID}";
 								<tbody>
 									<tr ng-repeat="d in document" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{d.TITLE}}</td>
+										<td>{{d.TITLE | strLimit: 22}}</td>
+										<td>{{d.USERS[0].USER_NAME | strLimit: 22}}</td>
 										<td>{{d.CREATED_DATE}}</td>
 										<td>{{d.VIEW}}</td>
 										<td>{{d.SHARE}}</td>
