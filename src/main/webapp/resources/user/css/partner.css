@@ -33,7 +33,8 @@
 	display: table-cell!important;
 }
 #partner .nav>li>a {
-    padding: 0px 26px;
+    padding: 0px;
+    padding-left: 7px;
    	background-color: white;
    	color:black !important;
 }
@@ -53,9 +54,13 @@
 
 #partner .navbar-nav>li>a {
     line-height: 0px;
-    *font-size: 34px;
+    font-size: 19px;
 }
 #partner .navbar-inverse .navbar-nav>.open>a,#partner .navbar-inverse .navbar-nav>.open>a:focus,#partner  .navbar-inverse .navbar-nav>.open>a:hover {
     color:black !important;
     background-color: white;
+}
+#partner .glyphicon-th:before{
+	font-size: 35px;	
+	margin-right: 13px;
 }

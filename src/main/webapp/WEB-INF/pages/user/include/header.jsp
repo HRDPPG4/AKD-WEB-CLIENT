@@ -32,6 +32,29 @@
     font-weight:bold;
     background-color:green;
 }
+img.userProfile
+{
+	width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    vertical-align: top;
+    margin: 0px;
+    margin-left: 20px;
+}
+#partner
+{
+	
+}
+
+.user
+{
+	display:table-cell;
+}
+.user .input-group-btn:last-child>.btn{
+	margin-left: 5px;
+	color:white;
+	padding: 7px 10px;
+}
 
 </style>
 
@@ -56,81 +79,99 @@ window.fileName="";
 
 
 <!-- top menu -->
-	<div class="top-menu" ng-init="getUserID(memIdAngular)">
-		<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
-			<span class="navbar-logo">
-					<a href="/" class="navbar-brand# brand-logo"> <img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/logo-4.png"/>					 
-					 </a>					
-			</span>
-	<div class="container">
-	<div class="row">
-        <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/search.jsp"></jsp:include></span>
-        <%-- <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span> --%>
-	</div>	
-	
-	</div>
-	
-	
-		
-	<div class="upload-signup-signin" >
-	
-     	<ul> 
-     	<li id="partner">
-     		<%-- <jsp:include page="partner.jsp"></jsp:include> --%>
-     	</li>           
-            <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
-             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
-            </li>
-			
-			<!-- If not yet login -->
-			<sec:authorize access="isAnonymous()">
-            <li id="signin">
-            	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
-            	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
-            </li>
-            <li id="signup">
-            	<a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>            	
-            </li>
-            </sec:authorize>
-            
-            <!-- If login already-->
-            <sec:authorize access="isAuthenticated()">
-            <li class="col-sm-1" id="avatar-user"><a href="/profile">
-            	<img alt="" src="${userProfile}">
-                <ul class="tooltiptext">
-                	<li><a href="/profile" target="_self">${userName}</a></li>
-                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
-                </ul>
-            </a>
-            </li>
-            </sec:authorize>    
-            <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
-        </ul>        
-     </div>
-</nav>
-
+<div class="top-menu" ng-init="getUserID(memIdAngular)">
+	<nav class="navbar navbar-inverse navbar-fixed-top navbar-bg">
+		<span class="navbar-logo">
+			<a href="/" class="navbar-brand# brand-logo"> 
+				<img alt="Logo" src="${pageContext.request.contextPath}/resources/user/img/logo-4.png"/>					 
+			 </a>					
+		</span>		
+		<div class="container">
+			<div class="row">
+		 	<span><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/search.jsp"></jsp:include></span> 	
+		 	<sec:authorize access="isAuthenticated()">
+		    	<span>
+		    		<a href="/profile" style="float:right;">
+			    		<img alt="" src="${userProfile}" class="userProfile">
+			    		<%-- <ul class="tooltiptext">
+		                	<li><a href="/profile" target="_self">${userName}</a></li>
+		                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
+		                </ul> --%>
+			    	</a>
+		    	</span> 
+            </sec:authorize>			      
+		    <span id="partner" style="float:right;"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+		        <span style="float:right;">
+		        	<div class="user"> 
+						<div class="input-group">								
+						    <span class="input-group-btn">	    	
+							    <button class="btn btn-primary" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">
+							    	ចែកចាយឯកសារ
+							    </button>
+							    <sec:authorize access="isAnonymous()">
+							    	<a href="http://120.136.24.174:13300/login?continue-site=http://localhost:2222/" class="btn btn-default">ចូលប្រើប្រាស់</a>
+							    	<a href="#" class="btn btn-default">ចុះឈ្មោះ</a> 
+							    </sec:authorize>
+						    </span>
+						</div>
+					</div>
+		        </span> 
+			</div>				
+		</div>
+		<%-- <div class="upload-signup-signin" >			
+	     	<ul> 
+		     	<li id="partner">
+		     		<jsp:include page="partner.jsp"></jsp:include>
+		     	</li>           
+	            <!-- <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="showCategory()">ចែកចាយឯកសារ</a> -->
+	             <li id="upload"><a href="#" class="btn btn-default" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">ចែកចាយឯកសារ</a>
+	            </li>
+				
+				<!-- If not yet login -->
+				<sec:authorize access="isAnonymous()">
+	            <li id="signin">
+	            	<!-- <a href="#features" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a> -->
+	            	<a href="http://120.136.24.174:13300/login?continue-site=${pageContext.request.contextPath}" class="btn btn-default" data-toggle="modal" data-target="#login">ចូលប្រើប្រាស់</a>
+	            </li>
+	            <li id="signup">
+	            	<a href="#stories" class="btn btn-default" data-toggle="modal" data-target="#register">ចុះឈ្មោះ</a>            	
+	            </li>
+	            </sec:authorize>
+	            
+	            <!-- If login already-->
+	            <sec:authorize access="isAuthenticated()">
+	            <li class="col-sm-1" id="avatar-user"><a href="/profile">
+	            	<img alt="" src="${userProfile}">
+	                <ul class="tooltiptext">
+	                	<li><a href="/profile" target="_self">${userName}</a></li>
+	                	<li><a href="/logout?logout"> ចាកចេញ </a></li>
+	                </ul>
+	            </a>
+	            </li>
+	            </sec:authorize>    
+	            <span id="partner"><jsp:include page="${pageContext.request.contextPath}/WEB-INF/pages/user/include/partner.jsp"></jsp:include></span>
+	        </ul>        
+	    </div> --%>
+	</nav>
 </div>
 <!-- main menu -->
 <div class="main-menu-contain">
 <nav class="navbar navbar-default navbar-sticky navbar-main-menu">
 	<div class="container">
-	<!--  <div class="navbar-logo-main"> -->
-			  
-	<!-- </div> -->
-	
 		 <div class="main-menu">
-		 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;"><a href="/" class="logo-main-menu" style="background-color:transparent !important;"><img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/></a>
-		</div>
+			 <div style="float:left;position:relative;top:5px;padding-right:20px;padding-bottom:8px;">
+				 <a href="/" class="logo-main-menu" style="background-color:transparent !important;">
+				 	<img alt="Logo" style="width:40px;" src="${pageContext.request.contextPath}/resources/user/img/AKD.png"/>
+				 </a>
+			</div>
 			<ul class="menu-basic nav" id="myTopnav">
 				<li class="icon">
 				   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-				 </li>
-			
+				 </li>			
 				  <li><a class="menu" href="/">
 					   <span><i class="fa fa-home" aria-hidden="true"></i>
 					   </span>ទំព័រដើម</a>
-				  </li>
-				  
+				  </li>				  
 				  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak 
 				  	<%-- <c:if test="${page == 'pageContext.request.requestURI'}">
 			          class="activeNav"

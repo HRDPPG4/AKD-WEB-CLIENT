@@ -34,7 +34,8 @@ ul.feature-header li.view-feature{
 .top-menu{
   height: 60px;
 }
-.navbar-bg{
+.navbar-bg{  
+  padding: 10px;
   padding-top: 10px;
   background-color: #fff;
   border-bottom: 1px solid #fff;
