@@ -8,6 +8,18 @@ html,body {
     background-color:#E9EBEE;
 }
 
+.navbar-main-menu,.section-title,.input-group-btn:last-child>.btn,ul.category-menu li.bg-cate,li.cates-main a:hover,.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover,.cd-top.cd-fade-out,.cd-top.cd-is-visible,.cd-top,ul.ul-toolbar > li.feedback a, ul.ul-toolbar > li.search{
+	background-color: #26a63c;
+}
+.fa-share-alt:before,.fa-arrow-circle-o-down:before,.fa-thumbs-up:before{
+	color:#26a63c;
+}
+li.cates-main a
+{
+	border-bottom: 1px dashed #26a63c;
+}
+
+
 /*top menu*/
 #header{
   width: 100%;
@@ -246,7 +258,8 @@ ul li > ul.tooltiptext li a:hover{
     position: fixed;
     width: 100%;
    z-index: 300;
-  background-color: #106CC8;
+  *background-color: #106CC8;
+  
   border-width: 1px 0;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -358,7 +371,6 @@ ul.menu-basic li.icon {display: none;}
   font-size: 16px;
 	line-height: 30px;
   letter-spacing: 1px;
-	background-color:#106CC8;
 }
 .popular-title{
 	margin:0;
@@ -759,7 +771,6 @@ ul.ul-toolbar > li.feedback:hover{
     color: #000;
     padding: 10px;
     text-decoration: none;
-     background-color:#106CC8 !important;
   border:1px solid #fff;
 }
 ul.ul-toolbar > a{
@@ -785,8 +796,7 @@ ul.ul-toolbar > li.feedback a{
     color: #000;
     padding: 5px;
     text-decoration: none;
-    background-color:#106CC8 !important;
-  border:1px solid #fff;
+  	border:1px solid #fff;
 }
 
 button.btn-side-search{
