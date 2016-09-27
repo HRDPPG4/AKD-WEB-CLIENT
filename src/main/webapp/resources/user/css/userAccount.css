@@ -1,0 +1,10 @@
+.skin-blue .main-header .navbar ,.skin-blue .main-header .logo{
+    background-color: #26a63c;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side{
+	background-color: #333;
+}
+.user-panel>.image>img {
+    max-width: 120px;
+    margin-left: 42px;
+}

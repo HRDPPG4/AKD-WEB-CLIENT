@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/AdminLTE.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/_all-skins.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/userAccount.css">	
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->

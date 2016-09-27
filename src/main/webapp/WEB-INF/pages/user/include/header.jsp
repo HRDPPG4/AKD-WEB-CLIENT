@@ -167,7 +167,10 @@ window.fileName="";
 		        <span class="upload-login-register">
 		        	<div class="user"> 
 						<div class="input-group">								
-						    <span class="input-group-btn">	    	
+						    <span class="input-group-btn">	
+						    	<a href="/userAccount" class="btn btn-primary">
+							    	Test User
+							    </a>    	
 							    <button class="btn btn-primary" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">
 							    	ចែកចាយឯកសារ
 							    </button>
