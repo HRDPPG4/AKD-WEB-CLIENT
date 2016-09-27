@@ -49,6 +49,8 @@ img.avatar {
 {
 	width:100%;
 	padding-right: 40px;
+	top: -6px;
+    position: relative;
 }
 #header .top-menu .navbar-logo a
 {
