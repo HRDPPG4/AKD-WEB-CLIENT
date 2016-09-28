@@ -97,7 +97,7 @@ a.thumbnail {
 
 <!--  New Code -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/AdminLTE.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/AdminLTE.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/plugins/AdminLTE/_all-skins.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/userAccount.css">	
 </head>
@@ -154,15 +154,15 @@ a.thumbnail {
 
 
 <!-- library jquery for file upload -->
-<script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/user/js/jquery-latest.min.js"></script> --%>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery.filer.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/user/js/jquery-upload-file.js"></script>
 <!-- Online Link -->
 
 <!-- New code here -->
 <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/fastclick/fastclick.js"></script> 
-<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/app.min.js"></script>
-<%-- <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/demo.js"></script> --%>
+<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/app.js"></script>
+<%--  <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/demo.js"></script> --%> 
 
 </body>
 </html>
