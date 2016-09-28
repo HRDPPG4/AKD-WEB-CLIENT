@@ -75,11 +75,6 @@
         </a>
       </li>
 
-      <li>
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>About</span>          
-        </a>
-      </li>
     </ul>
   </section>
   <!-- /.sidebar -->

@@ -19,3 +19,14 @@ user-panel.profile
 	    margin-left: 42px;
 	}
 }
+
+.main-header .navbar{
+	margin-left: 0px;
+}
+.main-header .sidebar-toggle {
+    color: #fff;
+    background-color: #26a63c !important;
+}
+.skin-blue .main-header .navbar, .skin-blue .main-header .logo{
+	display: table;
+}
