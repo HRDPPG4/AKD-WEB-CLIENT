@@ -4,93 +4,7 @@ var API_PATH = "http://localhost:1111";
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 //	CATEGORY	
-	$scope.showCategory = function(){			
-		$http({
-			url:API_PATH+'/api/v1/category',
-			method:'GET',
-			params : $scope.filter
-		}).then(function(response){
-		//	console.log(response.data.DATA);
-			$scope.category=response.data.DATA;	
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
-			//console.log("ALL Cat in admin"+$scope.category);
-		}, function(response){		
-		});
-	}	
-	$scope.showCategory();
-	
-	
-	
-//	$scope.removeCategory = function(id) {
-//		$http({
-//			url : API_PATH+'/api/v1/category/' + id,
-//			method : 'DELETE'
-//		}).then(function() {
-//			$scope.showCategory();
-//		}, function() {
-//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-//		});
-//	}
-
-	$scope.remove = function(id) {
-	alert(id);
-	$http({
-		url : API_PATH+'/api/v1/category/' + id,
-		method : 'PUT'
-	}).then(function() {
-		$scope.showCategory();
-		alert("success");
-	}, function() {
-		alert("Fiald");
-	});
-}
-	
-	$scope.alertDelete = function(id) {
-		swal({
-			title : "Are you sure?",
-			text : "You will not be able to recover this imaginary file!",
-			type : "warning",
-			showCancelButton : true,
-			confirmButtonColor : "#DD6B55",
-			confirmButtonText : "Yes, delete it!",
-			closeOnConfirm : false
-		},
-				function() {
-					$scope.removeCategory(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
-							"success");
-				});
-	}
-
-	
-	$scope.getDataForUpdate = function(category) {
-
-		$scope.folderName = category.c.CAT_NAME;
-		$scope.des = category.c.REMARK;
-		$scope.sta = category.c.STATUS;
-	}
-	
-//	$scope.updateCategory = function() {
-//		$http({
-//			url : API_PATH+'/api/v1/category',
-//			method : 'PUT',
-//			data : {
-//				'CAT_NAME' : $scope.folderName,
-//				'REMARK' : $scope.des,
-//				'STATUS' : $scope.sta
-//			}
-//		}).then(function(response) {
-//			$scope.showCategory();
-//		}, function() {
-//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-//		});
-//	}
-
-//	$scope.alertUpdate = function() {
-//		$scope.updateCategory();
-//		swal("Updated!", "You updated the user!", "success")
-//	}
-
+		
 	
 	$scope.getCategoryCount = function() {
 		$http({
@@ -104,6 +18,21 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		});
 	}
 	$scope.getCategoryCount();
+	
+	$scope.showCategoryByLimit = function(){			
+		$http({
+			url:API_PATH+'/api/v1/getAllCategoryByLimit',
+			method:'GET',
+			params : $scope.filter
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.category=response.data.DATA;	
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log("ALL Cat in admin"+$scope.category);
+		}, function(response){		
+		});
+	}	
+	$scope.showCategoryByLimit();
 	
 	//TODO: default filter
 	$scope.filter = {
@@ -128,8 +57,66 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	PAGINATION.on("page", function(event, num){
 		$scope.filter.page = num;
-		$scope.showCategory();
+		$scope.showCategoryByLimit();
 	});
+	
+	$scope.removeCategory = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/category/' + id,
+			method : 'PUT'
+		}).then(function() {
+			$scope.showCategoryByLimit();
+		}, function() {
+			
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeCategory(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
+
+	$scope.getDataForUpdate = function(category) {
+		$scope.folderName = category.c.CAT_NAME;
+		$scope.des = category.c.REMARK;
+		$scope.sta = category.c.STATUS;
+	}
+	
+	$scope.updateCategory = function() {
+		$http({
+			url : API_PATH+'/api/v1/category',
+			method : 'PUT',
+			data : {
+				'CAT_NAME' : $scope.folderName,
+				'REMARK' : $scope.des,
+				'STATUS' : $scope.sta
+			}
+		}).then(function(response) {
+			alert("success");
+			$scope.showCategoryByLimit();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+
+	$scope.alertUpdate = function() {
+		$scope.updateCategory();
+		swal("Updated!", "You updated the user!", "success")
+	}
+
+	
 	
 	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
@@ -209,7 +196,6 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		$scope.filter.page = num;
 		$scope.getUserData();
 	});
-	
 
 	$scope.getUserData();
 
