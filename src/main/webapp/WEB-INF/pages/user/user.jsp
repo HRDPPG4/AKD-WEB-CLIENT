@@ -182,7 +182,7 @@ a.thumbnail {
 <!-- New code here -->
 <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/fastclick/fastclick.js"></script> 
 <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/app.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/demo.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/resources/admin/js/plugins/AdminLTE/demo.js"></script> --%>
 
 </body>
 </html>

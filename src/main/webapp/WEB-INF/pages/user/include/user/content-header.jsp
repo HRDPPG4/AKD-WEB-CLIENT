@@ -14,12 +14,11 @@
     
 <section class="content-header" style="clear:both;">
   <h1>
-    Blank page
-    <small>it all starts here</small>
+    User Page
   </h1>
-  <ol class="breadcrumb">
+<!--   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Examples</a></li>
     <li class="active">Blank page</li>
-  </ol>
+  </ol> -->
 </section>

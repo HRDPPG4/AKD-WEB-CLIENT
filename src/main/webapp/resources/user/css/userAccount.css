@@ -30,3 +30,7 @@ user-panel.profile
 .skin-blue .main-header .navbar, .skin-blue .main-header .logo{
 	display: table;
 }
+.content-header>h1
+{
+	text-align: center;
+}
