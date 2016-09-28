@@ -113,35 +113,29 @@ a.thumbnail {
 
 <div class="container">
 	<section id="search">
-		<!-- section-title -->
-
-				<div style="margin-top:15px;">					 
-
-						<%-- <img src="${pageContext.request.contextPath}/resources/user/img/norecord.png"> --%>
-						
-						<div class="wrapper">
-							<%-- <%@include file="include/user/header-top.jsp"%> --%>
-						  	<%@include file="include/user/left-side-bar.jsp"%>
-						  	
-							<div class="content-wrapper">
-							  <%@include file="include/user/content-header.jsp"%>
-							  <section class="content">
-								
-								<!-- CONTENT BLOCK START HERE -->
-								
-							    <div class="box">
-							      dfdfdf
-							    </div>
-								
-								<!-- END CONTENT BLOCK HERE -->
-								
-							  </section>
-							</div>
-						
-						  <%@include file="include/user/footer.jsp"%>
-						  <%@include file="include/user/right-control-side-bar.jsp"%>
-						</div>
-				
+		<div style="margin-top:15px;">					 						
+			<div class="wrapper">
+				<%-- <%@include file="include/user/header-top.jsp"%> --%>
+			  	<%@include file="include/user/left-side-bar.jsp"%>
+			  	
+				<div class="content-wrapper">
+				  <%@include file="include/user/content-header.jsp"%>
+				  <section class="content">
+					
+					<!-- CONTENT BLOCK START HERE -->
+					
+				    <div class="box">
+				      dfdfdf
+				    </div>
+					
+					<!-- END CONTENT BLOCK HERE -->
+					
+				  </section>
+				</div>
+			
+			  <%@include file="include/user/footer.jsp"%>
+			  <%@include file="include/user/right-control-side-bar.jsp"%>
+			</div>				
 		</div>
 	</section>
 </div>
