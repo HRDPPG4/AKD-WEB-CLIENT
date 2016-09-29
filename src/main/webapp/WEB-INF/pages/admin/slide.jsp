@@ -19,6 +19,9 @@ window.userID = "${userID}";
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Slide</title>
 <%@include file="include/admin-link.jsp"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer.css" type="text/css" >
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer-dragdropbox-theme.css" type="text/css" >
+
 <style>
 .form-horizontal .form-group {
 	margin-right: 20px;

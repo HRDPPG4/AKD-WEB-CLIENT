@@ -8,14 +8,7 @@
 <link href="${pageContext.request.contextPath}/resources/plugins/ionicons/ionicons.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/plugins/AdminLTE/css/skins/_all-skins.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/plugins/AdminLTE/css/AdminLTE.min.css" rel="stylesheet">
-
-<!-- For Page Slide Only -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer.css" type="text/css" >
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer-dragdropbox-theme.css" type="text/css" >
-<!-- End -->
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/header.css">
 <link href="${pageContext.request.contextPath}/resources/admin/css/style.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/user/css/register.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/user/css/header.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/resources/admin/css/dashboard.css" rel="stylesheet">
 
