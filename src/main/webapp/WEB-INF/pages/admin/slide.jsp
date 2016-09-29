@@ -19,8 +19,6 @@ window.userID = "${userID}";
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Slide</title>
 <%@include file="include/admin-link.jsp"%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer.css" type="text/css" >
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer-dragdropbox-theme.css" type="text/css" >
 <style>
 .form-horizontal .form-group {
 	margin-right: 20px;
@@ -183,11 +181,6 @@ window.userID = "${userID}";
 	</div>
 	</div>
 	</div>
-		
-	<%@include file="include/admin-script.jsp"%>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery/jquery.filer.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/jQuery/jquery-upload-file.js"></script>
-
+<%@include file="include/admin-script.jsp"%> 
 </body>
 </html>

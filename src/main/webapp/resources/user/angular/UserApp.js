@@ -1186,37 +1186,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
-///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
-
-
-
-app.directive('bindFile', [function () {
-    return {
-        require: "ngModel",
-    
-        link: function ($scope, el, attrs, ngModel) {
-            el.bind('change', function (event) {
-                ngModel.$setViewValue(event.target.files[0]);
-                $scope.$apply();
-              
-            });
-            
-            $scope.$watch(function () {
-            //	$rootScope.name=$scope.theFile.name;
-
-                return ngModel.$viewValue;
-            }, function (value) {
-                if (!value) {
-                    el.val("");
-                }
-            });
-        }
-
-    };
-
-}]);
-
-///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
 ///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
