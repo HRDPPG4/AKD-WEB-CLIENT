@@ -6,9 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Main Categories</title>
 <%@include file="include/admin-link.jsp"%>
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
-<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
 <style>
 .form-horizontal .form-group {
 	margin-right: 20px;
@@ -244,10 +241,6 @@
 		</div>
 
 	</div>
-<body>
-
-	<script type="text/javascript"	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
-<script src="/resources/admin/angular/angular.min.js"></script>
+<%@include file="include/admin-script.jsp"%>
 </body>
 </html>

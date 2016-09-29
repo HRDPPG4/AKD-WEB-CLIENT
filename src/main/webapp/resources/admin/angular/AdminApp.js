@@ -12,7 +12,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(response){
 		//	console.log(response.data.DATA);
 			$scope.category=response.data.DATA;	
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("ALL Cat in admin"+$scope.category);
 		}, function(response){		
 		});
@@ -98,7 +98,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			method : 'GET'
 		}).then(function(response) {
 			$scope.CategoryCount = response.data.COUNT;
-			console.log($scope.CategoryCount);
+			//console.log($scope.CategoryCount);
 		}, function(response) {
 			
 		});
@@ -153,8 +153,8 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(response) {
 			alert("Folder create Successful");
 			// alert("ID: "+$scope.ParentID);
-			console.log("Check Upload Foler here!!");
-			console.log(response);
+			//console.log("Check Upload Foler here!!");
+			//console.log(response);
 			$scope.message = response.data.message;
 			$scope.folderName = category.c.CAT_NAME;
 			$scope.des = category.c.REMARK;
@@ -176,8 +176,8 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.user = response.data.DATA;
-			console.log($scope.user);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log($scope.user);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -310,7 +310,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 			method : 'GET'
 		}).then(function(response) {
 			$scope.UserCount = response.data.COUNT;
-			console.log($scope.UserCount);
+			//console.log($scope.UserCount);
 		}, function(response) {
 
 		});
@@ -381,7 +381,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
-			console.log($scope.documentCount);
+			//console.log($scope.documentCount);
 		}, function(response) {
 
 		});
@@ -393,8 +393,8 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
-			console.log($scope.document);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log($scope.document);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
@@ -436,8 +436,8 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}).then(function(response){
 		//	console.log(response.data.DATA);
 			$scope.getAllCategory=response.data.DATA;
-			console.log("GET ALL CAT ADMIN");
-			console.log($scope.getAllCategory);
+		//	console.log("GET ALL CAT ADMIN");
+		//	console.log($scope.getAllCategory);
 			
 		}, function(response){
 		
@@ -459,9 +459,9 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 			
 		}).then(function(response) {
-			console.log(response);
+			//console.log(response);
 			$scope.comment = response.data.DATA;
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -539,8 +539,8 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.feedback = response.data.DATA;
-			console.log($scope.feedback);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log($scope.feedback);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			
 		});
@@ -614,8 +614,8 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.report = response.data.DATA;
-			console.log($scope.report);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log($scope.report);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
@@ -689,8 +689,8 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.savelist = response.data.DATA;
-			console.log($scope.savelist);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log($scope.savelist);
+			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});

@@ -19,10 +19,7 @@
 	text-align:center;
 }
 </style>
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/js/sweetalert-dev.js"></script>
-<link href="${pageContext.request.contextPath}/resources/admin/css/sweetalert.css" rel="stylesheet" />
+
 </head>
 <body ng-cloak class="skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -173,6 +170,6 @@
 			<!-- /.content -->
 		</div>
 	</div>
-	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
+	<%@include file="include/admin-script.jsp"%>
 </body>
 </html>
