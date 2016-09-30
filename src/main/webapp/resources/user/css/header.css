@@ -1,5 +1,5 @@
 .modal-header, .close {
-      background-color: #106CC8;
+      background-color: #26a63c;
       color:white !important;
       text-align: center;
     *  font-size: 30px;
@@ -23,7 +23,7 @@ img.avatar {
 
 .modal-header
 {
-	padding:10px 10px 5px 10px;
+*	padding:10px 10px 5px 10px;
 }
 
 #LoginForm,#SignUpForm,#UploadForm
@@ -48,6 +48,9 @@ img.avatar {
 .navbar-logo img
 {
 	width:100%;
+	padding-right: 40px;
+	top: -6px;
+    position: relative;
 }
 #header .top-menu .navbar-logo a
 {

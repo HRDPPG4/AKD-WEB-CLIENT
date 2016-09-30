@@ -18,7 +18,6 @@ ul.feature-header li.view-feature{
 	padding-left:10px;
 	display: inline-block;
 	text-decoration:none;
-	border-right: 1px solid #106CC8;
 }
 
 ul.feature-header li.view-feature:last-child{
@@ -29,12 +28,9 @@ ul.feature-header li.view-feature:last-child{
 }
 
  li.view-feature a{
- color:#106CC8;
  font-size:16px;
 	text-decoration: none;
 }
 li.view-feature a:hover{
- color:#106CC8;
- border-bottom: 2px solid #106CC8;
 	text-decoration: none;
 }

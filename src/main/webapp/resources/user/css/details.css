@@ -248,19 +248,16 @@ color:white;
 
 .btn-savelist-detail{
 	padding:5px;
-	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
 .btn-share-detail{
 	padding:5px;
-	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
 .btn-report-detail{
 	padding:5px;
-	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }
@@ -287,12 +284,10 @@ input[type="button"]{
 	color:#fff;
 	font-size:14px;
 	border:1px solid #fff;
-	background:#106CC8 !important;
 }
 
 .btn-create-new{
 	padding:5px;
-	background:#106CC8;
 	color:#fff;
 	border:1px solid #fff;
 }

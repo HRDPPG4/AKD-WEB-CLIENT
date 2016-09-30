@@ -6,9 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Feedback</title>
 <%@include file="include/admin-link.jsp"%>
-
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
 <style>
 #PAGINATION{
 	text-align:center;
@@ -134,10 +131,7 @@
 			<!-- /.row --> </section>
 			<!-- /.content -->
 		</div>
-
-
 	</div>
-	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
-
+	<%@include file="include/admin-script.jsp"%>
 </body>
 </html>

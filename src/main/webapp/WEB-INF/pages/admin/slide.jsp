@@ -19,19 +19,8 @@ window.userID = "${userID}";
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin | Slide</title>
 <%@include file="include/admin-link.jsp"%>
-
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/angular.min.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/angular/AdminApp.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery.filer.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery-upload-file.js"></script>
-<script	src="${pageContext.request.contextPath}/resources/admin/js/jquery-latest.js"></script>
-<link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer.css" rel="stylesheet" />
-<link href="${pageContext.request.contextPath}/resources/admin/css/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
-
-<!-- Sweet Alert -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer.css" type="text/css" >
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/jQuery/css/jquery.filer-dragdropbox-theme.css" type="text/css" >
 
 <style>
 .form-horizontal .form-group {
@@ -194,8 +183,7 @@ window.userID = "${userID}";
 		</div>
 	</div>
 	</div>
-
 	</div>
-	<script src="/resources/admin/js/jquery.bootpage.min.js"></script>
+<%@include file="include/admin-script.jsp"%> 
 </body>
 </html>

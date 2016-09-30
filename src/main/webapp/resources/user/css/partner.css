@@ -33,7 +33,8 @@
 	display: table-cell!important;
 }
 #partner .nav>li>a {
-    padding: 0px 26px;
+    padding: 0px;
+    padding-left: 7px;
    	background-color: white;
    	color:black !important;
 }
@@ -53,9 +54,46 @@
 
 #partner .navbar-nav>li>a {
     line-height: 0px;
-    *font-size: 34px;
+    font-size: 19px;
 }
 #partner .navbar-inverse .navbar-nav>.open>a,#partner .navbar-inverse .navbar-nav>.open>a:focus,#partner  .navbar-inverse .navbar-nav>.open>a:hover {
     color:black !important;
     background-color: white;
+}
+#partner .glyphicon-th:before{
+	font-size: 35px;	
+	margin-right: 13px;
+}
+#partner .partnerUL{
+	max-height: 346px;
+	height: 396px;
+}
+
+ul.dropdown-menu.dropdown-item.partnerUL::before{
+    content: "" !important;
+    position: absolute !important;
+    top: -18% !important;
+    left: 84% !important;
+    border-width: 10px !important;
+    border-style: dashed dashed solid !important;
+    border-color: transparent !important;
+    border-bottom-color:white !important;
+    z-index: 2 !important;
+    display:block;
+    visibility: visible;
+}
+
+ul.dropdown-menu.dropdown-item.partnerUL::after{
+    content: "" !important;
+    position: absolute !important;
+    top: -19% !important;								/* differenct from before  */
+    left: 84% !important;
+    border-width: 10px !important;
+    border-style: dashed dashed solid !important;
+    border-color: transparent !important;
+    border-bottom-color: #fff !important;				/* differenct from before  */
+    border-bottom-color: rgba(0,0,0,.2) !important;	/* differenct from before  */
+    z-index: 1 !important;								/* differenct from before  */
+    display:block;
+    visibility: visible;
 }

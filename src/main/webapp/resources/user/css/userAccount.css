@@ -1,0 +1,36 @@
+.skin-blue .main-header .navbar ,.skin-blue .main-header .logo{
+    background-color: #26a63c;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side{
+	background-color: #333;
+}
+.user-panel>.image>img {
+    max-width: 120px;
+ *   margin-left: 42px;
+}
+user-panel.profile
+{
+	width:50%;
+	margin:0 auto;
+}
+@media only screen and (max-width: 2000px) {
+    .user-panel>.image>img {
+	    max-width: 120px;
+	    margin-left: 42px;
+	}
+}
+
+.main-header .navbar{
+	margin-left: 0px;
+}
+.main-header .sidebar-toggle {
+    color: #fff;
+    background-color: #26a63c !important;
+}
+.skin-blue .main-header .navbar, .skin-blue .main-header .logo{
+	display: table;
+}
+.content-header>h1
+{
+	text-align: center;
+}

@@ -14,7 +14,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		     		      },
 		     		      {
 		     		        "SITE_URL"	: "http://www.knongdai.com/",
-		     		        "SITE_NAME"	: "KNONGDAI",
+		     		        "SITE_NAME"	: "KND",
 		     		        "SITE_LOGO"	: "http://www.knongdai.com/resources/static/images/favicon/favicon-16x16.png"
 		     		      },
 		     		      {
@@ -258,7 +258,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 preloader.style.display ="none";*/
 			$scope.popular=response.data.DATA;
 
-			$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
+			//$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
 		//	console.log("Popular: "+$scope.popular);
 		}, function(response){
 
@@ -351,7 +351,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			preloader.style.display ="none";*/
 			
 			$scope.newDocument=response.data.DATA;
-			$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
+		//	$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
 		}, function(response){
 
@@ -1186,37 +1186,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 
-///////////////////		START DIRECTIVE FOR UPLOAD FILE	/////////////////
-
-
-
-app.directive('bindFile', [function () {
-    return {
-        require: "ngModel",
-    
-        link: function ($scope, el, attrs, ngModel) {
-            el.bind('change', function (event) {
-                ngModel.$setViewValue(event.target.files[0]);
-                $scope.$apply();
-              
-            });
-            
-            $scope.$watch(function () {
-            //	$rootScope.name=$scope.theFile.name;
-
-                return ngModel.$viewValue;
-            }, function (value) {
-                if (!value) {
-                    el.val("");
-                }
-            });
-        }
-
-    };
-
-}]);
-
-///////////////////		END DIRECTIVE FOR UPLOAD FILE	/////////////////
 
 
 ///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////

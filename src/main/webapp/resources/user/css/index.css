@@ -8,6 +8,27 @@ html,body {
     background-color:#E9EBEE;
 }
 
+/* START WEB PAGE COLOR BLOCK */
+
+.navbar-main-menu,.section-title,.input-group-btn:last-child>.btn,ul.category-menu li.bg-cate,li.cates-main a:hover,.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover,.cd-top.cd-fade-out,.cd-top.cd-is-visible,.cd-top,ul.ul-toolbar > li.feedback a, ul.ul-toolbar > li.search,ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover,ul li > ul.tooltiptext li a:hover,.left-profile,ul.nav-tabs li a,button.clear-history,li.btn-add button,.footer-list,#btn-fullscreen,.btn-savelist-detail,.btn-share-detail,.btn-report-detail,input[type="button"],.btn-create-new,#Slide-Detail .modal-header{
+	background-color: #26a63c;
+}
+.fa-share-alt:before,.fa-arrow-circle-o-down:before,.fa-thumbs-up:before,li.history-title,li.view-feature a:hover,li.view-feature a{
+	color:#26a63c;
+}
+li.cates-main a
+{
+	border-bottom: 1px dashed #26a63c;
+}
+li.view-feature a:hover{
+	border-bottom: 2px solid #26a63c;
+}
+ul.feature-header li.view-feature{
+	border-right: 2px solid #26a63c;
+}
+
+/* END WEB PAGE COLOR BLOCK */
+
 /*top menu*/
 #header{
   width: 100%;
@@ -16,7 +37,8 @@ html,body {
 .top-menu{
   height: 60px;
 }
-.navbar-bg{
+.navbar-bg{  
+*  padding: 10px;
   padding-top: 10px;
   background-color: #fff;
   border-bottom: 1px solid #fff;
@@ -144,7 +166,7 @@ ul li#upload  > a,li#signin  > a ,li#signup > a{
 ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover{
   color:#eee;
 
-  background-color:#106CC8;
+ * background-color:#106CC8;
   text-decoration: none;
 }
 
@@ -230,7 +252,7 @@ ul li > ul.tooltiptext li a:hover{
     color: #fff;
     margin-bottom:-9px;
     text-decoration:none;
-    background-color:#106CC8;
+   * background-color:#106CC8;
     border:none;
     margin-top:-9px;
      line-height:40px;
@@ -246,7 +268,8 @@ ul li > ul.tooltiptext li a:hover{
     position: fixed;
     width: 100%;
    z-index: 300;
-  background-color: #106CC8;
+  *background-color: #106CC8;
+  
   border-width: 1px 0;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -358,7 +381,6 @@ ul.menu-basic li.icon {display: none;}
   font-size: 16px;
 	line-height: 30px;
   letter-spacing: 1px;
-	background-color:#106CC8;
 }
 .popular-title{
 	margin:0;
@@ -434,7 +456,7 @@ ul.nav-tabs{
       list-style: none;
 }
 ul.nav-tabs li a{
-  background:#106CC8;
+ * background:#106CC8;
       color: #fff; 
       border-radius: 2px;
       display: inline-block;
@@ -687,7 +709,7 @@ i.fa-bars{
   top: 0px;
   left: 0;
   opacity: 1;
-  z-index: 100;
+  z-index: 10000;
 }
 
 /**/
@@ -759,7 +781,6 @@ ul.ul-toolbar > li.feedback:hover{
     color: #000;
     padding: 10px;
     text-decoration: none;
-     background-color:#106CC8 !important;
   border:1px solid #fff;
 }
 ul.ul-toolbar > a{
@@ -785,8 +806,7 @@ ul.ul-toolbar > li.feedback a{
     color: #000;
     padding: 5px;
     text-decoration: none;
-    background-color:#106CC8 !important;
-  border:1px solid #fff;
+  	border:1px solid #fff;
 }
 
 button.btn-side-search{
