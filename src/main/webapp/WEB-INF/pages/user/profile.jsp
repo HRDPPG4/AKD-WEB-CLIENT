@@ -46,7 +46,12 @@ window.userID = "${userID}";
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/responsive.css">
 
 
-	
+<style>
+.nav li ul li a:hover {
+    background-color: white !important;
+    color: black !important;
+}
+</style>	
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()">
 <jsp:include page="include/register.jsp"></jsp:include>
