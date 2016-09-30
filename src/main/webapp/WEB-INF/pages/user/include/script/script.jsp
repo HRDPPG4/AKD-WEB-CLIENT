@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page
     pageEncoding="utf-8"%>
     
 <a href="#0" class="cd-top">Top</a>
