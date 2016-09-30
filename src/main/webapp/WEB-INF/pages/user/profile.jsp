@@ -50,7 +50,9 @@ window.userID = "${userID}";
 .nav li ul li a:hover {
     background-color: white !important;
     color: black !important;
+        width: 188px;
 }
+
 </style>	
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()">

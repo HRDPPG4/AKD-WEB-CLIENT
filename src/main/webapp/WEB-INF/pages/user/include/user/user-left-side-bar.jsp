@@ -32,7 +32,7 @@
 		<li class="about" id="toggleSavelist">
 			<a data-toggle="tab" ng-click="getSavelistMenuUser()" href="#savelist">បញ្ជីររក្សាទុកឯកសារ </a>
 			<ul style="background-color:#26a63c">
-				<li ng-repeat ="savelistmenu in getSavelistMenu" class="about" ng-show ="showsavelist" >
+				<li ng-repeat ="savelistmenu in getSavelistMenu" class="about " ng-show ="showsavelist" >
 					<a style="background-color:#26a63c" data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist">{{savelistmenu.LIST_NAME}}</a>
 				</li>
 			</ul>	       
