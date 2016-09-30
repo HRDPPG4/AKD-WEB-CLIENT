@@ -28,19 +28,20 @@
     <!-- /.search form -->
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
-      <li class="header">USER CONTROL</li>
-    
+      <li class="header">USER CONTROL</li>  
+      
       <li>
         <a data-toggle="tab" href="#infor">
           <i class="fa fa-dashboard"></i> <span>About</span>          
         </a>
-      </li>
+      </li>        
       
-      <li>
-        <a href="#">
+      <!-- <li>
+        <a href="#user-dashboard" data-toggle="tab">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>          
         </a>
-      </li>
+      </li> -->
+      
       <li>
         <a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">
           <i class="fa fa-dashboard"></i> <span>My Documents</span> 
@@ -59,7 +60,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-           <li ng-repeat ="savelistmenu in getSavelistMenu" class="about " ng-show ="showsavelist">
+           <li ng-repeat ="savelistmenu in getSavelistMenu" class="savelistData">
           	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
           		{{savelistmenu.LIST_NAME}}
 	          	<span class="pull-right-container">
@@ -74,7 +75,7 @@
         <a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">
           <i class="fa fa-dashboard"></i> <span>History</span>          
         </a>
-      </li>
+      </li>            
     
     </ul>
   </section>

@@ -42,14 +42,15 @@
 		  		  	
 			<div class="content-wrapper">
 			  <%@include file="include/user/content-header.jsp"%>
-			  <section class="content">				
-				<%-- <%@include file="include/user/user-left-side-bar.jsp"%>	 --%>					
+			  <section class="content">								
 				 <div class="tab-content">
-				 	<%@include file="include/user/user-info.jsp"%>	
-					<%@include file="include/user/user-doc.jsp"%>	
-			      	<%@include file="include/user/user-savelist.jsp"%>	
-			 		<%@include file="include/user/user-history.jsp"%>
-			 		<%@include file="include/user/user-create-new-savelist.jsp"%>					 		
+				 	<%@include file="include/user-update/user-info.jsp"%>
+				 	<%-- <%@include file="include/user-update/user-dashboard.jsp"%> --%>				 		
+					<%@include file="include/user-update/user-doc.jsp"%>	
+			      	<%@include file="include/user-update/user-savelist.jsp"%>	
+			 		<%@include file="include/user-update/user-history.jsp"%>
+			 		<%@include file="include/user-update/user-create-new-savelist.jsp"%>
+			 							 		
 				  </div>						
 			  </section>
 			</div>
