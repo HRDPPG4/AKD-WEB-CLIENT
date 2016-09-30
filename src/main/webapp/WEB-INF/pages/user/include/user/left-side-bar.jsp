@@ -7,7 +7,8 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <span class="pull-left# image profile" >
-        <img src="${pageContext.request.contextPath}/resources/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      	<img src="${userProfile}" class="img-circle" alt="User Image">
+        <%-- <img src="${pageContext.request.contextPath}/resources/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image"> --%>
       </span>
       <!-- <div class="pull-left info">
         <p>Alexander Pierce</p>
@@ -28,13 +29,20 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">USER CONTROL</li>
+    
+      <li>
+        <a data-toggle="tab" href="#infor">
+          <i class="fa fa-dashboard"></i> <span>About</span>          
+        </a>
+      </li>
+      
       <li>
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>          
         </a>
       </li>
       <li>
-        <a href="#">
+        <a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">
           <i class="fa fa-dashboard"></i> <span>My Documents</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-green">20</small>
@@ -43,45 +51,32 @@
       </li>
       
       <li class="treeview">
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>My Savelist</span>
+         <a  ng-click="getSavelistMenuUser()" href="#savelist" data-toggle="tab#">
+          <i class="fa fa-dashboard"></i> 
+          <span>My Savelist</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li>
-          	<a href="#"><i class="fa fa-circle-o"></i> 
-          		VB
+           <li ng-repeat ="savelistmenu in getSavelistMenu" class="about " ng-show ="showsavelist">
+          	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
+          		{{savelistmenu.LIST_NAME}}
 	          	<span class="pull-right-container">
 	            	<small class="label pull-right bg-green">27</small>
 	            </span>
           	</a>          	
-          </li>
-          <li>
-          	<a href="#"><i class="fa fa-circle-o"></i> 
-          		Java
-	          	<span class="pull-right-container">
-	            	<small class="label pull-right bg-green">69</small>
-	            </span>
-          	</a>          	
-          </li>
+          </li>  
         </ul>
       </li>
       
       <li>
-        <a href="#">
+        <a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">
           <i class="fa fa-dashboard"></i> <span>History</span>          
         </a>
       </li>
-      
-      <li>
-        <a href="#">
-          <i class="fa fa-dashboard"></i> <span>About</span>          
-        </a>
-      </li>
-
+    
     </ul>
   </section>
   <!-- /.sidebar -->
-</aside>
+</aside>   

@@ -67,10 +67,10 @@ window.userID = "${userID}";
 </header>
 <jsp:include page="include/toolbar-right.jsp"></jsp:include>
 <content>
-	<div id="page-content-wrapper">
-		<section id="profile">
-			<div class="container" >
-				<div class="row section profile topspace-profile">	
+	<!-- <div id="page-content-wrapper"> -->
+		<%-- <section id="profile"> --%>
+			<!-- <div class="container" > -->
+				<!-- <div class="row section profile topspace-profile">	 -->
 					<%@include file="include/user/user-left-side-bar.jsp"%>						
 					 <div class="tab-content">
 						<%@include file="include/user/user-info.jsp"%>	
@@ -79,10 +79,10 @@ window.userID = "${userID}";
 				 		<%@include file="include/user/user-history.jsp"%>
 				 		<%@include file="include/user/user-create-new-savelist.jsp"%>					 		
 					  </div>
-				</div>	
-			</div>			
-		</section>
-	</div>
+				<!-- </div> -->	
+			<!-- </div>	 -->		
+		<%-- </section> --%>
+	<!-- </div> -->
 </content>
 
 <a href="#0" class="cd-top">Top</a>
