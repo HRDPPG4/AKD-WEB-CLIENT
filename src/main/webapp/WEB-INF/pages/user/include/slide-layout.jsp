@@ -13,12 +13,12 @@
 		<!-- <a href="#" alt="like" class="like">
 			<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
 		</a> -->
-		<a href="#" alt="download" class="download">
+		<a href="https://drive.google.com/uc?export=download&id={{slide.DOC_ID}}" alt="download" class="download">
 			<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
 		</a>
-		<a href="#" alt="share" class="share">
+		<button href="#" alt="share" class="share" id="shareBtn">
 			<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-		</a>
+		</button>
 	</span>
 </a>
     

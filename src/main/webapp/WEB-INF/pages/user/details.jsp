@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
     
@@ -11,11 +10,11 @@
 	<%@include file="include/link/link.jsp"%>
 	
 	<!--facebook meta tag--> 
-	<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+	<!-- <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Your Website Title" />
 	<meta property="og:description"   content="Your description" />
-	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
 	
 	<style>
 		
@@ -75,36 +74,18 @@
 </head>
 <body ng-cloak ng-app="UserApp"  ng-controller="UserCtrl" data-ng-init="getDocumentAndCategoryAndUserAndCommentByDocID('${id}')">
 				
-	<!-- Facebook Configuration -->				
-	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '1910861819140575', 
-	      xfbml      : true,
-	      version    : 'v2.7'
-	    });
-	  };
 	
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "//connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
-	</script>
 
 	<jsp:include page="include/register.jsp"></jsp:include>
 	<jsp:include page="include/login.jsp"></jsp:include>
 	<jsp:include page="include/upload.jsp"></jsp:include>
 	<jsp:include page="include/save-list.jsp"></jsp:include>
-
+	<jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
+  	<jsp:include page="include/toolbar-right.jsp"></jsp:include> 
+  	
 	<header id="header">
 	 	<jsp:include page="include/header.jsp"></jsp:include> 
 	</header>
-	
- 	<jsp:include page="include/view-by-google-drive.jsp"></jsp:include> 
-  	<jsp:include page="include/toolbar-right.jsp"></jsp:include> 
 
 	<div>
 		<content>
@@ -272,31 +253,9 @@
  	<%@include file="include/script/script.jsp"%>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/savelist.js"></script> 		
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script> 
+	
 	<!-- Report and Share Linked -->
 	<script src="../resources/user/js/report.js"></script>
-	<script src="../resources/user/js/countShare.js"></script>
-	
-	<script>
-		document.getElementById('shareBtn').onclick = function() {
-			// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
-			 var url = 'http://192.168.178.28:2222/' + window.location.pathname;
-			 
-			 
-			 var image=document.getElementById("thubnail").value;
-			// alert(image);
-			 
-		  FB.ui({
-		    method: 'share',
-		    display: 'popup',
-		    caption: 'TESTING',
-		    href:  url ,
-		  //  picture: thumnail,
-		    picture: image,
-		    
-		  }, function(response){
-			  
-		  });
-		}
-</script>
+	<script src="../resources/user/js/countShare.js"></script>	  	
 </body>
 </html>
