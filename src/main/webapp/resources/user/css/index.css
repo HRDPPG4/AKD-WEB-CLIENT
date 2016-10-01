@@ -8,6 +8,29 @@ html,body {
     background-color:#E9EBEE;
 }
 
+/* .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+} */
+
 /* START WEB PAGE COLOR BLOCK */
 
 .navbar-main-menu,.section-title,.input-group-btn:last-child>.btn,ul.category-menu li.bg-cate,li.cates-main a:hover,.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover,.cd-top.cd-fade-out,.cd-top.cd-is-visible,.cd-top,ul.ul-toolbar > li.feedback a, ul.ul-toolbar > li.search,ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover,ul li > ul.tooltiptext li a:hover,.left-profile,ul.nav-tabs li a,button.clear-history,li.btn-add button,.footer-list,#btn-fullscreen,.btn-savelist-detail,.btn-share-detail,.btn-report-detail,input[type="button"],.btn-create-new,#Slide-Detail .modal-header{
