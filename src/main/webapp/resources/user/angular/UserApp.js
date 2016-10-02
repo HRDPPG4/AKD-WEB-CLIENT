@@ -895,6 +895,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     			
     			}).then(function(response){
     				$scope.getDocumentInSavelist=response.data.DATA[0].SAVELISTDETAIL;
+    				console.log(response);
     			}, function(response){
 
     			});
