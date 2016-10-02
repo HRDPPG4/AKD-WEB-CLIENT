@@ -139,7 +139,7 @@
 															<span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span>
 														</button>		
 														<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
-														<button class="btn-share-detail" id="shareBtn">
+														<button class="btn-share-detail" id="shareBtn" onclick="shareToFB()">
 															<span​ class="shareIcon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 															ចែករំលែក
 														</button>
@@ -250,12 +250,13 @@
 		  }); 
 	</script>
 	
+	
  	<%@include file="include/script/script.jsp"%>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/savelist.js"></script> 		
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/save-list.js"></script> 
 	
 	<!-- Report and Share Linked -->
 	<script src="../resources/user/js/report.js"></script>
-	<script src="../resources/user/js/countShare.js"></script>	  	
+	<!-- <script src="../resources/user/js/countShare.js"></script>   -->	
 </body>
 </html>

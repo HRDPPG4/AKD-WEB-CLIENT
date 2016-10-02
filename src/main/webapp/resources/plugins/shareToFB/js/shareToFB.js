@@ -1,5 +1,65 @@
-
   window.fbAsyncInit = function() {
+	  FB.init({
+      appId      : '1910861819140575', 
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  
+  
+function shareToFB() {
+	// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
+	var url = 'http://192.168.178.28:2222/' + window.location.pathname;
+	var image=document.getElementById("thubnail").value;
+	 
+	 FB.ui({
+	   method: 'share',
+	   display: 'popup',
+	   caption: 'TESTING',
+	   href:  url ,
+	 //  picture: thumnail,
+	   picture: image,
+	   
+	 }, function(response){
+		  
+	 });
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+window.fbAsyncInit = function() {
 	  FB.init({
       appId      : '1910861819140575', 
       xfbml      : true,
@@ -34,4 +94,4 @@
 	  }, function(response){
 		  
 	  });
-	};
+	};*/

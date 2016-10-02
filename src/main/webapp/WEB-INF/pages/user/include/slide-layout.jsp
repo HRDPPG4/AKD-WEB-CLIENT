@@ -9,6 +9,7 @@
 	<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
 	<span class="descript">{{slide.DES | strLimit: 22}}</span>
 	<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
+	<input type="text" value={{slide.THUMBNAIL_URL}} id="thubnail" ng-show="false">
 	<span class="socials">
 		<!-- <a href="#" alt="like" class="like">
 			<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
@@ -16,9 +17,9 @@
 		<a href="https://drive.google.com/uc?export=download&id={{slide.DOC_ID}}" alt="download" class="download">
 			<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
 		</a>
-		<button href="#" alt="share" class="share" id="shareBtn">
+		<a href="#" alt="share" class="share" onclick="shareToFB()">
 			<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-		</button>
+		</a>
 	</span>
 </a>
     
