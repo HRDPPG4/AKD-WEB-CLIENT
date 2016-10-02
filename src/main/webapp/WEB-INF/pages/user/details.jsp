@@ -139,7 +139,7 @@
 															<span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span>
 														</button>		
 														<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
-														<button class="btn-share-detail" id="shareBtn" onclick="shareToFB()">
+														<button class="btn-share-detail" id="shareBtn" ng-click="FBShare(docDetail[0].THUMBNAIL_URL)">
 															<span​ class="shareIcon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 															ចែករំលែក
 														</button>

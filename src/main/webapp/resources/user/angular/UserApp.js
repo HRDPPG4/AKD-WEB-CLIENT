@@ -1175,14 +1175,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	    };
 	    
 	    
-	 
+	// SHARE TO FACEBOOK
 	    
-	    
-	    
-	    
-
-	    
-	
+    $scope.FBShare = function(thumbnail) {
+		var url = 'http://192.168.178.28:2222/' + window.location.pathname;
+		 
+		 FB.ui({
+		   method: 'share',
+		   display: 'popup',
+		   caption: 'TESTING',
+		   href:  url ,
+		   picture: thumbnail,
+		   
+		 }, function(response){
+			  
+		 });		
+	};
+	   
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 

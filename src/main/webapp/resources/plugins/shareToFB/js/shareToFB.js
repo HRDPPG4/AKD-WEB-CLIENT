@@ -15,24 +15,6 @@
    }(document, 'script', 'facebook-jssdk'));
   
   
-function shareToFB() {
-	// var thumnail = "https://drive.google.com/thumbnail?&sz=w320&id=" + fbThumbnail;
-	var url = 'http://192.168.178.28:2222/' + window.location.pathname;
-	var image=document.getElementById("thubnail").value;
-	 
-	 FB.ui({
-	   method: 'share',
-	   display: 'popup',
-	   caption: 'TESTING',
-	   href:  url ,
-	 //  picture: thumnail,
-	   picture: image,
-	   
-	 }, function(response){
-		  
-	 });
-}
-  
 
 
 
