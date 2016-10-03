@@ -366,11 +366,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			});
 			
 		});
-		
-		
 	};
-	
-	
 	
 		
 	$scope.getDocumentCount = function() {
@@ -392,7 +388,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
-			//console.log($scope.document);
+			console.log($scope.document);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -442,7 +438,51 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		
 		});
 	}
+	
+	$scope.removeDocument = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/document/' + id ,
+			method : 'PUT'
+		}).then(function() {
+			$scope.getDocumentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeDocument(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
 
+
+	$scope.getDataForUpdate = function(document) {
+		// alert(user.u.EMAIL);
+		$scope.gid = user.u.USER_ID;
+		$scope.gname = user.u.USER_NAME;
+		$scope.gpass = user.u.PASSWORD;
+		$scope.gemail = user.u.EMAIL;
+		$scope.gphone = user.u.PHONE;
+		$scope.gdate = user.u.CREATED_DATE;
+		$scope.gremark = user.u.REMARK;
+		$scope.gstatus = user.u.STATUS;
+		$scope.grole = user.u.USER_ROLE;
+
+	}
+	
+	
 
 });
 
