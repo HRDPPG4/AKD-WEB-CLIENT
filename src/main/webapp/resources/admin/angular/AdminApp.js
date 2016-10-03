@@ -27,11 +27,12 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
-		//	console.log(response.data.DATA);
+			console.log(response.data.DATA);
 			$scope.category=response.data.DATA;	
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("ALL Cat in admin"+$scope.category);
 		}, function(response){		
+		
 		});
 	}	
 	$scope.showCategoryByLimit();
@@ -92,8 +93,12 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 
 	$scope.getDataForUpdate = function(category) {
 		$scope.folderName = category.c.CAT_NAME;
+		$scope.createDate = category.c.CREATED_DATE;
 		$scope.des = category.c.REMARK;
+		$scope.parentID = category.c.PARENT_ID;
 		$scope.sta = category.c.STATUS;
+		$scope.icon = category.c.ICON;
+		$scope.cid = category.c.CAT_ID;
 	}
 	
 	$scope.updateCategory = function() {
@@ -102,14 +107,17 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			method : 'PUT',
 			data : {
 				'CAT_NAME' : $scope.folderName,
+				'CREATED_DATE' : $scope.createDate,
 				'REMARK' : $scope.des,
-				'STATUS' : $scope.sta
+				'PARENT_ID': $scope.parentID,
+				'STATUS' : $scope.sta,
+				'ICON': $scope.icon,
+				'CAT_ID' : $scope.cid
 			}
 		}).then(function(response) {
-
-			alert("success");
 			$scope.showCategoryByLimit();
 		},function(response) {
+
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 			$scope.CategoryCount = response.data.COUNT;
 			
@@ -385,7 +393,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
 			//console.log($scope.document);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
@@ -452,7 +460,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			//console.log(response);
 			$scope.comment = response.data.DATA;
-		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -531,7 +539,7 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.feedback = response.data.DATA;
 			//console.log($scope.feedback);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			
 		});
@@ -606,7 +614,7 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.report = response.data.DATA;
 			//console.log($scope.report);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
@@ -681,7 +689,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.savelist = response.data.DATA;
 			//console.log($scope.savelist);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
