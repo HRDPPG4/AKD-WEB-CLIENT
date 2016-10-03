@@ -3,94 +3,10 @@ var API_PATH = "http://localhost:1111";
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
-//	CATEGORY	
-	$scope.showCategory = function(){			
-		$http({
-			url:API_PATH+'/api/v1/category',
-			method:'GET',
-			params : $scope.filter
-		}).then(function(response){
-		//	console.log(response.data.DATA);
-			$scope.category=response.data.DATA;	
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
-			//console.log("ALL Cat in admin"+$scope.category);
-		}, function(response){		
-		});
-	}	
-	$scope.showCategory();
-	
-	
-	
-//	$scope.removeCategory = function(id) {
-//		$http({
-//			url : API_PATH+'/api/v1/category/' + id,
-//			method : 'DELETE'
-//		}).then(function() {
-//			$scope.showCategory();
-//		}, function() {
-//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-//		});
-//	}
-
-	$scope.remove = function(id) {
-	alert(id);
-	$http({
-		url : API_PATH+'/api/v1/category/' + id,
-		method : 'PUT'
-	}).then(function() {
-		$scope.showCategory();
-		alert("success");
-	}, function() {
-		alert("Fiald");
-	});
-}
-	
-	$scope.alertDelete = function(id) {
-		swal({
-			title : "Are you sure?",
-			text : "You will not be able to recover this imaginary file!",
-			type : "warning",
-			showCancelButton : true,
-			confirmButtonColor : "#DD6B55",
-			confirmButtonText : "Yes, delete it!",
-			closeOnConfirm : false
-		},
-				function() {
-					$scope.removeCategory(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
-							"success");
-				});
-	}
 
 	
-	$scope.getDataForUpdate = function(category) {
-
-		$scope.folderName = category.c.CAT_NAME;
-		$scope.des = category.c.REMARK;
-		$scope.sta = category.c.STATUS;
-	}
 	
-//	$scope.updateCategory = function() {
-//		$http({
-//			url : API_PATH+'/api/v1/category',
-//			method : 'PUT',
-//			data : {
-//				'CAT_NAME' : $scope.folderName,
-//				'REMARK' : $scope.des,
-//				'STATUS' : $scope.sta
-//			}
-//		}).then(function(response) {
-//			$scope.showCategory();
-//		}, function() {
-//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-//		});
-//	}
-
-//	$scope.alertUpdate = function() {
-//		$scope.updateCategory();
-//		swal("Updated!", "You updated the user!", "success")
-//	}
-
+	//	CATEGORY	
 	
 	$scope.getCategoryCount = function() {
 		$http({
@@ -98,12 +14,28 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			method : 'GET'
 		}).then(function(response) {
 			$scope.CategoryCount = response.data.COUNT;
-			//console.log($scope.CategoryCount);
+			console.log($scope.CategoryCount);
 		}, function(response) {
 			
 		});
 	}
 	$scope.getCategoryCount();
+	
+	$scope.showCategoryByLimit = function(){			
+		$http({
+			url:API_PATH+'/api/v1/getAllCategoryByLimit',
+			method:'GET',
+			params : $scope.filter
+		}).then(function(response){
+			console.log(response.data.DATA);
+			$scope.category=response.data.DATA;	
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			//console.log("ALL Cat in admin"+$scope.category);
+		}, function(response){		
+		
+		});
+	}	
+	$scope.showCategoryByLimit();
 	
 	//TODO: default filter
 	$scope.filter = {
@@ -128,8 +60,76 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	PAGINATION.on("page", function(event, num){
 		$scope.filter.page = num;
-		$scope.showCategory();
+		$scope.showCategoryByLimit();
 	});
+	
+	$scope.removeCategory = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/category/' + id,
+			method : 'PUT'
+		}).then(function() {
+			$scope.showCategoryByLimit();
+		}, function() {
+			
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeCategory(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
+
+	$scope.getDataForUpdate = function(category) {
+		$scope.folderName = category.c.CAT_NAME;
+		$scope.createDate = category.c.CREATED_DATE;
+		$scope.des = category.c.REMARK;
+		$scope.parentID = category.c.PARENT_ID;
+		$scope.sta = category.c.STATUS;
+		$scope.icon = category.c.ICON;
+		$scope.cid = category.c.CAT_ID;
+	}
+	
+	$scope.updateCategory = function() {
+		$http({
+			url : API_PATH+'/api/v1/category',
+			method : 'PUT',
+			data : {
+				'CAT_NAME' : $scope.folderName,
+				'CREATED_DATE' : $scope.createDate,
+				'REMARK' : $scope.des,
+				'PARENT_ID': $scope.parentID,
+				'STATUS' : $scope.sta,
+				'ICON': $scope.icon,
+				'CAT_ID' : $scope.cid
+			}
+		}).then(function(response) {
+			$scope.showCategoryByLimit();
+		},function(response) {
+
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			$scope.CategoryCount = response.data.COUNT;
+			
+		});
+	}
+
+	$scope.alertUpdate = function() {
+		$scope.updateCategory();
+		swal("Updated!", "You updated the user!", "success")
+	}
+
+	
 	
 	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
@@ -177,7 +177,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(response) {
 			$scope.user = response.data.DATA;
 			//console.log($scope.user);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -209,7 +209,6 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		$scope.filter.page = num;
 		$scope.getUserData();
 	});
-	
 
 	$scope.getUserData();
 
@@ -394,7 +393,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
 			//console.log($scope.document);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
@@ -461,7 +460,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			//console.log(response);
 			$scope.comment = response.data.DATA;
-		//	$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -540,7 +539,7 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.feedback = response.data.DATA;
 			//console.log($scope.feedback);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			
 		});
@@ -615,7 +614,7 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.report = response.data.DATA;
 			//console.log($scope.report);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});
@@ -690,7 +689,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 		}).then(function(response) {
 			$scope.savelist = response.data.DATA;
 			//console.log($scope.savelist);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 
 		});

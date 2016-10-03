@@ -36,8 +36,9 @@
 								</div>
 
 								<div class="form-group">
+									<label> Status </label>
 									<div class="radio">
-										<label> Status </label><br /> <label> <input
+										 <label> <input
 											ng-model="sta" type="radio" name="rdoResult" ng-value="'1'">
 											Enable
 										</label> <label> <input ng-model="sta" type="radio"
