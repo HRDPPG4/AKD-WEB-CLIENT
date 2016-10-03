@@ -1,44 +1,8 @@
 <%@ page 
     pageEncoding="utf-8"%>
     
-<style>
-	#mysavelist .main-savelist
-	{
-		background-color:white;
-		width:100%;
-		height:160px;
-		color:black;
-	}
-	#mysavelist .main-savelist img,#mysavelist .savelist-data img
-	{
-		height:100%;
-		padding:10px 0px;
-	}
-	#mysavelist .savelist-data
-	{
-		background-color:white;
-		width:100%;
-		height:120px;
-		color:black;
-		border-top: 1px solid #ccc;
-	}
-	#mysavelist ol.main-savelist-data{
-		list-style:none;
-		margin-left:0px;
-		padding-left:0px;
-	}
-	#mysavelist .no-savelist{
-		padding: 0px 15px;
-	}
-	#mysavelist .main-savelist button,#mysavelist .savelist-data button{
-		margin-top: 5px;
-	}
-	    
-	
-	
-</style>
     
-<div id="mysavelist" class="tab-pane fade">
+<div id="mysavelist" class="tab-pane fade main-list">
 	<div class="content-mydoc">	        
 	   <div class="pdf-ppt-doc-edit tab-content">
 	   		 <div id="pdf-edit" class="tab-pane fade in active">	   	
@@ -53,14 +17,14 @@
 		   		 		<p>This is description</p>
 	   		 		</div>
 	   		 		<div class="col-md-1">
-	   		 			<button class="btn btn-primary"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>	   		 			
-	   		 			<button class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+	   		 			<button class="btn btn-danger"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>	   		 			
+	   		 			<button class="btn btn-danger"><i class="fa fa-pencil" aria-hidden="true"></i></button>
 	   		 			<button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 	   		 		</div>
 	   		 	</div>
-	   		 	<ol class="main-savelist-data">
+	   		 	<ol class="main-list-data">
 	   		 		<li ng-repeat ="slide in getDocumentInSavelist">
-	   		 			<div class="savelist-data row">	   		 		
+	   		 			<div class="list-data row">	   		 		
 			 				<div class="col-md-3">
 			 					<span class="no-savelist">{{$index+1}}</span>
 			 					<a href="/detail/{{slide.DOCUMENT[0].DOC_ID}}">

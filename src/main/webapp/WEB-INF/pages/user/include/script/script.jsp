@@ -12,7 +12,7 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert/js/sweetalert-dev.js"></script>    
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert/js/sweetalert.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert2/js/sweetalert2.min.js"></script>  
+<%-- <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/sweetalert2/js/sweetalert2.min.js"></script>   --%>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/angular/angular.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/angular/angular-animate.min.js"></script>
