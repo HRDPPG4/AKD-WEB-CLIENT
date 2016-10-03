@@ -1,5 +1,4 @@
-<%@ page
-    pageEncoding="utf-8"%>
+<%@ page pageEncoding="utf-8"%>
     
 <div class="left-profile" >
 	<div class="img-pro">

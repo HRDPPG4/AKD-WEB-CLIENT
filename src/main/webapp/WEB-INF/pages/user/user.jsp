@@ -28,7 +28,8 @@
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()" class="hold-transition skin-blue sidebar-mini">
 	<jsp:include page="include/register.jsp"></jsp:include>
 	<jsp:include page="include/login.jsp"></jsp:include>
-	<jsp:include page="include/upload.jsp"></jsp:include>	
+	<jsp:include page="include/upload.jsp"></jsp:include>		
+	<%@include file="include/updateDocument.jsp"%>	
 				  
 	<header id="header">
 		<jsp:include page="include/header.jsp"></jsp:include>
