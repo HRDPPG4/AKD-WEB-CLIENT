@@ -53,110 +53,65 @@ a.thumbnail {
     border-radius: 0;
     box-shadow: none;
   }
-
+  
 </style>
 
 </head>
 <body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getCategoryByParentID('${ParentID}')">
-<jsp:include page="include/register.jsp"></jsp:include>
-<jsp:include page="include/login.jsp"></jsp:include>
-<jsp:include page="include/upload.jsp"></jsp:include>
-
-				  
-<header id="header">
-<jsp:include page="include/header.jsp"></jsp:include>
-
-<style>
-.tab-content #documentBox div.col-lg-4.col-sm-6.col-xs-12
-{
-	/* min-width:289.98px;
-	min-height:264px; */
+	<jsp:include page="include/register.jsp"></jsp:include>
+	<jsp:include page="include/login.jsp"></jsp:include>
+	<jsp:include page="include/upload.jsp"></jsp:include>
+				 
+	<header id="header">
+		<jsp:include page="include/header.jsp"></jsp:include>
+	</header>
 	
-	/* max-width:273.98px;
-	max-height:264px; */
-}
-
-</style>
-</header>
-<jsp:include page="include/toolbar-right.jsp"></jsp:include>
-<content>
-<div id="page-content-wrapper">
-	<div class="container" id="container-cate">
-		<section id="cates-view">
-				<div class="row section nav-left topspace-cates">
-				
-				<div class="row-nav-left-content" ng-cloak>
-					<div class="row">
-					   <div class="col-sm-3" id="left-side-nav" >
-					   	   <ul class="category-menu nav nav-pills nav-stacked">
-					   	   		 <li class="bg-cate">
-					   	   		 <span><i class="{{getCategoryByID.ICON}}"></i>
-			  	   					</span>{{getCategoryByID.CAT_NAME}}
-			  	   				</li>
-			  	   				<li  class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!--  ng-click="updateTotalDocByCatID(parentCat.CAT_ID)" -->
-			  	   					<a data-toggle="pill">{{parentCat.CAT_NAME}} ( <b>{{parentCat.TOTAL_DOC}}</b>​ )</a> 
-			  	   				</li>			  	   				
-					   	   </ul>
-					   </div>
-						
-						
-					
-						
-					  	<div class="col-sm-9" ng-if="parentCategory[0]">	
-							<div class="body-cates tab-content">							
-								<div id="documentBox" class="tab-pane fade in active" ng-init="getAllDocumentByCatID(parentCategory[0].CAT_ID)">
-						
-								<div ng-repeat="slide in documentByCatID track by $index" class="col-lg-4 col-sm-6 col-xs-12">
-								    
-								     <!-- for Track user log -->	
-						      		<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">
-						      		
-									<a href="/detail/{{slide.DOC_ID}}" class="thumbnail"  ng-click="countView(slide.DOC_ID)">
-									
-									<span class="img">
-									<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail"> 
-									</span>
-									<span class="title">{{slide.TITLE | strLimit: 22}}</span>
-									<span class="user-name">{{slide.USERS[0].USER_NAME | strLimit: 22}}</span>
-									<span class="descript">{{slide.DES | strLimit: 22}}</span>
-									<span class="view-count"><span>{{slide.VIEW}}</span> បានមើល</span>
-									<span class="socials">
-										<a href="#" alt="like" class="like">
-											<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-										</a>
-										<a href="#" alt="download" class="download">
-											<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
-											</a>
-										<a href="#" alt="share" class="share">
-											<span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-										</a>
-									</span>
-									</a>
-								</div>
-							</div>
-							
-							</div>
-							<div ng-if="recordNotFound" class="noRecord">
-								<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
-							</div>
-						</div>  
-						
-						</div>
-						
-					</div>		
+	<jsp:include page="include/toolbar-right.jsp"></jsp:include>
+	<content>
+		<div id="page-content-wrapper">
+			<div class="container" id="container-cate">
+				<section id="cates-view">
+					<div class="row section nav-left topspace-cates">					
+						<div class="row-nav-left-content" ng-cloak>
+							<div class="row">
+							   <div class="col-sm-3" id="left-side-nav" >
+							   	   <ul class="category-menu nav nav-pills nav-stacked">
+							   	   		 <li class="bg-cate">
+							   	   		 	<span>
+							   	   		 		<i class="{{getCategoryByID.ICON}}"></i>
+					  	   					</span>
+					  	   					{{getCategoryByID.CAT_NAME}}
+					  	   				</li>
+					  	   				<li  class="cates-main " ng-repeat="parentCat in parentCategory" ng-click="getAllDocumentByCatID(parentCat.CAT_ID)"> <!--  ng-click="updateTotalDocByCatID(parentCat.CAT_ID)" -->
+					  	   					<a data-toggle="pill">{{parentCat.CAT_NAME}} ( <b>{{parentCat.TOTAL_DOC}}</b>​ )</a> 
+					  	   				</li>			  	   				
+							   	   </ul>
+							   </div>
+						  		<div class="col-sm-9" ng-if="parentCategory[0]">	
+									<div class="body-cates tab-content">							
+										<div id="documentBox" class="tab-pane fade in active" ng-init="getAllDocumentByCatID(parentCategory[0].CAT_ID)">								
+											<div ng-repeat="slide in documentByCatID track by $index" class="col-lg-4 col-sm-6 col-xs-12">											    
+											     <!-- for Track user log -->	
+									      		<input   type="hidden" class="form-control" value="{{slide.USER_ID}}" id="slide_user_id">									      		
+												<%@include file="include/slide-layout.jsp"%>
+											</div>
+										</div>									
+									</div>
+									<div ng-if="recordNotFound" class="noRecord">
+										<img src="${pageContext.request.contextPath}/resources/user/img/norecord.png">
+									</div>
+								</div>  							
+							</div>							
+						</div>		
 					</div>
-			         
-			
-	  </section>
-  </div> 
-		<!-- end container -->
- </div>  
-	     <!-- end page-content-wrapper -->
-</content>
+		  		</section>
+	  		</div> 
+	 	</div>  
+	</content>
 
-  <footer>
-<%-- 	<jsp:include page="include/footer.jsp"></jsp:include> --%>
-   </footer>
+	  <footer>
+		<%-- 	<jsp:include page="include/footer.jsp"></jsp:include> --%>
+	   </footer>
 
 	 <%@include file="include/script/script.jsp"%>
 	 <!-- old file no other angular needed and no sweet alert -->

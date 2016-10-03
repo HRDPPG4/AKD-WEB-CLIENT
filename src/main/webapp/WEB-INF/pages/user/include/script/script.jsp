@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page
     pageEncoding="utf-8"%>
     
 <a href="#0" class="cd-top">Top</a>
@@ -22,6 +22,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/allkhmerslide.js"></script>	                        
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugins/shareToFB/js/shareToFB.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
 
 
