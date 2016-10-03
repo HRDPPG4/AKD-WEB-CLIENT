@@ -3,8 +3,10 @@ var API_PATH = "http://localhost:1111";
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
-//	CATEGORY	
-		
+
+	
+	
+	//	CATEGORY	
 	
 	$scope.getCategoryCount = function() {
 		$http({
@@ -167,7 +169,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(response) {
 			$scope.user = response.data.DATA;
 			//console.log($scope.user);
-			//$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
