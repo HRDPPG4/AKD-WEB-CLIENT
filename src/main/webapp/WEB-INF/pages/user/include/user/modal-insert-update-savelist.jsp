@@ -1,7 +1,32 @@
-<%@ page 
-    pageEncoding="utf-8"%>
+<%@ page pageEncoding="utf-8"%>
+
+<div class="modal fade" id="insert-update-savelist" role="dialog">
+	<div class="modal-dialog">
+	  	<!-- Modal content-->
+		<div class="modal-content">
+		      <div class="modal-header"  >
+		    	<button type="button" class="close" data-dismiss="modal" >&times;</button>
+		 		<h4 class="modal-title">បញ្ជីផ្ទុកឯកសារ</h4>               
+		      </div>
+			  <div class="modal-body" style="padding:40px 50px;">
+			  		<div class="form-group">
+			            <label>ឈ្មោះបញ្ជី:</label>
+			            <input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ" class="form-control" ng-model="saveListname">
+		          </div>  
+		          <div class="form-group">
+			            <label>ពិពណ៌នា:</label>
+			            <textarea class="form-control"​ placeholder="មតិខ្លះៗអំពីបញ្ជីគ្រប់គ្រងឯកសារមួយនេះ"></textarea>
+		          </div>	     					       
+			  </div>
+		    <div class="modal-footer">
+		      <button class="btn btn-primary"​ data-dismiss="modal" ng-click="saveList()" ng-disabled="!saveListname">បង្កើតថ្មី</button>  
+		      <button class="btn btn-primary"​ data-dismiss="modal" ng-disabled="!saveListname">កែរប្រែ</button>       
+		    </div>
+		</div>    
+	</div>
+</div>
     
-<div id="savelist" class="tab-pane fade">
+<!-- <div id="savelist" class="tab-pane fade">
  	<div class="content-savelist-all">
 	 	<div id="header-view-savelist">
 	 		<ul class="view-savelist">
@@ -49,4 +74,4 @@
    			</div>   			
    		</div>
      </div>
-  </div>
+  </div> -->

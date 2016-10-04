@@ -148,7 +148,7 @@ window.fileName="";
 						  </a>
 						  <ul class="dropdown-menu dropdown-item">
 								<li>
-									<a href="/profile">
+									<a href="/userAccount">
 										<span>${userName}</span>
 									</a>
 								</li>
@@ -167,10 +167,7 @@ window.fileName="";
 		        <span class="upload-login-register">
 		        	<div class="user"> 
 						<div class="input-group">								
-						    <span class="input-group-btn">	
-						    	<a href="/userAccount" class="btn btn-primary">
-							    	Test User
-							    </a>    	
+						    <span class="input-group-btn">	   	
 							    <button class="btn btn-primary" data-toggle="modal" data-target="#upload" ng-click="getAllCategory()">
 							    	ចែកចាយឯកសារ
 							    </button>

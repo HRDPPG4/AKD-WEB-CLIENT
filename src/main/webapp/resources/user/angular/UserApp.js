@@ -614,33 +614,69 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 	
 	 $scope.deleteLog =function(docID){
-	    
-		 
-			$http({
-				url:API_PATH+'/api/v1/log/'+docID,
-				method:'DELETE',
-			}).then(function(response){
-				$scope.getLogByUser($rootScope.userID);
-			}, function(response){
-              
-			});	
+		 swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+			type: "warning",   showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "យល់ព្រម",   
+			cancelButtonText: "បដិសេធ",   
+			closeOnConfirm: false,   closeOnCancel: false },
+			function(isConfirm){   
+			 	if (isConfirm) {     
+			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+			 		$http({
+						url:API_PATH+'/api/v1/log/'+docID,
+						method:'DELETE',
+					}).then(function(response){
+						$scope.getLogByUserID();
+					}, function(response){
+		              
+					});	
+			 	}
+		 		else {     
+		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+		 		} 
+		 	});
 		}
 	 
-	  $scope.getLogByUser =function(){
-	     
-  			$http({
-  				url:API_PATH+'/api/v1/user/log/'+$rootScope.userID,
-  				method:'GET'
-  			}).then(function(response){
-  				$scope.getLogByUser=response.data.DATA;
-  			  
-  			}, function(response){
-                
-  			});	
+	  $scope.getLogByUserID =function(){
+		  $http({
+				url:API_PATH+'/api/v1/user/log/'+$rootScope.userID,
+				method:'GET'
+			}).then(function(response){
+				$scope.getLogByUser=response.data.DATA;
+			  
+			}, function(response){
+              
+			});		  
   		}
-	
-	 
-	
+	  
+	  $scope.deleteAllLogByUserID =function(){
+			 swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+				text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+				type: "warning",   showCancelButton: true,   
+				confirmButtonColor: "#DD6B55",   
+				confirmButtonText: "យល់ព្រម",   
+				cancelButtonText: "បដិសេធ",   
+				closeOnConfirm: false,   closeOnCancel: false },
+				function(isConfirm){   
+				 	if (isConfirm) {     
+				 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+				 		$http({
+							url:API_PATH+'/api/v1/deleteAllLogByUserID/'+$rootScope.userID,
+							method:'DELETE',
+						}).then(function(response){
+							$scope.getLogByUserID();
+						}, function(response){
+			              
+						});	
+				 	}
+			 		else {     
+			 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+			 		} 
+			 	});
+			}
+	  
 	
 	
 	///////////////////		END LOG BLOCK	/////////////////
@@ -924,21 +960,31 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     //------------deletSavelistDetail--------------//
     		 $scope.deleteSavelistDetail =function(docID){
     	           var listID = $('#listID').val();
-    	       
-    	         
-    				$http({
-    					url:API_PATH+'/api/v1/savelist/deleteSavelistDetail/'+docID,
-    					method:'DELETE',
-    				}).then(function(response){
-    					
-    					$scope.getDocumentByEachSavelist($rootScope.userID,listID);
-    					
-    				}, function(response){
-    	             
-    	              
-    				});	
-    				
-    			  
+    	           
+    	           swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+    	   			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+    	   			type: "warning",   showCancelButton: true,   
+    	   			confirmButtonColor: "#DD6B55",   
+    	   			confirmButtonText: "យល់ព្រម",   
+    	   			cancelButtonText: "បដិសេធ",   
+    	   			closeOnConfirm: false,   closeOnCancel: false },
+    	   			function(isConfirm){   
+    	   			 	if (isConfirm) {     
+    	   			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+	    	   			 	$http({
+	        					url:API_PATH+'/api/v1/savelist/deleteSavelistDetail/'+docID,
+	        					method:'DELETE',
+	        				}).then(function(response){    					
+	        					$scope.getDocumentByEachSavelist(listID);    					
+	        				}, function(response){
+	        	             
+	        	              
+	        				});	
+    	   			 	}
+    	   		 		else {     
+    	   		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+    	   		 		} 
+    	   		 	});
     			}
     //------------EnddeleteSavelistDetail----------//
      
@@ -1113,7 +1159,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				}
 			}).then(function(response) {
 				 //$scope.getUserByID();
-				 location.href= "/profile";
+				 location.href= "/userAccount";
 			});
 		}
 		

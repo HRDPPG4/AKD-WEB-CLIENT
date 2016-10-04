@@ -1,3 +1,6 @@
+body{
+	font-family:Khmer OS Battambang;
+}
 .skin-blue .main-header .navbar ,.skin-blue .main-header .logo{
     background-color: #26a63c;
 }
@@ -41,7 +44,8 @@ user-panel.profile
 
 #mydoc .content-mydoc img,#mysavelist img,#viewed #content-view-history img
 {
-	height:120px;
+	*height:120px;
+	height:100%;
 }
 
 /* Get From Savelist Internal Style */
@@ -113,10 +117,17 @@ p.viewCount i.fa-share-alt:before,p.shareCount i.fa-share-alt:before{
 .main-info h3{
 	font-family:Khmer OS Battambang;
 }
-/* .main-info img{
-	width:50%;
-	height:50%;
-} */
+.history-header{
+	background-color:white;
+	width:100%;
+	height:110px;
+	color:black;
+	padding:10px;
+}
+.history-header h3{
+	
+	font-family:Khmer OS Battambang;
+}
 
 
 
