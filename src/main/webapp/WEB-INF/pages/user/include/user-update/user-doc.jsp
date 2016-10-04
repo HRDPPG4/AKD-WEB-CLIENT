@@ -21,11 +21,15 @@
 								</a>
 								
 							</div>
-							<div class="col-md-8">
+							<div class="col-md-7">
 								<h4>{{slide.TITLE}}</h4>
 								<!-- <h4>{{slide.DOCUMENT[0].USERS[0].USER_NAME}}</h4> -->
 								<p>{{slide.CREATED_DATE}}</p>
 							 	<p>{{slide.DES}}</p>
+							</div>
+							<div class="col-md-1">
+								<p class="viewCount"><span><i class="fa fa-eye" aria-hidden="true"></i> : {{numFormat(9999999)}}</span></p>
+								<p class="shareCount"><span><i class="fa fa-share-alt" aria-hidden="true"></i> : {{numFormat(9999999)}}</span></p>																
 							</div>
 							<div class="col-md-1">
 								<button class="btn btn-danger" ng-click="checkDocID(slide.DOC_ID)" data-toggle="modal" data-target="#updateDocument"><i class="fa fa-pencil" aria-hidden="true"></i></button>
