@@ -50,7 +50,7 @@
 						<%@include file="include/user-update/user-doc.jsp"%>	
 				      	<%@include file="include/user-update/user-savelist.jsp"%>	
 				 		<%@include file="include/user-update/user-history.jsp"%>
-				 		<%@include file="include/user-update/user-create-new-savelist.jsp"%>				 							 		
+				 		<%@include file="include/user-update/modal-insert-update-savelist.jsp"%>				 							 		
 					  </div>						
 				  </section>
 				</div>			
