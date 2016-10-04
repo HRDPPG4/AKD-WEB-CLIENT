@@ -1135,7 +1135,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				}
 			}).then(function(response) {
 				 //$scope.getUserByID();
-				 location.href= "/profile";
+				 location.href= "/userAccount";
 			});
 		}
 		
