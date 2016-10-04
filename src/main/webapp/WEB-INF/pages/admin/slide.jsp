@@ -150,6 +150,7 @@ window.userID = "${userID}";
 										<td><span class="label label-success">{{d.STATUS}}</span></td>
 										<td>
 											<button type="button" class="btn btn-primary btn-sm"
+												ng-click="getDataForUpdate(this)"
 												data-toggle="modal"	data-target="#updateDocument">
 												<i class="fa fa-edit"></i>
 											</button>
@@ -171,6 +172,7 @@ window.userID = "${userID}";
 					<!-- Modal Start -->
 
 					<%@include file="include/add-document.jsp"%>
+					<%@include file="include/update-document.jsp"%>
 
 					<!-- Modal End -->
 					<!-- /.box -->

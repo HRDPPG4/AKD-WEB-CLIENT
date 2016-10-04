@@ -16,26 +16,29 @@
 						<div class="main-login main-center">
 							<div class="box-body">
 								<div class="form-group">
-									<label for="categoryTitle">Document Title</label> <input
-										type="text" class="form-control" placeholder="Category title "
-										name="docName" ng-model="docName">
+									<label for="documentTitle">Document Title</label> <input
+										type="text" class="form-control" placeholder="Document title "
+										name="docTitle" ng-model="docTitle">
 								</div>
 
 								<div class="form-group">
 									<label for="description">Description</label>
 									<textarea class="form-control" placeholder="Description..."
-										rows="4" ng-model="des"></textarea>
+										rows="4" ng-model="docDesc"></textarea>
 								</div>
 
 								<div class="form-group">
 									<label> Status </label>
 									<div class="radio">
-										 <label> <input
-											ng-model="status" type="radio" name="rdoResult" ng-value="'1'">
-											Enable
-										</label> <label> <input ng-model="sta" type="radio"
-											name="rdoResult" ng-value="'0'"> Disable
-										</label>
+										 <label> 
+										 	<input	ng-model="status" type="radio" name="rdoResult" ng-value="'1'">
+												Enable
+										 </label> 
+										 <label> 
+										  	<input ng-model="status" type="radio"
+												name="rdoResult" ng-value="'0'"> 
+												Disable
+										 </label>
 									</div>
 								</div>
 							</div>

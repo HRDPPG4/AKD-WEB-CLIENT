@@ -373,7 +373,6 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		$http({
 			url : API_PATH+'/api/v1/getDocumentCount',
 			method : 'GET'
-			
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
 			//console.log($scope.documentCount);
@@ -467,21 +466,53 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				});
 	}
 
-
 	$scope.getDataForUpdate = function(document) {
-		// alert(user.u.EMAIL);
-		$scope.gid = user.u.USER_ID;
-		$scope.gname = user.u.USER_NAME;
-		$scope.gpass = user.u.PASSWORD;
-		$scope.gemail = user.u.EMAIL;
-		$scope.gphone = user.u.PHONE;
-		$scope.gdate = user.u.CREATED_DATE;
-		$scope.gremark = user.u.REMARK;
-		$scope.gstatus = user.u.STATUS;
-		$scope.grole = user.u.USER_ROLE;
-
+		$scope.docTitle = document.d.TITLE;
+		$scope.docDesc = document.d.DES;
+		$scope.embedLink = document.d.EMBEDED_LINK;
+		$scope.thumnail = document.d.THUMBNAIL_URL;
+		$scope.exportLink = document.d.EXPORT_LINK;
+		$scope.view = document.d.VIEW;
+		$scope.share = document.d.SHARE;
+		$scope.createdDate = document.d.CREATED_DATE;
+		$scope.docTypeNum = document.d.DOC_TYPE_NUM;
+		$scope.userID = document.d.USER_ID;
+		$scope.catID = document.d.CAT_ID;
+		$scope.status = document.d.STATUS;
+		$scope.docID= document.d.DOC_ID;
+		
 	}
 	
+	$scope.updateDocument = function() {
+		$http({
+			url : API_PATH+'/api/v1/document',
+			method : 'PUT',
+			data : {
+				'TITLE' : $scope.docTitle,
+				'DES' : $scope.docDesc,
+				'EMBEDED_LINK' : $scope.embedLink,
+				'THUMBNAIL_URL' : $scope.thumnail,
+				'EXPORT_LINK' : $scope.exportLink,
+				'VIEW' : $scope.view,
+				'SHARE' : $scope.share,
+				'CREATED_DATE' : $scope.createdDate,
+				'DOC_TYPE_NUM' : $scope.docTypeNum,
+				'USER_ID' : $scope.userID,
+				'CAT_ID' : $scope.catID,
+				'STATUS' : $scope.status,
+				'DOC_ID' : $scope.docID
+			}
+		}).then(function() {
+			$scope.getDocumentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+
+	$scope.alertUpdate = function() {
+		$scope.updateDocument();
+		swal("Updated!", "Document is updated!", "success")
+	}	
 	
 
 });
@@ -498,7 +529,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 			
 		}).then(function(response) {
-			//console.log(response);
+			console.log(response.data.DATA);
 			$scope.comment = response.data.DATA;
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
