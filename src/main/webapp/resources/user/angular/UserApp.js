@@ -551,6 +551,20 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 		});
 	}
+    
+    $scope.countTotalDocByUserID = function() {
+		$http({
+			url : API_PATH+'/api/v1/document/countTotalDocByUserID/'+$rootScope.userID,
+			method : 'GET'
+		}).then(function(response) {
+			$scope.countDocByUserID = response.data.COUNT;
+			console.log($scope.countDocByUserID);
+		}, function(response) {
+			
+		});
+	}
+    
+    
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
 	
@@ -910,18 +924,24 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     				url:API_PATH+'/api/v1/getuserSavelistMenu/'+$rootScope.userID,
     				method:'GET'
 	    			}).then(function(response){
-	    				$scope.getSavelistMenu=response.data.DATA;	    			
+	    				$scope.getSavelistMenu=response.data.DATA;	
 	    			
 	    			}, function(response){
 	
 	    			});	
         		}
      //-----------getSavelistMenuUser---------------//
+    	    /*$scope.saveListIDByUser="";
+    	    $scope.saveListNameByUser="";
+    	    $scope.totalInSaveListByUser="";*/
     	    
     		$scope.getDocumentByEachSavelist=function(savelistID){
+    			
+    			/*$scope.saveListIDByUser=savelistID;
+    			$scope.saveListNameByUser=listName;
+    			$scope.totalInSaveListByUser=totalDoc;*/
+    			
     			var userID = $rootScope.userID;
-    			
-    			
     			$http({
     				url:API_PATH+'/api/v1/getEachSavelist/'+userID,
     				method:'GET',

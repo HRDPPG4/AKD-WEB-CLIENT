@@ -12,8 +12,8 @@
 	   		 		</div>
 	   		 		<div class="col-md-8">
 	   		 			<h3>My Savelist</h3>
-		   		 		<h4><span><i class="fa fa-globe" aria-hidden="true"></i></span> | Chivorn</h4>
-		   		 		<p>12 docs</p>
+		   		 		<h4><!-- <span><i class="fa fa-globe" aria-hidden="true"></i></span> | --> ${userName}</h4>
+		   		 		<p>{{totalInSaveListByUser}}</p>
 		   		 		<p>This is description</p>
 	   		 		</div>
 	   		 		<div class="col-md-1">
