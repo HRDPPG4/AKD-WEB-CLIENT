@@ -4,7 +4,7 @@
 	<div class="history-header">
 		<h3>ប្រវត្តិនៃការមើលរបស់អ្នក</h3>
 		<div class="btn-clear-history">
-			<button class="clear-history btn btn-primary">លុបទាំងអស់</button>
+			<button class="clear-history btn btn-primary" ng-click="deleteAllLogByUserID()">លុបទាំងអស់</button>
 		</div>
 	</div>
 	<ol class="main-list-data">

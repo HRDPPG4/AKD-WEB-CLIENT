@@ -40,22 +40,22 @@
 	<section>
 		<div style="margin-top:15px;">					 						
 			<div class="wrapper">
-			  	<%@include file="include/user/left-side-bar.jsp"%>				  		  	
+			  	<%@include file="include/user-page-layout/left-side-bar.jsp"%>				  		  	
 				<div class="content-wrapper">
-				  <%@include file="include/user/content-header.jsp"%>
+				  <%@include file="include/user-page-layout/content-header.jsp"%>
 				  <section class="content">								
 					 <div class="tab-content">
-					 	<%@include file="include/user-update/user-info.jsp"%>
-					 	<%-- <%@include file="include/user-update/user-dashboard.jsp"%> --%>				 		
-						<%@include file="include/user-update/user-doc.jsp"%>	
-				      	<%@include file="include/user-update/user-savelist.jsp"%>	
-				 		<%@include file="include/user-update/user-history.jsp"%>
-				 		<%@include file="include/user-update/modal-insert-update-savelist.jsp"%>				 							 		
+					 	<%@include file="include/user/user-info.jsp"%>
+					 	<%-- <%@include file="include/user/user-dashboard.jsp"%> --%>				 		
+						<%@include file="include/user/user-doc.jsp"%>	
+				      	<%@include file="include/user/user-savelist.jsp"%>	
+				 		<%@include file="include/user/user-history.jsp"%>
+				 		<%@include file="include/user/modal-insert-update-savelist.jsp"%>				 							 		
 					  </div>						
 				  </section>
 				</div>			
-			  	<%@include file="include/user/footer.jsp"%>
-			  	<%@include file="include/user/right-control-side-bar.jsp"%>
+			  	<%@include file="include/user-page-layout/footer.jsp"%>
+			  	<%@include file="include/user-page-layout/right-control-side-bar.jsp"%>
 			</div>				
 		</div>
 	</section>

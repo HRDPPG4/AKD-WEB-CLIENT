@@ -650,9 +650,33 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
               
 			});		  
   		}
-	
-	 
-	
+	  
+	  $scope.deleteAllLogByUserID =function(){
+			 swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+				text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+				type: "warning",   showCancelButton: true,   
+				confirmButtonColor: "#DD6B55",   
+				confirmButtonText: "យល់ព្រម",   
+				cancelButtonText: "បដិសេធ",   
+				closeOnConfirm: false,   closeOnCancel: false },
+				function(isConfirm){   
+				 	if (isConfirm) {     
+				 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+				 		$http({
+							url:API_PATH+'/api/v1/deleteAllLogByUserID/'+$rootScope.userID,
+							method:'DELETE',
+						}).then(function(response){
+							$scope.getLogByUserID();
+						}, function(response){
+			              
+						});	
+				 	}
+			 		else {     
+			 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+			 		} 
+			 	});
+			}
+	  
 	
 	
 	///////////////////		END LOG BLOCK	/////////////////
