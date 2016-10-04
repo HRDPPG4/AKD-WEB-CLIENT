@@ -366,18 +366,13 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			});
 			
 		});
-		
-		
 	};
-	
-	
 	
 		
 	$scope.getDocumentCount = function() {
 		$http({
 			url : API_PATH+'/api/v1/getDocumentCount',
 			method : 'GET'
-			
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
 			//console.log($scope.documentCount);
@@ -392,7 +387,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.document = response.data.DATA;
-			//console.log($scope.document);
+			console.log($scope.document);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
@@ -442,7 +437,83 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		
 		});
 	}
+	
+	$scope.removeDocument = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/document/' + id ,
+			method : 'PUT'
+		}).then(function() {
+			$scope.getDocumentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeDocument(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
 
+	$scope.getDataForUpdate = function(document) {
+		$scope.docTitle = document.d.TITLE;
+		$scope.docDesc = document.d.DES;
+		$scope.embedLink = document.d.EMBEDED_LINK;
+		$scope.thumnail = document.d.THUMBNAIL_URL;
+		$scope.exportLink = document.d.EXPORT_LINK;
+		$scope.view = document.d.VIEW;
+		$scope.share = document.d.SHARE;
+		$scope.createdDate = document.d.CREATED_DATE;
+		$scope.docTypeNum = document.d.DOC_TYPE_NUM;
+		$scope.userID = document.d.USER_ID;
+		$scope.catID = document.d.CAT_ID;
+		$scope.status = document.d.STATUS;
+		$scope.docID= document.d.DOC_ID;
+		
+	}
+	
+	$scope.updateDocument = function() {
+		$http({
+			url : API_PATH+'/api/v1/document',
+			method : 'PUT',
+			data : {
+				'TITLE' : $scope.docTitle,
+				'DES' : $scope.docDesc,
+				'EMBEDED_LINK' : $scope.embedLink,
+				'THUMBNAIL_URL' : $scope.thumnail,
+				'EXPORT_LINK' : $scope.exportLink,
+				'VIEW' : $scope.view,
+				'SHARE' : $scope.share,
+				'CREATED_DATE' : $scope.createdDate,
+				'DOC_TYPE_NUM' : $scope.docTypeNum,
+				'USER_ID' : $scope.userID,
+				'CAT_ID' : $scope.catID,
+				'STATUS' : $scope.status,
+				'DOC_ID' : $scope.docID
+			}
+		}).then(function() {
+			$scope.getDocumentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+
+	$scope.alertUpdate = function() {
+		$scope.updateDocument();
+		swal("Updated!", "Document is updated!", "success")
+	}	
+	
 
 });
 
@@ -458,7 +529,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 			
 		}).then(function(response) {
-			//console.log(response);
+			console.log(response.data.DATA);
 			$scope.comment = response.data.DATA;
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
@@ -527,24 +598,61 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		swal(title, message);
 	}
 	
+	$scope.getDataForUpdate = function(com) {
+		$scope.createdDate = com.c.CREATED_DATE;
+		$scope.docTitle = com.c.DOCUMENTS[0].TITLE;
+		$scope.commentedBy = com.c.USERS[0].USER_NAME;
+		$scope.remark = com.c.REMARK;
+		$scope.userID = com.c.USER_ID;
+		$scope.docID = com.c.DOC_ID;
+		$scope.status = com.c.STATUS;
+		$scope.comID = com.c.COMMENT_ID;
+	}
+	
+	$scope.updateComment = function() {
+		$http({
+			url : API_PATH+'/api/v1/comment',
+			method : 'PUT',
+			data : {
+				'CREATED_DATE' : $scope.createdDate,
+				'REMARK' : $scope.remark,
+				'USER_ID' : $scope.userID,
+				'DOC_ID' : $scope.docID,
+				'STATUS' : $scope.status,
+				'COMMENT_ID' : $scope.comID
+			}
+		}).then(function() {
+			$scope.getCommentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertUpdateComment = function() {
+		$scope.updateComment();
+		swal("Updated!", "Comment has been updated!", "success")
+	}	
+	
+	
 });
 
-// =======================Feedback Controller======================
-app.controller('FeedbackCtrl', function($scope, $http, $window) {
-	$scope.getFeedbackData = function() {
+
+//=================== Savelist Controller======================
+app.controller('SavelistCtrl', function($scope, $http, $window) {
+	$scope.getSavelistData = function() {
 		$http({
-			url : API_PATH+'/api/v1/feedback',
+			url : API_PATH+'/api/v1/savelist',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
-			$scope.feedback = response.data.DATA;
-			//console.log($scope.feedback);
+			$scope.savelist = response.data.DATA;
+			console.log($scope.savelist);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
-			
+
 		});
 	}
-	$scope.getFeedbackData();
+	$scope.getSavelistData();
 	//TODO: default filter
 	$scope.filter = {
 		page: 1,
@@ -567,20 +675,19 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 	}
 	
 	PAGINATION.on("page", function(event, num){
+		
 		$scope.filter.page = num;
-		$scope.getFeedbackData();
+		$scope.getSavelistData();
 	});
 	
-	
-	$scope.removeFeedback = function(id) {
+	$scope.removeSavelist = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/feedback/' + id,
-			method : 'DELETE'
+			url : API_PATH+'/api/v1/savelist/' + id,
+			method : 'PUT'
 		}).then(function() {
-			$scope.getFeedbackData();
+			$scope.getSavelistData();
 		}, function() {
-			swal("Loading Data Fiald!", "Please check your connection again!");
-			alert("Fiald");
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
 	}
 	
@@ -595,8 +702,118 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 			closeOnConfirm : false
 		},
 				function() {
-					$scope.removeComment(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
+					$scope.removeSavelist(id);
+					swal("Deleted!", "Your record has been deleted.",
+							"success");
+				});
+	}
+	
+	$scope.getDataForUpdate = function(sl) {
+		$scope.listName = sl.s.LIST_NAME;
+		$scope.createdDate = sl.s.CREATED_DATE;
+		$scope.user = sl.s.USERS[0].USER_NAME;
+		$scope.remark = sl.s.REMARK;
+		$scope.userID = sl.s.USER_ID;
+		$scope.status = sl.s.STATUS;
+		$scope.listID= sl.s.LIST_ID;
+	}
+
+	$scope.updateSavelist = function() {
+		$http({
+			url : API_PATH+'/api/v1/savelist',
+			method : 'PUT',
+			data : {
+				'LIST_NAME' : $scope.listName,
+				'CREATED_DATE' : $scope.createdDate,
+				'REMARK' : $scope.remark,
+				'USER_ID' : $scope.userID,
+				'STATUS' : $scope.status,
+				'LIST_ID' : $scope.listID
+			}
+		}).then(function() {
+			$scope.getSavelistData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertUpdateSavelist = function() {
+		$scope.updateSavelist();
+		swal("Updated!", "List is updated!", "success")
+	}	
+	
+});
+//=======================End Savelist Controller======================
+
+
+// =======================Feedback Controller======================
+app.controller('FeedbackCtrl', function($scope, $http, $window) {
+	$scope.getFeedbackData = function() {
+		$http({
+			url : API_PATH+'/api/v1/feedback',
+			method : 'GET',
+			params : $scope.filter
+		}).then(function(response) {
+			$scope.feedback = response.data.DATA;
+			console.log($scope.feedback);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		}, function(response) {
+			
+		});
+	}
+		//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		$scope.filter.page = num;
+		$scope.getFeedbackData();
+	});
+	$scope.getFeedbackData();
+
+	
+	$scope.removeFeedback = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/feedback/' + id,
+			method : 'PUT'
+		}).then(function() {
+			$scope.getFeedbackData();
+		}, function() {
+			swal("Loading Data Fiald!", "Please check your connection again!");
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeFeedback(id);
+					swal("Deleted!", "Your record has been deleted.",
 							"success");
 				});
 	}
@@ -678,82 +895,6 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 	
 	
 });
-
-//=================== Savelist Controller======================
-app.controller('SavelistCtrl', function($scope, $http, $window) {
-	$scope.getSavelistData = function() {
-		$http({
-			url : API_PATH+'/api/v1/savelist',
-			method : 'GET',
-			params : $scope.filter
-		}).then(function(response) {
-			$scope.savelist = response.data.DATA;
-			//console.log($scope.savelist);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
-		}, function(response) {
-
-		});
-	}
-	$scope.getSavelistData();
-	//TODO: default filter
-	$scope.filter = {
-		page: 1,
-		limit: 10
-	};
-	
-	var PAGINATION = angular.element("#PAGINATION");
-	$scope.setPagination = function(totalPage){
-		PAGINATION.bootpag({
-			total: totalPage,          // total pages
-			page: $scope.filter.page,   // default page
-			leaps: true,
-	        firstLastUse: true,
-	        first: '←',
-	        last: '→',
-	        next: 'Next',
-	        prev: 'Prev',
-	        maxVisible: 10
-		});		
-	}
-	
-	PAGINATION.on("page", function(event, num){
-		
-		$scope.filter.page = num;
-		$scope.getSavelistData();
-	});
-	
-	$scope.removeSavelist = function(id) {
-		$http({
-			url : API_PATH+'/api/v1/savelist/' + id,
-			method : 'PUT'
-		}).then(function() {
-			$scope.getReportData();
-		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-		});
-	}
-	
-	$scope.alertDelete = function(id) {
-		swal({
-			title : "Are you sure?",
-			text : "You will not be able to recover this imaginary file!",
-			type : "warning",
-			showCancelButton : true,
-			confirmButtonColor : "#DD6B55",
-			confirmButtonText : "Yes, delete it!",
-			closeOnConfirm : false
-		},
-				function() {
-					$scope.removeSavelist(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
-							"success");
-				});
-	}
-	
-	
-});
-
-
 
 ///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
 

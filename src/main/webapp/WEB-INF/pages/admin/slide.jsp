@@ -149,10 +149,13 @@ window.userID = "${userID}";
 										<td>{{d.SHARE}}</td>
 										<td><span class="label label-success">{{d.STATUS}}</span></td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<button type="button" class="btn btn-primary btn-sm"
+												ng-click="getDataForUpdate(this)"
+												data-toggle="modal"	data-target="#updateDocument">
 												<i class="fa fa-edit"></i>
 											</button>
-											<button type="button" class="btn btn-danger btn-sm">
+											<button type="button" class="btn btn-danger btn-sm"
+												ng-click="alertDelete(d.DOC_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -169,6 +172,7 @@ window.userID = "${userID}";
 					<!-- Modal Start -->
 
 					<%@include file="include/add-document.jsp"%>
+					<%@include file="include/update-document.jsp"%>
 
 					<!-- Modal End -->
 					<!-- /.box -->
