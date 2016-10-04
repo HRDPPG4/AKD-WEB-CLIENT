@@ -630,7 +630,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 	
 	$scope.alertUpdateComment = function() {
 		$scope.updateComment();
-		swal("Updated!", "Document is updated!", "success")
+		swal("Updated!", "Comment has been updated!", "success")
 	}	
 	
 	
@@ -686,10 +686,8 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 			method : 'PUT'
 		}).then(function() {
 			$scope.getSavelistData();
-			alert("success");
 		}, function() {
-			alert("faild");
-//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
 		});
 	}
 	
@@ -705,7 +703,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 		},
 				function() {
 					$scope.removeSavelist(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
+					swal("Deleted!", "Your record has been deleted.",
 							"success");
 				});
 	}
@@ -741,7 +739,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 	
 	$scope.alertUpdateSavelist = function() {
 		$scope.updateSavelist();
-		swal("Updated!", "Document is updated!", "success")
+		swal("Updated!", "List is updated!", "success")
 	}	
 	
 });
@@ -757,20 +755,20 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.feedback = response.data.DATA;
-			//console.log($scope.feedback);
+			console.log($scope.feedback);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 			
 		});
 	}
-	$scope.getFeedbackData();
-	//TODO: default filter
+		//TODO: default filter
 	$scope.filter = {
 		page: 1,
 		limit: 10
 	};
 	
 	var PAGINATION = angular.element("#PAGINATION");
+	
 	$scope.setPagination = function(totalPage){
 		PAGINATION.bootpag({
 			total: totalPage,          // total pages
@@ -789,17 +787,17 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 		$scope.filter.page = num;
 		$scope.getFeedbackData();
 	});
-	
+	$scope.getFeedbackData();
+
 	
 	$scope.removeFeedback = function(id) {
 		$http({
 			url : API_PATH+'/api/v1/feedback/' + id,
-			method : 'DELETE'
+			method : 'PUT'
 		}).then(function() {
 			$scope.getFeedbackData();
 		}, function() {
 			swal("Loading Data Fiald!", "Please check your connection again!");
-			alert("Fiald");
 		});
 	}
 	
@@ -814,8 +812,8 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 			closeOnConfirm : false
 		},
 				function() {
-					$scope.removeComment(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
+					$scope.removeFeedback(id);
+					swal("Deleted!", "Your record has been deleted.",
 							"success");
 				});
 	}
