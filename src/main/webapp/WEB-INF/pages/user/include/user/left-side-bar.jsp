@@ -72,7 +72,7 @@
       </li>
       
       <li>
-        <a data-toggle="tab" ng-click="getLogByUser()" href="#viewed">
+        <a data-toggle="tab" ng-click="getLogByUserID()" href="#viewed">
           <i class="fa fa-dashboard"></i> <span>History</span>          
         </a>
       </li>            
