@@ -96,29 +96,29 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Date</th>
-										<!-- <th>Desciption</th> -->
+										<th>#</th>
+										<th>List Name</th>
 										<th>User</th>
-										<!-- <th>Docs</th> -->
+										<th>Document</th>
+										<th>Status</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr ng-repeat="s in savelist" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{s.LIST_NAME}}</td>
-										<td>{{s.CREATED_DATE}}</td>
-										
-										<td>{{s.USER_ID}}</td>
-										<!-- <td>{{s.DOC_ID}}</td> -->
+										<td>{{s.LIST_NAME | strLimit: 32}}</td>
+										<td>{{s.USERS[0].USER_NAME}}</td>
+										<td>{{s.DOC_ID}}</td>
+										<td><span class="label label-success">{{s.STATUS}}</span></td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<button type="button" class="btn btn-primary btn-sm"
+												ng-click="getDataForUpdate(this)"
+												data-toggle="modal"	data-target="#updateSavelist">
 												<i class="fa fa-edit"></i>
 											</button>
 											<button type="button" class="btn btn-danger btn-sm"
-											  		ng-click="alertDelete(s.SAVE_LIST_ID)">
+											  		ng-click="alertDelete(s.LIST_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
 										</td>
@@ -129,14 +129,13 @@
 							</table>
 							<div id="PAGINATION"></div>
 						</div>
-						<!-- /.box-body -->
 					</div>
-					<!-- /.box -->
+					<!-- ============ Modal Start ================= -->
+						<%@include file="include/update-savelist.jsp"%>
+					<!-- ============ Modal End   ================= -->	
+					
 				</div>
-				<!-- /.col -->
 			</div>
-			<!-- /.row --> </section>
-			<!-- /.content -->
 		</div>
 	</div>
 	<%@include file="include/admin-script.jsp"%>

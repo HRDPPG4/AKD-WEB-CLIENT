@@ -106,14 +106,16 @@
 								<tbody>
 									<tr ng-repeat="c in comment" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{c.DOCUMENTS[0].TITLE}}</td>
+										<td>{{c.DOCUMENTS[0].TITLE | strLimit: 32}}</td>
 										<td>{{c.USERS[0].USER_NAME}}</td>
 										<td>{{c.CREATED_DATE}}</td>
 										<td>{{c.REMARK}}</td>
 										<td><span class="label label-success">{{c.STATUS}}</span></td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-reply"></i>
+											<button type="button" class="btn btn-primary btn-sm"
+												ng-click="getDataForUpdate(this)"
+												data-toggle="modal"	data-target="#updateComment">
+												<i class="fa fa-edit"></i>
 											</button>
 											<button type="button" class="btn btn-danger btn-sm"
 															ng-click="alertDelete(c.COMMENT_ID)">
@@ -127,14 +129,14 @@
 							</table>
 							<div id="PAGINATION"></div>
 						</div>
-						<!-- /.box-body -->
 					</div>
-					<!-- /.box -->
+					<!-- ============ Modal Start ================= -->
+					
+					<%@include file="include/update-comment.jsp"%>
+					
+					<!-- ============ Modal End   ================= -->				
 				</div>
-				<!-- /.col -->
 			</div>
-			<!-- /.row --> </section>
-			<!-- /.content -->
 		</div>
 
 

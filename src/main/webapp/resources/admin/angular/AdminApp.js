@@ -598,7 +598,155 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		swal(title, message);
 	}
 	
+	$scope.getDataForUpdate = function(com) {
+		$scope.createdDate = com.c.CREATED_DATE;
+		$scope.docTitle = com.c.DOCUMENTS[0].TITLE;
+		$scope.commentedBy = com.c.USERS[0].USER_NAME;
+		$scope.remark = com.c.REMARK;
+		$scope.userID = com.c.USER_ID;
+		$scope.docID = com.c.DOC_ID;
+		$scope.status = com.c.STATUS;
+		$scope.comID = com.c.COMMENT_ID;
+	}
+	
+	$scope.updateComment = function() {
+		$http({
+			url : API_PATH+'/api/v1/comment',
+			method : 'PUT',
+			data : {
+				'CREATED_DATE' : $scope.createdDate,
+				'REMARK' : $scope.remark,
+				'USER_ID' : $scope.userID,
+				'DOC_ID' : $scope.docID,
+				'STATUS' : $scope.status,
+				'COMMENT_ID' : $scope.comID
+			}
+		}).then(function() {
+			$scope.getCommentData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertUpdateComment = function() {
+		$scope.updateComment();
+		swal("Updated!", "Document is updated!", "success")
+	}	
+	
+	
 });
+
+
+//=================== Savelist Controller======================
+app.controller('SavelistCtrl', function($scope, $http, $window) {
+	$scope.getSavelistData = function() {
+		$http({
+			url : API_PATH+'/api/v1/savelist',
+			method : 'GET',
+			params : $scope.filter
+		}).then(function(response) {
+			$scope.savelist = response.data.DATA;
+			console.log($scope.savelist);
+			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
+		}, function(response) {
+
+		});
+	}
+	$scope.getSavelistData();
+	//TODO: default filter
+	$scope.filter = {
+		page: 1,
+		limit: 10
+	};
+	
+	var PAGINATION = angular.element("#PAGINATION");
+	$scope.setPagination = function(totalPage){
+		PAGINATION.bootpag({
+			total: totalPage,          // total pages
+			page: $scope.filter.page,   // default page
+			leaps: true,
+	        firstLastUse: true,
+	        first: '←',
+	        last: '→',
+	        next: 'Next',
+	        prev: 'Prev',
+	        maxVisible: 10
+		});		
+	}
+	
+	PAGINATION.on("page", function(event, num){
+		
+		$scope.filter.page = num;
+		$scope.getSavelistData();
+	});
+	
+	$scope.removeSavelist = function(id) {
+		$http({
+			url : API_PATH+'/api/v1/savelist/' + id,
+			method : 'PUT'
+		}).then(function() {
+			$scope.getSavelistData();
+			alert("success");
+		}, function() {
+			alert("faild");
+//			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertDelete = function(id) {
+		swal({
+			title : "Are you sure?",
+			text : "You will not be able to recover this imaginary file!",
+			type : "warning",
+			showCancelButton : true,
+			confirmButtonColor : "#DD6B55",
+			confirmButtonText : "Yes, delete it!",
+			closeOnConfirm : false
+		},
+				function() {
+					$scope.removeSavelist(id);
+					swal("Deleted!", "Your imaginary file has been deleted.",
+							"success");
+				});
+	}
+	
+	$scope.getDataForUpdate = function(sl) {
+		$scope.listName = sl.s.LIST_NAME;
+		$scope.createdDate = sl.s.CREATED_DATE;
+		$scope.user = sl.s.USERS[0].USER_NAME;
+		$scope.remark = sl.s.REMARK;
+		$scope.userID = sl.s.USER_ID;
+		$scope.status = sl.s.STATUS;
+		$scope.listID= sl.s.LIST_ID;
+	}
+
+	$scope.updateSavelist = function() {
+		$http({
+			url : API_PATH+'/api/v1/savelist',
+			method : 'PUT',
+			data : {
+				'LIST_NAME' : $scope.listName,
+				'CREATED_DATE' : $scope.createdDate,
+				'REMARK' : $scope.remark,
+				'USER_ID' : $scope.userID,
+				'STATUS' : $scope.status,
+				'LIST_ID' : $scope.listID
+			}
+		}).then(function() {
+			$scope.getSavelistData();
+		}, function() {
+			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+		});
+	}
+	
+	$scope.alertUpdateSavelist = function() {
+		$scope.updateSavelist();
+		swal("Updated!", "Document is updated!", "success")
+	}	
+	
+});
+//=======================End Savelist Controller======================
+
 
 // =======================Feedback Controller======================
 app.controller('FeedbackCtrl', function($scope, $http, $window) {
@@ -749,82 +897,6 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 	
 	
 });
-
-//=================== Savelist Controller======================
-app.controller('SavelistCtrl', function($scope, $http, $window) {
-	$scope.getSavelistData = function() {
-		$http({
-			url : API_PATH+'/api/v1/savelist',
-			method : 'GET',
-			params : $scope.filter
-		}).then(function(response) {
-			$scope.savelist = response.data.DATA;
-			//console.log($scope.savelist);
-			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
-		}, function(response) {
-
-		});
-	}
-	$scope.getSavelistData();
-	//TODO: default filter
-	$scope.filter = {
-		page: 1,
-		limit: 10
-	};
-	
-	var PAGINATION = angular.element("#PAGINATION");
-	$scope.setPagination = function(totalPage){
-		PAGINATION.bootpag({
-			total: totalPage,          // total pages
-			page: $scope.filter.page,   // default page
-			leaps: true,
-	        firstLastUse: true,
-	        first: '←',
-	        last: '→',
-	        next: 'Next',
-	        prev: 'Prev',
-	        maxVisible: 10
-		});		
-	}
-	
-	PAGINATION.on("page", function(event, num){
-		
-		$scope.filter.page = num;
-		$scope.getSavelistData();
-	});
-	
-	$scope.removeSavelist = function(id) {
-		$http({
-			url : API_PATH+'/api/v1/savelist/' + id,
-			method : 'PUT'
-		}).then(function() {
-			$scope.getReportData();
-		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
-		});
-	}
-	
-	$scope.alertDelete = function(id) {
-		swal({
-			title : "Are you sure?",
-			text : "You will not be able to recover this imaginary file!",
-			type : "warning",
-			showCancelButton : true,
-			confirmButtonColor : "#DD6B55",
-			confirmButtonText : "Yes, delete it!",
-			closeOnConfirm : false
-		},
-				function() {
-					$scope.removeSavelist(id);
-					swal("Deleted!", "Your imaginary file has been deleted.",
-							"success");
-				});
-	}
-	
-	
-});
-
-
 
 ///////////////////		START FILTER STRING WITH LIMIT LEGNH	/////////////////
 
