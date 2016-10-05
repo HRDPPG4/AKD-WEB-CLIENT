@@ -42,11 +42,11 @@
         </a>
       </li> -->
       
-      <li>
+      <li ng-init="countTotalDocByUserID()">
         <a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">
           <i class="fa fa-dashboard"></i> <span>My Documents</span> 
           <span class="pull-right-container">
-            <small class="label pull-right bg-green">20</small>
+            <small class="label pull-right bg-green">{{countDocByUserID}}</small>
           </span>         
         </a>
       </li>
@@ -64,9 +64,9 @@
           	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
           		{{savelistmenu.LIST_NAME}}
 	          	<span class="pull-right-container">
-	            	<small class="label pull-right bg-green">27</small>
-	            </span>
-          	</a>          	
+	            	<small class="label pull-right bg-green">{{savelistmenu.TOTAL_DOCUMENT}}</small>	            	
+	            </span>	           
+          	</a>           	
           </li>  
         </ul>
       </li>
