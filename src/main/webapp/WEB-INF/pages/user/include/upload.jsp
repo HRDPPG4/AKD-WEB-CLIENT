@@ -27,9 +27,9 @@
 			    <div class="form-group">
 			      <label>Category:</label>		      
 			        <select class="form-control" ng-model="catID">			       
-                        <!-- <option ng-repeat="x in category | filter:{ CAT_LEVEL: '!0'}" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option> -->
-                        <!-- WE ALSO CAN USE THIS -->
-                        <option ng-repeat="x in category | filter:{ CAT_LEVEL: '1'}" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
+                        <option ng-repeat="x in category | filter:{ CAT_LEVEL: '!0'}" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
+                        <!-- WE ALSO CAN USE THIS BUT HAS PROBLEM WITH CATEGORY OTHER-->
+                        <!-- <option ng-repeat="x in category | filter:{ CAT_LEVEL: '1'}" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option> -->
                    	</select>
 			    </div>
 			    
