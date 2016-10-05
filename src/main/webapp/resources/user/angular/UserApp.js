@@ -125,6 +125,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 				$scope.category=response.data.DATA;
 				
+				console.log("Get All Category Test");
+				console.log($scope.category);
+				
 			}, function(response){
 			
 			});

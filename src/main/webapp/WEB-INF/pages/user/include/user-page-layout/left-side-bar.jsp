@@ -64,7 +64,7 @@
           	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
           		{{savelistmenu.LIST_NAME}}
 	          	<span class="pull-right-container">
-	            	<small class="label pull-right bg-green">{{savelistmenu.TOTAL_DOCUMENT}}</small>	            	
+	            	<small class="label pull-right bg-green" ng-show="savelistmenu.TOTAL_DOCUMENT>0">{{savelistmenu.TOTAL_DOCUMENT}}</small>	            	
 	            </span>	           
           	</a>           	
           </li>  
