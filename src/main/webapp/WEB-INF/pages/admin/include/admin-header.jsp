@@ -2,6 +2,23 @@
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+   <sec:authentication  property="principal.userID" var="userID"/>
+   <sec:authentication  property="principal.name" var="userName"/>
+   <sec:authentication  property="principal.email" var="userEmail"/> 
+   <sec:authentication  property="principal.profile" var="userProfile"/>         
+</sec:authorize>
+
+<<style>
+	 .nav>li>a>img.userProfile
+	{
+		height:19px;
+		width:30px;
+	}
+</style>
+
 <header class="main-header">
 			<!-- Logo -->
 			<a href="/" class="logo">
@@ -25,17 +42,14 @@
 						<!-- User Account: style can be found in dropdown.less -->
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="${pageContext.request.contextPath}/resources/admin/img/avatar.png" class="user-image" alt="User Image">
-								<span class="hidden-xs">BUNHONG KIM</span>
+								<img alt="" src="${userProfile}" class="userProfile" alt="User Image">
+								<span class="hidden-xs">${userName}</span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
 								<li class="user-header">
-									<img src="${pageContext.request.contextPath}/resources/admin/img/avatar.png" class="img-circle" alt="User Image">
-
-									<p>
-										Bunhong Kim
-									</p>
+									<img alt="" src="${userProfile}" alt="User Image">
+										<p>${userName}</p>
 								</li>
 								<li class="user-footer">
 									<div class="pull-left">

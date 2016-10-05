@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>	
-	 <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
+
+<%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>
 
 <sec:authorize access="isAuthenticated()">
    <sec:authentication  property="principal.userID" var="userID"/>
    <sec:authentication  property="principal.name" var="userName"/>
+   <sec:authentication  property="principal.email" var="userEmail"/> 
+   <sec:authentication  property="principal.profile" var="userProfile"/>         
 </sec:authorize>
 
 <html ng-app="MainApp">
@@ -43,13 +46,11 @@ window.userID = "${userID}";
 		<section class="sidebar"> <!-- Sidebar user panel -->
 		<div class="user-panel">
 			<div class="pull-left image">
-				<img
-					src="${pageContext.request.contextPath}/resources/admin/img/avatar.png"
-					class="img-circle" alt="User Image">
+				<img alt="" src="${userProfile}" class="userProfile">
 			</div>
 			<div class="pull-left info">
 				<p>ADMIN</p>
-				<p>BUNHONG KIM</p>
+				<p>${userName}</p>
 
 			</div>
 		</div>
