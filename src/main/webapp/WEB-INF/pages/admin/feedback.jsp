@@ -97,8 +97,8 @@
 								<thead>
 									<tr>
 										<th>#</th>
-										<th>Date</th>
 										<th>Desciption</th>
+										<th>Date</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -106,13 +106,13 @@
 								<tbody>
 									<tr ng-repeat="f in feedback" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{f.CREATE_DATE}}</td>
 										<td>{{f.DES}}</td>
+										<td>{{f.CREATE_DATE}}</td>
 										<td><span class="label label-success">{{f.STATUS}}</span></td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<!-- <button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
-											</button>
+											</button> -->
 											<button type="button" class="btn btn-danger btn-sm"
 												ng-click="alertDelete(f.FEEDBACK_ID)">
 												<i class="fa fa-eraser"></i>

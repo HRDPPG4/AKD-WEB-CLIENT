@@ -119,9 +119,9 @@
 									<tr>
 									<th>#</th>
 										<th>Name</th>
+										<th>Sub Category of</th>
+										<th>Doc Number</th>
 										<th>Date</th>
-										
-										<!-- <th>Type</th> -->
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -130,10 +130,11 @@
 									<tr ng-repeat="c in category" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
 										<td>{{c.CAT_NAME}}</td>
+										<td>{{c.SUB_CATEGORIES[0].CAT_NAME}}</td>
+										<td>{{c.TOTAL_DOC}}</td>
 										<td>{{c.CREATED_DATE}}</td>
-										
-										<!-- <td>{{c.PARENT_ID}}</td> -->
 										<td>{{c.STATUS}}</td>
+<!-- 										<td>{{c.DOCUMENTS[0].TITLE | strLimit: 32}}</td> -->
 										<td>
 											<button type="button" class="btn btn-primary btn-sm" ng-click="getDataForUpdate(this)"
 													data-toggle="modal"	data-target="#updateCategory">

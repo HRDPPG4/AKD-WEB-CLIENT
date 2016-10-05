@@ -98,7 +98,7 @@
 										<th>Document</th>
 										<th>Commented By</th>
 										<th>Date</th>
-										<th>Desciption</th>
+										<th>Description</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>

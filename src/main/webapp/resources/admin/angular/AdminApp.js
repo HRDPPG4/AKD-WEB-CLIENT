@@ -830,7 +830,7 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 			params : $scope.filter
 		}).then(function(response) {
 			$scope.report = response.data.DATA;
-			//console.log($scope.report);
+			console.log($scope.report);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
 

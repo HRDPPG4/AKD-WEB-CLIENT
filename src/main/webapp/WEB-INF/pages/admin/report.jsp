@@ -95,23 +95,25 @@
 							<table id="example1" class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>ID</th>
+										<th>#</th>
+										<th>Document</th>
 										<th>User</th>
 										<th>Date</th>
-										<th>Desciption</th>
+										<th>Description</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr ng-repeat="r in report" ng-init="rowNumber= 10">
 										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
-										<td>{{r.USER_ID}}</td>
-										<td>{{r.CREATED_DATE}}</td>
-										<td>{{r.REMARK}}</td>
+										<td>{{r.DOCUMENTS[0].TITLE | strLimit: 22}}</td>
+										<td>{{r.USERS[0].USER_NAME}}</td>
+										<td>{{r.CREATED_DATE | strLimit: 12}}</td>
+										<td>{{r.REMARK | strLimit: 32}}</td>
 										<td>
-											<button type="button" class="btn btn-primary btn-sm">
+											<!-- <button type="button" class="btn btn-primary btn-sm">
 												<i class="fa fa-edit"></i>
-											</button>
+											</button> -->
 											<button type="button" class="btn btn-danger btn-sm"
 											  		ng-click="alertDelete(r.REPORT_ID)">
 												<i class="fa fa-eraser"></i>

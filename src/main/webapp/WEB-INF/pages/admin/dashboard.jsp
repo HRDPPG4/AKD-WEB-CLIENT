@@ -152,39 +152,36 @@
 
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
-										<tr>
-											<th>ID</th>
-											<th>Name</th>
-											<th>Email</th>
-											<th>Date</th>
-											<th>Remark</th>
-											<th>Role</th>
-											<th>Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr ng-repeat="u in user">
-											<td>{{u.USER_ID}}</td>
-											<td>{{u.USER_NAME}}</td>
-											<td>{{u.EMAIL}}</td>
-											<td>{{u.CREATED_DATE}}</td>
-											<td>{{u.REMARK}}</td>
-											<td>{{u.USER_ROLE}}</td>
-											<td>
-												<button type="button" class="btn btn-primary btn-sm"
-													ng-click="getDataForUpdate(this)" data-toggle="modal"
-													data-target="#updateUser">
-													<i class="fa fa-edit"></i>
-												</button>
+									<tr>
+										<th>#</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Date</th>
+										<th>Role</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="u in user" ng-init="rowNumber= 10">
+										<td>{{($index + ((filter.page - 1) * rowNumber)) + 1}}</td>
+										<td>{{u.USER_NAME}}</td>
+										<td>{{u.EMAIL}}</td>
+										<td>{{u.CREATED_DATE}}</td>
+										<td>{{u.USER_ROLE}}</td>
+										<td>
+											<button type="button" class="btn btn-primary btn-sm"
+												ng-click="getDataForUpdate(this)" data-toggle="modal"
+												data-target="#updateUser">
+												<i class="fa fa-edit"></i>
+											</button>
 
-												<button type="button" class="btn btn-danger btn-sm"
-													ng-click="alertDelete(u.USER_ID)">
-													<i class="fa fa-eraser"></i>
-												</button>
-											</td>
-										</tr>
-									</tbody>
-									<tfoot>
+											<button type="button" class="btn btn-danger btn-sm"
+												ng-click="alertDelete(u.USER_ID)">
+												<i class="fa fa-eraser"></i>
+											</button>
+										</td>
+									</tr>
+								</tbody>									<tfoot>
 										<!-- <button class="btn btn-flat btn-primary"
 											ng-click="updateUser()">Update</button>
 										</tr> -->
