@@ -61,7 +61,7 @@
         </a>
         <ul class="treeview-menu">
            <li ng-repeat ="savelistmenu in getSavelistMenu" class="savelistData">
-          	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID,savelistmenu.LIST_NAME,savelistmenu.TOTAL_DOCUMENT)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
+          	<a data-toggle="tab"  ng-click="getDocumentByEachSavelist(savelistmenu.LIST_ID)" href="#mysavelist"><i class="fa fa-circle-o"></i> 
           		{{savelistmenu.LIST_NAME}}
 	          	<span class="pull-right-container">
 	            	<small class="label pull-right bg-green">{{savelistmenu.TOTAL_DOCUMENT}}</small>	            	

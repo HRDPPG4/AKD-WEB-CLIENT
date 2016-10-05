@@ -951,7 +951,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     			
     			}).then(function(response){
     				$scope.getDocumentInSavelist=response.data.DATA[0].SAVELISTDETAIL;
-    				console.log(response);
+    				$scope.currentClickSavelist=response.data.DATA[0];
+    				console.log("get savelist");
+    				console.log($scope.currentClickSavelist);
     			}, function(response){
 
     			});
