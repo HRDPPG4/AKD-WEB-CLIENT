@@ -10,7 +10,7 @@
    <sec:authentication  property="principal.profile" var="userProfile"/>         
 </sec:authorize>
 
-<html ng-app="MainApp">
+<html>
 <head>
 
 <script>
@@ -38,7 +38,7 @@ window.userID = "${userID}";
 }
 </style>
 </head>
-<body ng-cloak class="skin-blue sidebar-mini">
+<body​​ ng-app="MainApp" ng-cloak class="skin-blue sidebar-mini">
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>

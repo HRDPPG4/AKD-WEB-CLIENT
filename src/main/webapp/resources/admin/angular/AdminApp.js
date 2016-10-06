@@ -429,7 +429,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			method:'GET'			
 		}).then(function(response){
 		//	console.log(response.data.DATA);
-			$scope.getAllCategory=response.data.DATA;
+			$scope.AllCategory=response.data.DATA;
 		//	console.log("GET ALL CAT ADMIN");
 		//	console.log($scope.getAllCategory);
 			
