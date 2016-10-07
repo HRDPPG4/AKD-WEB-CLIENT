@@ -90,19 +90,19 @@ a.thumbnail {
 					 </div>
 					<div class="row" style="padding:12px;">
 						<div class="col-md-12" ng-if="showRecomment">
-							<div  ng-repeat="slide in recommend" class="col-md-3" style="margin-bottom:10px;">
+							<div  ng-repeat="slide in recommend | limitTo : 20" class="col-md-3" style="margin-bottom:10px;">
 								<%@include file="include/slide-layout.jsp"%>
 							</div>
 							<div id="PAGINATION"></div>
 						</div>	 						
 						<div class="col-md-12" ng-if="showPopular">
-							<div  ng-repeat="slide in popular" class="col-md-3" style="margin-bottom:10px;">
+							<div  ng-repeat="slide in popular | limitTo : 20" class="col-md-3" style="margin-bottom:10px;">
 								 <%@include file="include/slide-layout.jsp"%>  
 							</div>
 							<div id="PAGINATION"></div>
 						</div>						
 						<div class="col-md-12" ng-if="showNewPost">
-							<div  ng-repeat="slide in newDocument" class="col-md-3" style="margin-bottom:10px;">
+							<div  ng-repeat="slide in newDocument | limitTo : 20" class="col-md-3" style="margin-bottom:10px;">
 								 <%@include file="include/slide-layout.jsp"%>  
 							</div>
 							<!-- <div id="PAGINATION"></div> -->
