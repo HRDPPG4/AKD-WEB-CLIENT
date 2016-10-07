@@ -850,7 +850,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		         }else{
 		        	
-		          	  Savelistname = listname;
+		          	  /*Savelistname = listname;
 		          	  
 		          	  Des = "Create Category Savelist";
 		          	  $http({
@@ -877,7 +877,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        			$scope.enableList=false;
 		        		}, function(response){
 		        			
-		        		});
+		        		});*/
 
 		        
 		         }
