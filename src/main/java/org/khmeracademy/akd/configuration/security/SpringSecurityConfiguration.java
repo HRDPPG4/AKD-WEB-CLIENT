@@ -1,15 +1,18 @@
 package org.khmeracademy.akd.configuration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 @EnableWebSecurity
@@ -17,38 +20,16 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 		value={"classpath:configuration.properties"}
 )
 public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
-
 	@Autowired
 	private Environment environment;
 	
-	/*@Autowired
-	@Qualifier(value="ajaxAuthenticationSuccessHandler")
-	private AjaxAuthenticationSuccessHandler ajaxAuthenticationSuccessHandler;
-	
-	@Autowired
-	@Qualifier(value="ajaxAuthenticationFailureHandler")
-	private AjaxAuthenticationFailureHandler ajaxAuthenticationFailureHandler;
-
-	@Autowired
-	@Qualifier("CustomUserDetailService")
-	private UserDetailsService userDetailsService;
-	
-	
-	@Autowired
-	protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService);
-			//.passwordEncoder(passwordEncoder());
-		
-	}*/
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
 		http.authorizeRequests()
-			.antMatchers("/").permitAll();
-			//.antMatchers("/admin/**").hasAnyRole("ADMIN")
-			//.antMatchers("/user/**").hasRole("USER");
-		
+		.antMatchers("/").permitAll();
+		//.antMatchers("/admin/**").hasAnyRole("ADMIN")
+		//.antMatchers("/user/**").hasRole("USER");
 		http
 			.formLogin()
 			.loginPage(environment.getProperty("ACCOUNT_LOGIN_URL")+environment.getProperty("ACCOUNT_CONTINUE_SITE"))
@@ -69,17 +50,13 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.invalidateHttpSession(true)
 			.deleteCookies("JESSIONID",environment.getProperty("ACCOUNT_KNONG_DAI_COOKIE_NAME"))
 			.permitAll();
-			
 		
 		http.csrf().disable();
-		http.exceptionHandling().accessDeniedPage("/accessDenied");
+		http.exceptionHandling().accessDeniedPage("/access-denied");
 	}
-	
+
 	@Bean
 	protected SessionRegistry sessionRegistryImpl(){
 		return new SessionRegistryImpl();
 	}
-	
-	
-
 }

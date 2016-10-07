@@ -9,10 +9,12 @@ public class Role implements GrantedAuthority {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	@JsonProperty("ROLE_ID")
 	private int roleId;
+	
 	@JsonProperty("ROLE_NAME")
 	private String roleName;
 	

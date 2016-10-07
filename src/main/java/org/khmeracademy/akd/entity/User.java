@@ -42,6 +42,9 @@ public class User implements UserDetails{
 	@JsonProperty("ROLES")
 	private List<Role> roles;
 	
+	@JsonProperty("USER_HASH")
+	private String userHash;
+	
 	
 	public int getUserID() {
 		return userID;
@@ -138,6 +141,12 @@ public class User implements UserDetails{
 	}
 	public void setProfile(String profile) {
 		this.profile = profile;
+	}
+	public String getUserHash() {
+		return userHash;
+	}
+	public void setUserHash(String userHash) {
+		this.userHash = userHash;
 	}
 	
 	

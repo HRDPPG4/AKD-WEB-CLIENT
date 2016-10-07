@@ -11,9 +11,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @PropertySource(
 		value={"classpath:configuration.properties"}
@@ -27,7 +25,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 	public void addViewControllers(ViewControllerRegistry registry) {	
 		// STILL CAN USE WHEN DYNAMIC
 		registry.addViewController("/accessDenied").setViewName("error/403");
-		registry.addViewController("/login").setViewName("login");
+		/*registry.addViewController("/login").setViewName("login");*/
 	
 	}
 	
@@ -54,6 +52,11 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		return environment.getProperty("ACCOUNT.API.URL");
 	}
 	
+	@Bean(name="WS_URL")
+	public String AKD_API_URL(){
+		return environment.getProperty("AKD.API.URL");
+	}
+	
 	@Bean(name="KNONGDAI_API_SECRET_HEADER")
 	public HttpHeaders knongDaiSecretHeader(){
 		HttpHeaders headers = new HttpHeaders();
@@ -62,6 +65,8 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		headers.set("Authorization", "Basic " + credentials);
 		return headers;
 	}
+	
+	
 	
 	
 }

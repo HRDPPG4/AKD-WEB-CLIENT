@@ -1,4 +1,7 @@
 package org.khmeracademy.akd.controller;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.khmeracademy.akd.entity.User;
 import org.khmeracademy.akd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,22 +21,45 @@ public class AutoLoginController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/auto-login" , method= RequestMethod.GET)
-	public String autoLogin(@RequestParam("user-id") String userId , @RequestParam(name="continue-site", required=false , defaultValue="${pageContext.request.contextPath}") String continueSite) {
+	@RequestMapping(value = "/auto-login" , method= RequestMethod.GET)
+	public String autoLogin(@RequestParam("user-hash") String userHash , @RequestParam(name="continue-site", required=false , defaultValue="/") String continueSite , HttpServletResponse  response) {
 
-		User user = userService.findUserByUserId(userId);
-
-		System.out.println("Username : " + user.getUsername());
+			try{
+				
+				//TODO : Find user by user hash from TinhEy Database 
+				User user = userService.findUserByUserHash(userHash);
+				
+				//TODO : If user doesn't exit in TinhEy Database 
+				if(user == null){
+					//TODO : Get user from KhmerAcademy Database by user hash to save into TinhEy Database 
+					if(userService.registerUser(userHash)){
+						user = userService.findUserByUserHash(userHash);
+						System.out.println("User from KhmerAcademy  has beend saved into TinhEy Database successfully! Username : "+  user.getUsername());
+					}else{
+						System.out.println("User from KhmerAcademy  has not beend saved into TinhEy Database");
+					}
+				}else{
+					System.out.println("User aleady exists in KhmerAcademy and TinhEy Databaes.");
+				}
+				
+				System.out.println("Username : " + user.getUsername());
+				
+				//TODO : Set User Object into Spring Security Authentication
+				Authentication authentication = new UsernamePasswordAuthenticationToken(user, user.getPassword(), user.getAuthorities());
 		
-		Authentication authentication = new UsernamePasswordAuthenticationToken(user, user.getPassword(), user.getAuthorities());
+				SecurityContext context = new SecurityContextImpl();
+				
+				//TODO : Set User authentication to SecurityContext
+				context.setAuthentication(authentication);
+				
+				//TODO : store user information
+				SecurityContextHolder.setContext(context);
 
-		SecurityContext context = new SecurityContextImpl();
-		context.setAuthentication(authentication);
-
-		SecurityContextHolder.setContext(context);
-
+		
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return "redirect:"+continueSite;
 
 	}
-
 }
