@@ -37,34 +37,20 @@ public class UserServiceImpl implements UserService{
 	private RestTemplate rest;
 	
 	@Autowired
-	private String WS_URL;
+	private String AKD_API_URL;
 	
 	//TODO : Get User Object by user hash
 	@Override
 	public User findUserByUserHash(String userHash) {
 		try{
-			HttpEntity<Object> request = new HttpEntity<Object>(header);
-			/*ResponseEntity<Map> response = rest.exchange(WS_URL + "/user/find-user-by-user-hash/"+userHash, HttpMethod.POST , request , Map.class);*/
-			ResponseEntity<Map> response = rest.exchange(WS_URL + "/user/findUserByUserHash/"+userHash, HttpMethod.GET , request , Map.class);
+			HttpEntity<Object> request = new HttpEntity<Object>(header);			
+			ResponseEntity<Map> response = rest.exchange(AKD_API_URL + "/user/findUserByUserHash/"+userHash, HttpMethod.GET , request , Map.class);
 			Map<String, Object> map = (HashMap<String, Object>)response.getBody();
 			if(map.get("DATA") != null){
 				Map<String , Object> data =  (Map<String, Object>) map.get("DATA");
 				List<Role> roles = new ArrayList<>();
 				User u = new User();
-				
-				/*u.setUserID((Integer) data.get("ID"));
-				u.setName((String)data.get("USERNAME"));
-				u.setPassword((String) data.get("PASSWORD"));
-				u.setProfile((String) data.get("USER_IMAGE"));
-				Role role = new Role();
-				role.setRoleName((String)data.get("ROLE"));
-				roles.add(role);
 					
-				u.setRoles(roles);
-				
-				return u;*/
-				
-				
 				u.setUserID((Integer) data.get("USER_ID"));
 				u.setName((String)data.get("USER_NAME"));
 				u.setPassword((String) data.get("PASSWORD"));
@@ -77,8 +63,8 @@ public class UserServiceImpl implements UserService{
 				Role role = new Role();
 				role.setRoleName((String)data.get("USER_ROLE"));
 				roles.add(role);
-					
 				u.setRoles(roles);
+				
 				u.setProfile((String) data.get("PROFILE"));
 				u.setUserHash((String) data.get("USER_HASH"));
 				return u;
@@ -107,21 +93,25 @@ public class UserServiceImpl implements UserService{
 		
 		if(userMap != null){
 			//TODO : If user object exists in KhmerAacademy Database, but user doesn't exist in TinhEy Database, so save user object in TinhEy Database
-			/*UserFrm user = new UserFrm();*/
 			User user = new User();
+			user.setUserID((Integer) userMap.get("USER_ID"));
 			user.setName((String)userMap.get("USERNAME"));
-			user.setPassword((String)userMap.get("PASSWORD"));
-			user.setProfile((String)userMap.get("USER_IAMGE_URL"));
-			user.setUserHash((String)userMap.get("USER_HASH"));
+			user.setPassword((String) userMap.get("PASSWORD"));
+			user.setEmail((String) userMap.get("EMAIL"));
+			user.setPhone("");
+			user.setCreatedDate((String) userMap.get("REGISTERED_DATE"));
+			user.setRemark("");
+			user.setStatus(1);
 			user.setRole("ROLE_USER");
-			
-			System.out.println("//TODO : If user exists in KhmerAacademy Database, but user doesn't exists in TinhEy Database, so save user in TinhEy Database");
+			user.setProfile((String) userMap.get("USER_IAMGE_URL"));
+			user.setUserHash((String) userMap.get("USER_HASH"));
+			System.out.println("//TODO : If user exists in KhmerAacademy Database, but user doesn't exists in AKD Database, so save user in AKD Database");
 			
 			//TODO : Save user from KhmerAcademy into TinhEy Database 
 			HttpEntity<Object> savedRequest = new HttpEntity<Object>(user,header);
 			/*ResponseEntity<Map> savedResponse = rest.exchange(WS_URL + "/user/register", HttpMethod.POST , savedRequest , Map.class);*/
-			System.out.println(WS_URL);
-			ResponseEntity<Map> savedResponse = rest.exchange(WS_URL + "/user", HttpMethod.POST , savedRequest , Map.class);
+			System.out.println(AKD_API_URL);
+			ResponseEntity<Map> savedResponse = rest.exchange(AKD_API_URL + "/user", HttpMethod.POST , savedRequest , Map.class);
 			Map<String, Object> savedMap = (HashMap<String, Object>)savedResponse.getBody();
 			System.out.println("savedMap ====== > " + savedMap);
 			return true;

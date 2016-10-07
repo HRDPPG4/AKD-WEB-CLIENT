@@ -23,7 +23,6 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {	
-		// STILL CAN USE WHEN DYNAMIC
 		registry.addViewController("/accessDenied").setViewName("error/403");
 		/*registry.addViewController("/login").setViewName("login");*/
 	
@@ -52,7 +51,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		return environment.getProperty("ACCOUNT.API.URL");
 	}
 	
-	@Bean(name="WS_URL")
+	@Bean(name="AKD_API_URL")
 	public String AKD_API_URL(){
 		return environment.getProperty("AKD.API.URL");
 	}
