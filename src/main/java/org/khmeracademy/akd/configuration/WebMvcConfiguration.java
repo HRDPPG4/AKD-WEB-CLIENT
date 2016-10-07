@@ -51,10 +51,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		return environment.getProperty("ACCOUNT.API.URL");
 	}
 	
-	@Bean(name="AKD_API_URL")
-	public String AKD_API_URL(){
-		return environment.getProperty("AKD.API.URL");
-	}
+	
 	
 	@Bean(name="KNONGDAI_API_SECRET_HEADER")
 	public HttpHeaders knongDaiSecretHeader(){
@@ -64,6 +61,22 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		headers.set("Authorization", "Basic " + credentials);
 		return headers;
 	}
+	
+	@Bean(name="AKD_API_URL")
+	public String AKD_API_URL(){
+		return environment.getProperty("AKD.API.URL");
+	}
+	
+	@Bean(name="LOGIN_URL")
+	public String login(){
+		return environment.getProperty("ACCOUNT_LOGIN_URL")+environment.getProperty("ACCOUNT_CONTINUE_SITE");
+	}
+	
+	@Bean(name="REGISTER_URL")
+	public String register(){
+		return environment.getProperty("ACCOUNT.API.URL")+"/register"+environment.getProperty("ACCOUNT_CONTINUE_SITE")+"/register";
+	}
+	
 	
 	
 	

@@ -153,7 +153,7 @@ window.fileName="";
 									</a>
 								</li>
 								<li>
-									<a href="/logout?logout">
+									<a href="/logout">
 										<span>ចាកចេញ</span>
 									</a>
 								</li>			
@@ -172,8 +172,8 @@ window.fileName="";
 							    	ចែកចាយឯកសារ
 							    </button>
 							    <sec:authorize access="isAnonymous()">
-							    	<a href="http://120.136.24.174:13300/login?continue-site=http://localhost:2222/" class="btn btn-default">ចូលប្រើប្រាស់</a>
-							    	<a href="#" class="btn btn-default">ចុះឈ្មោះ</a> 
+							    	<a href="/login" class="btn btn-default">ចូលប្រើប្រាស់</a>
+							    	<a href="/register" class="btn btn-default">ចុះឈ្មោះ</a> 
 							    </sec:authorize>
 						    </span>
 						</div>

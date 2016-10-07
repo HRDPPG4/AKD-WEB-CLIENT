@@ -1,6 +1,8 @@
 package org.khmeracademy.akd.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
+	
+	@Autowired
+	private String LOGIN_URL;
+	
+	@Autowired
+	private String REGISTER_URL;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String findAll(){
@@ -68,10 +76,15 @@ public class UserController {
 	public String feature11(){
 		return "user/featured";
 	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView method() {
-		return new ModelAndView("redirect:" + "http://120.136.24.174:13300/login?continue-site=http://localhost:2222");
-
+    public ModelAndView login() {
+		return new ModelAndView("redirect:" + LOGIN_URL);
+    }
+	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register() {
+		return new ModelAndView("redirect:" + REGISTER_URL);
     }
 	
 }
