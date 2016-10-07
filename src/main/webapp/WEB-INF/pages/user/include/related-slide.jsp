@@ -6,7 +6,7 @@
 			<div class="related-container">																					
 				<h4>ឯកសារដែលមានទំនាក់ទំនងនឹងគ្នា</h4>
 				<hr>													
-				<div class="col-xs-12 col-sm-6 col-md-12" ng-repeat="related in documentByCatID | limitTo : 10">  												     									 		 
+				<div class="col-xs-12 col-sm-6 col-md-12" ng-repeat="related in documentByCatID | filter:{DOC_ID: '!' + docDetail[0].DOC_ID} | limitTo : 10">  												     									 		 
 			 		<div style="width:170px;float:left;position: relative;left:-5px;">	
 							<input type="hidden" class="form-control" value="{{related.DOC_ID}}" id="slide_id">						 												 																		
 				 		 <a href="/detail/{{related.DOC_ID}}" class="thumbnail-detail" ng-click="getDocumentById(related.DOC_ID)" >
