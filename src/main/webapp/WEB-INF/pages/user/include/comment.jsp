@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
  
 <%@taglib prefix='sec' uri="http://www.springframework.org/security/tags" %>    
@@ -39,26 +39,7 @@
 
 	</form>
 </div> 
- --%>    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     
