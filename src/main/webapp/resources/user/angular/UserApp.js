@@ -1,7 +1,9 @@
 
 var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
-var API_PATH = "http://localhost:1111";
+//var API_PATH = "http://localhost:1111";
+var API_PATH = "http://172.20.10.2:1111";
+
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
 app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
@@ -1102,7 +1104,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	////////////////////	START UPLOAD BLOCK	/////////////////
-//	$rootScope.finalName=$window.fileName;
 	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
@@ -1114,14 +1115,14 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
-			var file = $('#filer_input')[0].files[0];
+			var file = $('#singleUploadDocument')[0].files[0];
 			frmData.append("files", file);				
 			frmData.append("title", $scope.theFile.name);
 			frmData.append("des", $scope.des);
 			frmData.append("usreID", $rootScope.userID);		
 			frmData.append("catID", $scope.catID);	
 			$http({
-				url : API_PATH+'/api/uploadFile',
+				url : API_PATH+'/api/uploadDocument',
 				method :'POST',
 				data : frmData,
 				transformRequest : angular.identity,

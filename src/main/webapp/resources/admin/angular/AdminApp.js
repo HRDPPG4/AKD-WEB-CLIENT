@@ -1,5 +1,7 @@
 var app = angular.module('MainApp', []);
-var API_PATH = "http://localhost:1111";
+
+//var API_PATH = "http://localhost:1111";
+var API_PATH = "http://172.20.10.2:1111";
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
@@ -323,23 +325,57 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 //============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
 	$rootScope.userID = $window.userID;
-//	alert($scope.userID);
-	$scope.theFile = null;
 	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.des="";
-	$scope.uploadFile = function(event) {			
-		//alert("Upload Block");
+	
+	$scope.showSingleInput = false;
+	$scope.showMultipleInput = false;
+	
+	
+	$scope.getUploadOption = function(option){
+		if(option == 'Single'){
+			$scope.showSingleInput = true;
+			$scope.showMultipleInput = false;
+		}else{
+			$scope.showMultipleInput = true;
+			$scope.showSingleInput = false;
+		}
+	}
+	
+	$scope.uploadDocument = function(event){
+		
 		event.preventDefault();	
 		var files = event.target.files;
-		var frmData = new FormData();					
-		var file = $('#filer_input')[0].files[0];
-		frmData.append("files", file);				
-		frmData.append("title", $scope.theFile.name);
-		frmData.append("des", $scope.des);
+		var frmData = new FormData();
+		
 		frmData.append("usreID", $rootScope.userID);		
-		frmData.append("catID", $scope.catID);	
+		frmData.append("catID", $scope.catID);
+		frmData.append("des", $scope.des);
+		
+		if($scope.uploadOption == 'Single'){	
+			
+			var file = $('#singleUploadDocument')[0].files[0];
+			frmData.append("files", file);
+			frmData.append("title", $scope.selectedFile.name);
+		}else{
+								
+			var file = $('#multipleUploadDocument')[0].files;
+			for(var i = 0; i < file.length; i++){
+				frmData.append("files", file[i]);
+			}
+			
+			$('input[name^="fileName"]').each(function() {
+				var fileTitle = $(this).val();
+				var con = fileTitle.toLowerCase();				
+				if(con.endsWith('.pdf') || con.endsWith('.ppt') || con.endsWith('.pptx') || con.endsWith('.doc') || con.endsWith('.docx')){
+					fileTitle=fileTitle.substring(0, fileTitle.lastIndexOf('.'));	
+				}				
+				frmData.append("title",fileTitle);
+			});
+		}
+		
 		$http({
-			url : API_PATH+'/api/uploadFile',
+			url : API_PATH + '/api/uploadDocument',
 			method :'POST',
 			data : frmData,
 			transformRequest : angular.identity,
@@ -347,8 +383,6 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
-			//alert($rootScope.currentSubCategory);
-			//getAllDocumentByCatID(parentCat.CAT_ID)
 			
 			swal({  
 				title: "File Upload Successful!",   
@@ -366,7 +400,14 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			});
 			
 		});
-	};
+	}
+	
+	
+	
+	
+	/*$scope.uploadFile = function(event) {			
+		
+	};*/
 	
 		
 	$scope.getDocumentCount = function() {
@@ -908,3 +949,5 @@ return input;
 return $filter('limitTo')(input, limit) + '...';
 };
 }]);
+
+

@@ -122,9 +122,11 @@ window.userID = "${userID}";
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-
+							
 							<button class="btn btn-flat btn-primary" data-toggle="modal"
-								data-target="#addDocument" ng-click="getAllCategory()">Add Slide</button>
+								data-target="#upload-document" ng-click="getAllCategory()">Upload More
+							</button>
+							<br><br>
 
 
 							<table id="example1" class="table table-bordered table-striped">
@@ -171,9 +173,8 @@ window.userID = "${userID}";
 					</div>
 
 					<!-- Modal Start -->
-
-					<%@include file="include/add-document.jsp"%>
 					<%@include file="include/update-document.jsp"%>
+					<%@include file="include/upload-document.jsp"%>
 
 					<!-- Modal End -->
 					<!-- /.box -->
