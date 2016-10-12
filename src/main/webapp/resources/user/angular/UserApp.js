@@ -1276,7 +1276,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	};
 	
 	$scope.updateTotalShare = function(docID) {
-    	alert(docID);
 		$http({
 			url : API_PATH+'/api/v1/document/updateShare/'+docID,
 			method : 'PUT'
