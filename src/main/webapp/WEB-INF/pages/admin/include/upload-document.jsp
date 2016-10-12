@@ -29,7 +29,7 @@
       
    		  <div ng-show="showSingleInput">
    		  	<form method="post" enctype="multipart/form-data" > 			
-	 		 <input type="file" name="Singlefile" id="singleUploadDocument" data-ng-model="selectedFile">	  		  			 		  					
+	 		 <input type="file" name="Singlefile" id="singleUploadDocument" data-ng-model="selectedFile" accept=".pdf,.doc,.docx,.ppt,.pptx"/>	  		  			 		  					
 		  	
 			<div ng-show="selectedFile">
 			    <div class="form-group" >
@@ -54,7 +54,7 @@
    		  
    		  <div ng-show="showMultipleInput">
    		  	<form method="post" enctype="multipart/form-data" > 			
-	 			<input type="file" name="file" id="multipleUploadDocument" multiple="multiple">	
+	 			<input type="file" name="file" id="multipleUploadDocument" multiple="multiple" accept=".pdf,.doc,.docx,.ppt,.pptx"/>	
 	 			
 	 			<div class="form-group">
 			      <label>Category:</label>		      

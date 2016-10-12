@@ -1304,6 +1304,13 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	    if(isNegative) { formattedNumber = '-' + formattedNumber }
 	    return formattedNumber;
 	};
+	
+	$scope.callModal = function(id,option) {
+		$('#'+id).modal(option);
+	//	alert("modal  " + id + "  " + option);
+	};
+	
+	
 	   
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////

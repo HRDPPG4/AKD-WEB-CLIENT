@@ -12,7 +12,7 @@
       </div>
       <div class="modal-body" style="padding:40px 50px;">
    		 <form method="post" enctype="multipart/form-data">     			
-	 		<input type="file" name="file" id="singleUploadDocument" data-bind-file="" data-ng-model="theFile">		  		  
+	 		<input type="file" name="file" id="singleUploadDocument" data-bind-file="" data-ng-model="theFile" accept=".pdf,.doc,.docx,.ppt,.pptx"/>		  		  
 			 		  					
 		</form>  	
 			<div ng-show="theFile"> 
