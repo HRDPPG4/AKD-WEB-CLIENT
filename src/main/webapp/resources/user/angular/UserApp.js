@@ -1250,7 +1250,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	    
 	// SHARE TO FACEBOOK
 	    
-    $scope.FBShare = function(thumbnail) {
+    $scope.FBShare = function(docID,thumbnail) {
 		var url = 'http://192.168.178.28:2222/' + window.location.pathname;
 		 
 		 FB.ui({
@@ -1261,9 +1261,31 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		   picture: thumbnail,
 		   
 		 }, function(response){
-			  
-		 });		
+			 if (response && !response.error_code) {
+			        /*status = 'success';
+			        $.event.trigger('fb-share.success');
+			        alert("success");*/
+				 $scope.updateTotalShare(docID);
+
+			    } else {
+			        /*status = 'error';
+			        $.event.trigger('fb-share.error');
+			        alert("fail");*/
+			    }
+		 });	
 	};
+	
+	$scope.updateTotalShare = function(docID) {
+    	alert(docID);
+		$http({
+			url : API_PATH+'/api/v1/document/updateShare/'+docID,
+			method : 'PUT'
+		}).then(function(response) {
+			
+		}, function(response) {
+			
+		});
+	}
 	
 	$scope.numFormat = function(num) {
 	    isNegative = false
@@ -1317,16 +1339,4 @@ app.directive('myEnter', function () {
         });
     };
 });
-
-
-
-
-
-
-
-
-
-    
-
-
 
