@@ -161,6 +161,9 @@ window.userID = "${userID}";
 												ng-click="alertDelete(d.DOC_ID)">
 												<i class="fa fa-eraser"></i>
 											</button>
+											<a href="/detail/{{d.DOC_ID}}" type="button" class="btn btn-primary btn-sm">
+												<i class="fa fa-eye"></i>
+											</a>
 										</td>
 									</tr>
 

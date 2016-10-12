@@ -22,7 +22,7 @@
 }
 </style>
 </head>
-<body ng-cloak class="skin-blue sidebar-mini">
+<body ng-cloak class="skin-blue sidebar-mini">	
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%-- <%@include file="../include/navigation.jsp" %> --%>
@@ -119,9 +119,10 @@
 										<td>{{r.CREATED_DATE | strLimit: 12}}</td>
 										<td>{{r.REMARK | strLimit: 32}}</td>
 										<td>
-											<!-- <button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button> -->
+											<button ng-click = "readReport(this)"class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-read-report">
+												<i class="fa fa-eye"></i>
+											</button>
+											
 											<button type="button" class="btn btn-danger btn-sm"
 											  		ng-click="alertDelete(r.REPORT_ID)">
 												<i class="fa fa-eraser"></i>
@@ -132,6 +133,7 @@
 								</tbody>
 							</table>
 							<div id="PAGINATION"></div>
+							<%@include file="include/modal-read-report.jsp"%>
 						</div>
 						<!-- /.box-body -->
 					</div>

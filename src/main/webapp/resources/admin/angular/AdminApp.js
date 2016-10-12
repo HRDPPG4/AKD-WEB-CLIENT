@@ -852,11 +852,15 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 			confirmButtonText : "Yes, delete it!",
 			closeOnConfirm : false
 		},
-				function() {
-					$scope.removeFeedback(id);
-					swal("Deleted!", "Your record has been deleted.",
-							"success");
-				});
+		function() {
+			$scope.removeFeedback(id);
+			swal("Deleted!", "Your record has been deleted.",
+					"success");
+		});
+	}
+	
+	$scope.readFeedback = function(feedback) {
+		$scope.description = feedback.f.DES;
 	}
 	
 });
@@ -932,6 +936,10 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 		$scope.filter.page = num;
 		$scope.getReportData();
 	});
+	
+	$scope.readReport = function(report) {
+		$scope.description = report.r.REMARK;
+	}
 	
 	
 	

@@ -47,14 +47,3 @@
     
   </div>
 </div>
-<!-- <script>
- 
-	 $('#upload').on('hidden.bs.modal', function () {
-		  // do something…
-		 /*  alert("close")
-		  angular.element(document).find('#upload').scope().myfun();
-		  angular.element(document).find('#upload').scope().$apply()  */
-		
-		}) 
- 
-</script> -->

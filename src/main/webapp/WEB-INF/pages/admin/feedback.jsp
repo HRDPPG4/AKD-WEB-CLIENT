@@ -118,9 +118,9 @@
 										<td>{{f.CREATE_DATE}}</td>
 										<td><span class="label label-success">{{f.STATUS}}</span></td>
 										<td>
-											<!-- <button type="button" class="btn btn-primary btn-sm">
-												<i class="fa fa-edit"></i>
-											</button> -->
+											<button ng-click = "readFeedback(this)"class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-read-feedback">
+												<i class="fa fa-eye"></i>
+											</button>
 											<button type="button" class="btn btn-danger btn-sm"
 												ng-click="alertDelete(f.FEEDBACK_ID)">
 												<i class="fa fa-eraser"></i>
@@ -130,6 +130,7 @@
 								</tbody>
 							</table>
 							<div id="PAGINATION"></div>
+							<%@include file="include/modal-read-feedback.jsp"%>
 						</div>
 						<!-- /.box-body -->
 					</div>

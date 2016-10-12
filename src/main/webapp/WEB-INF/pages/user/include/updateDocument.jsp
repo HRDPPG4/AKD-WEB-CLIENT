@@ -10,8 +10,8 @@
 		 		<h4 class="modal-title">រូបភាពព័ត៌មានផ្ទាល់ខ្លួន</h4>               
 		      </div>
 			  <div class="modal-body" style="padding:40px 50px;">
-			  	 <form method="post" enctype="multipart/form-data">     			
-					<input type="file" name="docThumbnail" id="docThumbnail" multiple="multiple" onchange="angular.element(this).scope().setFile(this)">									 			  				 		  				
+			  	 <form method="post">     			
+					<input type="file" name="docThumbnail" id="docThumbnail" onchange="angular.element(this).scope().setFile(this)" accept="image/*">									 			  				 		  				
 			     </form>  	     					       
 			  </div>
 		    <div class="modal-footer">
