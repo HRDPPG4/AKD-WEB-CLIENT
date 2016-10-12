@@ -68,8 +68,7 @@
 			
 	      </div>
       <div class="modal-footer">
-        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadDocument($event)" ng-show="showSingleInput">រក្សាទុក</button>   
-        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadDocument($event)" ng-show="showMultipleInput">SaveMultiple</button> 
+        <button class="btn btn-primary btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadDocument($event)" ng-show="showSingleInput || showMultipleInput">រក្សាទុក</button>   
       </div>
     </div>
     
