@@ -137,13 +137,25 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
 	$scope.ParentID = "0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
 	$scope.sta = 1;
+	$scope.catLevel = 0;
+	
 	$scope.uploadFolder = function(event) {
 		event.preventDefault();
 		var frmData = new FormData();
 		frmData.append("folderID", $scope.ParentID);
 		frmData.append("folderName", $scope.folderName);
 		frmData.append("folderDes", $scope.des);
-		frmData.append("folderStatus", $scope.sta);
+		frmData.append("folderStatus", $scope.sta);	
+		frmData.append("catIcon", $scope.catIcon);
+		if($scope.showCatBox==true){
+			$scope.catLevel = 1;
+			$scope.catNumOrder = 0;
+		}else{
+			$scope.catLevel = 0;
+		}
+		
+		frmData.append("catNumOrder", $scope.catNumOrder);
+		frmData.append("catLevel", $scope.catLevel);
 		$http({
 			url : API_PATH+'/api/uploadFolder',
 			method : 'POST',
@@ -153,7 +165,13 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
-			alert("Folder create Successful");
+			
+			swal(
+				  'Good job!',
+				  'Folder create Successful!',
+				  'success'
+				)
+			
 			// alert("ID: "+$scope.ParentID);
 			//console.log("Check Upload Foler here!!");
 			//console.log(response);
@@ -163,6 +181,11 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			$scope.sta = category.c.STATUS;
 		}, function(response) {
 			console.log(response);
+			swal(
+				  'Sorry!',
+				  'Folder create Fail!',
+				  'error'
+				)
 		});
 	};
 });
@@ -384,20 +407,32 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			}
 		}).then(function(response) {
 			
-			swal({  
+			/*swal({  
 				title: "File Upload Successful!",   
 				text: "",   
 				timer: 800,   
 				showConfirmButton: false 
-			});
+			});*/
+			
+			swal(
+				  'Good job!',
+				  'Document Upload Successful!',
+				  'success'
+				)
 			
 		}, function(response) {
-			swal({  
+			/*swal({  
 				title: "File Upload Fail!",   
 				text: "",   
 				timer: 800,   
 				showConfirmButton: false 
-			});
+			});*/
+			
+			swal(
+				  'Sorry!',
+				  'Document Upload Fail!',
+				  'error'
+				)
 			
 		});
 	}

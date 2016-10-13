@@ -1131,12 +1131,18 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				}
 			}).then(function(response) {
 				
-				swal({  
+				/*swal({  
 					title: "File Upload Successful!",   
 					text: "",   
 					timer: 800,   
 					showConfirmButton: false 
-				});
+				});*/
+				
+				swal(
+					  'អបអរសាទរ!',
+					  'ឯកសាររបស់អ្នកត្រូវបានចែកចាយបានសម្រេច!',
+					  'success'
+					)
 				
 				$(".progress-bar").css("width", "100%"); 
 		
@@ -1150,12 +1156,18 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 				
 			}, function(response) {
-				swal({  
+				/*swal({  
 					title: "File Upload Fail!",   
 					text: "",   
 					timer: 800,   
 					showConfirmButton: false 
-				});
+				});*/
+				
+				swal(
+						  'សូមសោកស្តាយ!',
+						  'ឯកសារចែកចាយមិនបានសម្រេច!\nសូមព្យាយាមម្តងទៀត',
+						  'error'
+						)
 				
 			});
 		}
