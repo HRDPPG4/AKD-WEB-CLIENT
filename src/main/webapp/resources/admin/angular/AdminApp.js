@@ -522,7 +522,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		});
 	}
 	
-	$scope.getDocumentByStatus(1);
+	$scope.getDocumentByStatus(0);
 	
 	$scope.documentStatus = [
 		     		      {
@@ -542,7 +542,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			     		     "STATUS_VALUE"	: 3
 		     		      }	     		      
 	     		    ];
-	$scope.selectedStatus = $scope.documentStatus[1].STATUS_VALUE;
+	$scope.selectedStatus = $scope.documentStatus[0].STATUS_VALUE;
 /*	console.log($scope.documentStatus[0].STATUS_VALUE);*/
 	
 	// STOP NEW CODE UPDATE BY CHIVORN
