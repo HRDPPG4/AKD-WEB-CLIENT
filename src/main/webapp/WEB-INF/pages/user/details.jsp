@@ -86,6 +86,7 @@
 	<header id="header">
 	 	<jsp:include page="include/header.jsp"></jsp:include> 
 	</header>
+	
 
 	<div>
 		<content>
@@ -147,7 +148,10 @@
 														<button class="btn-report-detail"​ ng-click="checkUserLogin()">
 															<span><i class="fa fa-flag" aria-hidden="true"></i></span>
 															ការវាយតម្លៃ
-														</button>													
+														</button>	
+														
+														<jsp:include page="include/social-share-in-detail.jsp"></jsp:include>
+																										
 													</div>													
 												 </div>										
 											</div>

@@ -65,7 +65,7 @@ a.thumbnail {
 	<header id="header">
 		<jsp:include page="include/header.jsp"></jsp:include>
 	</header>
-	
+	<jsp:include page="include/social-share.jsp"></jsp:include>
 	<jsp:include page="include/toolbar-right.jsp"></jsp:include>
 	<content>
 		<div id="page-content-wrapper">

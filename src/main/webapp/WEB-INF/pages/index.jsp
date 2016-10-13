@@ -10,18 +10,18 @@
 <%@include file="user/include/link/link.jsp"%>
 </head>
 <body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">	
-	<%-- <jsp:include page="user/include/loading.jsp"></jsp:include> --%>
+	
 	<jsp:include page="user/include/register.jsp"></jsp:include>
 	<jsp:include page="user/include/login.jsp"></jsp:include>
 	<jsp:include page="user/include/upload.jsp"></jsp:include>
 	<jsp:include page="user/include/save-list.jsp"></jsp:include>
 					  
 	<header id="header">
-		<jsp:include page="user/include/header.jsp"></jsp:include>
+		<jsp:include page="user/include/header.jsp"></jsp:include>		
 	</header>	
-	
-	<content>
-		<div class="container">
+	<jsp:include page="user/include/social-share.jsp"></jsp:include>
+	<content>	
+		<div class="container">		
 			<section id="recommend" ng-if="recordFound">
 			<!-- section-title -->
 				<div class="row section recommend topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak >
@@ -40,8 +40,9 @@
 				</div>			
 			</section>
 		</div>
+		
 		<div class="container">
-			<section id="popular">
+			<section id="popular">			
 				<!-- section-title -->
 				<div class="row section popular topspace-second" data-ng-init="getDocumentByRecommended()" ng-cloak> 
 					<div class="popular-title">
