@@ -120,7 +120,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			$scope.showCategoryByLimit();
 		},function(response) {
 
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 			$scope.CategoryCount = response.data.COUNT;
 			
 		});
@@ -205,7 +205,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
@@ -255,7 +255,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function(respone) {
 			$scope.getUserData();
 		}, function(respone) {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 
@@ -291,7 +291,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function() {
 			$scope.getUserData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 
@@ -307,7 +307,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		}).then(function() {
 			$scope.getUserData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 
@@ -407,13 +407,6 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			}
 		}).then(function(response) {
 			
-			/*swal({  
-				title: "File Upload Successful!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});*/
-			
 			swal(
 				  'Good job!',
 				  'Document Upload Successful!',
@@ -421,13 +414,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				)
 			
 		}, function(response) {
-			/*swal({  
-				title: "File Upload Fail!",   
-				text: "",   
-				timer: 800,   
-				showConfirmButton: false 
-			});*/
-			
+
 			swal(
 				  'Sorry!',
 				  'Document Upload Fail!',
@@ -439,13 +426,8 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	
 	
-	
-	/*$scope.uploadFile = function(event) {			
 		
-	};*/
-	
-		
-	$scope.getDocumentCount = function() {
+	/*$scope.getDocumentCount = function() {
 		$http({
 			url : API_PATH+'/api/v1/getDocumentCount',
 			method : 'GET'
@@ -455,8 +437,9 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}, function(response) {
 
 		});
-	}
-	$scope.getDocumentData = function() {
+	}*/
+	
+	/*$scope.getDocumentData = function() {
 		$http({
 			url : API_PATH+'/api/v1/document',
 			method : 'GET',
@@ -466,12 +449,67 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			console.log($scope.document);
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 		}, function(response) {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
+		});
+	}*/
+	
+	//$scope.getDocumentData();
+	
+	
+	
+	// START NEW CODE UPDATE BY CHIVORN
+	
+	$scope.getTotalDocumentByStatus = function(status) {
+		$http({
+			url : API_PATH+'/api/v1/getTotalDocumentByStatus?status=' + status,
+			method : 'GET'
+		}).then(function(response) {
+			$scope.documentCount = response.data.COUNT;
+			//console.log($scope.documentCount);
+		//	alert($scope.documentCount);
+		}, function(response) {
+
 		});
 	}
-	$scope.getDocumentData();
 	
-	$scope.getDocumentCount();
+	$rootScope.currentStatus="";
+	
+	$scope.getDocumentByStatus = function(status) {
+		$rootScope.currentStatus = status;
+		$scope.getTotalDocumentByStatus($rootScope.currentStatus);
+		$http({
+			url : API_PATH+'/api/v1/document/getAllDocumentByStatus?status='+$rootScope.currentStatus,
+			method : 'GET',
+			params : $scope.filter
+		}).then(function(response) {
+			
+			$scope.document = response.data.DATA;
+			
+			if(response.data.PAGING != null){
+				$rootScope.currentTotalPage = response.data.PAGING.TOTAL_PAGES;				
+			}else{	
+				//$rootScope.currentTotalPage = 0;
+				$rootScope.currentTotalPage = Math.ceil($scope.documentCount/$scope.filter.limit); 	// TOTAL PAGE HAS PROBLEM IF DON'T USE LIKE THIS.
+			
+			}
+			
+		//	alert("totalPge"+$rootScope.currentTotalPage);
+			$scope.setPagination($rootScope.currentTotalPage);
+
+			
+		}, function(response) {
+			
+		});
+	}
+	
+	$scope.getDocumentByStatus(1);
+	
+	// STOP NEW CODE UPDATE BY CHIVORN
+	
+	
+	
+	
+//	$scope.getDocumentCount();
 
 	//TODO: default filter
 	$scope.filter = {
@@ -496,7 +534,8 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	PAGINATION.on("page", function(event, num){
 		$scope.filter.page = num;
-		$scope.getDocumentData();
+		//$scope.getDocumentData();
+		$scope.getDocumentByStatus($rootScope.currentStatus);
 	});
 	
 	$rootScope.getAllCategory = function(){
@@ -519,9 +558,10 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			url : API_PATH+'/api/v1/document/' + id ,
 			method : 'PUT'
 		}).then(function() {
-			$scope.getDocumentData();
+			//$scope.getDocumentData();
+			$scope.getDocumentByStatus($rootScope.currentStatus);
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
@@ -579,9 +619,10 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				'DOC_ID' : $scope.docID
 			}
 		}).then(function() {
-			$scope.getDocumentData();
+			//$scope.getDocumentData();
+			$scope.getDocumentByStatus($rootScope.currentStatus);
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 
@@ -610,7 +651,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 			$scope.setPagination(response.data.PAGING.TOTAL_PAGES);
 			
 		}, function(response) {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 
@@ -700,7 +741,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 		}).then(function() {
 			$scope.getCommentData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
@@ -763,7 +804,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 		}).then(function() {
 			$scope.getSavelistData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
@@ -809,7 +850,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 		}).then(function() {
 			$scope.getSavelistData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
@@ -925,7 +966,7 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 		}).then(function() {
 			$scope.getReportData();
 		}, function() {
-			$scope.faildAlert("Faild Loading...","Please check or connect to network!");
+			
 		});
 	}
 	
