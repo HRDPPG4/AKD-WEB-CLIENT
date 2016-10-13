@@ -10,6 +10,25 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	//	CATEGORY	
 	
+	$scope.getAllCategoryNewFun = function(){
+		$http({
+			url:API_PATH+'/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+		//	console.log(response.data.DATA);
+			$scope.allCategoryNewFun=response.data.DATA;
+		//	console.log("GET ALL CAT ADMIN");
+		//	console.log($scope.getAllCategory);
+			
+		}, function(response){
+		
+		});
+	}
+	
+	$scope.getAllCategoryNewFun();
+	
+	
+	
 	$scope.getCategoryCount = function() {
 		$http({
 			url : API_PATH+'/api/v1/getCategoryCount',
@@ -21,6 +40,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			
 		});
 	}
+	
 	$scope.getCategoryCount();
 	
 	$scope.showCategoryByLimit = function(){			

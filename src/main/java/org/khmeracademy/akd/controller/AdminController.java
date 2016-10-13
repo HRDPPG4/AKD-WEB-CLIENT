@@ -41,7 +41,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/main-category",method=RequestMethod.GET)
 	public String mainCategory(){
-		return "admin/main-category";
+		return "admin/category";
 	}
 	
 	@RequestMapping(value="/admin/sub-category",method=RequestMethod.GET)

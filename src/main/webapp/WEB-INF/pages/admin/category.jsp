@@ -171,7 +171,7 @@
 									</tr> -->
 
 									<!-- Modal -->
-									<div class="modal fade" id="addMainModal" role="dialog">
+									<div class="modal fade" id="addMainModal" role="dialog" >
 										<div class="modal-dialog">
 
 											<!-- Modal content-->
@@ -203,10 +203,10 @@
 															</div>
 
 															<div class="form-group" ng-show="showCatBox">
-																<label>Category:</label> <select class="form-control"
-																	ng-model="ParentID">
-																	<option ng-repeat="x in category" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
-																</select>
+																<label>Category:</label> 
+																<select class="form-control" ng-model="catID">			       
+											                        <option ng-repeat="cat in allCategoryNewFun | filter:{ CAT_LEVEL: '0'}" value="{{cat.CAT_ID}}">{{cat.CAT_NAME}}</option>
+											                   	</select>
 															</div>
 
 
