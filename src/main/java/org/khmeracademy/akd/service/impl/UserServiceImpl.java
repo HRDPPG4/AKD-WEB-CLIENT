@@ -39,6 +39,9 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private String AKD_API_URL;
 	
+	
+	
+	
 	//TODO : Get User Object by user hash
 	@Override
 	public User findUserByUserHash(String userHash) {
@@ -65,8 +68,11 @@ public class UserServiceImpl implements UserService{
 				roles.add(role);
 				u.setRoles(roles);
 				
-				u.setProfile((String) data.get("PROFILE"));
+				
 				u.setUserHash((String) data.get("USER_HASH"));
+				
+				u.setProfile((String) data.get("PROFILE"));
+				
 				return u;
 			}
 		}catch(Exception e){
@@ -103,8 +109,10 @@ public class UserServiceImpl implements UserService{
 			user.setRemark("");
 			user.setStatus(1);
 			user.setRole("ROLE_USER");
-			user.setProfile((String) userMap.get("USER_IAMGE_URL"));
 			user.setUserHash((String) userMap.get("USER_HASH"));
+			user.setProfile((String) userMap.get("USER_IAMGE_URL"));
+			
+			
 			System.out.println("//TODO : If user exists in KhmerAacademy Database, but user doesn't exists in AKD Database, so save user in AKD Database");
 			
 			//TODO : Save user from KhmerAcademy into TinhEy Database 

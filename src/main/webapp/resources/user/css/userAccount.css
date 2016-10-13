@@ -20,6 +20,7 @@ user-panel.profile
     .user-panel>.image>img {
 	    max-width: 120px;
 	    margin-left: 42px;
+	    height: 130px;
 	}
 }
 

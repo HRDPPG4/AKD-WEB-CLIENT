@@ -32,7 +32,7 @@
       
       <li>
         <a data-toggle="tab" href="#infor">
-          <i class="fa fa-dashboard"></i> <span>About</span>          
+          <i class="fa fa-info-circle"></i> <span>ព័ត៌មានរបស់ខ្ញុំ</span>          
         </a>
       </li>        
       
@@ -44,7 +44,7 @@
       
       <li ng-init="countTotalDocByUserID()">
         <a data-toggle="tab" ng-click="getDocumentByUser()" href="#mydoc">
-          <i class="fa fa-dashboard"></i> <span>My Documents</span> 
+          <i class="fa fa-book"></i> <span>ឯកសាររបស់ខ្ញុំ</span> 
           <span class="pull-right-container">
             <small class="label pull-right bg-green">{{countDocByUserID}}</small>
           </span>         
@@ -52,9 +52,9 @@
       </li>
       
       <li class="treeview">
-         <a  ng-click="getSavelistMenuUser()" href="#savelist" data-toggle="tab#">
-          <i class="fa fa-dashboard"></i> 
-          <span>My Savelist</span>
+         <a  ng-click="getSavelistMenuUser()" href="#" data-toggle="tab#">
+          <i class="fa fa-list"></i> 
+          <span>បញ្ជីរក្សាទុកឯកសារ</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -73,7 +73,7 @@
       
       <li>
         <a data-toggle="tab" ng-click="getLogByUserID()" href="#viewed">
-          <i class="fa fa-dashboard"></i> <span>History</span>          
+          <i class="fa fa-history"></i> <span>ប្រវត្តិនៃការចូលមើល</span>          
         </a>
       </li>            
     

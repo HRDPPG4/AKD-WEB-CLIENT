@@ -1,5 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+ <%@ page pageEncoding="utf-8"%>
 
 <div class="modal fade" id="updateDocument" role="dialog">
 	<div class="modal-dialog">

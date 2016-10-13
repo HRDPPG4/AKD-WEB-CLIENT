@@ -17,9 +17,9 @@
 		   		 		<p>{{currentClickSavelist.REMARK}}</p>
 	   		 		</div>
 	   		 		<div class="col-md-1">
-	   		 			<button class="btn btn-danger" data-toggle="modal" data-target="#insert-update-savelist"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>	   		 			
-	   		 			<button class="btn btn-danger" data-toggle="modal" data-target="#insert-update-savelist"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-	   		 			<button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+	   		 			<button ng-click="clearSavelistInput()" class="btn btn-danger" data-toggle="modal" data-target="#insert-update-savelist"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>	   		 			
+	   		 			<button ng-click="getUpdateSavelistInfo(currentClickSavelist.LIST_ID,currentClickSavelist.LIST_NAME,currentClickSavelist.REMARK)" class="btn btn-danger" data-toggle="modal" data-target="#insert-update-savelist"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+	   		 			<button ng-click="deleteSavelist(currentClickSavelist.LIST_ID)" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 	   		 		</div>
 	   		 	</div>
 	   		 	<ol class="main-list-data">

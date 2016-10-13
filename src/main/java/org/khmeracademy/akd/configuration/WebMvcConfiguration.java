@@ -67,6 +67,7 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
 		return environment.getProperty("AKD.API.URL");
 	}
 	
+	
 	@Bean(name="LOGIN_URL")
 	public String login(){
 		return environment.getProperty("ACCOUNT_LOGIN_URL")+environment.getProperty("ACCOUNT_CONTINUE_SITE");

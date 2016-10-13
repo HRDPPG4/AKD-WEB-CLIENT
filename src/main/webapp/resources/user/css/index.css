@@ -912,3 +912,17 @@ button.btn-side-search{
  {
  	background-color:#106cc8 !important;
  } */
+ 
+ .modal-title {
+    font-family: Khmer Os Battambang;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.jFiler-input-choose-btn.blue:hover {
+    background: #26a63c;
+}
+.jFiler-input-choose-btn.blue {
+    color: #26a63c;
+    border: 1px solid #26a63c;
+}

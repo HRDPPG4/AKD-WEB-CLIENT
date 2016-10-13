@@ -126,6 +126,13 @@ window.userID = "${userID}";
 							<button class="btn btn-flat btn-primary" data-toggle="modal"
 								data-target="#upload-document" ng-click="getAllCategory()">Upload More
 							</button>
+							
+							<div class="filter-btn" style="float: right;">
+								<button class="btn btn-flat btn-primary" >Pending Slide</button>
+								<button class="btn btn-flat btn-primary" >Enable Slide</button>
+								<button class="btn btn-flat btn-primary" >Deleted Slide</button>
+							</div>
+							<div style="clear: both;"></div>
 							<br><br>
 
 

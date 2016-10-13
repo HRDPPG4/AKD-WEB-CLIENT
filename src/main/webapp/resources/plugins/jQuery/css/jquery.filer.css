@@ -436,3 +436,11 @@ span.jFiler-icon-file.f-audio:after {
     cursor: pointer;
     color: #d9534f;
 }
+
+.jFiler-input-choose-btn.blue {
+    color: #008BFF;
+    border: 1px solid #008BFF;
+    font-family: Khmer OS Battambang !important;
+    font-weight: normal;
+    font-size: 15px;
+}

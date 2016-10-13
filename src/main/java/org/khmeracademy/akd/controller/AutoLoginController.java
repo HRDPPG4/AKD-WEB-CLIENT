@@ -40,7 +40,7 @@ public class AutoLoginController {
 				System.out.println("User aleady exists in KhmerAcademy and AKD Databaes.");
 			}
 			
-			System.out.println("Username : " + user.getUsername());
+		//	System.out.println("Username : " + user.getUsername());
 			
 			//TODO : Set User Object into Spring Security Authentication
 			Authentication authentication = new UsernamePasswordAuthenticationToken(user, user.getPassword(), user.getAuthorities());

@@ -46,11 +46,12 @@
 				  <section class="content">								
 					 <div class="tab-content">
 					 	<%@include file="include/user/user-info.jsp"%>
-					 	<%-- <%@include file="include/user/user-dashboard.jsp"%> --%>				 		
+					 	<%@include file="include/user/user-dashboard.jsp"%>				 		
 						<%@include file="include/user/user-doc.jsp"%>	
 				      	<%@include file="include/user/user-savelist.jsp"%>	
 				 		<%@include file="include/user/user-history.jsp"%>
-				 		<%@include file="include/user/modal-insert-update-savelist.jsp"%>				 							 		
+				 		<%@include file="include/user/modal-insert-update-savelist.jsp"%>	
+				 		<%@include file="include/user/modal-update-document.jsp"%>			 							 		
 					  </div>						
 				  </section>
 				</div>			

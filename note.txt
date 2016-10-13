@@ -1,0 +1,5 @@
+Status:
+0. Pending.
+1. Enable
+2. Disable
+3. Deleted

@@ -11,16 +11,16 @@
 			  <div class="modal-body" style="padding:40px 50px;">
 			  		<div class="form-group">
 			            <label>ឈ្មោះបញ្ជី:</label>
-			            <input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ" class="form-control" ng-model="saveListname">
+			            <input type="text" placeholder="បញ្ចូលចំណងជើងបញ្ជីដាក់ឯកសារ" class="form-control" ng-model="newSavelistName">
 		          </div>  
 		          <div class="form-group">
 			            <label>ពិពណ៌នា:</label>
-			            <textarea class="form-control"​ placeholder="មតិខ្លះៗអំពីបញ្ជីគ្រប់គ្រងឯកសារមួយនេះ"></textarea>
+			            <textarea class="form-control"​ placeholder="មតិខ្លះៗអំពីបញ្ជីគ្រប់គ្រងឯកសារមួយនេះ" ng-model="newSavelistDes"></textarea>
 		          </div>	     					       
 			  </div>
 		    <div class="modal-footer">
-		      <button class="btn btn-primary"​ data-dismiss="modal" ng-click="saveList()" ng-disabled="!saveListname">បង្កើតថ្មី</button>  
-		      <button class="btn btn-primary"​ data-dismiss="modal" ng-disabled="!saveListname">កែរប្រែ</button>       
+		      <button ng-show = "!showUpdate" ng-click="insertSavelistOnly()" class="btn btn-primary"​ data-dismiss="modal"  ng-disabled="!currentClickSavelist.LIST_NAME">រក្សាទុក</button>  <!-- ng-click="saveList()" -->
+		      <button ng-show = "showUpdate" ng-click="updateSavelist(currentClickSavelist.LIST_ID)" class="btn btn-primary"​ data-dismiss="modal" ng-disabled="!currentClickSavelist.LIST_NAME	">កែរប្រែ</button>       
 		    </div>
 		</div>    
 	</div>

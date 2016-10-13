@@ -569,6 +569,82 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		});
 	}
     
+    $scope.updateDocumentStatus = function(docID,status) {    	
+    	swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+			type: "warning",   showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "យល់ព្រម",   
+			cancelButtonText: "បដិសេធ",   
+			closeOnConfirm: false,   closeOnCancel: false },
+			function(isConfirm){   
+			 	if (isConfirm) {     			 		
+			 		$http({
+						url : API_PATH+'/api/v1/updateDocumentStatus?docID=' + docID + '&status='+ status,
+						method : 'PUT'
+					}).then(function(response) {
+						swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+						$scope.countTotalDocByUserID();
+						$scope.getDocumentByUser();
+					}, function(response) {
+						
+					});
+			 	}
+		 		else {     
+		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+		 		} 
+		 	});
+	}
+    
+    $scope.getDocumentInfoToUpdate = function(docID) {
+    	$scope.getAllCategory();
+		$http({
+			url : API_PATH+'/api/v1/document/' + docID,
+			method : 'GET'
+		}).then(function(response) {
+			$scope.documentToUpdate = response.data.DATA;
+		}, function(response) {
+			
+		});
+	}
+    
+    $scope.updateDocument = function(docID) {
+		$http({
+			url : API_PATH+'/api/v1/document',
+			method : 'PUT',
+			data : {
+				'TITLE' : $scope.documentToUpdate.TITLE,
+				'DES' : $scope.documentToUpdate.DES,
+				'EMBEDED_LINK' : $scope.documentToUpdate.EMBEDED_LINK,
+				'THUMBNAIL_URL' : $scope.documentToUpdate.THUMBNAIL_URL,
+				'EXPORT_LINK' : $scope.documentToUpdate.EXPORT_LINK,
+				'VIEW' : $scope.documentToUpdate.VIEW,
+				'SHARE' : $scope.documentToUpdate.SHARE,
+				'CREATED_DATE' : $scope.documentToUpdate.CREATED_DATE,
+				'DOC_TYPE_NUM' : $scope.documentToUpdate.DOC_TYPE_NUM,
+				'USER_ID' : $scope.documentToUpdate.USER_ID,
+				'CAT_ID' : $scope.documentToUpdate.CAT_ID,
+				'STATUS' : $scope.documentToUpdate.STATUS,
+				'DOC_ID' : docID
+			}
+		}).then(function() {
+			$scope.getDocumentByUser();
+			swal(
+				  'អបអរសាទរ!',
+				  'ឯកសារកែរប្រែបានសម្រេច!',
+				  'success'
+				)
+		}, function() {
+			swal(
+				  'សូមសោកស្តាយ!',
+				  'ឯកសារកែរប្រែមិនបានសម្រេច!',
+				  'error'
+				)
+		});
+	}
+    
+    
+    
     
 	
 	///////////////////		END DOCUMENT BLOCK	/////////////////
@@ -777,7 +853,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		      var status =  0;
 		         catename = savelistID 
 		        
-		        
+		       
+		         
 		        listname = $scope.saveListname;
 		         
 		      
@@ -888,7 +965,123 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		       
 				
 			}
+		
+		
+		
+		
+		// NEW SAVELIST FUNCTION UPDATE.
+		
+		$scope.insertSavelistOnly = function(){
+			$http({
+				url:API_PATH+'/api/v1/saveSavelistOnly',
+				method:'POST',
+				data:{				
+					"LIST_NAME": $scope.newSavelistName,
+					"CREATED_DATE": new Date(),
+					"REMARK": $scope.newSavelistDes,
+					"STATUS": 1,
+					"USER_ID": $rootScope.UserID
+				}	
+				
+			}).then(function(response){
+				$scope.getSavelistMenuUser();
+				$scope.clearSavelistInput();
+				swal(
+					  'អបអរសាទរ!',
+					  'បញ្ជីផ្ទុកឯកសារត្រូវបានបង្កើតជោគជ័យ!',
+					  'success'
+					)
+			}, function(response){
+				swal(
+					  'សូមសោកស្តាយ!',
+					  'បញ្ជីផ្ទុកឯកសារបង្កើតមិនបានសម្រេច!',
+					  'error'
+					)
+			});	
+			
+		}
+		
+		$scope.updateSavelist = function(listID){
+			$http({
+				url:API_PATH+'/api/v1/savelist',
+				method:'PUT',
+				data:{	
+					"LIST_ID":listID,
+					"LIST_NAME": $scope.newSavelistName,
+					"CREATED_DATE": new Date(),
+					"REMARK": $scope.newSavelistDes,
+					"STATUS": 1,
+					"USER_ID": $rootScope.UserID
+				}	
+				
+			}).then(function(response){
+				$scope.getDocumentByEachSavelist(listID)
+				$scope.getSavelistMenuUser();
+				$scope.clearSavelistInput();
+				swal(
+					  'អបអរសាទរ!',
+					  'បញ្ជីផ្ទុកឯកសារត្រូវបានកែរប្រែជោគជ័យ!',
+					  'success'
+					)
+			}, function(response){
+				swal(
+					  'សូមសោកស្តាយ!',
+					  'បញ្ជីផ្ទុកឯកសារកែរប្រែមិនបានសម្រេច!',
+					  'error'
+					)
+			});	
+			
+		}
+		
+		$scope.getUpdateSavelistInfo = function(id,name,des){
+			$scope.showUpdate = true;
+			$scope.newSavelistID = id;
+			$scope.newSavelistName = name;
+			$scope.newSavelistDes = des; 
+		}
+		
+		$scope.clearSavelistInput = function(){
+			$scope.showUpdate = false;
+			$scope.newSavelistName="";
+			$scope.newSavelistDes="";
+		}
+		
+		
+		$scope.deleteSavelist = function(listID){
+	           
+	           swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+	   			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+	   			type: "warning",   showCancelButton: true,   
+	   			confirmButtonColor: "#DD6B55",   
+	   			confirmButtonText: "យល់ព្រម",   
+	   			cancelButtonText: "បដិសេធ",   
+	   			closeOnConfirm: false,   closeOnCancel: false },
+	   			function(isConfirm){   
+	   			 	if (isConfirm) {     
+	   			 		
+ 	   			 	$http({
+     					url:API_PATH+'/api/v1/savelist/'+listID,
+     					method:'DELETE',
+     				}).then(function(response){    
+     					/*$scope.callActiveTab('mydoc');*/
+     					$('.nav-tabs a[href="#infor"]').tab('show');
+     					swal("បានជោគជ័យ!", "បញ្ជីរត្រូវបានលុប", "success"); 
+     					$scope.getSavelistMenuUser();
+     				}, function(response){
+     	             
+     	              
+     				});	
+	   			 	}
+	   		 		else {     
+	   		 			swal("បានបដិសេធ", "បញ្ជីរបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+	   		 		} 
+	   		 	});
+			}
+		
+		
+		
 
+		// END NEW SAVELIST FUNCTION UPDATE
      
 
      //--------End create saveList------------
@@ -1002,7 +1195,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	        					url:API_PATH+'/api/v1/savelist/deleteSavelistDetail/'+docID,
 	        					method:'DELETE',
 	        				}).then(function(response){    					
-	        					$scope.getDocumentByEachSavelist(listID);    					
+	        					$scope.getDocumentByEachSavelist(listID);   
+	        					$scope.getSavelistMenuUser();
 	        				}, function(response){
 	        	             
 	        	              
@@ -1319,7 +1513,11 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$scope.callModal = function(id,option) {
 		$('#'+id).modal(option);
-	//	alert("modal  " + id + "  " + option);
+	};
+	
+	$scope.callActiveTab = function(tabID) {
+		alert("Active Tab call: "+tabID);
+		$('.nav-tabs a[href="#' + tabID + '"]').tab('show');
 	};
 	
 	
