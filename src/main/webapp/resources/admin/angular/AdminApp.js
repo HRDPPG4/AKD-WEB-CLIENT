@@ -504,6 +504,27 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$scope.getDocumentByStatus(1);
 	
+	$scope.documentStatus = [
+		     		      {
+		     		        "STATUS_NAME"	: "Pending Document",
+		     		        "STATUS_VALUE"	: 0
+		     		      },
+		     		      {
+		     		    	 "STATUS_NAME"	: "Enable Document",
+			     		     "STATUS_VALUE"	: 1
+		     		      },
+		     		      {
+		     		    	 "STATUS_NAME"	: "Disable Document",
+			     		     "STATUS_VALUE"	: 2
+		     		      },
+		     		      {
+		     		    	 "STATUS_NAME"	: "Deleted Document",
+			     		     "STATUS_VALUE"	: 3
+		     		      }	     		      
+	     		    ];
+	$scope.selectedStatus = $scope.documentStatus[1].STATUS_VALUE;
+/*	console.log($scope.documentStatus[0].STATUS_VALUE);*/
+	
 	// STOP NEW CODE UPDATE BY CHIVORN
 	
 	

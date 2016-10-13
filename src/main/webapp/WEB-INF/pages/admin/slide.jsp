@@ -128,10 +128,12 @@ window.userID = "${userID}";
 							</button>
 							
 							<div class="filter-btn" style="float: right;">
-								<button ng-click="getDocumentByStatus(0)" class="btn btn-flat btn-primary" >Pending Slide</button>
-								<button ng-click="getDocumentByStatus(1)" class="btn btn-flat btn-primary" >Enable Slide</button>
-								<button ng-click="getDocumentByStatus(2)" class="btn btn-flat btn-primary" >Disable Slide</button>
-								<button ng-click="getDocumentByStatus(3)" class="btn btn-flat btn-primary" >Deleted Slide</button>
+								<div class="form-group">
+									<label>Filter By Status: </label> {{selectedStatus}}
+									<select class="form-control" ng-model="selectedStatus" ng-change="getDocumentByStatus(selectedStatus)">			       
+				                        <option ng-repeat="status in documentStatus" value="{{status.STATUS_VALUE}}">{{status.STATUS_NAME}}</option>
+				                   	</select>
+								</div>
 							</div>
 							<div style="clear: both;"></div>
 							<br><br>
