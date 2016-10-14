@@ -2,9 +2,8 @@
 var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
-
-//var API_PATH = "http://localhost:1111";
-var API_PATH = "http://192.168.178.207:1111";
+var API_PATH = "http://localhost:1111";
+//var API_PATH = "http://192.168.178.207:1111";
 
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
@@ -155,7 +154,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$scope.getAllCategoryAndSubcategory=function(){	
 		$http({
-			url:API_PATH+'/api/v1/getCategoryByParentID/0BybKdIgWtK8tbVNqQWlXM0Q2dlE',
+			url:API_PATH+'/api/v1/getCategoryByParentID/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
@@ -179,7 +178,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	//	GET MAIN CATEGORY
 	$scope.getMainCategory=function(parentID){		
 		$http({
-			url:API_PATH+'/api/v1/getCategoryByParentIDAndStatusEnable/0BybKdIgWtK8tbVNqQWlXM0Q2dlE',
+			url:API_PATH+'/api/v1/getCategoryByParentIDAndStatusEnable/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
@@ -1301,7 +1300,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	////////////////////	START UPLOAD BLOCK	/////////////////
 	$scope.theFile = null;
-	$scope.catID="0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
+	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
 		if($scope.checkUserLogin()){
