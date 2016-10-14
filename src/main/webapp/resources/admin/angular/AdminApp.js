@@ -155,7 +155,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
-	$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
+	$scope.ParentID = "0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.sta = 1;
 	$scope.catLevel = 0;
 	$scope.catNumOrder = 0;
@@ -186,7 +186,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			}
 		}).then(function(response) {
 			$scope.getAllCategoryNewFun();
-			$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
+			$scope.ParentID = "0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 			$scope.folderName="";
 			$scope.des="";
 			$scope.catIcon="";
@@ -373,7 +373,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 //============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
 	$rootScope.userID = $window.userID;
-	$scope.catID="0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
+	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.des="";
 	
 	$scope.showSingleInput = false;
