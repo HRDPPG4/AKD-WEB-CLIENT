@@ -13,12 +13,12 @@
 	<a class="a2a_button_facebook"></a> <br>
 	<a class="a2a_button_twitter"></a><br>
 	<a class="a2a_button_google_plus"></a><br>
-	<a class="a2a_button_email"></a><br>
+<!-- 	<a class="a2a_button_email"></a><br>
 	<a class="a2a_button_linkedin"></a><br>
 	<a class="a2a_button_google_gmail"></a><br>
 	<a class="a2a_button_outlook_com"></a><br>
 	<a class="a2a_button_skype"></a><br>
-	<a class="a2a_button_yahoo_mail"></a><br>
+	<a class="a2a_button_yahoo_mail"></a><br> -->
 	<a class="a2a_dd" href="https://www.addtoany.com/share"></a> <br>
 	</div>
 	<script async src="https://static.addtoany.com/menu/page.js"></script>

@@ -2,6 +2,7 @@
 var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 var API_PATH = "http://localhost:1111";
+var API_ACCESS_CONTROLLER_URL = "http://localhost:1111/api/v1";
 //var API_PATH = "http://192.168.178.207:1111";
 
 
@@ -51,7 +52,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	var lastPart = url.substr(url.lastIndexOf('/') + 1);
 	
 	$scope.checkLocation = function(){
-		//alert(API_PATH);
 		if(lastPart=="recommend"){
 			$scope.showRecomment=true;
 			$scope.showNewPost=false;
@@ -77,7 +77,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	}
 	$scope.getDocumentByLikeTitle = function(title){			
 		$http({
-			url:API_PATH+'/api/v1/getDocumentByLikeTitle/'+title,
+			url:API_ACCESS_CONTROLLER_URL + '/getDocumentByLikeTitle/'+title,
 			method:'GET'			
 		}).then(function(response){
 			
@@ -121,7 +121,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 		}else{
 			$http({
-				url:API_PATH+'/api/v1/category',
+				url:API_ACCESS_CONTROLLER_URL + '/category',
 				method:'GET'			
 			}).then(function(response){
 
@@ -141,7 +141,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.getCategoryByParentID=function(parentID){	
 		$scope.getCategoryByID(parentID);
 		$http({
-			url:API_PATH+'/api/v1/getCategoryByParentID/'+parentID,
+			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentID/'+parentID,
 			method:'GET'
 		}).then(function(response){
 			$scope.parentCategory=response.data.DATA;
@@ -153,7 +153,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$scope.getAllCategoryAndSubcategory=function(){	
 		$http({
-			url:API_PATH+'/api/v1/getCategoryByParentID/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
+			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentID/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
@@ -165,7 +165,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$scope.getCategoryByID=function(CatID){		
 		$http({
-			url:API_PATH+'/api/v1/category/'+CatID,
+			url:API_ACCESS_CONTROLLER_URL + '/category/'+CatID,
 			method:'GET'
 		}).then(function(response){
 			$scope.getCategoryByID=response.data.DATA;
@@ -177,7 +177,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	//	GET MAIN CATEGORY
 	$scope.getMainCategory=function(parentID){		
 		$http({
-			url:API_PATH+'/api/v1/getCategoryByParentIDAndStatusEnable/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
+			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentIDAndStatusEnable/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
@@ -198,7 +198,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		
 		$http({
-			url:API_PATH+'/api/v1/getAllCommentByDocID/'+DocID,
+			url:API_ACCESS_CONTROLLER_URL + '/getAllCommentByDocID/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.commentByDoc=response.data.DATA;
@@ -217,7 +217,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		}else{
 
 			$http({
-				url:API_PATH+'/api/v1/comment',
+				url:API_ACCESS_CONTROLLER_URL + '/comment',
 				method:'POST',
 				data:{				
 					"CREATED_DATE": new Date(),
@@ -255,7 +255,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showPopular=true;
 		
 		$http({
-			url:API_PATH+'/api/v1/getDocumentByPopular/',
+			url:API_ACCESS_CONTROLLER_URL + '/getDocumentByPopular/',
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
@@ -304,7 +304,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
 		$http({
-			url:API_PATH+'/api/v1/getDocumentByRecommended/'+$rootScope.userID,
+			url:API_ACCESS_CONTROLLER_URL + '/getDocumentByRecommended/'+$rootScope.userID,
 			method:'GET'
 		}).then(function(response){
 			if(response.data.DATA==null){
@@ -347,7 +347,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.showNewPost=true;
 		$scope.showPopular=false;
 		$http({
-			url:API_PATH+'/api/v1/getDocumentByNewPost/',
+			url:API_ACCESS_CONTROLLER_URL + '/getDocumentByNewPost/',
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
@@ -393,7 +393,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.getDocumentAndCategoryAndUserAndCommentByDocID = function(DocID){
 		fbThumbnail = DocID;
 		$http({
-			url:API_PATH+'/api/v1/getDocDetail/'+DocID,
+			url:API_ACCESS_CONTROLLER_URL + '/getDocDetail/'+DocID,
 			method:'GET'
 		}).then(function(response){
 			$scope.docDetail=response.data.DATA;
@@ -411,7 +411,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.allDocTitle=[];
 	$scope.getAllDocument = function(){
 		$http({
-			url:API_PATH+'/api/v1/document',
+			url:API_ACCESS_CONTROLLER_URL + '/document',
 			method:'GET'
 		}).then(function(response){
 			$scope.document=response.data.DATA;
@@ -431,7 +431,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.getAllDocumentByCatID=function(CatID){
 		$rootScope.currentSubCategory=CatID;		//First It is close!!
 		$http({
-			url:API_PATH+'/api/v1/getDocumentByCatID/'+CatID,
+			url:API_ACCESS_CONTROLLER_URL + '/getDocumentByCatID/'+CatID,
 			method:'GET'
 		}).then(function(response){
 			$scope.documentByCatID=response.data.DATA;
@@ -451,7 +451,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$scope.countView(docID);
 		
 		$http({
-			url:API_PATH+'/api/v1/document/'+docID,
+			url:API_ACCESS_CONTROLLER_URL + '/document/'+docID,
 			method:'GET'
 		}).then(function(response){
 			$scope.doc=response.data.DATA;
@@ -470,7 +470,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.getDocumentByUser=function(docTypeNum){
 		$scope.showsavelist= false;
 		$http({
-			url:API_PATH+'/api/v1/document/user/'+$rootScope.userID,
+			url:API_ACCESS_CONTROLLER_URL + '/document/user/'+$rootScope.userID,
 			method:'GET',
 			params: {
 				docTypeNum : docTypeNum
@@ -498,7 +498,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 	if (isConfirm) {     
 			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
 			 		$http({
-						url:API_PATH+'/api/v1/document/'+docID,
+						url:API_ACCESS_CONTROLLER_URL + '/document/'+docID,
 						method:'DELETE',
 					
 					
@@ -522,7 +522,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	status = 1;
     	$scope.trackLog(docID,Des,status);
     	$http({
-    		url : API_PATH+'/api/v1/document/counview/'+docID,
+    		url : API_ACCESS_CONTROLLER_URL + '/document/counview/'+docID,
     		method : 'PUT',
     		
     	}).then(function(response){
@@ -534,7 +534,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     /*$scope.CountDocByCatID = function(catID) {
     	//alert(catID);
 		$http({
-			url : API_PATH+'/api/v1/getDocumentCountByCatID/'+catID,
+			url : API_ACCESS_CONTROLLER_URL + '/getDocumentCountByCatID/'+catID,
 			method : 'GET'
 		}).then(function(response) {
 			$scope.docCount = response.data.COUNT;
@@ -547,7 +547,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     $scope.updateTotalDocByCatID = function(catID) {
     	//alert(catID);
 		$http({
-			url : API_PATH+'/api/v1/document/updateTotalDocByCatID/'+catID,
+			url : API_ACCESS_CONTROLLER_URL + '/document/updateTotalDocByCatID/'+catID,
 			method : 'PUT'
 		}).then(function(response) {
 			/*$scope.docUpdateByCatID = response.data.MESSAGE;
@@ -559,7 +559,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     
     $scope.countTotalDocByUserID = function() {
 		$http({
-			url : API_PATH+'/api/v1/document/countTotalDocByUserID/'+$rootScope.userID,
+			url : API_ACCESS_CONTROLLER_URL + '/document/countTotalDocByUserID/'+$rootScope.userID,
 			method : 'GET'
 		}).then(function(response) {
 			$scope.countDocByUserID = response.data.COUNT;
@@ -580,7 +580,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			function(isConfirm){   
 			 	if (isConfirm) {     			 		
 			 		$http({
-						url : API_PATH+'/api/v1/updateDocumentStatus?docID=' + docID + '&status='+ status,
+						url : API_ACCESS_CONTROLLER_URL + '/updateDocumentStatus?docID=' + docID + '&status='+ status,
 						method : 'PUT'
 					}).then(function(response) {
 						swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
@@ -599,7 +599,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     $scope.getDocumentInfoToUpdate = function(docID) {
     	$scope.getAllCategory();
 		$http({
-			url : API_PATH+'/api/v1/document/' + docID,
+			url : API_ACCESS_CONTROLLER_URL + '/document/' + docID,
 			method : 'GET'
 		}).then(function(response) {
 			$scope.documentToUpdate = response.data.DATA;
@@ -610,7 +610,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     
     $scope.updateDocument = function(docID) {
 		$http({
-			url : API_PATH+'/api/v1/document',
+			url : API_ACCESS_CONTROLLER_URL + '/document',
 			method : 'PUT',
 			data : {
 				'TITLE' : $scope.documentToUpdate.TITLE,
@@ -653,7 +653,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     $scope.feeback_text="";
 	$scope.saveFeedBack = function(){	
 		$http({
-			url:API_PATH+'/api/v1/feedback',
+			url:API_ACCESS_CONTROLLER_URL + '/feedback',
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
@@ -688,7 +688,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 
 		   }else{
 			   $http({
-					url:API_PATH+'/api/v1/log',
+					url:API_ACCESS_CONTROLLER_URL + '/log',
 					method:'POST',
 					data :{
 						  'CREATED_DATE': new Date(),
@@ -720,7 +720,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			 	if (isConfirm) {     
 			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
 			 		$http({
-						url:API_PATH+'/api/v1/log/'+docID,
+						url:API_ACCESS_CONTROLLER_URL + '/log/'+docID,
 						method:'DELETE',
 					}).then(function(response){
 						$scope.getLogByUserID();
@@ -736,7 +736,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 
 	  $scope.getLogByUserID =function(){
 		  $http({
-				url:API_PATH+'/api/v1/user/log/'+$rootScope.userID,
+				url:API_ACCESS_CONTROLLER_URL + '/user/log/'+$rootScope.userID,
 				method:'GET'
 			}).then(function(response){
 				$scope.getLogByUser=response.data.DATA;
@@ -758,7 +758,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				 	if (isConfirm) {     
 				 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
 				 		$http({
-							url:API_PATH+'/api/v1/deleteAllLogByUserID/'+$rootScope.userID,
+							url:API_ACCESS_CONTROLLER_URL + '/deleteAllLogByUserID/'+$rootScope.userID,
 							method:'DELETE',
 						}).then(function(response){
 							$scope.getLogByUserID();
@@ -790,7 +790,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				location.href= "/login";
 			}else{
 				$http({
-					url:API_PATH+'/api/v1/report',
+					url:API_ACCESS_CONTROLLER_URL + '/report',
 					method:'POST',
 					data:{	
 						"CREATED_DATE": new Date(),
@@ -869,7 +869,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        	 var status = 0;
 		           	  Savelistname = listname;
 		           	  $http({
-		           			url:API_PATH+'/api/v1/savelist',
+		           			url:API_ACCESS_CONTROLLER_URL + '/savelist',
 		           			method:'POST',
 		           			data:{
 		           				  'CREATED_DATE': new Date(),
@@ -903,7 +903,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		        	  
 		           	  Savelistname = catename;
 		           		$http({
-		           			url:API_PATH+'/api/v1/savelistDetail',
+		           			url:API_ACCESS_CONTROLLER_URL + '/savelistDetail',
 		           			method:'POST',
 		           			data:{
 		           				  'CREATED_DATE': new Date(),
@@ -933,7 +933,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		          	  
 		          	  Des = "Create Category Savelist";
 		          	  $http({
-		        			url:API_PATH+'/api/v1/saveSavelistOnly',
+		        			url:API_ACCESS_CONTROLLER_URL + '/saveSavelistOnly',
 		        			method:'POST',
 		        			data:{
 		        				  'CREATED_DATE': new Date(),
@@ -973,7 +973,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		$scope.insertSavelistOnly = function(){
 			$http({
-				url:API_PATH+'/api/v1/saveSavelistOnly',
+				url:API_ACCESS_CONTROLLER_URL + '/saveSavelistOnly',
 				method:'POST',
 				data:{				
 					"LIST_NAME": $scope.newSavelistName,
@@ -1003,7 +1003,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		
 		$scope.updateSavelist = function(listID){
 			$http({
-				url:API_PATH+'/api/v1/savelist',
+				url:API_ACCESS_CONTROLLER_URL + '/savelist',
 				method:'PUT',
 				data:{	
 					"LIST_ID":listID,
@@ -1060,7 +1060,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	   			 	if (isConfirm) {     
 	   			 		
  	   			 	$http({
-     					url:API_PATH+'/api/v1/savelist/'+listID,
+     					url:API_ACCESS_CONTROLLER_URL + '/savelist/'+listID,
      					method:'DELETE',
      				}).then(function(response){    
      					/*$scope.callActiveTab('mydoc');*/
@@ -1094,7 +1094,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
  			location.href= "/login";
  		}else{
  			$http({
-				url:API_PATH+'/api/v1/getuserSavelist/'+$rootScope.userID,
+				url:API_ACCESS_CONTROLLER_URL + '/getuserSavelist/'+$rootScope.userID,
 				method:'GET'
 			}).then(function(response){
 				$scope.getuserSavelist=response.data.DATA;
@@ -1119,7 +1119,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	    	
 
     			$http({
-    				url:API_PATH+'/api/v1/getuserSavelistMenu/'+$rootScope.userID,
+    				url:API_ACCESS_CONTROLLER_URL + '/getuserSavelistMenu/'+$rootScope.userID,
     				method:'GET'
 	    			}).then(function(response){
 	    				$scope.getSavelistMenu=response.data.DATA;	
@@ -1141,7 +1141,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     			
     			var userID = $rootScope.userID;
     			$http({
-    				url:API_PATH+'/api/v1/getEachSavelist/'+userID,
+    				url:API_ACCESS_CONTROLLER_URL + '/getEachSavelist/'+userID,
     				method:'GET',
     				params: {
     					savelistID : savelistID
@@ -1162,7 +1162,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     		$scope.showsavelist= false;
     		
     		$http({
-    			url:API_PATH+'/api/v1/document/user/'+$rootScope.userID,
+    			url:API_ACCESS_CONTROLLER_URL + '/document/user/'+$rootScope.userID,
     			method:'GET',
     			params: {
     				docTypeNum : docTypeNum
@@ -1192,7 +1192,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
     	   			 	if (isConfirm) {     
     	   			 		swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
 	    	   			 	$http({
-	        					url:API_PATH+'/api/v1/savelist/deleteSavelistDetail/'+docID,
+	        					url:API_ACCESS_CONTROLLER_URL + '/savelist/deleteSavelistDetail/'+docID,
 	        					method:'DELETE',
 	        				}).then(function(response){    					
 	        					$scope.getDocumentByEachSavelist(listID);   
@@ -1221,7 +1221,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 		}else{
 			$http({
-				url:API_PATH+'/api/v1/user/'+$rootScope.UserID,
+				url:API_ACCESS_CONTROLLER_URL + '/user/'+$rootScope.UserID,
 				method:'GET'
 			}).then(function(response){
 				$scope.getUserByID=response.data.DATA;
@@ -1246,7 +1246,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.saveUser = function(){	
 
 		$http({
-			url:API_PATH+'/api/v1/user',
+			url:API_ACCESS_CONTROLLER_URL + '/user',
 			method:'POST',
 			data:{
 				  'CREATED_DATE': new Date(),
@@ -1316,7 +1316,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			frmData.append("usreID", $rootScope.userID);		
 			frmData.append("catID", $scope.catID);	
 			$http({
-				url : API_PATH+'/api/uploadDocument',
+				url : API_ACCESS_CONTROLLER_URL + '/uploadDocument',
 				method :'POST',
 				data : frmData,
 				transformRequest : angular.identity,
@@ -1382,7 +1382,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			frmData.append("files", file);	
 			frmData.append("userID", $rootScope.userID);	
 			$http({
-				url : API_PATH+'/api/uploadUserProfile',
+				url : API_ACCESS_CONTROLLER_URL + '/uploadUserProfile',
 				method :'POST',
 				data : frmData,
 				transformRequest : angular.identity,
@@ -1417,7 +1417,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			frmData.append("files", file);	
 			frmData.append("docID", $rootScope.docUpdateID);	
 			$http({
-				url : API_PATH+'/api/uploadDocThumbnail',
+				url :API_ACCESS_CONTROLLER_URL + '/uploadDocThumbnail',
 				method :'POST',
 				data : frmData,
 				transformRequest : angular.identity,
@@ -1483,7 +1483,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	$scope.updateTotalShare = function(docID) {
 		$http({
-			url : API_PATH+'/api/v1/document/updateShare/'+docID,
+			url : API_ACCESS_CONTROLLER_URL + '/document/updateShare/'+docID,
 			method : 'PUT'
 		}).then(function(response) {
 			

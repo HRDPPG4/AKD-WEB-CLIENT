@@ -1,6 +1,7 @@
 var app = angular.module('MainApp', []);
 
 var API_PATH = "http://localhost:1111";
+var API_ACCESS_CONTROLLER_URL = "http://localhost:1111/api/v1";
 //var API_PATH = "http://192.168.178.207:1111";
 
 // Main Controller for admin
@@ -12,7 +13,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.getAllCategoryNewFun = function(){
 		$http({
-			url:API_PATH+'/api/v1/category',
+			url:API_ACCESS_CONTROLLER_URL + '/category',
 			method:'GET'			
 		}).then(function(response){
 		//	console.log(response.data.DATA);
@@ -31,7 +32,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.getCategoryCount = function() {
 		$http({
-			url : API_PATH+'/api/v1/getCategoryCount',
+			url : API_ACCESS_CONTROLLER_URL + '/getCategoryCount',
 			method : 'GET'
 		}).then(function(response) {
 			$scope.CategoryCount = response.data.COUNT;
@@ -45,7 +46,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.showCategoryByLimit = function(){			
 		$http({
-			url:API_PATH+'/api/v1/getAllCategoryByLimit',
+			url:API_ACCESS_CONTROLLER_URL + '/getAllCategoryByLimit',
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
@@ -87,7 +88,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.removeCategory = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/category/' + id,
+			url : API_ACCESS_CONTROLLER_URL + '/category/' + id,
 			method : 'PUT'
 		}).then(function() {
 			$scope.showCategoryByLimit();
@@ -125,7 +126,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.updateCategory = function() {
 		$http({
-			url : API_PATH+'/api/v1/category',
+			url : API_ACCESS_CONTROLLER_URL + '/category',
 			method : 'PUT',
 			data : {
 				'CAT_NAME' : $scope.folderName,
@@ -177,7 +178,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 		frmData.append("catNumOrder", $scope.catNumOrder);
 		frmData.append("catLevel", $scope.catLevel);
 		$http({
-			url : API_PATH+'/api/uploadFolder',
+			url : API_ACCESS_CONTROLLER_URL + '/uploadFolder',
 			method : 'POST',
 			data : frmData,
 			transformRequest : angular.identity,
@@ -221,7 +222,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.getUserData = function() {
 		$http({
-			url : API_PATH+'/api/v1/user',
+			url : API_ACCESS_CONTROLLER_URL + '/user',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -264,7 +265,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 
 	$scope.insertUser = function() {
 		$http({
-			url : API_PATH+'/api/v1/user',
+			url : API_ACCESS_CONTROLLER_URL + '/user',
 			method : "POST",
 			data : {
 				// 'USER_ID' : $scope.gid,
@@ -300,7 +301,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 
 	$scope.updateUser = function() {
 		$http({
-			url : API_PATH+'/api/v1/user',
+			url : API_ACCESS_CONTROLLER_URL + '/user',
 			method : 'PUT',
 			data : {
 				'USER_NAME' : $scope.gname,
@@ -327,7 +328,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.removeUser = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/user/' + id ,
+			url : API_ACCESS_CONTROLLER_URL + '/user/' + id ,
 			method : 'PUT'
 		}).then(function() {
 			$scope.getUserData();
@@ -355,7 +356,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 	
 	$scope.getUserCount = function() {
 		$http({
-			url : API_PATH+'/api/v1/getUserCount',
+			url : API_ACCESS_CONTROLLER_URL + '/getUserCount',
 			method : 'GET'
 		}).then(function(response) {
 			$scope.UserCount = response.data.COUNT;
@@ -423,7 +424,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}
 		
 		$http({
-			url : API_PATH + '/api/uploadDocument',
+			url : API_ACCESS_CONTROLLER_URL + '/uploadDocument',
 			method :'POST',
 			data : frmData,
 			transformRequest : angular.identity,
@@ -454,7 +455,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		
 	/*$scope.getDocumentCount = function() {
 		$http({
-			url : API_PATH+'/api/v1/getDocumentCount',
+			url : API_ACCESS_CONTROLLER_URL + '/getDocumentCount',
 			method : 'GET'
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
@@ -466,7 +467,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	/*$scope.getDocumentData = function() {
 		$http({
-			url : API_PATH+'/api/v1/document',
+			url : API_ACCESS_CONTROLLER_URL + '/document',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -486,7 +487,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$scope.getTotalDocumentByStatus = function(status) {
 		$http({
-			url : API_PATH+'/api/v1/getTotalDocumentByStatus?status=' + status,
+			url : API_ACCESS_CONTROLLER_URL + '/getTotalDocumentByStatus?status=' + status,
 			method : 'GET'
 		}).then(function(response) {
 			$scope.documentCount = response.data.COUNT;
@@ -503,7 +504,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		$rootScope.currentStatus = status;
 		$scope.getTotalDocumentByStatus($rootScope.currentStatus);
 		$http({
-			url : API_PATH+'/api/v1/document/getAllDocumentByStatus?status='+$rootScope.currentStatus,
+			url : API_ACCESS_CONTROLLER_URL + '/document/getAllDocumentByStatus?status='+$rootScope.currentStatus,
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -562,7 +563,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			function(isConfirm){   
 			 	if (isConfirm) {     			 		
 			 		$http({
-						url : API_PATH+'/api/v1/updateDocumentStatus?docID=' + docID + '&status='+ status,
+						url : API_ACCESS_CONTROLLER_URL + '/updateDocumentStatus?docID=' + docID + '&status='+ status,
 						method : 'PUT'
 					}).then(function(response) {
 						swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
@@ -581,7 +582,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$scope.getAllCategoryNewFun = function(){
 		$http({
-			url:API_PATH+'/api/v1/category',
+			url:API_ACCESS_CONTROLLER_URL + '/category',
 			method:'GET'			
 		}).then(function(response){
 			$scope.allCategoryNewFun=response.data.DATA;			
@@ -631,7 +632,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$rootScope.getAllCategory = function(){
 		$http({
-			url:API_PATH+'/api/v1/category',
+			url:API_ACCESS_CONTROLLER_URL + '/category',
 			method:'GET'			
 		}).then(function(response){
 		//	console.log(response.data.DATA);
@@ -646,7 +647,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$scope.removeDocument = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/document/' + id ,
+			url : API_ACCESS_CONTROLLER_URL + '/document/' + id ,
 			method : 'PUT'
 		}).then(function() {
 			//$scope.getDocumentData();
@@ -692,7 +693,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	$scope.updateDocument = function() {
 		$http({
-			url : API_PATH+'/api/v1/document',
+			url : API_ACCESS_CONTROLLER_URL + '/document',
 			method : 'PUT',
 			data : {
 				'TITLE' : $scope.docTitle,
@@ -732,7 +733,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 app.controller('CommentCtrl', function($scope, $http, $window) {
 	$scope.getCommentData = function() {
 		$http({
-			url : API_PATH+'/api/v1/comment',
+			url : API_ACCESS_CONTROLLER_URL + '/comment',
 			method : 'GET',
 			params : $scope.filter
 			
@@ -776,7 +777,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 	
 	$scope.removeComment = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/comment/' + id,
+			url : API_ACCESS_CONTROLLER_URL + '/comment/' + id,
 			method : 'PUT'
 		}).then(function() {
 			$scope.getCommentData();
@@ -819,7 +820,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 	
 	$scope.updateComment = function() {
 		$http({
-			url : API_PATH+'/api/v1/comment',
+			url : API_ACCESS_CONTROLLER_URL + '/comment',
 			method : 'PUT',
 			data : {
 				'CREATED_DATE' : $scope.createdDate,
@@ -849,7 +850,7 @@ app.controller('CommentCtrl', function($scope, $http, $window) {
 app.controller('SavelistCtrl', function($scope, $http, $window) {
 	$scope.getSavelistData = function() {
 		$http({
-			url : API_PATH+'/api/v1/savelist',
+			url : API_ACCESS_CONTROLLER_URL + '/savelist',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -890,7 +891,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 	
 	$scope.removeSavelist = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/savelist/' + id,
+			url : API_ACCESS_CONTROLLER_URL + '/savelist/' + id,
 			method : 'PUT'
 		}).then(function() {
 			$scope.getSavelistData();
@@ -928,7 +929,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 
 	$scope.updateSavelist = function() {
 		$http({
-			url : API_PATH+'/api/v1/savelist',
+			url : API_ACCESS_CONTROLLER_URL + '/savelist',
 			method : 'PUT',
 			data : {
 				'LIST_NAME' : $scope.listName,
@@ -958,7 +959,7 @@ app.controller('SavelistCtrl', function($scope, $http, $window) {
 app.controller('FeedbackCtrl', function($scope, $http, $window) {
 	$scope.getFeedbackData = function() {
 		$http({
-			url : API_PATH+'/api/v1/feedback',
+			url : API_ACCESS_CONTROLLER_URL + '/feedback',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -1000,7 +1001,7 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 	
 	$scope.removeFeedback = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/feedback/' + id,
+			url : API_ACCESS_CONTROLLER_URL + '/feedback/' + id,
 			method : 'PUT'
 		}).then(function() {
 			$scope.getFeedbackData();
@@ -1037,7 +1038,7 @@ app.controller('FeedbackCtrl', function($scope, $http, $window) {
 app.controller('ReportCtrl', function($scope, $http, $window) {
 	$scope.getReportData = function() {
 		$http({
-			url : API_PATH+'/api/v1/report',
+			url : API_ACCESS_CONTROLLER_URL + '/report',
 			method : 'GET',
 			params : $scope.filter
 		}).then(function(response) {
@@ -1052,7 +1053,7 @@ app.controller('ReportCtrl', function($scope, $http, $window) {
 	
 	$scope.removeReport = function(id) {
 		$http({
-			url : API_PATH+'/api/v1/report/' + id,
+			url : API_ACCESS_CONTROLLER_URL + '/report/' + id,
 			method : 'PUT'
 		}).then(function() {
 			$scope.getReportData();
