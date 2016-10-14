@@ -14,16 +14,17 @@
 					<label>ឈ្មោះឯកសារ</label> 
 					<input type="text" class="form-control" placeholder="ឈ្មោះឯកសារ" ng-model="documentToUpdate.TITLE">
 				</div>	
-				 <div class="form-group">
-					<label>ការរៀបរាប់ពីឯកសារ</label> 
-					<input type="text" class="form-control" placeholder="ការរៀបរាប់ពីឯកសារ" ng-model="documentToUpdate.DES">
-				</div>
 				<div class="form-group">
 					<label>ប្រភេទកញ្ចប់</label>
 					<select class="form-control" ng-model="documentToUpdate.CAT_ID">			       
                         <option ng-repeat="x in category | filter:{ CAT_LEVEL: '!0'}" value="{{x.CAT_ID}}">{{x.CAT_NAME}}</option>
                    	</select>
 				</div>
+				 <div class="form-group">
+					<label>ការរៀបរាប់ពីឯកសារ</label> 
+					<textarea type="text" class="form-control" placeholder="ការរៀបរាប់ពីឯកសារ" ng-model="documentToUpdate.DES"></textarea>
+				</div>
+				
 				     					       
 			  </div>
 		    <div class="modal-footer">

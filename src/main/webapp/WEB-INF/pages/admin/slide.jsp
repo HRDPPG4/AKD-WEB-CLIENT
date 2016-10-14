@@ -168,7 +168,7 @@ window.userID = "${userID}";
 												<i class="fa fa-edit"></i>
 											</button>
 											<button type="button" class="btn btn-danger btn-sm"
-												ng-click="alertDelete(d.DOC_ID)">
+												ng-click="updateDocumentStatus(d.DOC_ID,3)">
 												<i class="fa fa-eraser"></i>
 											</button>
 											<a href="/detail/{{d.DOC_ID}}" type="button" class="btn btn-primary btn-sm">

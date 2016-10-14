@@ -185,6 +185,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			$scope.getAllCategoryNewFun();
 			$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
 			$scope.folderName="";
 			$scope.des="";
@@ -548,6 +549,51 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	     		    ];
 	$scope.selectedStatus = $scope.documentStatus[0].STATUS_VALUE;
 /*	console.log($scope.documentStatus[0].STATUS_VALUE);*/
+	
+	
+	$scope.updateDocumentStatus = function(docID,status) {    	
+    	swal({   title: "តើអ្នកពិតជាចង់លុបមែនទេ?",   
+			text: "អ្នកនឹងមិនអាចហៅវាមកវិញបានទេ!",   
+			type: "warning",   showCancelButton: true,   
+			confirmButtonColor: "#DD6B55",   
+			confirmButtonText: "យល់ព្រម",   
+			cancelButtonText: "បដិសេធ",   
+			closeOnConfirm: false,   closeOnCancel: false },
+			function(isConfirm){   
+			 	if (isConfirm) {     			 		
+			 		$http({
+						url : API_PATH+'/api/v1/updateDocumentStatus?docID=' + docID + '&status='+ status,
+						method : 'PUT'
+					}).then(function(response) {
+						swal("បានជោគជ័យ!", "ឯកសារត្រូវបានលុប", "success"); 
+						$scope.getDocumentByStatus($rootScope.currentStatus);
+						$scope.countTotalDocByUserID();
+						$scope.getDocumentByUser();
+					}, function(response) {
+						
+					});
+			 	}
+		 		else {     
+		 			swal("បានបដិសេធ", "ឯកសាររបស់អ្នកគឺមានសុវត្ថិភាព :)", "error");   
+		 		} 
+		 	});
+	}
+	
+	$scope.getAllCategoryNewFun = function(){
+		$http({
+			url:API_PATH+'/api/v1/category',
+			method:'GET'			
+		}).then(function(response){
+			$scope.allCategoryNewFun=response.data.DATA;			
+		}, function(response){
+		
+		});
+	}
+	
+	$scope.getAllCategoryNewFun();
+	
+	
+	
 	
 	// STOP NEW CODE UPDATE BY CHIVORN
 	

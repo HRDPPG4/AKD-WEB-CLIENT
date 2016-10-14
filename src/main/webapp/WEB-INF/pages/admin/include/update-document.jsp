@@ -20,6 +20,13 @@
 										type="text" class="form-control" placeholder="Document title "
 										name="docTitle" ng-model="docTitle">
 								</div>
+								
+								<div class="form-group">
+									<label>Category:</label> 
+									<select class="form-control" ng-model="catID">			       
+				                        <option ng-repeat="cat in allCategoryNewFun | filter:{CAT_LEVEL:'1'}" value="{{cat.CAT_ID}}">{{cat.CAT_NAME}}</option>
+				                   	</select>
+								</div>
 
 								<div class="form-group">
 									<label for="description">Description</label>
