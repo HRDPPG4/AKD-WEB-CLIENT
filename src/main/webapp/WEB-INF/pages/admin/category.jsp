@@ -204,8 +204,8 @@
 
 															<div class="form-group" ng-show="showCatBox">
 																<label>Category:</label> 
-																<select class="form-control" ng-model="catID">			       
-											                        <option ng-repeat="cat in allCategoryNewFun | filter:{ CAT_LEVEL: '0'}" value="{{cat.CAT_ID}}">{{cat.CAT_NAME}}</option>
+																<select class="form-control" ng-model="ParentID">			       
+											                        <option ng-repeat="cat in allCategoryNewFun | filter:{CAT_LEVEL:'0'}" value="{{cat.CAT_ID}}">{{cat.CAT_NAME}}</option>
 											                   	</select>
 															</div>
 
