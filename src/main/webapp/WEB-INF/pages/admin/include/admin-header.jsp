@@ -11,7 +11,7 @@
    <sec:authentication  property="principal.profile" var="userProfile"/>         
 </sec:authorize>
 
-<<style>
+<style>
 	 .nav>li>a>img.userProfile
 	{
 		height:19px;
