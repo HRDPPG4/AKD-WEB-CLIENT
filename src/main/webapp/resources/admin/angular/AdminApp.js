@@ -155,7 +155,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	
 	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
-	$scope.ParentID = "0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
 	$scope.sta = 1;
 	$scope.catLevel = 0;
 	
@@ -368,7 +368,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 //============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
 	$rootScope.userID = $window.userID;
-	$scope.catID="0B4RhbtI4DXY_QWVOWkFiSTlRY1E";
+	$scope.catID="0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
 	$scope.des="";
 	
 	$scope.showSingleInput = false;
