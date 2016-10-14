@@ -186,6 +186,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			$scope.getAllCategoryNewFun();
 			$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
 			$scope.folderName="";
 			$scope.des="";
