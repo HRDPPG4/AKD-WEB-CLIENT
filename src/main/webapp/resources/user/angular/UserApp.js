@@ -1,10 +1,11 @@
 
-var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 
-var API_PATH = "http://localhost:1111";
 var API_ACCESS_CONTROLLER_URL = "http://localhost:1111/api/v1";
-//var API_PATH = "http://192.168.178.207:1111";
+var API_PATH = "http://localhost:1111";
+var UI_PATH = "http://192.168.178.202:2222";
+
+
 
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
@@ -249,8 +250,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.showPopular=false;
 	
 	$scope.getDocumentByPopular=function(){
-		/* preloader.style.opacity = 1;
-		 preloader.style.display ="block";*/
 		$scope.showRecomment=false;
 		$scope.showNewPost=false;
 		$scope.showPopular=true;
@@ -260,8 +259,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
-			 /*preloader.style.opacity = 0;
-			 preloader.style.display ="none";*/
 			$scope.popular=response.data.DATA;
 
 			//$scope.setDocumentPagination(response.data.PAGING.TOTAL_PAGES);
@@ -299,8 +296,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	});
 	
 	$scope.getDocumentByRecommended=function(){
-		/* preloader.style.opacity = 1;
-		 preloader.style.display ="block";*/
 		$scope.showRecomment=true;
 		$scope.showNewPost=false;
 		$scope.showPopular=false;
@@ -341,9 +336,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	$scope.getDocumentByNewPost=function(){		
-		 /*preloader.style.opacity = 1;
-		 preloader.style.display ="block";*/
-		 
 		$scope.showRecomment=false;
 		$scope.showNewPost=true;
 		$scope.showPopular=false;
@@ -352,10 +344,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			method:'GET',
 			params : $scope.filter
 		}).then(function(response){
-			
-			/*preloader.style.opacity = 0;
-			preloader.style.display ="none";*/
-			
 			$scope.newDocument=response.data.DATA;
 		//	$scope.setNewPostPagination(response.data.PAGING.TOTAL_PAGES);
 			//console.log("New: "+$scope.newDocument);
@@ -1458,7 +1446,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	// SHARE TO FACEBOOK
 	    
     $scope.FBShare = function(docID,thumbnail) {
-		var url = 'http://192.168.178.28:2222/' + window.location.pathname;
+		var url = UI_PATH + '/' + window.location.pathname;
 		 
 		 FB.ui({
 		   method: 'share',

@@ -69,6 +69,15 @@
 		#share .fa-share-alt:before,#share .fa-arrow-circle-o-down:before,#share .fa-thumbs-up:before{
 			color:black;
 		}
+		/* FOR DETAIL PAGE ONLY */
+		#header {
+		    height: 56px;
+		}
+		.top-menu {
+		    height: 27px;
+		}
+
+		
 	</style>
 
 </head>

@@ -1,7 +1,7 @@
 <%@ page pageEncoding="utf-8"%>
 
-<div class="container-fluid" ng-controller="UserCtrl">
-	<div id="side-toolbar">
+<div class="container-fluid#" ng-controller="UserCtrl">	
+	<!-- <div id="side-toolbar">
 		<div class="content-toolbar">
 			<ul class="ul-toolbar">
 				<li class="search">
@@ -27,5 +27,5 @@
 				</li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 </div>
