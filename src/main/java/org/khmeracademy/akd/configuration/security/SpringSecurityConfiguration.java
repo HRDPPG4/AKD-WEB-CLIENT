@@ -27,9 +27,9 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/").permitAll();
-		//.antMatchers("/admin/**").hasAnyRole("ADMIN")
-		//.antMatchers("/user/**").hasRole("USER");
+		.antMatchers("/").permitAll()
+		.antMatchers("/admin/**").hasAnyRole("ADMIN")
+		.antMatchers("/user/**").hasRole("USER");
 		http
 			.formLogin()
 			.loginPage(environment.getProperty("ACCOUNT_LOGIN_URL")+environment.getProperty("ACCOUNT_CONTINUE_SITE"))
@@ -52,7 +52,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.permitAll();
 		
 		http.csrf().disable();
-		http.exceptionHandling().accessDeniedPage("/access-denied");
+		http.exceptionHandling().accessDeniedPage("/accessDenied");
 	}
 
 	@Bean
