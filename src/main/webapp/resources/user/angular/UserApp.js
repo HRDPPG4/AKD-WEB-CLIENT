@@ -1,8 +1,8 @@
 
 var preloader = document.querySelector(".preloader");
 var app = angular.module('UserApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
-//var API_PATH = "http://localhost:1111";
-var API_PATH = "http://192.168.178.207:1111";
+var API_PATH = "http://localhost:1111";
+//var API_PATH = "http://192.168.178.207:1111";
 
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////

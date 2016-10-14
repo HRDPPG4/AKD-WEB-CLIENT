@@ -1,7 +1,7 @@
 var app = angular.module('MainApp', []);
 
-//var API_PATH = "http://localhost:1111";
-var API_PATH = "http://192.168.178.207:1111";
+var API_PATH = "http://localhost:1111";
+//var API_PATH = "http://192.168.178.207:1111";
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
