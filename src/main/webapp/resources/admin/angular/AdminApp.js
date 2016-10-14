@@ -1,7 +1,7 @@
 var app = angular.module('MainApp', []);
 
 //var API_PATH = "http://localhost:1111";
-var API_PATH = "http://172.20.10.2:1111";
+var API_PATH = "http://192.168.178.207:1111";
 
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
@@ -158,7 +158,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
 	$scope.sta = 1;
 	$scope.catLevel = 0;
-	
+	$scope.catNumOrder = 0;
 	$scope.uploadFolder = function(event) {
 		event.preventDefault();
 		var frmData = new FormData();
@@ -185,6 +185,10 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			$scope.ParentID = "0BybKdIgWtK8tbVNqQWlXM0Q2dlE";
+			$scope.folderName="";
+			$scope.des="";
+			$scope.catIcon="";
 			
 			swal(
 				  'Good job!',
@@ -195,10 +199,10 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			// alert("ID: "+$scope.ParentID);
 			//console.log("Check Upload Foler here!!");
 			//console.log(response);
-			$scope.message = response.data.message;
+			/*$scope.message = response.data.message;
 			$scope.folderName = category.c.CAT_NAME;
 			$scope.des = category.c.REMARK;
-			$scope.sta = category.c.STATUS;
+			$scope.sta = category.c.STATUS;*/
 		}, function(response) {
 			console.log(response);
 			swal(
