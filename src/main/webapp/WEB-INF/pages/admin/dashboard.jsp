@@ -95,7 +95,7 @@
 					<!-- small box -->
 					<div class="small-box bg-aqua">
 						<div class="inner">
-							<h3>{{documentCount}}</h3>
+							<h3>{{AllDocumentCount}}</h3>
 
 							<p>Slides</p>
 						</div>

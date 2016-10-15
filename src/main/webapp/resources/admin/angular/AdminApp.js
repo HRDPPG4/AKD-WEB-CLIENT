@@ -453,18 +453,17 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	
 		
-	/*$scope.getDocumentCount = function() {
+	$scope.getAllDocumentCount = function() {
 		$http({
 			url : API_ACCESS_CONTROLLER_URL + '/getDocumentCount',
 			method : 'GET'
 		}).then(function(response) {
-			$scope.documentCount = response.data.COUNT;
-			//console.log($scope.documentCount);
+			$scope.AllDocumentCount = response.data.COUNT;
 		}, function(response) {
 
 		});
-	}*/
-	
+	}
+	$scope.getAllDocumentCount();
 	/*$scope.getDocumentData = function() {
 		$http({
 			url : API_ACCESS_CONTROLLER_URL + '/document',
@@ -490,9 +489,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			url : API_ACCESS_CONTROLLER_URL + '/getTotalDocumentByStatus?status=' + status,
 			method : 'GET'
 		}).then(function(response) {
-			$scope.documentCount = response.data.COUNT;
-			//console.log($scope.documentCount);
-		//	alert($scope.documentCount);
+			$scope.documentCountByStatus = response.data.COUNT;
 		}, function(response) {
 
 		});
@@ -515,7 +512,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				$rootScope.currentTotalPage = response.data.PAGING.TOTAL_PAGES;				
 			}else{	
 				//$rootScope.currentTotalPage = 0;
-				$rootScope.currentTotalPage = Math.ceil($scope.documentCount/$scope.filter.limit); 	// TOTAL PAGE HAS PROBLEM IF DON'T USE LIKE THIS.
+				$rootScope.currentTotalPage = Math.ceil($scope.documentCountByStatus/$scope.filter.limit); 	// TOTAL PAGE HAS PROBLEM IF DON'T USE LIKE THIS.
 			
 			}
 			
@@ -528,7 +525,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		});
 	}
 	
-	$scope.getDocumentByStatus(0);
+	$scope.getDocumentByStatus(1);
 	
 	$scope.documentStatus = [
 		     		      {
@@ -548,7 +545,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 			     		     "STATUS_VALUE"	: 3
 		     		      }	     		      
 	     		    ];
-	$scope.selectedStatus = $scope.documentStatus[0].STATUS_VALUE;
+	$scope.selectedStatus = $scope.documentStatus[$rootScope.currentStatus].STATUS_VALUE;
 /*	console.log($scope.documentStatus[0].STATUS_VALUE);*/
 	
 	
@@ -601,7 +598,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 	
 	
 	
-//	$scope.getDocumentCount();
+//	$scope.getAllDocumentCount();
 
 	//TODO: default filter
 	$scope.filter = {
