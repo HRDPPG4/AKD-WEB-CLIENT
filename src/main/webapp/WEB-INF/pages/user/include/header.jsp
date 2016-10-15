@@ -168,7 +168,7 @@ window.fileName="";
 		        	<div class="user"> 
 						<div class="input-group">								
 						    <span class="input-group-btn">	   	
-							    <button class="btn btn-primary" data-toggle="modal"  ng-click="callModal('upload','show') ; getAllCategory()"><!-- data-target="#upload" -->
+							    <button class="btn btn-primary" data-toggle="modal"  ng-click="checkBeforeUpload()"><!-- data-target="#upload" -->
 							    	ចែកចាយឯកសារ
 							    </button>
 							    <sec:authorize access="isAnonymous()">

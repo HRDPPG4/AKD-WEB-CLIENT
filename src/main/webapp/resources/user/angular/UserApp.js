@@ -119,9 +119,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	$scope.getAllCategory = function(){
-		if($scope.checkUserLogin()){
-			
-		}else{
+		if(!$scope.checkUserLogin()){
 			$http({
 				url:API_ACCESS_CONTROLLER_URL + '/category',
 				method:'GET'			
@@ -135,9 +133,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			}, function(response){
 			
 			});
+			
 		}
-		
-		
 	}	
 	
 	$scope.getCategoryByParentID=function(parentID){	
@@ -1206,10 +1203,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	  ///////////////////	START USER BLOCK	/////////////////
 	
  $scope.getUserByID=function(){
-	 if($scope.checkUserLogin()){
-			
-		}else{
-			$http({
+	 if(!$scope.checkUserLogin()){
+		 $http({
 				url:API_ACCESS_CONTROLLER_URL + '/user/'+$rootScope.UserID,
 				method:'GET'
 			}).then(function(response){
@@ -1218,6 +1213,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			}, function(response){
 
 			});
+			
 		}
 	} 
     		 	
@@ -1226,8 +1222,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	 if($rootScope.UserID==0 || $rootScope.UserID==null ||$rootScope.UserID =="")
 		{
 			location.href= "/login";
-		}else{
-			
 		}
 	}
     		 
@@ -1287,14 +1281,19 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	
 	
 	////////////////////	START UPLOAD BLOCK	/////////////////
+	
+	$scope.checkBeforeUpload = function() {
+		if(!$scope.checkUserLogin()){	
+			$scope.callModal('upload','show');
+			$scope.getAllCategory();
+		}
+	};
+	
 	$scope.theFile = null;
 	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.des="";
 	$scope.uploadFile = function(event) {
-		if($scope.checkUserLogin()){
-			
-		}else{
-		
+		if(!$scope.checkUserLogin()){
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1313,14 +1312,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
-				
-				/*swal({  
-					title: "File Upload Successful!",   
-					text: "",   
-					timer: 800,   
-					showConfirmButton: false 
-				});*/
-				
 				swal(
 					  'អបអរសាទរ!',
 					  'ឯកសាររបស់អ្នកត្រូវបានចែកចាយបានសម្រេច!',
@@ -1339,13 +1330,6 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 			
 				
 			}, function(response) {
-				/*swal({  
-					title: "File Upload Fail!",   
-					text: "",   
-					timer: 800,   
-					showConfirmButton: false 
-				});*/
-				
 				swal(
 						  'សូមសោកស្តាយ!',
 						  'ឯកសារចែកចាយមិនបានសម្រេច!\nសូមព្យាយាមម្តងទៀត',
@@ -1354,16 +1338,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				
 			});
 		}
-		
-		
 	};
 	
 	
 	
 	$scope.uploadUserProfile = function(event) {
-		if($scope.checkUserLogin()){
-			
-		}else{
+		if(!$scope.checkUserLogin()){
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1382,9 +1362,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				 //$scope.getUserByID();
 				 location.href= "/userAccount";
 			});
+			
 		}
-		
-		
 	};
 	
 	$scope.checkDocID = function(docID) {
@@ -1396,9 +1375,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$rootScope.docUpdateID="default";
 	$scope.uploadDocThumbnail = function(event) {
 		
-		if($scope.checkUserLogin()){
-			
-		}else{
+		if(!$scope.checkUserLogin()){
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1417,9 +1394,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 				$scope.getDocumentByUser();
 				
 			});
+			
 		}
-		
-		
 	};
 	
 	
