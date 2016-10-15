@@ -6,6 +6,9 @@
 	margin-top: 20px;
 	z-index: 9999;
 }
+div.a2a_full_footer a{
+    display: none;
+}
 </style>
 
 <div class="mySocailCustom">

@@ -157,10 +157,7 @@
 														<button class="btn-report-detail"​ ng-click="checkUserLogin()">
 															<span><i class="fa fa-flag" aria-hidden="true"></i></span>
 															ការវាយតម្លៃ
-														</button>	
-														
-														<jsp:include page="include/social-share-in-detail.jsp"></jsp:include>
-																										
+														</button>										
 													</div>													
 												 </div>										
 											</div>
