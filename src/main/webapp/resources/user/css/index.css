@@ -926,3 +926,7 @@ button.btn-side-search{
     color: #26a63c;
     border: 1px solid #26a63c;
 }
+.setActive{
+    color: black !important;
+    background-color: #fff !important;
+}

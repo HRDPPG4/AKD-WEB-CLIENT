@@ -22,7 +22,7 @@ public class UserController {
 	private String REGISTER_URL;
 	
 	@RequestMapping(value="/",method=RequestMethod.GET)
-	public String findAll(){
+	public String index(){
 		return "index";
 	}
 	
@@ -39,19 +39,6 @@ public class UserController {
 		return "user/result-search";
 	}
 	
-	@RequestMapping(value="/user_view",method=RequestMethod.GET)
-	public String user_view(){
-		return "user/user_view";
-	}
-	
-	@RequestMapping(value="/user_view_history",method=RequestMethod.GET)
-	public String user_view_history(){
-		return "user/user_view_history";
-	}
-	@RequestMapping(value="/user_information",method=RequestMethod.GET)
-	public String user_information(){
-		return "user/user_information";
-	}
 	
 	@RequestMapping(value="/userAccount",method=RequestMethod.GET)
 	public String user(){
@@ -70,11 +57,6 @@ public class UserController {
 		//System.out.println("ID==>" + ParentID);
 		model.put("ParentID", ParentID);
 		return "user/viewPageByCategoryID";
-	}
-	
-	@RequestMapping(value="/user/feature",method=RequestMethod.GET)
-	public String feature11(){
-		return "user/featured";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

@@ -1,5 +1,5 @@
-<%@ page
-    pageEncoding="utf-8"%>
+<%@ page pageEncoding="utf-8"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   --%>
     
 <a href="#0" class="cd-top">Top</a>
 
@@ -25,5 +25,3 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/login.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/back-to-top.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/angular/UserApp.js"></script>
-
-

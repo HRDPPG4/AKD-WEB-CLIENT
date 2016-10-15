@@ -119,7 +119,7 @@ ul.dropdown-menu.dropdown-item::after{
 
 <script>
 window.userID = "${userID}"; 
-/* window.userName="${userName}"; */
+window.CURRENT_PAGE = "${ParentID}";
 window.fileName="";
 
 </script>
@@ -197,12 +197,14 @@ window.fileName="";
 					<li class="icon">
 					   <span><i class="fa fa-bars" aria-hidden="true"></i></span>
 					 </li>			
-					  <li><a class="menu" href="/">
-						   <span><i class="fa fa-home" aria-hidden="true"></i>
-						   </span>ទំព័រដើម</a>
+					  <li>
+						  <a class="menu" href="/" ng-class="{'setActive':CURRENT_PAGE == ''}">
+							   <span><i class="fa fa-home" aria-hidden="true"></i>
+							   </span>ទំព័រដើម
+						  </a>
 					  </li>				  
-					  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak >
-					  		<a class="menu" href="/view/{{mainCat.CAT_ID}}">
+					  <li ng-repeat="mainCat in getAllCategoryAndSubcategory" ng-cloak>
+					  		<a class="menu" href="/view/{{mainCat.CAT_ID}}" ng-class="{'setActive':CURRENT_PAGE == mainCat.CAT_ID}">
 							   <span><i class="{{mainCat.ICON}}" aria-hidden="true"></i>
 							   </span>{{mainCat.CAT_NAME}}
 						 	</a>

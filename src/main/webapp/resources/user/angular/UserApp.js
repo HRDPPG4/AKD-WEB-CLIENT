@@ -9,7 +9,7 @@ var UI_PATH = "http://192.168.178.202:2222";
 
 
 ///////////////////		START MAIN CONTROLLLER FOR USER BLOCK	/////////////////
-app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', function($scope,$rootScope,$http,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
+app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$window', function($scope,$rootScope,$http,$location,$sce,$window){	//$rootScope, $scope, $http, $location, $localStorage, loginService
 	
 	$scope.partners = [
 		     		      {
@@ -104,8 +104,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 	$scope.currentDocumentID="";
 		
 	$rootScope.userID = $window.userID;
-	$rootScope.loading =$window.loading;
-	
+	$rootScope.CURRENT_PAGE = $window.CURRENT_PAGE;
 	
 	
 	
@@ -1485,7 +1484,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$sce', '$window', func
 		$('.nav-tabs a[href="#' + tabID + '"]').tab('show');
 	};
 	
-	
+
 	   
 }]);
 ///////////////////		END MAIN CONTROLLLER FOR USER BLOCK	/////////////////
@@ -1520,4 +1519,6 @@ app.directive('myEnter', function () {
         });
     };
 });
+
+
 
