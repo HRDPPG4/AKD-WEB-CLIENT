@@ -221,7 +221,9 @@ app.controller('MainCtrl', function($scope,$rootScope, $http, $sce, $timeout) {
 
 
 // ======================User Controller===========================
-app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
+app.controller('UserCtrl', function($scope, $rootScope, $http, $sce, $timeout,$window) {
+	
+	
 	$scope.getUserData = function() {
 		$http({
 			url : API_ACCESS_CONTROLLER_URL + '/user',
@@ -368,6 +370,9 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 		});
 	}
 	$scope.getUserCount();
+	
+	
+	
 	
 
 });

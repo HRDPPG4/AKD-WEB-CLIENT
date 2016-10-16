@@ -57,10 +57,10 @@ window.userID = "${userID}";
 								</li>
 								<li class="user-footer">
 									<div class="pull-left">
-										<a href="#" class="btn btn-default btn-flat">Profile</a>
+										<a href="/userAccount" class="btn btn-default btn-flat">Profile</a>
 									</div>
 									<div class="pull-right">
-										<a href="" class="btn btn-default btn-flat">Sign out</a>
+										<a href="/logout" class="btn btn-default btn-flat">Sign out</a>
 									</div>
 								</li>
 							</ul>

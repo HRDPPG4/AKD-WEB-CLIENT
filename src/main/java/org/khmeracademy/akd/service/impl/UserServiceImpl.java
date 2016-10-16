@@ -62,6 +62,7 @@ public class UserServiceImpl implements UserService{
 				u.setCreatedDate((String) data.get("CREATED_DATE"));
 				u.setRemark((String) data.get("REMARK"));
 				u.setStatus((Integer) data.get("STATUS"));
+				u.setRole("ROLE_USER");
 				
 				Role role = new Role();
 				role.setRoleName((String)data.get("USER_ROLE"));
