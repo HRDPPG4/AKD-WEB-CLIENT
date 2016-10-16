@@ -9,13 +9,6 @@
 	<title>Document Detail</title>
 	<%@include file="include/link/link.jsp"%>
 	
-	<!--facebook meta tag--> 
-	<!-- <meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="Your Website Title" />
-	<meta property="og:description"   content="Your description" />
-	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
-	
 	<style>
 		
 		#SlideBox
@@ -143,7 +136,7 @@
 													</div>
 													<div id="btn" >	
 														<button class="btn-savelist-detail" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)">
-															<span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅ</span>
+															<span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅបញ្ជី</span>
 														</button>		
 														<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
 														<button class="btn-share-detail" id="shareBtn" ng-click="FBShare(docDetail[0].DOC_ID,docDetail[0].THUMBNAIL_URL)">
@@ -153,14 +146,14 @@
 		
 														<button class="btn-report-detail"​ ng-click="checkUserLogin()">
 															<span><i class="fa fa-flag" aria-hidden="true"></i></span>
-															ការវាយតម្លៃ
+															រាយការណ៍អំពីបញ្ហា
 														</button>										
 													</div>													
 												 </div>										
 											</div>
 											<!-- savelist -->
 											<div class="content-savelist" ng-show="enableList">
-												<div class="header-savelist">ការរក្សាឯកសារទុក
+												<div class="header-savelist">សូមធ្វើការជ្រើសរើសបញ្ជីផ្ទុកឯកសារ
 													<span>
 														<i class="fa fa-times " id="cross" style="font-size:10px;float:right;" aria-hidden="true"></i>
 													</span>
@@ -181,6 +174,7 @@
 														 	<!--   ​<button type="button" class="btn btn-info" id="btn-savelist"​ ng-click="saveList()">រក្សាទុក</button> -->							  								
 														</div>
 									 				</div>
+									 				<p>មិនទាន់មានបញ្ជីដែលទាក់ទងមែនទេ?</p>
 									 				<button type="button" class="btn-create-new"​ >បង្កើតថ្មី</button>
 													<input class=" form-control"  id="comment-savelist" ng-model="saveListname"/>
 													<input type="button" id="btnSavelist" value="បញ្ជូន" ng-click="saveList()">		
@@ -204,14 +198,14 @@
 											</script>
 											<!-- report -->
 											<div class="content-report">
-												<div class="header-report">ការវាយតម្លៃស្លាយនេះ
+												<div class="header-report">សូមរាយការណ៍អំពីបញ្ហារបស់ឯកសារនេះ
 													<span>
 														<i class="fa fa-times" id="cross-report" style="font-size:10px;float:right;" aria-hidden="true"></i>
 													</span>
 												</div>												
 												<form action="" class=" form-report">
 													<textarea class=" form-control" rows="2" id="comment" ng-model="currentReport"></textarea>
-													<input type="button" id="btnReport" value="បញ្ជូន" ng-click="insertReport()">
+													<input type="button" id="btnReport" value="រាយការណ៍" ng-click="insertReport()">
 												</form>													
 											</div>
 											 <div class="slide-detail-more">
