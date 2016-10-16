@@ -1199,7 +1199,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 				url:API_ACCESS_CONTROLLER_URL + '/user/'+$rootScope.UserID,
 				method:'GET'
 			}).then(function(response){
-				$scope.getUserByID=response.data.DATA;
+				$scope.userInfoByUserID=response.data.DATA;
 			
 			}, function(response){
 
@@ -1343,7 +1343,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
-				 //$scope.getUserByID();
+				 $scope.getUserByID();
 				 location.href= "/userAccount";
 			});
 			

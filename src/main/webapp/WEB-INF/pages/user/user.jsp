@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plugins/AdminLTE/css/skins/_all-skins.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/userAccount.css">
 </head>
-<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" ng-init="getUserByID()" class="hold-transition skin-blue sidebar-mini">
+<body ng-cloak ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getUserByID()" class="hold-transition skin-blue sidebar-mini">
 	<jsp:include page="include/register.jsp"></jsp:include>
 	<jsp:include page="include/login.jsp"></jsp:include>
 	<jsp:include page="include/upload.jsp"></jsp:include>		

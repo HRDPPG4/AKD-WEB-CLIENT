@@ -15,6 +15,7 @@
     padding:5px;
     margin:5px;
 }
+
 #commentBox textarea
 {
 	min-height: 5%;
@@ -55,4 +56,9 @@
 	text-align:left;
 	position: relative;
 	left:60px;
+}
+
+@media (min-width: 992px)
+div#img-user.col-md-1 {
+    padding: 0px !important;
 }

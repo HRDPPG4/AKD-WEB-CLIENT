@@ -144,7 +144,7 @@ window.fileName="";
 					  <ul class="nav navbar-nav navbar-right">	
 						<li class="dropdown">
 						  <a href="/profile" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						  	<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}" class="userProfile">						  	
+						  	<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{userInfoByUserID.PROFILE}}" class="userProfile">						  	
 						  </a>
 						  <ul class="dropdown-menu dropdown-item">
 								<li>

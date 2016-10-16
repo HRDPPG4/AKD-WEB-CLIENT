@@ -6,8 +6,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <span class="pull-left# image profile" >
-      	<!-- <img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{getUserByID.PROFILE}}" class="img-circle" alt="User Image"> -->
-      	<img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}" class="img-circle" alt="User Image">
+      	<img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{userInfoByUserID.PROFILE}}" class="img-circle" alt="User Image">
       </span>
       <br><br>
       <div >
