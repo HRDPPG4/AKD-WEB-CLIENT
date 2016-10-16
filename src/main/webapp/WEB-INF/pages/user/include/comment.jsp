@@ -18,11 +18,14 @@
 
 		<div id="commentBoxArea" class="col-md-11">
 			 <textarea myEnter="insertComment()" placeholder = "សូមបញ្ចេញមតិរបស់អ្នក..." ng-model="newComment"></textarea> 
-		</div>
-
-		<div id="btnPost">
+			 <div id="btnPost">
 			<input type="button" value="ដាក់ប្រកាស" class="btn btn-primary" ng-click="insertComment()" ng-disabled="!newComment">
 		</div>
+		</div>
+
+		<!-- <div id="btnPost">
+			<input type="button" value="ដាក់ប្រកាស" class="btn btn-primary" ng-click="insertComment()" ng-disabled="!newComment">
+		</div> -->
 		
 		<div ng-if="commentByDoc" id="listCommentBox" ng-repeat="comment in commentByDoc">	
 			<div id="img-user-commented">
