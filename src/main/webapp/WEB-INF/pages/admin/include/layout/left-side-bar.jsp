@@ -11,8 +11,8 @@
 <aside class="main-sidebar">
   <section class="sidebar">
     <div class="user-panel">
-      	<div class="pull-left image">
-			<img alt="" src="${userProfile}" class="userProfile">
+      	<div class="pull-left image" ng-cloak>
+			<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}" class="userProfile">
 		</div>
 		<div class="pull-left info">
 			<p>${userName}</p>

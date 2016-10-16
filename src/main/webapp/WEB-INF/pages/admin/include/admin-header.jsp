@@ -46,13 +46,13 @@ window.userID = "${userID}";
 						<!-- User Account: style can be found in dropdown.less -->
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img alt="" src="${userProfile}" class="userProfile" alt="User Image">
+								<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}"  class="userProfile" alt="User Image">
 								<span class="hidden-xs">${userName}</span>
 							</a>
 							<ul class="dropdown-menu">
 								<!-- User image -->
 								<li class="user-header">
-									<img alt="" src="${userProfile}" alt="User Image">
+									<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}"  alt="User Image">
 										<p>${userName}</p>
 								</li>
 								<li class="user-footer">

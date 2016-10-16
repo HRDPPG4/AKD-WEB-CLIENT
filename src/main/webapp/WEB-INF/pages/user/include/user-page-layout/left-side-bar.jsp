@@ -6,9 +6,16 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <span class="pull-left# image profile" >
-      	<img src="${userProfile}" class="img-circle" alt="User Image">
-        <%-- <img src="${pageContext.request.contextPath}/resources/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image"> --%>
+      	<!-- <img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{getUserByID.PROFILE}}" class="img-circle" alt="User Image"> -->
+      	<img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}" class="img-circle" alt="User Image">
       </span>
+      <br><br>
+      <div >
+			<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#update-user-image"​ >
+				<i class="fa fa-camera" aria-hidden="true"></i> ផ្លាស់ប្តូររូបភាពថ្មី
+			</a>
+		</div>
+		
       <!-- <div class="pull-left info">
         <p>Alexander Pierce</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>

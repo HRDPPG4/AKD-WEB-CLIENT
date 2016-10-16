@@ -70,12 +70,12 @@
 			color:black;
 		}
 		/* FOR DETAIL PAGE ONLY */
-		#header {
+		/* #header {
 		    height: 56px;
 		}
 		.top-menu {
 		    height: 27px;
-		}
+		} */
 
 		
 	</style>
