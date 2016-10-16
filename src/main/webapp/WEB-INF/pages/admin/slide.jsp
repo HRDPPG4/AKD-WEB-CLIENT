@@ -31,6 +31,7 @@ window.userID = "${userID}";
 </style>
 </head>
 <body​​ ng-app="MainApp" ng-cloak class="skin-blue sidebar-mini">
+	<%@include file="../user/include/image-loader.jsp"%>
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%@include file="include/layout/left-side-bar.jsp"%>

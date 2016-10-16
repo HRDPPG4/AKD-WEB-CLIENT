@@ -7,8 +7,6 @@ var API_ACCESS_CONTROLLER_URL = "http://localhost:1111/api/v1";
 // Main Controller for admin
 app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 
-	
-	
 	//	CATEGORY	
 	
 	$scope.getAllCategoryNewFun = function(){
@@ -161,6 +159,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 	$scope.catLevel = 0;
 	$scope.catNumOrder = 0;
 	$scope.uploadFolder = function(event) {
+		$(".upload_waiting").show();
 		event.preventDefault();
 		var frmData = new FormData();
 		frmData.append("folderID", $scope.ParentID);
@@ -186,6 +185,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
+			$(".upload_waiting").hide();
 			$scope.getAllCategoryNewFun();
 			$scope.ParentID = "0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 			$scope.folderName="";
@@ -206,6 +206,7 @@ app.controller('MainCtrl', function($scope, $http, $sce, $timeout) {
 			$scope.des = category.c.REMARK;
 			$scope.sta = category.c.STATUS;*/
 		}, function(response) {
+			$(".upload_waiting").hide();
 			console.log(response);
 			swal(
 				  'Sorry!',
@@ -374,6 +375,7 @@ app.controller('UserCtrl', function($scope, $http, $sce, $timeout) {
 //============================Start Document Controller===============
 app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
 	$rootScope.userID = $window.userID;
+	
 	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.des="";
 	
@@ -391,9 +393,9 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}
 	}
 	
-	$scope.uploadDocument = function(event){
-		
+	$scope.uploadDocument = function(event){		
 		event.preventDefault();	
+		$(".upload_waiting").show();
 		var files = event.target.files;
 		var frmData = new FormData();
 		
@@ -420,8 +422,19 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 					fileTitle=fileTitle.substring(0, fileTitle.lastIndexOf('.'));	
 				}				
 				frmData.append("title",fileTitle);
+				
+				console.log("Title: "+fileTitle);
 			});
 		}
+		
+		/*console.log("UserID: "+$rootScope.userID);
+		console.log("Cat: "+$scope.catID);
+		console.log("des: "+$scope.des);
+		console.log("fileName: "+$scope.selectedFile.name);*/
+
+		
+		
+		
 		
 		$http({
 			url : API_ACCESS_CONTROLLER_URL + '/uploadDocument',
@@ -432,7 +445,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				'Content-Type' : undefined
 			}
 		}).then(function(response) {
-			
+			$(".upload_waiting").hide();
 			swal(
 				  'Good job!',
 				  'Document Upload Successful!',
@@ -440,7 +453,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				)
 			
 		}, function(response) {
-
+			$(".upload_waiting").hide();
 			swal(
 				  'Sorry!',
 				  'Document Upload Fail!',

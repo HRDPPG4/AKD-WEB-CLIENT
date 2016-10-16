@@ -11,6 +11,10 @@
    <sec:authentication  property="principal.profile" var="userProfile"/>         
 </sec:authorize>
 
+<script>
+window.userID = "${userID}"; 
+</script>
+
 <style>
 	 .nav>li>a>img.userProfile
 	{

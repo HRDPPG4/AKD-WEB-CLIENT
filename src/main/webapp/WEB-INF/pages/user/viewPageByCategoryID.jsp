@@ -61,12 +61,14 @@ a.thumbnail {
 	<jsp:include page="include/register.jsp"></jsp:include>
 	<jsp:include page="include/login.jsp"></jsp:include>
 	<jsp:include page="include/upload.jsp"></jsp:include>
-				 
+	<%@include file="include/image-loader.jsp"%>			 
 	<header id="header">
 		<jsp:include page="include/header.jsp"></jsp:include>
 	</header>
 	<jsp:include page="include/social-share.jsp"></jsp:include>
 	<jsp:include page="include/toolbar-right.jsp"></jsp:include>
+	
+	
 	<content>
 		<div id="page-content-wrapper">
 			<div class="container" id="container-cate">
@@ -99,7 +101,7 @@ a.thumbnail {
 									</div>
 									<div ng-if="recordNotFound" class="noRecord">
 										<img src="${pageContext.request.contextPath}/resources/user/img/cat-no-doc.png">
-									</div>
+									</div>									
 								</div>  							
 							</div>							
 						</div>		

@@ -1287,12 +1287,12 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 			$scope.getAllCategory();
 		}
 	};
-	
 	$scope.theFile = null;
 	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
 	$scope.des="";
-	$scope.uploadFile = function(event) {
+	$scope.uploadDocument = function(event) {
 		if(!$scope.checkUserLogin()){
+			$(".upload_waiting").show();
 			event.preventDefault();	
 			var files = event.target.files;
 			var frmData = new FormData();					
@@ -1311,30 +1311,23 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 					'Content-Type' : undefined
 				}
 			}).then(function(response) {
+				$(".upload_waiting").hide();
+				
 				swal(
 					  'អបអរសាទរ!',
 					  'ឯកសាររបស់អ្នកត្រូវបានចែកចាយបានសម្រេច!',
 					  'success'
 					)
 				
-				$(".progress-bar").css("width", "100%"); 
-		
-				$scope.$on(frmData, function(){
-					
-				});
-				
 				$scope.getAllDocumentByCatID($rootScope.currentSubCategory);
-				
-				
-			
-				
 			}, function(response) {
+				$(".upload_waiting").hide();
+		
 				swal(
-						  'សូមសោកស្តាយ!',
-						  'ឯកសារចែកចាយមិនបានសម្រេច!\nសូមព្យាយាមម្តងទៀត',
-						  'error'
-						)
-				
+					  'សូមសោកស្តាយ!',
+					  'ឯកសារចែកចាយមិនបានសម្រេច!\nសូមព្យាយាមម្តងទៀត',
+					  'error'
+					)				
 			});
 		}
 	};

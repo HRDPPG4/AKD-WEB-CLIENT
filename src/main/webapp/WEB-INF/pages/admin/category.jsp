@@ -24,6 +24,7 @@
 </head>
 <body ng-cloak class="skin-blue sidebar-mini" ng-app="MainApp"
 	ng-controller="MainCtrl">
+	<%@include file="../user/include/image-loader.jsp"%>
 	<div class="wrapper">
 		<%@include file="include/admin-header.jsp"%>
 		<%@include file="include/layout/left-side-bar.jsp"%>

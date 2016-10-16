@@ -41,7 +41,7 @@
 			</div> 
 	      </div>
       <div class="modal-footer">
-        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadFile($event)">រក្សាទុក</button>   
+        <button class="btn-upload"​ alignt="center"​​ id="btnSave" ng-click="uploadDocument($event)">រក្សាទុក</button>   
       </div>
     </div>
     

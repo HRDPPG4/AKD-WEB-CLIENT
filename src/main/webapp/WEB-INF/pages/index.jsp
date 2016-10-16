@@ -9,13 +9,12 @@
 <title>Home</title>
 <%@include file="user/include/link/link.jsp"%>
 </head>
-<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">	
-	
+<body ng-app="UserApp" ng-controller="UserCtrl" data-ng-init="getDocumentByPopular()">		
 	<jsp:include page="user/include/register.jsp"></jsp:include>
 	<jsp:include page="user/include/login.jsp"></jsp:include>
 	<jsp:include page="user/include/upload.jsp"></jsp:include>
 	<jsp:include page="user/include/save-list.jsp"></jsp:include>
-					  
+	<%@include file="user/include/image-loader.jsp"%>				  
 	<header id="header">
 		<jsp:include page="user/include/header.jsp"></jsp:include>		
 	</header>	
