@@ -13,7 +13,7 @@
 	<h3>បញ្ចេញមតិរបស់អ្នកចំពោះអត្ថបទនេះ</h3>
 	<form action="">
 		<div id="img-user" class="col-md-1">
-			 <img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/${userProfile}">
+			 <img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{userInfoByUserID.PROFILE}}">
 		</div>
 
 		<div id="commentBoxArea" class="col-md-11">

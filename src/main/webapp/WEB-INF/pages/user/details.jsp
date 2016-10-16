@@ -114,7 +114,7 @@
 													</div>
 													<div id="owner">
 														<span id="img-user">
-															<img src="${pageContext.request.contextPath}/resources/user/img/login.png" alt="">
+															<img src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{docDetail[0].USERS[0].PROFILE}}" alt="">
 														</span>
 														 {{docDetail[0].USERS[0].USER_NAME}}														
 														<input type="text" value={{docDetail[0].THUMBNAIL_URL}} id="thubnail" ng-show="false">													
