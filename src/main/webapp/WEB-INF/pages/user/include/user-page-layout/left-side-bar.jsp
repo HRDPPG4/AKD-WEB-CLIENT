@@ -10,8 +10,8 @@
       </span>
       <br><br>
       <div >
-			<a class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#update-user-image"​ >
-				<i class="fa fa-camera" aria-hidden="true"></i> ផ្លាស់ប្តូររូបភាពថ្មី
+			<a  ​href="#" class="upload-proflie" class="btn btn-info btn-lg" data-toggle="modal" data-target="#update-user-image"​>
+				<i class="fa fa-camera" aria-hidden="true"></i> ចុចទីនេះដើម្បីផ្លាស់ប្តូររូបភាពថ្មី
 			</a>
 		</div>
 		
