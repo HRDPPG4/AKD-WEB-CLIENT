@@ -138,7 +138,7 @@
 														<button class="btn-savelist-detail" id="savelist"  ng-click="getSavelistUser(docDetail[0].USER_ID)">
 															<span><i class="fa fa-plus" aria-hidden="true"  ></i>បន្ថែមទៅបញ្ជី</span>
 														</button>		
-														<!-- <div id="shareBtn" class="btn btn-success clearfix">Share On Facebook</div> -->
+													
 														<button class="btn-share-detail" id="shareBtn" ng-click="FBShare(docDetail[0].DOC_ID,docDetail[0].THUMBNAIL_URL)">
 															<span​ class="shareIcon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 															ចែករំលែក

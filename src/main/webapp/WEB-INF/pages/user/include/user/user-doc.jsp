@@ -14,7 +14,7 @@
 						<div class="list-data">	   		 		
 							<div class="col-md-3">
 								<span class="no-savelist">{{$index+1}}</span>
-								<a href="/detail/{{slide.DOC_ID}}">
+								<a href="/detail/{{slide.DOC_ID}}" data-ng-click="countView(slide.DOC_ID)">
 									<img src="{{slide.THUMBNAIL_URL}}" alt="Thumbnail">
 								</a>
 								
