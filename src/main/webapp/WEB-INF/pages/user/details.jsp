@@ -149,7 +149,7 @@
 															រាយការណ៍អំពីបញ្ហា
 														</button>	
 														
-														<a class="btn-download-detail"​ href="https://drive.google.com/uc?export=download&id={{docDetail[0].DOC_ID}}">
+														<a class="btn-download-detail"​ href="https://drive.google.com/uc?export=download&id={{docDetail[0].DOC_ID}}" target="_blank">
 															<span><i class="fa fa-download" aria-hidden="true"></i></span>
 															ទាញយក
 														</a>									
