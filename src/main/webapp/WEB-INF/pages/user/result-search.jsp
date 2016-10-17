@@ -39,6 +39,7 @@ a.thumbnail {
 	</header>
 	<jsp:include page="include/social-share.jsp"></jsp:include>
 	<jsp:include page="include/toolbar-right.jsp"></jsp:include>
+	<jsp:include page="include/feedback.jsp"></jsp:include>
 	<content>
 		<div class="container">
 			<section id="search">

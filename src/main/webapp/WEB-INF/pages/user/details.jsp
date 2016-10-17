@@ -83,7 +83,7 @@
   	<jsp:include page="include/toolbar-right.jsp"></jsp:include> 
   	<%@include file="include/image-loader.jsp"%>	
 	<header id="header">
-	 	<jsp:include page="include/header.jsp"></jsp:include> 
+	 	<jsp:include page="include/header.jsp"></jsp:include> 	 	
 	</header>
 	
 
