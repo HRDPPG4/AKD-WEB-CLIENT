@@ -21,6 +21,7 @@ height:100% !important;
 }
 #Slide-Detail .modal-header
 {
+	z-index: 2000000;
 	border-bottom:0px;
 *	background-color:white !important;	
 *	height: 10px;
@@ -53,7 +54,6 @@ height:100% !important;
 }
 
 word-wrap:break-word;
-
 	
    
 
