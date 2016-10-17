@@ -14,11 +14,14 @@
 	<jsp:include page="user/include/login.jsp"></jsp:include>
 	<jsp:include page="user/include/upload.jsp"></jsp:include>
 	<jsp:include page="user/include/save-list.jsp"></jsp:include>
-	<%@include file="user/include/image-loader.jsp"%>				  
+	<%@include file="user/include/image-loader.jsp"%>	
+	
+				  
 	<header id="header">
 		<jsp:include page="user/include/header.jsp"></jsp:include>		
 	</header>	
 	<jsp:include page="user/include/social-share.jsp"></jsp:include>
+	<jsp:include page="user/include/feedback.jsp"></jsp:include>
 	<content>	
 		<div class="container">		
 			<section id="recommend" ng-if="recordFound">
