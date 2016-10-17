@@ -42,7 +42,7 @@ html,body {
 
 /* START WEB PAGE COLOR BLOCK */
 
-.navbar-main-menu,.section-title,.input-group-btn:last-child>.btn,ul.category-menu li.bg-cate,li.cates-main a:hover,.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover,.cd-top.cd-fade-out,.cd-top.cd-is-visible,.cd-top,ul.ul-toolbar > li.feedback a, ul.ul-toolbar > li.search,ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover,ul li > ul.tooltiptext li a:hover,.left-profile,ul.nav-tabs li a,button.clear-history,li.btn-add button,.footer-list,#btn-fullscreen,.btn-savelist-detail,.btn-share-detail,.btn-report-detail,input[type="button"],.btn-create-new,#Slide-Detail .modal-header{
+.navbar-main-menu,.section-title,.input-group-btn:last-child>.btn,ul.category-menu li.bg-cate,li.cates-main a:hover,.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover,.cd-top.cd-fade-out,.cd-top.cd-is-visible,.cd-top,ul.ul-toolbar > li.feedback a, ul.ul-toolbar > li.search,ul li#upload  > a:hover,li#signin  > a:hover ,li#signup > a:hover,ul li > ul.tooltiptext li a:hover,.left-profile,ul.nav-tabs li a,button.clear-history,li.btn-add button,.footer-list,#btn-fullscreen,.btn-savelist-detail,.btn-share-detail,.btn-report-detail,input[type="button"],.btn-create-new,#Slide-Detail .modal-header,a.btn-download-detail{
 	background-color: #26a63c;
 }
 .fa-share-alt:before,.fa-arrow-circle-o-down:before,.fa-thumbs-up:before,li.history-title,li.view-feature a:hover,li.view-feature a{

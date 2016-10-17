@@ -261,6 +261,13 @@ color:white;
 	color:#fff;
 	border:1px solid #fff;
 }
+a.btn-download-detail{
+	padding:2px 5px;
+	color:#fff;
+	border:1px solid #fff;
+	text-decoration: none;
+	color: white;
+}
 
 .header-report{
 	padding-bottom:5px;

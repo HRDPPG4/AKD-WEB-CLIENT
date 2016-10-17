@@ -147,7 +147,12 @@
 														<button class="btn-report-detail"​ ng-click="checkUserLogin()">
 															<span><i class="fa fa-flag" aria-hidden="true"></i></span>
 															រាយការណ៍អំពីបញ្ហា
-														</button>										
+														</button>	
+														
+														<a class="btn-download-detail"​ href="https://drive.google.com/uc?export=download&id={{docDetail[0].DOC_ID}}">
+															<span><i class="fa fa-download" aria-hidden="true"></i></span>
+															ទាញយក
+														</a>									
 													</div>													
 												 </div>										
 											</div>
