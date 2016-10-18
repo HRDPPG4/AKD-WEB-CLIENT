@@ -83,9 +83,9 @@ a.thumbnail {
 							<li class="view-feature"><a ng-click="getDocumentByNewPost()" href="/feature/new">ឯកសារថ្មីៗ</a></li>
 							 -->
 							
-							<li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a href="/feature/recommend">ឯកសារណែនាំ</a></li>
-							<li  class="view-feature"><a  href="/feature/popular">ឯកសារពេញនិយម</a></li>
-							<li class="view-feature"><a  href="/feature/new">ឯកសារថ្មីៗ</a></li>
+							<li class="view-feature" ng-if="UserID!='' ||UserID!=0"><a href="/feature/recommend" id="recommend">ឯកសារណែនាំ</a></li>
+							<li  class="view-feature"><a  href="/feature/popular" id="popular">ឯកសារពេញនិយម</a></li>
+							<li class="view-feature"><a  href="/feature/new" id="new">ឯកសារថ្មីៗ</a></li>
 						</ul>
 					 </div>
 					<div class="row" style="padding:12px;">
@@ -119,5 +119,19 @@ a.thumbnail {
 		<jsp:include page="include/footer.jsp"></jsp:include>
 	</footer>
 	<%@include file="include/script/script.jsp"%>
+	
+	<script>
+		var path = window.location.pathname;
+		path=path.substring(path.lastIndexOf('/') + 1	,path.length);
+		if(path == 'recommend'){
+			$("li.view-feature a#recommend").css("border-bottom", "2px solid #26a63c");
+		}else if(path == 'popular'){
+			$("li.view-feature a#popular").css("border-bottom", "2px solid #26a63c");
+		}else if(path == 'new'){
+			$("li.view-feature a#new").css("border-bottom", "2px solid #26a63c");
+		}else{
+			
+		}		
+	</script>	
 </body>
 </html>
