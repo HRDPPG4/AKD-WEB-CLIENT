@@ -143,7 +143,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 	
 	$scope.getAllCategoryAndSubcategory=function(){	
 		$http({
-			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentID/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
+			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentID/0',
 			method:'GET'
 		}).then(function(response){
 			$scope.getAllCategoryAndSubcategory=response.data.DATA;
@@ -165,9 +165,9 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 	}
 	
 	//	GET MAIN CATEGORY
-	$scope.getMainCategory=function(parentID){		
+	/*$scope.getMainCategory=function(parentID){		
 		$http({
-			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentIDAndStatusEnable/0BybKdIgWtK8tNTZUbGQwMzVpYjQ',
+			url:API_ACCESS_CONTROLLER_URL + '/getCategoryByParentIDAndStatusEnable/0',
 			method:'GET'
 		}).then(function(response){
 			$scope.mainCategory=response.data.DATA;
@@ -175,7 +175,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 		}, function(response){
 
 		});	
-	}
+	}*/
 	
 	////////////////////	END CATEGORY BLOCK	/////////////////
 	
@@ -659,7 +659,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 	///////////////////		START LOG BLOCK	/////////////////
 	
 
-	 $scope.trackLog=function(docID="" ,Des,status){
+	 $scope.trackLog=function(docID ,Des,status){
 		  
 		   if($rootScope.userID ==null || $rootScope.userID=="" ||$rootScope.userID ==0 ){
 
@@ -1280,7 +1280,7 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 		}
 	};
 	$scope.theFile = null;
-	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
+	$scope.catID="";
 	$scope.des="";
 	$scope.uploadDocument = function(event) {
 		if(!$scope.checkUserLogin()){

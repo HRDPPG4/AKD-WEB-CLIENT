@@ -155,7 +155,7 @@ app.controller('MainCtrl', function($scope,$rootScope, $http, $sce, $timeout) {
 	
 	
 	// UPLOAD CATEGORY AND SUB-CATEGORY BLOCK
-	$scope.ParentID = "0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
+	$scope.ParentID = "";
 	$scope.sta = 1;
 	$scope.catLevel = 0;
 	$scope.catNumOrder = 0;
@@ -188,7 +188,7 @@ app.controller('MainCtrl', function($scope,$rootScope, $http, $sce, $timeout) {
 		}).then(function(response) {
 			$(".upload_waiting").hide();
 			$scope.getAllCategoryNewFun();
-			$scope.ParentID = "0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
+			$scope.ParentID = "";
 			$scope.folderName="";
 			$scope.des="";
 			$scope.catIcon="";
@@ -382,9 +382,7 @@ app.controller('UserCtrl', function($scope, $rootScope, $http, $sce, $timeout,$w
 app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout,$window) {
 	$rootScope.userID = $window.userID;
 	
-	$scope.catID="0BybKdIgWtK8tNTZUbGQwMzVpYjQ";
-	$scope.des="";
-	
+	$scope.des="";	
 	$scope.showSingleInput = false;
 	$scope.showMultipleInput = false;
 	
