@@ -293,6 +293,8 @@ app.controller('UserCtrl',['$scope','$rootScope','$http','$location','$sce', '$w
 		}).then(function(response){
 			if(response.data.DATA==null){
 				$scope.recordFound=false;
+			}else{
+				$scope.recordFound=true;
 			}
 			$scope.recommend=response.data.DATA;
 		}, function(response){
