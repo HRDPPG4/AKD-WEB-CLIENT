@@ -417,7 +417,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 		}else{
 								
 			var file = $('#multipleUploadDocument')[0].files;
-			for(var i = 0; i < file.length; i++){
+			for(var i = file.length; i >= 0; i-- ){
 				frmData.append("files", file[i]);
 			}
 			
@@ -429,7 +429,7 @@ app.controller('DocumentCtrl', function($scope,$rootScope, $http, $sce, $timeout
 				}				
 				frmData.append("title",fileTitle);
 				
-				console.log("Title: "+fileTitle);
+				//console.log("Title: "+fileTitle);
 			});
 		}
 		
