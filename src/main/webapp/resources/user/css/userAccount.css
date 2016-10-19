@@ -18,9 +18,9 @@ user-panel.profile
 }
 @media only screen and (max-width: 2000px) {
     .user-panel>.image>img {
-	    max-width: 120px;
+	    width: 120px;
+	    height: 120px;
 	    margin-left: 42px;
-	    height: 130px;
 	}
 }
 
