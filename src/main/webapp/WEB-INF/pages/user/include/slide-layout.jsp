@@ -14,7 +14,7 @@
 		<!-- <a href="#" alt="like" class="like">
 			<span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
 		</a> -->
-		<a href="https://drive.google.com/uc?export=download&id={{slide.DOC_ID}}" alt="download" class="download" target="_blank">
+		<a href="{{slide.EXPORT_LINK}}" alt="download" class="download" target="_blank">
 			<span><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>
 		</a>
 		<a href="#" alt="share" class="share" ng-click="FBShare(slide.DOC_ID,slide.THUMBNAIL_URL)">
