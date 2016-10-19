@@ -1,20 +1,23 @@
 #commentBox
 {
-	min-width: 100%;
+	/* min-width: 100%;
 	min-height: 30%; 
-	background-color: white;
+	
 	padding:10px;
-	color: black;
+	
 	float: right;
-	margin-bottom: 10px;
+	margin-bottom: 10px; */
+	background-color: white;
+	color: black;
 }
 #commentBox img
 {
-	max-width: 45px;
+	width: 45px;
+	height: 45px;
     border-radius: 50%;
-    padding:5px;
-    margin:5px;
 }
+
+
 
 #commentBox textarea
 {
@@ -41,21 +44,31 @@
 {
 	heigh:50%;
 	width:100%;
-	
-	background-color:red;
 }
 #listCommentBox #img-user-commented
 {
 	float: left;
 	clear: both;
 }
+
+.image-user-commend
+{
+	margin: 0px 12px !important;
+}
 #listCommentBox #comment-list
 {
 	clear: both;
-	float: left;
+*	float: left;
 	text-align:left;
-	position: relative;
-	left:60px;
+	width: 100%;
+	/* position: relative;
+	left:73px; */
+}
+
+#listCommentBox #comment-list p.comment
+{
+	padding-left: 74px;
+	line-height: 30px;
 }
 
 @media (min-width: 992px)

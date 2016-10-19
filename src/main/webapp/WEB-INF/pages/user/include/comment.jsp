@@ -9,7 +9,7 @@
 </sec:authorize>
     
     
-<div id="commentBox"> 
+<div id="commentBox" class="container-fluid"> 
 	<h3>បញ្ចេញមតិរបស់អ្នកចំពោះអត្ថបទនេះ</h3>
 	<form action="">
 		<div id="img-user" class="col-md-1">
@@ -29,12 +29,13 @@
 		
 		<div ng-if="commentByDoc" id="listCommentBox" ng-repeat="comment in commentByDoc">	
 			<div id="img-user-commented">
-				<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{comment.USERS[0].PROFILE}}">
+				<img alt="" src="{{API_PATH_ANGULAR}}/resources/img/user-profile/{{comment.USERS[0].PROFILE}}" class="image-user-commend">
 				{{comment.USERS[0].USER_NAME}}
 			</div>
 			
 			<div id="comment-list">
-				 {{comment.REMARK}}
+				<p class="comment">{{comment.REMARK}}</p>
+				 
 			</div>
 		</div>
 
